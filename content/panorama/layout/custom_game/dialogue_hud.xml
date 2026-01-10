@@ -1,0 +1,62 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/dialogue_hud.css" />
+  </styles>
+
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/dialogue_hud.js" />
+  </scripts>
+
+  <Panel class="DialogueRoot">
+    <!-- Darken / blur the world while dialogue is open -->
+    <Panel id="WorldFX" class="WorldFX" />
+
+    <!-- Letterbox bars -->
+    <Panel id="CineBars" class="CineBars" hittest="false">
+      <Panel class="Bar BarTop" />
+      <Panel class="Bar BarBottom" />
+    </Panel>
+
+    <!-- Main container -->
+    <Panel id="DialogueShell" class="DialogueShell" hittest="false">
+      <Panel id="DialogueFrame" class="DialogueFrame" hittest="true">
+        <!-- LEFT: portrait + speaker -->
+        <Panel class="LeftCol">
+          <Panel class="PortraitFrame">
+            <!-- Optional: 3D portrait (remove if you don't want it) -->
+            <DOTAScenePanel
+              id="SpeakerScene"
+              class="SpeakerScene"
+              unit="npc_dota_hero_sven"
+              particleonly="false"
+              allowrotation="false" />
+            <Panel class="PortraitGloss" hittest="false" />
+            <Panel class="PortraitRim" hittest="false" />
+          </Panel>
+
+          <Panel class="SpeakerPlate">
+            <Label id="SpeakerName" class="SpeakerName" text="Sven" />
+            <Label id="SpeakerTitle" class="SpeakerTitle" text="Storm Hammer Enthusiast" />
+          </Panel>
+        </Panel>
+
+        <!-- RIGHT: text + choices -->
+        <Panel class="RightCol">
+          <Panel class="TextArea">
+            <Label id="DialogueText" class="DialogueText" text="..." />
+          </Panel>
+
+          <Panel id="ContinueHint" class="ContinueHint" visible="false">
+            <Label class="ContinueText" text="Press SPACE to continue" />
+            <Label class="ContinueArrow" text="›" />
+          </Panel>
+
+          <Panel id="Choices" class="Choices" />
+        </Panel>
+      </Panel>
+
+      <!-- top-right skip -->
+      <TextButton id="SkipButton" class="SkipButton" text="SKIP" />
+    </Panel>
+  </Panel>
+</root>

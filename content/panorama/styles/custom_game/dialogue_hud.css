@@ -1,0 +1,270 @@
+/* ===== Theme knobs (Panorama supports @define) ===== */
+@define Accent: #C6A15Bff;
+@define AccentSoft: #C6A15B33;
+@define Ink: #0B0E12ff;
+@define Ink2: #0B0E12cc;
+@define Paper: #E9ECEFff;
+@define Muted: #B8C0CCaa;
+
+/* ===== Root ===== */
+.DialogueRoot {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: collapse;
+  transition-property: opacity, transform;
+  transition-duration: 0.18s;
+  transition-timing-function: ease-in-out;
+  transform: translateY(16px);
+}
+
+/* Toggle this class from JS */
+.DialogueRoot.IsOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+/* ===== World FX (blur + dim) ===== */
+.WorldFX {
+  width: 100%;
+  height: 100%;
+  background-color: gradient(radial, 50% 55%, 0% 0%, 85% 85%, from(#00000000), to(#000000aa));
+  opacity: 0;
+  world-blur: gaussian(0);
+  transition-property: opacity, world-blur;
+  transition-duration: 0.18s;
+  transition-timing-function: ease-in-out;
+  transition-high-framerate: true;
+}
+
+.DialogueRoot.IsOpen .WorldFX {
+  opacity: 1;
+  world-blur: gaussian(6, 6, 1);
+}
+
+/* Panorama supports world-blur + gaussian(...) and transition-property. :contentReference[oaicite:2]{index=2} */
+
+/* ===== Letterbox bars ===== */
+.CineBars { width: 100%; height: 100%; }
+
+.Bar {
+  width: 100%;
+  height: 120px;
+  background-color: #000000;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.18s;
+  transition-timing-function: ease-in-out;
+}
+
+.BarTop { vertical-align: top; }
+.BarBottom { vertical-align: bottom; }
+
+.DialogueRoot.IsOpen .Bar { opacity: 1; }
+
+/* ===== Shell positions the frame in a nice “cinematic” zone ===== */
+.DialogueShell {
+  width: 100%;
+  height: 100%;
+  flow-children: none;
+}
+
+.DialogueFrame {
+  horizontal-align: center;
+  vertical-align: bottom;
+  margin-bottom: 165px;
+  width: 1080px;
+  min-height: 220px;
+  padding: 18px;
+  flow-children: right;
+
+  background-color: gradient(linear, 0% 0%, 0% 100%, from(#0e131aff), to(#07090cff));
+  border: 1px solid #ffffff12;
+  box-shadow: #000000aa -6px -6px 18px 12px;
+}
+
+/* ===== Columns ===== */
+.LeftCol {
+  width: 240px;
+  flow-children: down;
+  margin-right: 14px;
+}
+
+.RightCol {
+  width: 100%;
+  flow-children: down;
+}
+
+/* ===== Portrait ===== */
+.PortraitFrame {
+  width: 220px;
+  height: 220px;
+  border-radius: 18px;
+  overflow: clip;
+
+  background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2330ff), to(#0b0f16ff));
+  border: 1px solid #ffffff14;
+  box-shadow: #00000088 -4px -4px 12px 6px;
+}
+
+.SpeakerScene { width: 100%; height: 100%; }
+
+.PortraitGloss {
+  width: 100%;
+  height: 100%;
+  background-color: gradient(linear, 0% 0%, 100% 100%, from(#ffffff14), color-stop(0.35, #ffffff06), to(#ffffff00));
+}
+
+.PortraitRim {
+  width: 100%;
+  height: 100%;
+  border: 2px solid AccentSoft;
+  border-radius: 18px;
+  opacity: 0.9;
+}
+
+/* ===== Speaker nameplate ===== */
+.SpeakerPlate {
+  margin-top: 10px;
+  padding: 10px 12px;
+  flow-children: down;
+  border-radius: 14px;
+  background-color: gradient(linear, 0% 0%, 0% 100%, from(#0b0e12ee), to(#0b0e12aa));
+  border: 1px solid #ffffff10;
+}
+
+.SpeakerName {
+  font-size: 24px;
+  font-weight: bold;
+  color: Paper;
+  text-shadow: 2px 2px 0px 2.0 #000000aa;
+  letter-spacing: 1px;
+}
+
+.SpeakerTitle {
+  margin-top: 2px;
+  font-size: 16px;
+  color: Muted;
+  letter-spacing: 1px;
+}
+
+/* ===== Dialogue text ===== */
+.TextArea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background-color: gradient(linear, 0% 0%, 0% 100%, from(#0b0e12dd), to(#0b0e12aa));
+  border: 1px solid #ffffff0f;
+}
+
+.DialogueText {
+  width: 100%;
+  font-size: 20px;
+  line-height: 26px;
+  color: Paper;
+  text-shadow: 2px 2px 0px 2.0 #000000aa;
+  text-overflow: shrink;
+}
+
+/* ===== Continue hint (subtle pulse) ===== */
+.ContinueHint {
+  flow-children: right;
+  horizontal-align: right;
+  margin-top: 8px;
+  opacity: 0.85;
+}
+
+.ContinueText {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: Muted;
+}
+
+.ContinueArrow {
+  margin-left: 8px;
+  font-size: 20px;
+  color: Accent;
+  animation-name: Nudge;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes 'Nudge' {
+  0%   { transform: translateX(0px); opacity: 0.6; }
+  100% { transform: translateX(6px); opacity: 1.0; }
+}
+
+/* ===== Choices ===== */
+.Choices {
+  margin-top: 10px;
+  flow-children: down;
+  width: 100%;
+}
+
+.DialogueChoice {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 8px;
+  padding: 6px 10px;
+
+  background-color: gradient(linear, 0% 0%, 0% 100%, from(#2a313aff), to(#1a2028ff));
+  border: 1px solid #ffffff12;
+  border-radius: 12px;
+
+  transition-property: background-color, border, brightness, transform;
+  transition-duration: 0.08s;
+  transition-timing-function: ease-in-out;
+  sound: "ui_generic_button_click";
+}
+
+.DialogueChoice:hover {
+  brightness: 1.35;
+  border: 1px solid AccentSoft;
+  transform: translateY(-1px);
+}
+
+.DialogueChoice:active {
+  brightness: 0.95;
+  transform: translateY(1px);
+}
+
+.DialogueChoice Label {
+  font-size: 18px;
+  color: Paper;
+  text-shadow: 2px 2px 0px 2.0 #000000aa;
+}
+
+.DialogueChoice.IsSelected {
+  background-color: gradient(linear, 0% 0%, 0% 100%, from(#3a2f1bff), to(#241a0eff));
+  border: 1px solid Accent;
+}
+
+/* ===== Skip button ===== */
+#SkipButton {
+  horizontal-align: right;
+  vertical-align: top;
+  margin-top: 150px;
+  margin-right: 120px;
+
+  min-width: 90px;
+  min-height: 32px;
+  border-radius: 10px;
+  background-color: #00000066;
+  border: 1px solid #ffffff14;
+  transition-property: background-color, brightness;
+  transition-duration: 0.08s;
+  transition-timing-function: ease-in-out;
+}
+
+#SkipButton:hover { brightness: 1.4; background-color: #000000aa; }
+
+#SkipButton Label {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: Muted;
+}

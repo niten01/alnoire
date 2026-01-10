@@ -1,0 +1,1268 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc32:version{c5dcef98-b629-46ab-88e3-a17c005c935e} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "lightsabre.vmat"
+								to = "materials/models/heroes/sohei/bepis_sohei/bepis_sohei_stick.vmat"
+							},
+							{
+								from = "bepisbody.vmat"
+								to = "materials/models/heroes/sohei/bepis_sohei/bepis_sohei_body.vmat"
+							},
+							{
+								from = "robe.vmat"
+								to = "materials/models/heroes/sohei/bepis_sohei/bepis_sohei_robe.vmat"
+							},
+							{
+								from = "sohead.vmat"
+								to = "materials/models/heroes/sohei/bepis_sohei/bepis_sohei_head.vmat"
+							},
+							{
+								from = "cap.vmat"
+								to = "materials/models/heroes/sohei/bepis_sohei/bepis_sohei_cap.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								parent_bone = "root"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -12.188873, -18.964657, -25.239117 ]
+								hitbox_maxs = [ 11.06023, 18.556911, 16.674118 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "spine1"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -23.476105, -21.326612, -23.318161 ]
+								hitbox_maxs = [ 32.08342, 21.470293, 15.843323 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "spine2"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -35.864708, -28.486355, -23.742481 ]
+								hitbox_maxs = [ 24.589134, 28.486385, 16.395508 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "spine3"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -15.95446, -22.543818, -21.778725 ]
+								hitbox_maxs = [ 13.927544, 22.543844, 16.118942 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "clavicle_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -22.68959, -9.777729, -16.331955 ]
+								hitbox_maxs = [ 24.427898, 20.836826, 24.757042 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "clavicle_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -19.754837, -20.813412, -23.952225 ]
+								hitbox_maxs = [ 23.676537, 18.309986, 16.432846 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "bicep_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -26.132874, -28.096836, -23.238104 ]
+								hitbox_maxs = [ 26.270103, 10.111267, 14.31772 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "bicep_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -32.125908, -10.122467, -16.032814 ]
+								hitbox_maxs = [ 26.402771, 29.017342, 21.51318 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "elbow_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -15.473602, -16.972771, -10.326538 ]
+								hitbox_maxs = [ 30.635506, 8.953346, 17.765472 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "elbow_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -30.651237, -8.953171, -17.713654 ]
+								hitbox_maxs = [ 15.473709, 14.514, 10.326778 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "wrist_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -14.39489, -10.208149, -8.21059 ]
+								hitbox_maxs = [ 12.035889, 6.379097, 10.262661 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "wrist_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -12.03566, -6.379036, -10.262424 ]
+								hitbox_maxs = [ 12.951954, 10.208206, 8.210854 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "thigh_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -33.000374, -13.190071, -17.593376 ]
+								hitbox_maxs = [ 25.14122, 22.802502, 19.847607 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "thigh_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -22.21196, -23.062725, -19.86306 ]
+								hitbox_maxs = [ 32.709015, 10.366689, 17.329655 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "thumb_0_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -6.364092, -5.530109, -6.998871 ]
+								hitbox_maxs = [ 8.307865, 5.641846, 10.688606 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "mid_0_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -7.852303, -6.004144, -3.920174 ]
+								hitbox_maxs = [ 14.644005, 8.331768, 6.884766 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "index_0_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -5.84354, -8.227901, -4.477215 ]
+								hitbox_maxs = [ 14.104572, 6.473907, 5.436806 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "thumb_0_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -10.742922, -5.641884, -10.688965 ]
+								hitbox_maxs = [ 5.179884, 6.64946, 6.998558 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "mid_0_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -14.643745, -8.331486, -6.884892 ]
+								hitbox_maxs = [ 7.597897, 6.004426, 3.92012 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "index_0_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -14.104401, -6.473541, -5.436844 ]
+								hitbox_maxs = [ 5.843712, 8.228268, 4.47718 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "knee_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -30.534996, -15.88781, -24.273941 ]
+								hitbox_maxs = [ 69.579193, 47.462502, 35.098099 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "knee_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -80.393173, -47.810352, -33.241211 ]
+								hitbox_maxs = [ 30.496595, 13.439114, 24.192585 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "neck1"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -21.377563, -21.641319, -12.772476 ]
+								hitbox_maxs = [ 15.540512, 21.641342, 12.270897 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "thumb_1_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -7.106926, -6.649208, -2.593147 ]
+								hitbox_maxs = [ 10.277737, 3.319138, 7.190308 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "mid_1_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -6.585274, -6.004155, -1.953373 ]
+								hitbox_maxs = [ 8.354095, 5.172588, 4.993042 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "index_1_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -5.785667, -2.477619, -2.117842 ]
+								hitbox_maxs = [ 7.293396, 3.517979, 3.26631 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "thumb_1_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -10.277599, -3.319099, -7.19075 ]
+								hitbox_maxs = [ 5.950909, 6.649361, 2.592682 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "mid_1_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -8.353775, -4.471256, -4.993055 ]
+								hitbox_maxs = [ 6.585587, 6.004488, 1.953403 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "index_1_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -7.293205, -3.517578, -3.266279 ]
+								hitbox_maxs = [ 4.475098, 2.47802, 2.117872 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "back_fur_R0C0"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -31.079201, -12.339302, -13.970028 ]
+								hitbox_maxs = [ -7.271576, 8.975517, 8.990597 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "ankle_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -23.228027, -10.452229, -31.608891 ]
+								hitbox_maxs = [ 25.106674, 41.881973, 10.585391 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "ankle_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -25.189779, -42.227375, -10.662305 ]
+								hitbox_maxs = [ 25.158388, 10.108006, 31.858959 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "head"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -16.140503, -14.00663, -13.655914 ]
+								hitbox_maxs = [ 13.67712, 9.318909, 15.172943 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "sword_1"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -19.874367, -5.48, -3.4491 ]
+								hitbox_maxs = [ 98.561378, 38.710831, 9.281256 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "thumb_2_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -4.049576, -4.213356, -2.593079 ]
+								hitbox_maxs = [ 4.9263, 2.265305, 4.658665 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "mid_2_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -4.214554, -5.898089, -1.953358 ]
+								hitbox_maxs = [ 6.634872, 4.233103, 3.041725 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "index_2_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.939232, -1.804985, -2.117785 ]
+								hitbox_maxs = [ 3.784935, 2.200535, 1.391741 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "pad1_0_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -4.753647, -11.707207, -9.841864 ]
+								hitbox_maxs = [ 9.795105, 19.522331, 7.748646 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "wrist_helper_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -10.47266, -7.84948, -8.04085 ]
+								hitbox_maxs = [ 17.734451, 6.597153, 9.125454 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "thumb_2_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -5.027168, -3.319229, -4.659145 ]
+								hitbox_maxs = [ 4.049671, 4.213352, 2.59259 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "mid_2_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -6.634499, -4.232725, -3.041746 ]
+								hitbox_maxs = [ 4.214935, 5.898468, 1.95336 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "index_2_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -4.933617, -2.43293, -1.748184 ]
+								hitbox_maxs = [ 2.939453, 1.805428, 2.117817 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "pad0_0_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -9.795189, -19.204117, -7.748389 ]
+								hitbox_maxs = [ 4.753563, 11.707382, 9.842127 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "wrist_helper_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -17.734344, -6.597038, -9.125183 ]
+								hitbox_maxs = [ 9.962246, 7.849586, 8.041117 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "back_fur_R2C0"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.0, -2.0, -2.0 ]
+								hitbox_maxs = [ 2.0, 2.0, 2.0 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "toeBase_R"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -15.103395, -6.449615, -1.097738 ]
+								hitbox_maxs = [ 15.338289, 10.049784, 22.490566 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "toeBase_L"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -15.226348, -10.580708, -1.096064 ]
+								hitbox_maxs = [ 15.178502, 6.056881, 22.116438 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "back_flap0_0"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.945286, 15.297831, 14.281715 ]
+								hitbox_maxs = [ 9.476171, 19.079237, 24.167419 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "L_panel2_0"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -16.710291, -14.987207, -31.860458 ]
+								hitbox_maxs = [ -9.546984, 2.723216, -14.303696 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "R_panel3_0"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.0, -2.0, -2.0 ]
+								hitbox_maxs = [ 2.0, 2.0, 2.0 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "clth_fr_R_03"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.0, -2.0, -2.0 ]
+								hitbox_maxs = [ 2.0, 2.0, 2.0 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "bepis_sohei_base"
+						filename = "models/heroes/sohei/bepis_sohei/bepis_sohei_base.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "Folder"
+						name = "ss"
+						children = 
+						[
+							{
+								_class = "AnimFile"
+								name = "flail"
+								children = 
+								[
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_FLAIL"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/flail.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 16
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "attack"
+								children = 
+								[
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = true
+										extract_tz = false
+										extract_rz = false
+										linear = false
+										quadratic = false
+										root_bone_name = ""
+										motion_type = "Single"
+									},
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_ATTACK"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/attack.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 22
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "attack_crit"
+								children = 
+								[
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = true
+										extract_tz = false
+										extract_rz = false
+										linear = false
+										quadratic = false
+										root_bone_name = ""
+										motion_type = "Single"
+									},
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_ATTACK_STATUE"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/attack_crit.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 22
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "attack2"
+								children = 
+								[
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = true
+										extract_tz = false
+										extract_rz = false
+										linear = false
+										quadratic = false
+										root_bone_name = ""
+										motion_type = "Single"
+									},
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_ATTACK"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/attack2.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 22
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "bind"
+								children = 
+								[
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/bind.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 1440
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "death"
+								children = 
+								[
+									{
+										_class = "AnimEvent"
+										event_class = "AE_CL_PLAYSOUND"
+										event_frame = 10
+										event_keys = 
+										{
+											name = "BodyImpact_common.Light"
+											stop_on_seq_change = false
+											use_layer_sequence = false
+											tags = null
+										}
+									},
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = true
+										extract_tz = false
+										extract_rz = false
+										linear = false
+										quadratic = false
+										root_bone_name = ""
+										motion_type = "Single"
+									},
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_DIE"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/death.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 23
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "idle"
+								children = 
+								[
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_IDLE"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/idle.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 83
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "idle_spin_sword"
+								children = 
+								[
+									{
+										_class = "AnimEvent"
+										event_class = "AE_CL_PLAYSOUND"
+										event_frame = 10
+										event_keys = 
+										{
+											name = "Hero_Juggernaut.idle"
+											stop_on_seq_change = false
+											use_layer_sequence = false
+											tags = null
+										}
+									},
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_OVERRIDE_ABILITY_2"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/idle_spin_sword.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 49
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "omni"
+								children = 
+								[
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_OVERRIDE_ABILITY_4"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/omni.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 23
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "run_walk"
+								children = 
+								[
+									{
+										_class = "AnimEvent"
+										event_class = "AE_CL_PLAYSOUND_POSITION"
+										event_frame = 1
+										event_keys = 
+										{
+											name = "Sohei.Footsteps"
+											stop_on_seq_change = false
+											use_layer_sequence = false
+											tags = null
+										}
+									},
+									{
+										_class = "AnimEvent"
+										event_class = "AE_CL_PLAYSOUND_POSITION"
+										event_frame = 9
+										event_keys = 
+										{
+											name = "Sohei.Footsteps"
+											stop_on_seq_change = false
+											use_layer_sequence = false
+											tags = null
+										}
+									},
+									{
+										_class = "AnimEvent"
+										event_class = ""
+										event_frame = 16
+										event_keys = null
+									},
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = true
+										extract_tz = false
+										extract_rz = false
+										linear = false
+										quadratic = false
+										root_bone_name = ""
+										motion_type = "Single"
+									},
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_RUN"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/run_walk.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 16
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "stun"
+								children = 
+								[
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_STUN_STATUE"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/stun.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 48
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "attack_crit_anim"
+								children = 
+								[
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = true
+										extract_tz = false
+										extract_rz = false
+										linear = false
+										quadratic = false
+										root_bone_name = ""
+										motion_type = "Single"
+									},
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_ATTACK_EVENT"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/attack_crit.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 22
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "stun_anim"
+								children = 
+								[
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_DISABLED"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/stun.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 48
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "victory"
+								children = 
+								[
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1285.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_VICTORY"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/victory.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 69
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "jump"
+								children = 
+								[
+									{
+										_class = "ActivityModifier"
+										activity_name = "forcestaff_friendly"
+										activity_weight = 1
+									},
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = true
+										extract_tz = false
+										extract_rz = false
+										linear = false
+										quadratic = false
+										root_bone_name = ""
+										motion_type = "Single"
+									},
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1285.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_FLAIL"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/jump.dmx"
+								import_bone_scales = false
+								start_frame = 1
+								end_frame = 12
+								framerate = 25.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "jump_end"
+								children = 
+								[
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = true
+										extract_tz = false
+										extract_rz = false
+										linear = false
+										quadratic = false
+										root_bone_name = ""
+										motion_type = "Single"
+									},
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1285.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_FORCESTAFF_END"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/jump_end.dmx"
+								import_bone_scales = false
+								start_frame = 1
+								end_frame = 12
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "taunt_maskLord"
+								children = 
+								[
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1285.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_CHANNEL_ABILITY_4"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/taunt_maskLord.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 124
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "taunt_face_me"
+								children = 
+								[
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1285.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_CAST_ABILITY_4"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/taunt_face_me.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 70
+								framerate = 24.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "idle_capture"
+								children = 
+								[
+									{
+										_class = "AnimOffset"
+										translation = [ -1837.0, 0.0, -1304.0 ]
+										rotation_xyz = [ 0.0, 0.0, 135.0 ]
+									},
+								]
+								activity_name = "ACT_DOTA_CAPTURE"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								source_filename = "models/heroes/sohei/anims/idle.dmx"
+								import_bone_scales = false
+								start_frame = 0
+								end_frame = 83
+								framerate = 24.0
+								reverse = false
+							},
+						]
+					},
+				]
+				default_root_bone_name = ""
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		importer_notes = "Imported from VMDL"
+	}
+}
