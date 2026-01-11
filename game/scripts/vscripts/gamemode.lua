@@ -80,7 +80,7 @@ function GameMode:OnNPCSpawned(keys)
     unit.bLevelModelInit = true
 
     -- unit:AddNewModifier(unit, nil, "modifier_model", { duration = -1 })
-    AttachCustomWearable(unit, "models/heroes/dragon_knight_persona/dk_persona_weapon_full.vmdl")
+    -- AttachCustomWearable(unit, "models/heroes/dragon_knight_persona/dk_persona_weapon_full.vmdl")
 
     OnNPCSpawnedEvent(keys)
 end
