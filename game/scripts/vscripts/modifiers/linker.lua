@@ -1,0 +1,1 @@
+LinkLuaModifier('modifier_anim_translate_thinker', 'modifiers/modifier_anim_translate_thinker', LUA_MODIFIER_MOTION_NONE)

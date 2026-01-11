@@ -51,7 +51,7 @@ Layer0
 	TextureDetailMask "materials/default/default_detailmask.tga"
 	TextureDiffuseWarpMask "materials/default/default_diffusemask.tga"
 	TextureMetalnessMask "[0.463000 0.463000 0.463000 0.000000]"
-	TextureSelfIllumMask "models/sanya/materials/persona/persona_hair_spec.png"
+	TextureSelfIllumMask "models/sanya/materials/persona/persona_head_spec.png"
 
 	//---- Mask 2 ----
 	TextureRimMask "[1.000000 1.000000 1.000000 0.000000]"

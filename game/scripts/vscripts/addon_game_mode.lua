@@ -1,8 +1,6 @@
--- Generated from template
+require('internal.util')
 
-if GameMode == nil then
-	GameMode = class({})
-end
+require('gamemode')
 
 function Precache(context)
 	--[[
@@ -16,77 +14,12 @@ end
 
 -- Create the game mode when we activate
 function Activate()
-	GameRules.AddonTemplate = GameMode()
-	GameRules.AddonTemplate:InitGameMode()
+---@diagnostic disable-next-line: inject-field
+	GameRules.GameMode = GameMode()
+	GameRules.GameMode:InitGameMode()
 end
 
-function GameMode:InitGameMode()
-	print("Template addon is loaded.")
 
-	GameMode.dialogueState = {}
-	GameMode.npcs = {}
-	GameMode.nearCooldown = {}
-
-	GameRules:EnableCustomGameSetupAutoLaunch(true)
-	GameRules:SetCustomGameSetupAutoLaunchDelay(0)
-	GameRules:SetHeroSelectionTime(0)
-	GameRules:SetStrategyTime(0)
-	GameRules:SetShowcaseTime(0)
-	GameRules:SetPreGameTime(0)
-	GameRules:SetPostGameTime(5)
-	GameRules:GetGameModeEntity():SetThink("OnThink", GameMode, "GlobalThink", 2)
-	GameRules:GetGameModeEntity():SetCustomGameForceHero("dragon_knight")
-
-	LinkLuaModifier(
-		"modifier_model",
-		"modifiers/modifier_model", -- path under scripts/vscripts, without .lua
-		LUA_MODIFIER_MOTION_NONE
-	)
-
-
-
-	CustomGameEventManager:RegisterListener("dialogue_choice", function(_, args)
-		GameMode:OnDialogueChoice(args)
-	end)
-
-	ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(GameMode, "OnStateChange"), GameMode)
-	ListenToGameEvent("dota_unit_event", Dynamic_Wrap(GameMode, "OnUnitEvent"), GameMode)
-	ListenToGameEvent("npc_spawned", Dynamic_Wrap(GameMode, "OnNPCSpawned"), self)
-end
-
-function GameMode:OnNPCSpawned(keys)
-  local unit = EntIndexToHScript(keys.entindex)
-
-  if not unit or unit:IsNull() then return end
-  if not unit:IsRealHero() then return end
-
-  if unit.bLevelModelInit then return end
-  unit.bLevelModelInit = true
-
-  unit:AddNewModifier(unit, nil, "modifier_model", { duration = -1 })
-end
-
-function GameMode:OnUnitEvent(e)
-	print(e)
-end
-
-function GameMode:OnStateChange()
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		-- Start test dialogue for everyone after game begins
-		-- self:SpawnStoryNPC(Vector(0, 0, 3))
-		-- GameMode:StartDialogueForAll("intro")
-	end
-end
-
--- Evaluate the state of the game
-function GameMode:OnThink()
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		-- print( "Template addon script is running." )
-	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
-		return nil
-	end
-	return 1
-end
 
 -- Minimal dialogue graph (hardcoded for now)
 local DIALOGUE = {

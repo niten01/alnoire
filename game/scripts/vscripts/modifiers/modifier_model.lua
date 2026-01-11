@@ -1,6 +1,7 @@
 modifier_model = class({})
 
 function modifier_model:IsHidden() return true end
+
 function modifier_model:IsPurgable() return false end
 
 function modifier_model:DeclareFunctions()
@@ -12,16 +13,28 @@ end
 
 function modifier_model:GetModifierModelChange()
   local lvl = self:GetParent():GetLevel()
+  self:StartIntervalThink(1)
 
   print("[xxx] lol")
   return "models/sanya/sanya.vmdl"
---   if lvl >= 20 then
---     return "models/creeps/roshan/roshan.vmdl"      -- example path
---   elseif lvl >= 10 then
---     return "models/heroes/dragon_knight/dragon_knight.vmdl"
---   else
---     return nil -- use normal hero model
---   end
+  --   if lvl >= 20 then
+  --     return "models/creeps/roshan/roshan.vmdl"      -- example path
+  --   elseif lvl >= 10 then
+  --     return "models/heroes/dragon_knight/dragon_knight.vmdl"
+  --   else
+  --     return nil -- use normal hero model
+  --   end
+end
+
+function modifier_model:OnIntervalThink()
+  local unit = self:GetParent()
+  if not unit or unit:IsNull() then return end
+
+  local seq = unit.GetSequence and unit:GetSequence() or "<no GetSequence>"
+  local cycle = unit.GetCycle and unit:GetCycle() or -1
+
+  print(string.format("[ANIM] %s (ent=%d) seq=%s cycle=%.2f",
+    unit:GetUnitName(), unit:entindex(), tostring(seq), cycle))
 end
 
 function modifier_model:GetModifierModelScale()
