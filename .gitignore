@@ -1,6 +1,8 @@
 timelapse
 timelapses
 
+*.blend1
+
 # Logs
 logs
 *.log
