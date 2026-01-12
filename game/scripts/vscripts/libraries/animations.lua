@@ -27,7 +27,7 @@ ANIMATIONS_VERSION = "1.00"
   Notes
   -Animations can only play for valid activities/sequences possessed by the model the unit is using.
   -Sequences requiring 3+ activity modifier translates (i.e "stun+fear+loadout" or similar) are not possible currently in this library.
-  -Calling EndAnimation and attempting to StartAnimation a new animation for the same unit withing ~2 server frames of the animation end will likely fail to play the new animation.
+  -Calling EndAnimation and attempting to StartAnimation a new animation for the same unit withing ~2 server frames of the animation end will likely fail to play the new animation.  
     Calling StartAnimation directly without ending the previous animation will automatically add in this delay and cancel the previous animation.
   -The maximum animation rate which can be used is 12.75, and animation rates can only exist at a 0.05 resolution (i.e. 1.0, 1.05, 1.1 and not 1.06)
   -StartAnimation and EndAnimation functions can also be accessed through GameRules as GameRules.StartAnimation and GameRules.EndAnimation for use in scoped lua files (triggers, vscript ai, etc)
@@ -60,10 +60,10 @@ ANIMATIONS_VERSION = "1.00"
 
 ]]
 
-LinkLuaModifier( "modifier_animation", "libraries/modifiers/modifier_animation.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_animation_translate", "libraries/modifiers/modifier_animation_translate.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_animation_translate_permanent", "libraries/modifiers/modifier_animation_translate_permanent.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_animation_freeze", "libraries/modifiers/modifier_animation_freeze.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_animation", "modifiers/modifier_animation.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_animation_translate", "modifiers/modifier_animation_translate.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_animation_translate_permanent", "modifiers/modifier_animation_translate_permanent.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_animation_freeze", "modifiers/modifier_animation_freeze.lua", LUA_MODIFIER_MOTION_NONE )
 
 require('libraries/timers')
 
@@ -82,7 +82,6 @@ local _ANIMATION_TRANSLATE_TO_CODE = {
   anvil= 7,
   arcana= 8,
   armaments_set= 20,
-  attack_normal_range=63-ACT_DOTA_ATTACK,
   axes= 188,
   backstab= 41,
   backstroke_gesture= 283,
@@ -442,7 +441,7 @@ local _ANIMATION_TRANSLATE_TO_CODE = {
   strength=367,
   twinblade_run=368,
   twinblade_run_injured=369,
-  windwalk=370,
+  windwalk=370,  
 
 }
 
@@ -472,7 +471,7 @@ function StartAnimation(unit, table)
 
   if unit:HasModifier("modifier_animation") or (unit._animationEnd ~= nil and unit._animationEnd + .067 > GameRules:GetGameTime()) then
     EndAnimation(unit)
-    Timers:CreateTimer(.066, function()
+    Timers:CreateTimer(.066, function() 
       if translate2 ~= nil then
         unit:AddNewModifier(unit, nil, "modifier_animation_translate", {duration=duration, translate=translate2})
         unit:SetModifierStackCount("modifier_animation_translate", unit, _ANIMATION_TRANSLATE_TO_CODE[translate2])
@@ -518,7 +517,7 @@ function AddAnimationTranslate(unit, translate)
     return
   end
 
-  unit:AddNewModifier(unit, nil, "modifier_animation_translate_permanent", {duration = -1, translate = translate})
+  unit:AddNewModifier(unit, nil, "modifier_animation_translate_permanent", {translate = translate})
   unit:SetModifierStackCount("modifier_animation_translate_permanent", unit, _ANIMATION_TRANSLATE_TO_CODE[translate])
 end
 

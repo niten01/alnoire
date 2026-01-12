@@ -9,12 +9,12 @@ TIMERS_VERSION = "1.05"
     end
   )
 
-  -- The same timer as above with a shorthand call
+  -- The same timer as above with a shorthand call 
   Timers(function()
     print ("Hello. I'm running immediately and then every second thereafter.")
     return 1.0
   end)
-
+  
 
   -- A timer which calls a function with a table context
   Timers:CreateTimer(GameMode.someFunction, GameMode)
@@ -85,7 +85,7 @@ end
 function Timers:start()
   Timers = self
   self.timers = {}
-
+  
   --local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
   local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
   ent:SetThink("Think", self, "timers", TIMERS_THINK)
@@ -97,7 +97,7 @@ function Timers:Think()
   --end
 
   -- Track game time, since the dt passed in to think is actually wall-clock time not simulation time.
-  local pre_loop_now = GameRules:GetGameTime()
+  local now = GameRules:GetGameTime()
 
   -- Process timers
   for k,v in pairs(Timers.timers) do
@@ -110,7 +110,7 @@ function Timers:Think()
       bOldStyle = true
     end
 
-    local now = pre_loop_now
+    local now = GameRules:GetGameTime()
     if not bUseGameTime then
       now = Time()
     end
@@ -125,7 +125,7 @@ function Timers:Think()
 
       Timers.runningTimer = k
       Timers.removeSelf = false
-
+      
       -- Run the callback
       local status, nextCall
       if v.context then
@@ -186,29 +186,6 @@ function Timers:HandleEventError(name, event, err)
   end
 end
 
-function Timers:RemainingTime(name)
-  --Calculates Remaining Time on a given timer
-  local v = Timers.timers[name]
-  local bUseGameTime = true
-  if v.useGameTime ~= nil and v.useGameTime == false then
-    bUseGameTime = false
-  end
-  local bOldStyle = false
-  if v.useOldStyle ~= nil and v.useOldStyle == true then
-    bOldStyle = true
-  end
-  local now = GameRules:GetGameTime()
-  if not bUseGameTime then
-    now = Time()
-  end
-
-  if v.endTime == nil then
-    v.endTime = now
-  end
-
-  return v.endTime - now
-end
-
 function Timers:CreateTimer(name, args, context)
   if type(name) == "function" then
     if args ~= nil then
@@ -223,11 +200,15 @@ function Timers:CreateTimer(name, args, context)
     args = {endTime = name, callback = args}
     name = DoUniqueString("timer")
   end
+  
+  if args == nil then
+    print("Invalid arguments for created timer")
+  end
+
   if not args.callback then
     print("Invalid timer created: "..name)
     return
   end
-
 
   local now = GameRules:GetGameTime()
   if args.useGameTime ~= nil and args.useGameTime == false then
@@ -242,7 +223,7 @@ function Timers:CreateTimer(name, args, context)
 
   args.context = context
 
-  Timers.timers[name] = args
+  Timers.timers[name] = args 
 
   return name
 end
