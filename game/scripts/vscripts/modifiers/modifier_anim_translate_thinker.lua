@@ -7,7 +7,6 @@ function modifier_anim_translate_thinker:IsHidden() return true end
 function modifier_anim_translate_thinker:IsPurgable() return false end
 
 function modifier_anim_translate_thinker:OnCreated(kv)
-    Debug:EnableDebugging()
     self:StartIntervalThink(CONFIG.ANIMATION_TRANSLATE_THINKER_INTERVAL)
 end
 

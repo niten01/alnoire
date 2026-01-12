@@ -1,3 +1,5 @@
+require('libraries/event')
+
 GameEvents = GameEvents or {}
 
 function CreateGameEvent (name) --luacheck: ignore CreateGameEvent

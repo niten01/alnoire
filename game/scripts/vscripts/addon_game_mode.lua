@@ -5,7 +5,7 @@ else
 	DebugPrint("[BAREBONES] If this is not your first time, you probably used script_reload in console.")
 end
 
-require('util')
+require('internal/util')
 require('libraries/timers')                      -- Core lua library
 require('libraries/player_resource')             -- Core lua library
 require('gamemode')                              -- Core barebones file
@@ -28,7 +28,7 @@ end
 
 
 
--- Minimal dialogue graph (hardcoded for now)
+-- TODO: move to module
 -- local DIALOGUE = {
 -- 	intro = {
 -- 		speaker = "Shopkeeper",

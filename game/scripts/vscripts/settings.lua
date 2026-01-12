@@ -85,43 +85,7 @@ FORCE_PICKED_HERO =
 
 ADD_ITEM_TO_HERO_ON_SPAWN = false -- Add an example item to the picked hero when he spawns?
 
--- NOTE: use FIXED_RESPAWN_TIME if you want the same respawn time on every level.
-MAX_RESPAWN_TIME = 125           -- Default Dota doesn't have a limit (it can go above 125). Fast game modes should have 20 seconds.
-USE_CUSTOM_RESPAWN_TIMES = false -- Should we use custom respawn times (true) or dota default (false)?
-
--- Fill this table with respawn times on each level if USE_CUSTOM_RESPAWN_TIMES is true.
-CUSTOM_RESPAWN_TIME = {}
-CUSTOM_RESPAWN_TIME[1] = 5
-CUSTOM_RESPAWN_TIME[2] = 7
-CUSTOM_RESPAWN_TIME[3] = 9
-CUSTOM_RESPAWN_TIME[4] = 13
-CUSTOM_RESPAWN_TIME[5] = 16
-CUSTOM_RESPAWN_TIME[6] = 26
-CUSTOM_RESPAWN_TIME[7] = 28
-CUSTOM_RESPAWN_TIME[8] = 30
-CUSTOM_RESPAWN_TIME[9] = 32
-CUSTOM_RESPAWN_TIME[10] = 34
-CUSTOM_RESPAWN_TIME[11] = 36
-CUSTOM_RESPAWN_TIME[12] = 44
-CUSTOM_RESPAWN_TIME[13] = 46
-CUSTOM_RESPAWN_TIME[14] = 48
-CUSTOM_RESPAWN_TIME[15] = 50
-CUSTOM_RESPAWN_TIME[16] = 52
-CUSTOM_RESPAWN_TIME[17] = 54
-CUSTOM_RESPAWN_TIME[18] = 65
-CUSTOM_RESPAWN_TIME[19] = 70
-CUSTOM_RESPAWN_TIME[20] = 75
-CUSTOM_RESPAWN_TIME[21] = 80
-CUSTOM_RESPAWN_TIME[22] = 85
-CUSTOM_RESPAWN_TIME[23] = 90
-CUSTOM_RESPAWN_TIME[24] = 95
-CUSTOM_RESPAWN_TIME[25] = 100
-
-if MAX_LEVEL > 25 then
-	for i = 26, MAX_LEVEL do
-		CUSTOM_RESPAWN_TIME[i] = CUSTOM_RESPAWN_TIME[i - 1] + 5
-	end
-end
+CUSTOM_RESPAWN_TIME = 60 
 
 FOUNTAIN_CONSTANT_MANA_REGEN                 = -1    -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_MANA_REGEN               = -1    -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.

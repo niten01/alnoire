@@ -72,7 +72,6 @@ TIMERS_VERSION = "1.05"
 TIMERS_THINK = 0.01
 
 if Timers == nil then
-  print ( '[Timers] creating Timers' )
   Timers = {}
   setmetatable(Timers, {
     __call = function(t, ...)
