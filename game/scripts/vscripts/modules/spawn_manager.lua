@@ -13,6 +13,8 @@ function SpawnManager:Init(game)
 end
 
 function SpawnManager:OnHeroInGame(hero)
+    if not IsServer() then return end
+
     hero:AddNewModifier(hero, nil, "modifier_anim_translate_thinker", { duration = -1 })
 end
 

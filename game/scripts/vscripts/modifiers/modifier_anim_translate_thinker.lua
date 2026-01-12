@@ -1,13 +1,11 @@
 modifier_anim_translate_thinker = class {}
 
-local CONFIG = require('config')
-
 function modifier_anim_translate_thinker:IsHidden() return true end
 
 function modifier_anim_translate_thinker:IsPurgable() return false end
 
 function modifier_anim_translate_thinker:OnCreated(kv)
-    self:StartIntervalThink(CONFIG.ANIMATION_TRANSLATE_THINKER_INTERVAL)
+    self:StartIntervalThink(0.5)
 end
 
 function modifier_anim_translate_thinker:OnIntervalThink()
@@ -15,7 +13,7 @@ function modifier_anim_translate_thinker:OnIntervalThink()
     local unit = self:GetParent()
     if unit:GetAggroTarget() ~= nil
         or unit:IsAttacking()
-        or HasEnemiesInRadius(unit, CONFIG.ANIMATION_TRANSLATE_AGRESSIVE_RADIUS) then
+        or HasEnemiesInRadius(unit, 500) then
         AddAnimationTranslate(unit, "aggressive")
     else
         RemoveAnimationTranslate(unit)
