@@ -40,7 +40,7 @@
 
 .DialogueRoot.IsOpen .WorldFX {
   opacity: 1;
-  world-blur: gaussian(6, 6, 1);
+  world-blur: gaussian(60, 60, 60);
 }
 
 /* Panorama supports world-blur + gaussian(...) and transition-property. :contentReference[oaicite:2]{index=2} */
@@ -79,9 +79,11 @@
   padding: 18px;
   flow-children: right;
 
+
   background-color: gradient(linear, 0% 0%, 0% 100%, from(#0e131aff), to(#07090cff));
   border: 1px solid #ffffff12;
-  box-shadow: #000000aa -6px -6px 18px 12px;
+  border-radius: 10px;
+  box-shadow: #00000088 -2px 0px 10px 0px;
 }
 
 /* ===== Columns ===== */
@@ -128,13 +130,15 @@
 .SpeakerPlate {
   margin-top: 10px;
   padding: 10px 12px;
+  width: 220px;
   flow-children: down;
-  border-radius: 14px;
+  border-radius: 10px;
   background-color: gradient(linear, 0% 0%, 0% 100%, from(#0b0e12ee), to(#0b0e12aa));
   border: 1px solid #ffffff10;
 }
 
 .SpeakerName {
+  horizontal-align: center;
   font-size: 24px;
   font-weight: bold;
   color: Paper;
@@ -153,7 +157,7 @@
 .TextArea {
   width: 100%;
   padding: 10px 12px;
-  border-radius: 14px;
+  border-radius: 10px;
   background-color: gradient(linear, 0% 0%, 0% 100%, from(#0b0e12dd), to(#0b0e12aa));
   border: 1px solid #ffffff0f;
 }
@@ -213,23 +217,24 @@
 
   background-color: gradient(linear, 0% 0%, 0% 100%, from(#2a313aff), to(#1a2028ff));
   border: 1px solid #ffffff12;
-  border-radius: 12px;
+  border-radius: 10px;
 
   transition-property: background-color, border, brightness, transform;
   transition-duration: 0.08s;
   transition-timing-function: ease-in-out;
-  sound: "ui_generic_button_click";
 }
 
 .DialogueChoice:hover {
   brightness: 1.35;
   border: 1px solid AccentSoft;
   transform: translateY(-1px);
+  sound: "ui_herocard_hover";
 }
 
 .DialogueChoice:active {
   brightness: 0.95;
   transform: translateY(1px);
+  sound: "ui_generic_button_click";
 }
 
 .DialogueChoice Label {
@@ -239,7 +244,7 @@
 }
 
 .DialogueChoice.IsSelected {
-  background-color: gradient(linear, 0% 0%, 0% 100%, from(#3a2f1bff), to(#241a0eff));
+  background-color: gradient(linear, 0% 0%, 0% 100%, from(#3a2f1b), to(#241a0eff));
   border: 1px solid Accent;
 }
 

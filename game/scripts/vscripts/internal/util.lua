@@ -5,6 +5,9 @@ function DebugPrint(...)
 end
 
 function PrintTable(t, indent, done)
+  if not USE_DEBUG then
+    return
+  end
   --print ( string.format ('PrintTable type %s', type(keys)) )
   if type(t) ~= "table" then return end
 
@@ -226,7 +229,7 @@ end
 
 function bind(fn, arg1, ...)
   if select("#", ...) == 0 then
-    return function (...)
+    return function(...)
       return fn(arg1, ...)
     end
   else
@@ -234,8 +237,8 @@ function bind(fn, arg1, ...)
   end
 end
 
-function copy (obj, seen) 
-    if type(obj) ~= 'table' then return obj end
+function copy(obj, seen)
+  if type(obj) ~= 'table' then return obj end
   if seen and seen[obj] then return seen[obj] end
   local s = seen or {}
   local res = setmetatable({}, getmetatable(obj))
@@ -246,7 +249,7 @@ end
 
 function split(s, delimiter)
   local result = {}
-  for match in (s..delimiter):gmatch("(.-)"..delimiter) do
+  for match in (s .. delimiter):gmatch("(.-)" .. delimiter) do
     table.insert(result, match)
   end
   return result

@@ -9,12 +9,6 @@ return {
                     { type = "talk", npc = "npc_dota_creature_gnoll_assassin" }
                 }
             },
-            {
-                description = "final",
-                objectives = {
-                    { type = "talk", npc = "npc_dota_creature_gnoll_assassin" }
-                }
-            }
         }
     }
 }

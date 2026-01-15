@@ -1,0 +1,24 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/quest_log.css" />
+  </styles>
+
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/quest_log.js" />
+  </scripts>
+
+  <Panel class="QuestLogRoot Collapsed">
+    <Button id="QuestTab" class="QuestTab" onactivate="ToggleQuestLog()">
+      <Label id="QuestTabLabel" class="QuestTabLabel" text="QUESTS" />
+    </Button>
+
+    <Panel id="QuestLogPanel" class="QuestLogPanel">
+      <!-- <Panel class="QuestLogHeader">
+        <Label class="QuestLogTitle" text="Quests" />
+      </Panel> -->
+
+      <Label id="NoQuestsLabel" class="NoQuestsLabel" text="No active quests"></Label>
+      <Panel id="QuestList" class="QuestList" />
+    </Panel>
+  </Panel>
+</root>

@@ -491,5 +491,7 @@ function barebones:OnPlayerChat(keys)
 	local playerID = keys.playerid
 	local text = keys.text
 
-	OnPlayerUsedChatEvent(keys)
+	OnPlayerUsedChatEvent(extend(keys, {
+		playerID = playerID -- uniform naming
+	}))
 end

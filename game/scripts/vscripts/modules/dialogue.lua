@@ -44,6 +44,10 @@ function Dialogue:Init(game)
 
   CustomGameEventManager:RegisterListener("dialogue_choice", bind(self.OnDialogueChoice, self))
   CustomGameEventManager:RegisterListener("query_update", bind(self.OnQueryUpdate, self))
+
+  ChatCommand:LinkCommand("-dialogueclose", function(event)
+    self:HideDialogue(event.playerID)
+  end)
 end
 
 function Dialogue:StartDialogueForAll(startNode)
@@ -180,6 +184,8 @@ function Dialogue:OnQueryUpdate(_, args)
   local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
   if not hero or hero:IsNull() then return end
 
+  -- reselect early, to allow reselection
+  PlayerResource:ResetSelection(playerID)
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
 
   -- interact
