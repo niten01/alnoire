@@ -128,16 +128,6 @@ function PlayerTables:equals(o1, o2, ignore_mt)
     return true
 end
 
-function PlayerTables:copy(obj, seen)
-  if type(obj) ~= 'table' then return obj end
-  if seen and seen[obj] then return seen[obj] end
-  local s = seen or {}
-  local res = setmetatable({}, getmetatable(obj))
-  s[obj] = res
-  for k, v in pairs(obj) do res[self:copy(k, s)] = self:copy(v, s) end
-  return res
-end
-
 function PlayerTables:PlayerTables_Connected(args)
   --print('PlayerTables_Connected')
   --PrintTable(args)
@@ -284,7 +274,7 @@ function PlayerTables:GetTableValue(tableName, key)
 
   local ret = self.tables[tableName][key]
   if type(ret) == "table" then
-    return self:copy(ret)
+    return copy(ret)
   end
   return ret
 end
@@ -297,7 +287,7 @@ function PlayerTables:GetAllTableValues(tableName)
 
   local ret = self.tables[tableName]
   if type(ret) == "table" then
-    return self:copy(ret)
+    return copy(ret)
   end
   return ret
 end

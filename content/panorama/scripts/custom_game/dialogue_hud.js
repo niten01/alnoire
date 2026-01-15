@@ -82,12 +82,13 @@
 
     typewriter(payload.text || "", payload.cps || 45);
 
-    choices.forEach((c, idx) => {
+    $.Msg(payload.choices)
+    for (const [luaIdx, c] of Object.entries(payload.choices)) {
       const btn = $.CreatePanel("TextButton", choicesRoot, "");
       btn.AddClass("DialogueChoice");
 
       const lbl = $.CreatePanel("Label", btn, "");
-      lbl.text = c.text || ("Choice " + (idx + 1));
+      lbl.text = c.text;
 
       btn.SetPanelEvent("onmouseover", () => {
         // purely cosmetic “selected” glow
@@ -96,9 +97,10 @@
       });
 
       btn.SetPanelEvent("onactivate", () => {
-        GameEvents.SendCustomGameEventToServer("dialogue_choice", { choice: c.id });
+        $.Msg(c.id)
+        GameEvents.SendCustomGameEventToServer("dialogue_choice", { choiceLuaIndex: parseInt(luaIdx) });
       });
-    });
+    }
 
     skipButton.visible = payload.allowSkip === true;
     skipButton.SetPanelEvent("onactivate", () => {

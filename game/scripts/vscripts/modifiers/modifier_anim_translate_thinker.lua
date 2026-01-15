@@ -11,6 +11,8 @@ end
 function modifier_anim_translate_thinker:OnIntervalThink()
     ---@type CDOTA_BaseNPC
     local unit = self:GetParent()
+    if not unit or unit:IsNull() then return end
+
     if unit:GetAggroTarget() ~= nil
         or unit:IsAttacking()
         or HasEnemiesInRadius(unit, 500) then

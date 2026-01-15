@@ -76,7 +76,6 @@ local OnNPCSpawnedEvent = CreateGameEvent 'OnNPCSpawned'
 function barebones:OnNPCSpawned(keys)
 	if USE_DEBUG then
 		DebugPrint("[BAREBONES] A unit Spawned:")
-		PrintTable(keys, 2)
 	end
 
 	local npc

@@ -25,17 +25,17 @@ function PrintTable(t, indent, done)
 
       if type(value) == "table" and not done[value] then
         done[value] = true
-        print(string.rep("\t", indent) .. tostring(v) .. ":")
+        print(string.rep(" ", indent) .. tostring(v) .. ":")
         PrintTable(value, indent + 2, done)
       elseif type(value) == "userdata" and not done[value] then
         done[value] = true
-        print(string.rep("\t", indent) .. tostring(v) .. ": " .. tostring(value))
+        print(string.rep(" ", indent) .. tostring(v) .. ": " .. tostring(value))
         PrintTable((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
       else
         if t.FDesc and t.FDesc[v] then
-          print(string.rep("\t", indent) .. tostring(t.FDesc[v]))
+          print(string.rep(" ", indent) .. tostring(t.FDesc[v]))
         else
-          print(string.rep("\t", indent) .. tostring(v) .. ": " .. tostring(value))
+          print(string.rep(" ", indent) .. tostring(v) .. ": " .. tostring(value))
         end
       end
     end
@@ -232,4 +232,22 @@ function bind(fn, arg1, ...)
   else
     return bind(bind(fn, arg1), ...)
   end
+end
+
+function copy (obj, seen) 
+    if type(obj) ~= 'table' then return obj end
+  if seen and seen[obj] then return seen[obj] end
+  local s = seen or {}
+  local res = setmetatable({}, getmetatable(obj))
+  s[obj] = res
+  for k, v in pairs(obj) do res[copy(k, s)] = copy(v, s) end
+  return res
+end
+
+function split(s, delimiter)
+  local result = {}
+  for match in (s..delimiter):gmatch("(.-)"..delimiter) do
+    table.insert(result, match)
+  end
+  return result
 end

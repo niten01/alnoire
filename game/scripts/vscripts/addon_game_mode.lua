@@ -11,6 +11,15 @@ require('libraries/player_resource')             -- Core lua library
 require('gamemode')                              -- Core barebones file
 
 function Precache(context)
+	local precache = require('internal.precache')
+
+	for _, unit in ipairs(precache.units) do
+		PrecacheUnitByNameSync(unit, context)
+	end
+
+	for _, model in ipairs(precache.models) do
+		PrecacheModel(model, context)
+	end
 	--[[
 		Precache things we know we'll use.  Possible file types include (but not limited to):
 			PrecacheResource( "model", "*.vmdl", context )

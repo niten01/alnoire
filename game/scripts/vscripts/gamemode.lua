@@ -11,6 +11,7 @@ require('events')
 require('filters')
 
 require('libraries/animations')
+require('libraries/notifications')
 
 require('modifiers/linker')
 
@@ -117,9 +118,9 @@ function barebones:InitGameMode()
 
     DebugPrint("[BAREBONES] Done with setting Filters.")
 
-    DebugPrint("[BAREBONES] Initializing modules.")
+    DebugPrint("[ALNOIRE] Initializing modules.")
     self:InitModules()
-    DebugPrint("[BAREBONES] Initialized " .. TableLength(self.modules) .. "modules.")
+    DebugPrint("[ALNOIRE] Initialized " .. TableLength(self.modules) .. "modules.")
 
     print("[BAREBONES] initialized.")
     DebugPrint("[BAREBONES] Done loading the game mode!\n\n")
@@ -216,14 +217,13 @@ function barebones:CaptureGameMode()
 end
 
 function barebones:InitModules()
-    local SpawnManager = require('modules.spawn_manager')
-    local Dresser = require('modules.dresser')
-
     self.modules = {
-        SpawnManager = SpawnManager(),
-        Dresser = Dresser()
+        spawnManager = require('modules.spawn_manager')(self),
+        dresser = require('modules.dresser')(self),
+        chatCommand = require('modules.chatcommand')(self),
+        quest = require('modules.quest.quest')(self),
+        dialogue = require('modules.dialogue')(self)
     }
 
     for _, sys in pairs(self.modules) do sys:Init(self) end
 end
-
