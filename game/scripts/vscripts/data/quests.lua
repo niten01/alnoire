@@ -1,6 +1,6 @@
 return {
     q_test_quest = {
-        giver = "npc_dota_creature_gnoll_assassin",
+        giver = "npc_",
         name = "Test Quest",
         steps = {
             {
