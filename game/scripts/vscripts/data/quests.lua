@@ -1,12 +1,12 @@
 return {
     q_test_quest = {
-        giver = "npc_",
-        name = "Test Quest",
+        giver = "npc_tiny",
+        name = "Королевская взбучка",
         steps = {
             {
-                description = "pizda",
+                description = "Иди на арену.",
                 objectives = {
-                    { type = "talk", npc = "npc_dota_creature_gnoll_assassin" }
+                    { type = "come", trigger = "trigger_clash_royal" }
                 }
             },
         }
