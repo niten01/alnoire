@@ -24,7 +24,7 @@ return {
         }
     },
      q_nigger = {
-        giver = "npc_nigg",
+        giver = "npc_nig",
         name = "O'Block",
         steps = {
             {
@@ -36,9 +36,27 @@ return {
             {
                 description = "Отдай билет крипу",
                 objectives = {
-                    { type = "talk", npc = "npc_nigg" }
+                    { type = "talk", npc = "npc_nig" }
                 }
             },
         }
-    }
+    },
+     q_ogre_magi = {
+        giver = "npc_ogre_magi",
+        name = "Братство и ум",
+        steps = {
+            {
+                description = "Найди Огра-громилу",
+                objectives = {
+                    { type = "talk", npc = "npc_ogre_bruiser" }
+                }
+            },
+            {
+                description = "Вернись к Огр-магу",
+                objectives = {
+                    { type = "talk", npc = "npc_ogre_magi" }
+                }
+            },
+        }
+    },
 }
