@@ -186,10 +186,10 @@ function Dialogue:OnQueryUpdate(_, args)
   if not hero or hero:IsNull() then return end
 
   -- reselect early, to allow reselection
-  PlayerResource:ResetSelection(playerID)
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
 
   -- interact
+  PlayerResource:ResetSelection(playerID)
   local dialogue = self:GetAvailableDialogueNodeID(playerID, unit:GetUnitName())
   if dialogue then
     self:StartDialogueForAll(dialogue)

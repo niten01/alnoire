@@ -4,14 +4,14 @@
     * marci
 * george
     * models/creeps/ice_biome/undeadtusk/undead_tuskskeleton02.vmdl
-    * models/items/wraith_king/arcana/wraith_king_arcana.vmdl
-    * models/items/warlock/golem/warlock_the_infernal_master_golem/warlock_the_infernal_master_golem.vmdl
     * models/items/doom/lvbu_head/lvbu_head.vmdl
 * derek
     * models/heroes/beastmaster/beastmaster.vmdl
     * models/items/terrorblade/terrorblade_ultimate_depravity_head/terrorblade_ultimate_depravity_head.vmdl
 * niggers
     * models/heroes/warlock/warlock.vmdl
+    * models/heroes/bounty_hunter/bounty_hunter.vmdl
+    * models/heroes/ember_spirit/ember_spirit.vmdl
 * bear
     * models/items/lone_druid/bear/tarzan_and_kingkong_spirit/tarzan_and_kingkong_spirit.vmdl
     * models/creeps/neutral_creeps/n_creep_tadpole/n_creep_tadpole_v2.vmdl

@@ -37,7 +37,7 @@ function ChatCommand:OnPlayerChat(keys)
 
   if self.commands[splitted[1]] ~= nil then
     ChatCommand:DoCommand(keys, self.commands[splitted[1]])
-  elseif (GameRules:IsCheatMode()) and self.dev_commands[splitted[1]] ~= nil then
+  elseif (IsInToolsMode() or GameRules:IsCheatMode()) and self.dev_commands[splitted[1]] ~= nil then
     ChatCommand:DoCommand(keys, self.dev_commands[splitted[1]])
   end
 end

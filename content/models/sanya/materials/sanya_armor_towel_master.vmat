@@ -4,9 +4,8 @@ Layer0
 {
 	shader "hero.vfx"
 
-	//---- Masks ----
-	F_MASKS_1 1
-	F_MASKS_2 1
+	//---- 2-Sided Rendering ----
+	F_RENDER_BACKFACES 1
 
 	//---- Blend To Full ----
 	g_flEnvMapBlendToFull "0.000"
@@ -42,22 +41,10 @@ Layer0
 	TextureFresnelWarpSpec "materials/default/default_fresnelwarpspec.tga"
 
 	//---- Lighting ----
-	g_flAmbientScale "1.467"
+	g_flAmbientScale "1.000"
 	g_flBloomScale "0.000"
 	g_flBloomShift "0.000"
 	g_vBloomColor "[1.000000 1.000000 1.000000 0.000000]"
-
-	//---- Mask 1 ----
-	TextureDetailMask "materials/default/default_detailmask.tga"
-	TextureDiffuseWarpMask "materials/default/default_diffusemask.tga"
-	TextureMetalnessMask "materials/default/default_metalnessmask.tga"
-	TextureSelfIllumMask "models/sanya/materials/towel/fabrics_0042_color_1k.png"
-
-	//---- Mask 2 ----
-	TextureRimMask "[1.000000 1.000000 1.000000 0.000000]"
-	TextureSpecularExponent "materials/default/default_specexp.tga"
-	TextureSpecularMask "materials/default/default_specmask.tga"
-	TextureTintByBaseMask "materials/default/default_basetintmask.tga"
 
 	//---- Normal Map ----
 	TextureNormal "models/sanya/materials/towel/fabrics_0042_normal_opengl_1k.png"
@@ -70,6 +57,18 @@ Layer0
 	g_flSpecularExponent "32.000"
 	g_flSpecularScale "0.000"
 	g_vSpecularColor "[1.000000 1.000000 1.000000 0.000000]"
+
+	UnusedVariables
+	{
+		"TextureRimMask" "[1.000000 1.000000 1.000000 0.000000]"
+		"TextureSpecularExponent" "materials/default/default_specexp.tga"
+		"TextureSpecularMask" "materials/default/default_specmask.tga"
+		"TextureTintByBaseMask" "materials/default/default_basetintmask.tga"
+		"TextureDetailMask" "materials/default/default_detailmask.tga"
+		"TextureDiffuseWarpMask" "materials/default/default_diffusemask.tga"
+		"TextureMetalnessMask" "materials/default/default_metalnessmask.tga"
+		"TextureSelfIllumMask" "[1.000000 1.000000 1.000000 0.000000]"
+	}
 
 
 	VariableState
@@ -93,12 +92,6 @@ Layer0
 		{
 			"Ambient" 0
 			"Bloom" 0
-		}
-		"Mask 1"
-		{
-		}
-		"Mask 2"
-		{
 		}
 		"Normal Map"
 		{
