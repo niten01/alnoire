@@ -1,0 +1,40 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "global_lit_simple.vfx"
+
+	//---- 2-Sided Rendering ----
+	F_RENDER_BACKFACES 1
+
+	//---- Color ----
+	g_vColorTint "[0.000000 0.000000 0.000000 0.000000]"
+	g_vTexCoordOffset "[0.000 0.000]"
+	g_vTexCoordScale "[1.000 1.000]"
+	TextureColor "[0.000000 0.000000 0.000000 1.000000]"
+
+	UnusedVariables
+	{
+		"TextureSelfIllumMask" "materials/default/default_selfillum.tga"
+		"g_flSpecularBloom" "0.233"
+		"g_flSpecularIntensity" "1.872"
+		"TextureBloom" "materials/default/default_bloom.tga"
+		"TextureReflectance" "[0.358000 0.358000 0.358000 0.000000]"
+		"g_flWindFlexibility" "0.3"
+		"g_flWindHighFrequencyEffects" "1"
+		"g_flWindLinearity" "0"
+		"g_flWindLowFrequencyEffects" "1"
+		"g_flWindSpeedMultiplier" "1"
+		"TextureWindMaskHigh" "materials/default/default_mask.tga"
+		"TextureWindMaskLow" "materials/default/default_mask.tga"
+		"TextureWindRandomNoise" "[0.000000 0.000000 0.000000 0.000000]"
+	}
+
+
+	VariableState
+	{
+		"Color"
+		{
+		}
+	}
+}

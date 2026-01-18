@@ -12,4 +12,9 @@
     * models/items/terrorblade/terrorblade_ultimate_depravity_head/terrorblade_ultimate_depravity_head.vmdl
 * niggers
     * models/heroes/warlock/warlock.vmdl
+* bear
+    * models/items/lone_druid/bear/tarzan_and_kingkong_spirit/tarzan_and_kingkong_spirit.vmdl
+    * models/creeps/neutral_creeps/n_creep_tadpole/n_creep_tadpole_v2.vmdl
 
+zeus usach
+    * lightning_zeus_victory

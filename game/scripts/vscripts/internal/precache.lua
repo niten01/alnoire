@@ -1,6 +1,8 @@
 return {
     units = {
-        "npc_dota_creature_gnoll_assassin"
+        "npc_xavier",
+        "npc_gorilla",
+        "npc_rape_victim",
     },
     models = {
     },

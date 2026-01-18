@@ -8,6 +8,8 @@
   </scripts>
 
   <Panel class="DialogueRoot">
+    <CustomUIElement type="Hud"
+      layoutfile="file://{resources}/layout/custom_game/dialogue_portraits_manifest.xml" />
     <!-- Darken / blur the world while dialogue is open -->
     <Panel id="WorldFX" class="WorldFX" />
 
@@ -20,22 +22,18 @@
     <!-- Main container -->
     <Panel id="DialogueShell" class="DialogueShell" hittest="false">
       <Panel id="DialogueFrame" class="DialogueFrame" hittest="true">
-        <!-- LEFT: portrait + speaker -->
+
         <Panel class="LeftCol">
           <Panel class="PortraitFrame">
-            <!-- Optional: 3D portrait (remove if you don't want it) -->
-            <DOTAScenePanel
-              id="SpeakerScene"
-              class="SpeakerScene"
-              unit="npc_dota_hero_sven"
-              particleonly="false"
-              allowrotation="false" />
-            <Panel class="PortraitGloss" hittest="false" />
-            <Panel class="PortraitRim" hittest="false" />
+            <Image id="SpeakerPortrait" class="SpeakerPortrait"
+              src="file://{images}/custom_game/portraits/default.psd" />
+
+            <!-- <Panel class="PortraitGloss" hittest="false" />
+            <Panel class="PortraitRim" hittest="false" /> -->
           </Panel>
 
           <Panel class="SpeakerPlate">
-            <Label id="SpeakerName" class="SpeakerName" text="Sven" />
+            <Label id="SpeakerName" class="SpeakerName" text="???" />
             <Label id="SpeakerTitle" class="SpeakerTitle" text="Storm Hammer Enthusiast" />
           </Panel>
         </Panel>

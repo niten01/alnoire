@@ -15,15 +15,23 @@
 						[
 							{
 								from = "body.vmat"
-								to = "materials/heroes/sanya_body.vmat"
+								to = "models/sanya/materials/sanya_body.vmat"
 							},
 							{
 								from = "hair.vmat"
-								to = "materials/heroes/sanya_hair.vmat"
+								to = "models/sanya/materials/sanya_hair.vmat"
 							},
 							{
 								from = "head.vmat"
-								to = "materials/heroes/sanya_head.vmat"
+								to = "models/sanya/materials/sanya_head.vmat"
+							},
+							{
+								from = "armor_casual.vmat"
+								to = "models/sanya/materials/sanya_armor_casual.vmat"
+							},
+							{
+								from = "armor_shoulders_casual.vmat"
+								to = "models/sanya/materials/sanya_armor_shoulders_casual.vmat"
 							},
 						]
 						use_global_default = false
@@ -37,7 +45,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/sanya/sanya_naked.fbx"
+						filename = "models/sanya/sanya_casual.fbx"
 						import_scale = 1.0
 						import_filter = 
 						{
@@ -423,7 +431,7 @@
 						_class = "AnimFile"
 						name = "idle_debut"
 						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_IDLE"
+						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
@@ -437,6 +445,31 @@
 						animgraph_additive = false
 						delete_from_compiled_model = false
 						source_filename = "models/sanya/animations/idle_debut.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "porno"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/porno.fbx"
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1

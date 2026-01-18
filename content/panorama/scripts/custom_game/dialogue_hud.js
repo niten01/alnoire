@@ -2,6 +2,7 @@
   const root = $.GetContextPanel();
   const speakerName = $("#SpeakerName");
   const speakerTitle = $("#SpeakerTitle");
+  const speakerPortrait = $("#SpeakerPortrait");
   const textLabel = $("#DialogueText");
   const choicesRoot = $("#Choices");
   const continueHint = $("#ContinueHint");
@@ -43,11 +44,11 @@
     isTyping = true;
     textLabel.text = "";
 
-    const charsPerTick = Math.max(1, Math.floor((cps || 40) / 20)); // 20 ticks/sec
+    const charsPerTick = Math.max(1, Math.floor((cps || 40) / 20));
     let i = 0;
 
     function tick() {
-      if (token !== typingToken) return; // cancelled
+      if (token !== typingToken) return;
       if (!isTyping) return;
 
       i = Math.min(fullText.length, i + charsPerTick);
@@ -82,20 +83,19 @@
     speakerName.text = payload.speaker || "???";
     speakerTitle.text = payload.title || "";
     speakerTitle.visible = !!payload.title;
+    speakerPortrait.SetImage(`file://{images}/custom_game/portraits/${payload.speakerNPC || "default"}.psd`)
 
     clearChoices();
 
-    const choices = []
-    const choicesObj = payload.choices || {}
-    for (const k of Object.keys(choicesObj)) {
-      const i = Number(k)
-      if (Number.isInteger(i) && i >= 0) choices[i] = choicesObj[k];
-    }
+    // const choicesKeys = Object.keys(payload.choices)
+    // if (choicesKeys.length == 1 && payload.choices[choicesKeys[0]].text == "...") {
+    //   payload.choices = {}
+    // }
 
-    const hasChoices = choices.length > 0;
+    const hasChoices = Object.keys(payload.choices).length > 0;
     continueHint.visible = !hasChoices;
 
-    typewriter(payload.text || "", payload.cps || 20);
+    typewriter(payload.text || "", payload.cps || 15);
 
     for (const [luaIdx, c] of Object.entries(payload.choices)) {
       const btn = $.CreatePanel("TextButton", choicesRoot, "");
@@ -133,6 +133,7 @@
 
   // “Space to continue”: if typing, finish; otherwise tell server “advance”.
   function onKeyDown() {
+    $.Msg("sdlkf")
     // Key handling can be done via GameUI.SetMouseCallback / keybind systems,
     // but simplest is: only enable this when you already have a keybind or you
     // call it from your own input system.
@@ -140,24 +141,13 @@
     if (choicesRoot.GetChildCount() > 0) return;
 
     if (isTyping) finishTyping();
-    else GameEvents.SendCustomGameEventToServer("dialogue_advance", {});
+    else GameEvents.SendCustomGameEventToServer("dialogue_choice", { choiceLuaIndex: 1 });
   }
 
   // Wire your custom events
   GameEvents.Subscribe("dialogue_show", show);
-  // GameEvents.SendCustomGameEventToAllClients("dialogue_show",
-  //   {
-  //     speaker: "Sven",
-  //     title: "Storm Hammer Enthusiast",
-  //     text: "Hello there...",
-  //     cps: 45,
-  //     choices: [{ id: "a", text: "Option A" }, { id: "b", text: "b" }],
-  //     allowSkip: true
-  //   }
-  // )
   GameEvents.Subscribe("dialogue_hide", hide);
 
-  // If you have your own keybind setup, call onKeyDown() from it.
-  // (Leaving as a function so you can integrate cleanly.)
-  $.RegisterEventHandler("Cancelled", root, () => { /* optional */ });
+  // Game.AddCommand("+DialogueContinue", onKeyDown, "", 0);
+  // Game.AddCommand("-DialogueContinue", onKeyDown, "", 0);
 })();

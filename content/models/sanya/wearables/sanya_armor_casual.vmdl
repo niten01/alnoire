@@ -15,11 +15,11 @@
 						[
 							{
 								from = "armor_casual.vmat"
-								to = "materials/heroes/sanya_armor_casual.vmat"
+								to = "models/sanya/materials/sanya_armor_casual.vmat"
 							},
 							{
 								from = "armor_shoulders_casual.vmat"
-								to = "materials/heroes/sanya_armor_shoulders_casual.vmat"
+								to = "models/sanya/materials/sanya_armor_shoulders_casual.vmat"
 							},
 						]
 						use_global_default = false

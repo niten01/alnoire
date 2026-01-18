@@ -78,6 +78,7 @@ function Dialogue:ShowDialogueNode(playerID, nodeID)
 
   CustomGameEventManager:Send_ServerToPlayer(player, "dialogue_show", {
     speaker = node.speakerName,
+    speakerNPC = node.speakerNPC,
     text = node.text,
     choices = node.choices
   })

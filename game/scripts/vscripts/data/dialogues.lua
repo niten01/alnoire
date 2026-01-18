@@ -2,17 +2,31 @@ local QuestStatus = require('modules.quest.quest_status')
 
 return {
     entries = {
-        npc_dota_creature_gnoll_assassin = {
+        npc_xavier = {
             q_test_quest = {
-                { status = QuestStatus.INACTIVE, start = "d_1" },
-                { status = QuestStatus.ACTIVE, start = "d_2" },
+                { status = QuestStatus.INACTIVE, start = "d_0" },
+                { status = QuestStatus.ACTIVE,   start = "d_2" },
             },
+            flag = {
+                first_met = true
+            }
         }
     },
     nodes = {
+        d_0 = {
+            speakerName = "xaviersobased",
+            speakerNPC = "npc_xavier",
+            text = "erm",
+            choices = {
+                {
+                    text = "...",
+                    next = "d_1"
+                }
+            }
+        },
         d_1 = {
-            speakerName = "PIDOR",
-            speakerNPC = "npc_dota_creature_gnoll_assassin",
+            speakerName = "xaviersobased",
+            speakerNPC = "npc_xavier",
             text = "salam brat",
             choices = {
                 {
@@ -27,10 +41,10 @@ return {
                 }
             }
         },
-        d_2 = {
+        d_3 = {
             speakerName = "PIDOR",
-            speakerNPC = "npc_dota_creature_gnoll_assassin",
-            text = "vse?",
+            speakerNPC = "npc_xavier",
+            text = "vse2",
             choices = {
                 {
                     text = "ura",
@@ -39,6 +53,6 @@ return {
                     }
                 }
             }
-        }
+        },
     }
 }

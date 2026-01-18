@@ -15,7 +15,7 @@
 						[
 							{
 								from = "towel.vmat"
-								to = "materials/heroes/sanya_armor_towel_master.vmat"
+								to = "models/sanya/materials/sanya_armor_towel_master.vmat"
 							},
 						]
 						use_global_default = false
