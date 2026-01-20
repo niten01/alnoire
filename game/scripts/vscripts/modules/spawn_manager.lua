@@ -13,10 +13,10 @@ function SpawnManager:OnGameInProgress()
 
     for _, marker in ipairs(Entities:FindAllByClassname("info_target")) do
         local name = marker:GetName()
-        local prefix = "spawn__"
-        if not name or name:sub(1, #prefix) ~= prefix then goto continue end
+        local unitName = ExtractNamePayload(name, "spawn__")
+        if not unitName then return end
         DebugPrint("[ALNOIRE] Spawner entity found: ", name)
-        self:SpawnStoryNPC(name:sub(#prefix + 1), marker)
+        self:SpawnStoryNPC(unitName, marker)
         ::continue::
     end
 end

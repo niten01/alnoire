@@ -254,3 +254,12 @@ function split(s, delimiter)
   end
   return result
 end
+
+--- Process entity name of format "<type>__<payload>"
+---@param name string entity name
+---@param prefix string type prefix (i.e. "zone__")
+---@return string? entity name or nil if prefix doesn't match
+function ExtractNamePayload(name, prefix)
+  if not name or name:sub(1, #prefix) ~= prefix then return nil end
+  return name:sub(#prefix + 1)
+end
