@@ -222,7 +222,8 @@ function barebones:InitModules()
         dresser = require('modules.dresser')(self),
         chatCommand = require('modules.chatcommand')(self),
         quest = require('modules.quest.quest')(self),
-        dialogue = require('modules.dialogue')(self)
+        dialogue = require('modules.dialogue')(self),
+        music = require('modules.music')(self),
     }
 
     for _, sys in pairs(self.modules) do sys:Init(self) end

@@ -1,0 +1,44 @@
+
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  Music.Concert.A = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/xaviersobased_double_whammy.vsnd"
+    ]
+    volume = "2.500000"
+  }
+  Music.Concert.B = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      
+      "sounds/music/xaviersobased_nikes.vsnd"
+    ]
+    volume = "2.500000"
+  }
+
+  Music.Forest.Explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/forest_explore.vsnd"
+    ]
+    volume = "2.500000"
+    fade_in = "2.0"
+    fade_out = "2.0"
+  }
+  Music.Forest.Combat = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/forest_combat.vsnd"
+    ]
+    volume = "2.500000"
+    fade_in = "2.0"
+    fade_out = "2.0"
+  }
+
+}

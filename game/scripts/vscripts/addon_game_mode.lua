@@ -20,6 +20,10 @@ function Precache(context)
 	for _, model in ipairs(precache.models) do
 		PrecacheModel(model, context)
 	end
+
+	for _, sound in ipairs(precache.sounds) do
+		PrecacheResource("soundfile", sound, context)
+	end
 	--[[
 		Precache things we know we'll use.  Possible file types include (but not limited to):
 			PrecacheResource( "model", "*.vmdl", context )

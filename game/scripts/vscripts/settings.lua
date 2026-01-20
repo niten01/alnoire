@@ -2,6 +2,8 @@ USE_DEBUG = true                  -- Should we print statements on almost every 
 
 INTERACTION_RADIUS = 300
 
+COMBAT_MUSIC_MIN_LENGTH = 5
+
 ENABLE_HERO_RESPAWN = true        -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
 UNIVERSAL_SHOP_MODE = true        -- Should the shops contain all items?
 ALLOW_SAME_HERO_SELECTION = false -- Should we let people select the same hero as each other

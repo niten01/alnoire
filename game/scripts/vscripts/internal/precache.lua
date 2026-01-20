@@ -6,4 +6,7 @@ return {
     },
     models = {
     },
+    sounds = {
+        "soundevents/music.vsndevts"
+    }
 }
