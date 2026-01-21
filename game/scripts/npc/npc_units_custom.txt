@@ -235,7 +235,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-		"Model"						"models/props_structures/tower_good.vmdl"// Model.
+		"Model"						"models/props_structures/rock_golem/tower_radiant_rock_golem.vmdl"// Model.
 		"SoundSet"					"Tower.Water"					// Name of sound set.
 		"MinimapIcon"				""
 		"MinimapIconSize"			"0"
@@ -324,7 +324,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-		"Model"						"models/props_structures/tower_good.vmdl"// Model.
+		"Model"						"models/props_structures/rock_golem/tower_dire_rock_golem.vmdl"// Model.
 		"SoundSet"					"Tower.Water"					// Name of sound set.
 		"MinimapIcon"				""
 		"MinimapIconSize"			"0"

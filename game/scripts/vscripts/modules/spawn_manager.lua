@@ -13,7 +13,7 @@ function SpawnManager:OnGameInProgress()
 
     for _, marker in ipairs(Entities:FindAllByClassname("info_target")) do
         local name = marker:GetName()
-        
+        print(name)
         local isEnemy = marker:Attribute_GetIntValue("IsEnemy", 0)
         local unitName = ExtractNamePayload(name, "spawn__")
         if not unitName then return end
