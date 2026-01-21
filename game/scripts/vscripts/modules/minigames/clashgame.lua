@@ -8,7 +8,7 @@ function ClashGame:Init(game)
     print("Inited CLASHGAME")
     print("OnClashGameEnter:", GameEvents.OnClashGameEnter)
     self.game = game
-    local config = {
+    self.config = {
         {point = "spawn_radiant_left", team = DOTA_TEAM_GOODGUYS, target = "spawn_mega_left"},
         {point = "spawn_radiant_right", team = DOTA_TEAM_GOODGUYS, target = "spawn_mega_right"},
         {point = "spawn_dire_left", team = DOTA_TEAM_BADGUYS, target = "agro_for_dire_left"},
@@ -17,20 +17,20 @@ function ClashGame:Init(game)
 
     GameEvents:OnClashGameEnter(function(event)
         DebugPrint("Started CLASHGAME")
-        ClashGame.isActive = true
-        self:SpawnAllWaves(config)
+        self.isActive = true
+        self:SpawnAllWaves()
         GameRules:GetGameModeEntity():SetContextThink("ClashSpawner", function()
-            if not ClashGame.isActive then return nil end
-            ClashGame:SpawnAllWaves()
-            ClashGame:SpawnMegaCreep()
+            if not self.isActive then return nil end
+            self:SpawnAllWaves()
+            self:SpawnMegaCreep()
             return 30.0 
         end, 20.0)
     end)
 end
 
-function ClashGame:SpawnAllWaves(config)
+function ClashGame:SpawnAllWaves()
     print("Attempting to spawn waves...")
-    for _, data in pairs(config) do
+    for _, data in pairs(self.config) do
         local spawner = Entities:FindByName(nil, data.point)
         if spawner then
             print("Spawner found: " .. data.point)
