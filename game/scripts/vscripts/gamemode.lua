@@ -16,6 +16,7 @@ require('libraries/notifications')
 require('modifiers/linker')
 
 require('triggers/zones')
+require('triggers/clashgame')
 
 -- This function initializes the game mode and is called before anyone loads into the game
 -- It can be used to pre-initialize any values/tables that will be needed later
@@ -230,6 +231,7 @@ function barebones:InitModules()
         quest = require('modules.quest.quest')(self),
         dialogue = require('modules.dialogue')(self),
         music = require('modules.music')(self),
+        clashgame = require('modules.minigames.clashgame')(self),
     }
 
     for _, sys in pairs(self.modules) do sys:Init(self) end

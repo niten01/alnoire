@@ -1,1 +1,2 @@
 LinkLuaModifier('modifier_anim_translate_thinker', 'modifiers/modifier_anim_translate_thinker', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_blink_evade', 'modifiers/modifier_blink_evade', LUA_MODIFIER_MOTION_NONE)

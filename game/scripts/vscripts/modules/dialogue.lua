@@ -189,9 +189,9 @@ function Dialogue:OnQueryUpdate(_, args)
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
 
   -- interact
-  PlayerResource:ResetSelection(playerID)
   local dialogue = self:GetAvailableDialogueNodeID(playerID, unit:GetUnitName())
   if dialogue then
+    PlayerResource:ResetSelection(playerID)
     self:StartDialogueForAll(dialogue)
   end
 

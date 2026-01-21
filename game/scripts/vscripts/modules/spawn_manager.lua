@@ -13,10 +13,17 @@ function SpawnManager:OnGameInProgress()
 
     for _, marker in ipairs(Entities:FindAllByClassname("info_target")) do
         local name = marker:GetName()
+        
+        local isEnemy = marker:Attribute_GetIntValue("IsEnemy", 0)
         local unitName = ExtractNamePayload(name, "spawn__")
         if not unitName then return end
         DebugPrint("[ALNOIRE] Spawner entity found: ", name)
-        self:SpawnStoryNPC(unitName, marker)
+        if isEnemy ~= 0 then
+            self:SpawnEnemyNpc(unitName, marker)
+        else
+            self:SpawnStoryNPC(unitName, marker)
+        end
+        
         ::continue::
     end
 end
@@ -50,6 +57,22 @@ function SpawnManager:SpawnStoryNPC(name, marker)
     npc:AddNewModifier(npc, nil, "modifier_phased", {})
 
 end
+
+function SpawnManager:SpawnEnemyNpc(name, marker)
+    local npc = CreateUnitByName(
+        name,
+        marker:GetAbsOrigin(),
+        false,
+        nil,
+        nil,
+        DOTA_TEAM_NEUTRALS
+    )
+    local fwd = marker:GetForwardVector()
+    fwd.z = 0
+    npc:FaceTowards(npc:GetAbsOrigin() + fwd * 100)
+    npc:SetForwardVector(fwd)
+end
+
 
 function SpawnManager:OnNPCSpawned(keys)
     ---@type CDOTA_BaseNPC
