@@ -59,4 +59,35 @@ return {
             },
         }
     },
+     q_island_escape = {
+        giver = "trigger_Epstein",
+        name = "Побег от кумира",
+        steps = {
+            {
+                description = "Сбеги с острова",
+                objectives = {
+                    { type = "come", trigger = "trigger_tp_at_home" }
+                }
+            },
+        }            
+    },
+         q_island_explosion = {
+        giver = "npc_cat_barrel",
+        name = "Epstein's blow job",
+        steps = {
+            {
+                description = "Найди секретный проход и заложи бомбу",
+                objectives = {
+                    { type = "come", trigger = "trigger_bomb" }
+                }
+            },
+            {
+                description = "Вернись к подрывникам",
+                objectives = {
+                    { type = "talk", npc = "npc_cat_barrel" }
+                }
+            },
+        }
+    },
+    
 }
