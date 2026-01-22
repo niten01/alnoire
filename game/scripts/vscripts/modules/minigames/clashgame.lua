@@ -1,3 +1,9 @@
+require('internal.gameevents')
+
+OnTowerKilled = CreateGameEvent('OnTowerKilled')
+OnKingTowerKilled = CreateGameEvent('OnKingTowerKilled')
+OnClashGameEnd = CreateGameEvent('OnClashGameEnd')
+
 ClashGame = ClashGame or class {}
 
 ClashGame.isActive = false
@@ -5,9 +11,6 @@ ClashGame.isActive = false
 
 
 function ClashGame:Init(game)
-    print("Inited CLASHGAME")
-    print("OnClashGameEnter:", GameEvents.OnClashGameEnter)
-    self.game = game
     self.config = {
         {point = "spawn_radiant_left", team = DOTA_TEAM_GOODGUYS, target = "spawn_mega_left"},
         {point = "spawn_radiant_right", team = DOTA_TEAM_GOODGUYS, target = "spawn_mega_right"},
@@ -15,9 +18,27 @@ function ClashGame:Init(game)
         {point = "spawn_dire_right", team = DOTA_TEAM_BADGUYS, target = "agro_for_dire_right"},
     }
 
+    self.king_tower_good = nil
+    self.king_tower_bad = nil
+
+    self.tower_config = {
+        {point = "bad_tower_left", npc = "npc_dota_custom_tower_bad", team = DOTA_TEAM_BADGUYS},
+        {point = "bad_tower_right", npc = "npc_dota_custom_tower_bad", team = DOTA_TEAM_BADGUYS},
+        {point = "bad_tower_king", npc = "npc_dota_custom_king_tower_bad", team = DOTA_TEAM_BADGUYS},
+        {point = "good_tower_right", npc = "npc_dota_custom_tower_good", team = DOTA_TEAM_GOODGUYS},
+        {point = "good_tower_left", npc = "npc_dota_custom_tower_good", team = DOTA_TEAM_GOODGUYS},
+        {point = "good_tower_king", npc = "npc_dota_custom_king_tower_good", team = DOTA_TEAM_GOODGUYS},
+        
+    }
+    
+    self.good_creep_name = "npc_xavier"
+    self.bad_creep_name = "npc_xavier"
+    self.mega_creep_name = "mega_sanya"
     GameEvents:OnClashGameEnter(function(event)
-        DebugPrint("Started CLASHGAME")
+        if self.isActive then return end
+        DebugPrint("[ALNOIRE] Started CLASHGAME")
         self.isActive = true
+        self:SpawnTowers()
         self:SpawnAllWaves()
         GameRules:GetGameModeEntity():SetContextThink("ClashSpawner", function()
             if not self.isActive then return nil end
@@ -26,9 +47,61 @@ function ClashGame:Init(game)
             return 30.0 
         end, 20.0)
     end)
+
+    GameEvents:OnTowerKilled(function(event)
+        if not self.isActive then return end
+        self:OnTowerKilled(event)
+    end)
+
+    GameEvents:OnKingTowerKilled(function(event)
+        if not self.isActive then return end
+        self:OnKingTowerKilled(event)
+    end)
+end
+
+function ClashGame:SpawnTowers()
+    print("Spawning towers ... ")
+    for _, data in pairs(self.tower_config) do
+        local spawnerName = data.point
+        local spawner = Entities:FindByName(nil, spawnerName)
+        local unitName = data.npc
+        local unitTeam = data.team
+        if spawner then
+            local spawnerPos = spawner:GetAbsOrigin()
+            local unit = CreateUnitByName(
+                unitName,
+                spawnerPos,
+                false,
+                nil,
+                nil,
+                unitTeam
+            )
+            local fwd = spawner:GetForwardVector()
+            fwd.z = 0
+            unit:FaceTowards(unit:GetAbsOrigin() + fwd * 100)
+            unit:SetForwardVector(fwd)
+            
+            unit:RemoveAllModifiers(0, true, true, true)
+            if string.find(unitName, 'king') then
+                unit:AddNewModifier(unit, nil, 'modifier_invulnerable', {})
+                unit:AddNewModifier(unit, nil, 'modifier_king_tower', {})
+                if string.find(unitName, 'good') then
+                    self.king_tower_good = unit
+                else
+                    self.king_tower_bad = unit
+                end
+            else unit:AddNewModifier(unit, nil, 'modifier_tower', {})
+            end
+            unit:AddNewModifier(unit, nil, 'modifier_clash_unit', {})
+            
+        else print("No spawner for tower")
+        end
+
+    end
 end
 
 function ClashGame:SpawnAllWaves()
+    if not self.isActive then return end
     print("Attempting to spawn waves...")
     for _, data in pairs(self.config) do
         local spawner = Entities:FindByName(nil, data.point)
@@ -42,12 +115,12 @@ function ClashGame:SpawnAllWaves()
 end
 
 function ClashGame:CreateCreepGroup(spawner, team, targetName)
+    if not self.isActive then return end
     local target = Entities:FindByName(nil, targetName)
     local spawnPos = spawner:GetAbsOrigin()
-    local creepName = "npc_xavier"
     for i = 1, 3 do
-        local unit = CreateUnitByName(creepName, spawnPos + RandomVector(100), true, nil, nil, team)
-        
+        local unit = CreateUnitByName(self.bad_creep_name, spawnPos + RandomVector(100), true, nil, nil, team)
+        unit:AddNewModifier(unit, nil, 'modifier_clash_unit', {})
         if unit then
             if target then
                 unit:SetContextThink("InitialOrder", function()
@@ -62,22 +135,23 @@ function ClashGame:CreateCreepGroup(spawner, team, targetName)
                     return nil 
                 end, 0.1)
 
-                print("Success: Unit " .. creepName .. " sent to target " .. targetName)
+                print("Success: Unit " .. self.bad_creep_name .. " sent to target " .. targetName)
             else 
                 print("ERROR: target " .. targetName .. " NOT FOUND")
             end
         else
-            print("ERROR: Failed to create unit " .. creepName)
+            print("ERROR: Failed to create unit " .. self.bad_creep_name)
         end
     end
 end
 
 function ClashGame:SpawnMegaCreep()
+    if not self.isActive then return end
     local target = Entities:FindByName(nil, "agro_for_dire_left")
     local spawnPos = Entities:FindByName(nil, "spawn_mega_left")
     if not spawnPos then return end
-    local megacreepName = "mega_sanya"
-    local unit = CreateUnitByName(megacreepName, spawnPos:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
+    local unit = CreateUnitByName(self.mega_creep_name, spawnPos:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
+    unit:AddNewModifier(unit, nil, 'modifier_clash_unit', {})
     if unit then
         if target then
             unit:SetContextThink("InitialOrder", function()
@@ -89,6 +163,62 @@ function ClashGame:SpawnMegaCreep()
                 })
                 return nil
             end, 0.1)
+        end
+    end
+end
+
+function ClashGame:OnTowerKilled(event)
+    if not event then print("[ALNOIRE] NIL event ('OnTowerKilled')") end
+    local towerName = event.tower
+    if not towerName then end
+    if string.find(towerName, 'bad') then
+        self.king_tower_bad:RemoveModifierByName('modifier_invulnerable')
+    else
+        self.king_tower_good:RemoveModifierByName('modifier_invulnerable')
+    end
+end
+
+function ClashGame:OnKingTowerKilled(event)
+    if not event then print("[ALNOIRE] NIL event ('OnClashEnd')") end
+    local team = event.teamNumber
+    local is_winner = false
+    if team == DOTA_TEAM_BADGUYS then
+        print("[ALNOIRE] АЛЕКСАНДР ПРОЕБАЛ! клеш рояль")
+        is_winner = true
+    else
+        print("[ALNOIRE] АЛЕКСАНДР ПРОЕБАЛ! клеш рояль")
+        is_winner = false
+    end
+    OnClashGameEnd({
+        is_winner = is_winner
+    })
+    self.isActive = false
+    self:KillAll()
+end
+
+function ClashGame:KillAll()
+    local names_to_kill = {}
+    for _, data in pairs(self.tower_config) do
+        table.insert(names_to_kill, data.npc)
+    end
+    table.insert(names_to_kill, self.bad_creep_name)
+    table.insert(names_to_kill, self.good_creep_name)
+    local units = FindUnitsInRadius(
+        DOTA_TEAM_NEUTRALS,        
+        Vector(0, 0, 0),
+        nil,
+        FIND_UNITS_EVERYWHERE,
+        DOTA_UNIT_TARGET_TEAM_BOTH,
+        DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING,
+        DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
+        FIND_ANY_ORDER,
+        false
+    )
+    for _, unit in pairs(units) do
+        if unit and unit:HasModifier('modifier_clash_unit') then
+            print(unit:GetUnitName())
+            unit:RemoveAllModifiers(0, true, true, true)
+            unit:ForceKill(false)
         end
     end
 end
