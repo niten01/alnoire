@@ -14,10 +14,6 @@ return {
         npc = "npc_gorilla",
         type = "spawner"
     },
-    spawner_clash_tower = {
-        npc = "npc_dota_custom_tower_bad",
-        type = "spawner"
-    },
 
     ------------------------------------------------------------
     --- Zones
