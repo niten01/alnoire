@@ -11,20 +11,13 @@ end
 function SpawnManager:OnGameInProgress()
     if not IsServer() then return end
 
-    for _, marker in ipairs(Entities:FindAllByClassname("info_target")) do
-        local name = marker:GetName()
-        print(name)
-        local isEnemy = marker:Attribute_GetIntValue("IsEnemy", 0)
-        local unitName = ExtractNamePayload(name, "spawn__")
-        if not unitName then return end
-        DebugPrint("[ALNOIRE] Spawner entity found: ", name)
-        if isEnemy ~= 0 then
-            self:SpawnEnemyNpc(unitName, marker)
-        else
-            self:SpawnStoryNPC(unitName, marker)
+    local entityData = require("data.entities")
+    for _, spawnerData in ipairs(entityData.spawner) do
+        local entityName = spawnerData.name
+        for _, marker in ipairs(Entities:FindAllByName(entityName)) do
+            DebugPrint("[ALNOIRE] Spawner entity found: ", entityName)
+            self:SpawnNPC(spawnerData, marker)
         end
-        
-        ::continue::
     end
 end
 
@@ -36,9 +29,9 @@ function SpawnManager:OnHeroInGame(hero)
     end
 end
 
-function SpawnManager:SpawnStoryNPC(name, marker)
+function SpawnManager:SpawnNPC(spawnerData, marker)
     local npc = CreateUnitByName(
-        name,
+        spawnerData.npc,
         marker:GetAbsOrigin(),
         false,
         nil,
@@ -50,29 +43,14 @@ function SpawnManager:SpawnStoryNPC(name, marker)
     npc:FaceTowards(npc:GetAbsOrigin() + fwd * 100)
     npc:SetForwardVector(fwd)
 
-    npc:SetIdleAcquire(false)
-    npc:SetAcquisitionRange(0)
+    if spawnerData.type == "story" then
+        npc:SetIdleAcquire(false)
+        npc:SetAcquisitionRange(0)
 
-    npc:AddNewModifier(npc, nil, "modifier_invulnerable", {})
-    npc:AddNewModifier(npc, nil, "modifier_phased", {})
-
+        npc:AddNewModifier(npc, nil, "modifier_invulnerable", {})
+        npc:AddNewModifier(npc, nil, "modifier_phased", {})
+    end
 end
-
-function SpawnManager:SpawnEnemyNpc(name, marker)
-    local npc = CreateUnitByName(
-        name,
-        marker:GetAbsOrigin(),
-        false,
-        nil,
-        nil,
-        DOTA_TEAM_NEUTRALS
-    )
-    local fwd = marker:GetForwardVector()
-    fwd.z = 0
-    npc:FaceTowards(npc:GetAbsOrigin() + fwd * 100)
-    npc:SetForwardVector(fwd)
-end
-
 
 function SpawnManager:OnNPCSpawned(keys)
     ---@type CDOTA_BaseNPC
