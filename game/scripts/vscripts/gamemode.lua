@@ -127,7 +127,7 @@ function barebones:InitGameMode()
 
     DebugPrint("[ALNOIRE] Initializing modules.")
     self:InitModules()
-    DebugPrint("[ALNOIRE] Initialized " .. TableLength(self.modules) .. "modules.")
+    DebugPrint("[ALNOIRE] Initialized " .. TableLength(self.modules) .. " modules.")
 
     print("[BAREBONES] initialized.")
     DebugPrint("[BAREBONES] Done loading the game mode!\n\n")

@@ -11,11 +11,9 @@ end
 function SpawnManager:OnGameInProgress()
     if not IsServer() then return end
 
-    local entityData = require("data.entities")
-    for _, spawnerData in ipairs(entityData.spawner) do
-        local entityName = spawnerData.name
-        for _, marker in ipairs(Entities:FindAllByName(entityName)) do
-            DebugPrint("[ALNOIRE] Spawner entity found: ", entityName)
+    for entName, spawnerData in pairs(EntityData:AllByType("spawner")) do
+        for _, marker in ipairs(Entities:FindAllByName(entName)) do
+            DebugPrint("[ALNOIRE] Spawner entity found: ", entName)
             self:SpawnNPC(spawnerData, marker)
         end
     end

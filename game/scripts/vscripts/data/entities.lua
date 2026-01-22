@@ -1,22 +1,29 @@
 return {
-    spawner = {
-        {
-            name = "spawner_xavier",
-            npc = "npc_xavier",
-            type = "story"
-        },
-        {
-            name = "spawner_shooter",
-            npc = "npc_shooter",
-            type = "hostile"
-        },
-        {
-            name = "spawner_gorilla",
-            npc = "npc_gorilla",
-            type = "story"
-        },
+    ------------------------------------------------------------
+    --- Spawners
+    ------------------------------------------------------------
+    spawner_xavier = {
+        npc = "npc_xavier",
+        type = "spawner"
     },
-    zone = {
-        { name = "zone_forest" }
+    spawner_shooter = {
+        npc = "npc_shooter",
+        type = "spawner"
+    },
+    spawner_gorilla = {
+        npc = "npc_gorilla",
+        type = "spawner"
+    },
+    spawner_clash_tower = {
+        npc = "npc_dota_custom_tower_bad",
+        type = "spawner"
+    },
+
+    ------------------------------------------------------------
+    --- Zones
+    ------------------------------------------------------------
+    zone_forest = {
+        zone = "forest",
+        type = "zone"
     }
 }

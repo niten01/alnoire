@@ -1,14 +1,17 @@
 if barebones == nil then
 	_G.barebones = class({})
 else
-	DebugPrint("[BAREBONES] barebones class name is already in use, change the name if this is the first time you launch the game!")
+	DebugPrint(
+	"[BAREBONES] barebones class name is already in use, change the name if this is the first time you launch the game!")
 	DebugPrint("[BAREBONES] If this is not your first time, you probably used script_reload in console.")
 end
 
-require('internal/util')
-require('libraries/timers')                      -- Core lua library
-require('libraries/player_resource')             -- Core lua library
-require('gamemode')                              -- Core barebones file
+require('internal.util')
+require('internal.entity_data')
+
+require('libraries.timers')          -- Core lua library
+require('libraries.player_resource') -- Core lua library
+require('gamemode')                  -- Core barebones file
 
 function Precache(context)
 	local precache = require('internal.precache')

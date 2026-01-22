@@ -156,7 +156,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
-		"vscripts" 					"units/ai_shooter.lua"
+		"vscripts" 					"ai/ai_shooter.lua"
 		"Level"						"1"
 		"ModelScale" 				"1"
 
