@@ -67,7 +67,7 @@
 							{
 								_class = "ExtractMotion"
 								extract_tx = true
-								extract_ty = true
+								extract_ty = false
 								extract_tz = false
 								extract_rz = false
 								linear = false
@@ -431,7 +431,7 @@
 						_class = "AnimFile"
 						name = "idle_debut"
 						is_default_idle_anim = false
-						activity_name = ""
+						activity_name = "ACT_DOTA_IDLE"
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
@@ -455,6 +455,14 @@
 					{
 						_class = "AnimFile"
 						name = "porno"
+						children = 
+						[
+							{
+								_class = "ActivityModifier"
+								activity_name = "torment"
+								activity_weight = 1
+							},
+						]
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_IDLE"
 						activity_weight = 1

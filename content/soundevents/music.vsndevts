@@ -27,7 +27,6 @@
       "sounds/music/forest_explore.vsnd"
     ]
     volume = "2.500000"
-    fade_in = "2.0"
     fade_out = "5.0"
   }
   music.forest.combat = {
@@ -37,8 +36,15 @@
       "sounds/music/forest_combat.vsnd"
     ]
     volume = "2.500000"
-    fade_in = "0"
     fade_out = "2.0"
   }
-
+  music.city.explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/city_explore.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "2.0"
+  }
 }

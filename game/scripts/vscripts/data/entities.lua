@@ -22,8 +22,6 @@ return {
     ------------------------------------------------------------
     --- Zones
     ------------------------------------------------------------
-    zone_forest = {
-        zone = "forest",
-        type = "zone"
-    }
+    zone_forest = { type = "zone", musicSet = "forest" },
+    zone_city = { type = "zone", musicSet = "city" },
 }

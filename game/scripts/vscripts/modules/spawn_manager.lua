@@ -55,7 +55,6 @@ function SpawnManager:OnNPCSpawned(keys)
     local unit = keys.unit
     local unitName = unit:GetUnitName()
 
-    DebugPrint(unitName)
     if unitName == "npc_gorilla" then
         AddAnimationTranslate(unit, "torment")
     elseif unitName == "npc_rape_victim" then

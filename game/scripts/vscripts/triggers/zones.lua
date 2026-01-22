@@ -2,6 +2,7 @@ require("internal.gameevents")
 
 local OnZoneEnterEvent = CreateGameEvent 'OnZoneEnter'
 function ZoneOnStartTouch(trigger, event)
+    DebugPrint(trigger)
     local activator = event.activator
     if not activator or not activator:IsRealHero() then return end
     local zoneData = EntityData:ByName(trigger:GetName())
@@ -10,8 +11,7 @@ function ZoneOnStartTouch(trigger, event)
         return
     end
 
-    OnZoneEnterEvent({
-        zoneName = zoneData.zone,
+    OnZoneEnterEvent(extend(zoneData, {
         playerID = activator:GetPlayerID()
-    })
+    }))
 end

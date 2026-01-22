@@ -4,7 +4,7 @@ local EPS = 0.001
 
 local PlayerMusicState = class {}
 function PlayerMusicState:constructor()
-    self.zoneName = nil
+    self.musicSet = nil
     self.current = nil
     self.fade = nil
     self.lastInCombat = -1000
@@ -20,8 +20,8 @@ function Music:Init(game)
     end
 
     GameEvents:OnZoneEnter(function(event)
-        DebugPrint("[ALNOIRE] Switching music zone: " .. event.zoneName)
-        self.musicState[event.playerID].zoneName = event.zoneName
+        DebugPrint("[ALNOIRE] Switching music zone: " .. event.musicSet)
+        self.musicState[event.playerID].musicSet = event.musicSet
     end)
     GameEvents:OnHeroInGame(function(hero)
         hero:SetContextThink("MusicThinker", function()
@@ -43,9 +43,9 @@ function Music:HeroMusicThink(hero)
     local state = self.musicState[playerID]
 
     if state.customMusic then return MUSIC_THINK_INTERVAL end
-    if not state.zoneName then return MUSIC_THINK_INTERVAL end
+    if not state.musicSet then return MUSIC_THINK_INTERVAL end
 
-    local newSoundZone = "music." .. state.zoneName
+    local newSoundZone = "music." .. state.musicSet
     local newSoundState = "explore"
     local t0 = GameRules:GetGameTime()
 
