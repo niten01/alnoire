@@ -147,8 +147,17 @@ end
 
 function ClashGame:SpawnMegaCreep()
     if not self.isActive then return end
-    local target = Entities:FindByName(nil, "agro_for_dire_left")
-    local spawnPos = Entities:FindByName(nil, "spawn_mega_left")
+    local rand = math.random()
+    local spawnPos
+    local target
+    print("AAAAAAAAAAAAAAAAAAAA " .. rand)
+    if rand >= 0.5 then
+        spawnPos = Entities:FindByName(nil, "spawn_mega_left")
+        target = Entities:FindByName(nil, "agro_for_dire_left")
+    else
+        spawnPos = Entities:FindByName(nil, "spawn_mega_right")
+        target = Entities:FindByName(nil, "agro_for_dire_right")
+    end
     if not spawnPos then return end
     local unit = CreateUnitByName(self.mega_creep_name, spawnPos:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
     unit:AddNewModifier(unit, nil, 'modifier_clash_unit', {})
@@ -183,7 +192,7 @@ function ClashGame:OnKingTowerKilled(event)
     local team = event.teamNumber
     local is_winner = false
     if team == DOTA_TEAM_BADGUYS then
-        print("[ALNOIRE] АЛЕКСАНДР ПРОЕБАЛ! клеш рояль")
+        print("[ALNOIRE] АЛЕКСАНДР ПОБЕДИЛ! клеш рояль")
         is_winner = true
     else
         print("[ALNOIRE] АЛЕКСАНДР ПРОЕБАЛ! клеш рояль")
