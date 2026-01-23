@@ -2,6 +2,7 @@ return {
     units = {
         "npc_xavier",
         "npc_gorilla",
+        "npc_shooter",
         "npc_rape_victim",
         "mega_sanya",
         "npc_dota_custom_tower_bad",

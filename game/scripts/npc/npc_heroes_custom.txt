@@ -49,7 +49,7 @@
     "AttributeBaseIntelligence"                           "17"
     "AttributeIntelligenceGain"                           "1.5"
 
-    // "Ability1"                                            "sohei_dash"
+    "Ability1"                                               "ability_custom_sprint"
     // "Ability2"                                            "sohei_polarizing_palm"
     // "Ability3"                                            "sohei_ki_attraction"
     // "Ability4"                                            "sohei_momentum"
