@@ -17,6 +17,7 @@ require('modifiers/linker')
 
 require('triggers/zones')
 require('triggers/clashgame')
+require('triggers/ski')
 
 -- This function initializes the game mode and is called before anyone loads into the game
 -- It can be used to pre-initialize any values/tables that will be needed later

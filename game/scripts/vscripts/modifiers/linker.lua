@@ -5,5 +5,6 @@ LinkLuaModifier('modifier_blink_evade', 'modifiers/modifier_blink_evade', LUA_MO
 LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_tower', 'modifiers/modifier_tower', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_clash_unit', 'modifiers/modifier_clash_unit', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_ski', 'modifiers/modifier_ski', LUA_MODIFIER_MOTION_HORIZONTAL)
 
-LinkLuaModifier('modifier_test_eyes', 'modifiers/modifier_test_eyes', LUA_MODIFIER_MOTION_NONE)
+--LinkLuaModifier('modifier_test_eyes', 'modifiers/modifier_test_eyes', LUA_MODIFIER_MOTION_NONE)
