@@ -13,5 +13,9 @@ return {
     },
     sounds = {
         "soundevents/music.vsndevts"
+    },
+    particles = {
+        "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",
+        "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_r.vpcf",
     }
 }

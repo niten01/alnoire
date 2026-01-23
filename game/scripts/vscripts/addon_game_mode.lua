@@ -27,6 +27,10 @@ function Precache(context)
 	for _, sound in ipairs(precache.sounds) do
 		PrecacheResource("soundfile", sound, context)
 	end
+
+	for _, particle in ipairs(precache.particles) do
+		PrecacheResource("particle", particle, context)
+	end
 	--[[
 		Precache things we know we'll use.  Possible file types include (but not limited to):
 			PrecacheResource( "model", "*.vmdl", context )

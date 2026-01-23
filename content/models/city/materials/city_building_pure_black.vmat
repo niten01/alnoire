@@ -2,5 +2,28 @@
 
 Layer0
 {
-	shader "black.vfx"
+	shader "global_lit_simple.vfx"
+
+	//---- 2-Sided Rendering ----
+	F_RENDER_BACKFACES 1
+
+	//---- Color ----
+	g_vColorTint "[0.000000 0.000000 0.000000 0.000000]"
+	g_vTexCoordOffset "[0.000 0.000]"
+	g_vTexCoordScale "[1.000 1.000]"
+	TextureColor ""
+
+	UnusedVariables
+	{
+		"g_flBumpStrength" "1"
+		"TextureNormal" ""
+	}
+
+
+	VariableState
+	{
+		"Color"
+		{
+		}
+	}
 }
