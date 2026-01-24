@@ -5,6 +5,12 @@ function SkiGameStart(trigger, event)
     local activator = event.activator
     print("[ALNOIRE] STARTED SKI")
     activator:AddNewModifier(activator, nil, "modifier_ski", { duration = -1 })
+    local wearable = SpawnEntityFromTableSynchronous("prop_dynamic", {
+        model = "models/sanya/wearables/sanya_ski.vmdl",
+    })
+
+    wearable:FollowEntity(activator, true)
+    AddAnimationTranslate(activator, "windrun")
 end
 
 function SkiGameEnd(trigger, event)
@@ -14,4 +20,6 @@ function SkiGameEnd(trigger, event)
     OnSkiEnd({
         playerID = activator:GetPlayerID()
     })
+    
+    RemoveAnimationTranslate(activator)
 end
