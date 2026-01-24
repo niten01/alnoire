@@ -14,12 +14,11 @@
     type = "dota_update_battle_music"
     vsnd_files =
     [
-      
       "sounds/music/xaviersobased_nikes.vsnd"
     ]
     volume = "2.500000"
   }
-
+  // ---------------------------------------------------------
   music.forest.explore = {
     type = "dota_update_battle_music"
     vsnd_files =
@@ -38,6 +37,45 @@
     volume = "2.500000"
     fade_out = "2.0"
   }
+  // ---------------------------------------------------------
+  music.wastelands.explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/wastelands_explore.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "3.0"
+  }
+  music.wastelands.combat = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/wastelands_combat.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "2.0"
+  }
+  // ---------------------------------------------------------
+  music.ghetto.explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/ghetto_explore.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "2.0"
+  }
+  music.ghetto.combat = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/ghetto_combat.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "2.0"
+  }
+  // ---------------------------------------------------------
   music.city.explore = {
     type = "dota_update_battle_music"
     vsnd_files =
@@ -47,4 +85,5 @@
     volume = "2.500000"
     fade_out = "2.0"
   }
+  // ---------------------------------------------------------
 }

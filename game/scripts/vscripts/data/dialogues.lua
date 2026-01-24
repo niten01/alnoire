@@ -6,9 +6,6 @@ return {
             q_test_quest = {
                 { status = QuestStatus.INACTIVE, start = "d_0" },
                 { status = QuestStatus.ACTIVE,   start = "d_2" },
-            },
-            flag = {
-                first_met = true
             }
         }
     },

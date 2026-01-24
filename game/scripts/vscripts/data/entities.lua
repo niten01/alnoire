@@ -20,4 +20,6 @@ return {
     ------------------------------------------------------------
     zone_forest = { type = "zone", musicSet = "forest" },
     zone_city = { type = "zone", musicSet = "city" },
+    zone_wastelands = { type = "zone", musicSet = "wastelands" },
+    zone_ghetto = { type = "zone", musicSet = "ghetto" },
 }
