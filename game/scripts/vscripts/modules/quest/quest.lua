@@ -37,8 +37,6 @@ function Quest:Init(game)
     self.playerQuestStates[playerID] = PlayerQuestState(self.quests)
   end
 
-  ChatCommand:LinkDevCommand("-queststatus", Dynamic_Wrap(Quest, 'ShowQuestStatusCommand'), self)
-
   GameEvents:OnDialogueChoice(function(event)
     local playerID = event.playerID
 
@@ -54,11 +52,11 @@ function Quest:Init(game)
     -- quest can start here
     local allActions = event.choice.actions
     if not allActions then return end
-    local startActions = allActions.quest_start
-    if not startActions then return end
 
-    for _, action in ipairs(startActions) do
-      self:StartQuestForAll(action.questID)
+    for _, action in ipairs(allActions) do
+      if action.type == "quest_start" then
+        self:StartQuestForAll(action.questID)
+      end
     end
   end)
 
@@ -171,13 +169,6 @@ function Quest:GetActiveObjectivesByType(playerID, type)
   end
 
   return objectives
-end
-
-function Quest:ShowQuestStatusCommand(keys)
-  local splitted = split(keys.text, ' ')
-  local questID = splitted[2]
-  local text = self:GetQuestState(keys.playerID, questID).status
-  Notifications:Top(keys.playerID, { text = text, duration = 100 })
 end
 
 return Quest

@@ -9,13 +9,11 @@
     * models/heroes/beastmaster/beastmaster.vmdl
     * models/items/terrorblade/terrorblade_ultimate_depravity_head/terrorblade_ultimate_depravity_head.vmdl
 
-zeus usach
+* zeus usach
     * lightning_zeus_victory
 
 * music
-    * город (бой)
     * дерек (помедленнее, пофундаментальнее)
     * джордж (дарк солс мюзик)
-    * лыжи (террария снежный биом)
     * академия?
     * расставить лупы

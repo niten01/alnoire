@@ -20,8 +20,8 @@ Dialogue = Dialogue or class {}
 --       next = "next_node_id",
 --       text = "Choice text",
 --       actions = {
---         quest_end = { {questID = "q_quest_01"}, ... },
---         quest_start = { {questID = "q_quest_02"}, ... }
+--         { type = "quest_end", questID = "q_quest_01" },
+--         { type = "quest_start", questID = "q_quest_02" },
 --         ...
 --       }
 --     }, ...
@@ -124,7 +124,7 @@ function Dialogue:GetAvailableDialogueNodeID(playerID, unitName)
   if len == 0 then
     return nil
   elseif len > 1 then
-    local text = "[???] Ambiguoes dialogue for NPC: " .. unitName .. ". Matched nodes: "
+    local text = "[???] Ambiguous dialogue for NPC: " .. unitName .. ". Matched nodes: "
     for _, id in ipairs(matches) do
       text = text .. id .. "; "
     end

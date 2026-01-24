@@ -85,5 +85,25 @@
     volume = "2.500000"
     fade_out = "2.0"
   }
+  music.city.combat = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/city_combat.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "2.0"
+  }
+  // ---------------------------------------------------------
+  music.ski.explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/ski_explore.vsnd"
+    ]
+    volume = "2.500000"
+    fade_in = "3.0"
+    fade_out = "2.0"
+  }
   // ---------------------------------------------------------
 }
