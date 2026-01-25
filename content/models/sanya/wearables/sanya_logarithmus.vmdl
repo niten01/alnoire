@@ -1,0 +1,113 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc41:version{12fc9d44-453a-4ae4-b4d9-7e2ac0bbd4e0} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "Softbody"
+				children = 
+				[
+					{
+						_class = "ClothProxyMeshFile"
+						name = "sanya_robe_front"
+						filename = "models/sanya/wearables/sanya_robe_front.fbx"
+						import_scale = 1.0
+						back_solve_joints = false
+						back_solve_joints_drive_meshes = false
+						flex_cloth_borders = false
+						add_bones_to_render_mesh = false
+						back_solve_influence_threshold = 0.05
+						cloth_friction_bias = 0.0
+						cloth_friction_scale = 1.0
+						lock_friction_0 = false
+						lock_friction_1 = false
+						envelope_inches = 1000.0
+						cloth_goal_strength_bias = 0.284
+						cloth_goal_strength_scale = 1.0
+						lock_goal_strength_0 = false
+						lock_goal_strength_1 = false
+						cloth_drag_scale = 1.0
+						cloth_mass_scale = 1.0
+						cloth_gravity_scale = 1.0
+						cloth_collision_radius_scale = 1.0
+						cloth_ground_collision_scale = 1.0
+						cloth_ground_friction_scale = 1.0
+						cloth_use_rods_scale = 1.0
+						cloth_make_rods_scale = 1.0
+						cloth_anchor_free_rotate_scale = 1.0
+						cloth_volumetric_scale = 1.0
+						cloth_suspenders_scale = 1.0
+						cloth_bend_stiffness_scale = 1.0
+						cloth_stray_radius_inv_scale = 1.0
+						cloth_stray_radius_scale = 1.0
+						cloth_stray_radius_stretchiness_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+				stiffness_on_ragdoll = 0.0
+				motion_smooth_cdt = 0.0
+				cloth_sleep_enabled = false
+				cloth_immovable_hint = false
+				cloth_per_bone_scale_enabled = false
+				cloth_enable_empty_model = false
+				cloth_keychain_motion = false
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "body.vmat"
+								to = "models/sanya/materials/sanya_body.vmat"
+							},
+							{
+								from = "hair_logarithmus.vmat"
+								to = "models/sanya/materials/sanya_hair.vmat"
+							},
+							{
+								from = "head.vmat"
+								to = "models/sanya/materials/sanya_head.vmat"
+							},
+							{
+								from = "robe.vmat"
+								to = "models/sanya/materials/sanya_leather.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/sanya/sanya_logarithmus.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		document_sub_type = "ModelDocSubType_None"
+	}
+}
