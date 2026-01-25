@@ -12,6 +12,16 @@
 		"AbilityCooldown"			"0.0"
 		"MaxLevel"					"1"
 		"RequiredLevel"				"1"
+	}
+	"ability_custom_towel_dash"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/ability_custom_sprint"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityTextureName"		"phantom_lancer_doppelwalk"
+		"AbilityCooldown"			"5.0"
+		"MaxLevel"					"1"
+		"RequiredLevel"				"1"
 		
 	}
 }

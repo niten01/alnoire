@@ -5,6 +5,10 @@ INTERACTION_RADIUS = 300
 MUSIC_COMBAT_DECAY = 5
 MUSIC_THINK_INTERVAL = 0.1
 
+SAFE_BLINK_PRECISION = 0.1 -- Smaller means more precise
+
+---------------------------------------------------------------------------
+
 ENABLE_HERO_RESPAWN = true        -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
 UNIVERSAL_SHOP_MODE = true        -- Should the shops contain all items?
 ALLOW_SAME_HERO_SELECTION = false -- Should we let people select the same hero as each other
