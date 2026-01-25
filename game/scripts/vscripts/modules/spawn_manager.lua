@@ -31,10 +31,6 @@ function SpawnManager:OnHeroInGame(hero)
     end
     --hero:AddNewModifier(hero, nil, "modifier_test_eyes", { duration = -1 })
 
-    ChatCommand:LinkCommand("-a", function()
-        DebugPrint("sdkfjalksdf")
-        hero:ApplyAbsVelocityImpulse(Vector(100, 0, 0))
-    end)
 end
 
 function SpawnManager:SpawnNPC(spawnerData, marker)

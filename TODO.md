@@ -1,5 +1,4 @@
 ## models
-* xavier
 * тянучка
     * models/items/broodmother/bride_of_the_web_head/bride_of_the_web_head.vmdl
     * marci
@@ -16,7 +15,7 @@
 ## music
     * дерек (помедленнее, пофундаментальнее)
     * джордж (дарк солс мюзик)
-    * академия?
+    * алхимики (тайны)
     * расставить лупы
 
 ## classes
