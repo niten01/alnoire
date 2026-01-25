@@ -2,8 +2,8 @@ from PIL import Image
 import numpy as np
 
 # inputs
-x_path = "../content/models/ghetto/materials/ghetto_melee_normal_b.png"    
-y_path = "../content/models/ghetto/materials/ghetto_melee_normal_g.png"    
+x_path = "b.png"    
+y_path = "g.png"    
 
 # options
 invert_green = False  # set True if bumps/dents are inverted in-engine
