@@ -24,10 +24,6 @@ function SpawnManager:OnHeroInGame(hero)
 
     if not hero:HasModifier("modifier_anim_translate_thinker") then
         hero:AddNewModifier(hero, nil, "modifier_anim_translate_thinker", { duration = -1 })
-        local ability = hero:FindAbilityByName("ability_custom_sprint")
-        if ability then
-            ability:SetLevel(1)
-        end
     end
     --hero:AddNewModifier(hero, nil, "modifier_test_eyes", { duration = -1 })
 

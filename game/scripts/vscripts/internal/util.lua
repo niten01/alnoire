@@ -265,17 +265,18 @@ function ExtractNamePayload(name, prefix)
 end
 
 --- @param start Vector unit position where blink started
---- @param target Vector basically click position
-function GetSafeBlinkDestination(start, target, distance)
-  local direction = (target - start):Normalized()
-  local targetClipped = target
+--- @param targetRaw Vector basically click position
+function GetSafeBlinkDestination(start, targetRaw, distance)
+  local direction = (targetRaw - start):Normalized()
+  local target = targetRaw
+  local initialDistance = #(targetRaw - start)
   if distance then
-    targetClipped = start + direction * distance
+    target = start + direction * math.min(distance, initialDistance)
   end
 
   local accum = start
-  local maxLength = #(targetClipped - start)
-  while #accum < maxLength do
+  local maxLength = #(target - start)
+  while #(accum - start) < maxLength do
     accum = accum + direction * SAFE_BLINK_PRECISION
     if GridNav:IsBlocked(accum) or not GridNav:IsTraversable(accum) then
       break

@@ -19,13 +19,13 @@ function Dresser:Init(game)
         }
     }
 
-    GameEvents:OnHeroInGame(function(hero)
-        if not IsServer() then return end
-        local defaultWearables = self.classWearables[hero:GetUnitName()]
-        for _, wearablePath in ipairs(defaultWearables) do
-            AttachCustomWearable(hero, wearablePath)
-        end
-    end)
+    -- GameEvents:OnHeroInGame(function(hero)
+    --     if not IsServer() then return end
+    --     local defaultWearables = self.classWearables[hero:GetUnitName()]
+    --     for _, wearablePath in ipairs(defaultWearables) do
+    --         AttachCustomWearable(hero, wearablePath)
+    --     end
+    -- end)
 end
 
 return Dresser

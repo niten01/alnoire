@@ -18,5 +18,9 @@ return {
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_r.vpcf",
+        "maps/journey_assets/particles/lamp_journey_dire_tintable_f.vpcf",
+        "particles/units/heroes/hero_kez/kez_katana_echo_strike_movement_feathers.vpcf",
+        "particles/units/heroes/hero_kez/kez_sai_ultimate_crit.vpcf",
+        "particles/econ/items/slark/slark_ti6_blade/slark_ti6_pounce_trail_hand_pnt.vpcf",
     }
 }

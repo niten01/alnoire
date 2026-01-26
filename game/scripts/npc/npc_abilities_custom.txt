@@ -3,25 +3,31 @@
 {
 	"Version"		"1"
 
-	"ability_custom_sprint"
+	"sanya_sprint"
 	{
 		"BaseClass"					"ability_lua"
-		"ScriptFile" 				"abilities/ability_custom_sprint"
+		"ScriptFile" 				"abilities/sanya_sprint"
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"		"phantom_lancer_doppelwalk"
 		"AbilityCooldown"			"0.0"
 		"MaxLevel"					"1"
 		"RequiredLevel"				"1"
 	}
-	"ability_custom_towel_dash"
+	"sanya_towel_dash"
 	{
 		"BaseClass"					"ability_lua"
-		"ScriptFile" 				"abilities/ability_custom_sprint"
-		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"ScriptFile" 				"abilities/sanya_towel_dash"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"		"phantom_lancer_doppelwalk"
+		"AbilityCastRange"			"700"
+		"AbilityCastAnimation"	    "ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCooldown"			"5.0"
 		"MaxLevel"					"1"
 		"RequiredLevel"				"1"
-		
+
+		"AbilityValues"
+		{
+			"dash_speed"				"2500"
+		}
 	}
 }
