@@ -23,5 +23,6 @@ return {
         "particles/units/heroes/hero_kez/kez_katana_echo_strike_movement_feathers.vpcf",
         "particles/units/heroes/hero_kez/kez_sai_ultimate_crit.vpcf",
         "particles/econ/items/slark/slark_ti6_blade/slark_ti6_pounce_trail_hand_pnt.vpcf",
+        "particles/creatures/aghanim/portal_summon_b0a.vpcf"
     }
 }

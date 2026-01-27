@@ -20,7 +20,7 @@ function modifier_summon_distance_check:OnIntervalThink()
     local ability = self:GetAbility()
     if not owner or not owner:IsAlive() or not ability then return end
 
-    local radius = ability:GetSpecialValueFor("radius_summon")
+    local radius = ability:GetCastRange(owner:GetAbsOrigin(), nil)
     local distance = (unit:GetAbsOrigin() - owner:GetAbsOrigin()):Length2D()
 
     if distance > radius then
@@ -40,12 +40,19 @@ function modifier_summon_distance_check:OnIntervalThink()
 end
 
 function modifier_summon_distance_check:OnDeath(params)
-        -- Проверяем, что умер именно тот, на ком висит этот модификатор
-        if params.unit == self:GetParent() then
-            local ability = self:GetAbility()
-            if ability then
-                ability:SetFrozenCooldown(false)
-                print("Саммон погиб. Кулдаун запущен на " .. ability:GetCooldownTimeRemaining() .. " сек.")
+    local ability = self:GetAbility()
+    local unit = self:GetParent()
+    local owner = unit:GetOwner()
+    local caster = ability:GetCaster()
+
+    if params.unit == self:GetParent() then
+        if ability then
+            ability:StartCooldown(ability:GetSpecialValueFor('summon_cooldown'))
+            
+            if caster then
+                caster.summon = nil
             end
         end
     end
+    
+end

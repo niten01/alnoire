@@ -45,12 +45,12 @@
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityTextureName"            "lone_druid_spirit_bear"
 		
-		"AbilityCooldown"               "40.0"
+		"AbilityCooldown"               "5.0" // кд для телепортации к ноге
 		"AbilityManaCost"               "0"
 		"AbilityCastRange"        		"700"
 		"AbilityValues"
 		{
-			"radius_summon"				"700"
+			"summon_cooldown"			"10.0" // кд для именно призыва
 		}
 	}
 }
