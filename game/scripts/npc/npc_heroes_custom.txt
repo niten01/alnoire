@@ -168,7 +168,7 @@
 
     "Ability1"                                               "sanya_sprint"
     "Ability2"                                               "sanya_towel_dash"
-    // "Ability3"                                            "sohei_ki_attraction"
+    "Ability3"                                               "sanya_towel_summon"
     // "Ability4"                                            "sohei_momentum"
     // "Ability5"                                            "sohei_wholeness_of_body"
     // "Ability6"                                            "sohei_flurry_of_blows"

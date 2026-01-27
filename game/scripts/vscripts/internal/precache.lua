@@ -1,5 +1,6 @@
 return {
     units = {
+        "towel_summon",
         "npc_xavier",
         "npc_gorilla",
         "npc_shooter",
