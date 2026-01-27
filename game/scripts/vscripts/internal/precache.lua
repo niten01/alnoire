@@ -22,5 +22,11 @@ return {
         "particles/units/heroes/hero_kez/kez_katana_echo_strike_movement_feathers.vpcf",
         "particles/units/heroes/hero_kez/kez_sai_ultimate_crit.vpcf",
         "particles/econ/items/slark/slark_ti6_blade/slark_ti6_pounce_trail_hand_pnt.vpcf",
+        "particles/units/heroes/hero_marci/marci_rebound_charge_projectile_streak.vpcf",
+        "particles/units/heroes/hero_slark/slark_pounce_trail.vpcf",
+        "particles/sanya_towel_dash_trail.vpcf",
+        "particles/sanya_towel_dash_splash.vpcf",
+        "particles/econ/events/diretide_2020/high_five/high_five_impact_burst.vpcf",
+        "particles/econ/events/ti10/high_five/high_five_impact_steam.vpcf",
     }
 }

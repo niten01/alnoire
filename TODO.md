@@ -20,6 +20,9 @@
 
 ## classes
 
+particles:
+* particles/units/heroes/hero_marci/marci_rebound_charge_projectile_streak.vpcf
+
 ### towel_master
 дальник, самонер
 

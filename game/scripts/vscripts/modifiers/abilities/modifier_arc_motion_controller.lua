@@ -18,18 +18,30 @@ function modifier_arc_motion_controller:OnCreated()
         self.info = parent.jumpInfo
         parent.jumpInfo = nil
 
-        self.dashImpact = ParticleManager:CreateParticle(
-            "particles/units/heroes/hero_kez/kez_sai_ultimate_crit.vpcf",
+        -- self.dashStart = ParticleManager:CreateParticle(
+        --     "particles/units/heroes/hero_kez/kez_sai_ultimate_crit.vpcf",
+        --     PATTACH_ABSORIGIN_FOLLOW,
+        --     parent)
+        -- ParticleManager:SetParticleControlEnt(self.dashStart, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc",
+        --     Vector(0, 0, 0), false)
+        -- local attachment = parent:ScriptLookupAttachment("attach_hitloc")
+        -- local forward = self.info.direction
+        -- local origin = parent:GetAttachmentOrigin(attachment) + forward * 50
+        -- ParticleManager:SetParticleControlTransform(self.dashStart, 1, origin, VectorToAngles(forward))
+
+        self.dashStart = ParticleManager:CreateParticle(
+            "particles/sanya_towel_dash_splash.vpcf",
             PATTACH_ABSORIGIN_FOLLOW,
             parent)
-        ParticleManager:SetParticleControlEnt(self.dashImpact, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc",
-            Vector(0, 0, 0), false)
-        local attachment = parent:ScriptLookupAttachment("attach_hitloc")
-        local forward = self.info.direction
-        local origin = parent:GetAttachmentOrigin(attachment) + forward * 50
-        ParticleManager:SetParticleControlTransform(self.dashImpact, 1, origin, VectorToAngles(forward))
+        ParticleManager:SetParticleControlEnt(self.dashStart, 3, parent, PATTACH_POINT_FOLLOW, "attach_hitloc",
+            Vector(0, 0, 0), true)
 
-        if self:ApplyHorizontalMotionController() and self:ApplyVerticalMotionController() then
+        self.dashTrail = ParticleManager:CreateParticle(
+            "particles/sanya_towel_dash_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+        ParticleManager:SetParticleControlEnt(self.dashTrail, 3, parent, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc",
+            Vector(0, 0, 0), true)
+
+        if self:ApplyHorizontalMotionController() then
             self.time = 0
         else
             self:Destroy()
@@ -77,7 +89,9 @@ end
 
 function modifier_arc_motion_controller:OnDestroy()
     if IsServer() then
-        ParticleManager:ReleaseParticleIndex(self.dashImpact)
+        ParticleManager:ReleaseParticleIndex(self.dashStart)
+        ParticleManager:DestroyParticle(self.dashTrail, false)
+        ParticleManager:ReleaseParticleIndex(self.dashTrail)
         local parent = self:GetParent()
         FindClearSpaceForUnit(parent, parent:GetAbsOrigin(), true)
     end
