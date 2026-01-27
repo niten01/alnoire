@@ -1,5 +1,6 @@
 return {
     units = {
+        "towel_summon",
         "npc_xavier",
         "npc_gorilla",
         "npc_shooter",
@@ -28,5 +29,6 @@ return {
         "particles/sanya_towel_dash_splash.vpcf",
         "particles/econ/events/diretide_2020/high_five/high_five_impact_burst.vpcf",
         "particles/econ/events/ti10/high_five/high_five_impact_steam.vpcf",
+        "particles/creatures/aghanim/portal_summon_b0a.vpcf"
     }
 }

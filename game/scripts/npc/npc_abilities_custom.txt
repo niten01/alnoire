@@ -12,6 +12,11 @@
 		"AbilityCooldown"			"0.0"
 		"MaxLevel"					"1"
 		"RequiredLevel"				"1"
+		
+		"AbilityValues"
+		{
+			"sprint_speed"				"200"
+		}
 	}
 	"sanya_towel_dash"
 	{
@@ -28,6 +33,24 @@
 		"AbilityValues"
 		{
 			"dash_speed"				"2500"
+		}
+	}
+
+	"sanya_towel_summon"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/sanya_towel_summon"
+		"MaxLevel"                      "1"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"            "lone_druid_spirit_bear"
+		
+		"AbilityCooldown"               "5.0" // кд для телепортации к ноге
+		"AbilityManaCost"               "0"
+		"AbilityCastRange"        		"700"
+		"AbilityValues"
+		{
+			"summon_cooldown"			"10.0" // кд для именно призыва
 		}
 	}
 }

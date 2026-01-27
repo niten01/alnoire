@@ -12,7 +12,7 @@ function modifier_custom_sprint:DeclareFunctions()
 end
 
 function modifier_custom_sprint:GetModifierMoveSpeedBonus_Constant()
-    return 200
+    return self:GetAbility():GetSpecialValueFor('sprint_speed')
 end
 
 function modifier_custom_sprint:OnAttackLanded(params)
