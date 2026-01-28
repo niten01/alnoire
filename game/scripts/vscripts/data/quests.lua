@@ -41,7 +41,7 @@ return {
             },
         }
     },
-     q_ogre_magi = {
+     q_ogres = {
         giver = "npc_ogre_magi",
         name = "Братство и ум",
         steps = {
