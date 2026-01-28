@@ -1,4 +1,5 @@
 .venv
+__pychache__
 
 # test artifacts
 *.lua
