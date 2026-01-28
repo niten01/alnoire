@@ -3,15 +3,14 @@ Dialogue = Dialogue or class {}
 --[[
 -- Dialogue nodes file format:
 -- entries = {
---   npc_someone = {
---       questID = {
---           { status = "ACTIVE", start="node_id", stepIdx=5 (optional) },
----          ...
---       }, ...
---   }, ...
+    node_id = {
+      { type = "quest", questID = "q_quest_01", status = QuestStatus.ACTIVE, stepIdx = 2  },
+      { type = "flag", flagName = "firstMet", value = true  },
+    },
+--   ...
 -- }
--- nodes = {{
---   id = "node_id"
+-- nodes = {
+--   node_id = {
 --   speakerName = "npc a",
 --   speakerNPC = "npc_someone"
 --   text = "Hello",
@@ -108,12 +107,20 @@ function Dialogue:GetAvailableDialogueNodeID(playerID, unitName)
   if not entries or TableLength(entries) == 0 then return nil end
 
   local matches = {}
-  for questID, conditions in pairs(entries) do
-    local questState = self.game.modules.quest:GetQuestState(playerID, questID)
-    if not questState then goto continue end
-    for _, condition in ipairs(conditions) do
+  for _, condition in ipairs(entries) do
+    if condition.type == "quest" then
+      local questID = condition.questID
+      local questState = self.game.modules.quest:GetQuestState(playerID, questID)
+      if not questState then goto continue end
       if questState.status == condition.status and
           (not condition.stepIdx or condition.stepIdx == questState.stepIdx) then
+        table.insert(matches, condition.start)
+      end
+    elseif condition.type == "flag" then
+      local data = EntityData:ByName(unitName)
+      if not data then goto continue end
+      local flagValue = data[condition.flagName]
+      if flagValue == condition.value then
         table.insert(matches, condition.start)
       end
     end

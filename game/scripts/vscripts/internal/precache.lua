@@ -29,6 +29,8 @@ return {
         "particles/sanya_towel_dash_splash.vpcf",
         "particles/econ/events/diretide_2020/high_five/high_five_impact_burst.vpcf",
         "particles/econ/events/ti10/high_five/high_five_impact_steam.vpcf",
-        "particles/creatures/aghanim/portal_summon_b0a.vpcf"
+        "particles/creatures/aghanim/portal_summon_b0a.vpcf",
+        "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf",
+        "particles/sanya_sprint_trail.vpcf",
     }
 }

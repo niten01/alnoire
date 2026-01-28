@@ -3,6 +3,8 @@ local QuestStatus = require('modules.quest.quest_status')
 return {
     entries = {
         npc_xavier = {
+            {type="quest", questID = "q_test_quest"},
+            {type="flag", flagName="firstMet", value = true},
             q_test_quest = {
                 { status = QuestStatus.INACTIVE, start = "d_0" },
                 { status = QuestStatus.ACTIVE,   start = "d_2" },
