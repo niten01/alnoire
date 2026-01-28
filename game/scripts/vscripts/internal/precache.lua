@@ -32,5 +32,6 @@ return {
         "particles/creatures/aghanim/portal_summon_b0a.vpcf",
         "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf",
         "particles/sanya_sprint_trail.vpcf",
+        "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_embers.vpcf",
     }
 }

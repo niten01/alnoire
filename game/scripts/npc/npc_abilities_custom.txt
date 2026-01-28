@@ -22,7 +22,7 @@
 	{
 		"BaseClass"					"ability_lua"
 		"ScriptFile" 				"abilities/sanya_towel_dash"
-		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityTextureName"		"phantom_lancer_doppelwalk"
 		"AbilityCastRange"			"700"
 		"AbilityCastAnimation"	    "ACT_DOTA_CAST_ABILITY_1"
@@ -41,16 +41,25 @@
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"                    "abilities/sanya_towel_summon"
 		"MaxLevel"                      "1"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityTextureName"            "lone_druid_spirit_bear"
+		
+		"AbilityCooldown"               "10.0" // кд призыва
+		"AbilityManaCost"               "0"
+		"AbilityCastRange"        		"700"
+	}
+	"sanya_towel_summon_return"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/sanya_towel_summon_return"
+		"MaxLevel"                      "1"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"            "phantom_lancer_doppelwalk"
 		
 		"AbilityCooldown"               "5.0" // кд для телепортации к ноге
 		"AbilityManaCost"               "0"
 		"AbilityCastRange"        		"700"
-		"AbilityValues"
-		{
-			"summon_cooldown"			"10.0" // кд для именно призыва
-		}
 	}
 }

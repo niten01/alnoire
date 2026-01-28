@@ -1,6 +1,6 @@
 return {
     q_clash_royal = {
-        giver = "npc_tiny",
+        giver = "npc_blue_prince",
         name = "Королевская взбучка",
         steps = {
             {
@@ -41,7 +41,7 @@ return {
             },
         }
     },
-     q_ogre_magi = {
+     q_ogres = {
         giver = "npc_ogre_magi",
         name = "Братство и ум",
         steps = {
@@ -85,6 +85,57 @@ return {
                 description = "Вернись к подрывникам",
                 objectives = {
                     { type = "talk", npc = "npc_cat_barrel" }
+                }
+            },
+        }
+    },
+    q_pandas = {
+        giver = "npc_brewmaster",
+        name = "Три оттенка",
+        steps = {
+            {
+                description = "Найди Красного, Зелёного и Синего",
+                objectives = {
+                    { type = "talk", npc = "npc_red" }
+                    { type = "talk", npc = "npc_green" }
+                    { type = "talk", npc = "npc_blue" }
+                    
+                }
+            },
+            {
+                description = "Вернись к панде",
+                objectives = {
+                    { type = "talk", npc = "npc_brewmaster" }
+                }
+            },
+        }
+    },
+    q_main_quest_act_1 = {
+        giver = "npc_guide",
+        name = "Предвестие катастрофы",
+        steps = {
+            {
+                description = "Найди предвестника апокалипсиса в Заброшенном лесу и узнай что грядёт",
+                objectives = {
+                    { type = "talk", npc = "npc_witch_doctor" }        
+                }
+            },
+            {
+                description = "Найди способ починить шар для предсказаний",
+                objectives = {
+                    { type = "talk", npc = "npc_tinker" }
+                }
+            },
+            {
+                description = "Почини шар и верни предвестнику",
+                objectives = {
+                    { type = "talk", npc = "npc_witch_doctor" }
+                }
+            },
+            {
+                description = "Сообщи о предсказании гиду",
+                objectives = {
+                    { type = "talk", npc = "npc_guide" }
                 }
             },
         }
