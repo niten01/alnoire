@@ -10,8 +10,12 @@ end
 
 function modifier_summon_distance_check:DeclareFunctions()
     return {
-        MODIFIER_EVENT_ON_DEATH, 
+        MODIFIER_EVENT_ON_DEATH, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
     }
+end
+
+function modifier_summon_distance_check:GetModifierMoveSpeedBonus_Constant()
+    return self.speed_bonus or 0
 end
 
 function modifier_summon_distance_check:OnIntervalThink()
@@ -19,6 +23,14 @@ function modifier_summon_distance_check:OnIntervalThink()
     local owner = unit:GetOwner()
     local ability = self:GetAbility()
     if not owner or not owner:IsAlive() or not ability then return end
+
+    local target_speed = owner:GetIdealSpeed()
+    if target_speed > unit:GetBaseMoveSpeed() then
+        self.speed_bonus = target_speed - unit:GetBaseMoveSpeed()
+    else 
+        self.speed_bonus = 0
+    end
+    
 
     local radius = ability:GetCastRange(owner:GetAbsOrigin(), nil)
     local distance = (unit:GetAbsOrigin() - owner:GetAbsOrigin()):Length2D()
@@ -47,9 +59,9 @@ function modifier_summon_distance_check:OnDeath(params)
 
     if params.unit == self:GetParent() then
         if ability then
-            ability:StartCooldown(ability:GetSpecialValueFor('summon_cooldown'))
-            
+            ability:SetFrozenCooldown(false)
             if caster then
+                caster:SwapAbilities("sanya_towel_summon_return", "sanya_towel_summon", false, true)
                 caster.summon = nil
             end
         end

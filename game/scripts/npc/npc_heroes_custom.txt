@@ -169,7 +169,8 @@
     "Ability1"                                               "sanya_sprint"
     "Ability2"                                               "sanya_towel_dash"
     "Ability3"                                               "sanya_towel_summon"
-    // "Ability4"                                            "sohei_momentum"
+    "Ability4"                                               "sanya_towel_summon_return"
+    
     // "Ability5"                                            "sohei_wholeness_of_body"
     // "Ability6"                                            "sohei_flurry_of_blows"
     // "Ability7"                                            "sohei_innate_oaa"
