@@ -1,6 +1,6 @@
 return {
     q_clash_royal = {
-        giver = "npc_tiny",
+        giver = "npc_blue_prince",
         name = "Королевская взбучка",
         steps = {
             {
