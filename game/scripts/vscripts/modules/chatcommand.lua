@@ -17,40 +17,35 @@ function ChatCommand:Init()
 end
 
 -- Function to create the link
-function ChatCommand:LinkDevCommand(command, func, obj)
+function ChatCommand:LinkDevCommand(command, func)
   self.dev_commands = self.dev_commands or {}
-  self.dev_commands[command] = { func, obj }
+  self.dev_commands[command] = func
 end
 
 -- Function to create the link
-function ChatCommand:LinkCommand(command, func, obj)
+function ChatCommand:LinkCommand(command, func)
   self.commands = self.commands or {}
-  self.commands[command] = { func, obj }
+  self.commands[command] = func
 end
 
 -- Function that's called when somebody chats
-function ChatCommand:OnPlayerChat(keys)
+function ChatCommand:OnPlayerChat(event)
   self.dev_commands = self.dev_commands or {}
   self.commands = self.commands or {}
-  local text = string.lower(keys.text)
+  local text = string.lower(event.text)
   local splitted = split(text, " ")
+  local commandName = splitted[1]
+  table.remove(splitted, 1)
 
-  if self.commands[splitted[1]] ~= nil then
-    ChatCommand:DoCommand(keys, self.commands[splitted[1]])
-  elseif (IsInToolsMode() or GameRules:IsCheatMode()) and self.dev_commands[splitted[1]] ~= nil then
-    ChatCommand:DoCommand(keys, self.dev_commands[splitted[1]])
+  if self.commands[commandName] ~= nil then
+    ChatCommand:DoCommand(event, self.commands[commandName], splitted)
+  elseif (IsInToolsMode() or GameRules:IsCheatMode()) and self.dev_commands[commandName] ~= nil then
+    ChatCommand:DoCommand(event, self.dev_commands[commandName], splitted)
   end
 end
 
-function ChatCommand:DoCommand(keys, location)
-  local func = location[1]
-  local context = location[2]
-
-  if context == nil then
-    func(keys)
-  else
-    func(context, keys)
-  end
+function ChatCommand:DoCommand(event, func, args)
+  func(event, args)
 end
 
 return ChatCommand

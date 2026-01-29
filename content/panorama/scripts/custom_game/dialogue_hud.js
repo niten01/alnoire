@@ -95,7 +95,7 @@
     const hasChoices = Object.keys(payload.choices).length > 0;
     continueHint.visible = !hasChoices;
 
-    typewriter(payload.text || "", payload.cps || 15);
+    typewriter(payload.text || "", payload.cps || 45);
 
     for (const [luaIdx, c] of Object.entries(payload.choices)) {
       const btn = $.CreatePanel("TextButton", choicesRoot, "");

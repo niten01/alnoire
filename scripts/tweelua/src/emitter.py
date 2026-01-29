@@ -7,7 +7,9 @@ class LuaEmitter:
         self.lines = []
 
     def _format_value(self, val) -> str:
-        if type(val) is int:
+        if val is None:
+            return "nil"
+        elif type(val) is int:
             return str(val)
         elif type(val) is bool:
             return "true" if val else "false"
@@ -44,7 +46,7 @@ class LuaEmitter:
         for link in node.links:
             self.lines.append("{")
             self.lines.append(f"text = [[{link.display}]],")
-            self.lines.append(f'next = "{link.target}",')
+            self.lines.append(f'next = {self._format_value(link.target)},')
             if link.actions:
                 self._emit_choice_actions(link.actions)
             self.lines.append("},")

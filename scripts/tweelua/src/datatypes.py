@@ -4,18 +4,11 @@ from enum import Enum
 from src.datadict import DataDict
 
 
-class QuestStatusLua(Enum):
-    ACTIVE = "QuestStatus.ACTIVE"
-    INACTIVE = "QuestStatus.INACTIVE"
-    REJECTED = "QuestStatus.REJECTED"
-    COMPLETED = "QuestStatus.COMPLETED"
-
-
 @dataclass
 class Link:
     raw: str
     display: str
-    target: str
+    target: str | None
     actions: List[DataDict]
 
 

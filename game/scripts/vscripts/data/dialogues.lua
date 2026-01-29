@@ -104,21 +104,21 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",  status = QuestStatus.INACTIVE, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.INACTIVE, type = "quest" },
             },
         },
         d_untitled_passage_24 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",  status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.ACTIVE, step = 1, type = "quest" },
             },
         },
         d_untitled_passage_25 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",  status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_26 = {
@@ -224,7 +224,7 @@ return {
         d_untitled_passage_63 = {
             priority = 0,
             conditions = {
-                { questID = "q_clash_royal",  status = QuestStatus.ACTIVE, step = 3, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.ACTIVE, step = 3, type = "quest" },
                 { interact = "npc_blue_prince", type = "interact" },
             },
         },
@@ -246,7 +246,7 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",  status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_67 = {
@@ -451,6 +451,10 @@ return {
             text = [[]],
             speaker = [[npc_ogre_bruiser]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_nachat_delat_lip_trill_daby_dobavit_ustojchivuu_basovuu_osnovu = {
@@ -472,6 +476,10 @@ return {
             text = [[]],
             speaker = [[npc_creep_troll]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_nachat_pritoptyvat_v_takt_hlupanya = {
@@ -628,6 +636,10 @@ return {
             text = [[Ооооо, тогда увидимся там!]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_popravit_yajtsa = {
@@ -670,6 +682,10 @@ return {
             text = [[*Начался хаос. Все начали избивать друг друга. Ты решил не оставаться в стороне.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_prekratit = {
@@ -799,12 +815,20 @@ return {
             text = [[*Ты уходишь с позором.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_ujti = {
             text = [[*Обе головы продолжают спорить.*]],
             speaker = [[npc_ogre_magi_both]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_uhmylnutsya_i_nachat_hlupat = {
@@ -983,12 +1007,20 @@ return {
             text = [[Удачи в твоих странствиях!]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_11 = {
             text = [[*Панда бубнит и пердит.*]],
             speaker = [[npc_brewmaster]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_12 = {
@@ -1019,6 +1051,10 @@ return {
             text = [[Крип-предвестник проживает в Заброшенном лесу. Найди его ради Королевства!]],
             speaker = [[npc_guide]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_15 = {
@@ -1035,6 +1071,10 @@ return {
             text = [[*Тишина.*]],
             speaker = [[npc_tormentor]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_17 = {
@@ -1051,6 +1091,10 @@ return {
             text = [[Будь сильным, приятель.]],
             speaker = [[npc_creep_rogach]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_19 = {
@@ -1077,6 +1121,10 @@ return {
             text = [[ВПЕРЁД КАЧАТЬСЯ! СЛАВА КОРОЛЮ!]],
             speaker = [[npc_mustache]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_21 = {
@@ -1093,6 +1141,10 @@ return {
             text = [[*Крип неподвижно стоит.*]],
             speaker = [[npc_creep_bob]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_23 = {
@@ -1109,6 +1161,10 @@ return {
             text = [[Врата. Проходи через них.]],
             speaker = [[npc_blue_prince]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_25 = {
@@ -1142,6 +1198,10 @@ return {
             text = [[Л... Ладно. Немного перегнул, но мы в рассчёте, верно? Слава Королю!]],
             speaker = [[npc_monkey_king]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_28 = {
@@ -1182,6 +1242,10 @@ return {
             text = [[Надеюсь у тебя получится!]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_31 = {
@@ -1198,6 +1262,10 @@ return {
             text = [[*Не стоит его беспокоить.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_33 = {
@@ -1214,6 +1282,10 @@ return {
             text = [[Вали уже.]],
             speaker = [[npc_rape_victim]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_35 = {
@@ -1230,6 +1302,10 @@ return {
             text = [[Приходите ещё!]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_37 = {
@@ -1256,6 +1332,10 @@ return {
             text = [[*Он пристально смотрит на сцену. Ничто не способно отвлечь его.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_4 = {
@@ -1283,6 +1363,10 @@ return {
             text = [[1: Заброшенный...2: ЛЕС!]],
             speaker = [[npc_ogre_magi_both]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_42 = {
@@ -1320,6 +1404,10 @@ return {
             text = [[*Ты не решаешься возвращаться к ним.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_46 = {
@@ -1427,6 +1515,10 @@ return {
             text = [[Как вернёшься, мы используем детонатор!]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_56 = {
@@ -1443,6 +1535,10 @@ return {
             text = [[Вы легенда!]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_58 = {
@@ -1482,6 +1578,10 @@ return {
             [[*Её не обмануть. Ты чувствуешь, что поединок тоже не вариант, у неё слишком сильная аура. Придётся реально найти кого-то.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_61 = {
@@ -1498,6 +1598,10 @@ return {
             text = [[]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_63 = {
@@ -1517,6 +1621,10 @@ return {
             text = [[Тебе что-то нужно, человек?*Спросил крип с необычайно спокойным голосом.*]],
             speaker = [[npc_ogre_bruiser]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_65 = {
@@ -1540,18 +1648,30 @@ return {
             text = [[Теперь богач я. Брат бедный.]],
             speaker = [[npc_blue_prince]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_67 = {
             text = [[Не обращай на меня внимание. Иди дальше, давай.]],
             speaker = [[npc_monkey_king]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_68 = {
             text = [[привет ща акт 2]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_69 = {
@@ -1579,6 +1699,10 @@ return {
             text = [[Ступай.]],
             speaker = [[npc_shamanka]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_untitled_passage_9 = {
@@ -1650,6 +1774,10 @@ return {
             text = [[Неуважение.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_d = {
@@ -1722,6 +1850,10 @@ return {
             [[В первом ты преуспел, теперь пришло время показать силу. Если одним ударом ты сможешь сдвинуть меня, так уж и быть - исполню твоё желание. Нападай.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_g = {
@@ -1883,6 +2015,10 @@ return {
             [[*Он вошёл в невидимость и убежал. Хоть ты его и не видел, но ты знал, что Синий, с этого момента, вознёсся.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_g3 = {
@@ -2070,6 +2206,10 @@ return {
             text = [[Жду не дождусь результатов. Слава Королю!]],
             speaker = [[npc_guide]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_h8 = {
@@ -2166,12 +2306,20 @@ return {
             text = [[*Крип сильно расстроился. Его не покидает ощущение, что что-то не так.*]],
             speaker = [[npc_creep_bob]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_i9 = {
             text = [[Отлично. Проходи.]],
             speaker = [[npc_blue_prince]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_j = {
@@ -2201,6 +2349,10 @@ return {
             text = [[Ну... ладно...]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_j4 = {
@@ -2707,12 +2859,20 @@ return {
             [[*Несколько минут ты смотришь на его труп. В мылсях мелькают фразы из вашего диалога. Ты решаешься не брать мантию.*]],
             speaker = [[npc_ogre_bruiser]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_m6 = {
             text = [[*Он отправился жить. Ты уверен, это его последний день в этих землях.*]],
             speaker = [[npc_ogre_bruiser]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_m7 = {
@@ -2733,6 +2893,10 @@ return {
             text = [[*Огр обнял сам себя.*]],
             speaker = [[npc_ogre_magi_both]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_m9 = {
@@ -2764,6 +2928,10 @@ return {
             text = [[О, вот и наша героиня прибыла, иди к ней!]],
             speaker = [[npc_Epstein]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_n2 = {
@@ -3039,6 +3207,10 @@ return {
             [[*Зелёный выпускает ошеломляющий разряд, отчего ближайшие камни отлетают во все стороны. Впрочем, как и ты. Но для тебя это летальный исход.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_aleks_umret_za_tebya_ty_legenda_ty_m = {
@@ -3131,12 +3303,20 @@ return {
             text = [[Вход в деревню не доступен болванам.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_byvaj = {
             text = [[Тогда, как вернёшься, я сниму их с тебя и убегу, слышишь?!]],
             speaker = [[npc_rape_victim]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_v_pustoshah_krip_predlagal_mne_za_150_otdat = {
@@ -3187,6 +3367,10 @@ return {
             text = [[*Человек-сказитель, не проронив ни слова, закрыл глаза и начал медитировать.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_vau = {
@@ -3225,6 +3409,10 @@ return {
             text = [[*Довольный перекуп пересчитывает невидимые монеты, пока ты вертишь билеты у себя в руках.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_vzorvem_epshtejna = {
@@ -3232,6 +3420,10 @@ return {
             [[*Тебе выдали зелёную бочку. Выглядит она не впечатляюще, однако взрывная сила у неё - колоссальная.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_vizhu_ty_s_ludmi_horosho_ladish = {
@@ -3321,6 +3513,10 @@ return {
             text = [[Великая мудрость... Что ж, свидимся позже.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_vsmysle_isporchennaya = {
@@ -3541,6 +3737,10 @@ return {
             text = [[1: Похоже мы больше никогда не встретим брата...2: Судьба плохо обходится с умными, брат...]],
             speaker = [[npc_ogre_magi_both]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_daj_togda_hlebnut_iz_tvoego_bochonka = {
@@ -3558,6 +3758,10 @@ return {
             text = [[Ладно. Я понял. Участь страшнее смерти ожидает тебя за поворотом. Удачи.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_derevya_i_dikie_kripy = {
@@ -3594,6 +3798,10 @@ return {
             text = [[*Неизвестное придало тебе сил двигаться дальше.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_dorogo = {
@@ -3846,6 +4054,10 @@ return {
             text = [[*Рогач стучит себя по груди и махает тебе, пока ты уходишь.*]],
             speaker = [[npc_creep_rogach]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_i_chto_delat_budem = {
@@ -3960,6 +4172,10 @@ return {
             text = [[Тогда путь намечен, прощай.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_kakovo_eto_skupat_bilety_zastavlyaya_bednyh_stradat = {
@@ -3997,6 +4213,10 @@ return {
             text = [[Небеса с тобой. Слава Королю!]],
             speaker = [[npc_shamanka]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_kranshtejn = {
@@ -4013,12 +4233,20 @@ return {
             text = [[Возьми. Большая награда. Для большого человека.]],
             speaker = [[npc_blue_prince]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_kstati_tvoi_synovya_obeschali_vernutsya_no_ih_ne_vidat_gde_oni = {
             text = [[Какие сыновья?]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_kstati_u_tebya_znakomyj_golos = {
@@ -4035,24 +4263,40 @@ return {
             text = [[Всмысле может быть?!]],
             speaker = [[npc_rape_victim]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_ladno_poka = {
             text = [[*В стороне ты заметил вход в подземные пути.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_ladno_pomogu_tebe = {
             text = [[Постарайся уж, а то пока я не смогу их контролировать, жена меня домой не пустит.]],
             speaker = [[npc_brewmaster]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_ladno = {
             text = [[*Огр дал сам себе пять.*]],
             speaker = [[npc_ogre_magi_both]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_lukovye_koltsa_govno = {
@@ -4137,6 +4381,10 @@ return {
             text = [[Пусть схватка с нами покажет тебе, насколько Тень - великий дар.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_mne_kazhetsya_ya_znau_parol = {
@@ -4153,6 +4401,10 @@ return {
             text = [[Но где ты возьмёшь столько денег?!]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_mne_tozhe_odnako_vybora_net = {
@@ -4225,6 +4477,10 @@ return {
             [[*Теневой демон смог успокоить себя..*Давай же, Исчадие тьмы, одолеем его ради нашего хозяина. Мы перед ним в неоплатном долгу.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_na_sajte_kontserta_za_100_otdaut = {
@@ -4271,6 +4527,10 @@ return {
             text = [[]],
             speaker = [[npc_monkey_king]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_ne_dumau = {
@@ -4395,6 +4655,10 @@ return {
             text = [[Ты. Подумай ещё.]],
             speaker = [[npc_blue_prince]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_net = {
@@ -4735,6 +4999,10 @@ return {
             text = [[*Пришло время сматываться отсюда.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_pokupau = {
@@ -4761,6 +5029,10 @@ return {
             text = [[*Чувствуя твою агрессию, перекуп начинает обороняться.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_pizda_ostavajsya_soboj_no_starajsya_udelyat_vnimanie_sobesedniku = {
@@ -4964,6 +5236,10 @@ return {
             text = [[Тогда вперёд.]],
             speaker = [[npc_Epstein]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_prichina = {
@@ -5154,12 +5430,20 @@ return {
             text = [[Добро пожаловать.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_spasibo = {
             text = [[*Эпштейн в предвкушении.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_sposobnostu = {
@@ -5198,6 +5482,10 @@ return {
             [[*Они не знали, как и реагировать. Однако, даже после всего этого, они улыбаются. Ты их спаситель. И спаситель всех этих земель.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_tak_ty_verneshsya_domoj = {
@@ -5238,6 +5526,10 @@ return {
             text = [[ЧЕМ СЛОЖНЕЕ БИТВА, ТЕМ ВЕСЕЛЕЕ.]],
             speaker = [[npc_Epstein_guard]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_tam_nikogo_net_koroche_davajte_bystree = {
@@ -5274,6 +5566,10 @@ return {
             text = [[Боб... Точно! Спасибо!!]],
             speaker = [[npc_creep_bob]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_tebya_zovut_dzhon = {
@@ -5640,6 +5936,10 @@ return {
             text = [[*Нужно найти кого-то, кто выглядит умным...*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_hmmm = {
@@ -5714,6 +6014,10 @@ return {
             text = [[Эпштейн передаёт тебе привет.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_chego_usatyj = {
@@ -5881,6 +6185,10 @@ return {
             text = [[*Крипы расстроились и от скуки начали кидать в друг друга бомбочки.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_schekotno = {
@@ -6023,6 +6331,10 @@ return {
             [[Огромное спасибо, мистер. Благодаря тебе, тут стало намного безопаснее. *Крипы кланяются тебе. Ты стал их кумиром.*]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_eh = {
@@ -6117,6 +6429,10 @@ return {
             text = [[Буду ждать.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_ya_koroch_poshel = {
@@ -6216,6 +6532,10 @@ return {
             text = [[МОЛОДЧИНА!]],
             speaker = [[npc_mustache]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
         d_ya_tozhe_popalsya = {
@@ -6276,6 +6596,10 @@ return {
             text = [[Я ПРИНИМАЮ ТВОЙ ВЫЗОВ.]],
             speaker = [[default]],
             choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
             },
         },
     },
