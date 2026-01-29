@@ -12,6 +12,11 @@
 * zeus usach
     * lightning_zeus_victory
 
+random stuff:
+* models/heroes/bane/grip.vmdl (spooky)
+* models/items/undying/flesh_golem/grim_harvest_golem/grim_harvest_golem.vmdl (spooky)
+
+
 ## music
     * дерек (помедленнее, пофундаментальнее)
     * джордж (дарк солс мюзик)

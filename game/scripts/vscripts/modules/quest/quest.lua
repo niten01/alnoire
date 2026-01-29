@@ -36,6 +36,10 @@ function Quest:Init()
     self.playerQuestStates[playerID] = PlayerQuestState(self.quests)
   end
 
+  ChatCommand:LinkDevCommand("-queststatus", function(event, args)
+    self:ShowQuestStatus(event, args)
+  end)
+
   GameEvents:OnDialogueChoice(function(event)
     local playerID = event.playerID
 
@@ -50,12 +54,11 @@ function Quest:Init()
 
     -- quest can start here
     local allActions = event.choice.actions
+    PrintTable(allActions)
     if not allActions then return end
 
     for _, action in ipairs(allActions) do
-      if action.type == "quest_start" then
-        self:StartQuestForAll(action.questID)
-      end
+      self:HandleAction(playerID, action)
     end
   end)
 
@@ -168,6 +171,38 @@ function Quest:GetActiveObjectivesByType(playerID, type)
   end
 
   return objectives
+end
+
+function Quest:HandleAction(playerID, action)
+  if action.type == "quest_start" then
+    self:StartQuestForAll(action.questID)
+  elseif action.type == "quest_reject" then
+    local state = self.playerQuestStates[playerID]
+    state.status = QuestStatus.REJECTED
+  elseif action.type == "quest_end" then
+    self:FinishQuestForAll(action.questID)
+  end
+end
+
+function Quest:ShowQuestStatus(event, args)
+  local state = self.playerQuestStates[event.playerID]
+  local function printOneQuest(questID)
+    DebugPrint("---------------- " .. questID .. " ----------------")
+    PrintTable(state.questStates[questID])
+    DebugPrint("--------------------------------")
+  end
+
+  DebugPrint("\n\nQUESTSTATUS")
+
+  if TableLength(args) > 0 then
+    printOneQuest(args[1])
+    return
+  end
+
+  for questID, _ in pairs(state.questStates) do
+    printOneQuest(questID)
+  end
+  DebugPrint("\n\n")
 end
 
 return Quest

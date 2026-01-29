@@ -6,14 +6,16 @@ function PlayerQuestState:constructor(quests)
     for id, _ in pairs(quests) do
         self.questStates[id] = {
             status = QuestStatus.INACTIVE,
-            stepIdx = 1
+            stepIdx = nil
         }
     end
     self.flags = {} -- global events flags
 end
 
 function PlayerQuestState:StartQuest(questID)
-    self.questStates[questID].status = QuestStatus.ACTIVE
+    local questState = self.questStates[questID]
+    questState.status = QuestStatus.ACTIVE
+    questState.stepIdx = 1
 end
 
 function PlayerQuestState:GetOneQuestState(questID)

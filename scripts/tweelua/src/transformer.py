@@ -96,6 +96,11 @@ class StoryTransformer:
         if len(speaker_tags) != 0:
             passage.speaker = speaker_tags[0].fields["speaker"]
 
+    def _add_close_links(self):
+        for _, passage in self.story.passages.items():
+            if len(passage.links) == 0:
+                passage.links.append(Link("", "Закрыть.", None, []))
+
     def transform(self) -> Story:
         for name in list(self.story.passages.keys()):
             node_id = self._gen_node_id(name)
@@ -107,5 +112,7 @@ class StoryTransformer:
 
         for passage in self.story.passages.values():
             self._try_propagate_speaker(passage)
+
+        self._add_close_links()
 
         return self.story
