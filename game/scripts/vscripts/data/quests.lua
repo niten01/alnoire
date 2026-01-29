@@ -1,7 +1,8 @@
 return {
-    q_clash_royale = {
+    q_clash_royal = {
         giver = "npc_blue_prince",
         name = "Королевская взбучка",
+        acts = {1}
         steps = {
             {
                 description = "Иди на арену",
@@ -26,6 +27,7 @@ return {
     q_nigger = {
         giver = "npc_nig",
         name = "O'Block",
+        acts = {2}
         steps = {
             {
                 description = "Добудь билеты у перекупа",
@@ -43,6 +45,7 @@ return {
     },
     q_ogres = {
         giver = "npc_ogre_magi",
+        acts = {1}
         name = "Братство и ум",
         steps = {
             {
@@ -62,6 +65,7 @@ return {
     q_island_escape = {
         giver = "trigger_Epstein",
         name = "Побег от кумира",
+        acts = {1,2}
         steps = {
             {
                 description = "Сбеги с острова",
@@ -74,6 +78,7 @@ return {
     q_island_explosion = {
         giver = "npc_cat_barrel",
         name = "Epstein's blow job",
+        acts = {3}
         steps = {
             {
                 description = "Найди секретный проход и заложи бомбу",
@@ -92,6 +97,7 @@ return {
     q_pandas = {
         giver = "npc_brewmaster",
         name = "Три оттенка",
+        acts = {1,2,3}
         steps = {
             {
                 description = "Найди Красного, Зелёного и Синего",
