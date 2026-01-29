@@ -137,8 +137,8 @@
     "MovementSpeed"                                       "305"
 
     "AttackCapabilities"                                  "DOTA_UNIT_CAP_RANGED_ATTACK"
-    "AttackDamageMin"                                     "1000"
-    "AttackDamageMax"                                     "1000"
+    "AttackDamageMin"                                     "100"
+    "AttackDamageMax"                                     "100"
     "AttackRange"                                         "150"
     "AttackRate"                                          "1.7"
     "BaseAttackSpeed"                                     "100"
@@ -166,13 +166,16 @@
     "AttributeBaseIntelligence"                           "17"
     "AttributeIntelligenceGain"                           "1.5"
 
+    "AbilityLayout"				                                "6"
+
     "Ability1"                                               "sanya_sprint"
     "Ability2"                                               "sanya_towel_dash"
     "Ability3"                                               "sanya_towel_summon"
-    "Ability4"                                               "sanya_towel_summon_return"
-    
-    // "Ability5"                                            "sohei_wholeness_of_body"
-    // "Ability6"                                            "sohei_flurry_of_blows"
+    "Ability4"                                               "sanya_towel_root"
+    "Ability5"                                               "sanya_towel_aura_1"
+    "Ability8"                                               "sanya_towel_aura_2"
+    "Ability9"                                               "sanya_towel_aura_3"
+    "Ability10"                                              "sanya_towel_summon_return"
     // "Ability7"                                            "sohei_innate_oaa"
     // "Ability8"                                            "generic_hidden"
     // "Ability9"                                            "generic_hidden"

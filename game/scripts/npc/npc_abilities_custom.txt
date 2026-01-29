@@ -56,10 +56,94 @@
 		"MaxLevel"                      "1"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
-		"AbilityTextureName"            "phantom_lancer_doppelwalk"
+		"AbilityTextureName"            "dragon_knight_breathe_fire"
 		
 		"AbilityCooldown"               "5.0" // кд для телепортации к ноге
 		"AbilityManaCost"               "0"
 		"AbilityCastRange"        		"700"
 	}
+	"sanya_towel_root"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/sanya_towel_root"
+		"MaxLevel"                      "4"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"            "tusk_snowball"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityCooldown"               "5.0" 
+		"AbilityCastPoint"      		"0.3"
+		"AbilityManaCost"               "0"
+		"AbilityCastRange"        		"1000"
+		"AoERadius"               		"300"
+
+		"AbilityValues"
+		{
+			"aoe_radius"				"150 300 450 600"
+			"duration"					"1.0 2.0 3.0 4.0"
+			"damage_amp_pct"			"20 30 40 50"
+		}
+	}
+	"sanya_towel_aura_1"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/sanya_towel_aura_1"
+		"MaxLevel"                      "4"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"            "roshan_spell_block"
+
+		"AbilityCooldown"               "0" 
+		"AbilityManaCost"               "0"
+
+		"AbilityValues"
+		{
+			"radius"					"300 400 500 600"
+			"hp_regen"					"10.0 20.0 30.0 40.0"
+		}
+	}
+
+	"sanya_towel_aura_2"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/sanya_towel_aura_2"
+		"MaxLevel"                      "4"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"            "tusk_snowball"
+
+		"AbilityCooldown"               "0" 
+		"AbilityManaCost"               "0"
+
+
+		"AbilityValues"
+		{
+			"radius"					"300 400 500 600"
+			"bash_chance"				"10.0 20.0 30.0 40.0"
+		}
+	}
+
+	"sanya_towel_aura_3"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/sanya_towel_aura_3"
+		"MaxLevel"                      "4"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"            "jakiro_liquid_fire"
+
+		"AbilityCooldown"               "0" 
+		"AbilityManaCost"               "0"
+
+
+		"AbilityValues"
+		{
+			"radius"					"300 400 500 600"
+			"miss_chance"				"10.0 20.0 30.0 40.0"
+			"speed_bonus"				"100 200 300 400"
+		}
+	}
+	
 }
