@@ -1,4 +1,4 @@
-Dresser = Dresser or class {}
+Dresser = Dresser or {}
 
 local function AttachCustomWearable(hero, modelPath)
     if not IsServer() or not hero then return end
@@ -11,8 +11,7 @@ local function AttachCustomWearable(hero, modelPath)
     return wearable
 end
 
-function Dresser:Init(game)
-    self.game = game
+function Dresser:Init()
     self.classWearables = {
         ["npc_dota_hero_sanya"] = {
             "models/sanya/wearables/sanya_armor_casual.vmdl"

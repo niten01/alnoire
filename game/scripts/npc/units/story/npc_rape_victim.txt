@@ -1,0 +1,12 @@
+"DOTAUnits"
+{
+	"npc_rape_victim" 
+	{
+		"Model"						"models/heroes/sniper/sniper.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"Level"						"1"
+		"ModelScale" 				"1.5"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"				
+	}
+}

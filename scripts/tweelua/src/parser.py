@@ -34,6 +34,8 @@ def _parse_links(text: str) -> tuple[str, List[Link]]:
             raw = m.group(0)
             target = m.group("target")
             display = m.group("display") or target
+            if len(target.strip()) == 0:
+                raise ParseError(f"Empty link target: {text}")
             actions_raw = m.group("actions") or None
             actions = []
             if actions_raw:

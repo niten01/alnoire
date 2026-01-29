@@ -11,6 +11,8 @@ class LuaEmitter:
             return str(val)
         elif type(val) is bool:
             return "true" if val else "false"
+        elif str(val).lower() in ["active", "inactive", "rejected", "completed"]:
+            return f"QuestStatus.{str(val).upper()}"
         return f'"{str(val)}"'
 
     def _datadict_to_dict(self, datadict: DataDict) -> dict:
@@ -56,13 +58,19 @@ class LuaEmitter:
             self._emit_one_node(id)
         self.lines.append("},")
 
+    def _emit_entrypoint(self, node_id: str, entrypoint: Entrypoint):
+        self.lines.append(f"{node_id} = {{")
+        self.lines.append(f"priority = {entrypoint.priority},")
+        self.lines.append("conditions = {")
+        for condition in entrypoint.conditions:
+            self._emit_datadict_oneline(condition)
+        self.lines.append("},")
+        self.lines.append("},")
+
     def _emit_entries(self):
         self.lines.append("entries = {")
-        for node_id, conditions in self.story.entries.items():
-            self.lines.append(f"{node_id} = {{")
-            for condition in conditions:
-                self._emit_datadict_oneline(condition)
-            self.lines.append("},")
+        for node_id, entrypoint in self.story.entries.items():
+            self._emit_entrypoint(node_id, entrypoint)
         self.lines.append("},")
 
     def emit(self):

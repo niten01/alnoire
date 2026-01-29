@@ -226,14 +226,16 @@ end
 
 function barebones:InitModules()
     self.modules = {
-        spawnManager = require('modules.spawn_manager')(self),
-        dresser = require('modules.dresser')(self),
-        chatCommand = require('modules.chatcommand')(self),
-        quest = require('modules.quest.quest')(self),
-        dialogue = require('modules.dialogue')(self),
-        music = require('modules.music')(self),
-        clashgame = require('modules.minigames.clashgame')(self),
+        require('modules.spawn_manager'),
+        require('modules.entity_data'),
+        require('modules.global_state'),
+        require('modules.dresser'),
+        require('modules.chatcommand'),
+        require('modules.music'),
+        require('modules.quest.quest'),
+        require('modules.dialogue.dialogue'),
+        require('modules.minigames.clashgame'),
     }
 
-    for _, sys in pairs(self.modules) do sys:Init(self) end
+    for _, sys in ipairs(self.modules) do sys:Init() end
 end

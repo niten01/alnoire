@@ -34,10 +34,16 @@ class Passage:
 
 
 @dataclass
+class Entrypoint:
+    priority: int
+    conditions: List[DataDict]
+
+
+@dataclass
 class Story:
     title: str | None = None
     passages: Dict[str, Passage] = field(default_factory=dict)
-    entries: Dict[str, List[DataDict]] = field(default_factory=dict)
+    entries: Dict[str, List[Entrypoint]] = field(default_factory=dict)
 
     def add(self, passage: Passage):
         self.passages[passage.name] = passage

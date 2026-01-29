@@ -1,0 +1,10 @@
+"DOTAUnits"
+{
+	"npc_blue_prince" 
+	{
+		"Model"						"models/items/tiny/lionheart_kings_moving_castle_t4/lionheart_kings_moving_castle_t4.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.5"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}

@@ -1,4 +1,4 @@
-Music = Music or class {}
+Music = Music or {}
 
 local EPS = 0.001
 
@@ -12,8 +12,7 @@ function PlayerMusicState:constructor()
     self.customMusic = nil
 end
 
-function Music:Init(game)
-    self.game = game
+function Music:Init()
     self.musicState = {}
     for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
         self.musicState[playerID] = PlayerMusicState()

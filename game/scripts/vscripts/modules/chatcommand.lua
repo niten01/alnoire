@@ -10,7 +10,7 @@ Usage:
 created by Zarnotox with a lot of constructive help from the mod data guys https://discord.gg/Z7eCcGT (THIS IS NOT THE OAA DISCORD, THIS IS THE MODDATA DISCORD. YOU DID NOT FIND THE SECRET. check it out!)
 ]]
 
-ChatCommand = ChatCommand or class({})
+ChatCommand = ChatCommand or {}
 
 function ChatCommand:Init()
   GameEvents:OnPlayerUsedChat(bind(self.OnPlayerChat, self))

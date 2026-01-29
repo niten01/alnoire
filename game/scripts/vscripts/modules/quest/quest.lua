@@ -1,4 +1,4 @@
-Quest = Quest or class {}
+Quest = Quest or {}
 
 --[[
 --  Quest format:
@@ -25,9 +25,8 @@ local Evaluators = require('modules.quest.evaluators')
 
 local OnQuestCompleteEvent = CreateGameEvent 'OnQuestComplete'
 
-function Quest:Init(game)
+function Quest:Init()
   DebugPrint("[ALNOIRE] Initializing Quest module")
-  self.game = game
   self.quests = require("data.quests")
 
   DebugPrint("[ALNOIRE] Loaded " .. TableLength(self.quests) .. " quests")

@@ -4,13 +4,13 @@ OnTowerKilled = CreateGameEvent('OnTowerKilled')
 OnKingTowerKilled = CreateGameEvent('OnKingTowerKilled')
 OnClashGameEnd = CreateGameEvent('OnClashGameEnd')
 
-ClashGame = ClashGame or class {}
+ClashGame = ClashGame or {}
 
 ClashGame.isActive = false
 
 
 
-function ClashGame:Init(game)
+function ClashGame:Init()
     self.config = {
         {point = "spawn_radiant_left", team = DOTA_TEAM_GOODGUYS, target = "spawn_mega_left"},
         {point = "spawn_radiant_right", team = DOTA_TEAM_GOODGUYS, target = "spawn_mega_right"},

@@ -6,8 +6,11 @@ import re
 ENTRY_TYPE_FIELD_PATTERNS = {
     "quest": ["questID"],
     "var": ["var", "value"],
-    "bean": ["beat"],
+    "ent_var": ["ent_var", "value"],
+    "visit": ["visited"],
+    "beat": ["beat"],
     "trigger": ["trigger"],
+    "interact": ["interact"],
 }
 
 
@@ -59,12 +62,20 @@ class StoryTransformer:
 
     def _add_entries_from(self, passage: Passage):
         conditions = []
+        priority = 0
         for tag in passage.tags:
             if tag.type == "when":
-                condition_type = self._detect_entry_condition_type(tag)
-                conditions.append(DataDict(condition_type, tag.fields))
+                try:
+                    condition_type = self._detect_entry_condition_type(tag)
+                    conditions.append(DataDict(condition_type, tag.fields))
+                except TransformError as e:
+                    raise TransformError(
+                        f'Failed to add entry from: "{passage.name}". Failed tag: {tag}\n->Exception:{e}'
+                    )
+            elif tag.type == "priority":
+                priority = int(tag.fields["priority"])
         if len(conditions) > 0:
-            self.story.entries[passage.name] = conditions
+            self.story.entries[passage.name] = Entrypoint(priority, conditions)
 
     def _try_propagate_speaker(self, passage: Passage):
         if not passage.speaker:
@@ -77,13 +88,13 @@ class StoryTransformer:
             self._try_propagate_speaker(next)
 
     def _set_speaker(self, passage: Passage):
-        speakers = [t for t in passage.tags if t.type == "speaker"]
-        if len(speakers) > 1:
+        speaker_tags = [t for t in passage.tags if t.type == "speaker"]
+        if len(speaker_tags) > 1:
             raise TransformError(
                 f'More than 1 speaker tag found in node: "{passage.name}"'
             )
-        if len(speakers) != 0:
-            passage.speaker = speakers[0]
+        if len(speaker_tags) != 0:
+            passage.speaker = speaker_tags[0].fields["speaker"]
 
     def transform(self) -> Story:
         for name in list(self.story.passages.keys()):

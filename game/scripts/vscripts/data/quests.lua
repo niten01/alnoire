@@ -23,7 +23,7 @@ return {
             },
         }
     },
-     q_nigger = {
+    q_nigger = {
         giver = "npc_nig",
         name = "O'Block",
         steps = {
@@ -41,7 +41,7 @@ return {
             },
         }
     },
-     q_ogres = {
+    q_ogres = {
         giver = "npc_ogre_magi",
         name = "Братство и ум",
         steps = {
@@ -59,7 +59,7 @@ return {
             },
         }
     },
-     q_island_escape = {
+    q_island_escape = {
         giver = "trigger_Epstein",
         name = "Побег от кумира",
         steps = {
@@ -69,9 +69,9 @@ return {
                     { type = "come", trigger = "trigger_tp_at_home" }
                 }
             },
-        }            
+        }
     },
-         q_island_explosion = {
+    q_island_explosion = {
         giver = "npc_cat_barrel",
         name = "Epstein's blow job",
         steps = {
@@ -96,10 +96,10 @@ return {
             {
                 description = "Найди Красного, Зелёного и Синего",
                 objectives = {
-                    { type = "talk", npc = "npc_red" }
-                    { type = "talk", npc = "npc_green" }
-                    { type = "talk", npc = "npc_blue" }
-                    
+                    { type = "talk", npc = "npc_red" },
+                    { type = "talk", npc = "npc_green" },
+                    { type = "talk", npc = "npc_blue" },
+
                 }
             },
             {
@@ -117,7 +117,7 @@ return {
             {
                 description = "Найди предвестника апокалипсиса в Заброшенном лесу и узнай что грядёт",
                 objectives = {
-                    { type = "talk", npc = "npc_witch_doctor" }        
+                    { type = "talk", npc = "npc_witch_doctor" }
                 }
             },
             {
@@ -140,5 +140,5 @@ return {
             },
         }
     },
-    
+
 }
