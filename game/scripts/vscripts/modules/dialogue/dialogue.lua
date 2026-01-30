@@ -52,15 +52,37 @@ function Dialogue:Init()
     TableLength(self.dialogueGraph) .. " dialogue nodes with " .. TableLength(self.entryPoints) .. " entry points.")
 end
 
-function Dialogue:StartDialogueForAll(startNode)
+function Dialogue:StartDialogueForAll(startNodeID)
+  if not self.dialogueGraph[startNodeID] then return end
+
+  self:TrySetFirstMet(startNodeID)
+
   for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
     if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetPlayer(playerID) then
-      self:ShowDialogueNode(playerID, startNode)
+      self:ShowDialogueNode(playerID, startNodeID)
     end
   end
   OnDialogueStartEvent({
-    startNode = startNode
+    startNode = startNodeID
   })
+end
+
+function Dialogue:TrySetFirstMet(startNodeID)
+  local entrypoint = self.entryPoints[startNodeID]
+  if entrypoint then
+    for _, condition in ipairs(entrypoint.conditions) do
+      local npcName = condition.beat or condition.interact or (condition.trigger and condition.npc)
+      if not npcName then goto continue end
+      local data = EntityData:ByName(npcName)
+      if not data then
+        data = EntityData:AddEntity("npc", npcName, {})
+      end
+
+      data.first_met_cur_act = true;
+      data.first_met_cur_global = true;
+      ::continue::
+    end
+  end
 end
 
 function Dialogue:ShowDialogueNode(playerID, nodeID)
@@ -187,10 +209,10 @@ function Dialogue:OnQueryUpdate(_, args)
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
 
   -- interact
-  local dialogue = self:GetDialogueNodeBestMatch(playerID, { { type = "interact", interact = "npc_blue_prince" } })
-  if dialogue then
+  local nodeID = self:GetDialogueNodeBestMatch(playerID, { { type = "interact", interact = "npc_blue_prince" } })
+  if nodeID then
     PlayerResource:ResetSelection(playerID)
-    self:StartDialogueForAll(dialogue)
+    self:StartDialogueForAll(nodeID)
   end
 
   OnUnitInteractEvent({ playerID = playerID, unit = unit })

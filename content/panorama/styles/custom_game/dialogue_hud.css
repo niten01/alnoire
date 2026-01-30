@@ -43,8 +43,6 @@
   world-blur: gaussian(60, 60, 60);
 }
 
-/* Panorama supports world-blur + gaussian(...) and transition-property. :contentReference[oaicite:2]{index=2} */
-
 /* ===== Letterbox bars ===== */
 .CineBars { width: 100%; height: 100%; }
 

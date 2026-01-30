@@ -1,13 +1,27 @@
 (function () {
     const localPlayerId = Game.GetLocalPlayerID();
+    const blinkItemBG = "#C6A15Bff"
+    let quests = {}
+
+    function GetNewQuests(questlog) {
+        const oldQuests = new Set(Object.values(quests))
+        const newQuests = new Set(Object.values(questlog))
+
+        return new Set([...newQuests].filter(i => !oldQuests.has(i)))
+    }
+
+    Set.prototype.find = function () {
+        return Array.prototype.find.apply([...this], arguments);
+    };
 
     function RenderQuests(questlog) {
         const list = $("#QuestList");
         if (!list) return;
 
+        const newQuests = GetNewQuests(questlog)
         list.RemoveAndDeleteChildren();
 
-        const quests = questlog || {}
+        quests = questlog || {}
 
         const noQuests = $("#NoQuestsLabel")
         if (Object.keys(quests).length == 0) {
@@ -19,6 +33,15 @@
         for (const [_, q] of Object.entries(quests)) {
             const item = $.CreatePanel("Panel", list, "");
             item.AddClass("QuestItem");
+            if (newQuests.find(nq => nq.name == q.name)) {
+                const questTab = $("#QuestTab")
+                item.AddClass("QuestItemBlink")
+                questTab.AddClass("QuestTabBlink")
+                $.Schedule(0.5, () => {
+                    item.RemoveClass("QuestItemBlink")
+                    questTab.RemoveClass("QuestTabBlink")
+                })
+            }
 
             const name = $.CreatePanel("Label", item, "");
             name.AddClass("QuestName");
@@ -55,7 +78,6 @@
     $.Schedule(0.0, RefreshFromNetTable);
 })();
 
-// Make the function name visible to inline XML onactivate="ToggleQuestLog()"
 function ToggleQuestLog() {
     GameUI.CustomUIConfig().ToggleQuestLog();
 }

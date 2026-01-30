@@ -7,13 +7,13 @@ return {
             {
                 description = "Иди на арену",
                 objectives = {
-                    { type = "come", trigger = "trigger_clash_royal" }
+                    { type = "come", trigger = "trigger_clash_arena" }
                 }
             },
             {
                 description = "Уничтожь владения Красного Принца",
                 objectives = {
-                    { type = "kill", npc = "npc_tron" }
+                    { type = "kill", npc = "npc_dota_custom_king_tower_bad" }
                 }
             },
             {

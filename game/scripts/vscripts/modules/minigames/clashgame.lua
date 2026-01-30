@@ -12,29 +12,31 @@ ClashGame.isActive = false
 
 function ClashGame:Init()
     self.config = {
-        {point = "spawn_radiant_left", team = DOTA_TEAM_GOODGUYS, target = "spawn_mega_left"},
-        {point = "spawn_radiant_right", team = DOTA_TEAM_GOODGUYS, target = "spawn_mega_right"},
-        {point = "spawn_dire_left", team = DOTA_TEAM_BADGUYS, target = "agro_for_dire_left"},
-        {point = "spawn_dire_right", team = DOTA_TEAM_BADGUYS, target = "agro_for_dire_right"},
+        { point = "spawn_radiant_left",  team = DOTA_TEAM_GOODGUYS, target = "spawn_mega_left" },
+        { point = "spawn_radiant_right", team = DOTA_TEAM_GOODGUYS, target = "spawn_mega_right" },
+        { point = "spawn_dire_left",     team = DOTA_TEAM_BADGUYS,  target = "agro_for_dire_left" },
+        { point = "spawn_dire_right",    team = DOTA_TEAM_BADGUYS,  target = "agro_for_dire_right" },
     }
 
     self.king_tower_good = nil
     self.king_tower_bad = nil
 
     self.tower_config = {
-        {point = "bad_tower_left", npc = "npc_dota_custom_tower_bad", team = DOTA_TEAM_BADGUYS},
-        {point = "bad_tower_right", npc = "npc_dota_custom_tower_bad", team = DOTA_TEAM_BADGUYS},
-        {point = "bad_tower_king", npc = "npc_dota_custom_king_tower_bad", team = DOTA_TEAM_BADGUYS},
-        {point = "good_tower_right", npc = "npc_dota_custom_tower_good", team = DOTA_TEAM_GOODGUYS},
-        {point = "good_tower_left", npc = "npc_dota_custom_tower_good", team = DOTA_TEAM_GOODGUYS},
-        {point = "good_tower_king", npc = "npc_dota_custom_king_tower_good", team = DOTA_TEAM_GOODGUYS},
-        
+        { point = "bad_tower_left",   npc = "npc_dota_custom_tower_bad",       team = DOTA_TEAM_BADGUYS },
+        { point = "bad_tower_right",  npc = "npc_dota_custom_tower_bad",       team = DOTA_TEAM_BADGUYS },
+        { point = "bad_tower_king",   npc = "npc_dota_custom_king_tower_bad",  team = DOTA_TEAM_BADGUYS },
+        { point = "good_tower_right", npc = "npc_dota_custom_tower_good",      team = DOTA_TEAM_GOODGUYS },
+        { point = "good_tower_left",  npc = "npc_dota_custom_tower_good",      team = DOTA_TEAM_GOODGUYS },
+        { point = "good_tower_king",  npc = "npc_dota_custom_king_tower_good", team = DOTA_TEAM_GOODGUYS },
+
     }
-    
+
     self.good_creep_name = "npc_xavier"
     self.bad_creep_name = "npc_xavier"
     self.mega_creep_name = "mega_sanya"
-    GameEvents:OnClashGameEnter(function(event)
+    GameEvents:OnQuestTrigger(function(event)
+        if event.triggerName ~= "trigger_clash_arena" then return end
+
         if self.isActive then return end
         DebugPrint("[ALNOIRE] Started CLASHGAME")
         self.isActive = true
@@ -44,7 +46,7 @@ function ClashGame:Init()
             if not self.isActive then return nil end
             self:SpawnAllWaves()
             self:SpawnMegaCreep()
-            return 30.0 
+            return 30.0
         end, 20.0)
     end)
 
@@ -80,7 +82,7 @@ function ClashGame:SpawnTowers()
             fwd.z = 0
             unit:FaceTowards(unit:GetAbsOrigin() + fwd * 100)
             unit:SetForwardVector(fwd)
-            
+
             unit:RemoveAllModifiers(0, true, true, true)
             if string.find(unitName, 'king') then
                 unit:AddNewModifier(unit, nil, 'modifier_invulnerable', {})
@@ -90,13 +92,13 @@ function ClashGame:SpawnTowers()
                 else
                     self.king_tower_bad = unit
                 end
-            else unit:AddNewModifier(unit, nil, 'modifier_tower', {})
+            else
+                unit:AddNewModifier(unit, nil, 'modifier_tower', {})
             end
             unit:AddNewModifier(unit, nil, 'modifier_clash_unit', {})
-            
-        else print("No spawner for tower")
+        else
+            print("No spawner for tower")
         end
-
     end
 end
 
@@ -124,19 +126,18 @@ function ClashGame:CreateCreepGroup(spawner, team, targetName)
         if unit then
             if target then
                 unit:SetContextThink("InitialOrder", function()
-                    
                     ExecuteOrderFromTable({
-                        UnitIndex = unit:entindex(), 
-                        OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE, 
-                        Position = target:GetAbsOrigin(), 
-                        Queue = false 
+                        UnitIndex = unit:entindex(),
+                        OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                        Position = target:GetAbsOrigin(),
+                        Queue = false
                     })
 
-                    return nil 
+                    return nil
                 end, 0.1)
 
                 print("Success: Unit " .. self.bad_creep_name .. " sent to target " .. targetName)
-            else 
+            else
                 print("ERROR: target " .. targetName .. " NOT FOUND")
             end
         else
@@ -165,9 +166,9 @@ function ClashGame:SpawnMegaCreep()
         if target then
             unit:SetContextThink("InitialOrder", function()
                 ExecuteOrderFromTable({
-                    UnitIndex = unit:entindex(), 
-                    OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE, 
-                    Position = target:GetAbsOrigin(), 
+                    UnitIndex = unit:entindex(),
+                    OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                    Position = target:GetAbsOrigin(),
                     Queue = false
                 })
                 return nil
@@ -213,7 +214,7 @@ function ClashGame:KillAll()
     table.insert(names_to_kill, self.bad_creep_name)
     table.insert(names_to_kill, self.good_creep_name)
     local units = FindUnitsInRadius(
-        DOTA_TEAM_NEUTRALS,        
+        DOTA_TEAM_NEUTRALS,
         Vector(0, 0, 0),
         nil,
         FIND_UNITS_EVERYWHERE,
@@ -225,7 +226,6 @@ function ClashGame:KillAll()
     )
     for _, unit in pairs(units) do
         if unit and unit:HasModifier('modifier_clash_unit') then
-            print(unit:GetUnitName())
             unit:RemoveAllModifiers(0, true, true, true)
             unit:ForceKill(false)
         end

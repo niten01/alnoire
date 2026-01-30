@@ -43,7 +43,9 @@ return {
         "particles/sanya_towel_aura_blue.vpcf",
 
         "particles/items4_fx/spirit_vessel_damage_blast_burst.vpcf",
-        "particles/econ/items/pugna/pugna_ti9_immortal/pugna_ti9_immortal_netherblast_flash_b.vpcf"
+        "particles/econ/items/pugna/pugna_ti9_immortal/pugna_ti9_immortal_netherblast_flash_b.vpcf",
 
+        "particles/themed_fx/cny_fireworks_rockets_b.vpcf",
+        "particles/sanya_quest_complete_firework.vpcf",
     }
 }

@@ -83,7 +83,7 @@
 			{
 				m_nType = "PF_TYPE_LITERAL"
 				m_nMapType = "PF_MAP_TYPE_DIRECT"
-				m_flLiteralValue = 1000.0
+				m_flLiteralValue = 9999.0
 				m_NamedValue = ""
 				m_nControlPoint = 0
 				m_nScalarAttribute = 3
@@ -199,6 +199,7 @@
 					m_vDomainMaxs = [ 0.0, 0.0 ]
 				}
 			}
+			m_nSetMethod = "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
 		},
 		{
 			_class = "C_INIT_CreateWithinSphereTransform"
