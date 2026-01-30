@@ -34,10 +34,12 @@ return {
         "particles/sanya_sprint_trail.vpcf",
         "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_embers.vpcf",
 
-        "particles/econ/items/treant_protector/treant_ti10_immortal_head/treant_ti10_immortal_overgrowth_cast.vpcf",
         "particles/units/heroes/hero_treant/treant_overgrowth_vines_mid.vpcf",
-
         "particles/units/heroes/hero_treant/treant_overgrowth_cast.vpcf",
+
+        "particles/sanya_towel_aura_green.vpcf",
+        "particles/sanya_towel_aura_red.vpcf",
+        "particles/sanya_towel_aura_blue.vpcf",
 
     }
 }

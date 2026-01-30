@@ -14,3 +14,4 @@ function modifier_sanya_towel_aura_buff_1:DeclareFunctions()
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
     }
 end
+
