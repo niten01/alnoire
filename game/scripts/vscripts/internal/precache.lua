@@ -14,7 +14,8 @@ return {
     models = {
     },
     sounds = {
-        "soundevents/music.vsndevts"
+        "soundevents/music.vsndevts",
+        "sounds/addons/dungeon/boss_bar.vsnd"
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",
@@ -40,6 +41,9 @@ return {
         "particles/sanya_towel_aura_green.vpcf",
         "particles/sanya_towel_aura_red.vpcf",
         "particles/sanya_towel_aura_blue.vpcf",
+
+        "particles/items4_fx/spirit_vessel_damage_blast_burst.vpcf",
+        "particles/econ/items/pugna/pugna_ti9_immortal/pugna_ti9_immortal_netherblast_flash_b.vpcf"
 
     }
 }

@@ -1,3 +1,62 @@
 "DOTAAbilities"
 {
+    "item_sanya_flask"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_sanya_flask"
+        "AbilityTextureName"            "sanya_flask"
+
+        "ItemCost"                      "1"
+        "ItemQuality"                   "artifact"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAM | DECLARE_PURCHASES_IN_SPEECH"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityCooldown"               "3.0"
+
+        "ItemInitialCharges" "3" 
+        "ItemDisplayCharges" "1" 
+        "ItemRequiresCharges" "1" //The active ability needs charges to be used - Urn
+
+        "AbilityValues" 
+        {
+            "hp_regen"                  "200.0"
+            "duration"                  "2.0"
+        }
+    }
+    "item_sanya_flask_upgrade_recipe"
+    {
+        "BaseClass"           "item_datadriven"
+        "ItemRecipe"          "1" 
+        "ItemCost"            "0" 
+        "ItemResult"          "item_sanya_flask_upgrade_1"
+        "ItemRequirements"
+        {
+            "01" "item_sanya_flask"
+        }
+    }
+    "item_sanya_flask_upgrade_1"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_sanya_flask_upgrade_1"
+        "AbilityTextureName"            "sanya_flask_upgrade_1"
+
+        "ItemCost"                      "1"
+        "ItemQuality"                   "artifact"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAM | DECLARE_PURCHASES_IN_SPEECH"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityCooldown"               "3.0"
+
+        "ItemInitialCharges" "5" 
+        "ItemDisplayCharges" "1" 
+        "ItemRequiresCharges" "1" //The active ability needs charges to be used - Urn
+
+        "AbilityValues" 
+        {
+            "hp_regen"                  "300.0"
+            "duration"                  "2.0"
+        }
+    }
 }
