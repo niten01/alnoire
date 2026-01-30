@@ -42,6 +42,7 @@ function EntityData:AddEntity(type, name, initProperties)
     local new = extend({ name = name, type = type }, initProperties)
     self:AddCommonProperties(new)
     self.entities[name] = new
+    return self.entities[name]
 end
 
 function EntityData:ByName(name)

@@ -41,5 +41,7 @@ return {
         "particles/sanya_towel_aura_red.vpcf",
         "particles/sanya_towel_aura_blue.vpcf",
 
+        "particles/themed_fx/cny_fireworks_rockets_b.vpcf",
+        "particles/sanya_quest_complete_firework.vpcf",
     }
 }

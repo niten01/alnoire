@@ -40,35 +40,19 @@ function Quest:Init()
     self:ShowQuestStatus(event, args)
   end)
 
-  GameEvents:OnDialogueChoice(function(event)
-    local playerID = event.playerID
-
-    local objectives = self:GetActiveObjectivesByType(playerID, "talk")
-    for questID, questObjectives in pairs(objectives) do
-      for _, obj in ipairs(questObjectives) do
-        if Evaluators.TalkEvaluator(questID, obj, event) then
-          self:CompleteObjective(playerID, questID, obj)
-        end
-      end
+  ChatCommand:LinkDevCommand("-questreset", function(event)
+    self.playerQuestStates = {}
+    for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+      self.playerQuestStates[playerID] = PlayerQuestState(self.quests)
     end
-
-    -- quest can start here
-    local allActions = event.choice.actions
-    PrintTable(allActions)
-    if not allActions then return end
-
-    for _, action in ipairs(allActions) do
-      self:HandleAction(playerID, action)
-    end
+    self:UpdateQuestlog(event.playerID)
   end)
 
-  -- GameEvents:OnEntityKilled(function(event)
-  --   local objectives = activeObjectivesByType("kill")
-  --   for _, obj in ipairs(objectives) do
-  --     if not obj.current then obj.current = 0 end
-  --   end
-  -- end
-  -- )
+  ChatCommand:LinkDevCommand("-a", function(event)
+    self:EmitQuestCompleteParticles(event.playerID)
+  end)
+
+  self:RegisterEvaluators()
 end
 
 function Quest:StartQuestForAll(questID)
@@ -115,7 +99,6 @@ function Quest:CompleteObjective(playerID, questID, objective)
   local activeStep = quest.steps[state.stepIdx]
   if not activeStep then return end
 
-  -- TODO mark objectives
   objective.complete = true
 
   local hasIncomplete = false
@@ -129,12 +112,14 @@ function Quest:CompleteObjective(playerID, questID, objective)
     state.stepIdx = state.stepIdx + 1
     DebugPrint(state.stepIdx, TableLength(quest.steps))
     if state.stepIdx > TableLength(quest.steps) then
-      self:FinishQuestForAll(questID)
+      self:CompleteQuestForAll(questID)
     end
   end
+
+  self:UpdateQuestlog(playerID)
 end
 
-function Quest:FinishQuestForAll(questID)
+function Quest:CompleteQuestForAll(questID)
   if not self.quests[questID] then return end
   local quest = self.quests[questID]
 
@@ -147,9 +132,29 @@ function Quest:FinishQuestForAll(questID)
     OnQuestCompleteEvent({
       quest = quest
     })
+    self:EmitQuestCompleteParticles(playerID)
     Notifications:Top(playerID, { text = "Quest complete \"" .. quest.name .. "\"", duration = 5 })
     ::continue::
   end
+end
+
+function Quest:EmitQuestCompleteParticles(playerID)
+  if not IsServer() then return end
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  if not hero then return end
+  local pfx1 = ParticleManager:CreateParticle(
+    "particles/themed_fx/cny_fireworks_rockets_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+  ParticleManager:SetParticleControl(pfx1, 0, hero:GetAbsOrigin())
+
+  local pfx2 = ParticleManager:CreateParticle(
+    "particles/sanya_quest_complete_firework.vpcf",
+    PATTACH_ABSORIGIN_FOLLOW, hero)
+  ParticleManager:SetParticleControl(pfx2, 0, hero:GetAbsOrigin())
+
+  Timers:CreateTimer(10, function()
+    ParticleManager:ReleaseParticleIndex(pfx1)
+    ParticleManager:ReleaseParticleIndex(pfx2)
+  end)
 end
 
 function Quest:GetQuestState(playerID, questID)
@@ -180,7 +185,7 @@ function Quest:HandleAction(playerID, action)
     local state = self.playerQuestStates[playerID]
     state.status = QuestStatus.REJECTED
   elseif action.type == "quest_end" then
-    self:FinishQuestForAll(action.questID)
+    self:CompleteQuestForAll(action.questID)
   end
 end
 
@@ -203,6 +208,55 @@ function Quest:ShowQuestStatus(event, args)
     printOneQuest(questID)
   end
   DebugPrint("\n\n")
+end
+
+function Quest:RegisterEvaluators()
+  local function ForEachActiveObjectiveOfType(playerID, type, fn)
+    local objectives = self:GetActiveObjectivesByType(playerID, type)
+    for questID, questObjectives in pairs(objectives) do
+      for _, obj in ipairs(questObjectives) do
+        fn(questID, obj)
+      end
+    end
+  end
+
+  GameEvents:OnDialogueChoice(function(event)
+    local playerID = event.playerID
+
+    ForEachActiveObjectiveOfType(playerID, "talk", function(questID, objective)
+      if Evaluators.TalkEvaluator(questID, objective, event) then
+        self:CompleteObjective(playerID, questID, objective)
+      end
+    end)
+
+    -- quest can start here
+    local allActions = event.choice.actions
+    if not allActions then return end
+
+    for _, action in ipairs(allActions) do
+      self:HandleAction(playerID, action)
+    end
+  end)
+
+  GameEvents:OnEntityKilled(function(event)
+    for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+      ForEachActiveObjectiveOfType(playerID, "kill", function(questID, objective)
+        if Evaluators.KillEvaluator(objective, event) then
+          self:CompleteObjective(playerID, questID, objective)
+        end
+      end)
+    end
+  end
+  )
+
+  GameEvents:OnQuestTrigger(function(event)
+    local playerID = event.playerID
+    ForEachActiveObjectiveOfType(playerID, "come", function(questID, objective)
+      if Evaluators.TriggerEvaluator(objective, event) then
+        self:CompleteObjective(playerID, questID, objective)
+      end
+    end)
+  end)
 end
 
 return Quest

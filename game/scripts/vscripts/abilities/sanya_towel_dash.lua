@@ -1,13 +1,13 @@
 sanya_towel_dash = class {}
 
-LinkLuaModifier("modifier_arc_motion_controller", "modifiers/abilities/modifier_arc_motion_controller",
+LinkLuaModifier("modifier_towel_dash", "modifiers/abilities/modifier_towel_dash",
   LUA_MODIFIER_MOTION_BOTH)
 
 function sanya_towel_dash:OnSpellStart()
   local caster = self:GetCaster()
   local target = self:GetCursorPosition()
 
-  if caster:HasModifier("modifier_arc_motion_controller") then
+  if caster:HasModifier("modifier_towel_dash") then
     return
   end
 
@@ -35,5 +35,5 @@ function sanya_towel_dash:OnSpellStart()
     travelled = 0,
     speed = speed
   }
-  caster:AddNewModifier(caster, self, "modifier_arc_motion_controller", { duration = duration })
+  caster:AddNewModifier(caster, self, "modifier_towel_dash", { duration = duration })
 end
