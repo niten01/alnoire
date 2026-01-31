@@ -86,7 +86,7 @@ function SpawnManager:GetRespawnPosByRespawnPointName(respawnPointName)
     end
 
     if TableLength(respawnPointEntities) == 0 then
-        error("No respawn points found for " .. respawnPointName)
+        DebugPrint("[???] No respawn points found for " .. respawnPointName)
         return nil
     end
     local respawnPos = respawnPointEntities[1]:GetAbsOrigin()
