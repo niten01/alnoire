@@ -25,6 +25,7 @@ function sanya_towel_aura_1:OnUpgrade()
         caster.__active_towel_aura = 1
         if caster.aura_pfx then
             ParticleManager:DestroyParticle(caster.aura_pfx, true)
+            ParticleManager:ReleaseParticleIndex(caster.aura_pfx)
             caster.aura_pfx = nil
         end
         self:CreateAuraParticle()
@@ -37,6 +38,7 @@ end
 function sanya_towel_aura_1:OnSpellStart()
     local caster = self:GetCaster()
     ParticleManager:DestroyParticle(caster.aura_pfx, true)
+    ParticleManager:ReleaseParticleIndex(caster.aura_pfx)
     caster.aura_pfx = nil
     caster.__active_towel_aura = 2
     local aura2 = caster:FindAbilityByName('sanya_towel_aura_2')

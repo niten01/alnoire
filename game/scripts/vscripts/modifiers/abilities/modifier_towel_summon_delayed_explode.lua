@@ -26,24 +26,39 @@ function modifier_towel_summon_delayed_explode:OnCreated()
         end
     end
     local radius = ability:GetSpecialValueFor('radius')
-    self.pfx = ParticleManager:CreateParticle("particles/sanya_towel_aura_red.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+    self.pfx = ParticleManager:CreateParticle("particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_marker_ring_outer_hot.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+    self.pfx_2 = ParticleManager:CreateParticle("particles/econ/items/phoenix/eye_of_the_sun/phoenix_supernova_egg_eye_sun_glow_loadout.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
     ParticleManager:SetParticleControl(self.pfx, 1, Vector(radius, 0, 0))
+    ParticleManager:SetParticleControl(self.pfx_2, 1, Vector(0, 0, 0))
+    caster:StartGesture( ACT_DOTA_ATTACK )
 end
 
 function modifier_towel_summon_delayed_explode:OnDestroy()
     if not IsServer() then return end
     if self.pfx then
         ParticleManager:DestroyParticle(self.pfx, true)
+        ParticleManager:ReleaseParticleIndex(self.pfx)
         self.pfx = nil
     end
 
+    if self.pfx_2 then
+        ParticleManager:DestroyParticle(self.pfx_2, true)
+        ParticleManager:ReleaseParticleIndex(self.pfx_2)
+        self.pfx_2 = nil
+    end
+
+
     local caster = self:GetParent()
+    caster:RemoveGesture( ACT_DOTA_ATTACK )
     local ability = self:GetAbility()
     local radius = ability:GetSpecialValueFor('radius')
     local damage = ability:GetSpecialValueFor('damage')
     local pfx_exp = ParticleManager:CreateParticle("particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact.vpcf", PATTACH_ABSORIGIN, caster)
+    local pfx_exp_2 = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_death_dust.vpcf", PATTACH_ABSORIGIN, caster)
     ParticleManager:SetParticleControl(pfx_exp, 1, Vector(radius, 0, 0))
+    ParticleManager:SetParticleControl(pfx_exp_2, 1, Vector(radius, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx_exp)
+    ParticleManager:ReleaseParticleIndex(pfx_exp_2)
     local enemies = FindUnitsInRadius(
         caster:GetTeamNumber(),
         caster:GetAbsOrigin(),

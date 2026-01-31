@@ -35,8 +35,9 @@ return {
         "particles/sanya_sprint_trail.vpcf",
         "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_embers.vpcf",
 
+        -- towel root
         "particles/units/heroes/hero_treant/treant_overgrowth_vines_mid.vpcf",
-        "particles/units/heroes/hero_treant/treant_overgrowth_cast.vpcf",
+        "particles/econ/items/treant_protector/treant_ti10_immortal_head/treant_ti10_immortal_overgrowth_cast.vpcf",
 
         "particles/sanya_towel_aura_green.vpcf",
         "particles/sanya_towel_aura_red.vpcf",
@@ -48,6 +49,10 @@ return {
         "particles/themed_fx/cny_fireworks_rockets_b.vpcf",
         "particles/sanya_quest_complete_firework.vpcf",
 
+        -- summon explosion
         "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact.vpcf",
+        "particles/econ/items/phoenix/eye_of_the_sun/phoenix_supernova_egg_eye_sun_glow_loadout.vpcf",
+        "particles/units/heroes/hero_phoenix/phoenix_supernova_death_dust.vpcf",
+        "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_marker_ring_outer_hot.vpcf"
     }
 }

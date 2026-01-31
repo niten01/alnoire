@@ -19,7 +19,7 @@ function sanya_towel_root:OnSpellStart()
     local duration = self:GetSpecialValueFor("duration")
     local pfx = ParticleManager:CreateParticle("particles/econ/items/treant_protector/treant_ti10_immortal_head/treant_ti10_immortal_overgrowth_cast.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, point)
-    ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 1, 1))
+    ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx)
 
     local enemies = FindUnitsInRadius(

@@ -95,7 +95,7 @@ end
 
 function SpawnManager:OnEntityKilled(event)
     local hero = event.killed_unit
-    if not hero or not hero:IsRealHero() then return end
+    if not hero or not hero:IsRealHero() or hero:IsSpiritBearCustom() then return end
 
     local playerID =  hero:GetPlayerOwnerID()
     hero:SetRespawnPosition(self.playerRespawnPos[playerID])
