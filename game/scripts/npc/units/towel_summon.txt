@@ -4,13 +4,8 @@
 	{
 		// General
 		//----------------------------------------------------------------
-<<<<<<< HEAD
 		"Model"						"models/heroes/lone_druid/spirit_bear_rubick.vmdl"	// Model.
 		"BaseClass"					"npc_dota_lone_druid_bear"
-=======
-		"Model"						"models/towel_summon/sanya_towel_summon.vmdl"	// Model.
-		"BaseClass"					"npc_dota_creature"
->>>>>>> 2fbb069e8b5c4d3602c4adfdcb9f701a64ca351d
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
