@@ -1,0 +1,1 @@
+towel_summon_dash = class({})

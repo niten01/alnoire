@@ -20,26 +20,28 @@ function modifier_sanya_towel_aura_manager:OnIntervalThink()
         nil,
         aura1:GetSpecialValueFor('radius'),                            
         DOTA_UNIT_TARGET_TEAM_FRIENDLY,   
-        DOTA_UNIT_TARGET_CREEP,            
+        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,            
         DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED,
         FIND_ANY_ORDER,
         false
     )
     for _, summon in pairs(allies) do
-        if caster.__active_towel_aura == 1 and not summon:HasModifier('modifier_sanya_towel_aura_buff_1') then
+        if summon:IsSpiritBearCustom() then
+            if caster.__active_towel_aura == 1 and not summon:HasModifier('modifier_sanya_towel_aura_buff_1') then
             summon:RemoveModifierByName('modifier_sanya_towel_aura_buff_2')
             summon:RemoveModifierByName('modifier_sanya_towel_aura_buff_3')
             summon:AddNewModifier(caster, aura1, 'modifier_sanya_towel_aura_buff_1', {})
-        end
-        if caster.__active_towel_aura == 2 and not summon:HasModifier('modifier_sanya_towel_aura_buff_2') then
-            summon:RemoveModifierByName('modifier_sanya_towel_aura_buff_1')
-            summon:RemoveModifierByName('modifier_sanya_towel_aura_buff_3')
-            summon:AddNewModifier(caster, aura2, 'modifier_sanya_towel_aura_buff_2', {})
-        end
-        if caster.__active_towel_aura == 3 and not summon:HasModifier('modifier_sanya_towel_aura_buff_3') then
-            summon:RemoveModifierByName('modifier_sanya_towel_aura_buff_1')
-            summon:RemoveModifierByName('modifier_sanya_towel_aura_buff_2')
-            summon:AddNewModifier(caster, aura3, 'modifier_sanya_towel_aura_buff_3', {})
+            end
+            if caster.__active_towel_aura == 2 and not summon:HasModifier('modifier_sanya_towel_aura_buff_2') then
+                summon:RemoveModifierByName('modifier_sanya_towel_aura_buff_1')
+                summon:RemoveModifierByName('modifier_sanya_towel_aura_buff_3')
+                summon:AddNewModifier(caster, aura2, 'modifier_sanya_towel_aura_buff_2', {})
+            end
+            if caster.__active_towel_aura == 3 and not summon:HasModifier('modifier_sanya_towel_aura_buff_3') then
+                summon:RemoveModifierByName('modifier_sanya_towel_aura_buff_1')
+                summon:RemoveModifierByName('modifier_sanya_towel_aura_buff_2')
+                summon:AddNewModifier(caster, aura3, 'modifier_sanya_towel_aura_buff_3', {})
+            end
         end
     end
 end

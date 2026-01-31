@@ -29,6 +29,13 @@ particles:
 * particles/units/heroes/hero_marci/marci_rebound_charge_projectile_streak.vpcf
 
 ### towel_master
+саммон - 4 лвлва    : 1 -> 0 0 0 
+                    : 2 -> 1 1 0 
+                    : 3 -> 2 2 1
+                    : 4 -> 2 2 2
+остальные - 3 лвла
+блинк - 1
+
 дальник, самонер
 
 тычки замедляют

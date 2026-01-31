@@ -173,7 +173,7 @@ end
 
 -- This function checks if a given unit is Lone Druid's Spirit Bear, returns boolean value;
 function CDOTA_BaseNPC:IsSpiritBearCustom()
-  return string.find(self:GetUnitName(), "npc_dota_lone_druid_bear")
+  return string.find(self:GetUnitName(), "towel_summon")
 end
 
 function IsMonkeyKingCloneCustom(entity)

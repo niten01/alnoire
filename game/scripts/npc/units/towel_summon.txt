@@ -5,7 +5,7 @@
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/lone_druid/spirit_bear_rubick.vmdl"	// Model.
-		"BaseClass"					"npc_dota_creature"
+		"BaseClass"					"npc_dota_lone_druid_bear"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
@@ -13,10 +13,10 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability1"					"towel_summon_overpower"			
+		"Ability2"					"towel_summon_dash"			
+		"Ability3"					"towel_summon_explosion"			
+		//"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -63,6 +63,6 @@
 		"VisionNighttimeRange"		"400"		// Range of vision at night time.
 
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		"HasInventory"              "1"
+		"HasInventory"              "0"
 	}
 }

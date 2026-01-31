@@ -21,6 +21,9 @@ end
 function modifier_summon_distance_check:OnIntervalThink()
     local unit = self:GetParent()
     local owner = unit:GetOwner()
+    while unit:GetLevel() < owner:GetLevel() do
+        unit:HeroLevelUp(false)
+    end
     local ability = self:GetAbility()
     if not owner or not owner:IsAlive() or not ability then return end
 
@@ -66,5 +69,4 @@ function modifier_summon_distance_check:OnDeath(params)
             end
         end
     end
-    
 end

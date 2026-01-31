@@ -15,7 +15,7 @@ return {
     },
     sounds = {
         "soundevents/music.vsndevts",
-        "sounds/addons/dungeon/boss_bar.vsnd"
+        "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",
@@ -47,5 +47,7 @@ return {
 
         "particles/themed_fx/cny_fireworks_rockets_b.vpcf",
         "particles/sanya_quest_complete_firework.vpcf",
+
+        "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact.vpcf",
     }
 }
