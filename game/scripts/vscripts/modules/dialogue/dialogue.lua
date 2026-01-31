@@ -59,6 +59,8 @@ function Dialogue:StartDialogueForAll(startNodeID)
 
   for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
     if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetPlayer(playerID) then
+      local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+      CenterCameraOnUnit(playerID, hero)
       self:ShowDialogueNode(playerID, startNodeID)
     end
   end
@@ -127,7 +129,7 @@ function Dialogue:GetPlayerCurrentNode(playerID)
 end
 
 local ConditionEval = require('modules.dialogue.condition_evaluator')
-function Dialogue:GetDialogueNodeBestMatch(playerID, premetConditions)
+function Dialogue:GetDialogueNodeBestMatchEntrypoint(playerID, premetConditions)
   local matches = {}
   for nodeID, entrypoint in pairs(self.entryPoints) do
     entrypoint.nodeID = nodeID
@@ -152,7 +154,7 @@ function Dialogue:GetDialogueNodeBestMatch(playerID, premetConditions)
     Notifications:TopToAll({ text = text, duration = 10000 })
   end
 
-  return matches[1].nodeID
+  return matches[1]
 end
 
 function Dialogue:OnDialogueChoice(_, args)
@@ -209,10 +211,11 @@ function Dialogue:OnQueryUpdate(_, args)
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
 
   -- interact
-  local nodeID = self:GetDialogueNodeBestMatch(playerID, { { type = "interact", interact = "npc_blue_prince" } })
-  if nodeID then
+  local entrypoint = self:GetDialogueNodeBestMatchEntrypoint(playerID,
+    { { type = "interact", interact = unit:GetUnitName() } })
+  if entrypoint then
     PlayerResource:ResetSelection(playerID)
-    self:StartDialogueForAll(nodeID)
+    self:StartDialogueForAll(entrypoint.nodeID)
   end
 
   OnUnitInteractEvent({ playerID = playerID, unit = unit })

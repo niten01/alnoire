@@ -142,18 +142,14 @@ function Quest:EmitQuestCompleteParticles(playerID)
   if not IsServer() then return end
   local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
   if not hero then return end
-  local pfx1 = ParticleManager:CreateParticle(
-    "particles/themed_fx/cny_fireworks_rockets_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-  ParticleManager:SetParticleControl(pfx1, 0, hero:GetAbsOrigin())
 
-  local pfx2 = ParticleManager:CreateParticle(
+  local pfx = ParticleManager:CreateParticle(
     "particles/sanya_quest_complete_firework.vpcf",
     PATTACH_ABSORIGIN_FOLLOW, hero)
-  ParticleManager:SetParticleControl(pfx2, 0, hero:GetAbsOrigin())
+  ParticleManager:SetParticleControl(pfx, 0, hero:GetAbsOrigin())
 
   Timers:CreateTimer(10, function()
-    ParticleManager:ReleaseParticleIndex(pfx1)
-    ParticleManager:ReleaseParticleIndex(pfx2)
+    ParticleManager:ReleaseParticleIndex(pfx)
   end)
 end
 

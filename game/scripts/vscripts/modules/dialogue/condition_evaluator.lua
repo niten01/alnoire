@@ -54,8 +54,16 @@ function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)
     for _, condition in ipairs(conditions) do
         local skip = false
         for _, premetCondition in ipairs(premetConditions) do
-            if equals(premetCondition, condition) then
+            local contains = true
+            for k, v in pairs(premetCondition) do
+                if condition[k] ~= v then
+                    contains = false
+                    break
+                end
+            end
+            if contains then
                 skip = true
+                break
             end
         end
         if skip then goto continue end

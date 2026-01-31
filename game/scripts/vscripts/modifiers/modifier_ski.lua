@@ -13,6 +13,13 @@ function modifier_ski:OnCreated(kv)
     self.current_speed = self.min_speed
 
     self:StartIntervalThink(0.005)
+
+    local parent = self:GetParent()
+    self.wearable = SpawnEntityFromTableSynchronous("prop_dynamic", {
+        model = "models/sanya/wearables/sanya_ski.vmdl",
+    })
+
+    self.wearable:FollowEntity(parent, true)
 end
 
 function modifier_ski:OnIntervalThink()
@@ -83,4 +90,5 @@ end
 function modifier_ski:OnDestroy()
     if not IsServer() then return end
     FindClearSpaceForUnit(self:GetParent(), self:GetParent():GetAbsOrigin(), true)
+    self.wearable:RemoveSelf()
 end

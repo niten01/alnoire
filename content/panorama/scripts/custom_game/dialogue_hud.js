@@ -17,8 +17,12 @@
   }
 
   function setOpen(isOpen) {
-    if (isOpen) root.AddClass("IsOpen");
-    else root.RemoveClass("IsOpen");
+    if (isOpen) {
+      root.AddClass("IsOpen");
+    }
+    else {
+      root.RemoveClass("IsOpen");
+    }
 
     GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, !isOpen);
     GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, !isOpen);

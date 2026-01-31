@@ -21,16 +21,21 @@ return {
             npc = "npc_blue_prince",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_tormentor = {
+            npc = "npc_tormentor",
+            modifiers = { "modifier_story_npc" },
+        },
     },
 
     ------------------------------------------------------------
     --- Zones
     ------------------------------------------------------------
     zone = {
-        zone_forest = { musicSet = "forest" },
-        zone_city = { musicSet = "city" },
-        zone_wastelands = { musicSet = "wastelands" },
-        zone_ghetto = { musicSet = "ghetto" },
+        zone_prologue = { musicSet = "silence", respawnPoint = "respawn_prologue" },
+        zone_forest_1 = { musicSet = "forest", respawnPoint = "respawn_forest_1" },
+        zone_city = { musicSet = "city", respawnPoint = "respawn_city", },
+        zone_wastelands = { musicSet = "wastelands", respawnPoint = "respawn_wastelands" },
+        zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_ghetto" },
     },
 
     ------------------------------------------------------------

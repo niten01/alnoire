@@ -19,6 +19,7 @@ require('triggers/zones')
 require('triggers/ski')
 require('triggers/flask')
 require('triggers/quest_trigger')
+require('triggers/dialogue_trigger')
 
 -- This function initializes the game mode and is called before anyone loads into the game
 -- It can be used to pre-initialize any values/tables that will be needed later
