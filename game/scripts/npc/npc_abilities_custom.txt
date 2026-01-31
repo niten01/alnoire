@@ -58,10 +58,11 @@
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"                    "abilities/sanya_towel_summon_return"
 		"MaxLevel"                      "4"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityTextureName"            "dragon_knight_breathe_fire"
 		
+		"AbilityChannelTime"			"5.0"
 		"AbilityCooldown"               "5.0" // кд для телепортации к ноге
 		"AbilityManaCost"               "0"
 		"AbilityCastRange"        		"700"

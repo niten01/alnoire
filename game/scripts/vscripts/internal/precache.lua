@@ -33,19 +33,28 @@ return {
         "particles/creatures/aghanim/portal_summon_b0a.vpcf",
         "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf",
         "particles/sanya_sprint_trail.vpcf",
+
+
+        -- towel summon return
         "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_embers.vpcf",
+        "particles/econ/events/fall_2021/agh_aura_fall_2021_parent.vpcf",
+        "particles/econ/events/fall_2022/agh/agh_aura_fall2022_lvl2.vpcf",
+        "particles/econ/items/antimage_female/monsterhunter_kirin/antimage_manabreak_slow_body_flash.vpcf",
 
         -- towel root
         "particles/units/heroes/hero_treant/treant_overgrowth_vines_mid.vpcf",
         "particles/econ/items/treant_protector/treant_ti10_immortal_head/treant_ti10_immortal_overgrowth_cast.vpcf",
 
+        -- towel aura's
         "particles/sanya_towel_aura_green.vpcf",
         "particles/sanya_towel_aura_red.vpcf",
         "particles/sanya_towel_aura_blue.vpcf",
 
+        -- flasks
         "particles/items4_fx/spirit_vessel_damage_blast_burst.vpcf",
         "particles/econ/items/pugna/pugna_ti9_immortal/pugna_ti9_immortal_netherblast_flash_b.vpcf",
 
+        -- quests
         "particles/themed_fx/cny_fireworks_rockets_b.vpcf",
         "particles/sanya_quest_complete_firework.vpcf",
 
@@ -53,6 +62,8 @@ return {
         "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact.vpcf",
         "particles/econ/items/phoenix/eye_of_the_sun/phoenix_supernova_egg_eye_sun_glow_loadout.vpcf",
         "particles/units/heroes/hero_phoenix/phoenix_supernova_death_dust.vpcf",
-        "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_marker_ring_outer_hot.vpcf"
+        "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_marker_ring_outer_hot.vpcf",
+
+        
     }
 }

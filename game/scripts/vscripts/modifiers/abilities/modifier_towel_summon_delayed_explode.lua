@@ -9,6 +9,7 @@ function modifier_towel_summon_delayed_explode:CheckState()
     return {
         [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
         [MODIFIER_STATE_DISARMED] = true,
+        [MODIFIER_STATE_ATTACK_IMMUNE] = true,
     }
 end
 
@@ -22,7 +23,9 @@ function modifier_towel_summon_delayed_explode:OnCreated()
     for i = 0, caster:GetAbilityCount() - 1 do
         local abil = caster:GetAbilityByIndex(i)
         if abil then
-            abil:SetActivated(false)
+            if abil:GetAbilityName() ~= "towel_summon_dash" then
+                abil:SetActivated(false)
+            end
         end
     end
     local radius = ability:GetSpecialValueFor('radius')

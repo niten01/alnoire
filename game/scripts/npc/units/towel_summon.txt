@@ -9,7 +9,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"1.2"
+		"ModelScale" 				"1.3"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -37,7 +37,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"40"
-		"HealthBarOffset"			"240"
+		"HealthBarOffset"			"260"
 
 		// Bounty
 		//----------------------------------------------------------------

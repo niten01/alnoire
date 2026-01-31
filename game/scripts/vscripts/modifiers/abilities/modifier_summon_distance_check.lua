@@ -1,4 +1,5 @@
 modifier_summon_distance_check = class({})
+LinkLuaModifier("modifier_towel_summon_custom_stun", "modifiers/abilities/modifier_towel_summon_custom_stun", LUA_MODIFIER_MOTION_NONE)
 
 function modifier_summon_distance_check:IsHidden() return false end
 function modifier_summon_distance_check:IsPurgable() return false end
@@ -39,17 +40,12 @@ function modifier_summon_distance_check:OnIntervalThink()
     local distance = (unit:GetAbsOrigin() - owner:GetAbsOrigin()):Length2D()
 
     if distance > radius then
-        if not unit:HasModifier("modifier_stunned") then
-            unit:AddNewModifier(owner, ability, "modifier_stunned", {duration = -1})
-            self.nfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_stunned.vpcf", PATTACH_OVERHEAD_FOLLOW, unit)
+        if not unit:HasModifier("modifier_towel_summon_custom_stun") then
+            unit:AddNewModifier(owner, ability, "modifier_towel_summon_custom_stun", {duration = -1})
         end
     else
-        if unit:HasModifier("modifier_stunned") then
-            unit:RemoveModifierByName("modifier_stunned")
-            if self.nfx then
-                ParticleManager:DestroyParticle(self.nfx, false)
-                self.nfx = nil
-            end
+        if unit:HasModifier("modifier_towel_summon_custom_stun") then
+            unit:RemoveModifierByName("modifier_towel_summon_custom_stun")
         end
     end
 end
