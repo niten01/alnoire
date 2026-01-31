@@ -5,6 +5,7 @@
 		"Model"						"models/props_gameplay/divine_sentinel/divine_sentinel_10th_anniversary.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"ModelScale" 				"1.5"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"             "0" 
 	}
 }

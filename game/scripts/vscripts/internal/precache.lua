@@ -1,8 +1,15 @@
 return {
     units = {
-        "towel_summon",
         "npc_xavier",
+        "npc_tormentor",
+        "npc_shamanka",
+        "npc_gate_troll_uruk",
+        "npc_gate_troll_biruk",
+        "npc_gate_troll_diruk",
+
         "npc_gorilla",
+
+        "towel_summon",
         "npc_shooter",
         "npc_rape_victim",
         "mega_sanya",
@@ -45,7 +52,6 @@ return {
 
         "particles/items4_fx/spirit_vessel_damage_blast_burst.vpcf",
         "particles/econ/items/pugna/pugna_ti9_immortal/pugna_ti9_immortal_netherblast_flash_b.vpcf",
-
         "particles/themed_fx/cny_fireworks_rockets_b.vpcf",
         "particles/sanya_quest_complete_firework.vpcf",
 

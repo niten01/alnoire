@@ -2356,7 +2356,7 @@ return {
             choices = {
                 {
                     text = [[Начнём дуэль.]],
-                    next = "d_nachnem_duel",
+                    next = nil,
                     actions = {
                         { target = "talk", type = "fight_start" },
                     },
@@ -4464,7 +4464,7 @@ return {
             choices = {
                 {
                     text = [[*Начать битву*]],
-                    next = "d_nachat_bitvu",
+                    next = nil,
                     actions = {
                         { target = "talk", type = "fight_start" },
                     },
@@ -4610,7 +4610,7 @@ return {
             choices = {
                 {
                     text = [[*Начать обороняться.*]],
-                    next = "d_nachat_oboronyatsya",
+                    next = nil,
                     actions = {
                         { target = "kill", type = "(fight_start" },
                     },
@@ -5568,7 +5568,7 @@ return {
             choices = {
                 {
                     text = [[И не поспоришь.]],
-                    next = "d_i_ne_posporish",
+                    next = nil,
                     actions = {
                         { target = "kill", type = "fight_start" },
                     },
@@ -6459,7 +6459,7 @@ return {
             choices = {
                 {
                     text = [[Начнём.]],
-                    next = "d_nachnem_duel",
+                    next = nil,
                     actions = {
                         { target = "talk", type = "fight_start" },
                     },

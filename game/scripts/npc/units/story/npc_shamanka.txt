@@ -1,0 +1,10 @@
+"DOTAUnits"
+{
+	"npc_shamanka" 
+	{
+		"Model"						"models/items/courier/babka_bewitcher/babka_bewitcher.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}

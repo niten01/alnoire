@@ -1,4 +1,11 @@
 (function () {
+
+  const SPEAKER_PORTRAIT = {
+    "...": "default",
+    "???": "tormentor",
+    "": "tormentor",
+  }
+
   const root = $.GetContextPanel();
   const speakerName = $("#SpeakerName");
   const speakerTitle = $("#SpeakerTitle");

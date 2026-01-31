@@ -106,7 +106,7 @@
     "HasInventory"                                        "1"
 
     "VisionDaytimeRange"                                  "1800"
-    "VisionNighttimeRange"                                "800"
+    "VisionNighttimeRange"                                "1800"
 
     "BoundsHullName"                                      "DOTA_HULL_SIZE_HERO"
 
@@ -221,7 +221,7 @@
     "HasInventory"                                        "1"
 
     "VisionDaytimeRange"                                  "1800"
-    "VisionNighttimeRange"                                "800"
+    "VisionNighttimeRange"                                "1800"
 
     "BoundsHullName"                                      "DOTA_HULL_SIZE_HERO"
 

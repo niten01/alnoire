@@ -25,6 +25,22 @@ return {
             npc = "npc_tormentor",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_shamanka = {
+            npc = "npc_shamanka",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_gate_troll_left = {
+            npc = "npc_gate_troll_biruk",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_gate_troll_right = {
+            npc = "npc_gate_troll_diruk",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_gate_troll_center = {
+            npc = "npc_gate_troll_uruk",
+            modifiers = { "modifier_story_npc" },
+        },
     },
 
     ------------------------------------------------------------

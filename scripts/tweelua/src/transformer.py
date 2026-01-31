@@ -100,6 +100,11 @@ class StoryTransformer:
         for _, passage in self.story.passages.items():
             if len(passage.links) == 0:
                 passage.links.append(Link("", "Закрыть.", None, []))
+                continue
+            for link in passage.links:
+                next = self.story.passages[link.target]
+                if len(next.text.replace("\n", "").replace(" ", "")) == 0:
+                    link.target = None
 
     def transform(self) -> Story:
         for name in list(self.story.passages.keys()):

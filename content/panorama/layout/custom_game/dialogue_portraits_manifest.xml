@@ -2,5 +2,7 @@
     <Panel style="visibility: collapse;">
        <Image src="file://{images}/custom_game/portraits/default.psd" /> 
        <Image src="file://{images}/custom_game/portraits/npc_xavier.psd" /> 
+       <Image src="file://{images}/custom_game/portraits/tormentor.psd" /> 
+       <Image src="file://{images}/custom_game/portraits/gate_trolls.psd" /> 
     </Panel>
 </root>
