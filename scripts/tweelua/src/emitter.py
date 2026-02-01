@@ -39,8 +39,6 @@ class LuaEmitter:
         self.lines.append(id + " = {")
 
         self.lines.append(f"text = [[{node.text}]],")
-        if not node.speaker:
-            print(f'warning: node "{node.name}" has no speaker, setting "default"')
         self.lines.append(f"speaker = [[{node.speaker or 'default'}]],")
         self.lines.append("choices = {")
         for link in node.links:

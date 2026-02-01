@@ -94,7 +94,7 @@ class StoryTransformer:
                 f'More than 1 speaker tag found in node: "{passage.name}"'
             )
         if len(speaker_tags) != 0:
-            passage.speaker = speaker_tags[0].fields["speaker"]
+            passage.speaker = speaker_tags[0].fields["speaker"].replace("_", " ")
 
     def _add_close_links(self):
         for _, passage in self.story.passages.items():

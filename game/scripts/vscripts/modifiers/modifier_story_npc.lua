@@ -37,6 +37,7 @@ end
 
 function modifier_story_npc:OnCreated()
 	local parent = self:GetParent()
+	parent.bAcquisitionRange = parent:GetAcquisitionRange()
 	parent:SetIdleAcquire(false)
 	parent:SetAcquisitionRange(0)
 	if not parent:HasModifier("modifier_phased") then
@@ -46,6 +47,8 @@ end
 
 function modifier_story_npc:OnDestroy()
 	local parent = self:GetParent()
+	parent:SetIdleAcquire(true)
+	parent:SetAcquisitionRange(parent.bAcquisitionRange)
 	if parent:HasModifier("modifier_phased") then
 		parent:RemoveModifierByName("modifier_phased")
 	end

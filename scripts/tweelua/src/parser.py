@@ -78,7 +78,8 @@ def parse_twee(filepath: str) -> Story:
                 tag_dd = parse_datadict(tag)
                 tags.append(tag_dd)
             except ParseError:
-                print(f'warning: skipping non-DataDict tag: "{tag}"')
+                pass
+                # print(f'warning: skipping non-DataDict tag: "{tag}"')
         passage = Passage(name=p.header.name, tags=tags or [], text=text, links=links)
         story.add(passage)
 

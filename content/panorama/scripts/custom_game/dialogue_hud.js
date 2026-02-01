@@ -3,7 +3,8 @@
   const SPEAKER_PORTRAIT = {
     "...": "default",
     "???": "tormentor",
-    "": "tormentor",
+    "Старушка": "shamanka",
+    "Банда троллей": "gate_trolls",
   }
 
   const root = $.GetContextPanel();
@@ -81,20 +82,12 @@
   }
 
   function show(payload) {
-    // payload:
-    // {
-    //   speaker: "Sven",
-    //   title: "Storm Hammer Enthusiast",
-    //   text: "Hello there...",
-    //   cps: 45,
-    //   choices: [{ id:"a", text:"Option A" }, ...],
-    //   allowSkip: true
-    // }
-
-    speakerName.text = payload.speaker || "???";
+    speakerName.text = payload.speaker || "<unnamed>";
     speakerTitle.text = payload.title || "";
     speakerTitle.visible = !!payload.title;
-    speakerPortrait.SetImage(`file://{images}/custom_game/portraits/${payload.speakerNPC || "default"}.psd`)
+    speakerPortrait.SetImage(
+      `file://{images}/custom_game/portraits/${SPEAKER_PORTRAIT[payload.speaker || "default"]}.psd`
+    )
 
     clearChoices();
 
