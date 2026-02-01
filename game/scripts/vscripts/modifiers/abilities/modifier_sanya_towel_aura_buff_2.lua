@@ -4,13 +4,41 @@ function modifier_sanya_towel_aura_buff_2:IsHidden() return false end
 function modifier_sanya_towel_aura_buff_2:IsPurgable() return false end
 function modifier_sanya_towel_aura_buff_2:IsDebuff() return false end
 
-function modifier_sanya_towel_aura_buff_2:GetModifierConstantHealthRegen()
+function modifier_sanya_towel_aura_buff_2:GetModifierPreAttack_BonusDamage()
     local ability = self:GetAbility()
-    return 200
+    local bonus_damage = ability:GetSpecialValueFor('bonus_damage')
+    return bonus_damage
 end
 
 function modifier_sanya_towel_aura_buff_2:DeclareFunctions()
     return {
-        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
     }
+end
+
+function modifier_sanya_towel_aura_buff_2:OnCreated()
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    local ability = self:GetAbility()
+    self.damage_percent = ability:GetSpecialValueFor('hp_per_sec')
+    local pfx = ParticleManager:CreateParticle("models/heroes/phantom_assassin_persona/debut/particles/pa_badguy/pa_badguy_bladeimpact_blood_drops.vpcf", PATTACH_ABSORIGIN, parent)
+    self:AddParticle( pfx, false, false, -1, false, false )
+    self:StartIntervalThink(1.0)
+end
+
+function modifier_sanya_towel_aura_buff_2:OnIntervalThink()
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    if not parent:IsAlive() then return end
+    local cur_health = parent:GetHealth()
+    local damage_per_tick = cur_health * (self.damage_percent / 100)
+    ApplyDamage(
+        {
+            victim=parent,
+            attacker=parent,
+            damage=damage_per_tick,
+            damage_type=DAMAGE_TYPE_PURE,
+            damage_flags=DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+        }
+    )
 end

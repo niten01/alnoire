@@ -35,8 +35,8 @@ end
 function modifier_towel_summon_overpower:OnCreated()
     if not IsServer() then return end
     local caster = self:GetParent()
-    local pfx = ParticleManager:CreateParticle("particles/econ/items/shredder/timber_controlled_burn/timber_controlled_burn_timberchain_ember.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-    self:AddParticle( pfx, false, false, -1, false, true )
+    local pfx = ParticleManager:CreateParticle("particles/econ/items/shredder/timber_controlled_burn/timber_controlled_burn_timberchain_ember.vpcf", PATTACH_ABSORIGIN, caster)
+    self:AddParticle( pfx, false, false, -1, false, false )
     self:SetStackCount(0)
 end
 

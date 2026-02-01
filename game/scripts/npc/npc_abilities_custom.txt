@@ -126,7 +126,8 @@
 		"AbilityValues"
 		{
 			"radius"					"300 400 500 600"
-			"bash_chance"				"10.0 20.0 30.0 40.0"
+			"bonus_damage"				"30 40 50 60"
+			"hp_per_sec"				"1.5 1.5 1.5 1.5"
 		}
 	}
 
@@ -146,8 +147,8 @@
 		"AbilityValues"
 		{
 			"radius"					"300 400 500 600"
-			"miss_chance"				"10.0 20.0 30.0 40.0"
-			"speed_bonus"				"100 200 300 400"
+			"miss_chance"				"10 15 30 40"
+			"speed_bonus"				"50 60 70 80"
 		}
 	}
 

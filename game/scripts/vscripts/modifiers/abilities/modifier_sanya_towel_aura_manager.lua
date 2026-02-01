@@ -13,6 +13,13 @@ function modifier_sanya_towel_aura_manager:OnIntervalThink()
     local aura1 = caster:FindAbilityByName('sanya_towel_aura_1')
     local aura2 = caster:FindAbilityByName('sanya_towel_aura_2')
     local aura3 = caster:FindAbilityByName('sanya_towel_aura_3')
+    if caster.__active_towel_aura == 3 then
+        caster:AddNewModifier(caster, aura3, "modifier_sanya_towel_aura_buff_3", {})
+    else
+        if caster:HasModifier('modifier_sanya_towel_aura_buff_3') then
+            caster:RemoveModifierByName('modifier_sanya_towel_aura_buff_3')
+        end
+    end
     local radius = aura1:GetSpecialValueFor('radius')
     local allies = FindUnitsInRadius(
         caster:GetTeamNumber(),         
