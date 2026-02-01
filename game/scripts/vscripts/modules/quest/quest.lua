@@ -110,14 +110,25 @@ function Quest:CompleteObjective(playerID, questID, objective)
     end
   end
   if not hasIncomplete then
-    state.stepIdx = state.stepIdx + 1
-    DebugPrint(state.stepIdx, TableLength(quest.steps))
-    if state.stepIdx > TableLength(quest.steps) then
-      self:CompleteQuestForAll(questID)
-    end
+    self:AdvanceStep(playerID, questID)
   end
 
   self:UpdateQuestlog(playerID)
+end
+
+function Quest:AdvanceStep(playerID, questID)
+  local state = self:GetQuestState(playerID, questID)
+  local quest = self.quests[questID]
+  local activeStep = quest.steps[state.stepIdx]
+  DebugPrint("[ALNOIRE] Advance quest step: " .. questID .. " " .. state.stepIdx .. " -> " .. state.stepIdx + 1)
+
+  for _, action in ipairs(activeStep.postStepActions or {}) do
+    self:HandleAction(playerID, action)
+  end
+  state.stepIdx = state.stepIdx + 1
+  if state.stepIdx > TableLength(quest.steps) then
+    self:CompleteQuestForAll(questID)
+  end
 end
 
 function Quest:CompleteQuestForAll(questID)
@@ -187,6 +198,12 @@ function Quest:HandleAction(playerID, action)
     self:StartFight(action)
   elseif action.type == "change_hero" then
     PlayerResource:ReplaceHeroWith(playerID, action.hero, 0, 0)
+  elseif action.type == "open_door" then
+    DoorManager:Open(action.door)
+  elseif action.type == "give_item" then
+    DebugPrint("[???] TODO give_item")
+  else
+    error("Unhandled action type: " .. action.type)
   end
 end
 

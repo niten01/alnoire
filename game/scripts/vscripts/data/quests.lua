@@ -2,23 +2,31 @@ return {
     q_reach_city = {
         giver = "npc_shamanka",
         name = "Оплот цивилизации",
-        acts = {0},
+        acts = { 0 },
         steps = {
-            description = "Доберись до Королевства",
-            objectives = {
-                { type = "kill", npc = "npc_gate_troll_uruk" },
-                { type = "kill", npc = "npc_gate_troll_biruk" },
-                { type = "kill", npc = "npc_gate_troll_diruk" },
+            {
+                description = "Доберись до Королевства",
+                objectives = {
+                    { type = "kill", npc = "npc_gate_troll_uruk" },
+                    { type = "kill", npc = "npc_gate_troll_biruk" },
+                    { type = "kill", npc = "npc_gate_troll_diruk" },
+                },
+                postStepActions = {
+                    { type = "open_door", door = "door_prologue" }
+                }
             },
-            postStepActions = {
-                { type = "open_door", door="" }
-            }
+            {
+                description = "Доберись до Королевства",
+                objectives = {
+                    { type = "talk", npc = "npc_guide" },
+                },
+            },
         }
     },
     q_clash_royal = {
         giver = "npc_blue_prince",
         name = "Королевская взбучка",
-        acts = {1},
+        acts = { 1 },
         steps = {
             {
                 description = "Иди на арену",
@@ -43,7 +51,7 @@ return {
     q_nigger = {
         giver = "npc_nig",
         name = "O'Block",
-        acts = {2},
+        acts = { 2 },
         steps = {
             {
                 description = "Добудь билеты у перекупа",
@@ -61,7 +69,7 @@ return {
     },
     q_ogres = {
         giver = "npc_ogre_magi",
-        acts = {1},
+        acts = { 1 },
         name = "Братство и ум",
         steps = {
             {
@@ -81,7 +89,7 @@ return {
     q_island_escape = {
         giver = "trigger_Epstein",
         name = "Побег от кумира",
-        acts = {1,2},
+        acts = { 1, 2 },
         steps = {
             {
                 description = "Сбеги с острова",
@@ -94,7 +102,7 @@ return {
     q_island_explosion = {
         giver = "npc_cat_barrel",
         name = "Epstein's blow job",
-        acts = {3},
+        acts = { 3 },
         steps = {
             {
                 description = "Найди секретный проход и заложи бомбу",
@@ -113,7 +121,7 @@ return {
     q_pandas = {
         giver = "npc_brewmaster",
         name = "Три оттенка",
-        acts = {1,2,3},
+        acts = { 1, 2, 3 },
         steps = {
             {
                 description = "Найди Красного, Зелёного и Синего",

@@ -1,0 +1,8 @@
+doors_test
+{
+	material materials/overviews/doors_test.vmat
+	pos_x -1024
+	pos_y 1024
+	scale 2.000
+}
+
