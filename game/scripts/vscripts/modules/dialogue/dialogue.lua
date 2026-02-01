@@ -43,6 +43,7 @@ function Dialogue:Init()
 
   CustomGameEventManager:RegisterListener("dialogue_choice", bind(self.OnDialogueChoice, self))
   CustomGameEventManager:RegisterListener("query_update", bind(self.OnQueryUpdate, self))
+  GameEvents:OnCancelLethalDamage(bind(self.OnCancelLethalDamage, self))
 
   ChatCommand:LinkCommand("-dialogueclose", function(event)
     self:HideDialogue(event.playerID)
@@ -191,6 +192,29 @@ function Dialogue:OnDialogueChoice(_, args)
   self:ShowDialogueNode(playerID, choice.next)
 end
 
+function Dialogue:OnCancelLethalDamage(params)
+  if not IsServer() then return end
+
+  local startDialogue = function(playerID)
+    local entrypoint = self:GetDialogueNodeBestMatchEntrypoint(playerID,
+      { { type = "beat", beat = params.unit:GetUnitName() } })
+    if not entrypoint then return false end
+    self:StartDialogueForAll(entrypoint.nodeID)
+    return true
+  end
+
+  local playerID = params.attackerPlayerID
+  if playerID then
+    startDialogue(playerID)
+  else
+    for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+      if PlayerResource:IsValidPlayer(playerID) and PlayerResource:GetPlayer(playerID) then
+        if startDialogue(playerID) then break end
+      end
+    end
+  end
+end
+
 function Dialogue:OnQueryUpdate(_, args)
   if not IsServer() then return end
 
@@ -207,7 +231,6 @@ function Dialogue:OnQueryUpdate(_, args)
   local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
   if not hero or hero:IsNull() then return end
 
-  -- reselect early, to allow reselection
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
 
   -- interact

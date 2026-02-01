@@ -32,8 +32,6 @@ function SpawnManager:OnHeroInGame(hero)
         hero:AddNewModifier(hero, nil, "modifier_anim_translate_thinker", { duration = -1 })
     end
     --hero:AddNewModifier(hero, nil, "modifier_test_eyes", { duration = -1 })
-    -- This clears the "visited" history for a specific team
-    GameRules:GetGameModeEntity():SetFogOfWarDisabled(false)
 end
 
 function SpawnManager:SpawnNPC(spawnerName)
@@ -48,7 +46,7 @@ function SpawnManager:SpawnNPC(spawnerName)
             false,
             nil,
             nil,
-            DOTA_TEAM_NEUTRALS
+            DOTA_TEAM_BADGUYS
         )
         npc:SetEntityName(data.npc)
         local fwd = spawnerEnt:GetForwardVector()

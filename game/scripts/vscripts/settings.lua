@@ -47,8 +47,9 @@ BUYBACK_FIXED_GOLD_COST = 500            -- Fixed custom buyback gold cost (need
 CUSTOM_SCAN_COOLDOWN = 210               -- Custom cooldown of Scan in seconds. Doesn't affect Scan's starting cooldown!
 CUSTOM_GLYPH_COOLDOWN = 300              -- Custom cooldown of Glyph in seconds. Doesn't affect Glyph's starting cooldown!
 
+-- TODO: only for testing
 DISABLE_FOG_OF_WAR_ENTIRELY = false      -- Should we disable fog of war entirely for both teams?
-USE_UNSEEN_FOG_OF_WAR = true             -- Should we make unseen and fogged areas of the map completely black until uncovered by each team?
+USE_UNSEEN_FOG_OF_WAR = false             -- Should we make unseen and fogged areas of the map completely black until uncovered by each team?
 -- NOTE: DISABLE_FOG_OF_WAR_ENTIRELY must be false for USE_UNSEEN_FOG_OF_WAR to work
 USE_STANDARD_DOTA_BOT_THINKING = false   -- Should we have bots act like they would in Dota? (This requires 3 lanes, vanilla items, vanilla heroes etc)
 
@@ -89,7 +90,7 @@ SHOW_ONLY_PLAYER_INVENTORY = false        -- Should we allow players to only see
 DISABLE_STASH_PURCHASING = false          -- Should we prevent players from being able to buy items into their stash when not at a shop?
 DISABLE_ANNOUNCER = false                 -- Should we disable the announcer from working in the game?
 FORCE_PICKED_HERO =
-"npc_dota_hero_sanya_towel_master"                     -- What hero should we force all players to spawn as? (e.g. "npc_dota_hero_axe").  Use nil to allow players to pick their own hero.
+"npc_dota_hero_sanya"                     -- What hero should we force all players to spawn as? (e.g. "npc_dota_hero_axe").  Use nil to allow players to pick their own hero.
 -- This will not work if "EnablePickRules" is "1" in 'addoninfo.txt'!
 
 ADD_ITEM_TO_HERO_ON_SPAWN = false -- Add an example item to the picked hero when he spawns?

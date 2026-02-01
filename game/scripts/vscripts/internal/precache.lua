@@ -1,5 +1,9 @@
 return {
     units = {
+        "npc_dota_hero_sanya_towel_master",
+        "npc_dota_hero_sanya_rapper",
+        "npc_dota_hero_sanya_logarithmus",
+        "npc_dota_hero_sanya",
         "npc_xavier",
         "npc_tormentor",
         "npc_shamanka",

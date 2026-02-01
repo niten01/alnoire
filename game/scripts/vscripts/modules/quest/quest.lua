@@ -23,6 +23,7 @@ local QuestStatus = require('modules.quest.quest_status')
 local PlayerQuestState = require('modules.quest.quest_state')
 local Evaluators = require('modules.quest.evaluators')
 
+OnCancelLethalDamageEvent = CreateGameEvent 'OnCancelLethalDamage'
 local OnQuestCompleteEvent = CreateGameEvent 'OnQuestComplete'
 
 function Quest:Init()
@@ -182,6 +183,21 @@ function Quest:HandleAction(playerID, action)
     state.status = QuestStatus.REJECTED
   elseif action.type == "quest_end" then
     self:CompleteQuestForAll(action.questID)
+  elseif action.type == "fight_start" then
+    self:StartFight(action)
+  elseif action.type == "change_hero" then
+    PlayerResource:ReplaceHeroWith(playerID, action.hero, 0, 0)
+  end
+end
+
+function Quest:StartFight(action)
+  assert(action.type == "fight_start")
+  for _, ent in ipairs(Entities:FindAllByName(action.npc)) do
+    DebugPrint("[ALNOIRE] Starting fight with " .. ent:GetName())
+    ent:RemoveModifierByName("modifier_story_npc")
+    if action.target == "beat" and not ent:HasModifier("modifier_lethal_damage_tracking") then
+      ent:AddNewModifier(nil, nil, "modifier_lethal_damage_tracking", { duration = -1 })
+    end
   end
 end
 

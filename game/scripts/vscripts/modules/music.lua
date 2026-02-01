@@ -1,7 +1,5 @@
 Music = Music or {}
 
-local EPS = 0.001
-
 local PlayerMusicState = class {}
 function PlayerMusicState:constructor()
     self.musicSet = nil
@@ -19,7 +17,7 @@ function Music:Init()
     end
 
     GameEvents:OnZoneEnter(function(event)
-        DebugPrint("[ALNOIRE] Switching music zone: " .. event.musicSet)
+        DebugPrint("[ALNOIRE] Switching music set: " .. event.musicSet)
         self.musicState[event.playerID].musicSet = event.musicSet
     end)
     GameEvents:OnHeroInGame(function(hero)
@@ -38,8 +36,10 @@ function Music:StopCustomMusic(playerID)
 end
 
 function Music:HeroMusicThink(hero)
+    if not IsServer() then return end
     local playerID = hero:GetPlayerID()
     local state = self.musicState[playerID]
+    if not state then return end
 
     if state.customMusic then return MUSIC_THINK_INTERVAL end
     if not state.musicSet then return MUSIC_THINK_INTERVAL end
