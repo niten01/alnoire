@@ -19,6 +19,7 @@ function sanya_towel_summon:OnSpellStart()
     local unit = CreateUnitByName("towel_summon", caster:GetAbsOrigin(), true, caster, caster:GetOwner(), caster:GetTeamNumber())
     unit:SetControllableByPlayer(playerID, true)
     unit:SetOwner(caster)
+    unit:SetIdleAcquire(false)
     caster.summon = unit
 
 
