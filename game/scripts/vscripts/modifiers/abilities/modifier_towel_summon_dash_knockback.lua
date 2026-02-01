@@ -2,6 +2,8 @@ modifier_towel_summon_dash_knockback = class({})
 
 function modifier_towel_summon_dash_knockback:IsHidden() return true end
 
+function modifier_towel_summon_dash_knockback:IsPurgable() return false end
+
 function modifier_towel_summon_dash_knockback:CheckState()
     if not IsServer() then return end
     return {
@@ -11,10 +13,21 @@ function modifier_towel_summon_dash_knockback:CheckState()
     }
 end
 
+function modifier_towel_summon_dash_knockback:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_OVERRIDE_ANIMATION
+    }
+        
+end
+
+function modifier_towel_summon_dash_knockback:GetOverrideAnimation()
+    return ACT_DOTA_FLAIL
+end
+
 function modifier_towel_summon_dash_knockback:OnCreated(params)
     if not IsServer() then return end
     self.direction = Vector(params.x, params.y, 0):Normalized()
-    self.speed = params.speed or 600
+    self.speed = params.speed or 300
     
     self.peak_height = 100 
     self.duration = self:GetDuration()

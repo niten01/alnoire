@@ -75,6 +75,7 @@ return {
         "particles/units/heroes/hero_phoenix/phoenix_supernova_death_dust.vpcf",
         "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_marker_ring_outer_hot.vpcf",
 
-        
+        -- summon overpower
+        "particles/econ/items/shredder/timber_controlled_burn/timber_controlled_burn_timberchain_ember.vpcf",
     }
 }

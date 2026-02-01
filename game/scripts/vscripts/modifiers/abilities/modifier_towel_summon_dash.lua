@@ -13,7 +13,9 @@ function modifier_towel_summon_dash:CheckState()
     return {
         --[MODIFIER_STATE_STUNNED] = false, 
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true, 
-        [MODIFIER_STATE_COMMAND_RESTRICTED] = true
+        [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
+        [MODIFIER_STATE_ATTACK_IMMUNE] = true,
+
     }
 end
 
@@ -92,7 +94,7 @@ function modifier_towel_summon_dash:UpdateHorizontalMotion(me, dt)
                 duration = 0.3,
                 x = final_push_dir.x,
                 y = final_push_dir.y,
-                speed = 700
+                speed = 300
             })
             
             ApplyDamage({
