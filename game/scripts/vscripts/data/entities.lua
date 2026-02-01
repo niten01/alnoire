@@ -41,6 +41,10 @@ return {
             npc = "npc_gate_troll_uruk",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_guide_city_entrance = {
+            npc = "npc_guide",
+            modifiers = { "modifier_story_npc" },
+        },
     },
 
     ------------------------------------------------------------
@@ -64,5 +68,15 @@ return {
             beaten = false,
             can_give_quest = false,
         },
+    },
+
+    ------------------------------------------------------------
+    --- Doors
+    ------------------------------------------------------------
+    door = {
+        door_prologue = {
+            clipEntity = "clip_door_prologue",
+            openAnimation = "cf_palace_door_open"
+        }
     }
 }
