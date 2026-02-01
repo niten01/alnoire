@@ -28,7 +28,7 @@ Layer0
 	g_flTexCoordRotation "0.000"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "models/sanya/materials/persona/persona_head_base.png"
+	TextureColor "models/sanya/materials/persona/persona_head_tatoos.png"
 
 	//---- Detail 1 ----
 	g_flDetailTexCoordRotation "0.000"
