@@ -3430,8 +3430,25 @@ return {
             speaker = [[Старушка]],
             choices = {
                 {
-                    text = [[*Выбрать свою судьбу.*]],
+                    text = [[Towel Master. (Сложность: 3)]],
                     next = "d_vybrat_svou_sudbu",
+                    actions = {
+                        { hero = "npc_dota_hero_sanya_towel_master", type = "change_hero" },
+                    },
+                },
+                {
+                    text = [[Кварц-Ксеон. (Сложность: 2)]],
+                    next = "d_vybrat_svou_sudbu",
+                    actions = {
+                        { hero = "npc_dota_hero_sanya_rapper", type = "change_hero" },
+                    },
+                },
+                {
+                    text = [[Интегралус. (Сложность: 1)]],
+                    next = "d_vybrat_svou_sudbu",
+                    actions = {
+                        { hero = "npc_dota_hero_sanya_logarithmus", type = "change_hero" },
+                    },
                 },
             },
         },
@@ -4612,7 +4629,9 @@ return {
                     text = [[*Начать обороняться.*]],
                     next = nil,
                     actions = {
-                        { target = "kill", type = "(fight_start" },
+                        { target = "kill", npc = "npc_gate_troll_uruk", type = "fight_start" },
+                        { target = "kill", npc = "npc_gate_troll_biruk", type = "fight_start" },
+                        { target = "kill", npc = "npc_gate_troll_diruk", type = "fight_start" },
                     },
                 },
             },

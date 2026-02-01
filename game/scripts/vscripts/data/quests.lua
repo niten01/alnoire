@@ -1,4 +1,20 @@
 return {
+    q_reach_city = {
+        giver = "npc_shamanka",
+        name = "Оплот цивилизации",
+        acts = {0},
+        steps = {
+            description = "Доберись до Королевства",
+            objectives = {
+                { type = "kill", npc = "npc_gate_troll_uruk" },
+                { type = "kill", npc = "npc_gate_troll_biruk" },
+                { type = "kill", npc = "npc_gate_troll_diruk" },
+            },
+            postStepActions = {
+                { type = "open_door", door="" }
+            }
+        }
+    },
     q_clash_royal = {
         giver = "npc_blue_prince",
         name = "Королевская взбучка",
@@ -20,7 +36,7 @@ return {
                 description = "Вернись к Синему Принцу",
                 objectives = {
                     { type = "talk", npc = "npc_blue_prince" }
-                }
+                },
             },
         }
     },
