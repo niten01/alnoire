@@ -60,6 +60,7 @@ return {
         "particles/sanya_towel_aura_green.vpcf",
         "particles/sanya_towel_aura_red.vpcf",
         "particles/sanya_towel_aura_blue.vpcf",
+        "models/heroes/phantom_assassin_persona/debut/particles/pa_badguy/pa_badguy_bladeimpact_blood_drops.vpcf",
 
         -- flasks
         "particles/items4_fx/spirit_vessel_damage_blast_burst.vpcf",
