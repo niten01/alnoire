@@ -31,7 +31,8 @@ end
 function modifier_story_npc:CheckState()
 	return {
 		[MODIFIER_STATE_INVULNERABLE] = true,
-		[MODIFIER_STATE_NO_HEALTH_BAR] = true
+		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
+		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
 	}
 end
 
@@ -40,6 +41,10 @@ function modifier_story_npc:OnCreated()
 	parent.bAcquisitionRange = parent:GetAcquisitionRange()
 	parent:SetIdleAcquire(false)
 	parent:SetAcquisitionRange(0)
+	parent.oldDayVisionRange = parent:GetDayTimeVisionRange()
+	parent.oldNightVisionRange = parent:GetNightTimeVisionRange()
+	parent:SetDayTimeVisionRange(0)
+	parent:SetNightTimeVisionRange(0)
 	if not parent:HasModifier("modifier_phased") then
 		parent:AddNewModifier(parent, nil, "modifier_phased", {})
 	end
@@ -49,6 +54,9 @@ function modifier_story_npc:OnDestroy()
 	local parent = self:GetParent()
 	parent:SetIdleAcquire(true)
 	parent:SetAcquisitionRange(1000)
+	parent:SetDayTimeVisionRange(parent.oldDayVisionRange or 700)
+	parent:SetNightTimeVisionRange(parent.oldNightVisionRange or 700)
+	parent:SetNightTimeVisionRange(0)
 	if parent:HasModifier("modifier_phased") then
 		parent:RemoveModifierByName("modifier_phased")
 	end

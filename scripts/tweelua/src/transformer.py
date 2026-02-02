@@ -87,6 +87,16 @@ class StoryTransformer:
             next.speaker = passage.speaker
             self._try_propagate_speaker(next)
 
+    def _try_propagate_npc(self, passage: Passage):
+        if not passage.npc:
+            return
+
+        for next in [self.story.passages[l.target] for l in passage.links]:
+            if next.npc:
+                continue
+            next.npc = passage.npc
+            self._try_propagate_npc(next)
+
     def _set_speaker(self, passage: Passage):
         speaker_tags = [t for t in passage.tags if t.type == "speaker"]
         if len(speaker_tags) > 1:
@@ -95,6 +105,29 @@ class StoryTransformer:
             )
         if len(speaker_tags) != 0:
             passage.speaker = speaker_tags[0].fields["speaker"].replace("_", " ")
+
+    def _try_infer_npc(self, tags: List[DataDict]) -> str | None:
+        for t in tags:
+            npc = (
+                t.fields.get("interact")
+                or t.fields.get("beat")
+                or (t.fields.get("trigger") and t.fields.get("npc"))
+            )
+            if npc:
+                return npc
+        return None
+
+    def _set_npc(self, passage: Passage):
+        npc_tags = [t for t in passage.tags if t.type == "npc"]
+        if len(npc_tags) > 1:
+            raise TransformError(f'More than 1 npc tag found in node: "{passage.name}"')
+        if len(npc_tags) != 0:
+            passage.npc = npc_tags[0].fields["npc"]
+
+        if not passage.npc:
+            npc = self._try_infer_npc(passage.tags)
+            if npc:
+                passage.npc = npc
 
     def _add_close_links(self):
         for _, passage in self.story.passages.items():
@@ -114,9 +147,11 @@ class StoryTransformer:
         for passage in self.story.passages.values():
             self._add_entries_from(passage)
             self._set_speaker(passage)
+            self._set_npc(passage)
 
         for passage in self.story.passages.values():
             self._try_propagate_speaker(passage)
+            self._try_propagate_npc(passage)
 
         self._add_close_links()
 

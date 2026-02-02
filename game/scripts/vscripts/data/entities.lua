@@ -4,6 +4,7 @@ return {
     ------------------------------------------------------------
     spawner = {
         __common = {
+            team = DOTA_TEAM_GOODGUYS
         },
         spawner_xavier = {
             npc = "npc_xavier",
@@ -32,14 +33,17 @@ return {
         spawner_gate_troll_left = {
             npc = "npc_gate_troll_biruk",
             modifiers = { "modifier_story_npc" },
+            team = DOTA_TEAM_BADGUYS,
         },
         spawner_gate_troll_right = {
             npc = "npc_gate_troll_diruk",
             modifiers = { "modifier_story_npc" },
+            team = DOTA_TEAM_BADGUYS,
         },
         spawner_gate_troll_center = {
             npc = "npc_gate_troll_uruk",
             modifiers = { "modifier_story_npc" },
+            team = DOTA_TEAM_BADGUYS,
         },
         spawner_guide_city_entrance = {
             npc = "npc_guide",

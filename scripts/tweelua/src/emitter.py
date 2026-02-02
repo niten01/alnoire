@@ -40,11 +40,12 @@ class LuaEmitter:
 
         self.lines.append(f"text = [[{node.text}]],")
         self.lines.append(f"speaker = [[{node.speaker or 'default'}]],")
+        self.lines.append(f"npc = {self._format_value(node.npc)},")
         self.lines.append("choices = {")
         for link in node.links:
             self.lines.append("{")
             self.lines.append(f"text = [[{link.display}]],")
-            self.lines.append(f'next = {self._format_value(link.target)},')
+            self.lines.append(f"next = {self._format_value(link.target)},")
             if link.actions:
                 self._emit_choice_actions(link.actions)
             self.lines.append("},")

@@ -5,8 +5,8 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",      status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",               value = "1/2/3",             type = "var" },
+                { questID = "q_pandas",        status = QuestStatus.INACTIVE, type = "quest" },
+                { var = "act",                 value = "1/2/3",               type = "var" },
             },
         },
         d_untitled_passage_1 = {
@@ -19,7 +19,7 @@ return {
         d_untitled_passage_11 = {
             priority = 0,
             conditions = {
-                { ent_var = "beaten",               value = false,          npc = "npc_island_guard", type = "ent_var" },
+                { ent_var = "beaten",                 value = false,            npc = "npc_island_guard", type = "ent_var" },
                 { trigger = "trigger_island_fight_1", npc = "npc_island_guard", type = "trigger" },
             },
         },
@@ -32,21 +32,21 @@ return {
         d_untitled_passage_13 = {
             priority = 0,
             conditions = {
-                { var = "act",                   value = 0,       type = "var" },
+                { var = "act",                     value = 0,         type = "var" },
                 { trigger = "trigger_guide_first", npc = "npc_guide", type = "trigger" },
             },
         },
         d_untitled_passage_14 = {
             priority = 0,
             conditions = {
-                { interact = "npc_guide",       type = "interact" },
+                { interact = "npc_guide",         type = "interact" },
                 { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = "1/2", type = "quest" },
             },
         },
         d_untitled_passage_15 = {
             priority = 0,
             conditions = {
-                { var = "act",               value = 0,           type = "var" },
+                { var = "act",                 value = 0,             type = "var" },
                 { trigger = "trigger_rebirth", npc = "npc_tormentor", type = "trigger" },
             },
         },
@@ -54,14 +54,14 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_tormentor", type = "interact" },
-                { var = "act",              value = 0,      type = "var" },
+                { var = "act",                value = 0,        type = "var" },
             },
         },
         d_untitled_passage_17 = {
             priority = 100,
             conditions = {
                 { interact = "npc_creep_rogach", type = "interact" },
-                { ent_var = "first_met_global", value = true,  npc = "npc_creep_rogach", type = "ent_var" },
+                { ent_var = "first_met_global",  value = true,     npc = "npc_creep_rogach", type = "ent_var" },
             },
         },
         d_untitled_passage_18 = {
@@ -74,7 +74,7 @@ return {
             priority = 100,
             conditions = {
                 { trigger = "trigger_usach_stopit", npc = "npc_mustache", type = "trigger" },
-                { ent_var = "first_met_global",   value = true,       npc = "npc_mustache", type = "ent_var" },
+                { ent_var = "first_met_global",     value = true,         npc = "npc_mustache", type = "ent_var" },
             },
         },
         d_untitled_passage_2 = {
@@ -92,37 +92,37 @@ return {
         d_untitled_passage_21 = {
             priority = 0,
             conditions = {
-                { interact = "npc_creep_bob", type = "interact" },
-                { ent_var = "first_met_global", value = true, npc = "npc_creep_bob", type = "ent_var" },
+                { interact = "npc_creep_bob",   type = "interact" },
+                { ent_var = "first_met_global", value = true,     npc = "npc_creep_bob", type = "ent_var" },
             },
         },
         d_untitled_passage_22 = {
             priority = 0,
             conditions = {
-                { interact = "npc_creep_bob", type = "interact" },
-                { ent_var = "first_met_global", value = false, npc = "npc_creep_bob", type = "ent_var" },
+                { interact = "npc_creep_bob",   type = "interact" },
+                { ent_var = "first_met_global", value = false,    npc = "npc_creep_bob", type = "ent_var" },
             },
         },
         d_untitled_passage_23 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",  status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",                value = 1,                   type = "var" },
+                { questID = "q_clash_royal",    status = QuestStatus.INACTIVE, type = "quest" },
+                { var = "act",                  value = 1,                     type = "var" },
             },
         },
         d_untitled_passage_24 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",  status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_clash_royal",    status = QuestStatus.ACTIVE, step = 1, type = "quest" },
             },
         },
         d_untitled_passage_25 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",  status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_clash_royal",    status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_26 = {
@@ -140,7 +140,7 @@ return {
         d_untitled_passage_33 = {
             priority = 0,
             conditions = {
-                { interact = "npc_rape_victim",   type = "interact" },
+                { interact = "npc_rape_victim",     type = "interact" },
                 { trigger = "trigger_slish_kamish", npc = "npc_rape_victim", type = "trigger" },
             },
         },
@@ -154,22 +154,22 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",              value = 1,                   type = "var" },
+                { questID = "q_ogres",        status = QuestStatus.INACTIVE, type = "quest" },
+                { var = "act",                value = 1,                     type = "var" },
             },
         },
         d_untitled_passage_41 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_ogres",        status = QuestStatus.ACTIVE, step = 1, type = "quest" },
             },
         },
         d_untitled_passage_42 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_bruiser", type = "interact" },
-                { questID = "q_ogres",         status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_ogres",           status = QuestStatus.ACTIVE, step = 1, type = "quest" },
             },
         },
         d_untitled_passage_43 = {
@@ -182,34 +182,34 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.ACTIVE, step = 2, type = "quest" },
+                { questID = "q_ogres",        status = QuestStatus.ACTIVE, step = 2, type = "quest" },
             },
         },
         d_untitled_passage_45 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_ogres",        status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_46 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_first", type = "trigger" },
-                { var = "act",                    value = "1/2", type = "var" },
+                { var = "act",                      value = "1/2",   type = "var" },
             },
         },
         d_untitled_passage_47 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_second", type = "trigger" },
-                { var = "act",                     value = "1/2", type = "var" },
+                { var = "act",                       value = "1/2",   type = "var" },
             },
         },
         d_untitled_passage_48 = {
             priority = 0,
             conditions = {
-                { var = "act",                      value = "1/2",          type = "var" },
+                { var = "act",                        value = "1/2",            type = "var" },
                 { trigger = "trigger_island_fight_1", npc = "npc_island_guard", type = "trigger" },
             },
         },
@@ -217,13 +217,13 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_third", type = "trigger" },
-                { var = "act",                    value = "1/2", type = "var" },
+                { var = "act",                      value = "1/2",   type = "var" },
             },
         },
         d_untitled_passage_59 = {
             priority = 100,
             conditions = {
-                { ent_var = "first_met_global",    value = true,              npc = "npc_templar_assasin", type = "ent_var" },
+                { ent_var = "first_met_global",      value = true,                npc = "npc_templar_assasin", type = "ent_var" },
                 { trigger = "trigger_village_enter", npc = "npc_templar_assasin", type = "trigger" },
             },
         },
@@ -242,7 +242,7 @@ return {
         d_untitled_passage_63 = {
             priority = 0,
             conditions = {
-                { questID = "q_clash_royal",  status = QuestStatus.ACTIVE, step = 3, type = "quest" },
+                { questID = "q_clash_royal",    status = QuestStatus.ACTIVE, step = 3, type = "quest" },
                 { interact = "npc_blue_prince", type = "interact" },
             },
         },
@@ -250,103 +250,103 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_bruiser", type = "interact" },
-                { questID = "q_ogres",         status = QuestStatus.INACTIVE, type = "quest" },
+                { questID = "q_ogres",           status = QuestStatus.INACTIVE, type = "quest" },
             },
         },
         d_untitled_passage_65 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_ogres",        status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_66 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",  status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_clash_royal",    status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_67 = {
             priority = 0,
             conditions = {
                 { interact = "npc_monkey_king", type = "interact" },
-                { ent_var = "beaten",         value = true,   npc = "npc_monkey_king", type = "ent_var" },
+                { ent_var = "beaten",           value = true,     npc = "npc_monkey_king", type = "ent_var" },
             },
         },
         d_untitled_passage_68 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { var = "act",              value = "2/3/4",      type = "var" },
-                { questID = "q_ogres",      status = "incompleted", type = "quest" },
+                { var = "act",                value = "2/3/4",        type = "var" },
+                { questID = "q_ogres",        status = "incompleted", type = "quest" },
             },
         },
         d_untitled_passage_69 = {
             priority = 0,
             conditions = {
                 { interact = "npc_monkey_king", type = "interact" },
-                { ent_var = "beaten",         value = false,  npc = "npc_monkey_king", type = "ent_var" },
+                { ent_var = "beaten",           value = false,    npc = "npc_monkey_king", type = "ent_var" },
             },
         },
         d_untitled_passage_70 = {
             priority = 0,
             conditions = {
-                { var = "act",                value = "2/3/4",     type = "var" },
+                { var = "act",                  value = "2/3/4",       type = "var" },
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",  status = "incomplete", type = "quest" },
+                { questID = "q_clash_royal",    status = "incomplete", type = "quest" },
             },
         },
         d_untitled_passage_71 = {
             priority = 0,
             conditions = {
                 { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",      status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_pandas",        status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_72 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_beginning", type = "trigger" },
-                { var = "act",                 value = 0,     type = "var" },
+                { var = "act",                   value = 0,       type = "var" },
             },
         },
         d_untitled_passage_73 = {
             priority = 0,
             conditions = {
-                { var = "act",                        value = 0,        type = "var" },
+                { var = "act",                          value = 0,          type = "var" },
                 { trigger = "trigger_school_shooter_1", npc = "npc_sniper", type = "trigger" },
             },
         },
         d_untitled_passage_74 = {
             priority = 0,
             conditions = {
-                { interact = "npc_predvestnik", type = "interact" },
-                { var = "act",                  value = 1,                 type = "var" },
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { interact = "npc_predvestnik",   type = "interact" },
+                { var = "act",                    value = 1,                   type = "var" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 1,    type = "quest" },
             },
         },
         d_untitled_passage_75 = {
             priority = 0,
             conditions = {
                 { interact = "npc_predvestnik", type = "interact" },
-                { questID = "q_main_quest_1", status = QuestStatus.ACTIVE, step = 2, type = "quest" },
-                { var = "act",                value = 1,                 type = "var" },
+                { questID = "q_main_quest_1",   status = QuestStatus.ACTIVE, step = 2,    type = "quest" },
+                { var = "act",                  value = 1,                   type = "var" },
             },
         },
         d_untitled_passage_76 = {
             priority = 0,
             conditions = {
                 { interact = "npc_mystery", type = "interact" },
-                { var = "act",            value = 1,      type = "var" },
+                { var = "act",              value = 1,        type = "var" },
             },
         },
         d_untitled_passage_77 = {
             priority = 100,
             conditions = {
-                { interact = "npc_scientist", type = "interact" },
-                { var = "act",                value = 1,      type = "var" },
-                { ent_var = "first_met_global", value = true, npc = "npc_scientist", type = "ent_var" },
+                { interact = "npc_scientist",   type = "interact" },
+                { var = "act",                  value = 1,        type = "var" },
+                { ent_var = "first_met_global", value = true,     npc = "npc_scientist", type = "ent_var" },
             },
         },
         d_untitled_passage_78 = {
@@ -365,7 +365,7 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_shamanka", type = "interact" },
-                { var = "act",             value = 0,      type = "var" },
+                { var = "act",               value = 0,        type = "var" },
             },
         },
         d_untitled_passage_80 = {
@@ -378,7 +378,7 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_concert_guard", type = "interact" },
-                { var = "act",                  value = 1,      type = "var" },
+                { var = "act",                    value = 1,        type = "var" },
             },
         },
         d_untitled_passage_82 = {
@@ -390,36 +390,36 @@ return {
         d_untitled_passage_83 = {
             priority = 0,
             conditions = {
-                { interact = "npc_predvestnik", type = "interact" },
+                { interact = "npc_predvestnik",   type = "interact" },
                 { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 3, type = "quest" },
             },
         },
         d_untitled_passage_84 = {
             priority = 0,
             conditions = {
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 3,  type = "quest" },
-                { trigger = "trigger_gorilla",  npc = "npc_gorilla",       type = "trigger" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 3,        type = "quest" },
+                { trigger = "trigger_gorilla",    npc = "npc_gorilla",         type = "trigger" },
             },
         },
         d_untitled_passage_85 = {
             priority = 0,
             conditions = {
-                { ent_var = "beaten", value = false,  npc = "npc_red", type = "ent_var" },
+                { ent_var = "beaten",   value = false,    npc = "npc_red", type = "ent_var" },
                 { interact = "npc_red", type = "interact" },
             },
         },
         d_untitled_passage_86 = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_after_gorilla", npc = "npc_guide",       type = "trigger" },
-                { var = "act",                     value = 1,                 type = "var" },
-                { questID = "q_main_quest_1",      status = QuestStatus.ACTIVE, step = 3,    type = "quest" },
+                { trigger = "trigger_after_gorilla", npc = "npc_guide",           type = "trigger" },
+                { var = "act",                       value = 1,                   type = "var" },
+                { questID = "q_main_quest_1",        status = QuestStatus.ACTIVE, step = 3,        type = "quest" },
             },
         },
         d_untitled_passage_9 = {
             priority = 0,
             conditions = {
-                { var = "act",                   value = 0,          type = "var" },
+                { var = "act",                     value = 0,            type = "var" },
                 { trigger = "trigger_choose_hero", npc = "npc_shamanka", type = "trigger" },
             },
         },
@@ -429,6 +429,7 @@ return {
             text =
             [[Да, такие как ты. Их не заинтересовала жизнь с нами, потому они обосновались отдельно. В Королевстве сейчас живут только последователи Короля. ]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Понятно.]],
@@ -439,6 +440,7 @@ return {
         d_utopat_v_ovatsiyah = {
             text = [[*Жар окутывает твою спину. Невыносимый жар. Тебе не нужно оборачиваться, чтобы понять кто это.*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Ярость.*]],
@@ -449,6 +451,7 @@ return {
         d_vzyat_kamen = {
             text = [[Увидимся тогда! Нам пора продолжать. Слава Королю!]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -459,6 +462,7 @@ return {
         d_vzyat_predmet = {
             text = [[Врата в Королевство перед тобой. Ступай и накажи грешника.]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[Кого?]],
@@ -469,6 +473,7 @@ return {
         d_vzyat_s_pola_kamen = {
             text = [[*Ты чувствуешь его вес, он настоящий.*]],
             speaker = [[...]],
+            npc = "npc_tormentor",
             choices = {
                 {
                     text = [[*Метнуть камень в сооружение.*]],
@@ -480,6 +485,7 @@ return {
             text =
             [[Вот, возьми талисман. Один человек попросил отдать это кому-то с невероятно сильным внутренним миром. Думаю лучше экземпляра я и не встречу.]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[*Взять предмет*]],
@@ -493,6 +499,7 @@ return {
         d_da_skuchnovato = {
             text = [[*Ты откинулся на спинку и ни о чём не думаешь.*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[*Начать думать.*]],
@@ -508,6 +515,7 @@ return {
             text =
             [[*Красный настолько был ошарашен происходящим, что никак не мог понять, какой должна быть его реакция. Осознание того, что он не может постичь действий другого, а тем более себя, начало подпитывать страшный гнев в его теле.*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Начать делать lip trill, дабы добавить устойчивую басовую основу.*]],
@@ -522,6 +530,7 @@ return {
         d_zachem_ya_eto_skazal = {
             text = [[Запомни эти слова. Здесь моя работа окончена.]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Запомнить для чего?]],
@@ -533,6 +542,7 @@ return {
             text =
             [[*Красный настолько был ошарашен происходящим, что никак не мог понять, какой должна быть его реакция. Осознание того, что он не может постичь действий другого, а тем более себя, начало подпитывать страшный гнев в его теле.*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Начать делать lip trill, дабы добавить устойчивую басовую основу.*]],
@@ -547,6 +557,7 @@ return {
         d_metnut_kamen_v_sooruzhenie = {
             text = [[*Твой бросок на что-то повлиял. Золотая фигура издала тихий звук.*]],
             speaker = [[...]],
+            npc = "npc_tormentor",
             choices = {
                 {
                     text = [[*Подойти поближе и прислушаться.*]],
@@ -558,6 +569,7 @@ return {
             text =
             [[*Предвестник зажигает несколько свечек. Он садится и кладёт руки на шар. Всё это сопровождается его глубокими вдохами и едва слышным мычанием.*]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[...]],
@@ -568,6 +580,7 @@ return {
         d_nachat_bitvu = {
             text = [[]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -579,6 +592,7 @@ return {
             text =
             [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
@@ -593,6 +607,7 @@ return {
         d_nachat_dumat = {
             text = [[*Почему люди покупают лотерейные билеты, зная, что ничего не выйграют?*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[*Потому что они глупые, но с надеждой?*]],
@@ -607,6 +622,7 @@ return {
         d_nachat_oboronyatsya = {
             text = [[]],
             speaker = [[Банда троллей]],
+            npc = "npc_troll",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -618,6 +634,7 @@ return {
             text =
             [[*Лицо Красного замерло в ужасной гримасе. Он оскорблён, но при этом его разум не способен осознать и постчиь истинного замысла за твоими последними действиями.*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Значительно повысить темп хлюпанья.*]],
@@ -632,6 +649,7 @@ return {
         d_nachat_siyat = {
             text = [[]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -643,6 +661,7 @@ return {
             text =
             [[*Лицо Красного замерло в ужасной гримасе. Он оскорблён, но при этом его разум не способен осознать и постчиь истинного замысла за твоими последними действиями.*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Значительно повысить темп хлюпанья.*]],
@@ -658,6 +677,7 @@ return {
             text =
             [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
@@ -672,6 +692,7 @@ return {
         d_ne_snimat = {
             text = [[*Он смотрит в твои глаза, но ты не можешь разобрать какие эмоции он чувствует в данный момент.*]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Уходи и больше никогда не появляйся здесь.]],
@@ -682,6 +703,7 @@ return {
         d_nemnogo_otojti = {
             text = [[*Вооружённая фигура распахивает дверь и влетает в кабинет.*]],
             speaker = [[Скул Шутер]],
+            npc = "npc_sniper",
             choices = {
                 {
                     text = [[*Это скул шутер?!*]],
@@ -692,6 +714,7 @@ return {
         d_nu_pochemu_ya_to = {
             text = [[]],
             speaker = [[...]],
+            npc = "npc_gorilla",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -702,6 +725,7 @@ return {
         d_osmotretsya = {
             text = [[*Странно, после выхода из подземного перехода, путь назад просто исчез.*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[Хммм...]],
@@ -713,6 +737,7 @@ return {
             text =
             [[*Все замерли. От сильнейшего топтания твои ботинки покрылись чёрной пеленой, но ты этого даже не заметил, ведь взор твой был устремлён в небеса. В результате страстных движений, земля была окрашена тёмными узорами невиданной красоты."]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Словно иглы, мои ботинки вышили эти орнаменты для вас, земляне.]],
@@ -723,6 +748,7 @@ return {
         d_podojti_k_kripu = {
             text = [[Ты здесь недавно, да? Знаешь, что там?]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[Заброшенный лес.]],
@@ -733,6 +759,7 @@ return {
         d_podojti_poblizhe_i_prislushatsya = {
             text = [[РАВНОЦЕННЫЙ ОБМЕН - ОСНОВА ЭТОГО МИРА.]],
             speaker = [[???]],
+            npc = "npc_tormentor",
             choices = {
                 {
                     text = [[Чего?]],
@@ -743,6 +770,7 @@ return {
         d_podojti_poblizhe = {
             text = [[Меня зовут Боб.]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[А меня зову...]],
@@ -753,6 +781,7 @@ return {
         d_pojdu_chtol_posmotru = {
             text = [[*Преподователь продолжает что-то писать на доске. Ты по-тихому поднялся.*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -764,6 +793,7 @@ return {
             text =
             [[Человек, который твёрдо знает, чего он желает. Человек, который, несмотря на обстоятельства, делает то, что он хочет. Ты ещё более ценный чем я думала.]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[*Протянуть руку.*]],
@@ -774,6 +804,7 @@ return {
         d_potyanut_ruku_k_shtanam = {
             text = [[*Женщина сначала удивилась, а после обрадовалась.*]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[*Поправить яйца.*]],
@@ -784,6 +815,7 @@ return {
         d_predvestie_uzhe_sbylos = {
             text = [[*Горилла замечает тебя. Огромная туша двигается тебе наствречу.*]],
             speaker = [[...]],
+            npc = "npc_gorilla",
             choices = {
                 {
                     text = [[*Ну почему я то?!*]],
@@ -797,6 +829,7 @@ return {
         d_prigotovitsya = {
             text = [[]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -807,6 +840,7 @@ return {
         d_prigrozit_kulakom = {
             text = [[Оуу кей, братан. Ты воистину царь! Слава царю!]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Какой дар преподнесёшь мне сегодня?]],
@@ -817,6 +851,7 @@ return {
         d_pridetsya_chtoto_pridumat = {
             text = [[Надеюсь ты сможешь. Я люблю этот шар!]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -827,6 +862,7 @@ return {
         d_prinyat_vyzov = {
             text = [[]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -837,6 +873,7 @@ return {
         d_prodolzhat_ne_dumat = {
             text = [[*...*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[...]],
@@ -848,6 +885,7 @@ return {
             text =
             [[Впервые такое вижу. Твоя душа кричит, виднеются десятки различных "сущностей", однако, наподобие сперматозоидам, многие из них погибают, не сумев достигнуть цели. Это твои желания, скрытые за десятками стен эмоций.]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[Вау.]],
@@ -858,6 +896,7 @@ return {
         d_razbit_bochku_pinkom = {
             text = [[НЕЕЕЕТ, ЧТО ТЫ НАДЕЛАЛ?! ВСЁ ВЫЛИЛОСЬ. Я ТЕБЯ СЕЙЧАС...]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Ты ж говорил, что она пустая.]],
@@ -868,6 +907,7 @@ return {
         d_snyat_s_nego_mantiu = {
             text = [[*Оттолкнув твою руку, он хватает дубину и ударяет себя по голове.*]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Что...]],
@@ -879,6 +919,7 @@ return {
             text =
             [[*Все замерли. Лишь эхом отдаётся последняя нота. В это соло была вложена вся душа, что ты и не заметил, как замок отлетел. Словно медиатор, он лежит между указательным и большим пальцами. Ширинку больше, увы, не застегнуть. ]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[С этого момента цепи конуры более не смогут сдержать моего бульдога. Ты свободен.]],
@@ -889,6 +930,7 @@ return {
         d_ty_klanyaeshsya_v_otvet = {
             text = [[*Послышался шум динамиков.*Ты... Меня впечталил, конечно.]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[Рад.]],
@@ -899,6 +941,7 @@ return {
         d_udarit_lbom_emu_po_litsu = {
             text = [[АРГХХ... Ты что делаешь сука, А?!]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Моей мамы тут нет, она жива, чмо.]],
@@ -909,6 +952,7 @@ return {
         d_ujti = {
             text = [[*Обе головы продолжают спорить.*]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -919,6 +963,7 @@ return {
         d_uhmylnutsya_i_nachat_hlupat = {
             text = [[ЧТО ]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Начать щёлкать пальцами параллельно хлюпанью.*]],
@@ -933,6 +978,7 @@ return {
         d_hm = {
             text = [[*Послышался чей-то крик.*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[*Пойду чтоль посмотрю.*]],
@@ -943,6 +989,7 @@ return {
         d_eto_skul_shuter = {
             text = [[ЭЙ, БЕДОЛАГИ. СЕГОДНЯ Я НЕ В НАСТРОЕНИИ. КАК ДУМАЕТЕ, ВРЕМЯ ПОСТРЕЛЯТЬ?]],
             speaker = [[Скул Шутер]],
+            npc = "npc_sniper",
             choices = {
                 {
                     text = [[...]],
@@ -953,6 +1000,7 @@ return {
         d_ya_pochuvstvoval_priblizhenie_smerti_ya_tochno_umer_gde_ya = {
             text = [[*Потрогав своё тело, ты убеждаешься, что в нём нет пулевых ранений.*]],
             speaker = [[...]],
+            npc = "npc_tormentor",
             choices = {
                 {
                     text = [[*Взять с пола камень.*]],
@@ -963,6 +1011,7 @@ return {
         d_yarost = {
             text = [[Я ПРИНИМАЮ ТВОЙ ВЫЗОВ.]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Принять вызов.*]],
@@ -977,6 +1026,7 @@ return {
             text =
             [[Вообщем, ты их точно не пропустишь, у них очень выразительные цвета: Красный - злобный малый, Зелёный - твердолобый упырь, Синий - непредсказуемый болван.]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[А звать то их как?]],
@@ -991,6 +1041,7 @@ return {
         d_14 = {
             text = [[Как будто ты всё-таки старше.]],
             speaker = [[???]],
+            npc = nil,
             choices = {
                 {
                     text = [[Кстати, у тебя знакомый голос.]],
@@ -1001,6 +1052,7 @@ return {
         d_20 = {
             text = [[Очень грустно... Чтож, раз уж ты бесполезен, порадуй меня хотя бы шоу.]],
             speaker = [[???]],
+            npc = nil,
             choices = {
                 {
                     text = [[Кстати, у тебя знакомый голос.]],
@@ -1011,6 +1063,7 @@ return {
         d_untitled_passage = {
             text = [[*Перед твоим взором - покачивающаяся панда. Сильный запах алкоголя ударяет тебе в нос.*]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Что пьёшь?]],
@@ -1022,6 +1075,7 @@ return {
             text =
             [[*Существо красного цвета с мрачным видом смотрит в твою сторону. С некоторой периодичностью у него дёргается глаз.*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Ты ведь Красный?]],
@@ -1032,6 +1086,7 @@ return {
         d_untitled_passage_11 = {
             text = [[НАПАДАЙ.]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[*Приготовиться*]],
@@ -1045,6 +1100,7 @@ return {
         d_untitled_passage_12 = {
             text = [[*Из ниоткуда явилось три зубастых существа.*]],
             speaker = [[Банда троллей]],
+            npc = "npc_troll",
             choices = {
                 {
                     text = [[Вы вообще что такое?]],
@@ -1055,6 +1111,7 @@ return {
         d_untitled_passage_13 = {
             text = [[*Перед тобой девушка необычайной красоты. Она помахивает тебе рукой.*]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Привет.]],
@@ -1069,6 +1126,7 @@ return {
         d_untitled_passage_14 = {
             text = [[Крип-предвестник проживает в Заброшенном лесу. Найди его ради Королевства!]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1079,6 +1137,7 @@ return {
         d_untitled_passage_15 = {
             text = [[*Открыв глаза, ты видишь лишь обожённую землю и постройку странной формы.*]],
             speaker = [[...]],
+            npc = "npc_tormentor",
             choices = {
                 {
                     text = [[*Я почувствовал приближение смерти. Я точно умер. Где я.*]],
@@ -1089,6 +1148,7 @@ return {
         d_untitled_passage_16 = {
             text = [[*Тишина.*]],
             speaker = [[???]],
+            npc = "npc_tormentor",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1099,6 +1159,7 @@ return {
         d_untitled_passage_17 = {
             text = [[Эй, чувак, здарова.]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Здарова.]],
@@ -1109,6 +1170,7 @@ return {
         d_untitled_passage_18 = {
             text = [[Будь сильным, приятель.]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1119,6 +1181,7 @@ return {
         d_untitled_passage_19 = {
             text = [[СТОЯЯЯЯЯЯЯТЬ!!]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Чё ты кричишь?]],
@@ -1129,6 +1192,7 @@ return {
         d_untitled_passage_2 = {
             text = [[*Потерпев поражение, Красный остыл, на лице его родилось спокойствие.*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Ну как?]],
@@ -1139,6 +1203,7 @@ return {
         d_untitled_passage_20 = {
             text = [[ВПЕРЁД КАЧАТЬСЯ! СЛАВА КОРОЛЮ!]],
             speaker = [[Крип-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1149,6 +1214,7 @@ return {
         d_untitled_passage_21 = {
             text = [[*Крип-головастик произносит слова, очень сильно напрягая голову.*]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[*Подойти поближе.*]],
@@ -1159,6 +1225,7 @@ return {
         d_untitled_passage_22 = {
             text = [[*Крип неподвижно стоит.*]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1169,6 +1236,7 @@ return {
         d_untitled_passage_23 = {
             text = [[Человек. Хочешь разбогатеть?]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Смотря что предлагаешь.]],
@@ -1179,6 +1247,7 @@ return {
         d_untitled_passage_24 = {
             text = [[Врата. Проходи через них.]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1189,6 +1258,7 @@ return {
         d_untitled_passage_25 = {
             text = [[Помочь Принцу. Ты готов?]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Да.]],
@@ -1206,6 +1276,7 @@ return {
         d_untitled_passage_26 = {
             text = [[*Услышав твои шаги, человек необычной внешности расправляет плечи и подходит к тебе вплотную.*]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Ты человек или крип?]],
@@ -1216,6 +1287,7 @@ return {
         d_untitled_passage_27 = {
             text = [[Л... Ладно. Немного перегнул, но мы в рассчёте, верно? Слава Королю!]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Неа, теперь я твой царь.]],
@@ -1226,6 +1298,7 @@ return {
         d_untitled_passage_33 = {
             text = [[Пс... Эй, ты. Подойди.]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[*Подойти к крипу.*]],
@@ -1236,6 +1309,7 @@ return {
         d_untitled_passage_34 = {
             text = [[Вали уже.]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1247,6 +1321,7 @@ return {
             text =
             [[*Тебя заинтересовало необычное существо с двумя головами. Но, рассмотрев их лица, ты понял, что диалог будет не из простых.*]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Вы единое целое или две личности?]],
@@ -1257,6 +1332,7 @@ return {
         d_untitled_passage_41 = {
             text = [[1: Заброшенный...2: ЛЕС!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1267,6 +1343,7 @@ return {
         d_untitled_passage_42 = {
             text = [[*Крип причудливой внешности излучает необычайное спокойствие.*]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Ты случайно не Огр-громила?]],
@@ -1278,6 +1355,7 @@ return {
             text =
             [[*Огр-громила пал. Он лежит на земле и смотрет в небо. К нему пришло осознание, что это скорее всего последний раз, когда он может насладиться существованием.*]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[...]],
@@ -1288,6 +1366,7 @@ return {
         d_untitled_passage_44 = {
             text = [[1: Ооо, это же ты! Добрый человек-помощник.2: Реально! Это та спичка!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Мантии на интеллект не существует.]],
@@ -1298,6 +1377,7 @@ return {
         d_untitled_passage_45 = {
             text = [[*Ты не решаешься возвращаться к ним.*]],
             speaker = [[...]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1308,6 +1388,7 @@ return {
         d_untitled_passage_46 = {
             text = [[*Кажется тебя обманули, но ты продолжаешь верить. Кстати, кто такая цмка?*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[*Осмотреться.*]],
@@ -1318,6 +1399,7 @@ return {
         d_untitled_passage_47 = {
             text = [[Совсем не ожидал, что ты пройдёшь. Мои поздравления.]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[Цмка где.]],
@@ -1328,6 +1410,7 @@ return {
         d_untitled_passage_48 = {
             text = [[*Взгляда достаточно, чтобы понять, - это явно не цмка.*]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[Обидно.]],
@@ -1338,6 +1421,7 @@ return {
         d_untitled_passage_49 = {
             text = [[*Ты используешь ключ и открываешь клетку.*]],
             speaker = [[Крип-кот в бочке]],
+            npc = nil,
             choices = {
                 {
                     text = [[Вы свободны, убегайте.]],
@@ -1349,6 +1433,7 @@ return {
             text =
             [[*Девушка с угрожающим видом останавливает тебя. Почему-то есть ощущение, что её руки пролили много крови.*]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Что-то не так?]],
@@ -1360,6 +1445,7 @@ return {
             text =
             [[*Её не обмануть. Ты чувствуешь, что поединок тоже не вариант, у неё слишком сильная аура. Придётся реально найти кого-то.*]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1370,6 +1456,7 @@ return {
         d_untitled_passage_61 = {
             text = [[*Ты приветствуешь хранительницу.*]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Мне кажется я знаю пароль.]],
@@ -1380,6 +1467,7 @@ return {
         d_untitled_passage_63 = {
             text = [[Человек. Ты великий воин. Земли теперь полностью мои.]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Круто, как там с наградой?]],
@@ -1393,6 +1481,7 @@ return {
         d_untitled_passage_64 = {
             text = [[Тебе что-то нужно, человек?*Спросил крип с необычайно спокойным голосом.*]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Думаю нет.]],
@@ -1403,6 +1492,7 @@ return {
         d_untitled_passage_65 = {
             text = [[Всё-таки поможешь нам?!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Ладно ладно.]],
@@ -1420,6 +1510,7 @@ return {
         d_untitled_passage_66 = {
             text = [[Теперь богач я. Брат бедный.]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1430,6 +1521,7 @@ return {
         d_untitled_passage_67 = {
             text = [[Не обращай на меня внимание. Иди дальше, давай.]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1440,6 +1532,7 @@ return {
         d_untitled_passage_68 = {
             text = [[Похоже мы больше никогда не встретимся с ним...]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1450,6 +1543,7 @@ return {
         d_untitled_passage_69 = {
             text = [[В себя поверил, А?!]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Я готов.]],
@@ -1460,6 +1554,7 @@ return {
         d_untitled_passage_70 = {
             text = [[Мои владения. Потеряны...]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1470,6 +1565,7 @@ return {
         d_untitled_passage_71 = {
             text = [[*Панда бубнит и пердит.*]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Всё-таки помогу тебе.]],
@@ -1487,6 +1583,7 @@ return {
         d_untitled_passage_72 = {
             text = [[*Обычный день в институте. Так ещё и лекция по тупому предмету.*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[*Да... скучновато.*]],
@@ -1497,6 +1594,7 @@ return {
         d_untitled_passage_73 = {
             text = [[*Подойдя к двери, ты слышишь приближающиеся шаги. Мурашки проходят по твоему телу.*]],
             speaker = [[...]],
+            npc = "npc_sniper",
             choices = {
                 {
                     text = [[*Немного отойти.*]],
@@ -1507,6 +1605,7 @@ return {
         d_untitled_passage_74 = {
             text = [[*Раздражённый крип перепрыгивает с ноги на ногу, ходя вокруг кучки сверкающих осколков.*]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Не подскажешь, где найти предвестника?]],
@@ -1517,6 +1616,7 @@ return {
         d_untitled_passage_75 = {
             text = [[Думаю тебе пригодятся молоток и гвозди.]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1528,6 +1628,7 @@ return {
             text =
             [[*Странное аморфное существо держит в руках переливающийся камень. Вокруг него разброссано много таких же камней, но треснутых.*]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Что ты такое?]],
@@ -1539,6 +1640,7 @@ return {
             text =
             [[*Увлечённый работой человек копошиться в куче бумаг. На них ты замечаешь знакомые математические символы.*]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Оо, у вас тут математика?]],
@@ -1549,6 +1651,7 @@ return {
         d_untitled_passage_78 = {
             text = [[Я слежу за тобой.]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1559,6 +1662,7 @@ return {
         d_untitled_passage_79 = {
             text = [[Не мешай мне мешать!]],
             speaker = [[Крип-алхимик]],
+            npc = "npc_alchemist",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1569,6 +1673,7 @@ return {
         d_untitled_passage_8 = {
             text = [[Ступай.]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1579,6 +1684,7 @@ return {
         d_untitled_passage_80 = {
             text = [[Сейчас мы заняты, приходи позже.]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1589,6 +1695,7 @@ return {
         d_untitled_passage_81 = {
             text = [[*Накачанный крип очень громко пыхтит.*]],
             speaker = [[Крип-вышибала]],
+            npc = "npc_concert_guard",
             choices = {
                 {
                     text = [[Что тут за концерт?]],
@@ -1599,6 +1706,7 @@ return {
         d_untitled_passage_82 = {
             text = [[*Дальше ступать опасно. Есть большой шанс увязнуть в снегу.*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1609,6 +1717,7 @@ return {
         d_untitled_passage_83 = {
             text = [[*Приунывший предсказатель собирает с пола шишки.*]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Вот твой шар.]],
@@ -1619,6 +1728,7 @@ return {
         d_untitled_passage_84 = {
             text = [[*Это... Горилла.*]],
             speaker = [[...]],
+            npc = "npc_gorilla",
             choices = {
                 {
                     text = [[*Предвестие уже сбылось?*]],
@@ -1629,6 +1739,7 @@ return {
         d_untitled_passage_85 = {
             text = [[Я ПРИНИМАЮ ТВОЙ ВЫЗОВ.]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Начать сиять.*]],
@@ -1640,6 +1751,7 @@ return {
             text =
             [[*Гид восторженно подбегает к тебе.*Алекс! Ты наш спаситель, всё Королевство благодарит тебя за этот великий подвиг!]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Да это я.]],
@@ -1650,6 +1762,7 @@ return {
         d_untitled_passage_9 = {
             text = [[*Женщина со странной аурой начала тщательно тебя рассматривать.*]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[Здрасте, не подскажите где я?]],
@@ -1661,6 +1774,7 @@ return {
             text =
             [[Теперь ты член этой Деревни. Если расскажешь кому-либо о нашей деятельности, я казню тебя без колебаний.]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Спасибо, верю.]],
@@ -1671,6 +1785,7 @@ return {
         d_z_eto_samost_a_samost_eto_z = {
             text = [[Истина.]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[*Зачем я это сказал?*]],
@@ -1681,6 +1796,7 @@ return {
         d_a10 = {
             text = [[ПОСЛУШАЙ МУДРОГО ДЯДЮ И ИДИ НАХУЙ.]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Он и вправду очень скучает по тебе, понимаешь?]],
@@ -1691,6 +1807,7 @@ return {
         d_a2 = {
             text = [[*Существо было удивлено, что ты решил с ним заговорить.*]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[...]],
@@ -1702,6 +1819,7 @@ return {
             text =
             [[С тех пор как они перестали следовать моим приказам, жизнь пошла по дну. Люди меня стороняться и обходят. Жена даже из дома выгнала, представляешь? ]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Расскажи о сыновьях.]],
@@ -1713,6 +1831,7 @@ return {
             text =
             [[Я думал люди только и могут кричать о величии их Пропавшего Короля. Сидят на жопе и ничего кроме этого не делают. Неужто ты мне поможешь?]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Ты первый крип, что упомянул Короля. Что тебе о нём известно?]],
@@ -1723,6 +1842,7 @@ return {
         d_g = {
             text = [[Мы самые кровожадные воры Заброшенного леса: Урюк, Дирюк и Бе...]],
             speaker = [[Банда троллей]],
+            npc = "npc_troll",
             choices = {
                 {
                     text = [[Не не, мне не важно кто вы, я спрашивал, что за раса у вас.]],
@@ -1733,6 +1853,7 @@ return {
         d_h = {
             text = [[Я - гид этого Королевства. Все прибывшие в первую очередь встречаются со мной.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Ты знаешь как я сюда попал?]],
@@ -1743,6 +1864,7 @@ return {
         d_h10 = {
             text = [[Прекрасное имя.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Да.]],
@@ -1753,6 +1875,7 @@ return {
         d_h2 = {
             text = [[Нет, наши души где-то в промежутке. ]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[То есть я не смогу вернуться?]],
@@ -1763,6 +1886,7 @@ return {
         d_h3 = {
             text = [[Я удивлена, что ты дошёл до сюда. Обычно на всех новоприбывших нападают крипы у ворот.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Я убил их.]],
@@ -1773,6 +1897,7 @@ return {
         d_h4 = {
             text = [[На востоке - Пустошь. Ступившего в них ожидает только смерть...]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[*Далее.*]],
@@ -1784,6 +1909,7 @@ return {
             text =
             [[На севере - Система подземных путей М.Е.Т.Р.О. (Межрассовая Единая Тоннельно-Рельсовая Объединённая система), ведущих на территории, где поселились "новые" люди.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [["Новые" люди?]],
@@ -1794,6 +1920,7 @@ return {
         d_h6 = {
             text = [[Чтож, пора рассказать о нашем Королевстве, я же всё-таки гид. Что тебе интересно?]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Что за пределами Королевства?]],
@@ -1816,6 +1943,7 @@ return {
         d_h7 = {
             text = [[Жду не дождусь результатов. Слава Королю!]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1826,6 +1954,7 @@ return {
         d_h8 = {
             text = [[На юго-западе - Владения двух Каменных Принцов. Они никак не могут поделить свои земли.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[*Далее.*]],
@@ -1836,6 +1965,7 @@ return {
         d_i = {
             text = [[Вообщем хорошего дня тебе, друг. В нашем Королестве всегда весело.]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[И тебе хорошего.]],
@@ -1847,6 +1977,7 @@ return {
             text =
             [[Зверь Пустоши меня просто в землю втопчет... Нет ни одного существа, кто ему ровня. Радует, что он не нападает, а только обороняется...]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Тогда зачем с ним связываться?]],
@@ -1857,6 +1988,7 @@ return {
         d_i3 = {
             text = [[Как думаешь, почему людей так мало?]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Ну... может разъехались.]],
@@ -1868,6 +2000,7 @@ return {
             text =
             [[*После этих слов, усач резко изменился. Вся задорность исчезла. Остался только его глубокий голос.*]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Что это за взгляд?]],
@@ -1878,6 +2011,7 @@ return {
         d_i5 = {
             text = [[Ты умрёшь, уходи.]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Чего усатый?]],
@@ -1888,6 +2022,7 @@ return {
         d_i6 = {
             text = [[Меня зовут Боб!]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[Помощь нужна?]],
@@ -1898,6 +2033,7 @@ return {
         d_i7 = {
             text = [[Как меня зовут?!]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[Тебя зовут Боб.]],
@@ -1916,6 +2052,7 @@ return {
         d_i8 = {
             text = [[*Крип сильно расстроился. Его не покидает ощущение, что что-то не так.*]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1926,6 +2063,7 @@ return {
         d_i9 = {
             text = [[Отлично. Проходи.]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1936,6 +2074,7 @@ return {
         d_j = {
             text = [[Выходи один на один, уёбок.]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Начнём дуэль.]],
@@ -1949,6 +2088,7 @@ return {
         d_j10 = {
             text = [[Постарайся уж, а то пока я не смогу их контролировать, жена меня домой не пустит.]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1959,6 +2099,7 @@ return {
         d_j11 = {
             text = [[Ты такой же человек как и все остальные...]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -1970,6 +2111,7 @@ return {
             text =
             [[И тот дракон харкнул в брата огнём. Я почуял опасность, потому плюнул в огненный шар и потушил его! Так он и спасся.]],
             speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[...]],
@@ -1981,6 +2123,7 @@ return {
             text =
             [[Вообще-то это я его спас, оттащив брата за дубину, которой он замахивался. Из-за меня дракон промахнулся!]],
             speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[...]],
@@ -1992,6 +2135,7 @@ return {
             text =
             [[2: Никто не поверит в твои бредни, ты тот ещё пень!1: Я вообще не помню, чтоб ты что-то делал. Значит ты этого не делал!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Тихо, к чему вообще эта история?]],
@@ -2003,6 +2147,7 @@ return {
             text =
             [[1: Брат сказал, что сделает нас умнее. Он отправился искать Мантию на интеллект.2: Хотя куда умнее то!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Что за Мантия?]],
@@ -2013,6 +2158,7 @@ return {
         d_l14 = {
             text = [[2: Похоже Мантию стоит отдать тебе!!1: Хорошо ты его!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[*Я что, реально тупее их?*]],
@@ -2023,6 +2169,7 @@ return {
         d_l15 = {
             text = [[1: Когда найдёшь его - скажи, чтоб шёл домой!2: И мантию прихвати нам!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Ладно.]],
@@ -2041,6 +2188,7 @@ return {
             text =
             [[*2-ая голова начала говорить пискляво и резко.*А колёса твои где? Хихи хи. Неужто уже зима, на лыжи пересел?]],
             speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[...]],
@@ -2051,6 +2199,7 @@ return {
         d_l6 = {
             text = [[Как по твоему я поставлю лыжи на коня. Ты вообще не понимаешь чтоли..? У них копыта.]],
             speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[...]],
@@ -2061,6 +2210,7 @@ return {
         d_l7 = {
             text = [[Никак! Сейчас же лето. Воооо! Я бы налепил на них ролики!]],
             speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[...]],
@@ -2071,6 +2221,7 @@ return {
         d_l8 = {
             text = [[На кого?]],
             speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Эх...]],
@@ -2081,6 +2232,7 @@ return {
         d_l9 = {
             text = [[Хиихи хих. Не может быть! После встречи с гидом он стал мокреньким, так мы его только согреем!]],
             speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[В принципе я понял, вы два даунича.]],
@@ -2091,6 +2243,7 @@ return {
         d_m = {
             text = [[Я не могу снять её.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Причина?]],
@@ -2102,6 +2255,7 @@ return {
             text =
             [[До Мантии, моя жизнь была примитивной и бессмысленной, сейчас же полна новых открытий и откровений. ]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Ты ведь обещал отдать Мантию им.]],
@@ -2112,6 +2266,7 @@ return {
         d_m2 = {
             text = [[Моя позиция тверда, ничто не изменит её. Уходи.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Тебе всегда было плевать на них.]],
@@ -2126,6 +2281,7 @@ return {
         d_m3 = {
             text = [[Не нравится мне убивать. Это глупо, тем более ты хороший человек.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Мне тоже, однако выбора нет.]],
@@ -2136,6 +2292,7 @@ return {
         d_m4 = {
             text = [[*Огр хватает твою руку.*Сорвав её, я умру, ты ведь это понимаешь?]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Нет. Я оставлю тебя в живых.]],
@@ -2147,6 +2304,7 @@ return {
             text =
             [[*Несколько минут ты смотришь на его труп. В мылсях мелькают фразы из вашего диалога. Ты не решаешься взять мантию.*]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -2157,6 +2315,7 @@ return {
         d_m6 = {
             text = [[*Он отправился жить. Ты уверен, это его последний день в этих землях.*]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -2167,6 +2326,7 @@ return {
         d_m7 = {
             text = [[Так и где этот болван?!]],
             speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Он не вернётся.]],
@@ -2181,6 +2341,7 @@ return {
         d_m8 = {
             text = [[*Огр обнял сам себя.*]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -2192,6 +2353,7 @@ return {
             text =
             [[Ты победил в честном поединке.*Сказано это было очень спокойно и уверенно. Он ждёт твоих действий.*]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Почему ты не пытаешься сбежать?]],
@@ -2202,6 +2364,7 @@ return {
         d_n = {
             text = [[Чудненькое имя. А сколько тебе лет?]],
             speaker = [[???]],
+            npc = nil,
             choices = {
                 {
                     text = [[20.]],
@@ -2216,6 +2379,7 @@ return {
         d_n1 = {
             text = [[О, вот и наша героиня прибыла, иди к ней!]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -2226,6 +2390,7 @@ return {
         d_n9 = {
             text = [[Однако, если тебя признают, то выдадут кодовую фразу. Произнеси её и я позволю тебе пройти.]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Хмм...]],
@@ -2236,6 +2401,7 @@ return {
         d_o = {
             text = [[*...*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[...]],
@@ -2246,6 +2412,7 @@ return {
         d_o1 = {
             text = [[*Вдруг в коридоре послышался едва заметный хлопок. Взрыв? Выстрел?*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[*Хм?*]],
@@ -2256,6 +2423,7 @@ return {
         d_o10 = {
             text = [[Тогда почему она есть у нас?]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Чтобы выжить.]],
@@ -2270,6 +2438,7 @@ return {
         d_o11 = {
             text = [[*Существо протянуло руку.*]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Хм?]],
@@ -2280,6 +2449,7 @@ return {
         d_o12 = {
             text = [[Тогда почему Бог позволил сделать это?]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Он справедлив.]],
@@ -2294,6 +2464,7 @@ return {
         d_o13 = {
             text = [[Тогда какой смысл науки?]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Познать мир.]],
@@ -2308,6 +2479,7 @@ return {
         d_o2 = {
             text = [[*А почему морковь - это овощ, если она сладкая?*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[*Потому что она твёрдая?*]],
@@ -2323,6 +2495,7 @@ return {
             text =
             [[ЭЙ, ТЫ, НОСАТЫЙ. ДАВАЙ СРАЗИМСЯ. ЕСЛИ ДРАКА БУДЕТ СКУЧНОЙ, ТО Я РАССТРЕЛЯЮ ВСЕХ ЗДЕСЬ, ПОНЯЛ? ПОГНАЛИ!]],
             speaker = [[Скул Шутер]],
+            npc = "npc_sniper",
             choices = {
                 {
                     text = [[Ч.. что?]],
@@ -2337,6 +2510,7 @@ return {
             text =
             [[И потому тот город опустел и со временем превратился в Пустошь. Все, кто там проживают - последователи Короля, однако им не выпал шанс хотя бы увидеть его. Страшная судьба...]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Стоп, а как они ладят с Зверем?]],
@@ -2348,6 +2522,7 @@ return {
             text =
             [[Как вообще я могу быть счастливым, пока они такие не послушные? Это не жизнь. Приходится запивать горе своё. Пока они не воссоединяться, не смогу найти себе места.]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[...]],
@@ -2358,6 +2533,7 @@ return {
         d_o6 = {
             text = [[Оставь слова при себе.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Ты же понимаешь, что я не уйду?]],
@@ -2369,6 +2545,7 @@ return {
             text =
             [[А?! Ты ещё здесь? Вообщем есть неурядица. Приходили крипочки-хулиганы и начали играть в футбол моим драгоценным шаром! Они разбили его!]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Сожалею.]],
@@ -2384,6 +2561,7 @@ return {
             text =
             [[Хмм... ничем. А. Нет! Сквозь него я могу видеть испытания уготовленные нам, смертным! Ты.. наверное видел кратер в лесу, да?]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Да, большая яма.]],
@@ -2394,6 +2572,7 @@ return {
         d_o9 = {
             text = [[Тогда зачем ему наказывать верных и спасать грешников?]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Незачем.]],
@@ -2409,6 +2588,7 @@ return {
             text =
             [[Вместе с коллегой мы узнали.. Да! Алхимия существует! Спустя кучу тестов и опытов стало известно, что здесь главенствует правило Равноценного обмена! ]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Это как?]],
@@ -2420,6 +2600,7 @@ return {
             text =
             [[Допустим, мне нужна бумага, но у меня есть только вода и кусок древесины. С помощью алхимии я могу в один момент переделать эти материалы в полноценную бумагу, ведь она как раз-таки и состоит из воды и опилок. Вот так!]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Что значит "в один момент"? Как это вообще происходит?]],
@@ -2430,6 +2611,7 @@ return {
         d_p10 = {
             text = [[ДА..  ДА..    ДАРОВАНА..                          ЖИЗНЬ.]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[...]],
@@ -2440,6 +2622,7 @@ return {
         d_p11 = {
             text = [[*Предвестник падает в обморок.*]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[И как мне на это реагировать?]],
@@ -2451,6 +2634,7 @@ return {
             text =
             [[Вот возьми. Это, конечно, не сравнится с величиной твоего подвига, но я обязана тебя отблагодарить.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Спасибо типо.]],
@@ -2465,6 +2649,7 @@ return {
             text =
             [[И ещё. Приходил один странный крип, загадочный. Он просил передать, чтобы ты встретился с ним. Он ожидает тебя в Королевстве. Удачи!]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Хм...]],
@@ -2478,6 +2663,7 @@ return {
         d_p14 = {
             text = [[*Ты очень устал, однако придётся двигаться дальше.*]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -2489,6 +2675,7 @@ return {
             text =
             [[На данный момент есть только прототип - несовершенный Философский камень, потому он ломается после одного использования. Зато мы можем сделать кучу таких!]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Прикольно.]],
@@ -2500,6 +2687,7 @@ return {
             text =
             [[У моего коллеги амнезия. Приходтся постоянно рассказывать ему курсы всех предметов с 1 по 11 класс, так ещё и план бакалавриата и магистратуры...]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Если бы я встретил вас при жизни, то может поступил бы в Кэмпридж...]],
@@ -2511,6 +2699,7 @@ return {
             text =
             [[*По какой-то причине свечи начинают сильно разгораться. Тепло, что исходит от них не греет, а наоборот - обмараживает.*]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[...]],
@@ -2522,6 +2711,7 @@ return {
             text =
             [[*Шар начинает постепенно темнеть и покрываться чем-то наподобие плесени. Свечки затухли, и крип, с опустевшими глазами начинает обрывисто говорить...*]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[...]],
@@ -2532,6 +2722,7 @@ return {
         d_p6 = {
             text = [[ОН И.. ИДЁТ.      МОНСТР...                    ГОРИЛЛА..      И...]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[...]],
@@ -2542,6 +2733,7 @@ return {
         d_p7 = {
             text = [[ЖИ.. ЖИВОТНАЯ   ПОХОТЬ...       ЕГО..    ТЯГА...         ЧТО...        ИСПЕПЕЛЯЕТ...]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[...]],
@@ -2552,6 +2744,7 @@ return {
         d_p8 = {
             text = [[ОНО..       Б.. БУДЕТ        НАСИЛОВАТЬ..    КАЖДОГО...           ГРЯДЁТ..]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[...]],
@@ -2562,6 +2755,7 @@ return {
         d_p9 = {
             text = [[КОРОЛЕ..  ВСКАЯ..     БИТВА..            ПОСЛЕДНЕМУ..    ВЫЖИВШЕМУ...         БУДЕТ...]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[...]],
@@ -2573,6 +2767,7 @@ return {
             text =
             [[Где-то в этом мире, сам не знаю. Я вижу их постоянно, но не могу усмирить. Может и тебе посчастливиться встретить их.]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Красный - гневный, Зелёный - упрямый, Синий - своевольный. Запомнил.]],
@@ -2583,6 +2778,7 @@ return {
         d_a_gde_on = {
             text = [[Он покинул нас.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[В каком смысле?]],
@@ -2593,6 +2789,7 @@ return {
         d_a_gde_sam_meteorit = {
             text = [[*Крип задумался.*И вправду... Где он?]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Так это, ты сможешь выдать новое предсказание?]],
@@ -2603,6 +2800,7 @@ return {
         d_a_esli_ya_projdu = {
             text = [[Тогда с цмки одежда сама сползёт.]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[Принято.]],
@@ -2617,6 +2815,7 @@ return {
             text =
             [[Тогда нужно, чтобы кто-то из наших посчитал тебя достойным и позволил присоединиться к нашим исследованиям.]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[А как мне получить эту рекомендацию?]],
@@ -2627,6 +2826,7 @@ return {
         d_a_zvat_to_ih_kak = {
             text = [[Имена?.. Хм... Не припоминаю, я к ним всегда обращаюсь по цвету.]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[А где мне их искать?]],
@@ -2641,6 +2841,7 @@ return {
         d_a_iz_chego_eta_zhizha_sostoit = {
             text = [[Тебе лучше не знать.]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[...]],
@@ -2651,6 +2852,7 @@ return {
         d_a_kak_zhe_korol = {
             text = [[Ты давай, ротик прикрывай. Пока Короля нету, правлю здесь я.]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[То есть Король - чмо?]],
@@ -2662,6 +2864,7 @@ return {
             text =
             [[В Заброшенном лесу проживает крип-предвестник, и каждые 3 года он рассказывает о приближающейся опасности.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Ого.]],
@@ -2672,6 +2875,7 @@ return {
         d_a_kak_mne_poluchit_etu_rekomendatsiu = {
             text = [[Не имею понятия. Охрана тайн - вот моя миссия.]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[...]],
@@ -2683,6 +2887,7 @@ return {
             text =
             [[Мы не знаем, но они населяли эти земли ещё до появления людей. Кстати, некоторые крипы хорошие, они даже проживают с нами.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Ты сказала, что людей мало. Почему?]],
@@ -2693,6 +2898,7 @@ return {
         d_a_kto_vystupaet_to = {
             text = [[Легенда.]],
             speaker = [[Крип-вышибала]],
+            npc = "npc_concert_guard",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -2703,6 +2909,7 @@ return {
         d_a_kuda_on_otpravilsya = {
             text = [[Он пошёл на запад! Боюсь ты не знаешь где это, хих.]],
             speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Это сверху.]],
@@ -2725,6 +2932,7 @@ return {
         d_a_menya_zovu = {
             text = [[Меня зовут Боб.]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[...]],
@@ -2736,6 +2944,7 @@ return {
             text =
             [[Потому что с приходом Короля, каждый захотел жить под его покровительством. Следовательно, все те за стенами начали переселяться в наш город. Однако из-за прошлых конфликтов приняли далеко не всех.]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[...]],
@@ -2746,6 +2955,7 @@ return {
         d_a_pochemu_ty_ne_verneshsya_domoj = {
             text = [[Почему? Ты должен сам понимать.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Нет, не понимаю.]],
@@ -2756,6 +2966,7 @@ return {
         d_a_u_kogo_ya_b_tozhe_podvypil = {
             text = [[Не скажу.]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Почему?]],
@@ -2766,6 +2977,7 @@ return {
         d_a_che_sam_ne_pojdesh_togda_a = {
             text = [[*Усач громко вздохнул.*Я и сам слишком слаб...]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[...]],
@@ -2776,6 +2988,7 @@ return {
         d_aleks = {
             text = [[Круто. А я крип-рогач, знаешь почему?]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Возможно из-за рогов.]],
@@ -2786,6 +2999,7 @@ return {
         d_beru_kachestvom = {
             text = [[Берёшь куда?]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Проехали, так чем он вам отплатил?]],
@@ -2796,6 +3010,7 @@ return {
         d_bog = {
             text = [[Есть ли у Бога мораль?]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Да.]],
@@ -2810,6 +3025,7 @@ return {
         d_bolshe_voprosov_netu = {
             text = [[Хорошо. Кстати, я так и не спросила твоего имени...]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Меня зовут...]],
@@ -2820,6 +3036,7 @@ return {
         d_bhh_haaa_eosh = {
             text = [[Вход в деревню не доступен болванам.]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -2830,6 +3047,7 @@ return {
         d_byvaj = {
             text = [[Тогда, как вернёшься, я сниму их с тебя и убегу, слышишь?!]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -2840,6 +3058,7 @@ return {
         d_v_kakom_smysle = {
             text = [[*Она не отвечает.*]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Понятно.]],
@@ -2850,6 +3069,7 @@ return {
         d_v_printsipe_ya_ponyal_vy_dva_daunicha = {
             text = [[НЕТ! Мы довольно смышлённые, даже думать умеем! А вдвоём наш разум увеличивается в три раза!]],
             speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Почему в три.]],
@@ -2861,6 +3081,7 @@ return {
             text =
             [[2: Как можно вообще потеряться в себе, он внутри своей головы живёт?1: Это невозможно. скорее всего он заблудился.]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[*Уйти.*]],
@@ -2874,6 +3095,7 @@ return {
         d_valyaj = {
             text = [[Знал ли ты, что на месте Пустоши стоял город, подобно нашему?]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Нет.]],
@@ -2885,6 +3107,7 @@ return {
             text =
             [[Прямо сейчас я послала достаточный импульс, который позволит избранным прорваться и сделать тебя совершенным. Достойными оказались трое.]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[Towel Master.]],
@@ -2912,6 +3135,7 @@ return {
         d_vash_brat_tak_skazal = {
             text = [[Так ты нашёл его? Он всё ещё ходит с той огромной дубиной, да?]],
             speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[...]],
@@ -2922,6 +3146,7 @@ return {
         d_vizhu_ty_s_ludmi_horosho_ladish = {
             text = [[Да, мы и люди - инь янь, понимаешь? Всё время вместе. Но...]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Но?]],
@@ -2932,6 +3157,7 @@ return {
         d_vozmozhno_izza_rogov = {
             text = [[В точку, братан.]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Вижу ты с людьми хорошо ладишь?]],
@@ -2942,6 +3168,7 @@ return {
         d_voobschem_ty_pidorasik = {
             text = [[ЧЕГО?!]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*Ухмыльнуться и начать хлюпать.*]],
@@ -2956,6 +3183,7 @@ return {
             text =
             [[*Выронив из рук все шишки, он подлетает к тебе и выхватывает шар. Руки крипа нетерпеливо крутят его во все стороны, пока лучи солнца бликуют об хрустальную поверхность прямо тебе в глаза.*]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Всё хватит. Ты обещал сделать предсказание.]],
@@ -2966,6 +3194,7 @@ return {
         d_vsego = {
             text = [[Великая мудрость... Что ж, свидимся позже.]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -2976,6 +3205,7 @@ return {
         d_vse_hvatit_ty_obeschal_sdelat_predskazanie = {
             text = [[Ооух точно! Ради тебя и твоего рода я дам вам предупреждения от высших... Начинаю.]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[*Наблюдать.*]],
@@ -2986,6 +3216,7 @@ return {
         d_vy_voobsche_chto_takoe = {
             text = [[*Главный начал разговор.*Ооо новичок подъехал, мы таких любим.]],
             speaker = [[Банда троллей]],
+            npc = "npc_troll",
             choices = {
                 {
                     text = [[...]],
@@ -2997,6 +3228,7 @@ return {
             text =
             [[*1-ая голова начала говорить медленным занудным тоном.*Я Шофёр лимузина. Вожу важных персон. На машине... На конях...]],
             speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[...]],
@@ -3007,6 +3239,7 @@ return {
         d_vy_rodstvenniki_primi_ego_takim_kakim_est_i_eto_budet_vzaimno = {
             text = [[ТЫ ДЕБИЛЬНЫЙ ДАУН. ПРЯМ ДАУНСКИЙ ДЕБИЛ.]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Отец любит тебя. Он ждёт тебя. Вернись домой. Семья - самое важное на свете.]],
@@ -3017,6 +3250,7 @@ return {
         d_vy_svobodny_ubegajte = {
             text = [[*Поочерёдно крипы встали и поклонились тебе.*]],
             speaker = [[Крип-кот в бочке]],
+            npc = nil,
             choices = {
                 {
                     text = [[*Ты кланяешься в ответ.*]],
@@ -3027,6 +3261,7 @@ return {
         d_vysvobozhdenie = {
             text = [[Высвобождение? А высвобождение чего?]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Всего.]],
@@ -3037,6 +3272,7 @@ return {
         d_gde_tsmka = {
             text = [[Чуть дальше. Скажи, красавчик, сколько тебе лет?]],
             speaker = [[???]],
+            npc = nil,
             choices = {
                 {
                     text = [[20.]],
@@ -3051,6 +3287,7 @@ return {
         d_da = {
             text = [[*Усач разлился хохотом*Не думал, что в мире остались люди с яйцами!]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Огромными, прошу заметить.]],
@@ -3061,6 +3298,7 @@ return {
         d_da_bolshaya_yama = {
             text = [[Метеорит упал в то место. Это предсказал мой шар! Целых три года назад!!]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[А где сам метеорит?]],
@@ -3071,6 +3309,7 @@ return {
         d_da_oni_svoebraznye_no_hotya_by_provedaj_ih = {
             text = [[Тебе не понять насколько мерзки они для меня. ]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Но...]],
@@ -3081,6 +3320,7 @@ return {
         d_da__1 = {
             text = [[Алекс, а такой красивый юноша мог бы выполнить скромную просьбу юной девушки.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[А как же.]],
@@ -3091,6 +3331,7 @@ return {
         d_da_i_ya_obozhau_reshat = {
             text = [[Ого! Наконец-то смышлённый человек забрёл в этот мир. Чудеса! Значит мы поладим с тобой.]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Ты упомянул алхимию. Разве она существует?]],
@@ -3101,6 +3342,7 @@ return {
         d_davajte_sami = {
             text = [[1: Похоже мы больше никогда не встретим брата...2: Судьба плохо обходится с умными, брат...]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3112,6 +3354,7 @@ return {
             text =
             [[Охох, всё содержимое уже во мне.*Панда шлёпает себя по пузу, а потом стучит по бочке, намекая, что она пустая, однако слышно, что в ней ещё немного осталось.*]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Я слышу, что пиво ещё есть.]],
@@ -3122,6 +3365,7 @@ return {
         d_derevya_i_dikie_kripy = {
             text = [[Дубина, там сокровища, слышишь??]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[Это хорошо, по пути прихвачу.]],
@@ -3132,6 +3376,7 @@ return {
         d_dzheffri_ejnshtejn = {
             text = [[Эпштейн.]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[Кранштейн.]],
@@ -3142,6 +3387,7 @@ return {
         d_do_svidaniya = {
             text = [[]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3152,6 +3398,7 @@ return {
         d_dopustim = {
             text = [[*Неизвестное придало тебе сил двигаться дальше.*]],
             speaker = [[...]],
+            npc = "npc_tormentor",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3162,6 +3409,7 @@ return {
         d_dumau_net = {
             text = [[Тогда возвращайся в безопасноть, в этом лесу куча кровожадных существ.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3172,6 +3420,7 @@ return {
         d_dumau_on_prav = {
             text = [[*Обе головы хором ответили.*У нас два мозга, а у тебя один. Не сравнивай нас с собой!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Беру качеством.]],
@@ -3183,6 +3432,7 @@ return {
             text =
             [[Будь благодарен тому, что сможешь обучиться этому сейчас! Присоединяйся как-нибудь к нам и станешь умнейшим в этих краях. Так и сможешь исследовать вселенную!]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Может. Кстати, а можно мне один Философский камень?]],
@@ -3193,6 +3443,7 @@ return {
         d_zhmot = {
             text = [[*После таких слов, он разозлился, поставил бочку на землю и пнул её в тебя.*]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[*Разбить бочку пинком.*]],
@@ -3203,6 +3454,7 @@ return {
         d_zabroshennyj_les = {
             text = [[Неее, я имею ввиду, что там ВНУТРИ.]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[Деревья... и дикие крипы?]],
@@ -3213,6 +3465,7 @@ return {
         d_zapomnit_dlya_chego = {
             text = [[*Существо исчезло.*]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3223,6 +3476,7 @@ return {
         d_zdarova = {
             text = [[Ты попал в наш дом, ты новый житель, бро.]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Приятно.]],
@@ -3234,6 +3488,7 @@ return {
             text =
             [[Чувствую перед собой сильную энергию... Неужто пришёл тот, кто освободит наше измученное Королевство?]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[Что?]],
@@ -3245,6 +3500,7 @@ return {
             text =
             [[*Красный с энтузиазмом глазеет в твою сторону. Его губы начинают дрожать, новое оскорбление вот вот вылетит из них со свистом.*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Вообщем ты пидорасик.]],
@@ -3256,6 +3512,7 @@ return {
             text =
             [[Ты показал свою силу, добравшись живым до сюда. Можешь ли ты узнать, какой будет следующая катастрофа, чтобы мы были готовы?]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Конечно.]],
@@ -3276,6 +3533,7 @@ return {
         d_i_kak_mne_na_eto_reagirovat = {
             text = [[*Пора возвращаться к гиду.*]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3286,6 +3544,7 @@ return {
         d_i_ne_posporish = {
             text = [[]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3296,6 +3555,7 @@ return {
         d_i_tvoj_brat_daj_ugadau_tozhe_prints = {
             text = [[Верно. Красный Принц. Земля досталась нам от отца. Вечная борьба.]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[И тебе помочь отвоевать её?]],
@@ -3306,6 +3566,7 @@ return {
         d_i_tebe_pomoch_otvoevat_ee = {
             text = [[Верно. Брат мой - последователь капитализма. Куча денег. Куча сильных бойцов. Я не имею такового.]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Но ты же мне заплатишь?]],
@@ -3316,6 +3577,7 @@ return {
         d_i_tebe_horoshego = {
             text = [[*Рогач стучит себя по груди и махает тебе, пока ты уходишь.*]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3326,6 +3588,7 @@ return {
         d_i_chto_delat_budem = {
             text = [[Ты будешь проходить полосу препятствий, а я смотреть. Ты умирать, а я наслаждаться.]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[А если я пройду?]],
@@ -3337,6 +3600,7 @@ return {
             text =
             [[КАЧАТЬСЯ! Лишь комбинация сильного духа и тела позволит человеку возвыситься до его уровня. Я обязан стать сильнее!]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Я тогда тоже буду.]],
@@ -3347,6 +3611,7 @@ return {
         d_i__1 = {
             text = [[Он наш брат! Братьев ценить нужно! Даже человек должен это понять.]],
             speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Ну могу да.]],
@@ -3357,6 +3622,7 @@ return {
         d_kak_pojdet = {
             text = [[Подожди подожди, а кто тебе рассказал об их существовании? Это я!]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[Не помню такого.]],
@@ -3367,6 +3633,7 @@ return {
         d_kakoj_dar_prepodnesesh_mne_segodnya = {
             text = [[Какой ещё дар?! Ааа... я понял! Информация же пойдёт, да?]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Валяй.]],
@@ -3377,6 +3644,7 @@ return {
         d_kogo = {
             text = [[Небеса с тобой. Слава Королю!]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[До свидания.]],
@@ -3390,6 +3658,7 @@ return {
         d_kranshtejn = {
             text = [[*Тишина.*]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[И что делать будем?]],
@@ -3400,6 +3669,7 @@ return {
         d_kruto_kak_tam_s_nagradoj = {
             text = [[Возьми. Большая награда. Для большого человека.]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3410,6 +3680,7 @@ return {
         d_kstati_u_tebya_znakomyj_golos = {
             text = [[Серьёзно? Не знал, что у меня есть фанаты даже здесь. Я Джеффри...]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[Джеффри Эйнштейн.]],
@@ -3420,6 +3691,7 @@ return {
         d_ladno_togda_chast_otsyplu_mozhet_byt = {
             text = [[Всмысле может быть?!]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3430,6 +3702,7 @@ return {
         d_ladno_poka = {
             text = [[*В стороне ты заметил вход в подземные пути.*]],
             speaker = [[...]],
+            npc = nil,
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3440,6 +3713,7 @@ return {
         d_ladno = {
             text = [[*Огр дал сам себе пять.*]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3450,6 +3724,7 @@ return {
         d_mamu_ne_trogaj = {
             text = [[Поздно. Облапана до предела.]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[*Ударить лбом ему по лицу.*]],
@@ -3460,6 +3735,7 @@ return {
         d_mantii_na_intellekt_ne_suschestvuet = {
             text = [[Как так?!]],
             speaker = [[npc ogre magi both]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Ваш брат так сказал.]],
@@ -3470,6 +3746,7 @@ return {
         d_mantiya_proklyata = {
             text = [[Нет. Я просто не хочу быть прежним. Сейчас я владею всеми знаниями мира, это высшее наслаждение.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[...]],
@@ -3480,6 +3757,7 @@ return {
         d_menya_zovut = {
             text = [[*Девушка в предвкушении.*]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[...Алекс.]],
@@ -3498,6 +3776,7 @@ return {
         d_menya_poslal_tvoj_brat_ili_tochnee_bratya = {
             text = [[Понимаю.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Они беспокоются за тебя, вернёшься к ним?]],
@@ -3508,6 +3787,7 @@ return {
         d_mne_kazhetsya_ya_znau_parol = {
             text = [[Говори.]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Z - это Cамость, а Cамость - это Z.]],
@@ -3518,6 +3798,7 @@ return {
         d_mne_tozhe_odnako_vybora_net = {
             text = [[Тогда начнём.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[*Начать битву*]],
@@ -3531,6 +3812,7 @@ return {
         d_mnogo_chego = {
             text = [[Много хорошего... И... Много великого, да.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[А где он?]],
@@ -3541,6 +3823,7 @@ return {
         d_mozhet_kstati_a_mozhno_mne_odin_filosofskij_kamen = {
             text = [[Конечно! Только не показывай простолюдинам. Используй в тайне!]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[*Взять камень.*]],
@@ -3554,6 +3837,7 @@ return {
         d_my_v_limbe = {
             text = [[Да, наши души где-то промежутке.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[То есть я не смогу вернуться?]],
@@ -3564,6 +3848,7 @@ return {
         d_navernoe_no_umirat_neohota = {
             text = [[ЭТО ПРАВДА. ОДНАКО У МЕНЯ ПРИКАЗ, ИЗВИНИ.]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[Понимаю.]],
@@ -3574,6 +3859,7 @@ return {
         d_nadeyalsya_chto_smozhem_vstretitsya_vzhivuu = {
             text = [[Ты, к сожалению, староват.]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[...]],
@@ -3584,6 +3870,7 @@ return {
         d_nauka = {
             text = [[Может ли наука превзойти Бога?]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Да.]],
@@ -3598,6 +3885,7 @@ return {
         d_nachnem_duel = {
             text = [[]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3608,12 +3896,13 @@ return {
         d_ne_ne_mne_ne_vazhno_kto_vy_ya_sprashival_chto_za_rasa_u_vas = {
             text = [[Разорвём на части этого черта!!]],
             speaker = [[Банда троллей]],
+            npc = "npc_troll",
             choices = {
                 {
                     text = [[*Начать обороняться.*]],
                     next = nil,
                     actions = {
-                        { npc = "npc_gate_troll_uruk", target = "kill", type = "fight_start" },
+                        { npc = "npc_gate_troll_uruk",  target = "kill", type = "fight_start" },
                         { npc = "npc_gate_troll_biruk", target = "kill", type = "fight_start" },
                         { npc = "npc_gate_troll_diruk", target = "kill", type = "fight_start" },
                     },
@@ -3624,6 +3913,7 @@ return {
             text =
             [[Мне кажется он не спичка... Больше он походит на человека. Если мы его подожжём, он сгорит, понимаешь?]],
             speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[...]],
@@ -3635,6 +3925,7 @@ return {
             text =
             [[*Ты слышишь странный звук. Грудь ощущается тяжёлой. Повернув голову вниз, ты замечаешь сквозную дыру. Похоже она попала прям в сердце.*]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Бххъ... хааа... еошъъ....]],
@@ -3645,6 +3936,7 @@ return {
         d_ne_podskazhesh_gde_najti_predvestnika = {
             text = [[Ай я оой ёёёй... Мой бедный шарик. Хрустальный шарик.]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Ээй. Ало.]],
@@ -3655,6 +3947,7 @@ return {
         d_ne_pomnu_takogo = {
             text = [[Э?]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[Бывай.]],
@@ -3666,6 +3959,7 @@ return {
             text =
             [[Войдёшь в Пустоши и тебе напихают настолько сильно... Даже не знаю, есть ли слова, чтобы описать насколько...  ]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[А чё сам не пойдёшь тогда, а?]],
@@ -3676,6 +3970,7 @@ return {
         d_ne_hochu = {
             text = [[Ты. Подумай ещё.]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3686,6 +3981,7 @@ return {
         d_ne_ya_prishel_uznat_novoe_predskazanie = {
             text = [[Аааа... Понятно.*Крип начал палкой двигать осколки.*]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Так что?]],
@@ -3696,6 +3992,7 @@ return {
         d_nea_teper_ya_tvoj_tsar = {
             text = [[Ээу, после битвы совсем оборзел чтоли?!]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[*Пригрозить кулаком*]],
@@ -3706,6 +4003,7 @@ return {
         d_net_ne_ponimau = {
             text = [[Нынешнему мне не о чем говорить с ними. У вас был диалог, думаю несложно догадаться о чём я.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Да, они своебразные, но хотя бы проведай их.]],
@@ -3716,6 +4014,7 @@ return {
         d_net = {
             text = [[И наши города были в напряжных таких отношениях. Не воевали, конечно, но злоба была всякая.]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[А почему теперь там всё заброшено?]],
@@ -3726,6 +4025,7 @@ return {
         d_net_ya_ostavlu_tebya_v_zhivyh = {
             text = [[Не выйдет. Я умру как личность.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[*Снять с него Мантию.*]],
@@ -3740,6 +4040,7 @@ return {
         d_no_ty_zhe_mne_zaplatish = {
             text = [[Верно.]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Хм...]],
@@ -3751,6 +4052,7 @@ return {
             text =
             [[Ты сейчас начнёшь рассказывать о наших воспоминаниях, братских узах и о том, как они меня однажды спасли. Не нужно этого.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[...]],
@@ -3761,6 +4063,7 @@ return {
         d_no__1 = {
             text = [[Среди крипов куча злыдней, чёрт... Да и люди бывают теми ещё подонками...]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Понимаю тебя.]],
@@ -3771,6 +4074,7 @@ return {
         d_nu_i_horosho = {
             text = [[СРАЖЕНИЕ ЗА КОГО-ТО ДРУГОГО ПРИДАСТ ТЕБЕ МОТИВАЦИИ ДРАТЬСЯ В ПОЛНУЮ СИЛУ.]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[Так-то да.]],
@@ -3782,6 +4086,7 @@ return {
             text =
             [[Знаешь... Лучше. Твои удары усмирили мой гнев. Что-то я уж больно вспылил, даже неприятно вспоминать кем я был минуту назад. Благодарю за возвращение в спокойное состояние.]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Так ты вернёшься домой?]],
@@ -3793,6 +4098,7 @@ return {
             text =
             [[Мы с ним взрывали петарды в лесу, как на нас вышел огромный дракон. Он мог летать. С помощью крыльев.]],
             speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Ага.]],
@@ -3803,6 +4109,7 @@ return {
         d_nu_mozhet_razehalis = {
             text = [[Он убил всех. Остались только мы, что побоялись идти с остальными.]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[И что тогда делать?]],
@@ -3813,6 +4120,7 @@ return {
         d_obidno = {
             text = [[ЖАЛКО ТЕБЯ РАЗОЧАРОВЫВАТЬ.]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[Опять не повезло...]],
@@ -3824,6 +4132,7 @@ return {
             text =
             [[Время пророчества близко, но неизвестно чего ожидать. Мы бы спросили его, но в лесу полно опасных крипов, а мы люди - сейчас слабы.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[И вправду ужас.]],
@@ -3834,6 +4143,7 @@ return {
         d_ogromnymi_proshu_zametit = {
             text = [[Ого! Ну и боевой дух! Только вот ты ещё слабачок.]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Не понял.]],
@@ -3844,6 +4154,7 @@ return {
         d_on_i_vpravdu_ochen_skuchaet_po_tebe_ponimaesh = {
             text = [[ПРИКИНЬ, ТЫ ШЕРСТЬ.]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Вы родственники. Прими его таким, каким есть, и это будет взаимно.]],
@@ -3854,6 +4165,7 @@ return {
         d_on_ne_vernetsya = {
             text = [[*Обе головы переглянулись в недоумении.*Почему?!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Он потерялся.]],
@@ -3864,6 +4176,7 @@ return {
         d_on_poteryalsya = {
             text = [[Где?!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[В себе.]],
@@ -3874,6 +4187,7 @@ return {
         d_on_srazhalsya_s_drakonom_posle_pobedy_on_pal = {
             text = [[*Они начали смотреть в разные стороны.*]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Ценой своей жизни он спас поселение добрых крипов.]],
@@ -3884,6 +4198,7 @@ return {
         d_on_umer = {
             text = [[*Головы замолкли.*]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Он сражался с драконом. После победы, он пал.]],
@@ -3894,6 +4209,7 @@ return {
         d_oni_bespokoutsya_za_tebya_verneshsya_k_nim = {
             text = [[Теперь не могу. Но каких-то пару дней назад всё ещё был шанс.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Это связано с Мантией?]],
@@ -3905,6 +4221,7 @@ return {
             text =
             [[*Услышав любимое слово, человек резко повернулся к тебе.*Да! Математика, физика, астрономия и алхимия - всё это есть у нас, молодой человек! Вы новенький тут?]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Да. И я обожаю решать.]],
@@ -3915,6 +4232,7 @@ return {
         d_opyat_ne_povezlo = {
             text = [[ЧЕМ БЫСТРЕЕ УМРЁШЬ, ТЕМ БЫСТРЕЕ ПРОЙДЁТ ГРУСТЬ.]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[Наверное, но умирать неохота...]],
@@ -3925,6 +4243,7 @@ return {
         d_otets_lubit_tebya_on_zhdet_tebya_vernis_domoj_semya_samoe_vazhnoe_na_svete = {
             text = [[ПИСЕЧНАЯ ПОДСТАВКА - ТВОЙ ВЕЛИКИЙ ТИТУЛ. А ВООБЩЕ У ТЕБЯ НОС КАК...]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Знаешь, я передумал.]],
@@ -3935,6 +4254,7 @@ return {
         d_otkuda_ty_voobsche_govorish = {
             text = [[Остров усеян динамиками, а что?]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[Надеялся, что сможем встретиться вживую.]],
@@ -3945,6 +4265,7 @@ return {
         d_otkuda_ty_eto_skazal = {
             text = [[ГОРДЫНЯ - РАЗРУШИТЕЛЬ СУЩЕГО.]],
             speaker = [[???]],
+            npc = "npc_tormentor",
             choices = {
                 {
                     text = [[Подскажи где я.]],
@@ -3955,6 +4276,7 @@ return {
         d_plata_za_informatsiu = {
             text = [[Верно подмечено!]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[Ладно тогда, часть отсыплю, может быть.]],
@@ -3965,6 +4287,7 @@ return {
         d_podskazhi_gde_ya = {
             text = [[*Фигура замолкла.*]],
             speaker = [[???]],
+            npc = "npc_tormentor",
             choices = {
                 {
                     text = [[Допустим.]],
@@ -3975,6 +4298,7 @@ return {
         d_pozaimstvoval_mozhet_ukral = {
             text = [[Не твоё дело.]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Расскажи откуда, мне для друга надо.]],
@@ -3985,6 +4309,7 @@ return {
         d_pomosch_nuzhna = {
             text = [[Меня зовут... эм...*Крип начал перебирать варианты.*]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[...]],
@@ -3995,6 +4320,7 @@ return {
         d_ponimau_tebya = {
             text = [[Но мы всё равно вместе, понимаешь, Ален? Мы душевно связаны.]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Респект.]],
@@ -4009,6 +4335,7 @@ return {
         d_ponimau = {
             text = [[*Вдруг ты замечаешь клетку с крипами: исхудалыми и грустными.*]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[Те, наверное, как раз жерты Эпштейна, да?]],
@@ -4019,6 +4346,7 @@ return {
         d_ponyatno = {
             text = [[Знаешь... Если бы ты тогда сражался за нас, то исход мог бы быть совершенно другим... Хотя забудь.]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Понятно. Хороший дар ты преподнёс, благодарен тебе.]],
@@ -4029,6 +4357,7 @@ return {
         d_ponyatno_horoshij_dar_ty_prepodnes_blagodaren_tebe = {
             text = [[Получается так...]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -4039,6 +4368,7 @@ return {
         d_pochemu_v_tri = {
             text = [[Потому что в 4!]],
             speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Я короч пошёл.]],
@@ -4049,6 +4379,7 @@ return {
         d_pochemu_ty_ne_pytaeshsya_sbezhat = {
             text = [[В этом нет нужды. Моя жизнь теперь в твоих руках.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[*Потянуться к Мантии.*]],
@@ -4059,6 +4390,7 @@ return {
         d_pochemu = {
             text = [[Какая мне выгода?]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Дай тогда хлебнуть из твоего бочонка.]],
@@ -4069,6 +4401,7 @@ return {
         d_privet = {
             text = [[Приветствую, рада видеть новые лица в нашем Королевстве.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[А ты кто?]],
@@ -4080,6 +4413,7 @@ return {
             text =
             [[Мы стараемся раскрыть все тайны этого мира и добиться великих результатов! Я уверен, что здесь скрыто нечто большее. Но к сожалению, узнаем мы это не скоро...]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Почему?]],
@@ -4090,6 +4424,7 @@ return {
         d_prinyato = {
             text = [[Тогда вперёд.]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -4100,6 +4435,7 @@ return {
         d_prichina = {
             text = [[Осознание. Возвращение в прошлую жизнь недопустимо.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Мантия проклята?]],
@@ -4110,6 +4446,7 @@ return {
         d_priyatno = {
             text = [[Как звать тебя?]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Алекс.]],
@@ -4121,6 +4458,7 @@ return {
             text =
             [[Да беда ужасная настигла. У меня есть три сына, понимаешь, а они сбежали от папки своего, не хотят ладить со мной. ]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[...]],
@@ -4131,6 +4469,7 @@ return {
         d_rad = {
             text = [[Но и сильно разочаровал. Ты забрал мой товар, так что с этих пор - оглядывайся.]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[Ладно, пока.]],
@@ -4142,6 +4481,7 @@ return {
             text =
             [[Ооох, они прекрасные, но в последнее время на них что-то нашло, не подчиняются старику. Бывало заставляли меня делать ужасные вещи: воровать, буянить, даже нападать на окружающих... Ох, ужас...]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[...]],
@@ -4153,6 +4493,7 @@ return {
             text =
             [[Вдруг, как домино, люди начали окутывать тебя аплодисментами и восторженными возгласами. Тебе начало казаться, что из-за их шума земля начала дрожать. После такого остаётся делать только одну вещь...*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*... утопать в овациях.*]],
@@ -4164,6 +4505,7 @@ return {
             text =
             [[Приветствую, не переживай, вход в город бесплатный, можешь находиться здесь столько, сколько тебе нужно.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[...]],
@@ -4175,6 +4517,7 @@ return {
             text =
             [[Вдруг, как домино, люди начали окутывать тебя аплодисментами и восторженными возгласами. Тебе начало казаться, что из-за их шума земля начала дрожать. После такого остаётся делать только одну вещь...*]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[*... утопать в овациях.*]],
@@ -4185,6 +4528,7 @@ return {
         d_smotrya_chto_predlagaesh = {
             text = [[Я - Синий Принц. Сын великого Булыжника. Однако у Булыжника. Два сына.]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[И твой брат, дай угадаю, тоже принц?]],
@@ -4195,6 +4539,7 @@ return {
         d_sozhaleu = {
             text = [[Верно. Ужасное событие, возможно это кара Божья! ]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Чем шар ценен?]],
@@ -4206,6 +4551,7 @@ return {
             text =
             [[Со сменой суток, в Королевстве можешь встретиить новые лица. Возможно, тебе захочется пообщаться с горожанами.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Ладно.]],
@@ -4216,6 +4562,7 @@ return {
         d_spasibo_veru = {
             text = [[Добро пожаловать.]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -4227,6 +4574,7 @@ return {
             text =
             [[Эээ... Этого я не знаю. Я сыканул пойти на охоту с остальными, так что не знаю какая там обстановка. ]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Понятно.]],
@@ -4237,6 +4585,7 @@ return {
         d_tak_ty_verneshsya_domoj = {
             text = [[Да, и только благодаря тебе. У меня кстати есть вопрос: какая цель была у твоего перформанса?]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Высвобождение.]],
@@ -4247,6 +4596,7 @@ return {
         d_tak_chto = {
             text = [[Ааргъх... Это какое-то пиво. Позаимствовал у людей.]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[А у кого? Я б тоже подвыпил.]],
@@ -4262,6 +4612,7 @@ return {
             text =
             [[Только с шаром. Без шара никак! Давай ты его починишь! Я слышал, что люди хорошо мастерят, так давай же!]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Я попробую.]],
@@ -4272,6 +4623,7 @@ return {
         d_takto_da = {
             text = [[ЧЕМ СЛОЖНЕЕ БИТВА, ТЕМ ВЕСЕЛЕЕ.]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[И не поспоришь.]],
@@ -4285,6 +4637,7 @@ return {
         d_te_navernoe_kak_raz_zherty_epshtejna_da = {
             text = [[ДА.]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[У тебя есть ключ от клетки?]],
@@ -4295,6 +4648,7 @@ return {
         d_tebya_zovut_aleks = {
             text = [[Алекс... Алекс?]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[Да.]],
@@ -4305,6 +4659,7 @@ return {
         d_tebya_zovut_bob = {
             text = [[Боб... Точно! Спасибо!!]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -4315,6 +4670,7 @@ return {
         d_tebya_zovut_dzhon = {
             text = [[Джон... Джон? ]],
             speaker = [[Крип-Боб]],
+            npc = "npc_creep_bob",
             choices = {
                 {
                     text = [[Да.]],
@@ -4325,6 +4681,7 @@ return {
         d_tebya_ischet_otets_vozvraschajsya_domoj = {
             text = [[ТЫ ЧЁ, ЕБЛАН? ХАХАХА, КАКОЙ ОТЕЦ???]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Ты знаешь о ком я говорю. Он ждёт, когда ты воссоединишься с ним и своими братьями.]],
@@ -4336,6 +4693,7 @@ return {
             text =
             [[2: А к тому, что брат захотел нас отблагодарить за спасение... Вот...1: Хоть мы и старше, он сказал, что мы глуповаты. Думаю, он не прав.]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Думаю он прав.]],
@@ -4350,6 +4708,7 @@ return {
         d_to_est_korol_chmo = {
             text = [[ЧЁ СКАЗАЛ? Радуйся последним минутам, пока у тебя есть зубы.]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[*Встать в боевую стойку.*]],
@@ -4360,6 +4719,7 @@ return {
         d_to_est_ya_ne_smogu_vernutsya = {
             text = [[Отсюда нет выхода, так что можешь считать это своей новой жизнью.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[...]],
@@ -4370,6 +4730,7 @@ return {
         d_togda_zachem_s_nim_svyazyvatsya = {
             text = [[Он - немезис людского рода. ]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[...]],
@@ -4380,6 +4741,7 @@ return {
         d_ty_ved_krasnyj = {
             text = [[МОЖЕТ БЫТЬ, А ТЕБЕ ЧТО НАДО, СОПЛЯЧОК?]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[Тебя ищет отец, возвращайся домой.]],
@@ -4390,6 +4752,7 @@ return {
         d_ty_ved_obeschal_otdat_mantiu_im = {
             text = [[Верно, но я поддался искушению. Поверь, моим братьям Мантия будет только во вред.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[А почему ты не вернёшься домой?]],
@@ -4400,6 +4763,7 @@ return {
         d_ty_zh_govoril_chto_ona_pustaya = {
             text = [[*Некоторое время он всё ещё был зол, однако, вспомнив причину пьянства, начал плакать.*]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Просто так до такой степени не напиваются. Что не так?]],
@@ -4410,6 +4774,7 @@ return {
         d_ty_zhe_ponimaesh_chto_ya_ne_ujdu = {
             text = [[Да. Упёртость - удел недалёких. Я понимал, что без драки не обойдётся.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[...]],
@@ -4420,6 +4785,7 @@ return {
         d_ty_znaesh_kak_ya_suda_popal = {
             text = [[Да, ты умер будучи человеком.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Это ад или рай?]],
@@ -4438,6 +4804,7 @@ return {
         d_ty_znaesh_o_kom_ya_govoru_on_zhdet_kogda_ty_vossoedinishsya_s_nim_i_svoimi_bratyami = {
             text = [[ААААА, ТО ЕСТЬ У МЕНЯ ЕЩЁ И БРАТЬЯ ЕСТЬ, ВО ПРИКОЛ. ]],
             speaker = [[Красный]],
+            npc = "npc_red",
             choices = {
                 {
                     text = [[...]],
@@ -4449,6 +4816,7 @@ return {
             text =
             [[Ааа... О нём мало знаю. Мне кажется когда-то я его даже видел... Или нет?.. Вроде кто-то нападал на него. Но когда?]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Хорошо. Я помогу тебе.]],
@@ -4466,6 +4834,7 @@ return {
         d_ty_skazala_chto_ludej_malo_pochemu = {
             text = [[*Лицо девушки застыло. Опомнившись, она отвела взгляд.*]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Забудь.]],
@@ -4476,6 +4845,7 @@ return {
         d_ty_sluchajno_ne_ogrgromila = {
             text = [[Да, это я.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[Меня послал твой брат... Или точнее братья.]],
@@ -4487,6 +4857,7 @@ return {
             text =
             [[Отличный вопрос! Вообще нет, однако в этом мире правила другие. Сначала я испугался смерти, однако, увидев что происходит тут, просто расцвёл! Куча загадок требует ответов. ]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[...]],
@@ -4497,6 +4868,7 @@ return {
         d_ty_chelovek_ili_krip = {
             text = [[Эу, крип это твоя мама. Я царь здесь понял?]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[А как же Король?]],
@@ -4511,6 +4883,7 @@ return {
         d_u_tebya_est_kluch_ot_kletki = {
             text = [[ЕСТЬ.]],
             speaker = [[Воин Эпштейна]],
+            npc = "npc_island_guard",
             choices = {
                 {
                     text = [[Ну и хорошо.]],
@@ -4521,6 +4894,7 @@ return {
         d_uhodi_i_bolshe_nikogda_ne_poyavlyajsya_zdes = {
             text = [[Спасибо. Никогда не забуду твоего милосердия. Извини, что пришлось разбираться со всем этим.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[...]],
@@ -4531,6 +4905,7 @@ return {
         d_hm__1 = {
             text = [[Защити мои постройки. Разрушь его. Таково задание. Берешься?]],
             speaker = [[Крип-Синий Принц]],
+            npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Да.]],
@@ -4548,6 +4923,7 @@ return {
         d_hm__2 = {
             text = [[*Вдруг ты услышал голос внутри себя. Ты начал непроизвольно повторять.*]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Z - это самость, а самость - это Z.]],
@@ -4558,6 +4934,7 @@ return {
         d_hmm = {
             text = [[*Нужно найти кого-то, кто выглядит умным...*]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -4568,6 +4945,7 @@ return {
         d_hmmm = {
             text = [[*Из ниоткуда разнёсся мягкий голос.*Добро пожаловать на мой остров! Как тебя зовут?]],
             speaker = [[???]],
+            npc = nil,
             choices = {
                 {
                     text = [[Алекс.]],
@@ -4582,6 +4960,7 @@ return {
         d_tsenoj_svoej_zhizni_on_spas_poselenie_dobryh_kripov = {
             text = [[*Все четыре глаза поочерёдно заслезились.*]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[*Уйти.*]],
@@ -4595,6 +4974,7 @@ return {
         d_tsmka_gde = {
             text = [[Сейчас она придёт, пока можешь отдохнуть.]],
             speaker = [[Эпштейн]],
+            npc = nil,
             choices = {
                 {
                     text = [[Откуда ты вообще говоришь?]],
@@ -4605,6 +4985,7 @@ return {
         d_ch_chto = {
             text = [[]],
             speaker = [[Скул Шутер]],
+            npc = "npc_sniper",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -4615,6 +4996,7 @@ return {
         d_chego_usatyj = {
             text = [[Что слышал. Я не хочу видеть, чтобы кто-то ещё пал от его руки.]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Я умею драться так-то.]],
@@ -4625,6 +5007,7 @@ return {
         d_chego = {
             text = [[ЖЕРТВА ПЕРВОГО ДАЛА ПАДШИМ НАДЕЖДУ.]],
             speaker = [[???]],
+            npc = "npc_tormentor",
             choices = {
                 {
                     text = [[Откуда ты это сказал?]],
@@ -4635,6 +5018,7 @@ return {
         d_chto_velikogo_on_sovershil = {
             text = [[Он... эм... *Она задумалась.* Много всего...]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Много чего?]],
@@ -4646,6 +5030,7 @@ return {
             text =
             [[*Девушка покраснела*Король... Его зовут Джордж. Джордж Богоподобный. Он лучший человек... Идеальный во всём.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Что великого он совершил?]],
@@ -4656,6 +5041,7 @@ return {
         d_chto_za_mantiya = {
             text = [[Любой, кто оденет её, станет самым умным в мире!]],
             speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[А куда он отправился?]],
@@ -4666,6 +5052,7 @@ return {
         d_chto_za_portal_szadi = {
             text = [[Никто не знает. Он не работает.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[Понятно.]],
@@ -4676,6 +5063,7 @@ return {
         d_chto_za_predelami_korolevstva = {
             text = [[На западе - Заброшенный лес. Там проживают дикие крипы.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[*Далее.*]],
@@ -4687,6 +5075,7 @@ return {
             text =
             [[Ох, точно! Я же не объяснил как направлять эту силу. Видишь около себя разноцветную консистенцию? После затвердевания из неё получются Философские камни, которые как раз и делают все преобразования в считанные секунды!]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[Понятно.]],
@@ -4701,6 +5090,7 @@ return {
         d_chto_pesh = {
             text = [[*Панда плюнула в твою сторону, но не попала.*]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Это было необязательно. Так что пьёшь то?]],
@@ -4711,6 +5101,7 @@ return {
         d_chto_tut_za_kontsert = {
             text = [[Он ещё не начался. Приходи позже. И не забудь билет.]],
             speaker = [[Крип-вышибала]],
+            npc = "npc_concert_guard",
             choices = {
                 {
                     text = [[А кто выступает то?]],
@@ -4721,6 +5112,7 @@ return {
         d_chto_ty_takoe = {
             text = [[Те, что с разумом. Способны ли постичь непостижимое?]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Ээ?]],
@@ -4732,6 +5124,7 @@ return {
             text =
             [[Скрытая деревня имеет много тайн. Я дала обет, что буду защищать их от чужих глаз. Уходи, если дорога жизнь.]],
             speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
             choices = {
                 {
                     text = [[А если я хочу туда попасть?]],
@@ -4746,6 +5139,7 @@ return {
         d_chto = {
             text = [[*Свет в его глазах угасает.*]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[...]],
@@ -4756,6 +5150,7 @@ return {
         d_chto__1 = {
             text = [[Путник, ты попал в наши земли не просто так. У тебя есть миссия, Королевству нужен заступник.]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[Я умер пару минут назад, если что.]],
@@ -4766,6 +5161,7 @@ return {
         d_che_ty_krichish = {
             text = [[Вижу по твоим глазам, ты как я! Хочешь испытаний, хочешь проверить себя!]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Да!]],
@@ -4781,6 +5177,7 @@ return {
             text =
             [[Я способна пробуждать скрытые возможности тела человека. Коснись меня и твоя истинная форма проявится.]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[*Протянуть руку.*]],
@@ -4796,6 +5193,7 @@ return {
             text =
             [[Чтобы что-то получить, тебе нужно что-то равноценное. Словами тяжело объяснить, потому давай примером.]],
             speaker = [[Человек-учёный]],
+            npc = "npc_scientist",
             choices = {
                 {
                     text = [[...]],
@@ -4806,6 +5204,7 @@ return {
         d_eto_svyazano_s_mantiej = {
             text = [[Да.]],
             speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
             choices = {
                 {
                     text = [[...]],
@@ -4816,6 +5215,7 @@ return {
         d_eto_sleva = {
             text = [[Ого! Люди всё-таки тоже могут думать. Ваух!]],
             speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Вообщем Заброшенный лес.]],
@@ -4826,6 +5226,7 @@ return {
         d_eto_horosho_po_puti_prihvachu = {
             text = [[Только ты поделишься с мной, ммм...]],
             speaker = [[Крип-камыш]],
+            npc = "npc_rape_victim",
             choices = {
                 {
                     text = [[Плата за информацию?]],
@@ -4840,6 +5241,7 @@ return {
         d_eh = {
             text = [[Смотри! Этот паренёк вообще как спичка! Давай проведём им по шершавому!]],
             speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[Не нужно, поверьте.]],
@@ -4850,6 +5252,7 @@ return {
         d_ee = {
             text = [[Бог или Наука?]],
             speaker = [[Крип-загадка]],
+            npc = "npc_mystery",
             choices = {
                 {
                     text = [[Бог.]],
@@ -4864,6 +5267,7 @@ return {
         d_eej_alo = {
             text = [[*Крип отпрыгнул.*Мммм... Человеческое дитя, видать тебя послали из Королевства помочь мне?]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Не, я пришёл узнать новое предсказание.]],
@@ -4874,6 +5278,7 @@ return {
         d_ya_aleks_voobscheto = {
             text = [[Разве? Прости меня, перепутал немного. Некрасиво получилось, да...]],
             speaker = [[Крип-рогач]],
+            npc = "npc_creep_rogach",
             choices = {
                 {
                     text = [[Бывает.]],
@@ -4884,6 +5289,7 @@ return {
         d_ya_b_tak_zhe_sdelal = {
             text = [[Что?! Н.. но зачем. Это же порча священного имущества. Тебя могут покарать те, кто сверху!]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[Типо прикольно. А чем шар ценен то?]],
@@ -4894,6 +5300,7 @@ return {
         d_ya_gotov = {
             text = [[Выходи один на один, уёбок.]],
             speaker = [[Человек-быдло]],
+            npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Начнём.]],
@@ -4907,6 +5314,7 @@ return {
         d_ya_koroch_poshel = {
             text = [[1: Стой! Мы просим твою помощь. Брат наш, Огр-громила, ПОТЕРЯЛСЯ!2: Исчез с радаров!]],
             speaker = [[Крип-сиамский огр]],
+            npc = "npc_ogre_magi",
             choices = {
                 {
                     text = [[И?]],
@@ -4918,6 +5326,7 @@ return {
             text =
             [[*Надо взять осколки и каким-то способом починить шар. Но тут всё в крошку, смогу ли я найти искусного мастера?*]],
             speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
             choices = {
                 {
                     text = [[*Придётся что-то придумать.*]],
@@ -4928,6 +5337,7 @@ return {
         d_ya_slyshu_chto_pivo_esche_est = {
             text = [[Неа.]],
             speaker = [[Крип-панда]],
+            npc = "npc_brewmaster",
             choices = {
                 {
                     text = [[Жмот.]],
@@ -4938,6 +5348,7 @@ return {
         d_ya_togda_tozhe_budu = {
             text = [[МОЛОДЧИНА!]],
             speaker = [[Человек-усач]],
+            npc = "npc_mustache",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -4949,6 +5360,7 @@ return {
             text =
             [[Это отличная новость! Мы не могли обеспечить защиту этих врат, так как нас, людей, осталось единицы.]],
             speaker = [[Человек-гид]],
+            npc = "npc_guide",
             choices = {
                 {
                     text = [[А крипы это кто?]],
@@ -4960,6 +5372,7 @@ return {
             text =
             [[*Проигноривовав твои слова, она протягивает руку и чего-то ждёт. Ты чувствуешь, как её потрясывает.*]],
             speaker = [[Старушка]],
+            npc = "npc_shamanka",
             choices = {
                 {
                     text = [[Это зачем?]],
