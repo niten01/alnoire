@@ -8,8 +8,6 @@ LinkLuaModifier('modifier_clash_unit', 'modifiers/modifier_clash_unit', LUA_MODI
 LinkLuaModifier('modifier_ski', 'modifiers/modifier_ski', LUA_MODIFIER_MOTION_HORIZONTAL)
 
 LinkLuaModifier('modifier_blink_evade', 'modifiers/abilities/modifier_blink_evade', LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_custom_sprint", "modifiers/abilities/modifier_custom_sprint", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_custom_sprint_passive", "modifiers/abilities/modifier_custom_sprint_passive", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_summon_distance_check", "modifiers/abilities/modifier_summon_distance_check", LUA_MODIFIER_MOTION_NONE)
 
 --LinkLuaModifier('modifier_test_eyes', 'modifiers/modifier_test_eyes', LUA_MODIFIER_MOTION_NONE)
