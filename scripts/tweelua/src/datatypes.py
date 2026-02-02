@@ -19,6 +19,7 @@ class Passage:
     text: str = ""
     links: List[Link] = field(default_factory=list)
     speaker: str | None = field(default=None)
+    npc: str | None = field(default=None)
 
     def __repr__(self) -> str:
         return (

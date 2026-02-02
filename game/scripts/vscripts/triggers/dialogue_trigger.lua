@@ -7,5 +7,5 @@ function DialogueTriggerOnStartTouch(trigger, event)
 
     local entrypoint = Dialogue:GetDialogueNodeBestMatchEntrypoint(playerID, { premetCondition })
     if not entrypoint then return end
-    Dialogue:StartDialogueForAll(entrypoint.nodeID)
+    Dialogue:StartDialogueForPlayer(playerID, entrypoint.nodeID)
 end

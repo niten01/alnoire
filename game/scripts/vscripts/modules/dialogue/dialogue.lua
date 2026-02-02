@@ -32,6 +32,7 @@ Dialogue = Dialogue or {}
 local OnDialogueChoiceEvent = CreateGameEvent 'OnDialogueChoice'
 local OnDialogueStartEvent = CreateGameEvent 'OnDialogueStart'
 local OnDialogueEndEvent = CreateGameEvent 'OnDialogueEnd'
+local OnDialogueActionEvent = CreateGameEvent 'OnDialogueAction'
 local OnUnitInteractEvent = CreateGameEvent 'OnUnitInteract'
 
 function Dialogue:Init()
@@ -53,39 +54,37 @@ function Dialogue:Init()
     TableLength(self.dialogueGraph) .. " dialogue nodes with " .. TableLength(self.entryPoints) .. " entry points.")
 end
 
-function Dialogue:StartDialogueForAll(startNodeID)
+function Dialogue:StartDialogueForPlayer(playerID, startNodeID)
   if not self.dialogueGraph[startNodeID] then return end
 
   self:TrySetFirstMet(startNodeID)
 
-  for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-    if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetPlayer(playerID) then
-      local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
-      CenterCameraOnUnit(playerID, hero)
-      self:ShowDialogueNode(playerID, startNodeID)
-    end
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  if not hero then
+    error("No barebones assigned hero")
   end
+
+  CenterCameraOnUnit(playerID, hero)
+  hero:AddNewModifier(nil, nil, "modifier_dialogue_player", { duration = -1 })
+
+  self:ShowDialogueNode(playerID, startNodeID)
+
   OnDialogueStartEvent({
+    playerID = playerID,
     startNode = startNodeID
   })
 end
 
 function Dialogue:TrySetFirstMet(startNodeID)
-  local entrypoint = self.entryPoints[startNodeID]
-  if entrypoint then
-    for _, condition in ipairs(entrypoint.conditions) do
-      local npcName = condition.beat or condition.interact or (condition.trigger and condition.npc)
-      if not npcName then goto continue end
-      local data = EntityData:ByName(npcName)
-      if not data then
-        data = EntityData:AddEntity("npc", npcName, {})
-      end
-
-      data.first_met_cur_act = true;
-      data.first_met_cur_global = true;
-      ::continue::
-    end
+  local node = self.dialogueGraph[startNodeID]
+  if not node.npc then return end
+  local data = EntityData:ByName(node.npc)
+  if not data then
+    data = EntityData:AddEntity("npc", node.npc, {})
   end
+
+  data.first_met_cur_act = true;
+  data.first_met_cur_global = true;
 end
 
 function Dialogue:ShowDialogueNode(playerID, nodeID)
@@ -113,6 +112,8 @@ end
 function Dialogue:HideDialogue(playerID)
   local player = PlayerResource:GetPlayer(playerID)
   if not player then return end
+  local hero = player:GetAssignedHero()
+  hero:RemoveModifierByName("modifier_dialogue_player")
   self.playerDialogueState[playerID] = nil
   CustomGameEventManager:Send_ServerToPlayer(player, "dialogue_hide", {})
 end
@@ -177,6 +178,14 @@ function Dialogue:OnDialogueChoice(_, args)
     newNode = self:GetNode(choice.next),
     choice = choice
   })
+  if choice.actions then
+    for _, action in ipairs(choice.actions) do
+      OnDialogueActionEvent({
+        playerID = playerID,
+        action = action
+      })
+    end
+  end
 
   -- end dialogue
   if choice.next == nil then
@@ -238,7 +247,7 @@ function Dialogue:OnQueryUpdate(_, args)
     { { type = "interact", interact = unit:GetUnitName() } })
   if entrypoint then
     PlayerResource:ResetSelection(playerID)
-    self:StartDialogueForAll(entrypoint.nodeID)
+    self:StartDialogueForPlayer(playerID, entrypoint.nodeID)
   end
 
   OnUnitInteractEvent({ playerID = playerID, unit = unit })

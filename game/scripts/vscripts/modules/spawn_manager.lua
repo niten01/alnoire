@@ -46,7 +46,7 @@ function SpawnManager:SpawnNPC(spawnerName)
             false,
             nil,
             nil,
-            DOTA_TEAM_BADGUYS
+            data.team
         )
         npc:SetEntityName(data.npc)
         local fwd = spawnerEnt:GetForwardVector()
@@ -95,7 +95,7 @@ function SpawnManager:OnEntityKilled(event)
     local hero = event.killed_unit
     if not hero or not hero:IsRealHero() or hero:IsSpiritBearCustom() then return end
 
-    local playerID =  hero:GetPlayerOwnerID()
+    local playerID = hero:GetPlayerOwnerID()
     hero:SetRespawnPosition(self.playerRespawnPos[playerID])
 end
 

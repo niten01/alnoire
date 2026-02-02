@@ -249,22 +249,21 @@ function Quest:RegisterEvaluators()
     end
   end
 
-  GameEvents:OnDialogueChoice(function(event)
+  GameEvents:OnDialogueEnd(function(event)
     local playerID = event.playerID
 
     ForEachActiveObjectiveOfType(playerID, "talk", function(questID, objective)
-      if Evaluators.TalkEvaluator(questID, objective, event) then
+      if Evaluators.TalkEvaluator(objective, event) then
         self:CompleteObjective(playerID, questID, objective)
       end
     end)
+  end)
 
-    -- quest can start here
-    local allActions = event.choice.actions
-    if not allActions then return end
+  GameEvents:OnDialogueAction(function(event)
+    local playerID = event.playerID
+    local action = event.action
 
-    for _, action in ipairs(allActions) do
-      self:HandleAction(playerID, action)
-    end
+    self:HandleAction(playerID, action)
   end)
 
   GameEvents:OnEntityKilled(function(event)
