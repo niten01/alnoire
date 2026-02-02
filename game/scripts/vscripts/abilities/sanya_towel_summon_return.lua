@@ -47,7 +47,7 @@ function sanya_towel_summon_return:OnChannelFinish(bInterrupted)
         if caster.summon and caster.summon:IsAlive() then
             local spawn_pos = caster:GetAbsOrigin() + caster:GetForwardVector() * -150
             FindClearSpaceForUnit(caster.summon, spawn_pos, true)
-            caster.summon:StartGesture( ACT_DOTA_SPAWN )
+            -- caster.summon:StartGesture( ACT_DOTA_SPAWN )
             local pfx = ParticleManager:CreateParticle("particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_embers.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster.summon)
             ParticleManager:ReleaseParticleIndex(pfx)
             ParticleManager:DestroyParticle(pfx, true)

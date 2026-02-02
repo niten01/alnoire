@@ -72,9 +72,9 @@ return {
 
         -- summon explosion
         "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact.vpcf",
-        "particles/econ/items/phoenix/eye_of_the_sun/phoenix_supernova_egg_eye_sun_glow_loadout.vpcf",
-        "particles/units/heroes/hero_phoenix/phoenix_supernova_death_dust.vpcf",
-        "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_marker_ring_outer_hot.vpcf",
+        "particles/explosion_summon_supernova.vpcf",
+        "particles/sanya_summon_explosion_supernova.vpcf",
+        "particles/sanya_summon_explosion_ring_outer.vpcf",
 
         -- summon overpower
         "particles/econ/items/shredder/timber_controlled_burn/timber_controlled_burn_timberchain_ember.vpcf",

@@ -13,7 +13,15 @@ function modifier_towel_summon_delayed_explode:CheckState()
     }
 end
 
+function modifier_towel_summon_delayed_explode:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_OVERRIDE_ANIMATION
+    }
+end
 
+function modifier_towel_summon_delayed_explode:GetOverrideAnimation()
+    return ACT_DOTA_CHANNEL_ABILITY_3
+end
 
 function modifier_towel_summon_delayed_explode:OnCreated()
     if not IsServer() then return end
@@ -29,30 +37,17 @@ function modifier_towel_summon_delayed_explode:OnCreated()
         end
     end
     local radius = ability:GetSpecialValueFor('radius')
-    self.pfx = ParticleManager:CreateParticle("particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_marker_ring_outer_hot.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-    self.pfx_2 = ParticleManager:CreateParticle("particles/econ/items/phoenix/eye_of_the_sun/phoenix_supernova_egg_eye_sun_glow_loadout.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-    ParticleManager:SetParticleControl(self.pfx, 1, Vector(radius, 0, 0))
-    ParticleManager:SetParticleControl(self.pfx_2, 1, Vector(0, 0, 0))
-    caster:StartGesture( ACT_DOTA_ATTACK )
+    local pfx_pre_1 = ParticleManager:CreateParticle("particles/sanya_summon_explosion_ring_outer.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+    local pfx_pre_2 = ParticleManager:CreateParticle("particles/sanya_summon_explosion_supernova.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+    ParticleManager:SetParticleControl(pfx_pre_1, 1, Vector(radius, 0, 0))
+    ParticleManager:SetParticleControl(pfx_pre_1, 2, Vector(self:GetDuration(), 0, 0))
+    self:AddParticle(pfx_pre_1, false, false, -1, false, false)
+    self:AddParticle(pfx_pre_2, false, false, -1, false, false)
 end
 
 function modifier_towel_summon_delayed_explode:OnDestroy()
     if not IsServer() then return end
-    if self.pfx then
-        ParticleManager:DestroyParticle(self.pfx, true)
-        ParticleManager:ReleaseParticleIndex(self.pfx)
-        self.pfx = nil
-    end
-
-    if self.pfx_2 then
-        ParticleManager:DestroyParticle(self.pfx_2, true)
-        ParticleManager:ReleaseParticleIndex(self.pfx_2)
-        self.pfx_2 = nil
-    end
-
-
     local caster = self:GetParent()
-    caster:RemoveGesture( ACT_DOTA_ATTACK )
     local ability = self:GetAbility()
     local radius = ability:GetSpecialValueFor('radius')
     local damage = ability:GetSpecialValueFor('damage')
