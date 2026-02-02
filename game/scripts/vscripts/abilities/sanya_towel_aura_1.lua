@@ -3,21 +3,16 @@ LinkLuaModifier("modifier_sanya_towel_aura_buff_1", "modifiers/abilities/modifie
 
 sanya_towel_aura_1 = class({})
 
-function sanya_towel_aura_1:Spawn()
-    if IsServer() then
-        local caster = self:GetCaster()
-        if not caster:HasModifier("modifier_sanya_towel_aura_manager") then
-            caster:AddNewModifier(caster, self, 'modifier_sanya_towel_aura_manager', {})
-        end
-    end
-end
-
 function sanya_towel_aura_1:GetCastRange()
     return self:GetSpecialValueFor('radius')
 end
 
 function sanya_towel_aura_1:OnUpgrade()
     local caster = self:GetCaster()
+    if not caster:HasModifier("modifier_sanya_towel_aura_manager") then
+        caster:AddNewModifier(caster, self, 'modifier_sanya_towel_aura_manager', {})
+    end
+
     local aura2 = caster:FindAbilityByName("sanya_towel_aura_2")
     local aura3 = caster:FindAbilityByName("sanya_towel_aura_3")
 

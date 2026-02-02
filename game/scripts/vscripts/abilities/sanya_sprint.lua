@@ -1,3 +1,5 @@
+LinkLuaModifier("modifier_custom_sprint", "modifiers/abilities/modifier_custom_sprint", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_custom_sprint_passive", "modifiers/abilities/modifier_custom_sprint_passive", LUA_MODIFIER_MOTION_NONE)
 sanya_sprint = class({})
 
 function sanya_sprint:Spawn()

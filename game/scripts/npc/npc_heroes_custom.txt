@@ -128,7 +128,6 @@
     "HeroID"                                              "226"
     "Model"                                               "models/sanya/sanya_towel_master.vmdl"
     "ModelScale"                                          "0.85"
-
     "BotImplemented"                                      "0"
 
     "MovementCapabilities"                                "DOTA_UNIT_CAP_MOVE_GROUND"

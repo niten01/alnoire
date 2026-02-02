@@ -9,7 +9,7 @@ function modifier_sanya_towel_aura_manager:OnCreated()
 end
 
 function modifier_sanya_towel_aura_manager:OnIntervalThink()
-    local caster = self:GetCaster()
+    local caster = self:GetParent()
     local aura1 = caster:FindAbilityByName('sanya_towel_aura_1')
     local aura2 = caster:FindAbilityByName('sanya_towel_aura_2')
     local aura3 = caster:FindAbilityByName('sanya_towel_aura_3')
