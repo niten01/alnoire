@@ -1,13 +1,18 @@
 (function () {
     const localPlayerId = Game.GetLocalPlayerID();
-    const blinkItemBG = "#C6A15Bff"
     let quests = {}
 
     function GetNewQuests(questlog) {
-        const oldQuests = new Set(Object.values(quests))
-        const newQuests = new Set(Object.values(questlog))
+        const oldQuests = [...Object.values(quests)]
+        const newQuests = [...Object.values(questlog)]
+        let result = []
+        for (const nq of newQuests) {
+            if (!oldQuests.find(q => JSON.stringify(q) === JSON.stringify(nq))) {
+                result.push(nq)
+            }
+        }
 
-        return new Set([...newQuests].filter(i => !oldQuests.has(i)))
+        return result
     }
 
     Set.prototype.find = function () {
@@ -18,7 +23,7 @@
         const list = $("#QuestList");
         if (!list) return;
 
-        const newQuests = GetNewQuests(questlog)
+        const newQuests = GetNewQuests(questlog || {})
         list.RemoveAndDeleteChildren();
 
         quests = questlog || {}
@@ -31,14 +36,18 @@
 
         noQuests.style.visibility = "collapse"
         for (const [_, q] of Object.entries(quests)) {
-            const item = $.CreatePanel("Panel", list, "");
+            const id = "QuestItem_" + q.questID
+            const item = $.CreatePanel("Panel", list, id);
             item.AddClass("QuestItem");
             if (newQuests.find(nq => nq.name == q.name)) {
                 const questTab = $("#QuestTab")
                 item.AddClass("QuestItemBlink")
                 questTab.AddClass("QuestTabBlink")
                 $.Schedule(0.5, () => {
-                    item.RemoveClass("QuestItemBlink")
+                    const item = $("#" + id)
+                    $.Msg(item)
+                    if (item)
+                        item.RemoveClass("QuestItemBlink")
                     questTab.RemoveClass("QuestTabBlink")
                 })
             }

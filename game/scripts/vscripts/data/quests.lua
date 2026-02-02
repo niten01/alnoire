@@ -20,6 +20,9 @@ return {
                 objectives = {
                     { type = "talk", npc = "npc_guide" },
                 },
+                postStepActions = {
+                    { type = "change_act", act = 1 }
+                }
             },
         }
     },
