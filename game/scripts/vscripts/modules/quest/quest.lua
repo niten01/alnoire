@@ -80,7 +80,8 @@ function Quest:UpdateQuestlog(playerID)
     local activeStep = quest.steps[state.stepIdx]
     table.insert(questlog, {
       name = quest.name,
-      stepDescription = activeStep.description
+      stepDescription = activeStep.description,
+      questID = questID,
     })
   end
   CustomNetTables:SetTableValue("questlog", tostring(playerID), questlog)
@@ -197,7 +198,11 @@ function Quest:HandleAction(playerID, action)
   elseif action.type == "fight_start" then
     self:StartFight(action)
   elseif action.type == "change_hero" then
-    PlayerResource:ReplaceHeroWith(playerID, action.hero, 0, 0)
+    local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+    if not hero then error("No hero") end
+    local fwd = hero:GetForwardVector()
+    hero = PlayerResource:ReplaceHeroWith(playerID, action.hero, 0, 0)
+    hero:SetForwardVector(fwd)
   elseif action.type == "open_door" then
     DoorManager:Open(action.door)
   elseif action.type == "give_item" then
