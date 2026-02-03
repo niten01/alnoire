@@ -53,7 +53,7 @@ function modifier_towel_summon_delayed_explode:OnDestroy()
     local radius = ability:GetSpecialValueFor('radius')
     local damage = ability:GetSpecialValueFor('damage')
     local pfx_exp = ParticleManager:CreateParticle("particles/sanya_summon_explosion_impact_alt.vpcf", PATTACH_ABSORIGIN, caster)
-    ParticleManager:SetParticleControl(pfx_exp, 1, Vector(radius + 50, 0, 0))
+    ParticleManager:SetParticleControl(pfx_exp, 1, Vector(radius + 60, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx_exp)
     ScreenShake(caster:GetAbsOrigin(), 15, 150, 0.4, 1000, 0, true)
     local enemies = FindUnitsInRadius(

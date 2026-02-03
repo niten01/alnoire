@@ -46,34 +46,27 @@
 	[
 		{
 			m_ChildRef = resource:"particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact_ground_proj.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact_distort.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/sanya_summon_explosion_impact_alt_decal.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact_sphere_erode.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact_light.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/sanya_summon_explosion_impact_pedals.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact_blast_ground.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact_ring.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact_ring_smoke.vpcf"
@@ -81,11 +74,9 @@
 		},
 		{
 			m_ChildRef = resource:"particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact_dust_ring.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact_debris.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact_swirl.vpcf"
@@ -105,7 +96,6 @@
 		},
 		{
 			m_ChildRef = resource:"particles/sanya_summon_explosion_impact_filter_smoke.vpcf"
-			m_bDisableChild = true
 		},
 	]
 }

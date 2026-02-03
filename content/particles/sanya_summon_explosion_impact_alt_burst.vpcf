@@ -878,7 +878,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 48, 71, 75 ]
+			m_ColorFade = [ 133, 39, 0 ]
 		},
 	]
 	m_Renderers = 

@@ -90,5 +90,8 @@
 		{
 			m_ChildRef = resource:"particles/sanya_summon_explosion_impact_after_ring.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/sanya_summon_explosion_impact_filter_smoke.vpcf"
+		},
 	]
 }

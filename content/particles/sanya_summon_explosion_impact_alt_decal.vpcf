@@ -7,7 +7,7 @@
 	m_flConstantRadius = 350.0
 	m_nBehaviorVersion = 12
 	m_nFirstMultipleOverride_BackwardCompat = 4
-	m_ConstantColor = [ 64, 62, 62, 255 ]
+	m_ConstantColor = [ 2, 2, 2, 255 ]
 	m_controlPointConfigurations = 
 	[
 		{

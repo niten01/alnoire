@@ -79,8 +79,8 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 219, 101, 228 ]
-			m_ColorMax = [ 230, 143, 238 ]
+			m_ColorMin = [ 150, 22, 0 ]
+			m_ColorMax = [ 213, 108, 87 ]
 		},
 		{
 			_class = "C_INIT_PositionPlaceOnGround"
