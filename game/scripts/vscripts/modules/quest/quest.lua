@@ -204,11 +204,11 @@ function Quest:OnActChange()
     if quest.showExclamation then
       for _, giverEnt in ipairs(Entities:FindAllByName(quest.giver)) do
         quest.exclamationPfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_has_quest.vpcf",
-          PATTACH_ABSORIGIN, giverEnt)
+          PATTACH_CUSTOMORIGIN, giverEnt)
         local origin = giverEnt:GetAbsOrigin()
-        origin.z = 600
-        PrintTable(origin)
-        ParticleManager:SetParticleControl(quest.exclamationPfx, 0, origin)
+        origin.z = origin.z + 500
+        local fwd = Vector(0, -1, 0)
+        ParticleManager:SetParticleControlTransform(quest.exclamationPfx, 0, origin, VectorToAngles(fwd))
         break
       end
     end
