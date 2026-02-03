@@ -440,8 +440,7 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 25, 0, 0 ]
-			m_ColorMax = [ 109, 32, 12 ]
+			m_ColorMin = [ 227, 214, 214 ]
 		},
 		{
 			_class = "C_INIT_InitialVelocityNoise"
@@ -783,6 +782,7 @@
 			[
 				{
 					m_hTexture = resource:"materials/particle/flower/flower.vtex"
+					m_nTextureChannels = "SPRITECARD_TEXTURE_CHANNEL_MIX_A"
 				},
 			]
 		},
