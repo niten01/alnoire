@@ -7,3 +7,7 @@ function towel_summon_explosion:OnSpellStart()
     if caster:HasModifier("modifier_towel_summon_delayed_explode") then return end
     caster:AddNewModifier( caster, self, 'modifier_towel_summon_delayed_explode', {duration = self:GetSpecialValueFor('delay')} )
 end
+
+function towel_summon_explosion:GetCastRange()
+    return self:GetSpecialValueFor('radius') or 400
+end
