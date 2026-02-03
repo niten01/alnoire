@@ -4,6 +4,19 @@ function GlobalState:Init()
     self.state = {
         act = 0,
     }
+
+    -- set initial act
+    GlobalState:SetAct(self.state.act)
+
+    ChatCommand:LinkDevCommand("-setact", function(event, args)
+        GlobalState:SetAct(tonumber(args[1]))
+    end)
+end
+
+local OnActChangeEvent = CreateGameEvent 'OnActChange'
+function GlobalState:SetAct(act)
+    self.state.act = act
+    OnActChangeEvent({ act = act })
 end
 
 function GlobalState:Get()

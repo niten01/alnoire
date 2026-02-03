@@ -179,7 +179,7 @@ function Dialogue:OnDialogueChoice(_, args)
   })
   if choice.actions then
     for _, action in ipairs(choice.actions) do
-      Actions:HandleAction(playerID, action)
+      Actions:Handle(playerID, action)
     end
   end
 

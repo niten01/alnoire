@@ -69,6 +69,7 @@ return {
         -- quests
         "particles/themed_fx/cny_fireworks_rockets_b.vpcf",
         "particles/sanya_quest_complete_firework.vpcf",
+        "particles/generic_gameplay/generic_has_quest.vpcf",
 
         -- summon explosion
         "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact.vpcf",
