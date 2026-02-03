@@ -69,6 +69,7 @@ return {
         -- quests
         "particles/themed_fx/cny_fireworks_rockets_b.vpcf",
         "particles/sanya_quest_complete_firework.vpcf",
+        "particles/generic_gameplay/generic_has_quest.vpcf",
 
         -- summon explosion
         "particles/sanya_summon_explosion_impact.vpcf",

@@ -30,6 +30,7 @@ return {
         giver = "npc_blue_prince",
         name = "Королевская взбучка",
         acts = { 1 },
+        showExclamation = true,
         steps = {
             {
                 description = "Иди на арену",
@@ -55,6 +56,7 @@ return {
         giver = "npc_nig",
         name = "O'Block",
         acts = { 2 },
+        showExclamation = true,
         steps = {
             {
                 description = "Добудь билеты у перекупа",
@@ -74,6 +76,7 @@ return {
         giver = "npc_ogre_magi",
         acts = { 1 },
         name = "Братство и ум",
+        showExclamation = true,
         steps = {
             {
                 description = "Найди Огра-громилу",

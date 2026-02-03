@@ -53,6 +53,8 @@ function Quest:Init()
     self:EmitQuestCompleteParticles(event.playerID)
   end)
 
+  GameEvents:OnActChange(bind(self.OnActChange, self))
+
   self:RegisterEvaluators()
 end
 
@@ -128,7 +130,7 @@ function Quest:AdvanceStep(playerID, questID)
   DebugPrint("[ALNOIRE] Advance quest step: " .. questID .. " " .. state.stepIdx .. " -> " .. state.stepIdx + 1)
 
   for _, action in ipairs(activeStep.postStepActions or {}) do
-    Actions:HandleAction(playerID, action)
+    Actions:Handle(playerID, action)
   end
   state.stepIdx = state.stepIdx + 1
   if state.stepIdx > TableLength(quest.steps) then
@@ -189,6 +191,28 @@ function Quest:GetActiveObjectivesByType(playerID, type)
   end
 
   return objectives
+end
+
+function Quest:OnActChange()
+  local act = GlobalState:Get().act
+  for _, quest in pairs(self.quests) do
+    if quest.exclamationPfx then
+      ParticleManager:DestroyParticle(quest.exclamationPfx, false)
+      ParticleManager:ReleaseParticleIndex(quest.exclamationPfx)
+    end
+
+    if quest.showExclamation then
+      for _, giverEnt in ipairs(Entities:FindAllByName(quest.giver)) do
+        quest.exclamationPfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_has_quest.vpcf",
+          PATTACH_CUSTOMORIGIN, giverEnt)
+        local origin = giverEnt:GetAbsOrigin()
+        origin.z = origin.z + 500
+        local fwd = Vector(0, -1, 0)
+        ParticleManager:SetParticleControlTransform(quest.exclamationPfx, 0, origin, VectorToAngles(fwd))
+        break
+      end
+    end
+  end
 end
 
 function Quest:ShowQuestStatus(event, args)

@@ -35,6 +35,10 @@ function Handlers.change_hero(playerID, action)
   hero:SetForwardVector(fwd)
 end
 
+function Handlers.change_act(playerID, action)
+  GlobalState:SetAct(action.act)
+end
+
 function Handlers.open_door(playerID, action)
   DoorManager:Open(action.door)
 end
