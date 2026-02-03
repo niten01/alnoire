@@ -18,6 +18,11 @@ function PlayerQuestState:StartQuest(questID)
     questState.stepIdx = 1
 end
 
+function PlayerQuestState:RejectQuest(questID)
+    local questState = self.questStates[questID]
+    questState.status = QuestStatus.REJECTED
+end
+
 function PlayerQuestState:GetOneQuestState(questID)
     return self.questStates[questID]
 end

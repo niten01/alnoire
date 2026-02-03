@@ -72,6 +72,10 @@ function Quest:StartQuestForAll(questID)
   end
 end
 
+function Quest:RejectQuest(playerID, questID)
+  self.playerQuestStates[playerID]:RejectQuest(questID)
+end
+
 function Quest:UpdateQuestlog(playerID)
   local questlog = {}
   local activeStates = self.playerQuestStates[playerID]:GetActiveQuestStates()
@@ -124,7 +128,7 @@ function Quest:AdvanceStep(playerID, questID)
   DebugPrint("[ALNOIRE] Advance quest step: " .. questID .. " " .. state.stepIdx .. " -> " .. state.stepIdx + 1)
 
   for _, action in ipairs(activeStep.postStepActions or {}) do
-    self:HandleAction(playerID, action)
+    Actions:HandleAction(playerID, action)
   end
   state.stepIdx = state.stepIdx + 1
   if state.stepIdx > TableLength(quest.steps) then
@@ -187,42 +191,6 @@ function Quest:GetActiveObjectivesByType(playerID, type)
   return objectives
 end
 
-function Quest:HandleAction(playerID, action)
-  if action.type == "quest_start" then
-    self:StartQuestForAll(action.questID)
-  elseif action.type == "quest_reject" then
-    local state = self.playerQuestStates[playerID]
-    state.status = QuestStatus.REJECTED
-  elseif action.type == "quest_end" then
-    self:CompleteQuestForAll(action.questID)
-  elseif action.type == "fight_start" then
-    self:StartFight(action)
-  elseif action.type == "change_hero" then
-    local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
-    if not hero then error("No hero") end
-    local fwd = hero:GetForwardVector()
-    hero = PlayerResource:ReplaceHeroWith(playerID, action.hero, 0, 0)
-    hero:SetForwardVector(fwd)
-  elseif action.type == "open_door" then
-    DoorManager:Open(action.door)
-  elseif action.type == "give_item" then
-    DebugPrint("[???] TODO give_item")
-  else
-    error("Unhandled action type: " .. action.type)
-  end
-end
-
-function Quest:StartFight(action)
-  assert(action.type == "fight_start")
-  for _, ent in ipairs(Entities:FindAllByName(action.npc)) do
-    DebugPrint("[ALNOIRE] Starting fight with " .. ent:GetName())
-    ent:RemoveModifierByName("modifier_story_npc")
-    if action.target == "beat" and not ent:HasModifier("modifier_lethal_damage_tracking") then
-      ent:AddNewModifier(nil, nil, "modifier_lethal_damage_tracking", { duration = -1 })
-    end
-  end
-end
-
 function Quest:ShowQuestStatus(event, args)
   local state = self.playerQuestStates[event.playerID]
   local function printOneQuest(questID)
@@ -262,13 +230,6 @@ function Quest:RegisterEvaluators()
         self:CompleteObjective(playerID, questID, objective)
       end
     end)
-  end)
-
-  GameEvents:OnDialogueAction(function(event)
-    local playerID = event.playerID
-    local action = event.action
-
-    self:HandleAction(playerID, action)
   end)
 
   GameEvents:OnEntityKilled(function(event)

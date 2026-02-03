@@ -32,7 +32,6 @@ Dialogue = Dialogue or {}
 local OnDialogueChoiceEvent = CreateGameEvent 'OnDialogueChoice'
 local OnDialogueStartEvent = CreateGameEvent 'OnDialogueStart'
 local OnDialogueEndEvent = CreateGameEvent 'OnDialogueEnd'
-local OnDialogueActionEvent = CreateGameEvent 'OnDialogueAction'
 local OnUnitInteractEvent = CreateGameEvent 'OnUnitInteract'
 
 function Dialogue:Init()
@@ -180,10 +179,7 @@ function Dialogue:OnDialogueChoice(_, args)
   })
   if choice.actions then
     for _, action in ipairs(choice.actions) do
-      OnDialogueActionEvent({
-        playerID = playerID,
-        action = action
-      })
+      Actions:HandleAction(playerID, action)
     end
   end
 
