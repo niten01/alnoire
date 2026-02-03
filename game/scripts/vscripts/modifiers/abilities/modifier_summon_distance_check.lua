@@ -11,8 +11,16 @@ end
 
 function modifier_summon_distance_check:DeclareFunctions()
     return {
-        MODIFIER_EVENT_ON_DEATH, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+        MODIFIER_EVENT_ON_DEATH, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS
     }
+end
+
+function modifier_summon_distance_check:GetActivityTranslationModifiers()
+    if not self.speed_bonus or (self.speed_bonus == 0) then
+        return 
+    else 
+        return 'haste'
+    end
 end
 
 function modifier_summon_distance_check:GetModifierMoveSpeedBonus_Constant()

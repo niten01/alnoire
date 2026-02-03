@@ -9,8 +9,14 @@ function modifier_custom_sprint:DeclareFunctions()
         MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
         MODIFIER_EVENT_ON_TAKEDAMAGE,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
     }
 end
+
+function modifier_custom_sprint:GetActivityTranslationModifiers()
+    return 'haste'
+end
+
 
 function modifier_custom_sprint:GetModifierMoveSpeedBonus_Constant()
     return self:GetAbility():GetSpecialValueFor('sprint_speed')
