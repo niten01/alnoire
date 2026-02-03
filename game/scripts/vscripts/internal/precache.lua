@@ -71,9 +71,10 @@ return {
         "particles/sanya_quest_complete_firework.vpcf",
 
         -- summon explosion
-        "particles/econ/items/dark_willow/dark_willow_immortal_2021/dw_2021_willow_wisp_spell_impact.vpcf",
-        "particles/explosion_summon_supernova.vpcf",
+        "particles/sanya_summon_explosion_impact.vpcf",
+        "particles/sanya_summon_explosion_impact_alt.vpcf",
         "particles/sanya_summon_explosion_supernova.vpcf",
+        "particles/units/heroes/hero_phoenix/phoenix_supernova_death_dust.vpcf",
         "particles/sanya_summon_explosion_ring_outer.vpcf",
 
         -- summon overpower
