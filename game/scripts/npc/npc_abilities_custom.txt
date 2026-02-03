@@ -46,11 +46,10 @@
 		"AbilityTextureName"            "lone_druid_spirit_bear"
 		
 		"AbilityManaCost"               "0"
-		"AbilityCastRange"        		"700"
 		"AbilityValues"
 		{
 			"cooldown"					"10.0 10.0 10.0 10.0"
-
+			"radius"					"1200 1200 1200 1200"
 		}
 	}
 	"sanya_towel_summon_return"
@@ -65,7 +64,6 @@
 		"AbilityChannelTime"			"5.0"
 		"AbilityCooldown"               "5.0" // кд для телепортации к ноге
 		"AbilityManaCost"               "0"
-		"AbilityCastRange"        		"700"
 	}
 	"sanya_towel_root"
 	{

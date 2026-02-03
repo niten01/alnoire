@@ -9,6 +9,13 @@ function sanya_towel_summon_return:Spawn()
     end
 end
 
+function sanya_towel_summon_return:GetCastRange()
+    local caster = self:GetCaster()
+    local pair_abil = caster:FindAbilityByName('sanya_towel_summon')
+    if not pair_abil then return end
+    return pair_abil:GetCastRange() or 100
+end
+
 function sanya_towel_summon_return:OnSpellStart()
     local caster = self:GetCaster()
     if caster.summon and caster.summon:IsAlive() then

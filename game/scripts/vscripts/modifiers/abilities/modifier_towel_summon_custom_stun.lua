@@ -25,9 +25,10 @@ function modifier_towel_summon_custom_stun:OnCreated()
     for i = 0, unit:GetAbilityCount() - 1 do
         local abil = unit:GetAbilityByIndex(i)
         if abil then
-            if abil:GetAbilityName() ~= "towel_summon_dash" then
-                abil:SetActivated(false)
-            end
+            abil:SetActivated(false)
+            -- if abil:GetAbilityName() ~= "towel_summon_dash" then
+            --     abil:SetActivated(false)
+            -- end
         end
     end
 end

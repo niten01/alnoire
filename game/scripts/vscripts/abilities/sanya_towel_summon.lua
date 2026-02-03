@@ -49,6 +49,9 @@ function sanya_towel_summon:OnUpgrade()
     self:UpgradeBear(self, summon)
 end
 
+function sanya_towel_summon:GetCastRange()
+    return self:GetSpecialValueFor('radius') or 1200
+end
 
 function sanya_towel_summon:UpgradeBear(ability, bear)
     if not ability or not bear then return end
