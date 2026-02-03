@@ -5,9 +5,12 @@
 
 #base "units/story/npc_tormentor.txt"
 #base "units/story/npc_shamanka.txt"
-#base "units/story/npc_guide.txt"
 #base "units/story/npc_gate_trolls.txt"
+#base "units/story/npc_guide.txt"
+#base "units/story/npc_creep_rogach.txt"
+#base "units/story/npc_mustache.txt"
 #base "units/story/npc_blue_prince.txt"
+#base "units/story/npc_creep_bob.txt"
 #base "units/story/npc_rape_victim.txt"
 #base "units/story/npc_xavier.txt"
 

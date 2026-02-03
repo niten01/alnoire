@@ -9,6 +9,8 @@ class LuaEmitter:
     def _format_value(self, val) -> str:
         if val is None:
             return "nil"
+        elif type(val) is list:
+            return "{ " + ", ".join(map(self._format_value, val)) + " }"
         elif type(val) is int:
             return str(val)
         elif type(val) is bool:

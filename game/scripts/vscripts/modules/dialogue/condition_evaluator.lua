@@ -25,28 +25,28 @@ function Evaluators.quest(nodeID, playerID, condition)
     local questState = Quest:GetQuestState(playerID, questID)
     if not questState then return false end
     if questState.status == condition.status and
-        (not condition.step or condition.step == questState.stepIdx) then
+        (not condition.step or contains(condition.step, questState.stepIdx)) then
         return true
     end
     return false
 end
 
 --[[
-{ type = "var", var = "act", value = 3 }
+{ type = "var", var = "act", value = { 3, 4 } }
 --]]
 function Evaluators.var(nodeID, playerID, condition)
-    local realValue = GlobalState:Get().act
-    return realValue and realValue == condition.value
+    local realValue = GlobalState:Get()[condition.var]
+    return realValue ~= nil and contains(condition.value, realValue)
 end
 
 --[[
-{ type="ent_var", ent_var = "act", value = 3, npc=npc_abc }
+{ type="ent_var", ent_var = "first_met_global", value = { true }, npc=npc_abc }
 --]]
 function Evaluators.ent_var(nodeID, playerID, condition)
     local data = EntityData:ByName(condition.npc)
     if not data then return false end
     local realValue = data[condition.ent_var]
-    return realValue and realValue == condition.value
+    return realValue ~= nil and contains(condition.value, realValue)
 end
 
 function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)
@@ -54,14 +54,14 @@ function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)
     for _, condition in ipairs(conditions) do
         local skip = false
         for _, premetCondition in ipairs(premetConditions) do
-            local contains = true
+            local subset = true
             for k, v in pairs(premetCondition) do
                 if condition[k] ~= v then
-                    contains = false
+                    subset = false
                     break
                 end
             end
-            if contains then
+            if subset then
                 skip = true
                 break
             end

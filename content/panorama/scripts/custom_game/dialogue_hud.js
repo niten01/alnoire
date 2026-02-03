@@ -5,6 +5,7 @@
     "???": "tormentor",
     "Старушка": "shamanka",
     "Банда троллей": "gate_trolls",
+    "Синий Принц": "blue_prince",
   }
 
   const root = $.GetContextPanel();

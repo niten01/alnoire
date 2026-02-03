@@ -31,7 +31,7 @@ function barebones:InitGameMode()
   GameRules:SetUseUniversalShopMode(UNIVERSAL_SHOP_MODE)
   GameRules:SetHeroRespawnEnabled(ENABLE_HERO_RESPAWN)
 
-  GameRules:SetHeroSelectionTime(HERO_SELECTION_TIME)   -- THIS IS IGNORED when "EnablePickRules" is "1" in 'addoninfo.txt' !
+  GameRules:SetHeroSelectionTime(HERO_SELECTION_TIME) -- THIS IS IGNORED when "EnablePickRules" is "1" in 'addoninfo.txt' !
   GameRules:SetHeroSelectPenaltyTime(HERO_SELECTION_PENALTY_TIME)
 
   GameRules:SetPreGameTime(PRE_GAME_TIME)
@@ -50,7 +50,7 @@ function barebones:InitGameMode()
   GameRules:SetStartingGold(NORMAL_START_GOLD)
 
   if USE_CUSTOM_HERO_GOLD_BOUNTY then
-    GameRules:SetUseBaseGoldBountyOnHeroes(false)     -- if true Heroes will use their default base gold bounty which is similar to creep gold bounty, rather than DOTA specific formulas
+    GameRules:SetUseBaseGoldBountyOnHeroes(false) -- if true Heroes will use their default base gold bounty which is similar to creep gold bounty, rather than DOTA specific formulas
   end
 
   GameRules:SetHeroMinimapIconScale(MINIMAP_ICON_SIZE)
@@ -149,14 +149,14 @@ function barebones:CaptureGameMode()
   gamemode:SetBuybackEnabled(BUYBACK_ENABLED)
   gamemode:SetCustomBuybackCostEnabled(CUSTOM_BUYBACK_COST_ENABLED)
   gamemode:SetCustomBuybackCooldownEnabled(CUSTOM_BUYBACK_COOLDOWN_ENABLED)
-  gamemode:SetTopBarTeamValuesOverride(USE_CUSTOM_TOP_BAR_VALUES)   -- Probably does nothing, but I will leave it
+  gamemode:SetTopBarTeamValuesOverride(USE_CUSTOM_TOP_BAR_VALUES) -- Probably does nothing, but I will leave it
   gamemode:SetTopBarTeamValuesVisible(TOP_BAR_VISIBLE)
 
   if USE_CUSTOM_XP_VALUES then
     gamemode:SetUseCustomHeroLevels(true)
     gamemode:SetCustomXPRequiredToReachNextLevel(XP_PER_LEVEL_TABLE)
   elseif MAX_LEVEL ~= 30 then
-    gamemode:SetCustomHeroMaxLevel(MAX_LEVEL)     -- this is not needed if SetCustomXPRequiredToReachNextLevel is used
+    gamemode:SetCustomHeroMaxLevel(MAX_LEVEL) -- this is not needed if SetCustomXPRequiredToReachNextLevel is used
   end
 
   gamemode:SetBotThinkingEnabled(USE_STANDARD_DOTA_BOT_THINKING)
@@ -170,8 +170,8 @@ function barebones:CaptureGameMode()
   --gamemode:SetAlwaysShowPlayerNames(true) -- use this when you need to hide real hero names
   gamemode:SetAnnouncerDisabled(DISABLE_ANNOUNCER)
 
-  if FORCE_PICKED_HERO then                                -- FORCE_PICKED_HERO must be a string name of an existing hero, or there will be a big fat error
-    gamemode:SetCustomGameForceHero(FORCE_PICKED_HERO)     -- THIS WILL NOT WORK when "EnablePickRules" is "1" in 'addoninfo.txt' !
+  if FORCE_PICKED_HERO then                            -- FORCE_PICKED_HERO must be a string name of an existing hero, or there will be a big fat error
+    gamemode:SetCustomGameForceHero(FORCE_PICKED_HERO) -- THIS WILL NOT WORK when "EnablePickRules" is "1" in 'addoninfo.txt' !
   else
     gamemode:SetDraftingHeroPickSelectTimeOverride(HERO_SELECTION_TIME)
     gamemode:SetDraftingBanningTimeOverride(0)
@@ -210,7 +210,7 @@ function barebones:CaptureGameMode()
   gamemode:SetCustomGlyphCooldown(CUSTOM_GLYPH_COOLDOWN)
   gamemode:DisableHudFlip(FORCE_MINIMAP_ON_THE_LEFT)
 
-  gamemode:SetFreeCourierModeEnabled(false)   -- without this, passive GPM doesn't work, Thanks Valve
+  gamemode:SetFreeCourierModeEnabled(false) -- without this, passive GPM doesn't work, Thanks Valve
   --gamemode:SetUseTurboCouriers(true)
   --gamemode:SetGiveFreeTPOnDeath(false) -- disables free tp scroll on death
   --gamemode:SetTPScrollSlotItemOverride(itemname) -- replace tp scroll slot with something else

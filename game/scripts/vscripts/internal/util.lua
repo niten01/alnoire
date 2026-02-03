@@ -280,13 +280,11 @@ function equals(o1, o2)
   return true
 end
 
---- Process entity name of format "<type>__<payload>"
----@param name string entity name
----@param prefix string type prefix (i.e. "zone__")
----@return string? entity name or nil if prefix doesn't match
-function ExtractNamePayload(name, prefix)
-  if not name or name:sub(1, #prefix) ~= prefix then return nil end
-  return name:sub(#prefix + 1)
+function contains(seq, val)
+  for _, el in ipairs(seq) do
+    if val == el then return true end
+  end
+  return false
 end
 
 --- @param start Vector unit position where blink started

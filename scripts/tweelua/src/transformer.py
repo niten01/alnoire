@@ -60,6 +60,21 @@ class StoryTransformer:
             )
         return types[0]
 
+    def _postprocess_condition(self, condition: DataDict) -> DataDict:
+        if condition.type in ["ent_var", "var"]:
+            # make all var checks consistent (alternatives array value)
+            val = condition.fields["value"]
+            if type(val) is not list:
+                condition.fields["value"] = [val]
+        elif condition.type == "quest":
+            # quest step can also be an alternative array
+            val = condition.fields.get("step", None)
+            if not val:
+                return condition
+            if type(val) is not list:
+                condition.fields["step"] = [val]
+        return condition
+
     def _add_entries_from(self, passage: Passage):
         conditions = []
         priority = 0
@@ -67,7 +82,9 @@ class StoryTransformer:
             if tag.type == "when":
                 try:
                     condition_type = self._detect_entry_condition_type(tag)
-                    conditions.append(DataDict(condition_type, tag.fields))
+                    condition = DataDict(condition_type, tag.fields)
+                    condition = self._postprocess_condition(condition)
+                    conditions.append(condition)
                 except TransformError as e:
                     raise TransformError(
                         f'Failed to add entry from: "{passage.name}". Failed tag: {tag}\n->Exception:{e}'

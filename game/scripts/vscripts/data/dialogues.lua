@@ -5,21 +5,21 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",        status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",                 value = "1/2/3",               type = "var" },
+                { questID = "q_pandas",      status = QuestStatus.INACTIVE, type = "quest" },
+                { var = "act",               value = { 1, 2, 3 },         type = "var" },
             },
         },
         d_untitled_passage_1 = {
             priority = 0,
             conditions = {
                 { interact = "npc_red", type = "interact" },
-                { questID = "q_pandas", status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_pandas", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_11 = {
             priority = 0,
             conditions = {
-                { ent_var = "beaten",                 value = false,            npc = "npc_island_guard", type = "ent_var" },
+                { ent_var = "beaten",               value = { false },      npc = "npc_island_guard", type = "ent_var" },
                 { trigger = "trigger_island_fight_1", npc = "npc_island_guard", type = "trigger" },
             },
         },
@@ -32,21 +32,21 @@ return {
         d_untitled_passage_13 = {
             priority = 0,
             conditions = {
-                { var = "act",                     value = 0,         type = "var" },
+                { var = "act",                   value = { 0 },   type = "var" },
                 { trigger = "trigger_guide_first", npc = "npc_guide", type = "trigger" },
             },
         },
         d_untitled_passage_14 = {
             priority = 0,
             conditions = {
-                { interact = "npc_guide",         type = "interact" },
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = "1/2", type = "quest" },
+                { interact = "npc_guide",       type = "interact" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 1, 2 }, type = "quest" },
             },
         },
         d_untitled_passage_15 = {
             priority = 0,
             conditions = {
-                { var = "act",                 value = 0,             type = "var" },
+                { var = "act",               value = { 0 },       type = "var" },
                 { trigger = "trigger_rebirth", npc = "npc_tormentor", type = "trigger" },
             },
         },
@@ -54,14 +54,14 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_tormentor", type = "interact" },
-                { var = "act",                value = 0,        type = "var" },
+                { var = "act",              value = { 0 },  type = "var" },
             },
         },
         d_untitled_passage_17 = {
             priority = 100,
             conditions = {
                 { interact = "npc_creep_rogach", type = "interact" },
-                { ent_var = "first_met_global",  value = true,     npc = "npc_creep_rogach", type = "ent_var" },
+                { ent_var = "first_met_global", value = { true }, npc = "npc_creep_rogach", type = "ent_var" },
             },
         },
         d_untitled_passage_18 = {
@@ -74,7 +74,7 @@ return {
             priority = 100,
             conditions = {
                 { trigger = "trigger_usach_stopit", npc = "npc_mustache", type = "trigger" },
-                { ent_var = "first_met_global",     value = true,         npc = "npc_mustache", type = "ent_var" },
+                { ent_var = "first_met_global",   value = { true },   npc = "npc_mustache", type = "ent_var" },
             },
         },
         d_untitled_passage_2 = {
@@ -92,37 +92,37 @@ return {
         d_untitled_passage_21 = {
             priority = 0,
             conditions = {
-                { interact = "npc_creep_bob",   type = "interact" },
-                { ent_var = "first_met_global", value = true,     npc = "npc_creep_bob", type = "ent_var" },
+                { interact = "npc_creep_bob", type = "interact" },
+                { ent_var = "first_met_global", value = { true }, npc = "npc_creep_bob", type = "ent_var" },
             },
         },
         d_untitled_passage_22 = {
             priority = 0,
             conditions = {
-                { interact = "npc_creep_bob",   type = "interact" },
-                { ent_var = "first_met_global", value = false,    npc = "npc_creep_bob", type = "ent_var" },
+                { interact = "npc_creep_bob", type = "interact" },
+                { ent_var = "first_met_global", value = { false }, npc = "npc_creep_bob", type = "ent_var" },
             },
         },
         d_untitled_passage_23 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",    status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",                  value = 1,                     type = "var" },
+                { var = "act",                value = { 1 },               type = "var" },
+                { questID = "q_clash_royale", status = QuestStatus.INACTIVE, type = "quest" },
             },
         },
         d_untitled_passage_24 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",    status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_25 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",    status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_26 = {
@@ -140,7 +140,7 @@ return {
         d_untitled_passage_33 = {
             priority = 0,
             conditions = {
-                { interact = "npc_rape_victim",     type = "interact" },
+                { interact = "npc_rape_victim",   type = "interact" },
                 { trigger = "trigger_slish_kamish", npc = "npc_rape_victim", type = "trigger" },
             },
         },
@@ -154,22 +154,22 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",        status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",                value = 1,                     type = "var" },
+                { questID = "q_ogres",      status = QuestStatus.INACTIVE, type = "quest" },
+                { var = "act",              value = { 1 },               type = "var" },
             },
         },
         d_untitled_passage_41 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",        status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_ogres",      status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_42 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_bruiser", type = "interact" },
-                { questID = "q_ogres",           status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_ogres",         status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_43 = {
@@ -182,34 +182,34 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",        status = QuestStatus.ACTIVE, step = 2, type = "quest" },
+                { questID = "q_ogres",      status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_45 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",        status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_ogres",      status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_46 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_first", type = "trigger" },
-                { var = "act",                      value = "1/2",   type = "var" },
+                { var = "act",                    value = { 1, 2 }, type = "var" },
             },
         },
         d_untitled_passage_47 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_second", type = "trigger" },
-                { var = "act",                       value = "1/2",   type = "var" },
+                { var = "act",                     value = { 1, 2 }, type = "var" },
             },
         },
         d_untitled_passage_48 = {
             priority = 0,
             conditions = {
-                { var = "act",                        value = "1/2",            type = "var" },
+                { var = "act",                      value = { 1, 2 },       type = "var" },
                 { trigger = "trigger_island_fight_1", npc = "npc_island_guard", type = "trigger" },
             },
         },
@@ -217,13 +217,13 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_third", type = "trigger" },
-                { var = "act",                      value = "1/2",   type = "var" },
+                { var = "act",                    value = { 1, 2 }, type = "var" },
             },
         },
         d_untitled_passage_59 = {
             priority = 100,
             conditions = {
-                { ent_var = "first_met_global",      value = true,                npc = "npc_templar_assasin", type = "ent_var" },
+                { ent_var = "first_met_global",    value = { true },          npc = "npc_templar_assasin", type = "ent_var" },
                 { trigger = "trigger_village_enter", npc = "npc_templar_assasin", type = "trigger" },
             },
         },
@@ -242,111 +242,111 @@ return {
         d_untitled_passage_63 = {
             priority = 0,
             conditions = {
-                { questID = "q_clash_royal",    status = QuestStatus.ACTIVE, step = 3, type = "quest" },
                 { interact = "npc_blue_prince", type = "interact" },
+                { questID = "q_clash_royale", status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
             },
         },
         d_untitled_passage_64 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_bruiser", type = "interact" },
-                { questID = "q_ogres",           status = QuestStatus.INACTIVE, type = "quest" },
+                { questID = "q_ogres",         status = QuestStatus.INACTIVE, type = "quest" },
             },
         },
         d_untitled_passage_65 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",        status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_ogres",      status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_66 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",    status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_67 = {
             priority = 0,
             conditions = {
                 { interact = "npc_monkey_king", type = "interact" },
-                { ent_var = "beaten",           value = true,     npc = "npc_monkey_king", type = "ent_var" },
+                { ent_var = "beaten",         value = { true }, npc = "npc_monkey_king", type = "ent_var" },
             },
         },
         d_untitled_passage_68 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { var = "act",                value = "2/3/4",        type = "var" },
-                { questID = "q_ogres",        status = "incompleted", type = "quest" },
+                { var = "act",              value = { 2, 3, 4 },  type = "var" },
+                { questID = "q_ogres",      status = "incompleted", type = "quest" },
             },
         },
         d_untitled_passage_69 = {
             priority = 0,
             conditions = {
                 { interact = "npc_monkey_king", type = "interact" },
-                { ent_var = "beaten",           value = false,    npc = "npc_monkey_king", type = "ent_var" },
+                { ent_var = "beaten",         value = { false }, npc = "npc_monkey_king", type = "ent_var" },
             },
         },
         d_untitled_passage_70 = {
             priority = 0,
             conditions = {
-                { var = "act",                  value = "2/3/4",       type = "var" },
+                { var = "act",                value = { 2, 3, 4 }, type = "var" },
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",    status = "incomplete", type = "quest" },
+                { questID = "q_clash_royale", status = "incomplete", type = "quest" },
             },
         },
         d_untitled_passage_71 = {
             priority = 0,
             conditions = {
                 { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",        status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_pandas",      status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_72 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_beginning", type = "trigger" },
-                { var = "act",                   value = 0,       type = "var" },
+                { var = "act",                 value = { 0 }, type = "var" },
             },
         },
         d_untitled_passage_73 = {
             priority = 0,
             conditions = {
-                { var = "act",                          value = 0,          type = "var" },
+                { var = "act",                        value = { 0 },    type = "var" },
                 { trigger = "trigger_school_shooter_1", npc = "npc_sniper", type = "trigger" },
             },
         },
         d_untitled_passage_74 = {
             priority = 0,
             conditions = {
-                { interact = "npc_predvestnik",   type = "interact" },
-                { var = "act",                    value = 1,                   type = "var" },
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 1,    type = "quest" },
+                { interact = "npc_predvestnik", type = "interact" },
+                { var = "act",                  value = { 1 },             type = "var" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_75 = {
             priority = 0,
             conditions = {
                 { interact = "npc_predvestnik", type = "interact" },
-                { questID = "q_main_quest_1",   status = QuestStatus.ACTIVE, step = 2,    type = "quest" },
-                { var = "act",                  value = 1,                   type = "var" },
+                { questID = "q_main_quest_1", status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
+                { var = "act",                value = { 1 },             type = "var" },
             },
         },
         d_untitled_passage_76 = {
             priority = 0,
             conditions = {
                 { interact = "npc_mystery", type = "interact" },
-                { var = "act",              value = 1,        type = "var" },
+                { var = "act",            value = { 1 },  type = "var" },
             },
         },
         d_untitled_passage_77 = {
             priority = 100,
             conditions = {
-                { interact = "npc_scientist",   type = "interact" },
-                { var = "act",                  value = 1,        type = "var" },
-                { ent_var = "first_met_global", value = true,     npc = "npc_scientist", type = "ent_var" },
+                { interact = "npc_scientist", type = "interact" },
+                { var = "act",                value = { 1 },  type = "var" },
+                { ent_var = "first_met_global", value = { true }, npc = "npc_scientist", type = "ent_var" },
             },
         },
         d_untitled_passage_78 = {
@@ -365,7 +365,7 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_shamanka", type = "interact" },
-                { var = "act",               value = 0,        type = "var" },
+                { var = "act",             value = { 0 },  type = "var" },
             },
         },
         d_untitled_passage_80 = {
@@ -378,7 +378,7 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_concert_guard", type = "interact" },
-                { var = "act",                    value = 1,        type = "var" },
+                { var = "act",                  value = { 1 },  type = "var" },
             },
         },
         d_untitled_passage_82 = {
@@ -390,36 +390,36 @@ return {
         d_untitled_passage_83 = {
             priority = 0,
             conditions = {
-                { interact = "npc_predvestnik",   type = "interact" },
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 3, type = "quest" },
+                { interact = "npc_predvestnik", type = "interact" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
             },
         },
         d_untitled_passage_84 = {
             priority = 0,
             conditions = {
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 3,        type = "quest" },
-                { trigger = "trigger_gorilla",    npc = "npc_gorilla",         type = "trigger" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
+                { trigger = "trigger_gorilla",  npc = "npc_gorilla",       type = "trigger" },
             },
         },
         d_untitled_passage_85 = {
             priority = 0,
             conditions = {
-                { ent_var = "beaten",   value = false,    npc = "npc_red", type = "ent_var" },
+                { ent_var = "beaten", value = { false }, npc = "npc_red", type = "ent_var" },
                 { interact = "npc_red", type = "interact" },
             },
         },
         d_untitled_passage_86 = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_after_gorilla", npc = "npc_guide",           type = "trigger" },
-                { var = "act",                       value = 1,                   type = "var" },
-                { questID = "q_main_quest_1",        status = QuestStatus.ACTIVE, step = 3,        type = "quest" },
+                { trigger = "trigger_after_gorilla", npc = "npc_guide",       type = "trigger" },
+                { var = "act",                     value = { 1 },             type = "var" },
+                { questID = "q_main_quest_1",      status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
             },
         },
         d_untitled_passage_9 = {
             priority = 0,
             conditions = {
-                { var = "act",                     value = 0,            type = "var" },
+                { var = "act",                   value = { 0 },      type = "var" },
                 { trigger = "trigger_choose_hero", npc = "npc_shamanka", type = "trigger" },
             },
         },
@@ -769,7 +769,7 @@ return {
         },
         d_podojti_poblizhe = {
             text = [[Меня зовут Боб.]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -1213,7 +1213,7 @@ return {
         },
         d_untitled_passage_21 = {
             text = [[*Крип-головастик произносит слова, очень сильно напрягая голову.*]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -1224,7 +1224,7 @@ return {
         },
         d_untitled_passage_22 = {
             text = [[*Крип неподвижно стоит.*]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -1235,7 +1235,7 @@ return {
         },
         d_untitled_passage_23 = {
             text = [[Человек. Хочешь разбогатеть?]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -1246,7 +1246,7 @@ return {
         },
         d_untitled_passage_24 = {
             text = [[Врата. Проходи через них.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -1257,14 +1257,14 @@ return {
         },
         d_untitled_passage_25 = {
             text = [[Помочь Принцу. Ты готов?]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Да.]],
                     next = "d_i9",
                     actions = {
-                        { questID = "q_clash_royal", type = "quest_start" },
+                        { questID = "q_clash_royale", type = "quest_start" },
                     },
                 },
                 {
@@ -1466,7 +1466,7 @@ return {
         },
         d_untitled_passage_63 = {
             text = [[Человек. Ты великий воин. Земли теперь полностью мои.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -1765,8 +1765,8 @@ return {
             npc = "npc_shamanka",
             choices = {
                 {
-                    text = [[Здрасте, не подскажите где я?]],
-                    next = "d_zdraste_ne_podskazhite_gde_ya",
+                    text = [[Здрасте, не подскажете где я?]],
+                    next = "d_zdraste_ne_podskazhete_gde_ya",
                 },
             },
         },
@@ -2021,7 +2021,7 @@ return {
         },
         d_i6 = {
             text = [[Меня зовут Боб!]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -2032,7 +2032,7 @@ return {
         },
         d_i7 = {
             text = [[Как меня зовут?!]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -2051,7 +2051,7 @@ return {
         },
         d_i8 = {
             text = [[*Крип сильно расстроился. Его не покидает ощущение, что что-то не так.*]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -2062,7 +2062,7 @@ return {
         },
         d_i9 = {
             text = [[Отлично. Проходи.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -2931,7 +2931,7 @@ return {
         },
         d_a_menya_zovu = {
             text = [[Меня зовут Боб.]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -3484,7 +3484,7 @@ return {
                 },
             },
         },
-        d_zdraste_ne_podskazhite_gde_ya = {
+        d_zdraste_ne_podskazhete_gde_ya = {
             text =
             [[Чувствую перед собой сильную энергию... Неужто пришёл тот, кто освободит наше измученное Королевство?]],
             speaker = [[Старушка]],
@@ -3554,7 +3554,7 @@ return {
         },
         d_i_tvoj_brat_daj_ugadau_tozhe_prints = {
             text = [[Верно. Красный Принц. Земля досталась нам от отца. Вечная борьба.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -3565,7 +3565,7 @@ return {
         },
         d_i_tebe_pomoch_otvoevat_ee = {
             text = [[Верно. Брат мой - последователь капитализма. Куча денег. Куча сильных бойцов. Я не имею такового.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -3668,7 +3668,7 @@ return {
         },
         d_kruto_kak_tam_s_nagradoj = {
             text = [[Возьми. Большая награда. Для большого человека.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -3902,7 +3902,7 @@ return {
                     text = [[*Начать обороняться.*]],
                     next = nil,
                     actions = {
-                        { npc = "npc_gate_troll_uruk",  target = "kill", type = "fight_start" },
+                        { npc = "npc_gate_troll_uruk", target = "kill", type = "fight_start" },
                         { npc = "npc_gate_troll_biruk", target = "kill", type = "fight_start" },
                         { npc = "npc_gate_troll_diruk", target = "kill", type = "fight_start" },
                     },
@@ -3969,7 +3969,7 @@ return {
         },
         d_ne_hochu = {
             text = [[Ты. Подумай ещё.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -4039,7 +4039,7 @@ return {
         },
         d_no_ty_zhe_mne_zaplatish = {
             text = [[Верно.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -4308,7 +4308,7 @@ return {
         },
         d_pomosch_nuzhna = {
             text = [[Меня зовут... эм...*Крип начал перебирать варианты.*]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -4527,7 +4527,7 @@ return {
         },
         d_smotrya_chto_predlagaesh = {
             text = [[Я - Синий Принц. Сын великого Булыжника. Однако у Булыжника. Два сына.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -4647,7 +4647,7 @@ return {
         },
         d_tebya_zovut_aleks = {
             text = [[Алекс... Алекс?]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -4658,7 +4658,7 @@ return {
         },
         d_tebya_zovut_bob = {
             text = [[Боб... Точно! Спасибо!!]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -4669,7 +4669,7 @@ return {
         },
         d_tebya_zovut_dzhon = {
             text = [[Джон... Джон? ]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -4904,19 +4904,23 @@ return {
         },
         d_hm__1 = {
             text = [[Защити мои постройки. Разрушь его. Таково задание. Берешься?]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Да.]],
                     next = "d_i9",
                     actions = {
-                        { questID = "q_clash_royal", type = "quest_start" },
+                        { questID = "q_clash_royale", type = "quest_start" },
+                        { door = "door_clash_royale", type = "open_door" },
                     },
                 },
                 {
                     text = [[Не хочу.]],
                     next = "d_ne_hochu",
+                    actions = {
+                        { questID = "q_clash_royale", type = "quest_reject" },
+                    },
                 },
             },
         },
