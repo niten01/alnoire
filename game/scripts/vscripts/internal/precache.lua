@@ -10,6 +10,12 @@ return {
         "npc_gate_troll_uruk",
         "npc_gate_troll_biruk",
         "npc_gate_troll_diruk",
+        "npc_guide",
+        "npc_creep_bob",
+        "npc_creep_rogach",
+        "npc_mustache",
+        "npc_monkey_king",
+        "npc_blue_prince",
 
         "npc_gorilla",
 

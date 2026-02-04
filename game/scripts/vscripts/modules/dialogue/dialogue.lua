@@ -211,11 +211,15 @@ end
 function Dialogue:OnCancelLethalDamage(params)
   if not IsServer() then return end
 
+  local unitName = params.unit:GetUnitName()
+  local unitData = EntityData:ByName(unitName)
+  unitData.beaten = true
+
   local startDialogue = function(playerID)
     local entrypoint = self:GetDialogueNodeBestMatchEntrypoint(playerID,
-      { { type = "beat", beat = params.unit:GetUnitName() } })
+      { { type = "beat", beat = unitName } })
     if not entrypoint then return false end
-    self:StartDialogueForAll(entrypoint.nodeID)
+    self:StartDialogueForPlayer(playerID, entrypoint.nodeID)
     return true
   end
 
@@ -248,6 +252,8 @@ function Dialogue:OnQueryUpdate(_, args)
   if not hero or hero:IsNull() then return end
 
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
+  -- skip talks during fights
+  if not unit:HasModifier("modifier_story_npc") then return end
 
   -- interact
   local entrypoint = self:GetDialogueNodeBestMatchEntrypoint(playerID,

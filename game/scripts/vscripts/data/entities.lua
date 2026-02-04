@@ -61,6 +61,15 @@ return {
             npc = "npc_mustache",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_monkey_king = {
+            npc = "npc_monkey_king",
+            modifiers = { "modifier_story_npc" },
+            team = DOTA_TEAM_BADGUYS,
+        },
+        spawner_brewmaster = {
+            npc = "npc_brewmaster",
+            modifiers = { "modifier_story_npc" },
+        },
     },
 
     ------------------------------------------------------------
@@ -83,6 +92,10 @@ return {
             first_met_in_act = true,
             beaten = false,
             can_give_quest = false,
+            modifiers_on_player_kill = nil,
+        },
+        npc_monkey_king = {
+            modifiers_on_player_kill = { "modifier_story_npc" }
         },
     },
 

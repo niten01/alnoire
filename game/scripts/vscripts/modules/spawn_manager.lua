@@ -28,9 +28,9 @@ end
 function SpawnManager:OnHeroInGame(hero)
     if not IsServer() then return end
 
-    if not hero:HasModifier("modifier_anim_translate_thinker") then
-        hero:AddNewModifier(hero, nil, "modifier_anim_translate_thinker", { duration = -1 })
-    end
+    -- if not hero:HasModifier("modifier_anim_translate_thinker") then
+    --     hero:AddNewModifier(hero, nil, "modifier_anim_translate_thinker", { duration = -1 })
+    -- end
     --hero:AddNewModifier(hero, nil, "modifier_test_eyes", { duration = -1 })
 end
 
@@ -60,7 +60,9 @@ function SpawnManager:SpawnNPC(spawnerName)
             end
         end
 
-        EntityData:AddEntity("npc", data.npc, {})
+        if not EntityData:ByName(data.npc) then
+            EntityData:AddEntity("npc", data.npc, {})
+        end
     end
 end
 
@@ -96,7 +98,22 @@ function SpawnManager:OnEntityKilled(event)
     if not hero or not hero:IsRealHero() or hero:IsSpiritBearCustom() then return end
 
     local playerID = hero:GetPlayerOwnerID()
-    hero:SetRespawnPosition(self.playerRespawnPos[playerID])
+    local respawnPos = self.playerRespawnPos[playerID]
+    if not respawnPos then
+        print("[???] No respawn pos for player")
+    else
+        hero:SetRespawnPosition(respawnPos)
+    end
+
+    for _, npcData in ipairs(EntityData:AllByType('npc')) do
+        if not npcData.modifiers_on_player_kill then goto continue end
+        for _, modifierName in ipairs(npcData.modifiers_on_player_kill) do
+            if not hero:HasModifier(modifierName) then
+                hero:AddNewModifier(hero, nil, modifierName, { duration = -1 })
+            end
+        end
+        ::continue::
+    end
 end
 
 function SpawnManager:OnZoneEnter(event)

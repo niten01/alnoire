@@ -128,6 +128,7 @@ return {
         giver = "npc_brewmaster",
         name = "Три оттенка",
         acts = { 1, 2, 3 },
+        showExclamation = true,
         steps = {
             {
                 description = "Найди Красного, Зелёного и Синего",

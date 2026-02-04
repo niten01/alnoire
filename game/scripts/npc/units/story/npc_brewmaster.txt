@@ -1,0 +1,18 @@
+"DOTAUnits"
+{
+	"npc_brewmaster" 
+	{
+		"Model"						"models/heroes/brewmaster/brewmaster.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "159" } // barrel
+				"Wearable2" { "ItemDef" "19442" } // staff
+			}
+		}
+	}
+}

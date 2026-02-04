@@ -18,12 +18,16 @@ function Handlers.quest_end(playerID, action)
 end
 
 function Handlers.fight_start(playerID, action)
+  if not action.npc then
+    error("Fight action has no target npc")
+    return
+  end
   for _, ent in ipairs(Entities:FindAllByName(action.npc)) do
-    DebugPrint("[ALNOIRE] Starting fight with " .. ent:GetName())
-    ent:RemoveModifierByName("modifier_story_npc")
-    if action.target == "beat" and not ent:HasModifier("modifier_lethal_damage_tracking") then
-      ent:AddNewModifier(nil, nil, "modifier_lethal_damage_tracking", { duration = -1 })
-    end
+      DebugPrint("[ALNOIRE] Starting fight with " .. ent:GetName())
+      ent:RemoveModifierByName("modifier_story_npc")
+      if action.target == "talk" and not ent:HasModifier("modifier_story_lethal_damage_tracking") then
+        ent:AddNewModifier(ent, nil, "modifier_story_lethal_damage_tracking", { duration = -1 })
+      end
   end
 end
 

@@ -6,6 +6,11 @@
     "Старушка": "shamanka",
     "Банда троллей": "gate_trolls",
     "Синий Принц": "blue_prince",
+    "Крип-рогач": "rogach",
+    "Человек-усач": "mustache",
+    "Боб": "bob",
+    "Быдло": "monkey_king",
+    "Пьяная панда": "brewmaster",
   }
 
   const root = $.GetContextPanel();

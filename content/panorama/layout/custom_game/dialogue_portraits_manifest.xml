@@ -6,5 +6,10 @@
         <Image src="file://{images}/custom_game/portraits/gate_trolls.psd" />
         <Image src="file://{images}/custom_game/portraits/shamanka.psd" />
         <Image src="file://{images}/custom_game/portraits/blue_prince.psd" />
+        <Image src="file://{images}/custom_game/portraits/monkey_king.psd" />
+        <Image src="file://{images}/custom_game/portraits/bob.psd" />
+        <Image src="file://{images}/custom_game/portraits/rogach.psd" />
+        <Image src="file://{images}/custom_game/portraits/mustache.psd" />
+        <Image src="file://{images}/custom_game/portraits/brewmaster.psd" />
     </Panel>
 </root>

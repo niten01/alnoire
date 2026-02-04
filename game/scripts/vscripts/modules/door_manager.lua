@@ -13,6 +13,10 @@ function DoorManager:Open(doorName)
         return
     end
 
+    if not data.clipEntity then
+        error("No clip entity for door: " .. doorName)
+        return
+    end
     for _, clipEnt in ipairs(Entities:FindAllByName(data.clipEntity)) do
         DoEntFireByInstanceHandle(clipEnt, "Disable", "", 0, nil, nil)
     end

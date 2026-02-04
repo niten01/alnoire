@@ -209,6 +209,10 @@ function Quest:OnActChange()
     self:TryRemoveExclamation(questID)
 
     if quest.showExclamation then
+      if not quest.giver then
+        error("Quest " .. questID .. " has no giver")
+        return
+      end
       for _, giverEnt in ipairs(Entities:FindAllByName(quest.giver)) do
         quest.exclamationPfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_has_quest.vpcf",
           PATTACH_CUSTOMORIGIN, giverEnt)

@@ -23,6 +23,7 @@
     "AttackRate"                                          "1.7"
     "BaseAttackSpeed"                                     "100"
     "AttackAnimationPoint"                                "0.33"
+    "HasAggressiveStance"                                 "1"
     "AttackSpeedActivityModifiers"
     {
       "fast"                                              "170"
