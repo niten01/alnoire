@@ -81,6 +81,32 @@ return {
         },
     },
 
+    packs = {
+        __common = {
+            rangeFastTickRate = 1000,
+            rangeRetreat = 1000,
+            rangeAggro = 500,
+            state = "idle",
+        },
+
+        pack_forest_1 = {
+            foes = {
+                {
+                    unitName="npc_ogre",
+                    spawnPoint =  "spawn_point_1",
+                },
+                {
+                    unit="npc_ogre",
+                    spawnPoint =  "spawn_point_1",
+                },
+                {
+                    unit="npc_ogre",
+                    spawnPoint =  "spawn_point_1",
+                },
+            }
+        }
+    },
+
     ------------------------------------------------------------
     --- Zones
     ------------------------------------------------------------
