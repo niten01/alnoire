@@ -2,6 +2,7 @@
 #base "units/boss/npc_shooter.txt"
 
 #base "units/misc/clash_royale.txt"
+#base "units/jungle/act1_jungle.txt"
 
 #base "units/story/npc_tormentor.txt"
 #base "units/story/npc_shamanka.txt"
