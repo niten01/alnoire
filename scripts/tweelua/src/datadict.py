@@ -9,6 +9,21 @@ class DataDict:
     fields: Dict[str, any]
 
 
+def parse_val(val: str) -> any:
+    alt_split = str(val).split("/")
+    if val in ["true", "false"]:
+        return {"true": True, "false": False}[val]
+    elif len(alt_split) > 1:
+        return list(map(parse_val, alt_split))
+    else:
+        try:
+            num = int(val)
+            return num
+        except ValueError:
+            pass
+    return val
+
+
 def parse_datadict(payload: str) -> DataDict:
     type_split = payload.split(":")
     if len(type_split) != 2:
@@ -26,14 +41,6 @@ def parse_datadict(payload: str) -> DataDict:
 
         if not key or len(key) == 0:
             raise ParseError(f'Invalid DataDict field key in: "{kv_raw}"')
-        fields[key] = value
+        fields[key] = parse_val(value)
 
-    for k, v in fields.items():
-        if v in ["true", "false"]:
-            fields[k] = {"true": True, "false": False}[v]
-        else:
-            try:
-                fields[k] = int(v)
-            except ValueError:
-                pass
     return DataDict(type, fields)

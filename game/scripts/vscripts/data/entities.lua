@@ -49,6 +49,62 @@ return {
             npc = "npc_guide",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_creep_rogach = {
+            npc = "npc_creep_rogach",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_creep_bob = {
+            npc = "npc_creep_bob",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_mustache = {
+            npc = "npc_mustache",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_monkey_king = {
+            npc = "npc_monkey_king",
+            modifiers = { "modifier_story_npc" },
+            team = DOTA_TEAM_BADGUYS,
+        },
+        spawner_brewmaster = {
+            npc = "npc_brewmaster",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_ogre_magi = {
+            npc = "npc_ogre_magi",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_ogre_bruiser = {
+            npc = "npc_ogre_bruiser",
+            modifiers = { "modifier_story_npc" },
+            team = DOTA_TEAM_BADGUYS,
+        },
+    },
+
+    packs = {
+        __common = {
+            rangeFastTickRate = 1000,
+            rangeRetreat = 1000,
+            rangeAggro = 500,
+            state = "idle",
+        },
+
+        pack_forest_1 = {
+            foes = {
+                {
+                    unitName="npc_ogre",
+                    spawnPoint =  "spawn_point_1",
+                },
+                {
+                    unit="npc_ogre",
+                    spawnPoint =  "spawn_point_1",
+                },
+                {
+                    unit="npc_ogre",
+                    spawnPoint =  "spawn_point_1",
+                },
+            }
+        }
     },
 
     ------------------------------------------------------------
@@ -67,10 +123,14 @@ return {
     ------------------------------------------------------------
     npc = {
         __common = {
-            first_met_global = false,
-            first_met_in_act = false,
+            first_met_global = true,
+            first_met_in_act = true,
             beaten = false,
             can_give_quest = false,
+            modifiers_on_player_kill = nil,
+        },
+        npc_monkey_king = {
+            modifiers_on_player_kill = { "modifier_story_npc" }
         },
     },
 
@@ -81,6 +141,10 @@ return {
         door_prologue = {
             clipEntity = "clip_door_prologue",
             openAnimation = "cf_palace_door_open"
-        }
+        },
+        door_clash_royale = {
+            clipEntity = "clip_door_clash_royale",
+            openAnimation = "open"
+        },
     }
 }

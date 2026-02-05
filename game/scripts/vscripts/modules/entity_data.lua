@@ -20,6 +20,7 @@ function EntityData:Init()
         end
     end
 
+
     DebugPrint("[ALNOIRE] EntityData loaded " .. TableLength(self.entities) .. " entities")
 end
 

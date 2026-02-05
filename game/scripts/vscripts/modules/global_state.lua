@@ -2,11 +2,14 @@ GlobalState = GlobalState or {}
 
 function GlobalState:Init()
     self.state = {
-        act = 0,
+        act = 1,
     }
 
-    -- set initial act
-    GlobalState:SetAct(self.state.act)
+
+    GameEvents:OnGameInProgress(function()
+        -- set initial act
+        GlobalState:SetAct(self.state.act)
+    end)
 
     ChatCommand:LinkDevCommand("-setact", function(event, args)
         GlobalState:SetAct(tonumber(args[1]))

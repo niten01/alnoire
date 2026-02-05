@@ -43,7 +43,9 @@ function Dialogue:Init()
 
   CustomGameEventManager:RegisterListener("dialogue_choice", bind(self.OnDialogueChoice, self))
   CustomGameEventManager:RegisterListener("query_update", bind(self.OnQueryUpdate, self))
+
   GameEvents:OnCancelLethalDamage(bind(self.OnCancelLethalDamage, self))
+  GameEvents:OnActChange(bind(self.OnActChange, self))
 
   ChatCommand:LinkCommand("-dialogueclose", function(event)
     self:HideDialogue(event.playerID)
@@ -82,8 +84,8 @@ function Dialogue:TrySetFirstMet(startNodeID)
     data = EntityData:AddEntity("npc", node.npc, {})
   end
 
-  data.first_met_cur_act = true;
-  data.first_met_cur_global = true;
+  data.first_met_cur_act = false;
+  data.first_met_global = false;
 end
 
 function Dialogue:ShowDialogueNode(playerID, nodeID)
@@ -129,8 +131,8 @@ function Dialogue:GetPlayerCurrentNode(playerID)
   return self:GetNode(self:GetPlayerNodeID(playerID))
 end
 
-local ConditionEval = require('modules.dialogue.condition_evaluator')
 function Dialogue:GetDialogueNodeBestMatchEntrypoint(playerID, premetConditions)
+  local ConditionEval = require('modules.dialogue.condition_evaluator')
   local matches = {}
   for nodeID, entrypoint in pairs(self.entryPoints) do
     entrypoint.nodeID = nodeID
@@ -154,6 +156,9 @@ function Dialogue:GetDialogueNodeBestMatchEntrypoint(playerID, premetConditions)
     end
     Notifications:TopToAll({ text = text, duration = 10000 })
   end
+
+  DebugPrint("[ALNOIRE] Dialogue entrypoint matches:")
+  PrintTable(matches, 2)
 
   return matches[1]
 end
@@ -197,14 +202,24 @@ function Dialogue:OnDialogueChoice(_, args)
   self:ShowDialogueNode(playerID, choice.next)
 end
 
+function Dialogue:OnActChange(event)
+  for _, npcData in ipairs(EntityData:AllByType('npc')) do
+    npcData.first_met_in_act = true
+  end
+end
+
 function Dialogue:OnCancelLethalDamage(params)
   if not IsServer() then return end
 
+  local unitName = params.unit:GetUnitName()
+  local unitData = EntityData:ByName(unitName)
+  unitData.beaten = true
+
   local startDialogue = function(playerID)
     local entrypoint = self:GetDialogueNodeBestMatchEntrypoint(playerID,
-      { { type = "beat", beat = params.unit:GetUnitName() } })
+      { { type = "beat", beat = unitName } })
     if not entrypoint then return false end
-    self:StartDialogueForAll(entrypoint.nodeID)
+    self:StartDialogueForPlayer(playerID, entrypoint.nodeID)
     return true
   end
 
@@ -237,6 +252,8 @@ function Dialogue:OnQueryUpdate(_, args)
   if not hero or hero:IsNull() then return end
 
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
+  -- skip talks during fights
+  if not unit:HasModifier("modifier_story_npc") then return end
 
   -- interact
   local entrypoint = self:GetDialogueNodeBestMatchEntrypoint(playerID,

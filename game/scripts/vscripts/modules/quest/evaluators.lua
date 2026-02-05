@@ -19,6 +19,12 @@ return {
             return objective.currentProgress == objective.targetProgress
         end,
 
+    BeatEvaluator =
+        function(objective, event)
+            local victimName = event.unit:GetUnitName()
+            return objective.npc == victimName 
+        end,
+
     TriggerEvaluator =
         function(objective, event)
             if not objective.trigger or not event.triggerName then return false end

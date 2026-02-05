@@ -5,21 +5,21 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",        status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",                 value = "1/2/3",               type = "var" },
+                { questID = "q_pandas",      status = QuestStatus.INACTIVE, type = "quest" },
+                { var = "act",               value = { 1, 2, 3 },         type = "var" },
             },
         },
         d_untitled_passage_1 = {
             priority = 0,
             conditions = {
                 { interact = "npc_red", type = "interact" },
-                { questID = "q_pandas", status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_pandas", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_11 = {
             priority = 0,
             conditions = {
-                { ent_var = "beaten",                 value = false,            npc = "npc_island_guard", type = "ent_var" },
+                { ent_var = "beaten",               value = { false },      npc = "npc_island_guard", type = "ent_var" },
                 { trigger = "trigger_island_fight_1", npc = "npc_island_guard", type = "trigger" },
             },
         },
@@ -32,21 +32,21 @@ return {
         d_untitled_passage_13 = {
             priority = 0,
             conditions = {
-                { var = "act",                     value = 0,         type = "var" },
+                { var = "act",                   value = { 0 },   type = "var" },
                 { trigger = "trigger_guide_first", npc = "npc_guide", type = "trigger" },
             },
         },
         d_untitled_passage_14 = {
             priority = 0,
             conditions = {
-                { interact = "npc_guide",         type = "interact" },
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = "1/2", type = "quest" },
+                { interact = "npc_guide",       type = "interact" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 1, 2 }, type = "quest" },
             },
         },
         d_untitled_passage_15 = {
             priority = 0,
             conditions = {
-                { var = "act",                 value = 0,             type = "var" },
+                { var = "act",               value = { 0 },       type = "var" },
                 { trigger = "trigger_rebirth", npc = "npc_tormentor", type = "trigger" },
             },
         },
@@ -54,14 +54,14 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_tormentor", type = "interact" },
-                { var = "act",                value = 0,        type = "var" },
+                { var = "act",              value = { 0 },  type = "var" },
             },
         },
         d_untitled_passage_17 = {
             priority = 100,
             conditions = {
                 { interact = "npc_creep_rogach", type = "interact" },
-                { ent_var = "first_met_global",  value = true,     npc = "npc_creep_rogach", type = "ent_var" },
+                { ent_var = "first_met_global", value = { true }, npc = "npc_creep_rogach", type = "ent_var" },
             },
         },
         d_untitled_passage_18 = {
@@ -74,7 +74,7 @@ return {
             priority = 100,
             conditions = {
                 { trigger = "trigger_usach_stopit", npc = "npc_mustache", type = "trigger" },
-                { ent_var = "first_met_global",     value = true,         npc = "npc_mustache", type = "ent_var" },
+                { ent_var = "first_met_global",   value = { true },   npc = "npc_mustache", type = "ent_var" },
             },
         },
         d_untitled_passage_2 = {
@@ -92,37 +92,37 @@ return {
         d_untitled_passage_21 = {
             priority = 0,
             conditions = {
-                { interact = "npc_creep_bob",   type = "interact" },
-                { ent_var = "first_met_global", value = true,     npc = "npc_creep_bob", type = "ent_var" },
+                { interact = "npc_creep_bob", type = "interact" },
+                { ent_var = "first_met_global", value = { true }, npc = "npc_creep_bob", type = "ent_var" },
             },
         },
         d_untitled_passage_22 = {
             priority = 0,
             conditions = {
-                { interact = "npc_creep_bob",   type = "interact" },
-                { ent_var = "first_met_global", value = false,    npc = "npc_creep_bob", type = "ent_var" },
+                { interact = "npc_creep_bob", type = "interact" },
+                { ent_var = "first_met_global", value = { false }, npc = "npc_creep_bob", type = "ent_var" },
             },
         },
         d_untitled_passage_23 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",    status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",                  value = 1,                     type = "var" },
+                { var = "act",                value = { 1 },               type = "var" },
+                { questID = "q_clash_royale", status = QuestStatus.INACTIVE, type = "quest" },
             },
         },
         d_untitled_passage_24 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",    status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_25 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",    status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_26 = {
@@ -140,7 +140,7 @@ return {
         d_untitled_passage_33 = {
             priority = 0,
             conditions = {
-                { interact = "npc_rape_victim",     type = "interact" },
+                { interact = "npc_rape_victim",   type = "interact" },
                 { trigger = "trigger_slish_kamish", npc = "npc_rape_victim", type = "trigger" },
             },
         },
@@ -154,22 +154,22 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",        status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",                value = 1,                     type = "var" },
+                { questID = "q_ogres",      status = QuestStatus.INACTIVE, type = "quest" },
+                { var = "act",              value = { 1 },               type = "var" },
             },
         },
         d_untitled_passage_41 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",        status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_ogres",      status = QuestStatus.ACTIVE, type = "quest" },
             },
         },
         d_untitled_passage_42 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_bruiser", type = "interact" },
-                { questID = "q_ogres",           status = QuestStatus.ACTIVE, step = 1, type = "quest" },
+                { questID = "q_ogres",         status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_43 = {
@@ -182,34 +182,34 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",        status = QuestStatus.ACTIVE, step = 2, type = "quest" },
+                { questID = "q_ogres",      status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_45 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",        status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_ogres",      status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_46 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_first", type = "trigger" },
-                { var = "act",                      value = "1/2",   type = "var" },
+                { var = "act",                    value = { 1, 2 }, type = "var" },
             },
         },
         d_untitled_passage_47 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_second", type = "trigger" },
-                { var = "act",                       value = "1/2",   type = "var" },
+                { var = "act",                     value = { 1, 2 }, type = "var" },
             },
         },
         d_untitled_passage_48 = {
             priority = 0,
             conditions = {
-                { var = "act",                        value = "1/2",            type = "var" },
+                { var = "act",                      value = { 1, 2 },       type = "var" },
                 { trigger = "trigger_island_fight_1", npc = "npc_island_guard", type = "trigger" },
             },
         },
@@ -217,13 +217,13 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_third", type = "trigger" },
-                { var = "act",                      value = "1/2",   type = "var" },
+                { var = "act",                    value = { 1, 2 }, type = "var" },
             },
         },
         d_untitled_passage_59 = {
             priority = 100,
             conditions = {
-                { ent_var = "first_met_global",      value = true,                npc = "npc_templar_assasin", type = "ent_var" },
+                { ent_var = "first_met_global",    value = { true },          npc = "npc_templar_assasin", type = "ent_var" },
                 { trigger = "trigger_village_enter", npc = "npc_templar_assasin", type = "trigger" },
             },
         },
@@ -242,111 +242,111 @@ return {
         d_untitled_passage_63 = {
             priority = 0,
             conditions = {
-                { questID = "q_clash_royal",    status = QuestStatus.ACTIVE, step = 3, type = "quest" },
                 { interact = "npc_blue_prince", type = "interact" },
+                { questID = "q_clash_royale", status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
             },
         },
         d_untitled_passage_64 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_bruiser", type = "interact" },
-                { questID = "q_ogres",           status = QuestStatus.INACTIVE, type = "quest" },
+                { questID = "q_ogres",         status = QuestStatus.INACTIVE, type = "quest" },
             },
         },
         d_untitled_passage_65 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",        status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_ogres",      status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_66 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",    status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_clash_royale", status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_67 = {
             priority = 0,
             conditions = {
                 { interact = "npc_monkey_king", type = "interact" },
-                { ent_var = "beaten",           value = true,     npc = "npc_monkey_king", type = "ent_var" },
+                { ent_var = "beaten",         value = { true }, npc = "npc_monkey_king", type = "ent_var" },
             },
         },
         d_untitled_passage_68 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { var = "act",                value = "2/3/4",        type = "var" },
-                { questID = "q_ogres",        status = "incompleted", type = "quest" },
+                { var = "act",              value = { 2, 3, 4 }, type = "var" },
+                { questID = "q_ogres",      status = "incomplete", type = "quest" },
             },
         },
         d_untitled_passage_69 = {
             priority = 0,
             conditions = {
                 { interact = "npc_monkey_king", type = "interact" },
-                { ent_var = "beaten",           value = false,    npc = "npc_monkey_king", type = "ent_var" },
+                { ent_var = "beaten",         value = { false }, npc = "npc_monkey_king", type = "ent_var" },
             },
         },
         d_untitled_passage_70 = {
             priority = 0,
             conditions = {
-                { var = "act",                  value = "2/3/4",       type = "var" },
+                { var = "act",                value = { 2, 3, 4 }, type = "var" },
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royal",    status = "incomplete", type = "quest" },
+                { questID = "q_clash_royale", status = "incomplete", type = "quest" },
             },
         },
         d_untitled_passage_71 = {
             priority = 0,
             conditions = {
                 { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",        status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_pandas",      status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_72 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_beginning", type = "trigger" },
-                { var = "act",                   value = 0,       type = "var" },
+                { var = "act",                 value = { 0 }, type = "var" },
             },
         },
         d_untitled_passage_73 = {
             priority = 0,
             conditions = {
-                { var = "act",                          value = 0,          type = "var" },
+                { var = "act",                        value = { 0 },    type = "var" },
                 { trigger = "trigger_school_shooter_1", npc = "npc_sniper", type = "trigger" },
             },
         },
         d_untitled_passage_74 = {
             priority = 0,
             conditions = {
-                { interact = "npc_predvestnik",   type = "interact" },
-                { var = "act",                    value = 1,                   type = "var" },
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 1,    type = "quest" },
+                { interact = "npc_predvestnik", type = "interact" },
+                { var = "act",                  value = { 1 },             type = "var" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_75 = {
             priority = 0,
             conditions = {
                 { interact = "npc_predvestnik", type = "interact" },
-                { questID = "q_main_quest_1",   status = QuestStatus.ACTIVE, step = 2,    type = "quest" },
-                { var = "act",                  value = 1,                   type = "var" },
+                { questID = "q_main_quest_1", status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
+                { var = "act",                value = { 1 },             type = "var" },
             },
         },
         d_untitled_passage_76 = {
             priority = 0,
             conditions = {
                 { interact = "npc_mystery", type = "interact" },
-                { var = "act",              value = 1,        type = "var" },
+                { var = "act",            value = { 1 },  type = "var" },
             },
         },
         d_untitled_passage_77 = {
             priority = 100,
             conditions = {
-                { interact = "npc_scientist",   type = "interact" },
-                { var = "act",                  value = 1,        type = "var" },
-                { ent_var = "first_met_global", value = true,     npc = "npc_scientist", type = "ent_var" },
+                { interact = "npc_scientist", type = "interact" },
+                { var = "act",                value = { 1 },  type = "var" },
+                { ent_var = "first_met_global", value = { true }, npc = "npc_scientist", type = "ent_var" },
             },
         },
         d_untitled_passage_78 = {
@@ -365,7 +365,7 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_shamanka", type = "interact" },
-                { var = "act",               value = 0,        type = "var" },
+                { var = "act",             value = { 0 },  type = "var" },
             },
         },
         d_untitled_passage_80 = {
@@ -378,7 +378,7 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_concert_guard", type = "interact" },
-                { var = "act",                    value = 1,        type = "var" },
+                { var = "act",                  value = { 1 },  type = "var" },
             },
         },
         d_untitled_passage_82 = {
@@ -390,36 +390,36 @@ return {
         d_untitled_passage_83 = {
             priority = 0,
             conditions = {
-                { interact = "npc_predvestnik",   type = "interact" },
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 3, type = "quest" },
+                { interact = "npc_predvestnik", type = "interact" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
             },
         },
         d_untitled_passage_84 = {
             priority = 0,
             conditions = {
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = 3,        type = "quest" },
-                { trigger = "trigger_gorilla",    npc = "npc_gorilla",         type = "trigger" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
+                { trigger = "trigger_gorilla",  npc = "npc_gorilla",       type = "trigger" },
             },
         },
         d_untitled_passage_85 = {
             priority = 0,
             conditions = {
-                { ent_var = "beaten",   value = false,    npc = "npc_red", type = "ent_var" },
+                { ent_var = "beaten", value = { false }, npc = "npc_red", type = "ent_var" },
                 { interact = "npc_red", type = "interact" },
             },
         },
         d_untitled_passage_86 = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_after_gorilla", npc = "npc_guide",           type = "trigger" },
-                { var = "act",                       value = 1,                   type = "var" },
-                { questID = "q_main_quest_1",        status = QuestStatus.ACTIVE, step = 3,        type = "quest" },
+                { trigger = "trigger_after_gorilla", npc = "npc_guide",       type = "trigger" },
+                { var = "act",                     value = { 1 },             type = "var" },
+                { questID = "q_main_quest_1",      status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
             },
         },
         d_untitled_passage_9 = {
             priority = 0,
             conditions = {
-                { var = "act",                     value = 0,            type = "var" },
+                { var = "act",                   value = { 0 },      type = "var" },
                 { trigger = "trigger_choose_hero", npc = "npc_shamanka", type = "trigger" },
             },
         },
@@ -769,7 +769,7 @@ return {
         },
         d_podojti_poblizhe = {
             text = [[Меня зовут Боб.]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -839,7 +839,7 @@ return {
         },
         d_prigrozit_kulakom = {
             text = [[Оуу кей, братан. Ты воистину царь! Слава царю!]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -895,7 +895,7 @@ return {
         },
         d_razbit_bochku_pinkom = {
             text = [[НЕЕЕЕТ, ЧТО ТЫ НАДЕЛАЛ?! ВСЁ ВЫЛИЛОСЬ. Я ТЕБЯ СЕЙЧАС...]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -940,7 +940,7 @@ return {
         },
         d_udarit_lbom_emu_po_litsu = {
             text = [[АРГХХ... Ты что делаешь сука, А?!]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -1025,7 +1025,7 @@ return {
         d_empty = {
             text =
             [[Вообщем, ты их точно не пропустишь, у них очень выразительные цвета: Красный - злобный малый, Зелёный - твердолобый упырь, Синий - непредсказуемый болван.]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -1062,7 +1062,7 @@ return {
         },
         d_untitled_passage = {
             text = [[*Перед твоим взором - покачивающаяся панда. Сильный запах алкоголя ударяет тебе в нос.*]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -1202,7 +1202,7 @@ return {
         },
         d_untitled_passage_20 = {
             text = [[ВПЕРЁД КАЧАТЬСЯ! СЛАВА КОРОЛЮ!]],
-            speaker = [[Крип-усач]],
+            speaker = [[Человек-усач]],
             npc = "npc_mustache",
             choices = {
                 {
@@ -1213,7 +1213,7 @@ return {
         },
         d_untitled_passage_21 = {
             text = [[*Крип-головастик произносит слова, очень сильно напрягая голову.*]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -1224,7 +1224,7 @@ return {
         },
         d_untitled_passage_22 = {
             text = [[*Крип неподвижно стоит.*]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -1235,7 +1235,7 @@ return {
         },
         d_untitled_passage_23 = {
             text = [[Человек. Хочешь разбогатеть?]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -1246,7 +1246,7 @@ return {
         },
         d_untitled_passage_24 = {
             text = [[Врата. Проходи через них.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -1257,14 +1257,14 @@ return {
         },
         d_untitled_passage_25 = {
             text = [[Помочь Принцу. Ты готов?]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Да.]],
                     next = "d_i9",
                     actions = {
-                        { questID = "q_clash_royal", type = "quest_start" },
+                        { questID = "q_clash_royale", type = "quest_start" },
                     },
                 },
                 {
@@ -1275,7 +1275,7 @@ return {
         },
         d_untitled_passage_26 = {
             text = [[*Услышав твои шаги, человек необычной внешности расправляет плечи и подходит к тебе вплотную.*]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -1286,7 +1286,7 @@ return {
         },
         d_untitled_passage_27 = {
             text = [[Л... Ладно. Немного перегнул, но мы в рассчёте, верно? Слава Королю!]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -1320,7 +1320,7 @@ return {
         d_untitled_passage_40 = {
             text =
             [[*Тебя заинтересовало необычное существо с двумя головами. Но, рассмотрев их лица, ты понял, что диалог будет не из простых.*]],
-            speaker = [[Крип-сиамский огр]],
+            speaker = [[...]],
             npc = "npc_ogre_magi",
             choices = {
                 {
@@ -1330,13 +1330,13 @@ return {
             },
         },
         d_untitled_passage_41 = {
-            text = [[1: Заброшенный...2: ЛЕС!]],
-            speaker = [[Крип-сиамский огр]],
+            text = [[Заброшенный...]],
+            speaker = [[Голова умнотуп]],
             npc = "npc_ogre_magi",
             choices = {
                 {
-                    text = [[Закрыть.]],
-                    next = nil,
+                    text = [[...]],
+                    next = "d_les",
                 },
             },
         },
@@ -1353,7 +1353,7 @@ return {
         },
         d_untitled_passage_43 = {
             text =
-            [[*Огр-громила пал. Он лежит на земле и смотрет в небо. К нему пришло осознание, что это скорее всего последний раз, когда он может насладиться существованием.*]],
+            [[*Огр-громила пал. Он лежит на земле и смотрит в небо. К нему пришло осознание, что это скорее всего последний раз, когда он может насладиться существованием.*]],
             speaker = [[Огр-громила]],
             npc = "npc_ogre_bruiser",
             choices = {
@@ -1466,7 +1466,7 @@ return {
         },
         d_untitled_passage_63 = {
             text = [[Человек. Ты великий воин. Земли теперь полностью мои.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -1491,7 +1491,7 @@ return {
         },
         d_untitled_passage_65 = {
             text = [[Всё-таки поможешь нам?!]],
-            speaker = [[Крип-сиамский огр]],
+            speaker = [[Сиамский огр]],
             npc = "npc_ogre_magi",
             choices = {
                 {
@@ -1520,7 +1520,7 @@ return {
         },
         d_untitled_passage_67 = {
             text = [[Не обращай на меня внимание. Иди дальше, давай.]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -1531,7 +1531,7 @@ return {
         },
         d_untitled_passage_68 = {
             text = [[Похоже мы больше никогда не встретимся с ним...]],
-            speaker = [[Крип-сиамский огр]],
+            speaker = [[Сиамский огр]],
             npc = "npc_ogre_magi",
             choices = {
                 {
@@ -1542,7 +1542,7 @@ return {
         },
         d_untitled_passage_69 = {
             text = [[В себя поверил, А?!]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -1564,7 +1564,7 @@ return {
         },
         d_untitled_passage_71 = {
             text = [[*Панда бубнит и пердит.*]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -1765,8 +1765,8 @@ return {
             npc = "npc_shamanka",
             choices = {
                 {
-                    text = [[Здрасте, не подскажите где я?]],
-                    next = "d_zdraste_ne_podskazhite_gde_ya",
+                    text = [[Здрасте, не подскажете где я?]],
+                    next = "d_zdraste_ne_podskazhete_gde_ya",
                 },
             },
         },
@@ -1806,7 +1806,7 @@ return {
         },
         d_a2 = {
             text = [[*Существо было удивлено, что ты решил с ним заговорить.*]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -1818,7 +1818,7 @@ return {
         d_a3 = {
             text =
             [[С тех пор как они перестали следовать моим приказам, жизнь пошла по дну. Люди меня стороняться и обходят. Жена даже из дома выгнала, представляешь? ]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -1830,7 +1830,7 @@ return {
         d_a4 = {
             text =
             [[Я думал люди только и могут кричать о величии их Пропавшего Короля. Сидят на жопе и ничего кроме этого не делают. Неужто ты мне поможешь?]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -2021,7 +2021,7 @@ return {
         },
         d_i6 = {
             text = [[Меня зовут Боб!]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -2032,7 +2032,7 @@ return {
         },
         d_i7 = {
             text = [[Как меня зовут?!]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -2051,7 +2051,7 @@ return {
         },
         d_i8 = {
             text = [[*Крип сильно расстроился. Его не покидает ощущение, что что-то не так.*]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -2062,7 +2062,7 @@ return {
         },
         d_i9 = {
             text = [[Отлично. Проходи.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -2073,21 +2073,21 @@ return {
         },
         d_j = {
             text = [[Выходи один на один, уёбок.]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Начнём дуэль.]],
                     next = nil,
                     actions = {
-                        { target = "talk", type = "fight_start" },
+                        { target = "talk", npc = "npc_monkey_king", type = "fight_start" },
                     },
                 },
             },
         },
         d_j10 = {
             text = [[Постарайся уж, а то пока я не смогу их контролировать, жена меня домой не пустит.]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -2098,7 +2098,7 @@ return {
         },
         d_j11 = {
             text = [[Ты такой же человек как и все остальные...]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -2132,32 +2132,30 @@ return {
             },
         },
         d_l12 = {
-            text =
-            [[2: Никто не поверит в твои бредни, ты тот ещё пень!1: Я вообще не помню, чтоб ты что-то делал. Значит ты этого не делал!]],
-            speaker = [[Крип-сиамский огр]],
+            text = [[Никто не поверит в твои бредни, ты тот ещё пень!]],
+            speaker = [[Голова подначка]],
             npc = "npc_ogre_magi",
             choices = {
                 {
-                    text = [[Тихо, к чему вообще эта история?]],
-                    next = "d_tiho_k_chemu_voobsche_eta_istoriya",
+                    text = [[...]],
+                    next = "d_ya_voobsche_ne_pomnu",
                 },
             },
         },
         d_l13 = {
-            text =
-            [[1: Брат сказал, что сделает нас умнее. Он отправился искать Мантию на интеллект.2: Хотя куда умнее то!]],
-            speaker = [[Крип-сиамский огр]],
+            text = [[Брат сказал, что сделает нас умнее. Он отправился искать Мантию на интеллект.]],
+            speaker = [[Голова умнотуп]],
             npc = "npc_ogre_magi",
             choices = {
                 {
-                    text = [[Что за Мантия?]],
-                    next = "d_chto_za_mantiya",
+                    text = [[...]],
+                    next = "d_hotya_kuda",
                 },
             },
         },
         d_l14 = {
             text = [[2: Похоже Мантию стоит отдать тебе!!1: Хорошо ты его!]],
-            speaker = [[Крип-сиамский огр]],
+            speaker = [[Сиамский огр]],
             npc = "npc_ogre_magi",
             choices = {
                 {
@@ -2167,20 +2165,13 @@ return {
             },
         },
         d_l15 = {
-            text = [[1: Когда найдёшь его - скажи, чтоб шёл домой!2: И мантию прихвати нам!]],
-            speaker = [[Крип-сиамский огр]],
+            text = [[Когда найдёшь его - скажи, чтоб шёл домой!]],
+            speaker = [[Голова умнотуп]],
             npc = "npc_ogre_magi",
             choices = {
                 {
-                    text = [[Ладно.]],
-                    next = "d_ladno",
-                    actions = {
-                        { questID = "q_ogres", type = "quest_start" },
-                    },
-                },
-                {
-                    text = [[Давайте сами.]],
-                    next = "d_davajte_sami",
+                    text = [[...]],
+                    next = "d_i_mantiu",
                 },
             },
         },
@@ -2509,7 +2500,7 @@ return {
         d_o4 = {
             text =
             [[И потому тот город опустел и со временем превратился в Пустошь. Все, кто там проживают - последователи Короля, однако им не выпал шанс хотя бы увидеть его. Страшная судьба...]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -2521,7 +2512,7 @@ return {
         d_o5 = {
             text =
             [[Как вообще я могу быть счастливым, пока они такие не послушные? Это не жизнь. Приходится запивать горе своё. Пока они не воссоединяться, не смогу найти себе места.]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -2766,7 +2757,7 @@ return {
         d_a_gde_mne_ih_iskat = {
             text =
             [[Где-то в этом мире, сам не знаю. Я вижу их постоянно, но не могу усмирить. Может и тебе посчастливиться встретить их.]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -2825,7 +2816,7 @@ return {
         },
         d_a_zvat_to_ih_kak = {
             text = [[Имена?.. Хм... Не припоминаю, я к ним всегда обращаюсь по цвету.]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -2851,7 +2842,7 @@ return {
         },
         d_a_kak_zhe_korol = {
             text = [[Ты давай, ротик прикрывай. Пока Короля нету, правлю здесь я.]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -2931,7 +2922,7 @@ return {
         },
         d_a_menya_zovu = {
             text = [[Меня зовут Боб.]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -2943,7 +2934,7 @@ return {
         d_a_pochemu_teper_tam_vse_zabrosheno = {
             text =
             [[Потому что с приходом Короля, каждый захотел жить под его покровительством. Следовательно, все те за стенами начали переселяться в наш город. Однако из-за прошлых конфликтов приняли далеко не всех.]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -2965,7 +2956,7 @@ return {
         },
         d_a_u_kogo_ya_b_tozhe_podvypil = {
             text = [[Не скажу.]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -2998,7 +2989,7 @@ return {
         },
         d_beru_kachestvom = {
             text = [[Берёшь куда?]],
-            speaker = [[Крип-сиамский огр]],
+            speaker = [[Сиамский огр]],
             npc = "npc_ogre_magi",
             choices = {
                 {
@@ -3094,7 +3085,7 @@ return {
         },
         d_valyaj = {
             text = [[Знал ли ты, что на месте Пустоши стоял город, подобно нашему?]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -3340,20 +3331,20 @@ return {
             },
         },
         d_davajte_sami = {
-            text = [[1: Похоже мы больше никогда не встретим брата...2: Судьба плохо обходится с умными, брат...]],
-            speaker = [[Крип-сиамский огр]],
+            text = [[Похоже мы больше никогда не встретим брата...]],
+            speaker = [[Голова умнотуп]],
             npc = "npc_ogre_magi",
             choices = {
                 {
-                    text = [[Закрыть.]],
-                    next = nil,
+                    text = [[...]],
+                    next = "d_sudba_ploho",
                 },
             },
         },
         d_daj_togda_hlebnut_iz_tvoego_bochonka = {
             text =
             [[Охох, всё содержимое уже во мне.*Панда шлёпает себя по пузу, а потом стучит по бочке, намекая, что она пустая, однако слышно, что в ней ещё немного осталось.*]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -3407,7 +3398,7 @@ return {
             },
         },
         d_dumau_net = {
-            text = [[Тогда возвращайся в безопасноть, в этом лесу куча кровожадных существ.]],
+            text = [[Тогда возвращайся в безопасноcть, в этом лесу куча кровожадных существ.]],
             speaker = [[Огр-громила]],
             npc = "npc_ogre_bruiser",
             choices = {
@@ -3419,7 +3410,7 @@ return {
         },
         d_dumau_on_prav = {
             text = [[*Обе головы хором ответили.*У нас два мозга, а у тебя один. Не сравнивай нас с собой!]],
-            speaker = [[Крип-сиамский огр]],
+            speaker = [[Сиамский огр]],
             npc = "npc_ogre_magi",
             choices = {
                 {
@@ -3442,7 +3433,7 @@ return {
         },
         d_zhmot = {
             text = [[*После таких слов, он разозлился, поставил бочку на землю и пнул её в тебя.*]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -3484,7 +3475,7 @@ return {
                 },
             },
         },
-        d_zdraste_ne_podskazhite_gde_ya = {
+        d_zdraste_ne_podskazhete_gde_ya = {
             text =
             [[Чувствую перед собой сильную энергию... Неужто пришёл тот, кто освободит наше измученное Королевство?]],
             speaker = [[Старушка]],
@@ -3541,6 +3532,27 @@ return {
                 },
             },
         },
+        d_i_mantiu = {
+            text = [[И мантию прихвати нам!]],
+            speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
+            choices = {
+                {
+                    text = [[Ладно.]],
+                    next = "d_ladno",
+                    actions = {
+                        { questID = "q_ogres", type = "quest_start" },
+                    },
+                },
+                {
+                    text = [[Давайте сами.]],
+                    next = "d_davajte_sami",
+                    actions = {
+                        { questID = "q_ogres", type = "quest_reject" },
+                    },
+                },
+            },
+        },
         d_i_ne_posporish = {
             text = [[]],
             speaker = [[Воин Эпштейна]],
@@ -3554,7 +3566,7 @@ return {
         },
         d_i_tvoj_brat_daj_ugadau_tozhe_prints = {
             text = [[Верно. Красный Принц. Земля досталась нам от отца. Вечная борьба.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -3565,7 +3577,7 @@ return {
         },
         d_i_tebe_pomoch_otvoevat_ee = {
             text = [[Верно. Брат мой - последователь капитализма. Куча денег. Куча сильных бойцов. Я не имею такового.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -3619,6 +3631,17 @@ return {
                 },
             },
         },
+        d_ischez_s_radarov = {
+            text = [[Исчез с радаров!]],
+            speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
+            choices = {
+                {
+                    text = [[И?]],
+                    next = "d_i__1",
+                },
+            },
+        },
         d_kak_pojdet = {
             text = [[Подожди подожди, а кто тебе рассказал об их существовании? Это я!]],
             speaker = [[Крип-камыш]],
@@ -3632,7 +3655,7 @@ return {
         },
         d_kakoj_dar_prepodnesesh_mne_segodnya = {
             text = [[Какой ещё дар?! Ааа... я понял! Информация же пойдёт, да?]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -3668,7 +3691,7 @@ return {
         },
         d_kruto_kak_tam_s_nagradoj = {
             text = [[Возьми. Большая награда. Для большого человека.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -3712,7 +3735,18 @@ return {
         },
         d_ladno = {
             text = [[*Огр дал сам себе пять.*]],
-            speaker = [[Крип-сиамский огр]],
+            speaker = [[Сиамский огр]],
+            npc = "npc_ogre_magi",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_les = {
+            text = [[ЛЕС!]],
+            speaker = [[Голова подначка]],
             npc = "npc_ogre_magi",
             choices = {
                 {
@@ -3723,7 +3757,7 @@ return {
         },
         d_mamu_ne_trogaj = {
             text = [[Поздно. Облапана до предела.]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -3804,7 +3838,7 @@ return {
                     text = [[*Начать битву*]],
                     next = nil,
                     actions = {
-                        { target = "talk", type = "fight_start" },
+                        { target = "talk", npc = "npc_ogre_bruiser", type = "fight_start" },
                     },
                 },
             },
@@ -3884,7 +3918,7 @@ return {
         },
         d_nachnem_duel = {
             text = [[]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -3902,7 +3936,7 @@ return {
                     text = [[*Начать обороняться.*]],
                     next = nil,
                     actions = {
-                        { npc = "npc_gate_troll_uruk",  target = "kill", type = "fight_start" },
+                        { npc = "npc_gate_troll_uruk", target = "kill", type = "fight_start" },
                         { npc = "npc_gate_troll_biruk", target = "kill", type = "fight_start" },
                         { npc = "npc_gate_troll_diruk", target = "kill", type = "fight_start" },
                     },
@@ -3969,7 +4003,7 @@ return {
         },
         d_ne_hochu = {
             text = [[Ты. Подумай ещё.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -3991,7 +4025,7 @@ return {
         },
         d_nea_teper_ya_tvoj_tsar = {
             text = [[Ээу, после битвы совсем оборзел чтоли?!]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -4013,7 +4047,7 @@ return {
         },
         d_net = {
             text = [[И наши города были в напряжных таких отношениях. Не воевали, конечно, но злоба была всякая.]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -4030,6 +4064,9 @@ return {
                 {
                     text = [[*Снять с него Мантию.*]],
                     next = "d_snyat_s_nego_mantiu",
+                    actions = {
+                        { npc = "npc_ogre_bruiser", type = "kill" },
+                    },
                 },
                 {
                     text = [[*Не снимать.*]],
@@ -4039,7 +4076,7 @@ return {
         },
         d_no_ty_zhe_mne_zaplatish = {
             text = [[Верно.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -4297,7 +4334,7 @@ return {
         },
         d_pozaimstvoval_mozhet_ukral = {
             text = [[Не твоё дело.]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -4308,7 +4345,7 @@ return {
         },
         d_pomosch_nuzhna = {
             text = [[Меня зовут... эм...*Крип начал перебирать варианты.*]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -4345,7 +4382,7 @@ return {
         },
         d_ponyatno = {
             text = [[Знаешь... Если бы ты тогда сражался за нас, то исход мог бы быть совершенно другим... Хотя забудь.]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -4356,7 +4393,7 @@ return {
         },
         d_ponyatno_horoshij_dar_ty_prepodnes_blagodaren_tebe = {
             text = [[Получается так...]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -4389,7 +4426,7 @@ return {
         },
         d_pochemu = {
             text = [[Какая мне выгода?]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -4457,7 +4494,7 @@ return {
         d_prosto_tak_do_takoj_stepeni_ne_napivautsya_chto_ne_tak = {
             text =
             [[Да беда ужасная настигла. У меня есть три сына, понимаешь, а они сбежали от папки своего, не хотят ладить со мной. ]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -4480,7 +4517,7 @@ return {
         d_rasskazhi_o_synovyah = {
             text =
             [[Ооох, они прекрасные, но в последнее время на них что-то нашло, не подчиняются старику. Бывало заставляли меня делать ужасные вещи: воровать, буянить, даже нападать на окружающих... Ох, ужас...]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -4527,7 +4564,7 @@ return {
         },
         d_smotrya_chto_predlagaesh = {
             text = [[Я - Синий Принц. Сын великого Булыжника. Однако у Булыжника. Два сына.]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
@@ -4573,12 +4610,23 @@ return {
         d_stop_a_kak_oni_ladyat_s_zverem = {
             text =
             [[Эээ... Этого я не знаю. Я сыканул пойти на охоту с остальными, так что не знаю какая там обстановка. ]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Понятно.]],
                     next = "d_ponyatno",
+                },
+            },
+        },
+        d_sudba_ploho = {
+            text = [[Судьба плохо обходится с умными, брат...]],
+            speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
                 },
             },
         },
@@ -4595,7 +4643,7 @@ return {
         },
         d_tak_chto = {
             text = [[Ааргъх... Это какое-то пиво. Позаимствовал у людей.]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -4647,7 +4695,7 @@ return {
         },
         d_tebya_zovut_aleks = {
             text = [[Алекс... Алекс?]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -4658,7 +4706,7 @@ return {
         },
         d_tebya_zovut_bob = {
             text = [[Боб... Точно! Спасибо!!]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -4669,7 +4717,7 @@ return {
         },
         d_tebya_zovut_dzhon = {
             text = [[Джон... Джон? ]],
-            speaker = [[Крип-Боб]],
+            speaker = [[Боб]],
             npc = "npc_creep_bob",
             choices = {
                 {
@@ -4690,24 +4738,19 @@ return {
             },
         },
         d_tiho_k_chemu_voobsche_eta_istoriya = {
-            text =
-            [[2: А к тому, что брат захотел нас отблагодарить за спасение... Вот...1: Хоть мы и старше, он сказал, что мы глуповаты. Думаю, он не прав.]],
-            speaker = [[Крип-сиамский огр]],
+            text = [[А к тому, что брат захотел нас отблагодарить за спасение... Вот...]],
+            speaker = [[Голова подначка]],
             npc = "npc_ogre_magi",
             choices = {
                 {
-                    text = [[Думаю он прав.]],
-                    next = "d_dumau_on_prav",
-                },
-                {
-                    text = [[И чем он отплатил вам?]],
-                    next = "d_l13",
+                    text = [[...]],
+                    next = "d_hot_my_i_starshe",
                 },
             },
         },
         d_to_est_korol_chmo = {
             text = [[ЧЁ СКАЗАЛ? Радуйся последним минутам, пока у тебя есть зубы.]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -4762,7 +4805,7 @@ return {
         },
         d_ty_zh_govoril_chto_ona_pustaya = {
             text = [[*Некоторое время он всё ещё был зол, однако, вспомнив причину пьянства, начал плакать.*]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -4814,8 +4857,8 @@ return {
         },
         d_ty_pervyj_krip_chto_upomyanul_korolya_chto_tebe_o_nem_izvestno = {
             text =
-            [[Ааа... О нём мало знаю. Мне кажется когда-то я его даже видел... Или нет?.. Вроде кто-то нападал на него. Но когда?]],
-            speaker = [[Крип-панда]],
+            [[Ааа... О нём мало знаю. Мне кажется когда-то я его даже видел... Или нет?.. Вроде кто-то напал на него. Но когда?]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -4828,6 +4871,9 @@ return {
                 {
                     text = [[Понятно. Удачи тебе в поисках.]],
                     next = "d_j11",
+                    actions = {
+                        { questID = "q_pandas", type = "quest_reject" },
+                    },
                 },
             },
         },
@@ -4867,7 +4913,7 @@ return {
         },
         d_ty_chelovek_ili_krip = {
             text = [[Эу, крип это твоя мама. Я царь здесь понял?]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
@@ -4899,24 +4945,31 @@ return {
                 {
                     text = [[...]],
                     next = "d_m6",
+                    actions = {
+                        { npc = "npc_ogre_bruiser", type = "remove" },
+                    },
                 },
             },
         },
         d_hm__1 = {
             text = [[Защити мои постройки. Разрушь его. Таково задание. Берешься?]],
-            speaker = [[Крип-Синий Принц]],
+            speaker = [[Синий Принц]],
             npc = "npc_blue_prince",
             choices = {
                 {
                     text = [[Да.]],
                     next = "d_i9",
                     actions = {
-                        { questID = "q_clash_royal", type = "quest_start" },
+                        { questID = "q_clash_royale", type = "quest_start" },
+                        { door = "door_clash_royale", type = "open_door" },
                     },
                 },
                 {
                     text = [[Не хочу.]],
                     next = "d_ne_hochu",
+                    actions = {
+                        { questID = "q_clash_royale", type = "quest_reject" },
+                    },
                 },
             },
         },
@@ -4954,6 +5007,32 @@ return {
                 {
                     text = [[Где цмка?]],
                     next = "d_gde_tsmka",
+                },
+            },
+        },
+        d_hot_my_i_starshe = {
+            text = [[Хоть мы и старше, он сказал, что мы глуповаты. Думаю, он не прав.]],
+            speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
+            choices = {
+                {
+                    text = [[Думаю он прав.]],
+                    next = "d_dumau_on_prav",
+                },
+                {
+                    text = [[И чем он отплатил вам?]],
+                    next = "d_l13",
+                },
+            },
+        },
+        d_hotya_kuda = {
+            text = [[Хотя куда умнее то!]],
+            speaker = [[Голова подначка]],
+            npc = "npc_ogre_magi",
+            choices = {
+                {
+                    text = [[Что за Мантия?]],
+                    next = "d_chto_za_mantiya",
                 },
             },
         },
@@ -5039,7 +5118,7 @@ return {
             },
         },
         d_chto_za_mantiya = {
-            text = [[Любой, кто оденет её, станет самым умным в мире!]],
+            text = [[Любой, кто наденет её, станет самым умным в мире!]],
             speaker = [[Голова умнотуп]],
             npc = "npc_ogre_magi",
             choices = {
@@ -5089,7 +5168,7 @@ return {
         },
         d_chto_pesh = {
             text = [[*Панда плюнула в твою сторону, но не попала.*]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
@@ -5297,28 +5376,39 @@ return {
                 },
             },
         },
+        d_ya_voobsche_ne_pomnu = {
+            text = [[Я вообще не помню, чтоб ты что-то делал. Значит ты этого не делал!]],
+            speaker = [[Голова умнотуп]],
+            npc = "npc_ogre_magi",
+            choices = {
+                {
+                    text = [[Тихо, к чему вообще эта история?]],
+                    next = "d_tiho_k_chemu_voobsche_eta_istoriya",
+                },
+            },
+        },
         d_ya_gotov = {
             text = [[Выходи один на один, уёбок.]],
-            speaker = [[Человек-быдло]],
+            speaker = [[Быдло]],
             npc = "npc_monkey_king",
             choices = {
                 {
                     text = [[Начнём.]],
                     next = nil,
                     actions = {
-                        { target = "talk", type = "fight_start" },
+                        { target = "talk", npc = "npc_monkey_king", type = "fight_start" },
                     },
                 },
             },
         },
         d_ya_koroch_poshel = {
-            text = [[1: Стой! Мы просим твою помощь. Брат наш, Огр-громила, ПОТЕРЯЛСЯ!2: Исчез с радаров!]],
-            speaker = [[Крип-сиамский огр]],
+            text = [[Стой! Мы просим твою помощь. Брат наш, Огр-громила, ПОТЕРЯЛСЯ!]],
+            speaker = [[Голова подначка]],
             npc = "npc_ogre_magi",
             choices = {
                 {
-                    text = [[И?]],
-                    next = "d_i__1",
+                    text = [[...]],
+                    next = "d_ischez_s_radarov",
                 },
             },
         },
@@ -5336,7 +5426,7 @@ return {
         },
         d_ya_slyshu_chto_pivo_esche_est = {
             text = [[Неа.]],
-            speaker = [[Крип-панда]],
+            speaker = [[Пьяная панда]],
             npc = "npc_brewmaster",
             choices = {
                 {

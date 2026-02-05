@@ -1,0 +1,10 @@
+"DOTAUnits"
+{
+	"npc_ogre_magi" 
+	{
+		"Model"						"models/heroes/ogre_magi/ogre_magi.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.6"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}

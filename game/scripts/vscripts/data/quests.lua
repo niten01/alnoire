@@ -26,7 +26,7 @@ return {
             },
         }
     },
-    q_clash_royal = {
+    q_clash_royale = {
         giver = "npc_blue_prince",
         name = "Королевская взбучка",
         acts = { 1 },
@@ -85,7 +85,19 @@ return {
                 }
             },
             {
-                description = "Вернись к Огр-магу",
+                description = "Победи Огра-громилу",
+                objectives = {
+                    { type = "beat", npc = "npc_ogre_bruiser" }
+                }
+            },
+            {
+                description = "Поговори с Огром-громилой",
+                objectives = {
+                    { type = "talk", npc = "npc_ogre_bruiser" }
+                }
+            },
+            {
+                description = "Вернись к сиамским ограм",
                 objectives = {
                     { type = "talk", npc = "npc_ogre_magi" }
                 }
@@ -128,6 +140,7 @@ return {
         giver = "npc_brewmaster",
         name = "Три оттенка",
         acts = { 1, 2, 3 },
+        showExclamation = true,
         steps = {
             {
                 description = "Найди Красного, Зелёного и Синего",

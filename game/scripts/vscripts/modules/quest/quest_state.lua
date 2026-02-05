@@ -23,6 +23,11 @@ function PlayerQuestState:RejectQuest(questID)
     questState.status = QuestStatus.REJECTED
 end
 
+function PlayerQuestState:CancelQuest(questID)
+    local questState = self.questStates[questID]
+    questState.status = QuestStatus.INCOMPLETE
+end
+
 function PlayerQuestState:GetOneQuestState(questID)
     return self.questStates[questID]
 end

@@ -5,6 +5,15 @@
     "???": "tormentor",
     "Старушка": "shamanka",
     "Банда троллей": "gate_trolls",
+    "Синий Принц": "blue_prince",
+    "Крип-рогач": "rogach",
+    "Человек-усач": "mustache",
+    "Боб": "bob",
+    "Быдло": "monkey_king",
+    "Пьяная панда": "brewmaster",
+    "Голова умнотуп": "ogre_left",
+    "Голова подначка": "ogre_right",
+    "Сиамский огр": "ogre_both",
   }
 
   const root = $.GetContextPanel();
@@ -56,7 +65,7 @@
     isTyping = true;
     textLabel.text = "";
 
-    const charsPerTick = Math.max(1, Math.floor((cps || 40) / 20));
+    const charsPerTick = Math.max(1, Math.floor(cps / 20));
     let i = 0;
 
     function tick() {
@@ -99,7 +108,7 @@
     const hasChoices = Object.keys(payload.choices).length > 0;
     continueHint.visible = !hasChoices;
 
-    typewriter(payload.text || "", payload.cps || 45);
+    typewriter(payload.text || "", payload.cps || 65);
 
     for (const [luaIdx, c] of Object.entries(payload.choices)) {
       const btn = $.CreatePanel("TextButton", choicesRoot, "");
