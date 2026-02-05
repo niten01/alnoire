@@ -167,7 +167,7 @@ return {
             {
                 description = "Найди предвестника апокалипсиса в Заброшенном лесу и узнай что грядёт",
                 objectives = {
-                    { type = "talk", npc = "npc_witch_doctor" }
+                    { type = "talk", npc = "npc_predvestnik" }
                 }
             },
             {
@@ -179,7 +179,7 @@ return {
             {
                 description = "Почини шар и верни предвестнику",
                 objectives = {
-                    { type = "talk", npc = "npc_witch_doctor" }
+                    { type = "talk", npc = "npc_predvestnik" }
                 }
             },
             {

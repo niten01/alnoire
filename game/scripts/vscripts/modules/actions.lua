@@ -40,6 +40,7 @@ function Handlers.change_hero(playerID, action)
 end
 
 function Handlers.change_act(playerID, action)
+  DebugPrint("[ALNOIRE] Change act to: " .. action.act)
   GlobalState:SetAct(action.act)
 end
 
@@ -79,6 +80,11 @@ function Handlers.remove(playerID, action)
       ParticleManager:ReleaseParticleIndex(pfx)
     end)
   end
+end
+
+function Handlers.set_var(playerID, action)
+  DebugPrint("[ALNOIRE] Set global var " .. action.var .. " to " .. tostring(action.value))
+  GlobalState:Get()[action.var] = action.value
 end
 
 function Actions:Handle(playerID, action)

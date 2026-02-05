@@ -83,6 +83,18 @@ return {
             npc = "npc_rape_victim",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_predvestnik = {
+            npc = "npc_predvestnik",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_mystery = {
+            npc = "npc_mystery",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_templar_assasin = {
+            npc = "npc_templar_assasin",
+            modifiers = { "modifier_story_npc" },
+        },
     },
 
     packs = {
@@ -154,6 +166,11 @@ return {
             clipEntity = "clip_door_forest_1_reward",
             openAnimation = "cf_palace_door_open",
             requiresButtons = {
+                "button_forest_1_reward_1",
+                "button_forest_1_reward_2",
+                "button_forest_1_reward_3",
+                "button_forest_1_reward_4",
+                "button_forest_1_reward_5",
             },
         },
         door_forest_1_shortcut = {
@@ -171,6 +188,22 @@ return {
     button = {
         button_forest_1_shortcut = {
             trigger = "button_trigger_forest_1_shortcut"
-        }
+        },
+
+        button_forest_1_reward_1 = {
+            trigger = "button_trigger_forest_1_reward_1"
+        },
+        button_forest_1_reward_2 = {
+            trigger = "button_trigger_forest_1_reward_2"
+        },
+        button_forest_1_reward_3 = {
+            trigger = "button_trigger_forest_1_reward_3"
+        },
+        button_forest_1_reward_4 = {
+            trigger = "button_trigger_forest_1_reward_4"
+        },
+        button_forest_1_reward_5 = {
+            trigger = "button_trigger_forest_1_reward_5"
+        },
     },
 }

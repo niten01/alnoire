@@ -61,8 +61,6 @@ function EntityData:AllByField(fieldName, fieldValue)
         id, ent = next(self.entities, id)
         while id ~= nil do
             if ent[fieldName] == fieldValue then
-                DebugPrint(id.."---------")
-                PrintTable(ent)
                 return id, ent
             end
             id, ent = next(self.entities, id)

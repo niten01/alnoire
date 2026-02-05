@@ -22,6 +22,9 @@ return {
         "npc_ogre_bruiser",
         "npc_brewmaster",
         "npc_rape_victim",
+        "npc_predvestnik",
+        "npc_mystery",
+        "npc_templar_assasin",
 
         "npc_xavier",
 

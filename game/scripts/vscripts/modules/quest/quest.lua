@@ -231,7 +231,9 @@ function Quest:OnActChange(event)
     else
       for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
         local state = self.playerQuestStates[playerID]
-        state:CancelQuest(questID)
+        if state:GetOneQuestState(questID).status ~= QuestStatus.COMPLETED then
+          state:CancelQuest(questID)
+        end
       end
     end
   end

@@ -50,7 +50,8 @@ def _parse_links(text: str) -> tuple[str, List[Link]]:
             )
 
         else:
-            text_content += line
+            text_content += line + '\n'
+    text_content = text_content.strip()
     return text_content, links
 
 
@@ -72,7 +73,7 @@ def parse_twee(filepath: str) -> Story:
         raw = p.context or ""
         text, links = _parse_links(raw)
         num_links += len(links)
-        text = text.replace("\n", "\\n")
+        # text = text.replace("\n", "\\n")
         tags = []
         for tag in p.header.tags or []:
             try:
