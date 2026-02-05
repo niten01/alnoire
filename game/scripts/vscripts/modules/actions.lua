@@ -1,9 +1,6 @@
 Actions = Actions or {}
 
 function Actions:Init()
-  ChatCommand:LinkDevCommand("-a", function(event)
-    self:Handle(0, { type = "remove", npc = "npc_ogre_bruiser" })
-  end)
 end
 
 local Handlers = {}

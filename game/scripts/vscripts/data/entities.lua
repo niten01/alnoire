@@ -79,6 +79,10 @@ return {
             modifiers = { "modifier_story_npc" },
             team = DOTA_TEAM_BADGUYS,
         },
+        spawner_rape_victim = {
+            npc = "npc_rape_victim",
+            modifiers = { "modifier_story_npc" },
+        },
     },
 
     packs = {
@@ -92,16 +96,16 @@ return {
         pack_forest_1 = {
             foes = {
                 {
-                    unitName="npc_ogre",
-                    spawnPoint =  "spawn_point_1",
+                    unitName = "npc_ogre",
+                    spawnPoint = "spawn_point_1",
                 },
                 {
-                    unit="npc_ogre",
-                    spawnPoint =  "spawn_point_1",
+                    unit = "npc_ogre",
+                    spawnPoint = "spawn_point_1",
                 },
                 {
-                    unit="npc_ogre",
-                    spawnPoint =  "spawn_point_1",
+                    unit = "npc_ogre",
+                    spawnPoint = "spawn_point_1",
                 },
             }
         }
@@ -140,11 +144,33 @@ return {
     door = {
         door_prologue = {
             clipEntity = "clip_door_prologue",
-            openAnimation = "cf_palace_door_open"
+            openAnimation = "cf_palace_door_open",
         },
         door_clash_royale = {
             clipEntity = "clip_door_clash_royale",
-            openAnimation = "open"
+            openAnimation = "open",
         },
-    }
+        door_forest_1_reward = {
+            clipEntity = "clip_door_forest_1_reward",
+            openAnimation = "cf_palace_door_open",
+            requiresButtons = {
+            },
+        },
+        door_forest_1_shortcut = {
+            clipEntity = "clip_door_forest_1_shortcut",
+            openAnimation = "cf_palace_door_open",
+            requiresButtons = {
+                "button_forest_1_shortcut"
+            },
+        },
+    },
+
+    ------------------------------------------------------------
+    --- Buttons
+    ------------------------------------------------------------
+    button = {
+        button_forest_1_shortcut = {
+            trigger = "button_trigger_forest_1_shortcut"
+        }
+    },
 }

@@ -4,7 +4,7 @@ return {
         "npc_dota_hero_sanya_rapper",
         "npc_dota_hero_sanya_logarithmus",
         "npc_dota_hero_sanya",
-        "npc_xavier",
+
         "npc_tormentor",
         "npc_shamanka",
         "npc_gate_troll_uruk",
@@ -16,12 +16,17 @@ return {
         "npc_mustache",
         "npc_monkey_king",
         "npc_blue_prince",
-
+        "npc_blue_prince",
         "npc_gorilla",
+        "npc_ogre_magi",
+        "npc_ogre_bruiser",
+        "npc_brewmaster",
+        "npc_rape_victim",
+
+        "npc_xavier",
 
         "towel_summon",
         "npc_shooter",
-        "npc_rape_victim",
         "mega_sanya",
         "npc_dota_custom_tower_bad",
         "npc_dota_custom_tower_good",

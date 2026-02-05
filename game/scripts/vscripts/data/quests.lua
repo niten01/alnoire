@@ -77,6 +77,7 @@ return {
         acts = { 1 },
         name = "Братство и ум",
         showExclamation = true,
+        noFireworks = true,
         steps = {
             {
                 description = "Найди Огра-громилу",

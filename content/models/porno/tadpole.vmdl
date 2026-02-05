@@ -17,6 +17,10 @@
 								from = "rendermeshshape0.vmat"
 								to = "materials/models/creeps/neutral_creeps/n_creep_tadpole/n_creep_tadpole.vmat"
 							},
+							{
+								from = "kamish.vmat"
+								to = "materials/models/creeps/neutral_creeps/n_creep_tadpole/n_creep_tadpole_gear.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""
@@ -536,6 +540,56 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "tadpole_idle"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/porno/aniamtions/tadpole_idle.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 20.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "tadpole_idle_alt"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_IDLE_RARE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/porno/aniamtions/tadpole_idle_alt.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 20.0
 						reverse = false
 						additional_anim_files = [  ]
 					},

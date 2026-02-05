@@ -153,7 +153,9 @@ function Quest:CompleteQuestForAll(questID)
     OnQuestCompleteEvent({
       quest = quest
     })
-    self:EmitQuestCompleteParticles(playerID)
+    if not quest.noFireworks then
+      self:EmitQuestCompleteParticles(playerID)
+    end
     Notifications:Top(playerID, { text = "Quest complete \"" .. quest.name .. "\"", duration = 5 })
     ::continue::
   end

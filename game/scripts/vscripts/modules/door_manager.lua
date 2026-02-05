@@ -1,8 +1,27 @@
 DoorManager = DoorManager or {}
 
 function DoorManager:Init()
-    ChatCommand:LinkDevCommand("-d", function(event, args)
+    ChatCommand:LinkDevCommand("-dooropen", function(event, args)
         self:Open(args[1])
+    end)
+
+    GameEvents:OnButtonPress(function(event)
+        for doorName, door in EntityData:AllByType("door") do
+            if not door.requiresButtons then goto continue end
+            local idx = -1
+            for i, reqBtn in ipairs(door.requiresButtons) do
+                if reqBtn == event.buttonName then
+                    idx = i
+                    break
+                end
+            end
+            if idx == -1 then goto continue end
+            table.remove(door.requiresButtons, idx)
+            if TableLength(door.requiresButtons) == 0 then
+                self:Open(doorName)
+            end
+            ::continue::
+        end
     end)
 end
 

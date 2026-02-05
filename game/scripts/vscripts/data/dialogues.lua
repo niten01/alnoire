@@ -140,7 +140,6 @@ return {
         d_untitled_passage_33 = {
             priority = 0,
             conditions = {
-                { interact = "npc_rape_victim",   type = "interact" },
                 { trigger = "trigger_slish_kamish", npc = "npc_rape_victim", type = "trigger" },
             },
         },
@@ -163,6 +162,7 @@ return {
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
                 { questID = "q_ogres",      status = QuestStatus.ACTIVE, type = "quest" },
+                { questID = "q_ogres",      status = QuestStatus.ACTIVE, step = { 1, 2, 3 }, type = "quest" },
             },
         },
         d_untitled_passage_42 = {
@@ -182,7 +182,7 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
+                { questID = "q_ogres",      status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
             },
         },
         d_untitled_passage_45 = {
@@ -1365,7 +1365,7 @@ return {
         },
         d_untitled_passage_44 = {
             text = [[1: Ооо, это же ты! Добрый человек-помощник.2: Реально! Это та спичка!]],
-            speaker = [[Крип-сиамский огр]],
+            speaker = [[Сиамский огр]],
             npc = "npc_ogre_magi",
             choices = {
                 {
@@ -3768,7 +3768,7 @@ return {
         },
         d_mantii_na_intellekt_ne_suschestvuet = {
             text = [[Как так?!]],
-            speaker = [[npc ogre magi both]],
+            speaker = [[Сиамский огр]],
             npc = "npc_ogre_magi",
             choices = {
                 {
