@@ -13,6 +13,8 @@
 #base "units/story/npc_creep_bob.txt"
 #base "units/story/npc_monkey_king.txt"
 #base "units/story/npc_brewmaster.txt"
+#base "units/story/npc_ogre_magi.txt"
+#base "units/story/npc_ogre_bruiser.txt"
 #base "units/story/npc_rape_victim.txt"
 #base "units/story/npc_xavier.txt"
 

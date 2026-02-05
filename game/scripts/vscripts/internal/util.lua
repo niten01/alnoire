@@ -287,6 +287,14 @@ function contains(seq, val)
   return false
 end
 
+function max(seq)
+  local mx = -math.huge
+  for _, el in ipairs(seq) do
+    if el > mx then mx = el end
+  end
+  return mx
+end
+
 --- @param start Vector unit position where blink started
 --- @param targetRaw Vector basically click position
 function GetSafeBlinkDestination(start, targetRaw, distance)

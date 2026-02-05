@@ -49,7 +49,7 @@ function Quest:Init()
     self:UpdateQuestlog(event.playerID)
   end)
 
-  ChatCommand:LinkDevCommand("-a", function(event)
+  ChatCommand:LinkDevCommand("-questcompleteparticles", function(event)
     self:EmitQuestCompleteParticles(event.playerID)
   end)
 
@@ -204,23 +204,32 @@ function Quest:TryRemoveExclamation(questID)
   end
 end
 
-function Quest:OnActChange()
+function Quest:OnActChange(event)
+  local act = event.act
   for questID, quest in pairs(self.quests) do
+    local isNowActive = (not quest.acts) or max(quest.acts) >= act
     self:TryRemoveExclamation(questID)
 
-    if quest.showExclamation then
-      if not quest.giver then
-        error("Quest " .. questID .. " has no giver")
-        return
+    if isNowActive then
+      if quest.showExclamation then
+        if not quest.giver then
+          error("Quest " .. questID .. " has no giver")
+          return
+        end
+        for _, giverEnt in ipairs(Entities:FindAllByName(quest.giver)) do
+          quest.exclamationPfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_has_quest.vpcf",
+            PATTACH_CUSTOMORIGIN, giverEnt)
+          local origin = giverEnt:GetAbsOrigin()
+          origin.z = origin.z + 330
+          local fwd = Vector(0, -1, 0)
+          ParticleManager:SetParticleControlTransform(quest.exclamationPfx, 0, origin, VectorToAngles(fwd))
+          break
+        end
       end
-      for _, giverEnt in ipairs(Entities:FindAllByName(quest.giver)) do
-        quest.exclamationPfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_has_quest.vpcf",
-          PATTACH_CUSTOMORIGIN, giverEnt)
-        local origin = giverEnt:GetAbsOrigin()
-        origin.z = origin.z + 400
-        local fwd = Vector(0, -1, 0)
-        ParticleManager:SetParticleControlTransform(quest.exclamationPfx, 0, origin, VectorToAngles(fwd))
-        break
+    else
+      for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+        local state = self.playerQuestStates[playerID]
+        state:CancelQuest(questID)
       end
     end
   end
@@ -277,6 +286,16 @@ function Quest:RegisterEvaluators()
     end
   end
   )
+
+  GameEvents:OnCancelLethalDamage(function(event)
+    for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+      ForEachActiveObjectiveOfType(playerID, "beat", function(questID, objective)
+        if Evaluators.BeatEvaluator(objective, event) then
+          self:CompleteObjective(playerID, questID, objective)
+        end
+      end)
+    end
+  end)
 
   GameEvents:OnQuestTrigger(function(event)
     local playerID = event.playerID

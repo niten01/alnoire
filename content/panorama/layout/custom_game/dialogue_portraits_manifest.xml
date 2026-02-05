@@ -11,5 +11,8 @@
         <Image src="file://{images}/custom_game/portraits/rogach.psd" />
         <Image src="file://{images}/custom_game/portraits/mustache.psd" />
         <Image src="file://{images}/custom_game/portraits/brewmaster.psd" />
+        <Image src="file://{images}/custom_game/portraits/ogre_right.psd" />
+        <Image src="file://{images}/custom_game/portraits/ogre_left.psd" />
+        <Image src="file://{images}/custom_game/portraits/ogre_both.psd" />
     </Panel>
 </root>

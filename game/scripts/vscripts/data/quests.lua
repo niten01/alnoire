@@ -85,7 +85,19 @@ return {
                 }
             },
             {
-                description = "Вернись к Огр-магу",
+                description = "Победи Огра-громилу",
+                objectives = {
+                    { type = "beat", npc = "npc_ogre_bruiser" }
+                }
+            },
+            {
+                description = "Поговори с Огром-громилой",
+                objectives = {
+                    { type = "talk", npc = "npc_ogre_bruiser" }
+                }
+            },
+            {
+                description = "Вернись к сиамским ограм",
                 objectives = {
                     { type = "talk", npc = "npc_ogre_magi" }
                 }

@@ -70,6 +70,15 @@ return {
             npc = "npc_brewmaster",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_ogre_magi = {
+            npc = "npc_ogre_magi",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_ogre_bruiser = {
+            npc = "npc_ogre_bruiser",
+            modifiers = { "modifier_story_npc" },
+            team = DOTA_TEAM_BADGUYS,
+        },
     },
 
     ------------------------------------------------------------
