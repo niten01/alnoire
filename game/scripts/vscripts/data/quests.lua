@@ -238,4 +238,25 @@ q_main_quest_act_3 = {
             },
         }
     },
+    q_ghetto = {
+        giver = "npc_dream",
+        name = "High top",
+        acts = { 3 },
+        showExclamation = true,
+        noFireworks = true,
+        steps = {
+            {
+                description = "Забери из гетто lean",
+                objectives = {
+                    { type = "take", trigger = "trigger_lean" }
+                }
+            },
+            {
+                description = "Отдай lean крипу",
+                objectives = {
+                    { type = "talk", npc = "npc_dream" }
+                }
+            },
+        }
+    },
 }
