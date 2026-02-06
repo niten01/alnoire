@@ -95,5 +95,8 @@ return {
 
         -- summon overpower
         "particles/econ/items/shredder/timber_controlled_burn/timber_controlled_burn_timberchain_ember.vpcf",
+
+        -- debug
+        "particles/sanya_debug_radius_ring.vpcf",
     }
 }

@@ -231,6 +231,7 @@ function barebones:InitModules()
   self.modules = {
     require('modules.chatcommand'),
     require('modules.spawn_manager'),
+    require('modules.pack_manager'),
     require('modules.entity_data'),
     require('modules.global_state'),
     require('modules.door_manager'),
