@@ -52,8 +52,8 @@ return {
             },
         }
     },
-    q_nigger = {
-        giver = "npc_nig",
+    q_concert = {
+        giver = "npc_dream",
         name = "O'Block",
         acts = { 2 },
         showExclamation = true,
@@ -67,7 +67,7 @@ return {
             {
                 description = "Отдай билет крипу",
                 objectives = {
-                    { type = "talk", npc = "npc_nig" }
+                    { type = "talk", npc = "npc_dream" }
                 }
             },
         }
@@ -190,5 +190,52 @@ return {
             },
         }
     },
-
+    q_main_quest_act_2 = {
+        giver = "npc_guide",
+        name = "Выживший",
+        steps = {
+            {
+                description = "Найди загадочного крипа и узнай, что ему нужно",
+                objectives = {
+                    { type = "talk", npc = "npc_mystery" }
+                }
+            },
+            {
+                description = "Встреться с Главой",
+                objectives = {
+                    { type = "talk", npc = "npc_leader" }
+                }
+            },
+            {
+                description = "Найди выжившего в Снежных горах",
+                objectives = {
+                    { type = "talk", npc = "npc_hermit" }
+                }
+            },
+            {
+                description = "Расскажи о ключе Главе",
+                objectives = {
+                    { type = "talk", npc = "npc_leader" }
+                }
+            },
+        }
+    },
+q_main_quest_act_3 = {
+        giver = "npc_guide",
+        name = "Великий ключ",
+        steps = {
+            {
+                description = "Добудь Философский камень и 3 части ключа: Первый - На вершине Снежной горы, Второй - В пасти чудовища Искажённого леса, Третий - У старушки-медиума",
+                objectives = {
+                    { type = "take", trigger = "trigger_derek_key"}
+                }
+            },
+            {
+                description = "Вернись к Главе",
+                objectives = {
+                    { type = "talk", npc = "npc_leader" }
+                }
+            },
+        }
+    },
 }
