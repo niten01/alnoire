@@ -220,5 +220,22 @@ return {
             },
         }
     },
-
+q_main_quest_act_3 = {
+        giver = "npc_guide",
+        name = "Великий ключ",
+        steps = {
+            {
+                description = "Добудь Философский камень и 3 части ключа: Первый - На вершине Снежной горы, Второй - В пасти чудовища Искажённого леса, Третий - У старушки-медиума",
+                objectives = {
+                    { type = "take", trigger = "trigger_derek_key"}
+                }
+            },
+            {
+                description = "Вернись к Главе",
+                objectives = {
+                    { type = "talk", npc = "npc_leader" }
+                }
+            },
+        }
+    },
 }
