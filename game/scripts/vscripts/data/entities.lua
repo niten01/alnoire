@@ -81,27 +81,27 @@ return {
         },
     },
 
-    packs = {
+    pack = {
         __common = {
-            rangeFastTickRate = 1000,
+            rangeFastTickRate = 2000,
             rangeRetreat = 1000,
             rangeAggro = 500,
             state = "idle",
         },
 
-        pack_forest_1 = {
+        pack_forest_act1_lizards = {
             foes = {
                 {
-                    unitName="npc_ogre",
-                    spawnPoint =  "spawn_point_1",
+                    unitName="npc_jungle_creep_melee",
+                    spawnPoint =  "spawn_point_lizard_1",
                 },
                 {
-                    unit="npc_ogre",
-                    spawnPoint =  "spawn_point_1",
+                    unitName="npc_jungle_creep_melee",
+                    spawnPoint =  "spawn_point_lizard_2",
                 },
                 {
-                    unit="npc_ogre",
-                    spawnPoint =  "spawn_point_1",
+                    unitName="npc_jungle_creep_melee",
+                    spawnPoint =  "spawn_point_lizard_3",
                 },
             }
         }
