@@ -52,8 +52,8 @@ return {
             },
         }
     },
-    q_nigger = {
-        giver = "npc_nig",
+    q_concert = {
+        giver = "npc_dream",
         name = "O'Block",
         acts = { 2 },
         showExclamation = true,
@@ -67,7 +67,7 @@ return {
             {
                 description = "Отдай билет крипу",
                 objectives = {
-                    { type = "talk", npc = "npc_nig" }
+                    { type = "talk", npc = "npc_dream" }
                 }
             },
         }
