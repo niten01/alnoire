@@ -77,6 +77,7 @@ return {
         acts = { 1 },
         name = "Братство и ум",
         showExclamation = true,
+        noFireworks = true,
         steps = {
             {
                 description = "Найди Огра-громилу",
@@ -166,7 +167,7 @@ return {
             {
                 description = "Найди предвестника апокалипсиса в Заброшенном лесу и узнай что грядёт",
                 objectives = {
-                    { type = "talk", npc = "npc_witch_doctor" }
+                    { type = "talk", npc = "npc_predvestnik" }
                 }
             },
             {
@@ -178,7 +179,7 @@ return {
             {
                 description = "Почини шар и верни предвестнику",
                 objectives = {
-                    { type = "talk", npc = "npc_witch_doctor" }
+                    { type = "talk", npc = "npc_predvestnik" }
                 }
             },
             {

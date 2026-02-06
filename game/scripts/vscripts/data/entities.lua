@@ -79,6 +79,22 @@ return {
             modifiers = { "modifier_story_npc" },
             team = DOTA_TEAM_BADGUYS,
         },
+        spawner_rape_victim = {
+            npc = "npc_rape_victim",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_predvestnik = {
+            npc = "npc_predvestnik",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_mystery = {
+            npc = "npc_mystery",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_templar_assasin = {
+            npc = "npc_templar_assasin",
+            modifiers = { "modifier_story_npc" },
+        },
     },
 
     pack = {
@@ -92,6 +108,7 @@ return {
         pack_forest_act1_lizards = {
             foes = {
                 {
+<<<<<<< HEAD
                     unitName="npc_jungle_creep_melee",
                     spawnPoint =  "spawn_point_lizard_1",
                 },
@@ -102,6 +119,18 @@ return {
                 {
                     unitName="npc_jungle_creep_melee",
                     spawnPoint =  "spawn_point_lizard_3",
+=======
+                    unitName = "npc_ogre",
+                    spawnPoint = "spawn_point_1",
+                },
+                {
+                    unit = "npc_ogre",
+                    spawnPoint = "spawn_point_1",
+                },
+                {
+                    unit = "npc_ogre",
+                    spawnPoint = "spawn_point_1",
+>>>>>>> ad16fb1f4764ff1202e4259d1827c8d54faa7988
                 },
             }
         }
@@ -140,11 +169,54 @@ return {
     door = {
         door_prologue = {
             clipEntity = "clip_door_prologue",
-            openAnimation = "cf_palace_door_open"
+            openAnimation = "cf_palace_door_open",
         },
         door_clash_royale = {
             clipEntity = "clip_door_clash_royale",
-            openAnimation = "open"
+            openAnimation = "open",
         },
-    }
+        door_forest_1_reward = {
+            clipEntity = "clip_door_forest_1_reward",
+            openAnimation = "cf_palace_door_open",
+            requiresButtons = {
+                "button_forest_1_reward_1",
+                "button_forest_1_reward_2",
+                "button_forest_1_reward_3",
+                "button_forest_1_reward_4",
+                "button_forest_1_reward_5",
+            },
+        },
+        door_forest_1_shortcut = {
+            clipEntity = "clip_door_forest_1_shortcut",
+            openAnimation = "cf_palace_door_open",
+            requiresButtons = {
+                "button_forest_1_shortcut"
+            },
+        },
+    },
+
+    ------------------------------------------------------------
+    --- Buttons
+    ------------------------------------------------------------
+    button = {
+        button_forest_1_shortcut = {
+            trigger = "button_trigger_forest_1_shortcut"
+        },
+
+        button_forest_1_reward_1 = {
+            trigger = "button_trigger_forest_1_reward_1"
+        },
+        button_forest_1_reward_2 = {
+            trigger = "button_trigger_forest_1_reward_2"
+        },
+        button_forest_1_reward_3 = {
+            trigger = "button_trigger_forest_1_reward_3"
+        },
+        button_forest_1_reward_4 = {
+            trigger = "button_trigger_forest_1_reward_4"
+        },
+        button_forest_1_reward_5 = {
+            trigger = "button_trigger_forest_1_reward_5"
+        },
+    },
 }

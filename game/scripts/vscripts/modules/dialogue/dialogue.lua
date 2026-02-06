@@ -203,7 +203,7 @@ function Dialogue:OnDialogueChoice(_, args)
 end
 
 function Dialogue:OnActChange(event)
-  for _, npcData in ipairs(EntityData:AllByType('npc')) do
+  for _, npcData in EntityData:AllByType('npc') do
     npcData.first_met_in_act = true
   end
 end

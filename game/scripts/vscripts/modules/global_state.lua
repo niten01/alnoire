@@ -3,6 +3,8 @@ GlobalState = GlobalState or {}
 function GlobalState:Init()
     self.state = {
         act = 1,
+        knows_village_password = false,
+        has_village_pass = false,
     }
 
 

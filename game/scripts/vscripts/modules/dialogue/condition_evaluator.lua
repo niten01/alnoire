@@ -51,7 +51,9 @@ end
 
 function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)
     local match = true
-    for _, condition in ipairs(conditions) do
+    local interesting = false
+    local failedIndex = -1
+    for i, condition in ipairs(conditions) do
         local skip = false
         for _, premetCondition in ipairs(premetConditions) do
             local subset = true
@@ -66,7 +68,10 @@ function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)
                 break
             end
         end
-        if skip then goto continue end
+        if skip then
+            interesting = true
+            goto continue
+        end
 
         local evaluator = Evaluators[condition.type]
         if not evaluator then
@@ -75,10 +80,15 @@ function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)
         local result = evaluator(entryNodeID, playerID, condition)
         if not result then
             match = false
+            failedIndex = i
             break
         end
         ::continue::
     end
+    -- if interesting then
+    --     DebugPrint("----Fail dialogue condition: " .. failedIndex .. "----")
+    --     PrintTable(conditions, 2)
+    -- end
     return match
 end
 

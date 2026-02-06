@@ -55,14 +55,18 @@ function EntityData:AllByType(type)
 end
 
 function EntityData:AllByField(fieldName, fieldValue)
-    local result = {}
-    for id, ent in pairs(self.entities) do
-        if ent[fieldName] == fieldValue then
-            result[id] = ent
+    local id = nil
+    local ent = nil
+    return function()
+        id, ent = next(self.entities, id)
+        while id ~= nil do
+            if ent[fieldName] == fieldValue then
+                return id, ent
+            end
+            id, ent = next(self.entities, id)
         end
+        return nil
     end
-
-    return result
 end
 
 return EntityData

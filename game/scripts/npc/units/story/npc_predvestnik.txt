@@ -1,0 +1,10 @@
+"DOTAUnits"
+{
+	"npc_predvestnik" 
+	{
+		"Model"						"models/heroes/witchdoctor/witchdoctor.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}

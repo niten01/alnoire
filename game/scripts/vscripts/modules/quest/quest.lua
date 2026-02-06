@@ -153,7 +153,9 @@ function Quest:CompleteQuestForAll(questID)
     OnQuestCompleteEvent({
       quest = quest
     })
-    self:EmitQuestCompleteParticles(playerID)
+    if not quest.noFireworks then
+      self:EmitQuestCompleteParticles(playerID)
+    end
     Notifications:Top(playerID, { text = "Quest complete \"" .. quest.name .. "\"", duration = 5 })
     ::continue::
   end
@@ -229,7 +231,9 @@ function Quest:OnActChange(event)
     else
       for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
         local state = self.playerQuestStates[playerID]
-        state:CancelQuest(questID)
+        if state:GetOneQuestState(questID).status ~= QuestStatus.COMPLETED then
+          state:CancelQuest(questID)
+        end
       end
     end
   end

@@ -2,7 +2,7 @@
 {
 	"npc_creep_bob" 
 	{
-		"Model"						"models/creeps/neutral_creeps/n_creep_tadpole_c/n_creep_tadpole_c.vmdl"
+		"Model"						"models/bob/bob.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"ModelScale" 				"0.8"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"

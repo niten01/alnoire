@@ -17,6 +17,10 @@
 #base "units/story/npc_ogre_magi.txt"
 #base "units/story/npc_ogre_bruiser.txt"
 #base "units/story/npc_rape_victim.txt"
+#base "units/story/npc_predvestnik.txt"
+#base "units/story/npc_mystery.txt"
+#base "units/story/npc_templar_assasin.txt"
+
 #base "units/story/npc_xavier.txt"
 
 #base "units/towel_summon.txt"

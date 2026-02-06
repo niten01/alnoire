@@ -13,7 +13,7 @@ end
 function SpawnManager:OnGameInProgress()
     if not IsServer() then return end
 
-    for spawnerName, spawnerData in pairs(EntityData:AllByType("spawner")) do
+    for spawnerName, spawnerData in EntityData:AllByType("spawner") do
         if spawnerData.deferred then goto continue end
         self:SpawnNPC(spawnerName)
         ::continue::
@@ -71,11 +71,11 @@ function SpawnManager:OnNPCSpawned(keys)
     local unit = keys.unit
     local unitName = unit:GetUnitName()
 
-    if unitName == "npc_gorilla" then
-        AddAnimationTranslate(unit, "torment")
-    elseif unitName == "npc_rape_victim" then
-        AddAnimationTranslate(unit, "torment")
-    end
+    -- if unitName == "npc_gorilla" then
+    --     AddAnimationTranslate(unit, "k")
+    -- elseif unitName == "npc_rape_victim" then
+    --     AddAnimationTranslate(unit, "torment")
+    -- end
 end
 
 function SpawnManager:GetRespawnPosByRespawnPointName(respawnPointName)
@@ -105,7 +105,7 @@ function SpawnManager:OnEntityKilled(event)
         hero:SetRespawnPosition(respawnPos)
     end
 
-    for _, npcData in ipairs(EntityData:AllByType('npc')) do
+    for _, npcData in EntityData:AllByType('npc') do
         if not npcData.modifiers_on_player_kill then goto continue end
         for _, modifierName in ipairs(npcData.modifiers_on_player_kill) do
             if not hero:HasModifier(modifierName) then
