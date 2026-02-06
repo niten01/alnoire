@@ -23,11 +23,34 @@ function DefaultCreepThink()
     local distToSpawn = (currentPos - unit.spawnPos):Length2D()
 
 
+    if beaconState == 'aggro' then
+        if not unit.aggroStartTime then
+            unit.aggroStartTime = GameRules:GetGameTime()
+        end
+    else
+        unit.aggroStartTime = nil
+    end
+
     -- деремся сука
     if beaconState == 'aggro' and target and target:IsAlive() then
         if distToSpawn > beacon.data.rangeRetreat then 
             MoveHome(unit)
         else
+            local currentTime = GameRules:GetGameTime()
+            
+            if unit:IsChanneling() or unit:GetCurrentActiveAbility() then
+                return BATTLE_THINK_INTERVAL 
+            end
+
+            local timeInAggro = currentTime - (unit.aggroStartTime or 0)
+            unit.lastCastTime = unit.lastCastTime or 0
+
+            if timeInAggro >= 5 and (currentTime - unit.lastCastTime) >= 2 then
+                if CastAbilities(unit, target) then
+                    unit.lastCastTime = currentTime
+                    return BATTLE_THINK_INTERVAL 
+                end
+            end
             if unit:GetAggroTarget() ~= target then
                 unit:MoveToTargetToAttack(target)
             end
@@ -65,4 +88,29 @@ function MoveHome(unit)
     if dist > 50 then
         unit:MoveToPosition(unit.spawnPos)
     end
+end
+
+function CastAbilities(unit, target)
+    if unit:IsSilenced() or unit:IsStunned() or unit:IsChanneling() then return false end
+    local abilityCount = unit:GetAbilityCount()
+    for i = 0, abilityCount - 1 do
+        local ability = unit:GetAbilityByIndex(i)
+        if ability and ability:IsActivated() and ability:IsFullyCastable() and not ability:IsPassive() then
+            local range = ability:GetCastRange(unit:GetAbsOrigin(), target)
+            local dist = (unit:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
+            if dist <= (range + 100) then
+                local behavior = ability:GetBehavior()
+                
+                if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
+                    unit:CastAbilityOnTarget(target, ability, -1)
+                elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
+                    unit:CastAbilityNoTarget(ability, -1)
+                elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then
+                    unit:CastAbilityOnPosition(target:GetAbsOrigin(), ability, -1)
+                end
+                return true
+            end
+        end
+    end
+    return false
 end

@@ -2,6 +2,9 @@ PackManager = PackManager or {}
 
 function PackManager:Init()
     GameEvents:OnGameInProgress(bind(self.OnGameInProgress, self))
+    ChatCommand:LinkDevCommand("-junglerespawn", function(event, args)
+    self:SpawnPack(args[1])
+  end)
 end
 
 function PackManager:OnGameInProgress()
@@ -23,6 +26,8 @@ function PackManager:SpawnPack(packTargetName)
     packTargetEntity.state = data.state or "idle"
     packTargetEntity.data = data
 
+    packTargetEntity.units = {}
+    
     for _, foe in pairs(data.foes) do
         local unitName = foe.unitName
         local spawner = foe.spawnPoint
@@ -38,8 +43,10 @@ function PackManager:SpawnPack(packTargetName)
                 function (unit)
                     unit.packTarget = packTargetEntity
                     unit.spawnPos = abs
+                    table.insert(packTargetEntity.units, unit)
                 end
             )
+            
             DebugPrint("[ALNOIRE] Created pack unit: ", unitName)
         end
     end
@@ -54,18 +61,37 @@ end
 
 function PackManager:PackTargetDefaultThink(packTargetEntity)
     if not packTargetEntity or packTargetEntity:IsNull() then return nil end
-    --print(packTargetEntity.state)
+
+    local hasAliveUnits = false
+    if packTargetEntity.units then
+        for i = #packTargetEntity.units, 1, -1 do
+            local u = packTargetEntity.units[i]
+            if u and not u:IsNull() and u:IsAlive() then
+                hasAliveUnits = true
+                break 
+            end
+        end
+    end
+
+    if not hasAliveUnits then
+        print("[ALNOIRE] All units in pack " .. packTargetEntity:GetName() .. " are dead. Disabling beacon thinker.")
+        packTargetEntity.state = "dead"
+        return nil 
+    end
+
+
+    print(packTargetEntity.state)
     local data = packTargetEntity.data
     local pos = packTargetEntity:GetAbsOrigin()
 
     local enemies = FindUnitsInRadius(
-        DOTA_TEAM_BADGUYS,                -- Мы знаем, что ищем для "плохих парней"
+        DOTA_TEAM_BADGUYS,               
         pos,
         nil,
         data.rangeFastTickRate, 
-        DOTA_UNIT_TARGET_TEAM_ENEMY,      -- Враги для Bad Guys (Radiant/Dire)
+        DOTA_UNIT_TARGET_TEAM_ENEMY,    
         DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-        DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS,
+        DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
         FIND_CLOSEST,
         false
     )
