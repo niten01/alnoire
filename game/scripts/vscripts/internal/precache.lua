@@ -38,12 +38,17 @@ return {
         "npc_xavier",
 
         "towel_summon",
+
         "npc_shooter",
         "mega_sanya",
         "npc_dota_custom_tower_bad",
         "npc_dota_custom_tower_good",
         "npc_dota_custom_king_tower_bad",
         "npc_dota_custom_king_tower_good",
+
+        -- jungle creeps
+        "npc_jungle_creep_melee",
+        "npc_dota_skeletion_king",
     },
     models = {
     },
@@ -69,7 +74,6 @@ return {
         "particles/creatures/aghanim/portal_summon_b0a.vpcf",
         "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf",
         "particles/sanya_sprint_trail.vpcf",
-
 
         -- towel summon return
         "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_embers.vpcf",
@@ -106,5 +110,8 @@ return {
 
         -- summon overpower
         "particles/econ/items/shredder/timber_controlled_burn/timber_controlled_burn_timberchain_ember.vpcf",
+
+        -- debug
+        "particles/sanya_debug_radius_ring.vpcf",
     }
 }

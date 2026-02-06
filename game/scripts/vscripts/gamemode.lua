@@ -232,6 +232,7 @@ function barebones:InitModules()
     require('modules.chatcommand'),
     require('modules.entity_data'),
     require('modules.spawn_manager'),
+    require('modules.pack_manager'),
     require('modules.global_state'),
     require('modules.door_manager'),
     require('modules.dresser'),
