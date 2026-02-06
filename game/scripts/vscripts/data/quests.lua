@@ -190,5 +190,35 @@ return {
             },
         }
     },
+    q_main_quest_act_2 = {
+        giver = "npc_guide",
+        name = "Выживший",
+        steps = {
+            {
+                description = "Найди загадочного крипа и узнай, что ему нужно",
+                objectives = {
+                    { type = "talk", npc = "npc_mystery" }
+                }
+            },
+            {
+                description = "Встреться с Главой",
+                objectives = {
+                    { type = "talk", npc = "npc_leader" }
+                }
+            },
+            {
+                description = "Найди выжившего в Снежных горах",
+                objectives = {
+                    { type = "talk", npc = "npc_hermit" }
+                }
+            },
+            {
+                description = "Расскажи о ключе Главе",
+                objectives = {
+                    { type = "talk", npc = "npc_leader" }
+                }
+            },
+        }
+    },
 
 }
