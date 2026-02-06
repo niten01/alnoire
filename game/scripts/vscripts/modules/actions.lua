@@ -87,6 +87,65 @@ function Handlers.set_var(playerID, action)
   GlobalState:Get()[action.var] = action.value
 end
 
+function Handlers.teleport(playerID, action)
+  if not action.target then
+    error("No teleport target")
+  end
+
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  if not hero then
+    error("No hero")
+  end
+
+  local targets = Entities:FindAllByName(action.target)
+  if TableLength(targets) > 1 then
+    error("Multiple targets match: " .. action.target)
+  end
+  if TableLength(targets) == 0 then
+    error("No such target: " .. action.target)
+  end
+
+  local tgt = targets[1]
+  local pos = tgt:GetAbsOrigin()
+  local fwd = tgt:GetForwardVector()
+  hero:SetAbsOrigin(pos)
+  hero:SetForwardVector(fwd)
+  CenterCameraOnUnit(playerID, hero)
+  DebugPrint("[ALNOIRE] Teleported to " .. action.target)
+end
+
+function Handlers.die(playerID, action)
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  if not hero then
+    error("No hero")
+  end
+
+  local attacker = nil
+  if action.attacker then
+    local ents = Entities:FindAllByName(action.attacker)
+    if TableLength(ents) == 0 then
+      error("No attacker found: " .. action.attacker)
+    end
+    if TableLength(ents) > 1 then
+      DebugPrint("[???] Multiple attackers found, choosing first")
+    end
+    attacker = ents[1]
+  end
+  hero:Kill(nil, attacker)
+end
+
+function Handlers.spawn(playerID, action)
+  SpawnManager:SpawnNPC(action.spawn)
+end
+
+function Handlers.music_start(playerID, action)
+  Music:StartCustomMusic(playerID, action.music)
+end
+
+function Handlers.music_stop(playerID, action)
+  Music:StopCustomMusic(playerID)
+end
+
 function Actions:Handle(playerID, action)
   local handler = Handlers[action.type]
   if not handler then

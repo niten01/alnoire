@@ -2,9 +2,8 @@ Music = Music or {}
 
 local PlayerMusicState = class {}
 function PlayerMusicState:constructor()
-    self.musicSet = nil
+    self.musicSet = "silence"
     self.current = nil
-    self.fade = nil
     self.lastInCombat = -1000
     self.isBoss = false
     self.customMusic = nil
@@ -28,7 +27,10 @@ function Music:Init()
 end
 
 function Music:StartCustomMusic(playerID, soundName)
-    self.musicState[playerID].customMusic = soundName
+    local state = self.musicState[playerID]
+    state.customMusic = soundName
+    state.current = nil
+    EmitGlobalSound(soundName)
 end
 
 function Music:StopCustomMusic(playerID)

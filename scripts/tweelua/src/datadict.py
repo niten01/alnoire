@@ -30,6 +30,8 @@ def parse_datadict(payload: str) -> DataDict:
         raise ParseError(f'Invalid DataDict syntax: "{payload}"')
     type, fields_raw = type_split
     fields = {}
+    if len(fields_raw.strip()) == 0:
+        return DataDict(type, fields)
     for kv_raw in fields_raw.split(","):
         kv_split = kv_raw.strip().split("=")
         if len(kv_split) == 1:

@@ -230,8 +230,8 @@ end
 function barebones:InitModules()
   self.modules = {
     require('modules.chatcommand'),
-    require('modules.spawn_manager'),
     require('modules.entity_data'),
+    require('modules.spawn_manager'),
     require('modules.global_state'),
     require('modules.door_manager'),
     require('modules.dresser'),

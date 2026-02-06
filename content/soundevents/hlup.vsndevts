@@ -1,0 +1,253 @@
+
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+    hlup = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_accent = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_accent.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_accent_bass = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_accent_bass.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_accent_bass_cad = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_accent_bass_cad.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_accent_bass_riff = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_accent_bass_riff.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_accent_vox = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_accent_vox.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_accent_vox_cad = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_accent_vox_cad.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_accent_vox_riff = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_accent_vox_riff.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_tempo = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_tempo.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_tempo_bass = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_tempo_bass.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_tempo_bass_cad = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_tempo_bass_cad.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_tempo_bass_riff = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_tempo_bass_riff.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_tempo_vox = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_tempo_vox.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_tempo_vox_cad = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_tempo_vox_cad.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_snap_tempo_vox_riff = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_snap_tempo_vox_riff.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_accent = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_accent.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_accent_bass = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_accent_bass.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_accent_bass_cad = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_accent_bass_cad.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_accent_bass_riff = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_accent_bass_riff.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_accent_vox = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_accent_vox.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_accent_vox_cad = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_accent_vox_cad.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_accent_vox_riff = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_accent_vox_riff.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_tempo = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_tempo.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_tempo_bass = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_tempo_bass.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_tempo_bass_cad = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_tempo_bass_cad.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_tempo_bass_riff = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_tempo_bass_riff.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_tempo_vox = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_tempo_vox.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_tempo_vox_cad = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_tempo_vox_cad.vsnd"
+            ]
+            volume = "2.5"
+    }
+    hlup_stomp_tempo_vox_riff = {
+            type = "dota_update_battle_music"
+            vsnd_files =
+            [
+                    "sounds/music/hlups/hlup_stomp_tempo_vox_riff.vsnd"
+            ]
+            volume = "2.5"
+    }
+}

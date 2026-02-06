@@ -3,6 +3,8 @@
 
 #base "units/misc/clash_royale.txt"
 
+#base "units/story/npc_subway.txt"
+
 #base "units/story/npc_tormentor.txt"
 #base "units/story/npc_shamanka.txt"
 #base "units/story/npc_gate_trolls.txt"
@@ -19,6 +21,10 @@
 #base "units/story/npc_predvestnik.txt"
 #base "units/story/npc_mystery.txt"
 #base "units/story/npc_templar_assasin.txt"
+#base "units/story/npc_alchemist.txt"
+#base "units/story/npc_scientist.txt"
+#base "units/story/npc_red.txt"
+#base "units/story/npc_concert_guard.txt"
 
 #base "units/story/npc_xavier.txt"
 

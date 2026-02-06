@@ -5,6 +5,7 @@ function GlobalState:Init()
         act = 1,
         knows_village_password = false,
         has_village_pass = false,
+        has_ski = false,
     }
 
 

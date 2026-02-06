@@ -13,7 +13,9 @@ end
 function SpawnManager:OnGameInProgress()
     if not IsServer() then return end
 
-    for spawnerName, spawnerData in EntityData:AllByType("spawner") do
+    local spawnersCopy = {}
+    for k, v in EntityData:AllByType("spawner") do spawnersCopy[k] = v end
+    for spawnerName, spawnerData in pairs(spawnersCopy) do
         if spawnerData.deferred then goto continue end
         self:SpawnNPC(spawnerName)
         ::continue::
@@ -48,6 +50,9 @@ function SpawnManager:SpawnNPC(spawnerName)
             nil,
             data.team
         )
+        if not npc then
+            error("Failed to spawn: " .. data.npc)
+        end
         npc:SetEntityName(data.npc)
         local fwd = spawnerEnt:GetForwardVector()
         fwd.z = 0
@@ -62,6 +67,10 @@ function SpawnManager:SpawnNPC(spawnerName)
 
         if not EntityData:ByName(data.npc) then
             EntityData:AddEntity("npc", data.npc, {})
+        end
+        local entData = EntityData:ByName(data.npc)
+        if npc:HasModifier("modifier_story_npc") then
+            entData.isStory = true
         end
     end
 end
@@ -97,22 +106,22 @@ function SpawnManager:OnEntityKilled(event)
     local hero = event.killed_unit
     if not hero or not hero:IsRealHero() or hero:IsSpiritBearCustom() then return end
 
+    for npcName, npcData in EntityData:AllByType('npc') do
+        if not npcData.isStory then goto continue end
+        for _, ent in ipairs(Entities:FindAllByName(npcName)) do
+            if not ent:HasModifier("modifier_story_npc") then
+                ent:AddNewModifier(hero, nil, "modifier_story_npc", { duration = -1 })
+            end
+        end
+        ::continue::
+    end
+
     local playerID = hero:GetPlayerOwnerID()
     local respawnPos = self.playerRespawnPos[playerID]
     if not respawnPos then
         print("[???] No respawn pos for player")
     else
         hero:SetRespawnPosition(respawnPos)
-    end
-
-    for _, npcData in EntityData:AllByType('npc') do
-        if not npcData.modifiers_on_player_kill then goto continue end
-        for _, modifierName in ipairs(npcData.modifiers_on_player_kill) do
-            if not hero:HasModifier(modifierName) then
-                hero:AddNewModifier(hero, nil, modifierName, { duration = -1 })
-            end
-        end
-        ::continue::
     end
 end
 

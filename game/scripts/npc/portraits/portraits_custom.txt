@@ -209,4 +209,99 @@
     "PortraitHideDropShadow"                              "0"
     "PortraitDesaturateParticles"                         "0"
   }
+
+  	"models/mustache/mustache.vmdl"
+	{
+		"PortraitLightPosition"		"60.886497 25.307377 137.779083"
+		"PortraitLightAngles"		"20.795567 -149.244141 -100.698868"
+		"PortraitLightFOV"		"42.769001"
+		"PortraitLightDistance"		"173.179993"
+		"PortraitLightColor"		"254 254 254"
+		"PortraitShadowColor"		"109 109 109"
+		"PortraitShadowScale"		"1.000000"
+		"PortraitAmbientColor"		"167 211 216"
+		"PortraitAmbientScale"		"1.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_whiteexteriornight.vmat"
+		"PortraitBackgroundColor1"		"0.027451 0.000000 0.133333"
+		"PortraitBackgroundColor2"		"0.031373 0.164706 0.603922"
+		"PortraitBackgroundColor3"		"0.321569 1.000000 1.000000"
+		"PortraitBackgroundColor4"		"0.062745 0.192157 0.223529"
+		"PortraitLightScale"		"2.044000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"0.060 -0.925 0.375"
+		"PortraitAnimationActivity"		"ACT_DOTA_CAPTURE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"181.985291 -102.300026 85.424797"
+				"PortraitAngles"		"349.113281 149.594803 0.000000"
+				"PortraitFOV"		"9.277000"
+				"PortraitFar"		"1000.000000"
+			}
+		}
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitHideParticles"		"0"
+		"PortraitHideDropShadow"		"0"
+		"PortraitDesaturateParticles"		"0"
+	}
+  "models/porno/tadpole.vmdl"
+	{
+		"PortraitLightPosition"		"50.592018 35.204300 162.360001"
+		"PortraitLightAngles"		"73.760002 -177.992172 0.000000"
+		"PortraitLightFOV"		"75.000000"
+		"PortraitLightDistance"		"115.000000"
+		"PortraitLightColor"		"191 240 254"
+		"PortraitShadowColor"		"0 0 0"
+		"PortraitShadowScale"		"1.000000"
+		"PortraitAmbientColor"		"155 104 104"
+		"PortraitAmbientScale"		"8.020000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_forest_two.vmat"
+		"PortraitBackgroundColor1"		"0.200000 0.650980 0.701961"
+		"PortraitBackgroundColor2"		"0.600000 0.807843 0.772549"
+		"PortraitBackgroundColor3"		"0.200000 0.698039 0.701961"
+		"PortraitBackgroundColor4"		"0.290196 0.592157 0.862745"
+		"PortraitLightScale"		"2.503000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-10.070 5.110 -31.920"
+		"PortraitAnimationActivity"		"ACT_DOTA_CAPTURE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"329.642365 193.245071 182.823120"
+				"PortraitAngles"		"13.609977 211.189835 0.000000"
+				"PortraitFOV"		"17.000000"
+				"PortraitFar"		"1000.000000"
+			}
+		}
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitHideParticles"		"0"
+		"PortraitHideDropShadow"		"0"
+		"PortraitDesaturateParticles"		"0"
+		"PortraitDesaturateHero"		"1"
+		"hero_presets"
+		{
+			"Default"
+			{
+				"PortraitHeroRotation"		"0.000000 0.000000 0.000000"
+			}
+		}
+		"EffectDissolveColor"		"1.000000 1.000000 1.000000"
+		"GodraysFXColor"		"1.000000 1.000000 1.000000"
+		"GroundfogFXColor"		"1.000000 1.000000 1.000000"
+		"PortraitPlayIdleExpression"		"0"
+		"PortraitVignetteItem"		"0"
+		"PortraitAllowAnimatedPortrait"		"1"
+	}
 }

@@ -9,13 +9,6 @@ return {
                 { var = "act",               value = { 1, 2, 3 },         type = "var" },
             },
         },
-        d_untitled_passage_1 = {
-            priority = 0,
-            conditions = {
-                { interact = "npc_red", type = "interact" },
-                { questID = "q_pandas", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
-            },
-        },
         d_untitled_passage_11 = {
             priority = 0,
             conditions = {
@@ -388,6 +381,7 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_no_skis", type = "trigger" },
+                { var = "has_ski",           value = { false }, type = "var" },
             },
         },
         d_untitled_passage_83 = {
@@ -407,8 +401,10 @@ return {
         d_untitled_passage_85 = {
             priority = 0,
             conditions = {
-                { ent_var = "beaten", value = { false }, npc = "npc_red", type = "ent_var" },
-                { interact = "npc_red", type = "interact" },
+                { ent_var = "beaten",         value = { false },         npc = "npc_red", type = "ent_var" },
+                { interact = "npc_red",       type = "interact" },
+                { questID = "q_pandas",       status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
+                { ent_var = "first_met_global", value = { false },       npc = "npc_red", type = "ent_var" },
             },
         },
         d_untitled_passage_86 = {
@@ -424,6 +420,44 @@ return {
             conditions = {
                 { var = "act",                   value = { 0 },      type = "var" },
                 { trigger = "trigger_choose_hero", npc = "npc_shamanka", type = "trigger" },
+            },
+        },
+        d_redhlup = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_red",       type = "interact" },
+                { questID = "q_pandas",       status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
+                { ent_var = "first_met_global", value = { true },        npc = "npc_red", type = "ent_var" },
+            },
+        },
+        d_subwaycity = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_subway_city", type = "interact" },
+            },
+        },
+        d_subwayconcert = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_subway_concert", type = "interact" },
+            },
+        },
+        d_subwayghetto = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_subway_ghetto", type = "interact" },
+            },
+        },
+        d_subwayski = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_subway_ski", type = "interact" },
+            },
+        },
+        d_subwayvillage = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_subway_village", type = "interact" },
             },
         },
     },
@@ -514,22 +548,6 @@ return {
                 },
             },
         },
-        d_delat_aktsent_na_kazhdoe_chetvertoe_hlupane = {
-            text =
-            [[*Красный настолько был ошарашен происходящим, что никак не мог понять, какой должна быть его реакция. Осознание того, что он не может постичь действий другого, а тем более себя, начало подпитывать страшный гнев в его теле.*]],
-            speaker = [[Красный]],
-            npc = "npc_red",
-            choices = {
-                {
-                    text = [[*Начать делать lip trill, дабы добавить устойчивую басовую основу.*]],
-                    next = "d_nachat_delat_lip_trill_daby_dobavit_ustojchivuu_basovuu_osnovu",
-                },
-                {
-                    text = [[*Начинать подпискивать, дабы расширить диапозон между низкими и высокими частотами.*]],
-                    next = "d_nachinat_podpiskivat_daby_rasshirit_diapozon_mezhdu_nizkimi_i_vysokimi_chastotami",
-                },
-            },
-        },
         d_zachem_ya_eto_skazal = {
             text = [[Запомни эти слова. Здесь моя работа окончена.]],
             speaker = [[Крип-загадка]],
@@ -541,22 +559,6 @@ return {
                     actions = {
                         { npc = "npc_mystery", type = "remove" },
                     },
-                },
-            },
-        },
-        d_znachitelno_povysit_temp_hlupanya = {
-            text =
-            [[*Красный настолько был ошарашен происходящим, что никак не мог понять, какой должна быть его реакция. Осознание того, что он не может постичь действий другого, а тем более себя, начало подпитывать страшный гнев в его теле.*]],
-            speaker = [[Красный]],
-            npc = "npc_red",
-            choices = {
-                {
-                    text = [[*Начать делать lip trill, дабы добавить устойчивую басовую основу.*]],
-                    next = "d_nachat_delat_lip_trill_daby_dobavit_ustojchivuu_basovuu_osnovu",
-                },
-                {
-                    text = [[*Начинать подпискивать, дабы расширить диапозон между низкими и высокими частотами.*]],
-                    next = "d_nachinat_podpiskivat_daby_rasshirit_diapozon_mezhdu_nizkimi_i_vysokimi_chastotami",
                 },
             },
         },
@@ -594,22 +596,6 @@ return {
                 },
             },
         },
-        d_nachat_delat_lip_trill_daby_dobavit_ustojchivuu_basovuu_osnovu = {
-            text =
-            [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
-            speaker = [[Красный]],
-            npc = "npc_red",
-            choices = {
-                {
-                    text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
-                    next = "d_sygrat_riff_na_shirinke_s_razresheniem_v_toniku",
-                },
-                {
-                    text = [[*Отбить ботинками завершающую каденцию.*]],
-                    next = "d_otbit_botinkami_zavershauschuu_kadentsiu",
-                },
-            },
-        },
         d_nachat_dumat = {
             text = [[*Почему люди покупают лотерейные билеты, зная, что ничего не выйграют?*]],
             speaker = [[...]],
@@ -636,22 +622,6 @@ return {
                 },
             },
         },
-        d_nachat_pritoptyvat_v_takt_hlupanya = {
-            text =
-            [[*Лицо Красного замерло в ужасной гримасе. Он оскорблён, но при этом его разум не способен осознать и постчиь истинного замысла за твоими последними действиями.*]],
-            speaker = [[Красный]],
-            npc = "npc_red",
-            choices = {
-                {
-                    text = [[*Значительно повысить темп хлюпанья.*]],
-                    next = "d_znachitelno_povysit_temp_hlupanya",
-                },
-                {
-                    text = [[*Делать акцент на каждое четвёртое хлюпанье.*]],
-                    next = "d_delat_aktsent_na_kazhdoe_chetvertoe_hlupane",
-                },
-            },
-        },
         d_nachat_siyat = {
             text = [[]],
             speaker = [[Красный]],
@@ -660,38 +630,6 @@ return {
                 {
                     text = [[Закрыть.]],
                     next = nil,
-                },
-            },
-        },
-        d_nachat_schelkat_paltsami_parallelno_hlupanu = {
-            text =
-            [[*Лицо Красного замерло в ужасной гримасе. Он оскорблён, но при этом его разум не способен осознать и постчиь истинного замысла за твоими последними действиями.*]],
-            speaker = [[Красный]],
-            npc = "npc_red",
-            choices = {
-                {
-                    text = [[*Значительно повысить темп хлюпанья.*]],
-                    next = "d_znachitelno_povysit_temp_hlupanya",
-                },
-                {
-                    text = [[*Делать акцент на каждое четвёртое хлюпанье.*]],
-                    next = "d_delat_aktsent_na_kazhdoe_chetvertoe_hlupane",
-                },
-            },
-        },
-        d_nachinat_podpiskivat_daby_rasshirit_diapozon_mezhdu_nizkimi_i_vysokimi_chastotami = {
-            text =
-            [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
-            speaker = [[Красный]],
-            npc = "npc_red",
-            choices = {
-                {
-                    text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
-                    next = "d_sygrat_riff_na_shirinke_s_razresheniem_v_toniku",
-                },
-                {
-                    text = [[*Отбить ботинками завершающую каденцию.*]],
-                    next = "d_otbit_botinkami_zavershauschuu_kadentsiu",
                 },
             },
         },
@@ -736,18 +674,6 @@ return {
                 {
                     text = [[Хммм...]],
                     next = "d_hmmm",
-                },
-            },
-        },
-        d_otbit_botinkami_zavershauschuu_kadentsiu = {
-            text =
-            [[*Все замерли. От сильнейшего топтания твои ботинки покрылись чёрной пеленой, но ты этого даже не заметил, ведь взор твой был устремлён в небеса. В результате страстных движений, земля была окрашена тёмными узорами невиданной красоты."]],
-            speaker = [[Красный]],
-            npc = "npc_red",
-            choices = {
-                {
-                    text = [[Словно иглы, мои ботинки вышили эти орнаменты для вас, земляне.]],
-                    next = "d_slovno_igly_moi_botinki_vyshili_eti_ornamenty_dlya_vas_zemlyane",
                 },
             },
         },
@@ -921,18 +847,6 @@ return {
                 },
             },
         },
-        d_sygrat_riff_na_shirinke_s_razresheniem_v_toniku = {
-            text =
-            [[*Все замерли. Лишь эхом отдаётся последняя нота. В это соло была вложена вся душа, что ты и не заметил, как замок отлетел. Словно медиатор, он лежит между указательным и большим пальцами. Ширинку больше, увы, не застегнуть.]],
-            speaker = [[Красный]],
-            npc = "npc_red",
-            choices = {
-                {
-                    text = [[С этого момента цепи конуры более не смогут сдержать моего бульдога. Ты свободен.]],
-                    next = "d_s_etogo_momenta_tsepi_konury_bolee_ne_smogut_sderzhat_moego_buldoga_ty_svoboden",
-                },
-            },
-        },
         d_ty_klanyaeshsya_v_otvet = {
             text = [[*Послышался шум динамиков.*
 Ты... Меня впечталил, конечно.]],
@@ -974,11 +888,17 @@ return {
             choices = {
                 {
                     text = [[*Начать щёлкать пальцами параллельно хлюпанью.*]],
-                    next = "d_nachat_schelkat_paltsami_parallelno_hlupanu",
+                    next = "d_hlupsnap",
+                    actions = {
+                        { music = "hlup_snap", type = "music_start" },
+                    },
                 },
                 {
                     text = [[*Начать притоптывать в такт хлюпанья.*]],
-                    next = "d_nachat_pritoptyvat_v_takt_hlupanya",
+                    next = "d_hlupstomp",
+                    actions = {
+                        { music = "hlup_stomp", type = "music_start" },
+                    },
                 },
             },
         },
@@ -1024,7 +944,7 @@ return {
                     text = [[*Принять вызов.*]],
                     next = nil,
                     actions = {
-                        { target = "talk", type = "fight_start" },
+                        { target = "talk", npc = "npc_red", type = "fight_start" },
                     },
                 },
             },
@@ -1075,18 +995,6 @@ return {
                 {
                     text = [[Что пьёшь?]],
                     next = "d_chto_pesh",
-                },
-            },
-        },
-        d_untitled_passage_1 = {
-            text =
-            [[*Существо красного цвета с мрачным видом смотрит в твою сторону. С некоторой периодичностью у него дёргается глаз.*]],
-            speaker = [[Красный]],
-            npc = "npc_red",
-            choices = {
-                {
-                    text = [[Ты ведь Красный?]],
-                    next = "d_ty_ved_krasnyj",
                 },
             },
         },
@@ -1753,6 +1661,9 @@ return {
                 {
                     text = [[*Начать сиять.*]],
                     next = nil,
+                    actions = {
+                        { target = "talk", npc = "npc_red", type = "fight_start" },
+                    },
                 },
             },
         },
@@ -1971,6 +1882,554 @@ return {
                 },
             },
         },
+        d_hlupsnap = {
+            text =
+            [[*Лицо Красного замерло в ужасной гримасе. Он оскорблён, но при этом его разум не способен осознать и постчиь истинного замысла за твоими последними действиями.*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Значительно повысить темп хлюпанья.*]],
+                    next = "d_hlupsnaptempo",
+                    actions = {
+                        { music = "hlup_snap_tempo", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Делать акцент на каждое четвёртое хлюпанье.*]],
+                    next = "d_hlupsnapaccent",
+                    actions = {
+                        { music = "hlup_snap_accent", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupsnapaccent = {
+            text =
+            [[*Красный настолько был ошарашен происходящим, что никак не мог понять, какой должна быть его реакция. Осознание того, что он не может постичь действий другого, а тем более себя, начало подпитывать страшный гнев в его теле.*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Начать делать lip trill, дабы добавить устойчивую басовую основу.*]],
+                    next = "d_hlupsnapaccentbass",
+                    actions = {
+                        { music = "hlup_snap_accent_bass", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Начинать подпискивать, дабы расширить диапозон между низкими и высокими частотами.*]],
+                    next = "d_hlupsnapaccentvox",
+                    actions = {
+                        { music = "hlup_snap_accent_vox", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupsnapaccentbass = {
+            text =
+            [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
+                    next = "d_hlupsnapaccentbassriff",
+                    actions = {
+                        { music = "hlup_snap_accent_bass_riff", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Отбить ботинками завершающую каденцию.*]],
+                    next = "d_hlupsnapaccentbasscad",
+                    actions = {
+                        { music = "hlup_snap_accent_bass_cad", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupsnapaccentbasscad = {
+            text =
+            [[*Все замерли. От сильнейшего топтания твои ботинки покрылись чёрной пеленой, но ты этого даже не заметил, ведь взор твой был устремлён в небеса. В результате страстных движений, земля была окрашена тёмными узорами невиданной красоты."]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[Словно иглы, мои ботинки вышили эти орнаменты для вас, земляне.]],
+                    next = "d_slovno_igly_moi_botinki_vyshili_eti_ornamenty_dlya_vas_zemlyane",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupsnapaccentbassriff = {
+            text =
+            [[*Все замерли. Лишь эхом отдаётся последняя нота. В это соло была вложена вся душа, что ты и не заметил, как замок отлетел. Словно медиатор, он лежит между указательным и большим пальцами. Ширинку больше, увы, не застегнуть.]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[С этого момента цепи конуры более не смогут сдержать моего бульдога. Ты свободен.]],
+                    next = "d_s_etogo_momenta_tsepi_konury_bolee_ne_smogut_sderzhat_moego_buldoga_ty_svoboden",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupsnapaccentvox = {
+            text =
+            [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
+                    next = "d_hlupsnapaccentvoxriff",
+                    actions = {
+                        { music = "hlup_snap_accent_vox_riff", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Отбить ботинками завершающую каденцию.*]],
+                    next = "d_hlupsnapaccentvoxcad",
+                    actions = {
+                        { music = "hlup_snap_accent_vox_cad", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupsnapaccentvoxcad = {
+            text =
+            [[*Все замерли. От сильнейшего топтания твои ботинки покрылись чёрной пеленой, но ты этого даже не заметил, ведь взор твой был устремлён в небеса. В результате страстных движений, земля была окрашена тёмными узорами невиданной красоты."]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[Словно иглы, мои ботинки вышили эти орнаменты для вас, земляне.]],
+                    next = "d_slovno_igly_moi_botinki_vyshili_eti_ornamenty_dlya_vas_zemlyane",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupsnapaccentvoxriff = {
+            text =
+            [[*Все замерли. Лишь эхом отдаётся последняя нота. В это соло была вложена вся душа, что ты и не заметил, как замок отлетел. Словно медиатор, он лежит между указательным и большим пальцами. Ширинку больше, увы, не застегнуть.]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[С этого момента цепи конуры более не смогут сдержать моего бульдога. Ты свободен.]],
+                    next = "d_s_etogo_momenta_tsepi_konury_bolee_ne_smogut_sderzhat_moego_buldoga_ty_svoboden",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupsnaptempo = {
+            text =
+            [[*Красный настолько был ошарашен происходящим, что никак не мог понять, какой должна быть его реакция. Осознание того, что он не может постичь действий другого, а тем более себя, начало подпитывать страшный гнев в его теле.*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Начать делать lip trill, дабы добавить устойчивую басовую основу.*]],
+                    next = "d_hlupsnaptempobass",
+                    actions = {
+                        { music = "hlup_snap_tempo_bass", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Начинать подпискивать, дабы расширить диапозон между низкими и высокими частотами.*]],
+                    next = "d_hlupsnaptempovox",
+                    actions = {
+                        { music = "hlup_snap_tempo_vox", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupsnaptempobass = {
+            text =
+            [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
+                    next = "d_hlupsnaptempobassriff",
+                    actions = {
+                        { music = "hlup_snap_tempo_bass_riff", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Отбить ботинками завершающую каденцию.*]],
+                    next = "d_hlupsnaptempobasscad",
+                    actions = {
+                        { music = "hlup_snap_tempo_bass_cad", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupsnaptempobasscad = {
+            text =
+            [[*Все замерли. От сильнейшего топтания твои ботинки покрылись чёрной пеленой, но ты этого даже не заметил, ведь взор твой был устремлён в небеса. В результате страстных движений, земля была окрашена тёмными узорами невиданной красоты."]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[Словно иглы, мои ботинки вышили эти орнаменты для вас, земляне.]],
+                    next = "d_slovno_igly_moi_botinki_vyshili_eti_ornamenty_dlya_vas_zemlyane",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupsnaptempobassriff = {
+            text =
+            [[*Все замерли. Лишь эхом отдаётся последняя нота. В это соло была вложена вся душа, что ты и не заметил, как замок отлетел. Словно медиатор, он лежит между указательным и большим пальцами. Ширинку больше, увы, не застегнуть.]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[С этого момента цепи конуры более не смогут сдержать моего бульдога. Ты свободен.]],
+                    next = "d_s_etogo_momenta_tsepi_konury_bolee_ne_smogut_sderzhat_moego_buldoga_ty_svoboden",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupsnaptempovox = {
+            text =
+            [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
+                    next = "d_hlupsnaptempovoxriff",
+                    actions = {
+                        { music = "hlup_snap_tempo_vox_riff", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Отбить ботинками завершающую каденцию.*]],
+                    next = "d_hlupsnaptempovoxcad",
+                    actions = {
+                        { music = "hlup_snap_tempo_vox_cad", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupsnaptempovoxcad = {
+            text =
+            [[*Все замерли. От сильнейшего топтания твои ботинки покрылись чёрной пеленой, но ты этого даже не заметил, ведь взор твой был устремлён в небеса. В результате страстных движений, земля была окрашена тёмными узорами невиданной красоты."]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[Словно иглы, мои ботинки вышили эти орнаменты для вас, земляне.]],
+                    next = "d_slovno_igly_moi_botinki_vyshili_eti_ornamenty_dlya_vas_zemlyane",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupsnaptempovoxriff = {
+            text =
+            [[*Все замерли. Лишь эхом отдаётся последняя нота. В это соло была вложена вся душа, что ты и не заметил, как замок отлетел. Словно медиатор, он лежит между указательным и большим пальцами. Ширинку больше, увы, не застегнуть.]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[С этого момента цепи конуры более не смогут сдержать моего бульдога. Ты свободен.]],
+                    next = "d_s_etogo_momenta_tsepi_konury_bolee_ne_smogut_sderzhat_moego_buldoga_ty_svoboden",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupstomp = {
+            text =
+            [[*Лицо Красного замерло в ужасной гримасе. Он оскорблён, но при этом его разум не способен осознать и постчиь истинного замысла за твоими последними действиями.*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Значительно повысить темп хлюпанья.*]],
+                    next = "d_hlupstomptempo",
+                    actions = {
+                        { music = "hlup_stomp_tempo", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Делать акцент на каждое четвёртое хлюпанье.*]],
+                    next = "d_hlupstompaccent",
+                    actions = {
+                        { music = "hlup_stomp_accent", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupstompaccent = {
+            text =
+            [[*Красный настолько был ошарашен происходящим, что никак не мог понять, какой должна быть его реакция. Осознание того, что он не может постичь действий другого, а тем более себя, начало подпитывать страшный гнев в его теле.*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Начать делать lip trill, дабы добавить устойчивую басовую основу.*]],
+                    next = "d_hlupstompaccentbass",
+                    actions = {
+                        { music = "hlup_stomp_accent_bass", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Начинать подпискивать, дабы расширить диапозон между низкими и высокими частотами.*]],
+                    next = "d_hlupstompaccentvox",
+                    actions = {
+                        { music = "hlup_stomp_accent_vox", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupstompaccentbass = {
+            text =
+            [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
+                    next = "d_hlupstompaccentbassriff",
+                    actions = {
+                        { music = "hlup_stomp_accent_bass_riff", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Отбить ботинками завершающую каденцию.*]],
+                    next = "d_hlupstompaccentbasscad",
+                    actions = {
+                        { music = "hlup_stomp_accent_bass_cad", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupstompaccentbasscad = {
+            text =
+            [[*Все замерли. От сильнейшего топтания твои ботинки покрылись чёрной пеленой, но ты этого даже не заметил, ведь взор твой был устремлён в небеса. В результате страстных движений, земля была окрашена тёмными узорами невиданной красоты."]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[Словно иглы, мои ботинки вышили эти орнаменты для вас, земляне.]],
+                    next = "d_slovno_igly_moi_botinki_vyshili_eti_ornamenty_dlya_vas_zemlyane",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupstompaccentbassriff = {
+            text =
+            [[*Все замерли. Лишь эхом отдаётся последняя нота. В это соло была вложена вся душа, что ты и не заметил, как замок отлетел. Словно медиатор, он лежит между указательным и большим пальцами. Ширинку больше, увы, не застегнуть.]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[С этого момента цепи конуры более не смогут сдержать моего бульдога. Ты свободен.]],
+                    next = "d_s_etogo_momenta_tsepi_konury_bolee_ne_smogut_sderzhat_moego_buldoga_ty_svoboden",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupstompaccentvox = {
+            text =
+            [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
+                    next = "d_hlupstompaccentvoxriff",
+                    actions = {
+                        { music = "hlup_stomp_accent_vox_riff", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Отбить ботинками завершающую каденцию.*]],
+                    next = "d_hlupstompaccentvoxcad",
+                    actions = {
+                        { music = "hlup_stomp_accent_vox_cad", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupstompaccentvoxcad = {
+            text =
+            [[*Все замерли. От сильнейшего топтания твои ботинки покрылись чёрной пеленой, но ты этого даже не заметил, ведь взор твой был устремлён в небеса. В результате страстных движений, земля была окрашена тёмными узорами невиданной красоты."]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[Словно иглы, мои ботинки вышили эти орнаменты для вас, земляне.]],
+                    next = "d_slovno_igly_moi_botinki_vyshili_eti_ornamenty_dlya_vas_zemlyane",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupstompaccentvoxriff = {
+            text =
+            [[*Все замерли. Лишь эхом отдаётся последняя нота. В это соло была вложена вся душа, что ты и не заметил, как замок отлетел. Словно медиатор, он лежит между указательным и большим пальцами. Ширинку больше, увы, не застегнуть.]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[С этого момента цепи конуры более не смогут сдержать моего бульдога. Ты свободен.]],
+                    next = "d_s_etogo_momenta_tsepi_konury_bolee_ne_smogut_sderzhat_moego_buldoga_ty_svoboden",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupstomptempo = {
+            text =
+            [[*Красный настолько был ошарашен происходящим, что никак не мог понять, какой должна быть его реакция. Осознание того, что он не может постичь действий другого, а тем более себя, начало подпитывать страшный гнев в его теле.*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Начать делать lip trill, дабы добавить устойчивую басовую основу.*]],
+                    next = "d_hlupstomptempobass",
+                    actions = {
+                        { music = "hlup_stomp_tempo_bass", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Начинать подпискивать, дабы расширить диапозон между низкими и высокими частотами.*]],
+                    next = "d_hlupstomptempovox",
+                    actions = {
+                        { music = "hlup_stomp_tempo_vox", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupstomptempobass = {
+            text =
+            [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
+                    next = "d_hlupstomptempobassriff",
+                    actions = {
+                        { music = "hlup_stomp_tempo_bass_riff", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Отбить ботинками завершающую каденцию.*]],
+                    next = "d_hlupstomptempobasscad",
+                    actions = {
+                        { music = "hlup_stomp_tempo_bass_cad", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupstomptempobasscad = {
+            text =
+            [[*Все замерли. От сильнейшего топтания твои ботинки покрылись чёрной пеленой, но ты этого даже не заметил, ведь взор твой был устремлён в небеса. В результате страстных движений, земля была окрашена тёмными узорами невиданной красоты."]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[Словно иглы, мои ботинки вышили эти орнаменты для вас, земляне.]],
+                    next = "d_slovno_igly_moi_botinki_vyshili_eti_ornamenty_dlya_vas_zemlyane",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupstomptempobassriff = {
+            text =
+            [[*Все замерли. Лишь эхом отдаётся последняя нота. В это соло была вложена вся душа, что ты и не заметил, как замок отлетел. Словно медиатор, он лежит между указательным и большим пальцами. Ширинку больше, увы, не застегнуть.]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[С этого момента цепи конуры более не смогут сдержать моего бульдога. Ты свободен.]],
+                    next = "d_s_etogo_momenta_tsepi_konury_bolee_ne_smogut_sderzhat_moego_buldoga_ty_svoboden",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupstomptempovox = {
+            text =
+            [[*Наступает момент кульминации. Лицо Красного уже залилось алым градиентом, вот вот его терпение лопнет и он пойдёт в твою сторону. Однако останавливаться сейчас нельзя, толпа прохожих внимательно следит за твоими движениями. Пришло время поставить точку...*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[*Сыграть рифф на ширинке с разрешением в тонику.*]],
+                    next = "d_hlupstomptempovoxriff",
+                    actions = {
+                        { music = "hlup_stomp_tempo_vox_riff", type = "music_start" },
+                    },
+                },
+                {
+                    text = [[*Отбить ботинками завершающую каденцию.*]],
+                    next = "d_hlupstomptempovoxcad",
+                    actions = {
+                        { music = "hlup_stomp_tempo_vox_cad", type = "music_start" },
+                    },
+                },
+            },
+        },
+        d_hlupstomptempovoxcad = {
+            text =
+            [[*Все замерли. От сильнейшего топтания твои ботинки покрылись чёрной пеленой, но ты этого даже не заметил, ведь взор твой был устремлён в небеса. В результате страстных движений, земля была окрашена тёмными узорами невиданной красоты."]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[Словно иглы, мои ботинки вышили эти орнаменты для вас, земляне.]],
+                    next = "d_slovno_igly_moi_botinki_vyshili_eti_ornamenty_dlya_vas_zemlyane",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
+        d_hlupstomptempovoxriff = {
+            text =
+            [[*Все замерли. Лишь эхом отдаётся последняя нота. В это соло была вложена вся душа, что ты и не заметил, как замок отлетел. Словно медиатор, он лежит между указательным и большим пальцами. Ширинку больше, увы, не застегнуть.]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[С этого момента цепи конуры более не смогут сдержать моего бульдога. Ты свободен.]],
+                    next = "d_s_etogo_momenta_tsepi_konury_bolee_ne_smogut_sderzhat_moego_buldoga_ty_svoboden",
+                    actions = {
+                        { type = "music_stop" },
+                    },
+                },
+            },
+        },
         d_i = {
             text = [[Вообщем хорошего дня тебе, друг. В нашем Королестве всегда весело.]],
             speaker = [[Крип-рогач]],
@@ -2100,8 +2559,12 @@ return {
             npc = "npc_brewmaster",
             choices = {
                 {
-                    text = [[Закрыть.]],
+                    text = [[Базар.]],
                     next = nil,
+                    actions = {
+                        { npc = "npc_brewmaster", type = "remove" },
+                        { spawn = "spawner_red", type = "spawn" },
+                    },
                 },
             },
         },
@@ -2765,6 +3228,140 @@ return {
                 },
             },
         },
+        d_redhlup = {
+            text =
+            [[*Существо красного цвета с мрачным видом смотрит в твою сторону. С некоторой периодичностью у него дёргается глаз.*]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[Ты ведь Красный?]],
+                    next = "d_ty_ved_krasnyj",
+                },
+            },
+        },
+        d_subwaycity = {
+            text = [[Куда Вам билет?]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_city",
+            choices = {
+                {
+                    text = [[Горнолыжный склон]],
+                    next = nil,
+                    actions = {
+                        { target = "tp_target_ski", type = "teleport" },
+                    },
+                },
+                {
+                    text = [[Скрытая деревня]],
+                    next = nil,
+                    actions = {
+                        { target = "tp_target_village", type = "teleport" },
+                    },
+                },
+                {
+                    text = [[Площадка для проведения мероприятий]],
+                    next = nil,
+                    actions = {
+                        { target = "tp_target_concert", type = "teleport" },
+                    },
+                },
+                {
+                    text = [[Гетто]],
+                    next = nil,
+                    actions = {
+                        { target = "tp_target_ghetto", type = "teleport" },
+                    },
+                },
+                {
+                    text = [[Я передумал]],
+                    next = nil,
+                },
+            },
+        },
+        d_subwayconcert = {
+            text = [[Отсюда можно вернуться в город.]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_concert",
+            choices = {
+                {
+                    text = [[Город]],
+                    next = nil,
+                    actions = {
+                        { target = "tp_target_city", type = "teleport" },
+                    },
+                },
+                {
+                    text = [[Я передумал]],
+                    next = nil,
+                },
+            },
+        },
+        d_subwayghetto = {
+            text = [[Отсюда можно вернуться в город.]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_ghetto",
+            choices = {
+                {
+                    text = [[Город]],
+                    next = nil,
+                    actions = {
+                        { target = "tp_target_city", type = "teleport" },
+                    },
+                },
+                {
+                    text = [[Я передумал]],
+                    next = nil,
+                },
+            },
+        },
+        d_subwayski = {
+            text = [[Отсюда можно вернуться в город.]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_ski",
+            choices = {
+                {
+                    text = [[Город]],
+                    next = nil,
+                    actions = {
+                        { target = "tp_target_city", type = "teleport" },
+                    },
+                },
+                {
+                    text = [[Я передумал]],
+                    next = nil,
+                },
+            },
+        },
+        d_subwayvillage = {
+            text = [[Отсюда можно вернуться в город.]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_village",
+            choices = {
+                {
+                    text = [[Город]],
+                    next = nil,
+                    actions = {
+                        { target = "tp_target_city", type = "teleport" },
+                    },
+                },
+                {
+                    text = [[Я передумал]],
+                    next = nil,
+                },
+            },
+        },
+        d_terminalclose = {
+            text = [[]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_city",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
         d_a_gde_mne_ih_iskat = {
             text =
             [[Где-то в этом мире, сам не знаю. Я вижу их постоянно, но не могу усмирить. Может и тебе посчастливиться встретить их.]],
@@ -3000,6 +3597,17 @@ return {
                 },
             },
         },
+        d_bazar = {
+            text = [[]],
+            speaker = [[Пьяная панда]],
+            npc = "npc_brewmaster",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
         d_beru_kachestvom = {
             text = [[Берёшь куда?]],
             speaker = [[Сиамский огр]],
@@ -3043,8 +3651,11 @@ return {
             npc = "npc_templar_assasin",
             choices = {
                 {
-                    text = [[Закрыть.]],
+                    text = [[Умереть.]],
                     next = nil,
+                    actions = {
+                        { attacker = "npc_templar_assasin", type = "die" },
+                    },
                 },
             },
         },
@@ -3178,7 +3789,7 @@ return {
                     text = [[*Ухмыльнуться и начать хлюпать.*]],
                     next = "d_uhmylnutsya_i_nachat_hlupat",
                     actions = {
-                        { music = "hlup1", type = "music_start" },
+                        { music = "hlup", type = "music_start" },
                     },
                 },
             },
@@ -3201,8 +3812,11 @@ return {
             npc = "npc_red",
             choices = {
                 {
-                    text = [[Закрыть.]],
+                    text = [[Пока.]],
                     next = nil,
+                    actions = {
+                        { npc = "npc_red", type = "remove" },
+                    },
                 },
             },
         },
@@ -3286,6 +3900,39 @@ return {
                 {
                     text = [[14.]],
                     next = "d_14",
+                },
+            },
+        },
+        d_getto = {
+            text = [[]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_city",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_gornolyzhnyj_sklon = {
+            text = [[]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_city",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_gorod = {
+            text = [[]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_concert",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
                 },
             },
         },
@@ -3843,7 +4490,8 @@ return {
                     text = [[Z - это Cамость, а Cамость - это Z.]],
                     next = "d_z_eto_camost_a_camost_eto_z",
                     actions = {
-                        { var = "has_village_pass", value = true, type = "set_var" },
+                        { var = "has_village_pass", value = true,  type = "set_var" },
+                        { door = "door_village",  type = "open_door" },
                     },
                 },
             },
@@ -4342,6 +4990,17 @@ return {
                 },
             },
         },
+        d_ploschadka_dlya_provedeniya_meropriyatij = {
+            text = [[]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_city",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
         d_podskazhi_gde_ya = {
             text = [[*Фигура замолкла.*]],
             speaker = [[???]],
@@ -4361,6 +5020,17 @@ return {
                 {
                     text = [[Расскажи откуда, мне для друга надо.]],
                     next = "d_pochemu",
+                },
+            },
+        },
+        d_poka = {
+            text = [[]],
+            speaker = [[Красный]],
+            npc = "npc_red",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
                 },
             },
         },
@@ -4569,6 +5239,17 @@ return {
                 {
                     text = [[...]],
                     next = "d_h",
+                },
+            },
+        },
+        d_skrytaya_derevnya = {
+            text = [[]],
+            speaker = [[Терминал М.Е.Т.Р.О.]],
+            npc = "npc_subway_city",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
                 },
             },
         },
@@ -4956,6 +5637,17 @@ return {
                 {
                     text = [[Ну и хорошо.]],
                     next = "d_nu_i_horosho",
+                },
+            },
+        },
+        d_umeret = {
+            text = [[]],
+            speaker = [[Человек-хранитель]],
+            npc = "npc_templar_assasin",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
                 },
             },
         },

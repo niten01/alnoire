@@ -118,13 +118,11 @@
       lbl.text = c.text;
 
       btn.SetPanelEvent("onmouseover", () => {
-        // purely cosmetic “selected” glow
         choicesRoot.Children().forEach(p => p.RemoveClass("IsSelected"));
         btn.AddClass("IsSelected");
       });
 
       btn.SetPanelEvent("onactivate", () => {
-        $.Msg(c.id)
         GameEvents.SendCustomGameEventToServer("dialogue_choice", { choiceLuaIndex: parseInt(luaIdx) });
       });
     }
@@ -144,12 +142,7 @@
     setOpen(false);
   }
 
-  // “Space to continue”: if typing, finish; otherwise tell server “advance”.
   function onKeyDown() {
-    $.Msg("sdlkf")
-    // Key handling can be done via GameUI.SetMouseCallback / keybind systems,
-    // but simplest is: only enable this when you already have a keybind or you
-    // call it from your own input system.
     if (!root.BHasClass("IsOpen")) return;
     if (choicesRoot.GetChildCount() > 0) return;
 
@@ -157,7 +150,6 @@
     else GameEvents.SendCustomGameEventToServer("dialogue_choice", { choiceLuaIndex: 1 });
   }
 
-  // Wire your custom events
   GameEvents.Subscribe("dialogue_show", show);
   GameEvents.Subscribe("dialogue_hide", hide);
 

@@ -6,6 +6,28 @@ return {
         __common = {
             team = DOTA_TEAM_GOODGUYS
         },
+
+        spawner_subway_city = {
+            npc = "npc_subway_city",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_subway_ski = {
+            npc = "npc_subway_ski",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_subway_village = {
+            npc = "npc_subway_village",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_subway_concert = {
+            npc = "npc_subway_concert",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_subway_ghetto = {
+            npc = "npc_subway_ghetto",
+            modifiers = { "modifier_story_npc" },
+        },
+
         spawner_xavier = {
             npc = "npc_xavier",
             modifiers = { "modifier_story_npc" },
@@ -95,6 +117,25 @@ return {
             npc = "npc_templar_assasin",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_alchemist = {
+            npc = "npc_alchemist",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_scientist = {
+            npc = "npc_scientist",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_red = {
+            npc = "npc_red",
+            modifiers = { "modifier_story_npc" },
+            team = DOTA_TEAM_BADGUYS,
+            deferred = true,
+        },
+        spawner_concert_guard = {
+            npc = "npc_concert_guard",
+            modifiers = { "modifier_story_npc" },
+        },
+
     },
 
     packs = {
@@ -103,6 +144,7 @@ return {
             rangeRetreat = 1000,
             rangeAggro = 500,
             state = "idle",
+            isStory = false,
         },
 
         pack_forest_1 = {
@@ -143,10 +185,6 @@ return {
             first_met_in_act = true,
             beaten = false,
             can_give_quest = false,
-            modifiers_on_player_kill = nil,
-        },
-        npc_monkey_king = {
-            modifiers_on_player_kill = { "modifier_story_npc" }
         },
     },
 
@@ -179,6 +217,15 @@ return {
             requiresButtons = {
                 "button_forest_1_shortcut"
             },
+        },
+        door_village = {
+            clipEntity = "clip_door_village"
+        },
+        door_concert = {
+            clipEntity = "clip_door_concert"
+        },
+        door_ski = {
+            clipEntity = "clip_door_ski"
         },
     },
 

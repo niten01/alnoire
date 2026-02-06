@@ -5,6 +5,12 @@ return {
         "npc_dota_hero_sanya_logarithmus",
         "npc_dota_hero_sanya",
 
+        "npc_subway_city",
+        "npc_subway_ski",
+        "npc_subway_village",
+        "npc_subway_concert",
+        "npc_subway_ghetto",
+
         "npc_tormentor",
         "npc_shamanka",
         "npc_gate_troll_uruk",
@@ -25,6 +31,9 @@ return {
         "npc_predvestnik",
         "npc_mystery",
         "npc_templar_assasin",
+        "npc_alchemist",
+        "npc_scientist",
+        "npc_red",
 
         "npc_xavier",
 
@@ -39,7 +48,9 @@ return {
     models = {
     },
     sounds = {
+        "soundevents/items.vsndevts",
         "soundevents/music.vsndevts",
+        "soundevents/hlup.vsndevts",
         "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
     },
     particles = {

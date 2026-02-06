@@ -1,0 +1,39 @@
+"DOTAUnits"
+{
+	"npc_subway_city" 
+	{
+		"Model"						"models/subway/subway.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"RingRadius"				"200"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_subway_ski" 
+	{
+		"Model"						"models/subway/subway.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_subway_village" 
+	{
+		"Model"						"models/subway/subway.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_subway_concert" 
+	{
+		"Model"						"models/subway/subway.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_subway_ghetto" 
+	{
+		"Model"						"models/subway/subway.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}

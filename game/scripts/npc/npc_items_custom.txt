@@ -59,4 +59,17 @@
             "duration"                  "2.0"
         }
     }
+    "item_ski"
+    {
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_ski.lua"
+        "AbilityTextureName"            "ski"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "0"
+        "ItemPermanent"                 "0"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "ItemInitialCharges"            "1" 
+    }
 }

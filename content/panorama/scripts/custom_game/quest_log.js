@@ -45,7 +45,6 @@
                 questTab.AddClass("QuestTabBlink")
                 $.Schedule(0.5, () => {
                     const item = $("#" + id)
-                    $.Msg(item)
                     if (item)
                         item.RemoveClass("QuestItemBlink")
                     questTab.RemoveClass("QuestTabBlink")

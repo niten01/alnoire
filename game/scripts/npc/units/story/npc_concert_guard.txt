@@ -1,0 +1,10 @@
+"DOTAUnits"
+{
+	"npc_concert_guard" 
+	{
+		"Model"						"models/heroes/dark_seer/dark_seer.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}
