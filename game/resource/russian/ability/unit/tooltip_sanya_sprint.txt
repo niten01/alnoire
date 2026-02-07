@@ -1,0 +1,5 @@
+"DOTA_Tooltip_ability_sanya_sprint"		            "Спринт"
+"DOTA_Tooltip_ability_sanya_sprint_Lore"		            "Gotta go f... Э, слыш, заткнись нахуй."
+"DOTA_Tooltip_Ability_sanya_sprint_SummaryDescription" ""
+"DOTA_Tooltip_ability_sanya_sprint_Description"		"Саня значительно ускоряется, получая дополнительную скорость передвижения. Не может быть использован, если в последние %sprint_damage_cooldown% сек. владелец получал урон."
+"DOTA_Tooltip_ability_sanya_sprint_sprint_speed"		"ДОП. СКОРОСТЬ:"
