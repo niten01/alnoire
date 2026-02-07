@@ -173,13 +173,16 @@ return {
             {
                 description = "Найди способ починить шар для предсказаний",
                 objectives = {
-                    { type = "talk", npc = "npc_tinker" }
+                    { type = "get_item", item = "item_crystal_ball" }
                 }
             },
             {
-                description = "Почини шар и верни предвестнику",
+                description = "Верни шар предвестнику",
                 objectives = {
                     { type = "talk", npc = "npc_predvestnik" }
+                },
+                postStepActions = {
+                    { type = "setup_gorilla_scene" }
                 }
             },
             {
@@ -220,14 +223,15 @@ return {
             },
         }
     },
-q_main_quest_act_3 = {
+    q_main_quest_act_3 = {
         giver = "npc_guide",
         name = "Великий ключ",
         steps = {
             {
-                description = "Добудь Философский камень и 3 части ключа: Первый - На вершине Снежной горы, Второй - В пасти чудовища Искажённого леса, Третий - У старушки-медиума",
+                description =
+                "Добудь Философский камень и 3 части ключа: Первый - На вершине Снежной горы, Второй - В пасти чудовища Искажённого леса, Третий - У старушки-медиума",
                 objectives = {
-                    { type = "take", trigger = "trigger_derek_key"}
+                    { type = "take", trigger = "trigger_derek_key" }
                 }
             },
             {

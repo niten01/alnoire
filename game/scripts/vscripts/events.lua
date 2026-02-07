@@ -68,6 +68,12 @@ function barebones:OnGameInProgress()
 
 	-- If the day/night is not changed at 00:00, the following line is needed:
 	GameRules:SetTimeOfDay(0.251)
+
+	local gamemode = GameRules:GetGameModeEntity()
+	gamemode:SetContextThink("InventoryTracker", function()
+		return self:InventoryThink()
+	end, 0)
+
 	OnGameInProgressEvent()
 end
 
@@ -492,4 +498,27 @@ function barebones:OnPlayerChat(keys)
 	OnPlayerUsedChatEvent(extend(keys, {
 		playerID = playerID, -- uniform naming
 	}))
+end
+
+local OnItemObtainEvent = CreateGameEvent 'OnItemObtain'
+function barebones:InventoryThink()
+	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+		if PlayerResource:IsValidPlayerID(playerID) then
+			local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+			if hero then
+				for slot = 0, 14 do
+					local item = hero:GetItemInSlot(slot)
+					if item and not item.is_tracked then
+						DebugPrint("[BAREBONES] On item obtain: " .. item:GetName())
+						OnItemObtainEvent({
+							playerID = playerID,
+							itemName = item:GetName(),
+						})
+						item.is_tracked = true
+					end
+				end
+			end
+		end
+	end
+	return 0.5
 end

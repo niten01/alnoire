@@ -159,6 +159,19 @@ function Handlers.music_stop(playerID, action)
   Music:StopCustomMusic(playerID)
 end
 
+function Handlers.take_item(playerID, action)
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  if not hero then
+    error("No hero")
+  end
+
+  local item = hero:FindItemInInventory(action.itemName)
+  if not item then
+    error("Player has no item to remove: " .. action.itemName)
+  end
+  hero:RemoveItem(item)
+end
+
 function Actions:Handle(playerID, action)
   local handler = Handlers[action.type]
   if not handler then

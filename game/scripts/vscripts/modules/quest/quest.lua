@@ -309,6 +309,15 @@ function Quest:RegisterEvaluators()
       end
     end)
   end)
+
+  GameEvents:OnItemObtain(function(event)
+    local playerID = event.playerID
+    ForEachActiveObjectiveOfType(playerID, "get_item", function(questID, objective)
+      if Evaluators.GetItemEvaluator(objective, event) then
+        self:CompleteObjective(playerID, questID, objective)
+      end
+    end)
+  end)
 end
 
 return Quest

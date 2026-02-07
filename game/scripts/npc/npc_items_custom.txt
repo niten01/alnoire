@@ -16,7 +16,7 @@
 
         "ItemInitialCharges" "3" 
         "ItemDisplayCharges" "1" 
-        "ItemRequiresCharges" "1" //The active ability needs charges to be used - Urn
+        "ItemRequiresCharges" "1" 
 
         "AbilityValues" 
         {
@@ -66,7 +66,7 @@
         "AbilityTextureName"            "ski"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "0"
+        "ItemPurchasable"               "1"
         "ItemPermanent"                 "0"
         "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -111,7 +111,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "0"
+        "ItemPurchasable"               "1"
         "ItemQuality"                   "rare"
     }
     "item_recipe_crystal_ball"
@@ -156,5 +156,38 @@
                 }
             }
         }
+    }
+    "item_key_part_1"
+    {
+        "ID"                    "3005"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "key_part_1"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+    }
+    "item_key_part_2"
+    {
+        "ID"                    "3006"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "key_part_2"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+    }
+    "item_key_part_3"
+    {
+        "ID"                    "3007"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "key_part_3"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
     }
 }

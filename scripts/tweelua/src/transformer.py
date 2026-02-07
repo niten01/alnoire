@@ -11,6 +11,7 @@ ENTRY_TYPE_FIELD_PATTERNS = {
     "beat": ["beat"],
     "trigger": ["trigger"],
     "interact": ["interact"],
+    "has_item": ["has_item"],
 }
 
 

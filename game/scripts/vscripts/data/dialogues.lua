@@ -389,6 +389,7 @@ priority = 0,
 conditions = {
 { interact="npc_predvestnik",type="interact" },
 { questID="q_main_quest_act_1",status=QuestStatus.ACTIVE,step={ 3 },type="quest" },
+{ has_item="item_crystal_ball",type="has_item" },
 },
 },
 d_untitled_passage_84 = {
@@ -526,7 +527,7 @@ choices = {
 text = [[*Взять предмет*]],
 next = "d_vzyat_predmet",
 actions = {
-{ itemName="key_part_1",type="give_item" },
+{ itemName="item_key_part_2",type="give_item" },
 },
 },
 },
@@ -1627,6 +1628,9 @@ choices = {
 {
 text = [[Вот твой шар.]],
 next = "d_vot_tvoj_shar",
+actions = {
+{ itemName="item_crystal_ball",type="take_item" },
+},
 },
 },
 },
