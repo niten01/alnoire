@@ -275,7 +275,7 @@ return {
                 }
             },
             {
-                description = "Осмотри пещеру около входа в Королевство",
+                description = "Осмотри пещеру около входа в Королевство (Carcer Immortalium)",
                 objectives = {
                     { type = "talk", npc = "npc_george" }
                 }
