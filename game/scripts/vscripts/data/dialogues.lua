@@ -395,7 +395,6 @@ conditions = {
 d_untitled_passage_84 = {
 priority = 0,
 conditions = {
-{ questID="q_main_quest_act_1",status=QuestStatus.ACTIVE,step={ 3 },type="quest" },
 { trigger="trigger_gorilla",npc="npc_gorilla",type="trigger" },
 },
 },
@@ -413,7 +412,6 @@ priority = 0,
 conditions = {
 { trigger="trigger_after_gorilla",npc="npc_guide",type="trigger" },
 { var="act",value={ 1 },type="var" },
-{ questID="q_main_quest_1",status=QuestStatus.ACTIVE,step={ 3 },type="quest" },
 },
 },
 d_untitled_passage_9 = {
@@ -750,7 +748,9 @@ choices = {
 text = [[*Ну почему я то?!*]],
 next = nil,
 actions = {
-{ target="kill",type="fight_start" },
+{ target="kill",npc="npc_gorilla",type="fight_start" },
+{ type="gorilla_fight_start" },
+{ npc="npc_rape_victim",type="kill" },
 },
 },
 },

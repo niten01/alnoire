@@ -172,6 +172,34 @@ function Handlers.take_item(playerID, action)
   hero:RemoveItem(item)
 end
 
+function Handlers.setup_gorilla_scene(playerID, action)
+  for _, ent in ipairs(Entities:FindAllByName("npc_rape_victim")) do
+    ent:RemoveSelf()
+  end
+
+  SpawnManager:SpawnNPC("spawner_gorilla")
+  SpawnManager:SpawnNPC("spawner_rape_victim_2")
+  Timers:CreateTimer(0.5, function()
+    for _, ent in ipairs(Entities:FindAllByName("npc_rape_victim")) do
+      AddAnimationTranslate(ent, "torment")
+    end
+
+    for _, ent in ipairs(Entities:FindAllByName("npc_gorilla")) do
+      AddAnimationTranslate(ent, "torment")
+    end
+  end)
+
+  for _, ent in ipairs(Entities:FindAllByName("trigger_gorilla")) do
+    ent:Enable()
+  end
+end
+
+function Handlers.gorilla_fight_start(playerID, action)
+    for _, ent in ipairs(Entities:FindAllByName("npc_gorilla")) do
+      RemoveAnimationTranslate(ent)
+    end
+end
+
 function Actions:Handle(playerID, action)
   local handler = Handlers[action.type]
   if not handler then
