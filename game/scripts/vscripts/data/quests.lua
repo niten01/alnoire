@@ -224,7 +224,7 @@ return {
         }
     },
     q_main_quest_act_3 = {
-        giver = "npc_guide",
+        giver = "npc_leader",
         name = "Великий ключ",
         steps = {
             {
@@ -259,6 +259,43 @@ return {
                 description = "Отдай lean крипу",
                 objectives = {
                     { type = "talk", npc = "npc_dream" }
+                }
+            },
+        }
+    },
+    q_main_quest_act_4 = {
+        giver = "npc_leader",
+        name = "Судьба",
+        steps = {
+            {
+                description =
+                "Иди в Пустошь и покончи с Дереком",
+                objectives = {
+                    { type = "talk", npc = "npc_derek" }
+                }
+            },
+            {
+                description = "Осмотри пещеру около входа в Королевство (Carcer Immortalium)",
+                objectives = {
+                    { type = "talk", npc = "npc_george" }
+                }
+            },
+            {
+                description = "Одолей Короля",
+                objectives = {
+                    { type = "talk", npc = "npc_george" }
+                }
+            },
+            {
+                description = "Соверши сделку с Богом",
+                objectives = {
+                    { type = "talk", npc = "npc_tormentor" }
+                }
+            },
+            {
+                description = "Вернись в реальный мир",
+                objectives = {
+                    { type = "trigger", trigger = "trigger_portal_escape" }
                 }
             },
         }
