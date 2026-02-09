@@ -7,6 +7,7 @@ else
 end
 
 require('internal.util')
+require('internal.ai_utils')
 
 require('libraries.timers')          -- Core lua library
 require('libraries.player_resource') -- Core lua library
