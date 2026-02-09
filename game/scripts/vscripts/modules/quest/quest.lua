@@ -53,6 +53,21 @@ function Quest:Init()
     self:EmitQuestCompleteParticles(event.playerID)
   end)
 
+  ChatCommand:LinkDevCommand("-setqueststatus", function(event, args)
+    local playerID = event.playerID
+    local questState = self.playerQuestStates[playerID]:GetOneQuestState(args[1])
+    questState.status = args[2]
+    self:UpdateQuestlog(playerID)
+  end)
+
+  ChatCommand:LinkDevCommand("-setqueststep", function(event, args)
+    local playerID = event.playerID
+    local questState = self.playerQuestStates[playerID]:GetOneQuestState(args[1])
+    questState.status = QuestStatus.ACTIVE 
+    questState.stepIdx = tonumber(args[2])
+    self:UpdateQuestlog(playerID)
+  end)
+
   GameEvents:OnActChange(bind(self.OnActChange, self))
 
   self:RegisterEvaluators()
@@ -305,6 +320,15 @@ function Quest:RegisterEvaluators()
     local playerID = event.playerID
     ForEachActiveObjectiveOfType(playerID, "come", function(questID, objective)
       if Evaluators.TriggerEvaluator(objective, event) then
+        self:CompleteObjective(playerID, questID, objective)
+      end
+    end)
+  end)
+
+  GameEvents:OnItemObtain(function(event)
+    local playerID = event.playerID
+    ForEachActiveObjectiveOfType(playerID, "get_item", function(questID, objective)
+      if Evaluators.GetItemEvaluator(objective, event) then
         self:CompleteObjective(playerID, questID, objective)
       end
     end)

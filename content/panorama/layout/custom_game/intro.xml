@@ -1,0 +1,22 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/intro.css" />
+    </styles>
+
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/intro.js" />
+    </scripts>
+
+    <Panel class="IntroRoot">
+        <Panel class="IntroContainer" id="IntroContainer" hittest="false">
+            <Movie id="IntroVideo"
+                src="file://{resources}/videos/intro.webm"
+                repeat="false"
+                autoplay="false" />
+
+            <Button id="SkipButton">
+                <Label text="SKIP INTRO" />
+            </Button>
+        </Panel>
+    </Panel>
+</root>

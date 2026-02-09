@@ -105,6 +105,7 @@ function barebones:InitGameMode()
 
   ListenToGameEvent("dota_player_selected_custom_team", Dynamic_Wrap(barebones, 'OnPlayerSelectedCustomTeam'), self)
   ListenToGameEvent("dota_npc_goal_reached", Dynamic_Wrap(barebones, 'OnNPCGoalReached'), self)
+  ListenToGameEvent("dota_item_purchased", Dynamic_Wrap(barebones, 'OnItemPurchased'), self)
 
   -- Change random seed for math.random function
   local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0', '')

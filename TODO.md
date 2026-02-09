@@ -3,7 +3,7 @@
     * models/items/broodmother/bride_of_the_web_head/bride_of_the_web_head.vmdl
     * marci
 * george
-    * models/creeps/ice_biome/undeadtusk/undead_tuskskeleton02.vmdl
+    * models/creeps/ice_biome/undeadtusk/undead_tuskskeleton_armor01.vmdl
     * models/items/doom/lvbu_head/lvbu_head.vmdl
 * derek
     * models/heroes/beastmaster/beastmaster.vmdl
@@ -65,3 +65,7 @@ particles:
 * врожденка - дизарм пока не нажмет спел
 * астрал степ
 * 
+
+* интро бауманка
+* ловушки
+*

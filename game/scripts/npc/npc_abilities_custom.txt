@@ -16,6 +16,7 @@
 		"AbilityValues"
 		{
 			"sprint_speed"				"200"
+			"sprint_damage_cooldown"	"5"
 		}
 	}
 	"sanya_towel_dash"

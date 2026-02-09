@@ -38,7 +38,9 @@ return {
         },
         spawner_gorilla = {
             npc = "npc_gorilla",
+            modifiers = { "modifier_story_npc" },
             deferred = true,
+            team = DOTA_TEAM_BADGUYS,
         },
         spawner_blue_prince = {
             npc = "npc_blue_prince",
@@ -104,6 +106,11 @@ return {
         spawner_rape_victim = {
             npc = "npc_rape_victim",
             modifiers = { "modifier_story_npc" },
+        },
+        spawner_rape_victim_2 = {
+            npc = "npc_rape_victim",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
         spawner_predvestnik = {
             npc = "npc_predvestnik",

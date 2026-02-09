@@ -2,3 +2,6 @@ numpy
 Pillow
 pytwee
 transliterate
+libretranslate
+tqdm
+requests

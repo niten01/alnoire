@@ -49,6 +49,17 @@ function Evaluators.ent_var(nodeID, playerID, condition)
     return realValue ~= nil and contains(condition.value, realValue)
 end
 
+--[[
+{ type="has_item", has_item = "item_something" }
+--]]
+function Evaluators.has_item(nodeID, playerID, condition)
+    local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+    if not hero then
+        error("No hero")
+    end
+    return hero:HasItemInInventory(condition.has_item)
+end
+
 function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)
     local match = true
     local interesting = false
@@ -85,10 +96,10 @@ function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)
         end
         ::continue::
     end
-    -- if interesting then
-    --     DebugPrint("----Fail dialogue condition: " .. failedIndex .. "----")
-    --     PrintTable(conditions, 2)
-    -- end
+    if interesting then
+        DebugPrint("----Fail dialogue condition: " .. failedIndex .. "----")
+        PrintTable(conditions, 2)
+    end
     return match
 end
 

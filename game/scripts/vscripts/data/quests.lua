@@ -173,13 +173,16 @@ return {
             {
                 description = "Найди способ починить шар для предсказаний",
                 objectives = {
-                    { type = "talk", npc = "npc_tinker" }
+                    { type = "get_item", item = "item_crystal_ball" }
                 }
             },
             {
-                description = "Почини шар и верни предвестнику",
+                description = "Верни шар предвестнику",
                 objectives = {
                     { type = "talk", npc = "npc_predvestnik" }
+                },
+                postStepActions = {
+                    { type = "setup_gorilla_scene" }
                 }
             },
             {
@@ -220,14 +223,15 @@ return {
             },
         }
     },
-q_main_quest_act_3 = {
-        giver = "npc_guide",
+    q_main_quest_act_3 = {
+        giver = "npc_leader",
         name = "Великий ключ",
         steps = {
             {
-                description = "Добудь Философский камень и 3 части ключа: Первый - На вершине Снежной горы, Второй - В пасти чудовища Искажённого леса, Третий - У старушки-медиума",
+                description =
+                "Добудь Философский камень и 3 части ключа: Первый - На вершине Снежной горы, Второй - В пасти чудовища Искажённого леса, Третий - У старушки-медиума",
                 objectives = {
-                    { type = "take", trigger = "trigger_derek_key"}
+                    { type = "take", trigger = "trigger_derek_key" }
                 }
             },
             {
@@ -255,6 +259,43 @@ q_main_quest_act_3 = {
                 description = "Отдай lean крипу",
                 objectives = {
                     { type = "talk", npc = "npc_dream" }
+                }
+            },
+        }
+    },
+    q_main_quest_act_4 = {
+        giver = "npc_leader",
+        name = "Судьба",
+        steps = {
+            {
+                description =
+                "Иди в Пустошь и покончи с Дереком",
+                objectives = {
+                    { type = "talk", npc = "npc_derek" }
+                }
+            },
+            {
+                description = "Осмотри пещеру около входа в Королевство (Carcer Immortalium)",
+                objectives = {
+                    { type = "talk", npc = "npc_george" }
+                }
+            },
+            {
+                description = "Одолей Короля",
+                objectives = {
+                    { type = "talk", npc = "npc_george" }
+                }
+            },
+            {
+                description = "Соверши сделку с Богом",
+                objectives = {
+                    { type = "talk", npc = "npc_tormentor" }
+                }
+            },
+            {
+                description = "Вернись в реальный мир",
+                objectives = {
+                    { type = "trigger", trigger = "trigger_portal_escape" }
                 }
             },
         }

@@ -1,5 +1,6 @@
 <root>
   <Panel>
+    <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/intro.xml" />
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/dialogue_hud.xml" />
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/quest_log.xml" />
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/selection.xml" />

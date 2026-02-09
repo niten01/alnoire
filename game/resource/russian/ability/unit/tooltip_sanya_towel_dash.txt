@@ -1,0 +1,5 @@
+"DOTA_Tooltip_ability_sanya_towel_dash"		            "Towel Dash"
+"DOTA_Tooltip_ability_sanya_towel_dash_Lore"		    "Ни капли воды, потреченной за время тестирования, не было пожертвовано африканским детям."
+"DOTA_Tooltip_Ability_sanya_towel_dash_SummaryDescription" ""
+"DOTA_Tooltip_ability_sanya_towel_dash_Description"		"Используя реактивный режим душа, совершает мыльный рывок в указанном направлении."
+"DOTA_Tooltip_ability_sanya_towel_dash_Note0"		    "Не может быть использован через уровни ландшафта."

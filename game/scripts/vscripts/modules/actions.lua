@@ -49,7 +49,20 @@ function Handlers.open_door(playerID, action)
 end
 
 function Handlers.give_item(playerID, action)
-  DebugPrint("[???] TODO give_item")
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  if not hero then
+    error("No hero")
+  end
+  if not action.itemName then
+    error("No itemName")
+  end
+  local item = hero:AddItemByName(action.itemName)
+  if not item then
+    local playerHndl = PlayerResource:GetPlayer(playerID)
+    item = CreateItem(action.itemName, playerHndl, hero)
+    CreateItemOnPositionSync(hero:GetAbsOrigin(), item)
+  end
+  item:SetCombineLocked(true)
 end
 
 function Handlers.kill(playerID, action)
@@ -144,6 +157,47 @@ end
 
 function Handlers.music_stop(playerID, action)
   Music:StopCustomMusic(playerID)
+end
+
+function Handlers.take_item(playerID, action)
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  if not hero then
+    error("No hero")
+  end
+
+  local item = hero:FindItemInInventory(action.itemName)
+  if not item then
+    error("Player has no item to remove: " .. action.itemName)
+  end
+  hero:RemoveItem(item)
+end
+
+function Handlers.setup_gorilla_scene(playerID, action)
+  for _, ent in ipairs(Entities:FindAllByName("npc_rape_victim")) do
+    ent:RemoveSelf()
+  end
+
+  SpawnManager:SpawnNPC("spawner_gorilla")
+  SpawnManager:SpawnNPC("spawner_rape_victim_2")
+  Timers:CreateTimer(0.5, function()
+    for _, ent in ipairs(Entities:FindAllByName("npc_rape_victim")) do
+      AddAnimationTranslate(ent, "torment")
+    end
+
+    for _, ent in ipairs(Entities:FindAllByName("npc_gorilla")) do
+      AddAnimationTranslate(ent, "torment")
+    end
+  end)
+
+  for _, ent in ipairs(Entities:FindAllByName("trigger_gorilla")) do
+    ent:Enable()
+  end
+end
+
+function Handlers.gorilla_fight_start(playerID, action)
+    for _, ent in ipairs(Entities:FindAllByName("npc_gorilla")) do
+      RemoveAnimationTranslate(ent)
+    end
 end
 
 function Actions:Handle(playerID, action)

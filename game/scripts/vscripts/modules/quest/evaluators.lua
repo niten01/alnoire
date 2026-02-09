@@ -22,7 +22,7 @@ return {
     BeatEvaluator =
         function(objective, event)
             local victimName = event.unit:GetUnitName()
-            return objective.npc == victimName 
+            return objective.npc == victimName
         end,
 
     TriggerEvaluator =
@@ -31,4 +31,9 @@ return {
             return event.triggerName == objective.trigger
         end,
 
+    GetItemEvaluator =
+        function(objective, event)
+            if not objective.item or not event.itemName then return false end
+            return event.itemName == objective.item
+        end,
 }

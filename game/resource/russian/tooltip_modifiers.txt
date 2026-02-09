@@ -1,0 +1,2 @@
+"DOTA_Tooltip_modifier_custom_sprint"		"Спринт"
+"DOTA_Tooltip_modifier_custom_sprint_Description"		"Бежит, не зная усталости"

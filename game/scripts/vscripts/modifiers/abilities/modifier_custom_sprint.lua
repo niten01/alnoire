@@ -52,7 +52,7 @@ function modifier_custom_sprint:DisableSprint()
 
     if ability and ability:GetToggleState() then
         ability:ToggleAbility()
-        ability:StartCooldown(5.0)
+        ability:StartCooldown(self:GetAbility():GetSpecialValueFor('sprint_damage_cooldown'))
         caster:RemoveModifierByName("modifier_custom_sprint")
         local pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_manaburn.vpcf",
             PATTACH_ABSORIGIN_FOLLOW, caster)
