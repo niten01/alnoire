@@ -64,13 +64,20 @@ function modifier_summon_distance_check:OnDeath(params)
     local owner = unit:GetOwner()
     local caster = ability:GetCaster()
 
-    if params.unit == self:GetParent() then
+    if params.unit == unit then
         if ability then
             ability:SetFrozenCooldown(false)
             if caster then
                 caster:SwapAbilities("sanya_towel_summon_return", "sanya_towel_summon", false, true)
                 caster.summon = nil
             end
+        end
+    elseif params.unit == owner then
+        unit:ForceKill(false)
+        if caster then
+            ability:SetFrozenCooldown(false)
+            caster:SwapAbilities("sanya_towel_summon_return", "sanya_towel_summon", false, true)
+            caster.summon = nil
         end
     end
 end

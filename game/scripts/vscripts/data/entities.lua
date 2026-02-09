@@ -168,13 +168,36 @@ return {
             rangeAggro = 600,
             state = "idle",
             isStory = false,
+            thinker = "default"
         },
 
         pack_forest_act1_lizards = {
             foes = {
                 {
-                    unitName = "npc_jungle_creep_melee",
-                    spawnPoint = "spawn_point_lizard_1",
+                    unitName="npc_jungle_venomancer",
+                    spawnPoint =  "spawn_point_lizzards_venomancer",
+                },
+                {
+                    unitName="npc_jungle_creep_melee",
+                    spawnPoint =  "spawn_point_lizzards_creep_melee",
+                },
+                {
+                    unitName="npc_jungle_creep_range",
+                    spawnPoint =  "spawn_point_lizzards_creep_range",
+                }
+            }
+        },
+
+        pack_forest_act1_axe = {
+            thinker = "axe",
+            foes = {
+                {
+                    unitName="npc_jungle_axe",
+                    spawnPoint =  "spawn_point_axe_axe",
+                },
+                {
+                    unitName="npc_jungle_sisipisi",
+                    spawnPoint =  "spawn_point_axe_sisipisi",
                 },
             }
         }

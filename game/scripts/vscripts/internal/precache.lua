@@ -50,7 +50,11 @@ return {
 
         -- jungle creeps
         "npc_jungle_creep_melee",
-        "npc_dota_skeletion_king",
+        "npc_jungle_creep_range",
+        "npc_jungle_sisipisi",
+        "npc_dota_hero_venomancer",
+        "npc_dota_hero_axe",
+
     },
     models = {
     },
@@ -115,6 +119,9 @@ return {
 
         -- summon overpower
         "particles/econ/items/shredder/timber_controlled_burn/timber_controlled_burn_timberchain_ember.vpcf",
+
+        -- jungle
+        "particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf",
 
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",
