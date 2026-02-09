@@ -630,7 +630,7 @@
 						_class = "AnimFile"
 						name = "tadpole_death"
 						is_default_idle_anim = false
-						activity_name = ""
+						activity_name = "ACT_DOTA_DIE"
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2

@@ -2,6 +2,23 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 
 {
+  music.classroom_1.explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/classroom_ambient.vsnd"
+    ]
+    volume = "2.500000"
+  }
+  music.classroom_1.combat = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/silence.vsnd"
+    ]
+    volume = "2.500000"
+  }
+  // ---------------------------------------------------------
   music.silence.explore = {
     type = "dota_update_battle_music"
     vsnd_files =

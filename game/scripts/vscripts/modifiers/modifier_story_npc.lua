@@ -33,11 +33,14 @@ function modifier_story_npc:CheckState()
 		[MODIFIER_STATE_INVULNERABLE] = true,
 		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
 		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR_FOR_ENEMIES]   = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR_FOR_OTHER_PLAYERS]   = true,
 	}
 end
 
 function modifier_story_npc:OnCreated()
 	local parent = self:GetParent()
+	parent:Stop()
 	parent.bAcquisitionRange = parent:GetAcquisitionRange()
 	parent:SetIdleAcquire(false)
 	parent:SetAcquisitionRange(0)

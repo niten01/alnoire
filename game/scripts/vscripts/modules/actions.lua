@@ -1,6 +1,40 @@
 Actions = Actions or {}
 
 function Actions:Init()
+  GameEvents:OnActChange(bind(self.OnActChange, self))
+end
+
+local function fastRemoveNPC(name)
+  for _, ent in ipairs(Entities:FindAllByName(name)) do
+    ent:RemoveSelf()
+  end
+end
+
+local function prettyRemoveNPC(name)
+  for _, ent in ipairs(Entities:FindAllByName(name)) do
+    DebugPrint("[ALNOIRE] Remove " .. ent:GetName())
+    local pfx = ParticleManager:CreateParticle(
+      "particles/action_remove_smoke.vpcf",
+      PATTACH_ABSORIGIN_FOLLOW, ent)
+    ParticleManager:SetParticleControl(pfx, 1, ent:GetAbsOrigin())
+    ParticleManager:SetParticleControl(pfx, 3, ent:GetAbsOrigin())
+    Timers:CreateTimer(0.01, function()
+      ent:RemoveSelf()
+    end)
+    Timers:CreateTimer(3, function()
+      ParticleManager:ReleaseParticleIndex(pfx)
+    end)
+  end
+end
+
+local function enableTrigger(name, enable)
+  for _, ent in ipairs(Entities:FindAllByName(name)) do
+    if enable then
+      ent:Enable()
+    else
+      ent:Disable()
+    end
+  end
 end
 
 local Handlers = {}
@@ -25,6 +59,7 @@ function Handlers.fight_start(playerID, action)
   for _, ent in ipairs(Entities:FindAllByName(action.npc)) do
     DebugPrint("[ALNOIRE] Starting fight with " .. ent:GetName())
     ent:RemoveModifierByName("modifier_story_npc")
+    ent:SetTeam(DOTA_TEAM_BADGUYS)
     if action.target == "talk" and not ent:HasModifier("modifier_story_lethal_damage_tracking") then
       ent:AddNewModifier(ent, nil, "modifier_story_lethal_damage_tracking", { duration = -1 })
     end
@@ -79,20 +114,7 @@ function Handlers.remove(playerID, action)
   if not action.npc then
     error("No npc for remove action")
   end
-  for _, ent in ipairs(Entities:FindAllByName(action.npc)) do
-    DebugPrint("[ALNOIRE] Remove " .. ent:GetName())
-    local pfx = ParticleManager:CreateParticle(
-      "particles/action_remove_smoke.vpcf",
-      PATTACH_ABSORIGIN_FOLLOW, ent)
-    ParticleManager:SetParticleControl(pfx, 1, ent:GetAbsOrigin())
-    ParticleManager:SetParticleControl(pfx, 3, ent:GetAbsOrigin())
-    Timers:CreateTimer(0.01, function()
-      ent:RemoveSelf()
-    end)
-    Timers:CreateTimer(3, function()
-      ParticleManager:ReleaseParticleIndex(pfx)
-    end)
-  end
+  prettyRemoveNPC(action.npc)
 end
 
 function Handlers.set_var(playerID, action)
@@ -173,10 +195,7 @@ function Handlers.take_item(playerID, action)
 end
 
 function Handlers.setup_gorilla_scene(playerID, action)
-  for _, ent in ipairs(Entities:FindAllByName("npc_rape_victim")) do
-    ent:RemoveSelf()
-  end
-
+  fastRemoveNPC("npc_rape_victim")
   SpawnManager:SpawnNPC("spawner_gorilla")
   SpawnManager:SpawnNPC("spawner_rape_victim_2")
   Timers:CreateTimer(0.5, function()
@@ -189,18 +208,38 @@ function Handlers.setup_gorilla_scene(playerID, action)
     end
   end)
 
-  for _, ent in ipairs(Entities:FindAllByName("trigger_gorilla")) do
-    ent:Enable()
-  end
+
+  enableTrigger("trigger_gorilla", true)
+  fastRemoveNPC("npc_guide")
+  SpawnManager:SpawnNPC("spawner_guide_forest_entrance")
+  enableTrigger("trigger_after_gorilla", true)
 end
 
 function Handlers.gorilla_fight_start(playerID, action)
-    for _, ent in ipairs(Entities:FindAllByName("npc_gorilla")) do
-      RemoveAnimationTranslate(ent)
-    end
+  for _, ent in ipairs(Entities:FindAllByName("npc_gorilla")) do
+    RemoveAnimationTranslate(ent)
+  end
+end
+
+function Handlers.win(playerID, action)
+  GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+end
+
+function Actions:SetupAct2()
+  fastRemoveNPC("npc_mystery")
+  SpawnManager:SpawnNPC("spawner_mystery_2")
+  SpawnManager:SpawnNPC("spawner_storyteller")
+end
+
+function Actions:OnActChange(event)
+  local act = event.act
+  if act == 2 then
+    self:SetupAct2()
+  end
 end
 
 function Actions:Handle(playerID, action)
+  PrintTable(action, 2)
   local handler = Handlers[action.type]
   if not handler then
     error("Unhandled action type: " .. action.type)

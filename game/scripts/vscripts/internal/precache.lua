@@ -23,7 +23,6 @@ return {
         "npc_monkey_king",
         "npc_blue_prince",
         "npc_blue_prince",
-        "npc_gorilla",
         "npc_ogre_magi",
         "npc_ogre_bruiser",
         "npc_brewmaster",
@@ -34,7 +33,10 @@ return {
         "npc_alchemist",
         "npc_scientist",
         "npc_red",
+        "npc_gorilla",
 
+        "npc_storyteller",
+        "npc_leader",
         "npc_xavier",
 
         "towel_summon",
@@ -74,6 +76,9 @@ return {
         "particles/creatures/aghanim/portal_summon_b0a.vpcf",
         "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf",
         "particles/sanya_sprint_trail.vpcf",
+
+        -- traps
+        "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf",
 
         -- towel summon return
         "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_embers.vpcf",

@@ -80,7 +80,7 @@ end
 -- An NPC has spawned somewhere in game. This includes heroes
 local OnNPCSpawnedEvent = CreateGameEvent 'OnNPCSpawned'
 function barebones:OnNPCSpawned(keys)
-	DebugPrint("[BAREBONES] A unit spawned: entindex=" .. keys.entindex)
+	-- DebugPrint("[BAREBONES] A unit spawned: entindex=" .. keys.entindex)
 
 	local npc
 	if keys.entindex then

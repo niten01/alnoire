@@ -18,6 +18,11 @@ function Evaluators.trigger() return false end
 function Evaluators.beat() return false end
 
 --[[
+{ type = "kill", beat = "npc_abc" }
+--]]
+function Evaluators.kill() return false end
+
+--[[
 { type = "quest", questID = "q_test_quest_01", status = QuestStatus.ACTIVE, step = 1 (optional) }
 --]]
 function Evaluators.quest(nodeID, playerID, condition)

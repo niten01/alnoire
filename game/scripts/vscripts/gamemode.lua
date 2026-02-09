@@ -242,6 +242,7 @@ function barebones:InitModules()
     require('modules.quest.quest'),
     require('modules.dialogue.dialogue'),
     require('modules.minigames.clashgame'),
+    require('modules.intro_movie'),
   }
 
   for _, sys in ipairs(self.modules) do sys:Init() end

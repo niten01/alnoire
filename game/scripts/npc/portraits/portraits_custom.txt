@@ -304,4 +304,32 @@
 		"PortraitVignetteItem"		"0"
 		"PortraitAllowAnimatedPortrait"		"1"
 	}
+  "models/storyteller/storyteller.vmdl"
+  {
+    "PortraitLightPosition"                               "-29.29 70.60 201.41"
+    "PortraitLightAngles"                                 "153.85 101.02 0.00"
+    "PortraitLightFOV"                                    "90"
+    "PortraitLightDistance"                               "119"
+    "PortraitLightColor"                                  "254 227 161"
+    "PortraitShadowColor"                                 "69 97 111"
+    "PortraitShadowScale"                                 "4.950000"
+    "PortraitAmbientColor"                                "89 111 123"
+    "PortraitAmbientScale"                                "5.000000"
+    "PortraitSpecularColor"                               "251 74 84"
+    "PortraitBackgroundTexture"                           "materials/vgui/hud/heroportraits/portraitbackground_light.vmat"
+    "PortraitParticle"                                    "particles/units/heroes/hero_chen/portrait_chen.vpcf"
+    "PortraitLightScale"                                  "3.050000"
+    "PortraitGroundShadowScale"                           "1.500000"
+    "PortraitAmbientDirection"                            "1.000 -67.060 -59.550"
+    "PortraitAnimationActivity"                           "ACT_DOTA_IDLE"
+    "cameras"
+    {
+      "default"
+      {
+        "PortraitPosition"                                "209.75 -167.41 28.83"
+        "PortraitAngles"                                  "350.88 142.39 0.00"
+        "PortraitFOV"                                     "8"
+      }
+    }
+  }
 }

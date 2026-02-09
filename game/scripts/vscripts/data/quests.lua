@@ -189,6 +189,9 @@ return {
                 description = "Сообщи о предсказании гиду",
                 objectives = {
                     { type = "talk", npc = "npc_guide" }
+                },
+                postStepActions = {
+                    { type = "change_act", act = 2 }
                 }
             },
         }

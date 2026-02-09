@@ -9,6 +9,7 @@
 		"SoundSet"					"Hero_MonkeyKing"
 		"Level"						"12"
 		"ModelScale" 				"1.0"
+		"ConsideredHero" 			"1"
 
 		// Abilities
 		//----------------------------------------------------------------

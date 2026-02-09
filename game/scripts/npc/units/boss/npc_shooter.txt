@@ -9,6 +9,7 @@
 		"vscripts" 					"ai/ai_shooter.lua"
 		"Level"						"1"
 		"ModelScale" 				"1"
+		"ConsideredHero" 			"1"
 
 		// Abilities
 		//----------------------------------------------------------------

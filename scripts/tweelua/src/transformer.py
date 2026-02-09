@@ -9,6 +9,7 @@ ENTRY_TYPE_FIELD_PATTERNS = {
     "ent_var": ["ent_var", "value"],
     "visit": ["visited"],
     "beat": ["beat"],
+    "kill": ["kill"],
     "trigger": ["trigger"],
     "interact": ["interact"],
     "has_item": ["has_item"],

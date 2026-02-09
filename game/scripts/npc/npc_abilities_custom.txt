@@ -203,4 +203,11 @@
 			"speed"						"1200 1200"
 		}
 	}
+
+	"trap_fire_arrow"
+	{
+		"BaseClass"             "ability_lua"
+		"ScriptFile"            "abilities/trap_fire_arrow.lua"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
 }

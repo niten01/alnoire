@@ -32,15 +32,15 @@ return {
             npc = "npc_xavier",
             modifiers = { "modifier_story_npc" },
         },
-        spawner_shooter = {
+        spawner_shooter_1 = {
             npc = "npc_shooter",
             deferred = true,
+            modifiers = { "modifier_story_npc" },
         },
         spawner_gorilla = {
             npc = "npc_gorilla",
             modifiers = { "modifier_story_npc" },
             deferred = true,
-            team = DOTA_TEAM_BADGUYS,
         },
         spawner_blue_prince = {
             npc = "npc_blue_prince",
@@ -57,20 +57,22 @@ return {
         spawner_gate_troll_left = {
             npc = "npc_gate_troll_biruk",
             modifiers = { "modifier_story_npc" },
-            team = DOTA_TEAM_BADGUYS,
         },
         spawner_gate_troll_right = {
             npc = "npc_gate_troll_diruk",
             modifiers = { "modifier_story_npc" },
-            team = DOTA_TEAM_BADGUYS,
         },
         spawner_gate_troll_center = {
             npc = "npc_gate_troll_uruk",
             modifiers = { "modifier_story_npc" },
-            team = DOTA_TEAM_BADGUYS,
         },
         spawner_guide_city_entrance = {
             npc = "npc_guide",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_guide_forest_entrance = {
+            npc = "npc_guide",
+            deferred = true,
             modifiers = { "modifier_story_npc" },
         },
         spawner_creep_rogach = {
@@ -88,7 +90,6 @@ return {
         spawner_monkey_king = {
             npc = "npc_monkey_king",
             modifiers = { "modifier_story_npc" },
-            team = DOTA_TEAM_BADGUYS,
         },
         spawner_brewmaster = {
             npc = "npc_brewmaster",
@@ -101,7 +102,6 @@ return {
         spawner_ogre_bruiser = {
             npc = "npc_ogre_bruiser",
             modifiers = { "modifier_story_npc" },
-            team = DOTA_TEAM_BADGUYS,
         },
         spawner_rape_victim = {
             npc = "npc_rape_victim",
@@ -120,6 +120,10 @@ return {
             npc = "npc_mystery",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_mystery_2 = {
+            npc = "npc_mystery",
+            modifiers = { "modifier_story_npc" },
+        },
         spawner_templar_assasin = {
             npc = "npc_templar_assasin",
             modifiers = { "modifier_story_npc" },
@@ -135,14 +139,26 @@ return {
         spawner_red = {
             npc = "npc_red",
             modifiers = { "modifier_story_npc" },
-            team = DOTA_TEAM_BADGUYS,
             deferred = true,
         },
         spawner_concert_guard = {
             npc = "npc_concert_guard",
             modifiers = { "modifier_story_npc" },
         },
-
+        spawner_arrow_trap = {
+            npc = "npc_arrow_trap",
+            team = DOTA_TEAM_BADGUYS,
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_storyteller = {
+            npc = "npc_storyteller",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+        },
+        spawner_leader = {
+            npc = "npc_leader",
+            modifiers = { "modifier_story_npc" },
+        },
     },
 
     pack = {
@@ -157,8 +173,8 @@ return {
         pack_forest_act1_lizards = {
             foes = {
                 {
-                    unitName="npc_jungle_creep_melee",
-                    spawnPoint =  "spawn_point_lizard_1",
+                    unitName = "npc_jungle_creep_melee",
+                    spawnPoint = "spawn_point_lizard_1",
                 },
             }
         }
@@ -168,6 +184,7 @@ return {
     --- Zones
     ------------------------------------------------------------
     zone = {
+        zone_classroom_1 = { musicSet = "classroom_1", respawnPoint = "respawn_prologue" },
         zone_prologue = { musicSet = "silence", respawnPoint = "respawn_prologue" },
         zone_forest_1 = { musicSet = "forest", respawnPoint = "respawn_forest_1" },
         zone_city = { musicSet = "city", respawnPoint = "respawn_city", },
@@ -184,6 +201,7 @@ return {
             first_met_in_act = true,
             beaten = false,
             can_give_quest = false,
+            isStory = true,
         },
     },
 
@@ -218,7 +236,11 @@ return {
             },
         },
         door_village = {
-            clipEntity = "clip_door_village"
+            clipEntity = "clip_door_village",
+        },
+        door_village_leader = {
+            clipEntity = "clip_door_village_leader",
+            openAnimation = "cf_palace_door_open",
         },
         door_concert = {
             clipEntity = "clip_door_concert"

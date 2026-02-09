@@ -1,6 +1,8 @@
 #base "units/boss/npc_gorilla.txt"
 #base "units/boss/npc_shooter.txt"
 
+#base "units/trap/npc_arrow_trap.txt"
+
 #base "units/misc/clash_royale.txt"
 #base "units/jungle/act1_jungle.txt"
 
@@ -27,6 +29,8 @@
 #base "units/story/npc_red.txt"
 #base "units/story/npc_concert_guard.txt"
 
+#base "units/story/npc_storyteller.txt"
+#base "units/story/npc_leader.txt"
 #base "units/story/npc_xavier.txt"
 
 #base "units/towel_summon.txt"

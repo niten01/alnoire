@@ -9,7 +9,7 @@
 		"SoundSet"					"n_creep_Ranged"
 		"Level"						"2"
 		"ModelScale" 				"1.0"
-		"IsNeutralUnitType"			"1"
+		"ConsideredHero" 			"1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -77,6 +77,7 @@
 		"Level"						"3"
 		"ModelScale" 				"0.8"
 		"IsNeutralUnitType"			"1"
+		"ConsideredHero" 			"1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -144,6 +145,7 @@
 		"Level"						"2"
 		"ModelScale" 				"1.5"
 		"IsNeutralUnitType"			"1"
+		"ConsideredHero" 			"1"
 
 		// Abilities
 		//----------------------------------------------------------------

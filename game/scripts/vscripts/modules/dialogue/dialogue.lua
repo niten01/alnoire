@@ -46,6 +46,7 @@ function Dialogue:Init()
 
   GameEvents:OnCancelLethalDamage(bind(self.OnCancelLethalDamage, self))
   GameEvents:OnActChange(bind(self.OnActChange, self))
+  GameEvents:OnEntityKilled(bind(self.OnEntityKilled, self))
 
   ChatCommand:LinkCommand("-dialogueclose", function(event)
     self:HideDialogue(event.playerID)
@@ -84,7 +85,7 @@ function Dialogue:TrySetFirstMet(startNodeID)
     data = EntityData:AddEntity("npc", node.npc, {})
   end
 
-  data.first_met_cur_act = false;
+  data.first_met_in_act = false;
   data.first_met_global = false;
 end
 
@@ -233,6 +234,17 @@ function Dialogue:OnCancelLethalDamage(params)
       end
     end
   end
+end
+
+function Dialogue:OnEntityKilled(event)
+  local victim = event.killed_unit
+  local killer = event.killer_unit
+  if not victim.IsBaseNPC or not victim:IsBaseNPC() or not killer:IsHero() then return end
+  local playerID = killer:GetPlayerOwnerID()
+  local entrypoint = self:GetDialogueNodeBestMatchEntrypoint(playerID,
+    { { type = "kill", kill = victim:GetName() } })
+  if not entrypoint then return end
+  self:StartDialogueForPlayer(playerID, entrypoint.nodeID)
 end
 
 function Dialogue:OnQueryUpdate(_, args)
