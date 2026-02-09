@@ -48,7 +48,9 @@ return {
 
         -- jungle creeps
         "npc_jungle_creep_melee",
-        "npc_dota_skeletion_king",
+        "npc_jungle_creep_range",
+        "npc_dota_hero_venomancer",
+        "npc_dota_hero_axe",
     },
     models = {
     },
