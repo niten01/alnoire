@@ -152,6 +152,7 @@ return {
             rangeAggro = 600,
             state = "idle",
             isStory = false,
+            thinker = "default"
         },
 
         pack_forest_act1_lizards = {
@@ -172,15 +173,16 @@ return {
         },
 
         pack_forest_act1_axe = {
+            thinker = "axe",
             foes = {
                 {
                     unitName="npc_jungle_axe",
                     spawnPoint =  "spawn_point_axe_axe",
                 },
-                -- {
-                --     unitName="npc_jungle_axe_creeps",
-                --     spawnPoint =  "spawn_point_axe_creep",
-                -- },
+                {
+                    unitName="npc_jungle_sisipisi",
+                    spawnPoint =  "spawn_point_axe_sisipisi",
+                },
             }
         }
     },

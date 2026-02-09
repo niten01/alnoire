@@ -51,32 +51,31 @@ function PackManager:SpawnPack(packTargetName)
         end
     end
 
-    self:DrawDebugCircle(packTargetEntity, data.rangeAggro)
-    self:DrawDebugCircle(packTargetEntity, data.rangeRetreat)
-    self:DrawDebugCircle(packTargetEntity, data.rangeFastTickRate)
-    packTargetEntity:SetContextThink("PackTargetDefaultThink", function()
-        return self:PackTargetDefaultThink(packTargetEntity)
-    end, IDLE_THINK_INTERVAL)
+    DrawDebugCircle(packTargetEntity, data.rangeAggro)
+    DrawDebugCircle(packTargetEntity, data.rangeRetreat)
+    DrawDebugCircle(packTargetEntity, data.rangeFastTickRate)
+
+    if data.thinker == "default" then
+        packTargetEntity:SetContextThink("PackTargetDefaultThink", function()
+        return self:PackTargetDefaultThink(packTargetEntity) 
+        end, IDLE_THINK_INTERVAL)
+
+    elseif data.thinker == "axe" then
+        packTargetEntity:SetContextThink("PackTargetDenyThink", function()
+        return self:PackTargetDenyThink(packTargetEntity) 
+        end, IDLE_THINK_INTERVAL)
+    end
+
+    
 end
 
 function PackManager:PackTargetDefaultThink(packTargetEntity)
     if not packTargetEntity or packTargetEntity:IsNull() then return nil end
 
-    local hasAliveUnits = false
-    if packTargetEntity.units then
-        for i = #packTargetEntity.units, 1, -1 do
-            local u = packTargetEntity.units[i]
-            if u and not u:IsNull() and u:IsAlive() then
-                hasAliveUnits = true
-                break 
-            end
-        end
-    end
-
-    if not hasAliveUnits then
+    if not AnyAlive(packTargetEntity) then
         print("[ALNOIRE] All units in pack " .. packTargetEntity:GetName() .. " are dead. Disabling beacon thinker.")
         packTargetEntity.state = "dead"
-        return nil 
+        return nil
     end
 
 
@@ -126,11 +125,79 @@ function PackManager:PackTargetDefaultThink(packTargetEntity)
 end
 
 
-function PackManager:DrawDebugCircle(entity, radius)
-    local pfx = ParticleManager:CreateParticle("particles/sanya_debug_radius_ring.vpcf", PATTACH_WORLDORIGIN, nil)
-    ParticleManager:SetParticleControl(pfx, 0, entity:GetAbsOrigin()) 
-    ParticleManager:SetParticleControl(pfx, 2, Vector(radius, 0, 0)) 
-    return pfx
+function PackManager:PackTargetDenyThink(packTargetEntity)
+    if not packTargetEntity or packTargetEntity:IsNull() then return nil end
+
+    if not AnyAlive(packTargetEntity) then
+        print("[ALNOIRE] All units in pack " .. packTargetEntity:GetName() .. " are dead. Disabling beacon thinker.")
+        packTargetEntity.state = "dead"
+        return nil
+    end
+
+    local data = packTargetEntity.data
+    local pos = packTargetEntity:GetAbsOrigin()
+
+    local enemies = FindUnitsInRadius(
+        DOTA_TEAM_BADGUYS, pos, nil, data.rangeFastTickRate, 
+        DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+        DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
+        FIND_CLOSEST, false
+    )
+
+
+    if #enemies == 0 then
+        packTargetEntity.state = "idle"
+        packTargetEntity.target = nil
+        packTargetEntity.denyTarget = nil 
+        packTargetEntity.somebodyNear = false
+        print('--- beacon idle')
+        return IDLE_THINK_INTERVAL
+    end
+
+    local allies = FindUnitsInRadius(
+        DOTA_TEAM_BADGUYS, pos, nil, data.rangeFastTickRate,
+        DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
+        DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false
+    )
+
+    if #allies == 1 then
+        packTargetEntity.axe_alone = true
+        print('----axe alone')
+    end
+    
+    local bestDeny = nil
+    local lowestHP = 50.1
+    for _, ally in pairs(allies) do
+        if ally:IsAlive() and ally:GetHealthPercent() < lowestHP then
+            lowestHP = ally:GetHealthPercent()
+            bestDeny = ally
+        end
+    end
+    packTargetEntity.denyTarget = bestDeny 
+
+    packTargetEntity.somebodyNear = true
+    local target = enemies[1]
+    local dist = (target:GetAbsOrigin() - pos):Length2D()
+
+    if (packTargetEntity.state == 'idle' or packTargetEntity.state == 'retreat' or packTargetEntity.state == 'prepare') and dist <= data.rangeAggro then
+        packTargetEntity.state = 'aggro'
+        packTargetEntity.target = target
+
+    elseif packTargetEntity.state == 'aggro' then
+        if dist > data.rangeRetreat or not target:IsAlive() then
+            packTargetEntity.state = 'retreat'
+            packTargetEntity.target = nil
+        else
+            packTargetEntity.target = target
+        end
+
+    elseif packTargetEntity.state == 'retreat' and dist > data.rangeAggro then
+        packTargetEntity.state = 'idle'
+    end
+
+    print('--- beacon battle')
+    return BATTLE_THINK_INTERVAL
 end
+
 
 return PackManager
