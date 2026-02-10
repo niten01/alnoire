@@ -223,6 +223,9 @@ return {
                 objectives = {
                     { type = "talk", npc = "npc_leader" }
                 }
+                postStepActions = {
+                    { type = "change_act", act = 3 }
+                }
             },
         }
     },
@@ -241,6 +244,9 @@ return {
                 description = "Вернись к Главе",
                 objectives = {
                     { type = "talk", npc = "npc_leader" }
+                }
+                postStepActions = {
+                    { type = "change_act", act = 4 }
                 }
             },
         }
