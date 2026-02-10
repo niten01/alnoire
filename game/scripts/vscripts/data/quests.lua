@@ -124,7 +124,26 @@ return {
         acts = { 3 },
         steps = {
             {
-                description = "Найди секретный проход и заложи бомбу",
+                description = "Найди секретный проход",
+                objectives = {
+                    { type = "come", trigger = "trigger_island_fifth" }
+                }
+            },
+            {
+                description = "Изучи территорию",
+                objectives = {
+                    { type = "come", trigger = "trigger_demons" }
+                }
+            },
+            {
+                description = "Одолей демонов",
+                objectives = {
+                    { type = "kill", npc = "npc_shadow_demon_island" }
+                    { type = "kill", npc = "npc_shadow_fiend_island" }
+                }
+            },
+            {
+                description = "Заложи бомбу",
                 objectives = {
                     { type = "come", trigger = "trigger_bomb" }
                 }
@@ -150,6 +169,9 @@ return {
                     { type = "talk", npc = "npc_green" },
                     { type = "talk", npc = "npc_blue" },
 
+                }
+                postStepActions = {
+                    { type = "spawn", npc = "npc_brewmaster" }
                 }
             },
             {
@@ -223,6 +245,9 @@ return {
                 objectives = {
                     { type = "talk", npc = "npc_leader" }
                 }
+                postStepActions = {
+                    { type = "change_act", act = 3 }
+                }
             },
         }
     },
@@ -241,6 +266,9 @@ return {
                 description = "Вернись к Главе",
                 objectives = {
                     { type = "talk", npc = "npc_leader" }
+                }
+                postStepActions = {
+                    { type = "change_act", act = 4 }
                 }
             },
         }
