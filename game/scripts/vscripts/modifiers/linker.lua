@@ -1,3 +1,5 @@
+require('modifiers.events')
+
 LinkLuaModifier('modifier_anim_translate_thinker', 'modifiers/modifier_anim_translate_thinker', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_story_npc', 'modifiers/modifier_story_npc', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_story_lethal_damage_tracking', 'modifiers/modifier_story_lethal_damage_tracking', LUA_MODIFIER_MOTION_NONE)

@@ -141,6 +141,11 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
+        spawner_green = {
+            npc = "npc_green",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+        },
         spawner_concert_guard = {
             npc = "npc_concert_guard",
             modifiers = { "modifier_story_npc" },
@@ -159,6 +164,19 @@ return {
             npc = "npc_leader",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_perekup = {
+            npc = "npc_perekup",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_hermit = {
+            npc = "npc_hermit",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_dream = {
+            npc = "npc_dream",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+        },
     },
 
     pack = {
@@ -174,16 +192,16 @@ return {
         pack_forest_act1_lizards = {
             foes = {
                 {
-                    unitName="npc_jungle_venomancer",
-                    spawnPoint =  "spawn_point_lizzards_venomancer",
+                    unitName = "npc_jungle_venomancer",
+                    spawnPoint = "spawn_point_lizzards_venomancer",
                 },
                 {
-                    unitName="npc_jungle_creep_melee",
-                    spawnPoint =  "spawn_point_lizzards_creep_melee",
+                    unitName = "npc_jungle_creep_melee",
+                    spawnPoint = "spawn_point_lizzards_creep_melee",
                 },
                 {
-                    unitName="npc_jungle_creep_range",
-                    spawnPoint =  "spawn_point_lizzards_creep_range",
+                    unitName = "npc_jungle_creep_range",
+                    spawnPoint = "spawn_point_lizzards_creep_range",
                 }
             }
         },
@@ -192,12 +210,12 @@ return {
             thinker = "axe",
             foes = {
                 {
-                    unitName="npc_jungle_axe",
-                    spawnPoint =  "spawn_point_axe_axe",
+                    unitName = "npc_jungle_axe",
+                    spawnPoint = "spawn_point_axe_axe",
                 },
                 {
-                    unitName="npc_jungle_sisipisi",
-                    spawnPoint =  "spawn_point_axe_sisipisi",
+                    unitName = "npc_jungle_sisipisi",
+                    spawnPoint = "spawn_point_axe_sisipisi",
                 },
             }
         }
@@ -225,7 +243,14 @@ return {
             beaten = false,
             can_give_quest = false,
             isStory = true,
+            drop = {}
         },
+        npc_perekup = {
+            drop = {
+                "item_concert_ticket",
+                "item_concert_ticket",
+            }
+        }
     },
 
     ------------------------------------------------------------
@@ -260,13 +285,13 @@ return {
         },
         door_forest_2 = {
             clipEntity = "clip_door_forest_2",
-            openAnimation = "open",
-            requresPassword = "stringus collapsus",
+            openAnimation = "cf_palace_door_open",
+            requiresPassword = "stringus collapsus",
         },
         door_forest_3 = {
             clipEntity = "clip_door_forest_3",
             openAnimation = "open",
-            requresPassword = "logarithmus solvus",
+            requiresPassword = "logarithmus solvus",
         },
         door_village = {
             clipEntity = "clip_door_village",

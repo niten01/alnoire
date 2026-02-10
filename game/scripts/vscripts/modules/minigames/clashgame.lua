@@ -1,9 +1,5 @@
 require('internal.gameevents')
 
-OnTowerKilled = CreateGameEvent('OnTowerKilled')
-OnKingTowerKilled = CreateGameEvent('OnKingTowerKilled')
-OnClashGameEnd = CreateGameEvent('OnClashGameEnd')
-
 ClashGame = ClashGame or {}
 
 ClashGame.isActive = false
@@ -48,16 +44,6 @@ function ClashGame:Init()
             self:SpawnMegaCreep()
             return 30.0
         end, 20.0)
-    end)
-
-    GameEvents:OnTowerKilled(function(event)
-        if not self.isActive then return end
-        self:OnTowerKilled(event)
-    end)
-
-    GameEvents:OnKingTowerKilled(function(event)
-        if not self.isActive then return end
-        self:OnKingTowerKilled(event)
     end)
 end
 
@@ -177,10 +163,7 @@ function ClashGame:SpawnMegaCreep()
     end
 end
 
-function ClashGame:OnTowerKilled(event)
-    if not event then print("[ALNOIRE] NIL event ('OnTowerKilled')") end
-    local towerName = event.tower
-    if not towerName then end
+function ClashGame:OnTowerKilled(towerName)
     if string.find(towerName, 'bad') then
         self.king_tower_bad:RemoveModifierByName('modifier_invulnerable')
     else
@@ -188,9 +171,7 @@ function ClashGame:OnTowerKilled(event)
     end
 end
 
-function ClashGame:OnKingTowerKilled(event)
-    if not event then print("[ALNOIRE] NIL event ('OnClashEnd')") end
-    local team = event.teamNumber
+function ClashGame:OnKingTowerKilled(team)
     local is_winner = false
     if team == DOTA_TEAM_BADGUYS then
         print("[ALNOIRE] АЛЕКСАНДР ПОБЕДИЛ! клеш рояль")
@@ -199,9 +180,6 @@ function ClashGame:OnKingTowerKilled(event)
         print("[ALNOIRE] АЛЕКСАНДР ПРОЕБАЛ! клеш рояль")
         is_winner = false
     end
-    OnClashGameEnd({
-        is_winner = is_winner
-    })
     self.isActive = false
     self:KillAll()
 end

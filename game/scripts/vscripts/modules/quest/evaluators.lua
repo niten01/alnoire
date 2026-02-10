@@ -36,4 +36,10 @@ return {
             if not objective.item or not event.itemName then return false end
             return event.itemName == objective.item
         end,
+
+    RemoveEvaluator =
+        function(objective, event)
+            if not objective.npc or not event.npc then return false end
+            return event.npc == objective.npc
+        end,
 }

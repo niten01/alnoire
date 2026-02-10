@@ -1,7 +1,7 @@
-
 modifier_king_tower = class({})
 
 function modifier_king_tower:IsHidden() return true end
+
 function modifier_king_tower:IsPurgable() return false end
 
 function modifier_king_tower:DeclareFunctions()
@@ -17,8 +17,7 @@ function modifier_king_tower:OnDeath(event)
     local teamNum = self:GetParent():GetTeamNumber()
     print("[ALNOIRE] KING TOWER DIED:", self:GetParent():GetUnitName())
 
-    OnKingTowerKilled({
-        tower = self:GetParent():GetUnitName(),
-        teamNumber = teamNum
-    })
+    ClashGame:OnKingTowerKilled(
+        teamNum
+    )
 end

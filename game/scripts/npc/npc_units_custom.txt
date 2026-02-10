@@ -33,7 +33,7 @@
 #base "units/story/npc_storyteller.txt"
 #base "units/story/npc_leader.txt"
 #base "units/story/npc_dream.txt"
-#base "units/story/npc_seller.txt"
+#base "units/story/npc_perekup.txt"
 #base "units/story/npc_xavier.txt"
 #base "units/story/npc_genius.txt"
 #base "units/story/npc_green.txt"

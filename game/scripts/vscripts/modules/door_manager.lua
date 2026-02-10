@@ -39,8 +39,10 @@ function DoorManager:Init()
         end
       end
 
+      DebugPrint("[ALNOIRE] Checking door pass attempt: " .. input .. ", against: " .. door.requiresPassword)
       if door.requiresPassword == input and minDist <= DOOR_PASSWORD_RADIUS then
         self:Open(doorName)
+        break
       end
       ::continue::
     end
