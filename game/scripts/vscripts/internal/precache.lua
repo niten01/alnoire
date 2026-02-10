@@ -41,7 +41,7 @@ return {
         "npc_dream",
         "npc_hermit",
         "npc_green",
-        "npc_seller",
+        "npc_perekup",
 
         "towel_summon",
 
