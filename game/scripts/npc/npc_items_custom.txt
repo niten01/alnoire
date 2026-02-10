@@ -190,4 +190,15 @@
         "ItemPurchasable"               "1"
         "ItemQuality"                   "rare"
     }
+    "item_concert_ticket"
+    {
+        "ID"                    "3008"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "concert_ticket"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+    }
 }

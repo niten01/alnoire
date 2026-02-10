@@ -20,10 +20,9 @@ Quest = Quest or {}
 --
 --]]
 local QuestStatus = require('modules.quest.quest_status')
-local PlayerQuestState = require('modules.quest.quest_state')
+local QuestsState = require('modules.quest.quests_state')
 local Evaluators = require('modules.quest.evaluators')
 
-OnCancelLethalDamageEvent = CreateGameEvent 'OnCancelLethalDamage'
 local OnQuestCompleteEvent = CreateGameEvent 'OnQuestComplete'
 
 function Quest:Init()
@@ -32,40 +31,32 @@ function Quest:Init()
 
   DebugPrint("[ALNOIRE] Loaded " .. TableLength(self.quests) .. " quests")
 
-  self.playerQuestStates = {}
-  for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-    self.playerQuestStates[playerID] = PlayerQuestState(self.quests)
-  end
+  self.questStates = QuestsState(self.quests)
 
   ChatCommand:LinkDevCommand("-queststatus", function(event, args)
     self:ShowQuestStatus(event, args)
   end)
 
   ChatCommand:LinkDevCommand("-questreset", function(event)
-    self.playerQuestStates = {}
-    for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-      self.playerQuestStates[playerID] = PlayerQuestState(self.quests)
-    end
-    self:UpdateQuestlog(event.playerID)
+    self.questStates = QuestsState(self.quests)
+    self:UpdateQuestlog()
   end)
 
   ChatCommand:LinkDevCommand("-questcompleteparticles", function(event)
-    self:EmitQuestCompleteParticles(event.playerID)
+    self:EmitQuestCompleteParticles()
   end)
 
   ChatCommand:LinkDevCommand("-setqueststatus", function(event, args)
-    local playerID = event.playerID
-    local questState = self.playerQuestStates[playerID]:GetOneQuestState(args[1])
+    local questState = self.questStates:GetOneQuestState(args[1])
     questState.status = args[2]
-    self:UpdateQuestlog(playerID)
+    self:UpdateQuestlog()
   end)
 
   ChatCommand:LinkDevCommand("-setqueststep", function(event, args)
-    local playerID = event.playerID
-    local questState = self.playerQuestStates[playerID]:GetOneQuestState(args[1])
-    questState.status = QuestStatus.ACTIVE 
+    local questState = self.questStates:GetOneQuestState(args[1])
+    questState.status = QuestStatus.ACTIVE
     questState.stepIdx = tonumber(args[2])
-    self:UpdateQuestlog(playerID)
+    self:UpdateQuestlog()
   end)
 
   GameEvents:OnActChange(bind(self.OnActChange, self))
@@ -76,28 +67,24 @@ end
 function Quest:StartQuestForAll(questID)
   DebugPrint("[ALNOIRE] Start quest: " .. questID)
   self:TryRemoveExclamation(questID)
-  for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-    if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetPlayer(playerID) then
-      local quest = self.quests[questID]
-      if not quest then
-        print("??? Invalid quest ID")
-        return
-      end
-
-      self.playerQuestStates[playerID]:StartQuest(questID)
-      self:UpdateQuestlog(playerID)
-    end
+  local quest = self.quests[questID]
+  if not quest then
+    print("??? Invalid quest ID")
+    return
   end
+
+  self.questStates:StartQuest(questID)
+  self:UpdateQuestlog()
 end
 
-function Quest:RejectQuest(playerID, questID)
+function Quest:RejectQuest(questID)
   DebugPrint("[ALNOIRE] Reject quest: " .. questID)
-  self.playerQuestStates[playerID]:RejectQuest(questID)
+  self.questStates:RejectQuest(questID)
 end
 
-function Quest:UpdateQuestlog(playerID)
+function Quest:UpdateQuestlog()
   local questlog = {}
-  local activeStates = self.playerQuestStates[playerID]:GetActiveQuestStates()
+  local activeStates = self.questStates:GetActiveQuestStates()
   for questID, state in pairs(activeStates) do
     local quest = self.quests[questID]
     local activeStep = quest.steps[state.stepIdx]
@@ -107,18 +94,17 @@ function Quest:UpdateQuestlog(playerID)
       questID = questID,
     })
   end
-  CustomNetTables:SetTableValue("questlog", tostring(playerID), questlog)
+  for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+    if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:IsValidPlayer(playerID) then
+      CustomNetTables:SetTableValue("questlog", tostring(playerID), questlog)
+    end
+  end
 end
 
-function Quest:CanStartQuest(playerID, quest)
-  if not quest.requiresFlag then return true end
-  return self.playerQuestStates[playerID]:GetFlag(quest.requiresFlag)
-end
-
-function Quest:CompleteObjective(playerID, questID, objective)
+function Quest:CompleteObjective(questID, objective)
   DebugPrint("[ALNOIRE] Objective complete: ")
   PrintTable(objective, 2)
-  local state = self:GetQuestState(playerID, questID)
+  local state = self:GetQuestState(questID)
   if not state then return end
   local quest = self.quests[questID]
   local activeStep = quest.steps[state.stepIdx]
@@ -134,20 +120,20 @@ function Quest:CompleteObjective(playerID, questID, objective)
     end
   end
   if not hasIncomplete then
-    self:AdvanceStep(playerID, questID)
+    self:AdvanceStep(questID)
   end
 
-  self:UpdateQuestlog(playerID)
+  self:UpdateQuestlog()
 end
 
-function Quest:AdvanceStep(playerID, questID)
-  local state = self:GetQuestState(playerID, questID)
+function Quest:AdvanceStep(questID)
+  local state = self:GetQuestState(questID)
   local quest = self.quests[questID]
   local activeStep = quest.steps[state.stepIdx]
   DebugPrint("[ALNOIRE] Advance quest step: " .. questID .. " " .. state.stepIdx .. " -> " .. state.stepIdx + 1)
 
   for _, action in ipairs(activeStep.postStepActions or {}) do
-    Actions:Handle(playerID, action)
+    StoryDriver:HandleAction(nil, action)
   end
   state.stepIdx = state.stepIdx + 1
   if state.stepIdx > TableLength(quest.steps) then
@@ -160,46 +146,47 @@ function Quest:CompleteQuestForAll(questID)
   local quest = self.quests[questID]
 
   DebugPrint("[ALNOIRE] Quest complete: " .. questID)
+  local state = self:GetQuestState(questID)
+  if not state then return end
+  state.status = QuestStatus.COMPLETED
+  self:UpdateQuestlog()
+  OnQuestCompleteEvent({
+    quest = quest
+  })
+  if not quest.noFireworks then
+    self:EmitQuestCompleteParticles()
+  end
+  Notifications:TopToAll({ text = "Quest complete \"" .. quest.name .. "\"", duration = 5 })
+end
+
+function Quest:EmitQuestCompleteParticles()
+  if not IsServer() then return end
   for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-    local state = self:GetQuestState(playerID, questID)
-    if not state then goto continue end
-    state.status = QuestStatus.COMPLETED
-    self:UpdateQuestlog(playerID)
-    OnQuestCompleteEvent({
-      quest = quest
-    })
-    if not quest.noFireworks then
-      self:EmitQuestCompleteParticles(playerID)
+    if not PlayerResource:IsValidPlayerID(playerID) or not PlayerResource:IsValidPlayer(playerID) then
+      goto continue
     end
-    Notifications:Top(playerID, { text = "Quest complete \"" .. quest.name .. "\"", duration = 5 })
+    local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+    if not hero then return end
+
+    local pfx = ParticleManager:CreateParticle(
+      "particles/sanya_quest_complete_firework.vpcf",
+      PATTACH_ABSORIGIN_FOLLOW, hero)
+    ParticleManager:SetParticleControl(pfx, 0, hero:GetAbsOrigin())
+
+    Timers:CreateTimer(10, function()
+      ParticleManager:ReleaseParticleIndex(pfx)
+    end)
     ::continue::
   end
 end
 
-function Quest:EmitQuestCompleteParticles(playerID)
-  if not IsServer() then return end
-  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
-  if not hero then return end
-
-  local pfx = ParticleManager:CreateParticle(
-    "particles/sanya_quest_complete_firework.vpcf",
-    PATTACH_ABSORIGIN_FOLLOW, hero)
-  ParticleManager:SetParticleControl(pfx, 0, hero:GetAbsOrigin())
-
-  Timers:CreateTimer(10, function()
-    ParticleManager:ReleaseParticleIndex(pfx)
-  end)
+function Quest:GetQuestState(questID)
+  return self.questStates:GetOneQuestState(questID)
 end
 
-function Quest:GetQuestState(playerID, questID)
-  return self.playerQuestStates[playerID]:GetOneQuestState(questID)
-end
-
-function Quest:GetActiveObjectivesByType(playerID, type)
-  if not self.playerQuestStates[playerID] then return {} end
-
+function Quest:GetActiveObjectivesByType(type)
   local objectives = {}
-  for questID, state in pairs(self.playerQuestStates[playerID]:GetActiveQuestStates()) do
+  for questID, state in pairs(self.questStates:GetActiveQuestStates()) do
     local activeStep = self.quests[questID].steps[state.stepIdx]
     for _, obj in ipairs(activeStep.objectives) do
       if obj.type == type then
@@ -228,6 +215,15 @@ function Quest:OnActChange(event)
     self:TryRemoveExclamation(questID)
 
     if isNowActive then
+      -- try cancel quest that doesn't meet requirements
+      for _, req in ipairs(quest.requires or {}) do
+        local state = self.questStates:GetOneQuestState(req)
+        if state.status ~= QuestStatus.COMPLETED then
+          self.questStates:CancelQuest(questID)
+          goto skip_quest
+        end
+      end
+
       if quest.showExclamation then
         if not quest.giver then
           error("Quest " .. questID .. " has no giver")
@@ -244,18 +240,17 @@ function Quest:OnActChange(event)
         end
       end
     else
-      for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-        local state = self.playerQuestStates[playerID]
-        if state:GetOneQuestState(questID).status ~= QuestStatus.COMPLETED then
-          state:CancelQuest(questID)
-        end
+      local states = self.questStates
+      if states:GetOneQuestState(questID).status ~= QuestStatus.COMPLETED then
+        states:CancelQuest(questID)
       end
     end
+    ::skip_quest::
   end
 end
 
 function Quest:ShowQuestStatus(event, args)
-  local state = self.playerQuestStates[event.playerID]
+  local state = self.questStates
   local function printOneQuest(questID)
     DebugPrint("---------------- " .. questID .. " ----------------")
     PrintTable(state.questStates[questID])
@@ -276,8 +271,8 @@ function Quest:ShowQuestStatus(event, args)
 end
 
 function Quest:RegisterEvaluators()
-  local function ForEachActiveObjectiveOfType(playerID, type, fn)
-    local objectives = self:GetActiveObjectivesByType(playerID, type)
+  local function ForEachActiveObjectiveOfType(type, fn)
+    local objectives = self:GetActiveObjectivesByType(type)
     for questID, questObjectives in pairs(objectives) do
       for _, obj in ipairs(questObjectives) do
         fn(questID, obj)
@@ -286,50 +281,50 @@ function Quest:RegisterEvaluators()
   end
 
   GameEvents:OnDialogueEnd(function(event)
-    local playerID = event.playerID
-
-    ForEachActiveObjectiveOfType(playerID, "talk", function(questID, objective)
+    ForEachActiveObjectiveOfType("talk", function(questID, objective)
       if Evaluators.TalkEvaluator(objective, event) then
-        self:CompleteObjective(playerID, questID, objective)
+        self:CompleteObjective(questID, objective)
       end
     end)
   end)
 
   GameEvents:OnEntityKilled(function(event)
-    for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-      ForEachActiveObjectiveOfType(playerID, "kill", function(questID, objective)
-        if Evaluators.KillEvaluator(objective, event) then
-          self:CompleteObjective(playerID, questID, objective)
-        end
-      end)
-    end
+    ForEachActiveObjectiveOfType("kill", function(questID, objective)
+      if Evaluators.KillEvaluator(objective, event) then
+        self:CompleteObjective(questID, objective)
+      end
+    end)
   end
   )
 
   GameEvents:OnCancelLethalDamage(function(event)
-    for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-      ForEachActiveObjectiveOfType(playerID, "beat", function(questID, objective)
-        if Evaluators.BeatEvaluator(objective, event) then
-          self:CompleteObjective(playerID, questID, objective)
-        end
-      end)
-    end
+    ForEachActiveObjectiveOfType("beat", function(questID, objective)
+      if Evaluators.BeatEvaluator(objective, event) then
+        self:CompleteObjective(questID, objective)
+      end
+    end)
   end)
 
   GameEvents:OnQuestTrigger(function(event)
-    local playerID = event.playerID
-    ForEachActiveObjectiveOfType(playerID, "come", function(questID, objective)
+    ForEachActiveObjectiveOfType("come", function(questID, objective)
       if Evaluators.TriggerEvaluator(objective, event) then
-        self:CompleteObjective(playerID, questID, objective)
+        self:CompleteObjective(questID, objective)
       end
     end)
   end)
 
   GameEvents:OnItemObtain(function(event)
-    local playerID = event.playerID
-    ForEachActiveObjectiveOfType(playerID, "get_item", function(questID, objective)
+    ForEachActiveObjectiveOfType("get_item", function(questID, objective)
       if Evaluators.GetItemEvaluator(objective, event) then
-        self:CompleteObjective(playerID, questID, objective)
+        self:CompleteObjective(questID, objective)
+      end
+    end)
+  end)
+
+  GameEvents:OnNPCRemove(function(event)
+    ForEachActiveObjectiveOfType("remove", function(questID, objective)
+      if Evaluators.RemoveEvaluator(objective, event) then
+        self:CompleteObjective(questID, objective)
       end
     end)
   end)

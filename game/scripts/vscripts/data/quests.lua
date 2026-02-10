@@ -61,7 +61,7 @@ return {
             {
                 description = "Добудь билеты у перекупа",
                 objectives = {
-                    { type = "take", trigger = "trigger_ticket" }
+                    { type = "get_item", item = "item_concert_ticket" }
                 }
             },
             {
@@ -138,8 +138,8 @@ return {
             {
                 description = "Одолей демонов",
                 objectives = {
-                    { type = "kill", npc = "npc_shadow_demon_island" }
-                    { type = "kill", npc = "npc_shadow_fiend_island" }
+                    { type = "kill", npc = "npc_shadow_demon_island" },
+                    { type = "kill", npc = "npc_shadow_fiend_island" },
                 }
             },
             {
@@ -165,11 +165,11 @@ return {
             {
                 description = "Найди Красного, Зелёного и Синего",
                 objectives = {
-                    { type = "talk", npc = "npc_red" },
-                    { type = "talk", npc = "npc_green" },
-                    { type = "talk", npc = "npc_blue" },
+                    { type = "remove", npc = "npc_red" },
+                    { type = "remove", npc = "npc_green" },
+                    { type = "remove", npc = "npc_blue" },
 
-                }
+                },
                 postStepActions = {
                     { type = "spawn", npc = "npc_brewmaster" }
                 }
@@ -244,7 +244,7 @@ return {
                 description = "Расскажи о ключе Главе",
                 objectives = {
                     { type = "talk", npc = "npc_leader" }
-                }
+                },
                 postStepActions = {
                     { type = "change_act", act = 3 }
                 }
@@ -266,7 +266,7 @@ return {
                 description = "Вернись к Главе",
                 objectives = {
                     { type = "talk", npc = "npc_leader" }
-                }
+                },
                 postStepActions = {
                     { type = "change_act", act = 4 }
                 }
@@ -277,6 +277,7 @@ return {
         giver = "npc_dream",
         name = "High top",
         acts = { 3 },
+        requires = { "q_concert" },
         showExclamation = true,
         noFireworks = true,
         steps = {

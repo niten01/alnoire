@@ -238,7 +238,7 @@ function barebones:InitModules()
     require('modules.door_manager'),
     require('modules.dresser'),
     require('modules.music'),
-    require('modules.actions'),
+    require('modules.story_driver'),
     require('modules.quest.quest'),
     require('modules.dialogue.dialogue'),
     require('modules.minigames.clashgame'),

@@ -38,6 +38,10 @@ return {
         "npc_storyteller",
         "npc_leader",
         "npc_xavier",
+        "npc_dream",
+        "npc_hermit",
+        "npc_green",
+        "npc_seller",
 
         "towel_summon",
 

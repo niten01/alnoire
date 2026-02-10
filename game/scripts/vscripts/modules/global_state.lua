@@ -6,6 +6,9 @@ function GlobalState:Init()
         knows_village_password = false,
         has_village_pass = false,
         has_ski = false,
+        green_test_tried = false,
+        perekup_good_ending = false,
+        has_concert_pass = false,
     }
 
 

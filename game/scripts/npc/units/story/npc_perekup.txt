@@ -1,0 +1,10 @@
+"DOTAUnits"
+{
+	"npc_perekup" 
+	{
+		"Model"						"models/heroes/kunkka/kunkka.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.2"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}

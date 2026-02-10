@@ -18,6 +18,11 @@ function Evaluators.trigger() return false end
 function Evaluators.beat() return false end
 
 --[[
+{ type = "green_test", green_strong_hit = true }
+--]]
+function Evaluators.green_test() return false end
+
+--[[
 { type = "kill", beat = "npc_abc" }
 --]]
 function Evaluators.kill() return false end
@@ -27,7 +32,7 @@ function Evaluators.kill() return false end
 --]]
 function Evaluators.quest(nodeID, playerID, condition)
     local questID = condition.questID
-    local questState = Quest:GetQuestState(playerID, questID)
+    local questState = Quest:GetQuestState(questID)
     if not questState then return false end
     if questState.status == condition.status and
         (not condition.step or contains(condition.step, questState.stepIdx)) then
@@ -63,6 +68,17 @@ function Evaluators.has_item(nodeID, playerID, condition)
         error("No hero")
     end
     return hero:HasItemInInventory(condition.has_item)
+end
+
+--[[
+{ type="no_item", no_item = "item_something" }
+--]]
+function Evaluators.no_item(nodeID, playerID, condition)
+    local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+    if not hero then
+        error("No hero")
+    end
+    return not hero:HasItemInInventory(condition.no_item)
 end
 
 function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)

@@ -13,6 +13,8 @@ ENTRY_TYPE_FIELD_PATTERNS = {
     "trigger": ["trigger"],
     "interact": ["interact"],
     "has_item": ["has_item"],
+    "no_item": ["no_item"],
+    "green_test": ["green_strong_hit"],
 }
 
 
@@ -163,7 +165,10 @@ class StoryTransformer:
             node_id = self._gen_node_id(name)
             self.story.rename(name, node_id)
 
-        for passage in self.story.passages.values():
+        for passage in list(self.story.passages.values()):
+            for link in passage.links:
+                if link.target not in self.story.passages:
+                    self.story.add(Passage(link.target, []))
             self._add_entries_from(passage)
             self._set_speaker(passage)
             self._set_npc(passage)

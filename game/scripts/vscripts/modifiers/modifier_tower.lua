@@ -14,7 +14,5 @@ function modifier_tower:OnDeath(event)
     if event.unit ~= self:GetParent() then return end
 
 
-    OnTowerKilled({
-        tower = self:GetParent():GetUnitName()
-    })
+    ClashGame:OnTowerKilled(self:GetParent():GetUnitName())
 end

@@ -45,6 +45,7 @@ function Dialogue:Init()
   CustomGameEventManager:RegisterListener("query_update", bind(self.OnQueryUpdate, self))
 
   GameEvents:OnCancelLethalDamage(bind(self.OnCancelLethalDamage, self))
+  GameEvents:OnGreenTestHit(bind(self.OnGreenTestHit, self))
   GameEvents:OnActChange(bind(self.OnActChange, self))
   GameEvents:OnEntityKilled(bind(self.OnEntityKilled, self))
 
@@ -185,7 +186,7 @@ function Dialogue:OnDialogueChoice(_, args)
   })
   if choice.actions then
     for _, action in ipairs(choice.actions) do
-      Actions:Handle(playerID, action)
+      StoryDriver:HandleAction(playerID, action)
     end
   end
 
@@ -234,6 +235,14 @@ function Dialogue:OnCancelLethalDamage(params)
       end
     end
   end
+end
+
+function Dialogue:OnGreenTestHit(event)
+  local playerID = event.playerID
+  local entrypoint = self:GetDialogueNodeBestMatchEntrypoint(playerID,
+    { { type = "green_test", green_strong_hit = event.win } })
+  if not entrypoint then return end
+  self:StartDialogueForPlayer(playerID, entrypoint.nodeID)
 end
 
 function Dialogue:OnEntityKilled(event)
