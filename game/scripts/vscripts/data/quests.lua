@@ -170,14 +170,14 @@ return {
                     { type = "talk", npc = "npc_blue" },
 
                 }
+                postStepActions = {
+                    { type = "spawn", npc = "npc_brewmaster" }
+                }
             },
             {
                 description = "Вернись к панде",
                 objectives = {
                     { type = "talk", npc = "npc_brewmaster" }
-                }
-                postStepActions = {
-                    { type = "spawn", npc = "npc_brewmaster" }
                 }
             },
         }
