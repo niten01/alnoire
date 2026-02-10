@@ -149,6 +149,7 @@ function Handlers.teleport(playerID, action)
   DebugPrint("[ALNOIRE] Teleported to " .. action.target)
 end
 
+-- { attacker = "npc_abc" }
 function Handlers.die(playerID, action)
   local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
   if not hero then
@@ -223,6 +224,17 @@ end
 
 function Handlers.win(playerID, action)
   GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+end
+
+function Handlers.green_test_start(playerID, action)
+  for _, ent in ipairs(Entities:FindAllByName("npc_green")) do
+    DebugPrint("[ALNOIRE] Starting green strength test")
+    ent:RemoveModifierByName("modifier_story_npc")
+    ent:SetTeam(DOTA_TEAM_BADGUYS)
+    if action.target == "talk" and not ent:HasModifier("modifier_story_weak_hit_tracking") then
+      ent:AddNewModifier(ent, nil, "modifier_story_weak_hit_tracking", { duration = -1 })
+    end
+  end
 end
 
 function Actions:SetupAct2()

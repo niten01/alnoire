@@ -258,6 +258,16 @@ return {
                 "button_forest_1_shortcut"
             },
         },
+        door_forest_2 = {
+            clipEntity = "clip_door_forest_2",
+            openAnimation = "open",
+            requresPassword = "stringus collapsus",
+        },
+        door_forest_3 = {
+            clipEntity = "clip_door_forest_3",
+            openAnimation = "open",
+            requresPassword = "logarithmus solvus",
+        },
         door_village = {
             clipEntity = "clip_door_village",
         },

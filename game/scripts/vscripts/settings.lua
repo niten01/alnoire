@@ -1,6 +1,7 @@
 USE_DEBUG = true                  -- Should we print statements on almost every function/event call? For debugging.
 
 INTERACTION_RADIUS = 500
+DOOR_PASSWORD_RADIUS = 500
 
 MUSIC_COMBAT_DECAY = 5
 MUSIC_THINK_INTERVAL = 0.1

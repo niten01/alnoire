@@ -1,5 +1,8 @@
 #base "units/boss/npc_gorilla.txt"
 #base "units/boss/npc_shooter.txt"
+#base "units/boss/npc_monkey_king.txt"
+#base "units/boss/npc_ogre_bruiser.txt"
+#base "units/boss/npc_killer.txt"
 
 #base "units/trap/npc_arrow_trap.txt"
 
@@ -16,10 +19,8 @@
 #base "units/story/npc_mustache.txt"
 #base "units/story/npc_blue_prince.txt"
 #base "units/story/npc_creep_bob.txt"
-#base "units/story/npc_monkey_king.txt"
 #base "units/story/npc_brewmaster.txt"
 #base "units/story/npc_ogre_magi.txt"
-#base "units/story/npc_ogre_bruiser.txt"
 #base "units/story/npc_rape_victim.txt"
 #base "units/story/npc_predvestnik.txt"
 #base "units/story/npc_mystery.txt"
@@ -31,7 +32,12 @@
 
 #base "units/story/npc_storyteller.txt"
 #base "units/story/npc_leader.txt"
+#base "units/story/npc_dream.txt"
+#base "units/story/npc_seller.txt"
 #base "units/story/npc_xavier.txt"
+#base "units/story/npc_genius.txt"
+#base "units/story/npc_green.txt"
+#base "units/story/npc_hermit.txt"
 
 #base "units/towel_summon.txt"
 

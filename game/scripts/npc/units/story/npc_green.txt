@@ -1,0 +1,11 @@
+"DOTAUnits"
+{
+	"npc_green" 
+	{
+		"Model"						"models/heroes/brewmaster/brewmaster_firespirit.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.3"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"ConsideredHero" 			"1"
+	}
+}

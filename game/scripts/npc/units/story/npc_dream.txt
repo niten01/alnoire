@@ -1,0 +1,10 @@
+"DOTAUnits"
+{
+	"npc_dream" 
+	{
+		"Model"						"models/heroes/invoker/invoker.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}
