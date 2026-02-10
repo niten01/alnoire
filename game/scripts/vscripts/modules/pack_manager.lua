@@ -162,19 +162,21 @@ function PackManager:PackTargetDenyThink(packTargetEntity)
 
     if #allies == 1 then
         packTargetEntity.axe_alone = true
-        print('----axe alone')
+        packTargetEntity.denyTarget = nil
+        --print('----axe alone')
     end
     
     local bestDeny = nil
     local lowestHP = 50.1
     for _, ally in pairs(allies) do
-        if ally:IsAlive() and ally:GetHealthPercent() < lowestHP then
+        if ally and not ally:IsNull() and ally:IsAlive() and ally:GetHealthPercent() < lowestHP then
             lowestHP = ally:GetHealthPercent()
             bestDeny = ally
         end
     end
-    packTargetEntity.denyTarget = bestDeny 
-
+    if not packTargetEntity.axe_alone then
+        packTargetEntity.denyTarget = bestDeny 
+    end
     packTargetEntity.somebodyNear = true
     local target = enemies[1]
     local dist = (target:GetAbsOrigin() - pos):Length2D()
@@ -195,7 +197,7 @@ function PackManager:PackTargetDenyThink(packTargetEntity)
         packTargetEntity.state = 'idle'
     end
 
-    print('--- beacon battle')
+    --print('--- beacon battle')
     return BATTLE_THINK_INTERVAL
 end
 

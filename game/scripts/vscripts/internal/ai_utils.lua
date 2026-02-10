@@ -9,7 +9,7 @@ function MoveHome(unit)
     end
 end
 
-function CastAbilities(unit, target)
+function CastAllAbilities(unit, target)
     if unit:IsSilenced() or unit:IsStunned() or unit:IsChanneling() then return false end
     local abilityCount = unit:GetAbilityCount()
     for i = 0, abilityCount - 1 do
@@ -31,6 +31,19 @@ function CastAbilities(unit, target)
         end
     end
     return false
+end
+
+function SetAllAbilitiesCooldown(unit, fcooldown)
+    for i = 0, unit:GetAbilityCount() - 1 do
+        local ab = unit:GetAbilityByIndex(i)
+        if ab and not ab:IsPassive() then
+            local cd = ab:GetCooldownTimeRemaining()
+            if cd > fcooldown then 
+                ab:StartCooldown(fcooldown) 
+                unit.lastCastTime = GameRules:GetGameTime() 
+            end
+        end
+    end
 end
 
 function AnyAlive(packTargetEntity)

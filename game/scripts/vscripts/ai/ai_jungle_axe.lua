@@ -32,30 +32,26 @@ function DenyAxeThink()
         end
     end
 
-    
-    if beaconState == 'aggro' and target and target:IsAlive() then
-        local currentTime = GameRules:GetGameTime()
-        unit.aggroStartTime = unit.aggroStartTime or currentTime
-        
-        if (currentTime - (unit.lastCastTime or 0)) >= 2 then
-            if CastAbilities(unit, target) then
-                unit.lastCastTime = currentTime
-                return BATTLE_THINK_INTERVAL
-            end
-        end
-    end
-
     if unit:GetCurrentActiveAbility() or unit:IsChanneling() then
         return BATTLE_THINK_INTERVAL
     end
 
+    if beaconState == 'aggro' and target and target:IsAlive() then
+        local currentTime = GameRules:GetGameTime()
+        unit.aggroStartTime = unit.aggroStartTime or currentTime
+        if CastAllAbilities(unit, target) then
+            return BATTLE_THINK_INTERVAL
+        end
+    end
+
 
     if beaconState == 'aggro' and denyTarget and denyTarget:IsAlive() then
+        
         ExecuteOrderFromTable({
             UnitIndex = unit:entindex(),
             OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
             TargetIndex = denyTarget:entindex(),
-            Queue = false,
+            Queue = true,
         })
         return BATTLE_THINK_INTERVAL
     end

@@ -54,6 +54,8 @@ return {
         "npc_jungle_sisipisi",
         "npc_dota_hero_venomancer",
         "npc_dota_hero_axe",
+        "npc_dota_hero_razor",
+        "npc_dota_hero_antimage",
 
     },
     models = {

@@ -8,11 +8,26 @@ function modifier_axe_sustain:IsPurgable()
     return false
 end
 
+function modifier_axe_sustain:GetActivityTranslationModifiers()
+    return ACT_DOTA_TELEPORT
+end
+
 function modifier_axe_sustain:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
+        MODIFIER_PROPERTY_DISABLE_AUTOATTACK,
+        MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
     }
+end
+
+function modifier_axe_sustain:GetDisableAutoAttack()
+    return 1
+end
+
+function modifier_axe_sustain:GetModifierBaseAttack_BonusDamage()
+    return 200
 end
 
 function modifier_axe_sustain:GetTexture()
@@ -34,6 +49,6 @@ end
 function modifier_axe_sustain:OnAttackLanded(args)
     if not IsServer() then return end
     if args.target == self:GetParent() then
-        EmitSoundOn('Hero_Bristleback.ViscousGoo.Cast', self:GetParent())
+        EmitSoundOn('Ability.PlasmaFieldImpact', self:GetParent())
     end
 end

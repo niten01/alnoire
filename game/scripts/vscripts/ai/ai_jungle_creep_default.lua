@@ -46,7 +46,7 @@ function DefaultCreepThink()
             unit.lastCastTime = unit.lastCastTime or 0
 
             if timeInAggro >= 5 and (currentTime - unit.lastCastTime) >= 2 then
-                if CastAbilities(unit, target) then
+                if CastAllAbilities(unit, target)  then
                     unit.lastCastTime = currentTime
                     return BATTLE_THINK_INTERVAL 
                 end
