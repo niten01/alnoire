@@ -1,0 +1,11 @@
+Model Information:
+* title:	Metal Round Glasses
+* source:	https://sketchfab.com/3d-models/metal-round-glasses-f9128bd394214539af2ac80e4204bd35
+* author:	rikokenz (https://sketchfab.com/rikokenz)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Metal Round Glasses" (https://sketchfab.com/3d-models/metal-round-glasses-f9128bd394214539af2ac80e4204bd35) by rikokenz (https://sketchfab.com/rikokenz) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
