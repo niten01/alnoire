@@ -275,6 +275,8 @@ function StoryDriver:SetupAct2()
 
   SpawnManager:SpawnNPC("spawner_dream")
   triggerSetEnabled("trigger_black_creep", true)
+
+  SpawnManager:SpawnNPC("spawner_genius")
 end
 
 function StoryDriver:OnActChange(event)
