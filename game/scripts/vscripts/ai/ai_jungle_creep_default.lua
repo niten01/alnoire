@@ -1,10 +1,7 @@
 if not IsServer() then return end
 
-function Spawn(kv)
+function Spawn()
     if not thisEntity or not IsServer() then return end
-    if not thisEntity.spawnPos or thisEntity.spawnPos:IsNull() then
-        thisEntity.spawnPos = thisEntity:GetAbsOrigin()
-    end
     thisEntity:SetIdleAcquire(false)
     thisEntity:SetAcquisitionRange(0)
     thisEntity:Stop()
@@ -13,12 +10,14 @@ end
 
 function DefaultCreepThink()
     local unit = thisEntity
-    local beacon = unit.packTarget
     if not unit:IsAlive() then return nil end
-    if not beacon or beacon:IsNull() then return IDLE_THINK_INTERVAL end
+    local beaconData = unit.packTargetData
+    if not beaconData then return BATTLE_THINK_INTERVAL end
 
-    local beaconState = beacon.state
-    local target = beacon.target
+    local beaconState = beaconData.state
+    if not beaconState or beaconState == 'off' or beaconState == 'dead' then return IDLE_THINK_INTERVAL end
+
+    local target = beaconData.target
     local currentPos = unit:GetAbsOrigin()
     local distToSpawn = (currentPos - unit.spawnPos):Length2D()
 
@@ -33,7 +32,7 @@ function DefaultCreepThink()
 
     -- деремся сука
     if beaconState == 'aggro' and target and target:IsAlive() then
-        if distToSpawn > beacon.data.rangeRetreat then 
+        if distToSpawn > beaconData.rangeRetreat then 
             MoveHome(unit)
         else
             local currentTime = GameRules:GetGameTime()
@@ -73,7 +72,7 @@ function DefaultCreepThink()
         end
     end
 
-    if beaconState == 'aggro' or beaconState == 'retreat' or beacon.somebodyNear or distToSpawn > 150 then
+    if beaconState == 'aggro' or beaconState == 'retreat' or beaconData.somebodyNear or distToSpawn > 150 then
         --print('крип battle!')
         return BATTLE_THINK_INTERVAL
     end

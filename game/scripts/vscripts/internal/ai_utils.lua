@@ -46,13 +46,13 @@ function SetAllAbilitiesCooldown(unit, fcooldown)
     end
 end
 
-function AnyAlive(packTargetEntity)
+function AnyAlive(packTargetData)
     if not IsServer() then return end
-    if not packTargetEntity or packTargetEntity:IsNull() then return end
+    if not packTargetData then return end
     local hasAliveUnits = false
-    if packTargetEntity.units then
-        for i = #packTargetEntity.units, 1, -1 do
-            local u = packTargetEntity.units[i]
+    if packTargetData.units then
+        for i = #packTargetData.units, 1, -1 do
+            local u = packTargetData.units[i]
             if u and not u:IsNull() and u:IsAlive() then
                 hasAliveUnits = true
                 break 

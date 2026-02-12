@@ -8,15 +8,10 @@ function modifier_axe_sustain:IsPurgable()
     return false
 end
 
-function modifier_axe_sustain:GetActivityTranslationModifiers()
-    return ACT_DOTA_TELEPORT
-end
-
 function modifier_axe_sustain:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
-        MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
         MODIFIER_PROPERTY_DISABLE_AUTOATTACK,
         MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
     }

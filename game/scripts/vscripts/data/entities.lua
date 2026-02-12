@@ -177,47 +177,66 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
+
+        -- jungle
+        spawner_lizards_venomancer = {
+            npc = "npc_jungle_venomancer",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_lizards"
+        },
+        spawner_lizards_creep_melee = {
+            npc = "npc_jungle_creep_melee",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_lizards"
+        },
+        spawner_lizards_creep_range = {
+            npc = "npc_jungle_creep_range",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_lizards"
+        },
+
+        spawner_axe_axe = {
+            npc = "npc_jungle_axe",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_axe"
+        },
+        spawner_axe_sisipisi = {
+            npc = "npc_jungle_sisipisi",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_axe",
+        },
     },
 
     pack = {
         __common = {
+            spawners = {},
+            units = {},
+            activateAfterUnitsSpawned = true,
+            somebodyNear = false,
             rangeFastTickRate = 2000,
             rangeRetreat = 1300,
             rangeAggro = 600,
-            state = "idle",
-            isStory = false,
-            thinker = "default"
+            thinker = "default",
+            state = "off",
+
+            target = nil,
         },
 
         pack_forest_act1_lizards = {
-            foes = {
-                {
-                    unitName = "npc_jungle_venomancer",
-                    spawnPoint = "spawn_point_lizzards_venomancer",
-                },
-                {
-                    unitName = "npc_jungle_creep_melee",
-                    spawnPoint = "spawn_point_lizzards_creep_melee",
-                },
-                {
-                    unitName = "npc_jungle_creep_range",
-                    spawnPoint = "spawn_point_lizzards_creep_range",
-                }
-            }
+            spawners = {
+                "spawner_lizards_venomancer",
+                "spawner_lizards_creep_melee",
+                "spawner_lizards_creep_range",
+            },
         },
 
         pack_forest_act1_axe = {
             thinker = "axe",
-            foes = {
-                {
-                    unitName = "npc_jungle_axe",
-                    spawnPoint = "spawn_point_axe_axe",
-                },
-                {
-                    unitName = "npc_jungle_sisipisi",
-                    spawnPoint = "spawn_point_axe_sisipisi",
-                },
-            }
+            denyTarget = nil,
+            spawners = {
+                "spawner_axe_axe",
+                "spawner_axe_sisipisi",
+            },
         }
     },
 
