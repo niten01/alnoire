@@ -718,6 +718,7 @@ priority = 0,
 conditions = {
 { interact="npc_xavier",type="interact" },
 { ent_var="first_met_global",value={ true },npc="npc_xavier",type="ent_var" },
+{ var="concert_crowd_beaten",value={ true },type="var" },
 },
 },
 d_xavieragain = {
@@ -725,19 +726,22 @@ priority = 0,
 conditions = {
 { interact="npc_xavier",type="interact" },
 { ent_var="first_met_global",value={ false },npc="npc_xavier",type="ent_var" },
+{ var="concert_crowd_beaten",value={ true },type="var" },
 },
 },
 d_xavierfightagain = {
 priority = 0,
 conditions = {
-{ trigger="trigger_concert_crowd",npc="npc_crowd",type="trigger" },
-{ ent_var="beaten",value={ false },npc="npc_crowd",type="ent_var" },
+{ trigger="trigger_concert_crowd",type="trigger" },
+{ var="concert_crowd_beaten",value={ false },type="var" },
+{ var="concert_crowd_met",value={ true },type="var" },
 },
 },
 d_xavierstart = {
 priority = 0,
 conditions = {
 { trigger="trigger_concert_crowd",type="trigger" },
+{ var="concert_crowd_met",value={ false },type="var" },
 },
 },
 },
@@ -6655,6 +6659,7 @@ choices = {
 text = [[*Сорваться с цепи.*]],
 next = nil,
 actions = {
+{ var="concert_crowd_met",value=true,type="set_var" },
 { pack="pack_concert_crowd",type="fight_start" },
 },
 },
@@ -6678,7 +6683,7 @@ next = "d_u_menya_est_k_tebe_delo",
 d_sorvatsya_s_tsepi = {
 text = [[]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[Закрыть.]],
@@ -8042,7 +8047,7 @@ next = nil,
 d_xavierfightagain = {
 text = [[*Начался хаос. Все начали избивать друг друга. Ты решил не оставаться в стороне.*]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[*Сорваться с цепи.*]],

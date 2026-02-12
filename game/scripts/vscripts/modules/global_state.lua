@@ -8,7 +8,10 @@ function GlobalState:Init()
         has_ski = false,
         green_test_tried = false,
         perekup_good_ending = false,
+
         has_concert_pass = false,
+        concert_crowd_met = false,
+        concert_crowd_beaten = false,
     }
 
 

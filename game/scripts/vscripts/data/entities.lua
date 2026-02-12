@@ -11,20 +11,8 @@ return {
             npc = "npc_subway_city",
             modifiers = { "modifier_story_npc" },
         },
-        spawner_subway_ski = {
-            npc = "npc_subway_ski",
-            modifiers = { "modifier_story_npc" },
-        },
-        spawner_subway_village = {
-            npc = "npc_subway_village",
-            modifiers = { "modifier_story_npc" },
-        },
-        spawner_subway_concert = {
-            npc = "npc_subway_concert",
-            modifiers = { "modifier_story_npc" },
-        },
-        spawner_subway_ghetto = {
-            npc = "npc_subway_ghetto",
+        spawner_subway_to_city = {
+            npc = "npc_subway_to_city",
             modifiers = { "modifier_story_npc" },
         },
 
@@ -205,7 +193,7 @@ return {
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_axe",
         },
-        
+
         spawner_dream_concert = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
@@ -262,6 +250,9 @@ return {
         },
 
         pack_concert_crowd = {
+            rangeFastTickRate = 1300,
+            rangeRetreat = 1300,
+            rangeAggro = 1300,
             denyTarget = nil,
             activateAfterUnitsSpawned = false,
             spawners = {

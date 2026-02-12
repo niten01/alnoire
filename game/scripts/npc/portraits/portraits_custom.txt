@@ -332,4 +332,66 @@
       }
     }
   }
+  "models/ghetto/ghetto_ranged.vmdl"
+  {
+    "PortraitLightPosition"                               "55.31 37.07 131.86"
+    "PortraitLightAngles"                                 "31.11 231.93 0.00"
+    "PortraitLightFOV"                                    "90"
+    "PortraitLightDistance"                               "132"
+    "PortraitLightColor"                                  "254 218 192"
+    "PortraitShadowColor"                                 "38 38 56"
+    "PortraitShadowScale"                                 "5.000000"
+    "PortraitAmbientColor"                                "38 38 38"
+    "PortraitAmbientScale"                                "4.750000"
+    "PortraitSpecularColor"                               "251 74 84"
+    "PortraitBackgroundTexture"                           "materials/vgui/hud/heroportraits/portraitbackground_gradient_btm.vmat"
+    "PortraitBackgroundColor1"                            "1 .60 .2"
+    "PortraitBackgroundColor2"                            "1 .60 .2"
+    "PortraitBackgroundColor3"                            "1 .60 .2"
+    "PortraitBackgroundColor4"                            "1 .60 .2"
+    "PortraitLightScale"                                  "1.700000"
+    "PortraitGroundShadowScale"                           "1.500000"
+    "PortraitAmbientDirection"                            "23.740 -36.210 -32.290"
+    "PortraitAnimationActivity"                           "ACT_DOTA_IDLE"
+    "cameras"
+    {
+      "default"
+      {
+        "PortraitPosition"                                "147.21 58.96 95.17"
+        "PortraitAngles"                                  "346.14 204.72 0.00"
+        "PortraitFOV"                                     "12"
+      }
+    }
+  }
+  "models/towel_summon/sanya_towel_summon.vmdl"
+  {
+    "PortraitLightPosition"                               "55.42 -29.05 196.76"
+    "PortraitLightAngles"                                 "54.11 166.17 0.00"
+    "PortraitLightFOV"                                    "90"
+    "PortraitLightDistance"                               "99"
+    "PortraitLightColor"                                  "254 248 241"
+    "PortraitShadowColor"                                 "74 74 74"
+    "PortraitShadowScale"                                 "5.000000"
+    "PortraitAmbientColor"                                "79 108 108"
+    "PortraitAmbientScale"                                "5.000000"
+    "PortraitSpecularColor"                               "251 74 84"
+    "PortraitBackgroundTexture"                           "materials/vgui/hud/heroportraits/portraitbackground_gradient_btm.vmat"
+    "PortraitBackgroundColor1"                            ".2 .7 1"
+    "PortraitBackgroundColor2"                            "0 0 0"
+    "PortraitBackgroundColor3"                            ".1 .6 .3"
+    "PortraitBackgroundColor4"                            ".3 .7 .2"
+    "PortraitLightScale"                                  "1.700000"
+    "PortraitGroundShadowScale"                           "1.500000"
+    "PortraitAmbientDirection"                            "-79.070 -84.150 -25.320"
+    "PortraitAnimationActivity"                           "ACT_DOTA_IDLE"
+    "cameras"
+    {
+      "default"
+      {
+        "PortraitPosition"                                "150.47 -85.81 109.27"
+        "PortraitAngles"                                  "342.70 150.72 0.00"
+        "PortraitFOV"                                     "15"
+      }
+    }
+  }
 }
