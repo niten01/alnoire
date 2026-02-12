@@ -59,6 +59,8 @@ end
 
 function Dialogue:StartDialogueForPlayer(playerID, startNodeID)
   if not self.dialogueGraph[startNodeID] then return end
+  if self.playerDialogueState[playerID] then return end
+  if StoryDriver:HasActiveFights() then return end
 
   self:TrySetFirstMet(startNodeID)
 

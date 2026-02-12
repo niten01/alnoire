@@ -12,27 +12,27 @@ function PackManager:OnGameInProgress()
     for packName, packData in EntityData:AllByType('pack') do
         PrintTable(packData, 2)
         if packData.activateAfterUnitsSpawned then
-            self:ActivatePackTarget(packName)
+            self:ActivatePack(packName)
         end
     end
 end
 
-function PackManager:ActivatePackTarget(packName)
-    DebugPrint("[ALNOIRE] Activating pack: " .. packName)
+function PackManager:ActivatePack(packName)
     assert(packName)
+    DebugPrint("[ALNOIRE] Activating pack: " .. packName)
     local pack = self:GetPack(packName)
-    if pack.state ~= 'off' then
-        DebugPrint("[???] (PackManager) skipping already activated pack")
-        return
-    end
+    if pack.state ~= 'off' then return end
+
     local packEntity = Entities:FindByName(nil, packName)
     if not packEntity then
         DebugPrint("[???] (PackManager) no entity for pack: ", packName)
         return
     end
-    DrawDebugCircle(packEntity, pack.rangeAggro)
-    DrawDebugCircle(packEntity, pack.rangeRetreat)
-    DrawDebugCircle(packEntity, pack.rangeFastTickRate)
+    pack.debugPfx = {
+        DrawDebugCircle(packEntity, pack.rangeAggro),
+        DrawDebugCircle(packEntity, pack.rangeRetreat),
+        DrawDebugCircle(packEntity, pack.rangeFastTickRate),
+    }
 
     if pack.thinker == "default" then
         packEntity:SetContextThink("PackTargetDefaultThink", function()
@@ -48,6 +48,18 @@ function PackManager:ActivatePackTarget(packName)
     pack.state = 'idle'
 end
 
+function PackManager:DeactivatePack(packName)
+    assert(packName)
+    DebugPrint("[ALNOIRE] Deactivating pack: " .. packName)
+    local pack = self:GetPack(packName)
+    if pack.state == 'off' then return end
+
+    for _, pfx in ipairs(pack.debugPfx or {}) do
+        DestroyDebugCircle(pfx)
+    end
+    pack.state = 'off'
+end
+
 function PackManager:AddUnit(packName, npc)
     local pack = self:GetPack(packName)
     assert(pack, "Invalid packName")
@@ -56,27 +68,46 @@ function PackManager:AddUnit(packName, npc)
     DebugPrint("[ALNOIRE] Added " .. npc:GetName() .. " to pack: " .. packName)
 end
 
-function PackManager:RespawnPack(packTargetName)
-    local pack = self:GetPack(packTargetName)
+function PackManager:RespawnPack(packName)
+    local pack = self:GetPack(packName)
+    local oldState = pack.state
+    for _, unit in ipairs(pack.units) do
+        if unit and not unit:IsNull() and unit:IsAlive() then
+            unit:RemoveSelf() -- agressive remove to not trigger anything accidentally
+        end
+    end
+    for _, spawnerName in ipairs(pack.spawners) do
+        SpawnManager:SpawnNPC(spawnerName)
+    end
+
+    -- pack could deactivate itself during respawn
+    if oldState ~= 'off' then
+        self:ActivatePack(packName)
+    end
 end
 
 function PackManager:GetPack(packName)
     return EntityData:ByName(packName)
 end
 
-function PackManager:PackTargetDefaultThink(packTargetEnt, packTargetData)
-    if not packTargetEnt or packTargetEnt:IsNull() then return nil end
-    if not packTargetData then return nil end
-    if #packTargetData.units == 0 then return IDLE_THINK_INTERVAL end
-    if not AnyAlive(packTargetData) then
-        print("[ALNOIRE] All units in pack " .. packTargetEnt:GetName() .. " are dead. Disabling beacon thinker.")
-        packTargetData.state = "dead"
+local OnPackWipedEvent = CreateGameEvent 'OnPackWiped'
+function PackManager:PackTargetDefaultThink(packEnt, pack)
+    if not packEnt or packEnt:IsNull() then return nil end
+    if not pack then return nil end
+    if pack.state == 'off' then return nil end
+    if #pack.units == 0 then return IDLE_THINK_INTERVAL end
+    if not AnyAlive(pack) then
+        print("[ALNOIRE] All units in pack " .. packEnt:GetName() .. " are dead. Disabling beacon thinker.")
+        self:DeactivatePack(pack.name)
+        OnPackWipedEvent({
+            packName = pack.name
+        })
         return nil
     end
-    local rangeFastTickRate = packTargetData.rangeFastTickRate
-    local rangeAggro = packTargetData.rangeAggro
-    local rangeRetreat = packTargetData.rangeRetreat
-    local pos = packTargetEnt:GetAbsOrigin()
+    local rangeFastTickRate = pack.rangeFastTickRate
+    local rangeAggro = pack.rangeAggro
+    local rangeRetreat = pack.rangeRetreat
+    local pos = packEnt:GetAbsOrigin()
 
     local enemies = FindUnitsInRadius(
         DOTA_TEAM_BADGUYS,
@@ -90,28 +121,28 @@ function PackManager:PackTargetDefaultThink(packTargetEnt, packTargetData)
         false
     )
     if #enemies == 0 then
-        packTargetData.state = "idle"
-        packTargetData.target = nil
-        packTargetData.somebodyNear = false
+        pack.state = "idle"
+        pack.target = nil
+        pack.somebodyNear = false
         return IDLE_THINK_INTERVAL
     end
 
-    packTargetData.somebodyNear = true
+    pack.somebodyNear = true
     local target = enemies[1]
     local dist = (target:GetAbsOrigin() - pos):Length2D()
 
-    if (packTargetData.state == 'idle' or packTargetData.state == 'retreat' or packTargetData.state == 'prepare') and dist <= rangeAggro then
-        packTargetData.state = 'aggro'
-        packTargetData.target = target
-    elseif packTargetData.state == 'aggro' then
+    if (pack.state == 'idle' or pack.state == 'retreat' or pack.state == 'prepare') and dist <= rangeAggro then
+        pack.state = 'aggro'
+        pack.target = target
+    elseif pack.state == 'aggro' then
         if dist > rangeRetreat or not target:IsAlive() then
-            packTargetData.state = 'retreat'
-            packTargetData.target = nil
+            pack.state = 'retreat'
+            pack.target = nil
         else
-            packTargetData.target = target
+            pack.target = target
         end
-    elseif packTargetData.state == 'retreat' and dist > rangeAggro then
-        packTargetData.state = 'idle'
+    elseif pack.state == 'retreat' and dist > rangeAggro then
+        pack.state = 'idle'
     end
 
     return BATTLE_THINK_INTERVAL
@@ -122,7 +153,7 @@ function PackManager:PackTargetDenyThink(packTargetEnt, packTargetData)
     if not packTargetData then return nil end
     if #packTargetData.units == 0 then return IDLE_THINK_INTERVAL end
 
-    if not AnyAlive(packTargetData) then
+    if not UpdateUnits(packTargetData) then
         print("[ALNOIRE] All units in pack " .. packTargetEnt:GetName() .. " are dead. Disabling beacon thinker.")
         packTargetData.state = "dead"
         return nil

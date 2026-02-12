@@ -60,10 +60,7 @@ function AnyAlive(packTargetData)
         end
     end
 
-    if not hasAliveUnits then
-        return false 
-    end
-    return true
+    return hasAliveUnits
 end
 
 function DrawDebugCircle(entity, radius)
@@ -74,6 +71,11 @@ function DrawDebugCircle(entity, radius)
     ParticleManager:SetParticleControl(pfx, 2, Vector(radius, 0, 0)) 
     return pfx
 end
+
+function DestroyDebugCircle(pfx)
+    ParticleManager:DestroyParticle(pfx, false)
+    ParticleManager:ReleaseParticleIndex(pfx)
+end 
 
 function FindSanyaInRadius(centerPoint, radius)
     local units = FindUnitsInRadius(

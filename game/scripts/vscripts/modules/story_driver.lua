@@ -3,6 +3,8 @@ StoryDriver = StoryDriver or {}
 function StoryDriver:Init()
   GameEvents:OnActChange(bind(self.OnActChange, self))
   GameEvents:OnEntityKilled(bind(self.OnEntityKilled, self))
+  GameEvents:OnPackWiped(bind(self.OnPackWiped, self))
+  self.activeStoryFights = {}
 end
 
 local function fastRemoveNPC(name)
@@ -72,23 +74,7 @@ function Handlers.fight_start(playerID, action)
   assert(not action.npc, "Legacy fight_start action, rewrite to pack")
   assert(action.pack, "No pack specified for fight_start action")
 
-  local packName = action.pack
-  local pack = PackManager:GetPack(packName)
-  assert(pack, "No such pack: " .. packName)
-  for _, unit in ipairs(pack.units) do
-    DebugPrint("[ALNOIRE] Starting fight with " .. unit:GetName())
-    unit:RemoveModifierByName("modifier_story_npc")
-    unit:SetTeam(DOTA_TEAM_BADGUYS)
-  end
-  PackManager:ActivatePackTarget(packName)
-
-  if action.nonLethalNPC then
-    local ent = Entities:FindByName(nil, action.nonLethalNPC)
-    assert(ent, "No such ent to add non-lethal tracking: " .. action.nonLethalNPC)
-    if not ent:HasModifier("modifier_story_lethal_damage_tracking") then
-      ent:AddNewModifier(ent, nil, "modifier_story_lethal_damage_tracking", { duration = -1 })
-    end
-  end
+  StoryDriver:StartFight(action.pack, action.nonLethalNPC)
 end
 
 function Handlers.change_hero(playerID, action)
@@ -277,6 +263,28 @@ function Handlers.force_give_drop(playerID, action)
   giveDrop(npcData)
 end
 
+function StoryDriver:StartFight(packName, nonLethalNPC)
+  local pack = PackManager:GetPack(packName)
+  assert(pack, "No such pack: " .. packName)
+  for _, unit in ipairs(pack.units) do
+    DebugPrint("[ALNOIRE] Starting fight with " .. unit:GetName())
+    unit:RemoveModifierByName("modifier_story_npc")
+    unit:SetTeam(DOTA_TEAM_BADGUYS)
+  end
+
+  PackManager:ActivatePack(packName)
+
+  if nonLethalNPC then
+    local ent = Entities:FindByName(nil, nonLethalNPC)
+    assert(ent, "No such ent to add non-lethal tracking: " .. nonLethalNPC)
+    if not ent:HasModifier("modifier_story_lethal_damage_tracking") then
+      ent:AddNewModifier(ent, nil, "modifier_story_lethal_damage_tracking", { duration = -1 })
+    end
+  end
+
+  table.insert(self.activeStoryFights, packName)
+end
+
 function StoryDriver:SetupAct2()
   fastRemoveNPC("npc_mystery")
   SpawnManager:SpawnNPC("spawner_mystery_2")
@@ -298,10 +306,39 @@ function StoryDriver:OnActChange(event)
 end
 
 function StoryDriver:OnEntityKilled(event)
-  local npcData = EntityData:ByName(event.killed_unit:GetName())
-  if not npcData or not npcData.drop then return end
+  local victim = event.killed_unit
 
-  giveDrop(npcData)
+  -- try give drop
+  local victimNPCData = EntityData:ByName(victim:GetName())
+  if victimNPCData and victimNPCData.drop then
+    giveDrop(victimNPCData)
+  end
+
+  -- handle fight end
+  if victim:IsRealHero() and not victim:IsSpiritBearCustom() then
+    while #self.activeStoryFights > 0 do
+      local packName = table.remove(self.activeStoryFights, 1)
+      PackManager:DeactivatePack(packName)
+      PackManager:RespawnPack(packName)
+    end
+  end
+end
+
+function StoryDriver:OnPackWiped(event)
+  for i, packName in ipairs(self.activeStoryFights) do
+    if packName == event.packName then
+      table.remove(self.activeStoryFights, i)
+      break
+    end
+  end
+
+  if event.packName == "pack_concert_crowd" then
+    GlobalState:Get().concert_crowd_beaten = true
+  end
+end
+
+function StoryDriver:HasActiveFights()
+  return #self.activeStoryFights > 0
 end
 
 function StoryDriver:HandleAction(playerID, action)

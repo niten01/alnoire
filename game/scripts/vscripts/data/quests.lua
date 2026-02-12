@@ -54,7 +54,7 @@ return {
     },
     q_concert = {
         giver = "npc_dream",
-        name = "O'Block",
+        name = "High top",
         acts = { 2 },
         showExclamation = true,
         steps = {
@@ -275,7 +275,7 @@ return {
     },
     q_ghetto = {
         giver = "npc_dream",
-        name = "High top",
+        name = "O'Block",
         acts = { 3 },
         requires = { "q_concert" },
         showExclamation = true,

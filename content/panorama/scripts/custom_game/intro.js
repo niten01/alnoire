@@ -6,6 +6,9 @@
         $.Msg("Start intro")
 
         video.Play();
+        video.RemoveClass("Hide")
+        container.RemoveClass("Hide")
+        $.GetContextPanel().style.visibility = "visible"
 
         $.Schedule(30.0, SkipIntro);
     }
