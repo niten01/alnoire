@@ -1,5 +1,3 @@
-LinkLuaModifier("modifier_axe_sustain", "modifiers/jungle/modifier_axe_sustain", LUA_MODIFIER_MOTION_NONE)
-
 if not IsServer() then return end
 
 function Spawn()

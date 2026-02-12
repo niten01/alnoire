@@ -14,4 +14,7 @@ LinkLuaModifier('modifier_ski', 'modifiers/modifier_ski', LUA_MODIFIER_MOTION_HO
 LinkLuaModifier('modifier_blink_evade', 'modifiers/abilities/modifier_blink_evade', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_summon_distance_check", "modifiers/abilities/modifier_summon_distance_check", LUA_MODIFIER_MOTION_NONE)
 
+-- jungle
+LinkLuaModifier("modifier_axe_sustain", "modifiers/jungle/modifier_axe_sustain", LUA_MODIFIER_MOTION_NONE)
+
 --LinkLuaModifier('modifier_test_eyes', 'modifiers/modifier_test_eyes', LUA_MODIFIER_MOTION_NONE)
