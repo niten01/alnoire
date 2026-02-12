@@ -2,9 +2,17 @@
 {
 	"npc_genius" 
 	{
-		"Model"						"models/heroes/invoker/invoker.vmdl"
+		"Model"						"models/heroes/oracle/oracle.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"ModelScale" 				"1.0"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"ConsideredHero" 			"1"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "28290" } // armor
+			}
+		}
 	}
 }

@@ -205,6 +205,17 @@ return {
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_axe",
         },
+        
+        spawner_dream_concert = {
+            npc = "npc_dream",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+        },
+        spawner_genius = {
+            npc = "npc_genius",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+        },
     },
 
     pack = {

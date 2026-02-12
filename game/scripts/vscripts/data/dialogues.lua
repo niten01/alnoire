@@ -551,8 +551,8 @@ d_geniusfightagain = {
 priority = 0,
 conditions = {
 { interact="npc_genius",type="interact" },
-{ ent_var="beaten",value={ false },npc="npc_genius",type="ent_var" },
 { var="act",value={ 2, 3 },type="var" },
+{ ent_var="first_met_global",value={ false },npc="npc_genius",type="ent_var" },
 },
 },
 d_geniusfirstmet = {
@@ -560,6 +560,7 @@ priority = 0,
 conditions = {
 { interact="npc_genius",type="interact" },
 { var="act",value={ 2, 3 },type="var" },
+{ ent_var="first_met_global",value={ true },npc="npc_genius",type="ent_var" },
 },
 },
 d_greenfightagain = {
@@ -608,6 +609,7 @@ priority = 0,
 conditions = {
 { interact="npc_hermit",type="interact" },
 { questID="q_main_quest_act_2",status=QuestStatus.ACTIVE,step={ 3 },type="quest" },
+{ ent_var="first_met_global",value={ true },npc="npc_hermit",type="ent_var" },
 },
 },
 d_leaderagain1 = {
@@ -713,6 +715,7 @@ d_xavierafterfight = {
 priority = 0,
 conditions = {
 { interact="npc_xavier",type="interact" },
+{ ent_var="first_met_global",value={ true },npc="npc_xavier",type="ent_var" },
 },
 },
 d_xavieragain = {
@@ -6610,6 +6613,7 @@ text = [[Пока.]],
 next = nil,
 actions = {
 { npc="npc_dream",type="remove" },
+{ spawn="spawner_dream_concert",type="spawn" },
 },
 },
 },
@@ -7050,7 +7054,7 @@ choices = {
 text = [[Не хочу как-то.]],
 next = nil,
 actions = {
-{ target="kill",type="fight_start" },
+{ target="kill",npc="npc_genius",type="fight_start" },
 },
 },
 },
@@ -7997,8 +8001,8 @@ next = "d_pohozhe_gdeto_v_skrytoj_derevne",
 },
 d_xavierafterfight = {
 text = [[*Xavier notices your devotion.*
-That was dope, youre feeling me, yeah]],
-speaker = [[Xaviersobased]],
+That was dope, you're feeling me, yeah]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
@@ -8009,7 +8013,7 @@ next = "d_realno_ya_ochen_rad",
 },
 d_xavieragain = {
 text = [[*Ты не можешь отовать глаз. Это слишком прекрасно.*]],
-speaker = [[Xaviersobased]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
@@ -8044,8 +8048,8 @@ next = "d_chto__2",
 },
 },
 d_xavieryes = {
-text = [[You showed yourself clearly, um, like youre my hood bro now. I'm glad that, that i can continue my work here, yeah.]],
-speaker = [[Xaviersobased]],
+text = [[You proved yourself for real like, um... like youre my hood-bro now. I'm glad that... that I can continue my work here, yeah.]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
@@ -8201,7 +8205,7 @@ next = nil,
 },
 d_budu_hranit_etot_dar_vechno = {
 text = [[*He smiles and throw some signs with his hands. Xavier picks up microphone and continues performing. Flow's back on track.*]],
-speaker = [[Xaviersobased]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
@@ -8737,7 +8741,7 @@ next = "d_izza_tebya_malenkij_niger_ne_mozhet_popast_na_kontsert_ponimaesh",
 },
 d_konechno_moj_goat = {
 text = [[Shout out to all my fans here, that's the gang, that's the gang, um, especially you, Alex. Take this small shi, its a gift from me to you bro.]],
-speaker = [[Xaviersobased]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
@@ -8758,24 +8762,25 @@ next = "d_a",
 },
 },
 d_ladno_davaj = {
-text = [[(Задачка)]],
+text = [[Посчитай-ка интегральчик от 0 до 2: 
+x * (x^2 + 1)^3]],
 speaker = [[Крип-гений]],
 npc = "npc_genius",
 choices = {
 {
-text = [[a]],
+text = [[63]],
 next = "d_q6",
 },
 {
-text = [[b]],
+text = [[-15/16]],
+next = "d_q6",
+},
+{
+text = [[78]],
 next = "d_q7",
 },
 {
-text = [[c]],
-next = "d_q6",
-},
-{
-text = [[d]],
+text = [[-1.815]],
 next = "d_q6",
 },
 },
@@ -9119,7 +9124,7 @@ choices = {
 text = [[Получается ты неуч, а я крутой типо.]],
 next = nil,
 actions = {
-{ target="kill",type="fight_start" },
+{ target="kill",npc="npc_genius",type="fight_start" },
 },
 },
 },
@@ -9204,7 +9209,7 @@ next = "d_obernut_svoi_nogi_vokrug_nego_i_nachat_tyanut_vesom_tela",
 },
 d_realno_ya_ochen_rad = {
 text = [[That shi was lit.]],
-speaker = [[Xaviersobased]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
@@ -9426,8 +9431,8 @@ next = nil,
 },
 d_u_tebya_pryam_krutye_treki_i_ty_krutoj = {
 text = [[It's good, like, it's good cuz when i died, i thought there wont be hood around here bro...
-But luckily its here you feel me?]],
-speaker = [[Xaviersobased]],
+But luckily it's here you feel me?]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
@@ -9583,7 +9588,7 @@ choices = {
 text = [[*В чём же я ошибся?*]],
 next = nil,
 actions = {
-{ target="kill",type="fight_start" },
+{ target="kill",npc="npc_genius",type="fight_start" },
 },
 },
 },

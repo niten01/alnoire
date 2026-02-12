@@ -42,6 +42,7 @@ return {
         "npc_hermit",
         "npc_green",
         "npc_perekup",
+        "npc_genius",
 
         "towel_summon",
 
@@ -55,6 +56,8 @@ return {
         -- jungle creeps
         "npc_jungle_creep_melee",
         "npc_jungle_creep_range",
+        "npc_jungle_axe",
+        "npc_jungle_venomancer",
         "npc_jungle_sisipisi",
         "npc_dota_hero_venomancer",
         "npc_dota_hero_axe",
