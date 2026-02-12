@@ -10,6 +10,7 @@ LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODI
 LinkLuaModifier('modifier_tower', 'modifiers/modifier_tower', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_clash_unit', 'modifiers/modifier_clash_unit', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_ski', 'modifiers/modifier_ski', LUA_MODIFIER_MOTION_HORIZONTAL)
+LinkLuaModifier('modifier_ski_cold', 'modifiers/modifier_ski_cold', LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier('modifier_blink_evade', 'modifiers/abilities/modifier_blink_evade', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_summon_distance_check", "modifiers/abilities/modifier_summon_distance_check", LUA_MODIFIER_MOTION_NONE)

@@ -17,3 +17,11 @@ function SkiGameEnd(trigger, event)
 
     RemoveAnimationTranslate(activator)
 end
+
+function AddSkiCold(trigger, event)
+    local activator = event.activator
+
+    if not activator:HasModifier("modifier_ski_cold") then
+        activator:AddNewModifier(activator, nil, "modifier_ski_cold", { duration = -1 })
+    end
+end

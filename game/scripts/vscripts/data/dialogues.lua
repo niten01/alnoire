@@ -442,28 +442,10 @@ conditions = {
 { interact="npc_subway_city",type="interact" },
 },
 },
-d_subwayconcert = {
+d_subwaytocity = {
 priority = 0,
 conditions = {
-{ interact="npc_subway_concert",type="interact" },
-},
-},
-d_subwayghetto = {
-priority = 0,
-conditions = {
-{ interact="npc_subway_ghetto",type="interact" },
-},
-},
-d_subwayski = {
-priority = 0,
-conditions = {
-{ interact="npc_subway_ski",type="interact" },
-},
-},
-d_subwayvillage = {
-priority = 0,
-conditions = {
-{ interact="npc_subway_village",type="interact" },
+{ interact="npc_subway_to_city",type="interact" },
 },
 },
 d_bouncerhaveticket = {
@@ -3534,64 +3516,10 @@ next = nil,
 },
 },
 },
-d_subwayconcert = {
+d_subwaytocity = {
 text = [[Отсюда можно вернуться в город.]],
 speaker = [[Терминал М.Е.Т.Р.О.]],
-npc = "npc_subway_concert",
-choices = {
-{
-text = [[Город]],
-next = nil,
-actions = {
-{ target="tp_target_city",type="teleport" },
-},
-},
-{
-text = [[Я передумал]],
-next = nil,
-},
-},
-},
-d_subwayghetto = {
-text = [[Отсюда можно вернуться в город.]],
-speaker = [[Терминал М.Е.Т.Р.О.]],
-npc = "npc_subway_ghetto",
-choices = {
-{
-text = [[Город]],
-next = nil,
-actions = {
-{ target="tp_target_city",type="teleport" },
-},
-},
-{
-text = [[Я передумал]],
-next = nil,
-},
-},
-},
-d_subwayski = {
-text = [[Отсюда можно вернуться в город.]],
-speaker = [[Терминал М.Е.Т.Р.О.]],
-npc = "npc_subway_ski",
-choices = {
-{
-text = [[Город]],
-next = nil,
-actions = {
-{ target="tp_target_city",type="teleport" },
-},
-},
-{
-text = [[Я передумал]],
-next = nil,
-},
-},
-},
-d_subwayvillage = {
-text = [[Отсюда можно вернуться в город.]],
-speaker = [[Терминал М.Е.Т.Р.О.]],
-npc = "npc_subway_village",
+npc = "npc_subway_to_city",
 choices = {
 {
 text = [[Город]],
@@ -4176,7 +4104,7 @@ next = nil,
 d_gorod = {
 text = [[]],
 speaker = [[Терминал М.Е.Т.Р.О.]],
-npc = "npc_subway_concert",
+npc = "npc_subway_to_city",
 choices = {
 {
 text = [[Закрыть.]],
