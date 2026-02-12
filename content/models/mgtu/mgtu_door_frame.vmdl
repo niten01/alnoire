@@ -29,6 +29,10 @@
 								from = "wood.vmat"
 								to = "models/mgtu/materials/mgtu_wood.vmat"
 							},
+							{
+								from = "plasterwallclean.vmat"
+								to = "models/mgtu/materials/mgtu_wall_clean.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""
