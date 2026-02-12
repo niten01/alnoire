@@ -43,6 +43,7 @@ return {
         "npc_green",
         "npc_perekup",
         "npc_genius",
+        "npc_ghetto_ranged",
 
         "towel_summon",
 
@@ -63,6 +64,9 @@ return {
         "npc_dota_hero_axe",
         "npc_dota_hero_razor",
         "npc_dota_hero_antimage",
+
+        -- traps
+        "npc_arrow_trap",
 
     },
     models = {

@@ -32,7 +32,7 @@ function EntityData:AddCommonProperties(entityData)
     local common = self.commonForType[entityData.type]
     if not common then return end
     for k, v in pairs(common) do
-        if not entityData[k] then
+        if entityData[k] == nil then
             entityData[k] = v
         end
     end

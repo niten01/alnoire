@@ -617,6 +617,8 @@ priority = 0,
 conditions = {
 { interact="npc_leader",type="interact" },
 { ent_var="first_met_in_act",value={ false },npc="npc_leader",type="ent_var" },
+{ var="act",value={ 2 },type="var" },
+{ questID="q_main_quest_act_2",status=QuestStatus.ACTIVE,type="quest" },
 },
 },
 d_leaderfirstmet = {
@@ -634,7 +636,7 @@ conditions = {
 },
 },
 d_leadersecond = {
-priority = 0,
+priority = 100,
 conditions = {
 { interact="npc_leader",type="interact" },
 { questID="q_main_quest_act_2",status=QuestStatus.ACTIVE,step={ 4 },type="quest" },
@@ -735,7 +737,7 @@ conditions = {
 d_xavierstart = {
 priority = 0,
 conditions = {
-{ trigger="trigger_concert_crowd",npc="npc_crowd",type="trigger" },
+{ trigger="trigger_concert_crowd",type="trigger" },
 },
 },
 },
@@ -6647,13 +6649,13 @@ next = nil,
 d_pohozhe_do_nih_vse_esche_ne_doshlo = {
 text = [[*Начался хаос. Все начали избивать друг друга. Ты решил не оставаться в стороне.*]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[*Сорваться с цепи.*]],
 next = nil,
 actions = {
-{ target="kill",type="fight_start" },
+{ pack="pack_concert_crowd",type="fight_start" },
 },
 },
 },
@@ -6687,7 +6689,7 @@ next = nil,
 d_stop_esli_on_zdes_neuzhto = {
 text = [[*Да... Xavier умер как и ты. Однако эта мысль, наоборот, успокивает тебя, ведь ты можешь жить с ним бок о бок столько, сколько хочешь.*]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[ДА.]],
@@ -7550,7 +7552,7 @@ next = "d_horosho_horosho_ya_kstati_tozhe_pojdu",
 },
 },
 d_leaderagain1 = {
-text = [[Чтобы открыть проход в Коралловый лес, подойди поближе к двери и произнеси заклинание вслух: "Stringus Coldlapsus".]],
+text = [[Чтобы открыть проход в Коралловый лес, подойди поближе к двери и произнеси заклинание вслух: "Stringus Colllapsus".]],
 speaker = [[Глава]],
 npc = "npc_leader",
 choices = {
@@ -7583,14 +7585,29 @@ next = "d_vsmysle_a_kak_zhe_vash_vsemilubimyj_korol",
 },
 },
 },
-d_leaderpass3 = {
-text = [[Заклинание от врат в Искажённый лес: "Logarithmus solvus".]],
+d_leaderhintclose = {
+text = [[]],
 speaker = [[Глава]],
 npc = "npc_leader",
 choices = {
 {
 text = [[Закрыть.]],
 next = nil,
+},
+},
+},
+d_leaderpass3 = {
+text = [[Заклинание от врат в Искажённый лес: "Logarithmus solvus".]],
+speaker = [[Глава]],
+npc = "npc_leader",
+choices = {
+{
+text = [[Понял.]],
+next = nil,
+},
+{
+text = [[Я забыл где находятся части ключа...]],
+next = "d_ya_zabyl_gde_nahodyatsya_chasti_klucha",
 },
 },
 },
@@ -7898,7 +7915,7 @@ next = "d_pri_vstrechi_s_derekom_ya_by_tak_i_tak_ponyal_chto_on_ne_zhivotnoe",
 },
 },
 d_r3 = {
-text = [[Так что иди уже и наконец накажи грешника, он заслуживает великое наказание.]],
+text = [[Ступай же и соверши предначертанное. Пусть тяжесть его греха обернется невыносимым бременем расплаты.]],
 speaker = [[Старушка]],
 npc = "npc_shamanka",
 choices = {
@@ -8039,7 +8056,7 @@ actions = {
 d_xavierstart = {
 text = [[*Ты не веришь своим глазам. Это же Xavier. Настоящий.*]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[ЧТО?!]],
@@ -8136,7 +8153,7 @@ d_aleks_umret_za_tebya_ty_legenda_ty_m = {
 text = [[*Тебя перебил человек из толпы, схватив за плечо.*
 Слышь, щегол. Я главный фанат Ксавьера, уяснил?!]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[Съеби.]],
@@ -8147,7 +8164,7 @@ next = "d_sebi",
 d_aaaaaharr_arghe_shuufuvuu = {
 text = [[*Твоё яростное сердцебиение перебивает его голос, отчего ты не можешь разобрать текст. Хотя ты в любом случае не можешь.*]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[*Стоп, если он здесь... Неужто?..*]],
@@ -8258,7 +8275,7 @@ speaker = [[Глава]],
 npc = "npc_leader",
 choices = {
 {
-text = [[...]],
+text = [[Пересказать разговор с отшельником.]],
 next = "d_r",
 },
 },
@@ -8407,7 +8424,7 @@ next = "d_f",
 d_da__2 = {
 text = [[*Ноги начали вести тебя ближе к сцене. Словно собака, ты готов показать всем насколько ты предан своему хозяину. Вобрав кучу воздуха через свой нос, ты заряжаешь самый громкий крик, который человек способен воспроизвести.*]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[КСАВЬЕР Я ТВОЙ САМЫЙ ГЛАВНЫЙ ФАНАТ!!!!!!!!!]],
@@ -8644,7 +8661,7 @@ next = "d_hm_neploho_no_dazhe_tak_mne_ne_hvatit_u_menya_50_zolota",
 d_ksaver_ya_tvoj_samyj_glavnyj_fanat = {
 text = [[*Гул невероятной мощи начал резонировать от стен, усиливаясь с каждый отскоком. Ничего, кроме тебя, не было слышно. Нескольких людей сбило с ног.*]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[АЛЕКС УМРЁТ ЗА ТЕБЯ, ТЫ ЛЕГЕНДА, ТЫ М...]],
@@ -9196,6 +9213,17 @@ next = "d_tebya_probivaet_na_slezu_ot_voshischeniya",
 },
 },
 },
+d_prostite = {
+text = [[Впрочем уже поздно что-то менять. Если верить словам отшельника, первая часть ключа находятся у старушки, вторая – на одном из пиков Снежных гор, третью же оберегают челюсти чудовища Искаженного леса.]],
+speaker = [[Глава]],
+npc = "npc_leader",
+choices = {
+{
+text = [[Спасибо, запомнил.]],
+next = nil,
+},
+},
+},
 d_raz_ty_ne_hochesh_idti_so_mnoj_ya_prosto_ponesu_tebya = {
 text = [[*Зелёный усмехается. Ты всё ещё пытаешься оторвать его от земли.*]],
 speaker = [[Зелёный]],
@@ -9251,10 +9279,21 @@ next = nil,
 },
 },
 },
+d_spasibo_zapomnil = {
+text = [[]],
+speaker = [[Глава]],
+npc = "npc_leader",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
 d_sebi = {
 text = [[*Одним ударом ты отправил псевдофаната в нокаут. Только вот остальные тоже возомнили себя преданными поклонниками. Все начали доказывать это друг другу.*]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[*Похоже до них всё ещё не дошло...*]],
@@ -9480,7 +9519,7 @@ actions = {
 d_chto__2 = {
 text = [[*У тебя участилось дыхание, стало тяжело дышать, но тебя это даже впирает. Ты всё ещё не можешь принять того, что видишь.*]],
 speaker = [[...]],
-npc = "npc_crowd",
+npc = nil,
 choices = {
 {
 text = [[Ааааахарр... Аргхэ.. Шууфувуу...]],
@@ -9547,7 +9586,7 @@ next = "d_q15",
 },
 },
 d_em_dopustim = {
-text = [[Первую часть я отдал старушке-медиуму, вторую - спрятал на соседней Снежной горе, а третью - скормил самому могучему крипу Искажённого леса.]],
+text = [[Первую часть я отдал старушке-медиуму, вторую - спрятал на соседнем пике Снежных гор, а третью - скормил самому могучему крипу Искажённого леса.]],
 speaker = [[Человек-отшельник]],
 npc = "npc_hermit",
 choices = {
@@ -9645,6 +9684,17 @@ choices = {
 {
 text = [[...]],
 next = "d_q",
+},
+},
+},
+d_ya_zabyl_gde_nahodyatsya_chasti_klucha = {
+text = [[Я начинаю думать, что твое присутствие в деревне – плод чьей-то нерассудительной щедрости. Кажется мой протеже поторопился, рассказывая тебе пароль.]],
+speaker = [[Глава]],
+npc = "npc_leader",
+choices = {
+{
+text = [[Простите...]],
+next = "d_prostite",
 },
 },
 },

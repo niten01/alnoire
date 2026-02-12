@@ -67,16 +67,25 @@ function Handlers.quest_end(playerID, action)
   Quest:CompleteQuestForAll(action.questID)
 end
 
+-- { pack = "pack_abc", nonLethalNPC = "npc_someone" (optional) }
 function Handlers.fight_start(playerID, action)
-  if not action.npc then
-    error("Fight action has no target npc")
-    return
+  assert(not action.npc, "Legacy fight_start action, rewrite to pack")
+  assert(action.pack, "No pack specified for fight_start action")
+
+  local packName = action.pack
+  local pack = PackManager:GetPack(packName)
+  assert(pack, "No such pack: " .. packName)
+  for _, unit in ipairs(pack.units) do
+    DebugPrint("[ALNOIRE] Starting fight with " .. unit:GetName())
+    unit:RemoveModifierByName("modifier_story_npc")
+    unit:SetTeam(DOTA_TEAM_BADGUYS)
   end
-  for _, ent in ipairs(Entities:FindAllByName(action.npc)) do
-    DebugPrint("[ALNOIRE] Starting fight with " .. ent:GetName())
-    ent:RemoveModifierByName("modifier_story_npc")
-    ent:SetTeam(DOTA_TEAM_BADGUYS)
-    if action.target == "talk" and not ent:HasModifier("modifier_story_lethal_damage_tracking") then
+  PackManager:ActivatePackTarget(packName)
+
+  if action.nonLethalNPC then
+    local ent = Entities:FindByName(nil, action.nonLethalNPC)
+    assert(ent, "No such ent to add non-lethal tracking: " .. action.nonLethalNPC)
+    if not ent:HasModifier("modifier_story_lethal_damage_tracking") then
       ent:AddNewModifier(ent, nil, "modifier_story_lethal_damage_tracking", { duration = -1 })
     end
   end
@@ -277,6 +286,8 @@ function StoryDriver:SetupAct2()
   triggerSetEnabled("trigger_black_creep", true)
 
   SpawnManager:SpawnNPC("spawner_genius")
+
+  SpawnManager:SpawnNPC("spawner_concert_fan_ranged")
 end
 
 function StoryDriver:OnActChange(event)

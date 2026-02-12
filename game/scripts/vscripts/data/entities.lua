@@ -216,8 +216,19 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
+
+        spawner_concert_fan_ranged = {
+            npc = "npc_ghetto_ranged",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+            packID = "pack_concert_crowd",
+        },
     },
 
+
+    ------------------------------------------------------------
+    --- Packs
+    ------------------------------------------------------------
     pack = {
         __common = {
             spawners = {},
@@ -248,7 +259,15 @@ return {
                 "spawner_axe_axe",
                 "spawner_axe_sisipisi",
             },
-        }
+        },
+
+        pack_concert_crowd = {
+            denyTarget = nil,
+            activateAfterUnitsSpawned = false,
+            spawners = {
+                "spawner_concert_fan_ranged",
+            },
+        },
     },
 
     ------------------------------------------------------------

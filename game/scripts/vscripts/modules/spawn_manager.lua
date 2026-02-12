@@ -69,9 +69,7 @@ function SpawnManager:SpawnNPC(spawnerName)
             EntityData:AddEntity("npc", data.npc, {})
         end
         local entData = EntityData:ByName(data.npc)
-        if npc:HasModifier("modifier_story_npc") then
-            entData.isStory = true
-        end
+        entData.isStory = npc:HasModifier("modifier_story_npc")
         if data.packID then
             self:LinkUnitToPack(npc, data)
             npc.spawnPos = origin
@@ -79,17 +77,9 @@ function SpawnManager:SpawnNPC(spawnerName)
     end
 end
 
-function SpawnManager:LinkUnitToPack(npc, spawnerData, origin)
+function SpawnManager:LinkUnitToPack(npc, spawnerData)
     DebugPrint("[ALNOIRE] Trying to link unit to pack: ", npc:GetUnitName())
-    local packTargetName = spawnerData.packID
-    local packData = EntityData:ByName(packTargetName)
-    if not packData then
-        DebugPrint("[ALNOIRE] No data for pack: ", packTargetName)
-        return
-    end
-    table.insert(packData.units, npc)
-    npc.packTargetData = packData
-    print("[ALNOIRE] LINKED " .. npc:GetUnitName() .. " to " .. packTargetName)
+    PackManager:AddUnit(spawnerData.packID, npc)
 end
 
 function SpawnManager:OnNPCSpawned(keys)
