@@ -42,6 +42,7 @@ return {
         "npc_hermit",
         "npc_green",
         "npc_perekup",
+        "npc_genius",
 
         "towel_summon",
 
