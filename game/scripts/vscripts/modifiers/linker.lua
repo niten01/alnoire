@@ -19,7 +19,10 @@ LinkLuaModifier("modifier_summon_distance_check", "modifiers/abilities/modifier_
 LinkLuaModifier("modifier_axe_sustain", "modifiers/jungle/modifier_axe_sustain", LUA_MODIFIER_MOTION_NONE)
 
 
+-- ai
+LinkLuaModifier("modifier_default_creep_ai", "modifiers/ai/modifier_default_creep_ai", LUA_MODIFIER_MOTION_NONE)
+
 -- bosses
-LinkLuaModifier("modifier_mk_summon", "modifiers/bosses/modifier_mk_summon", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)
 
 --LinkLuaModifier('modifier_test_eyes', 'modifiers/modifier_test_eyes', LUA_MODIFIER_MOTION_NONE)

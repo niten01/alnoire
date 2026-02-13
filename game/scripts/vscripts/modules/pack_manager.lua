@@ -45,6 +45,15 @@ function PackManager:ActivatePack(packName)
         DebugPrint("[ALNOIRE](PackManager) no such thinker for name: ", pack.thinker)
     end
     pack.state = 'idle'
+
+    PackManager:ForAllAliveUnits(pack, self.ActivateAiForUnit)
+end
+
+
+function PackManager:ActivateAiForUnit(unit)
+    if not IsServer() then return end
+    assert(unit.ai_modifier, "No such ai_modifier for unit: " .. unit:GetName())
+    
 end
 
 function PackManager:ResetPackPosition(packName)
@@ -82,6 +91,9 @@ function PackManager:AddUnit(packName, npc)
     assert(pack, "Invalid packName")
     table.insert(pack.units, npc)
     npc.packTargetData = pack
+    if pack.state ~= 'off' then
+        self:ActivateAiForUnit(npc) 
+    end
     DebugPrint("[ALNOIRE] Added " .. npc:GetName() .. " to pack: " .. packName)
 end
 

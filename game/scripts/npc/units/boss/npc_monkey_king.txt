@@ -10,7 +10,6 @@
 		"Level"						"12"
 		"ModelScale" 				"1.0"
 		"ConsideredHero" 			"1"
-		"vscripts"                  "ai/ai_jungle_creep_default.lua"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -92,7 +91,6 @@
 		"Level"						"12"
 		"ModelScale" 				"1.0"
 		"ConsideredHero" 			"0"
-		"vscripts"                  "ai/ai_jungle_creep_default.lua"
 
 		// Abilities
 		//----------------------------------------------------------------
