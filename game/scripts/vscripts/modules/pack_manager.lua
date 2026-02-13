@@ -10,6 +10,13 @@ end
 function PackManager:OnGameInProgress()
     if not IsServer() then return end
     for packName, packData in EntityData:AllByType('pack') do
+        packData.spawners = {}
+        for spawnerName, spawnerData in EntityData:AllByType('spawner') do
+            if spawnerData.packID and spawnerData.packID == packName then
+                table.insert(packData.spawners, spawnerName)
+            end
+        end
+
         if packData.activateAfterUnitsSpawned then
             self:ActivatePack(packName)
         end
@@ -86,14 +93,13 @@ function PackManager:AddUnit(packName, npc)
 end
 
 function PackManager:RespawnPack(packName)
+    DebugPrint("[ALNOIRE] Respawning pack: " .. packName)
     local pack = self:GetPack(packName)
     local oldState = pack.state
-    self:ForAllAliveUnits()
-    for _, unit in ipairs(pack.units) do
-        if unit and not unit:IsNull() and unit:IsAlive() then
-            unit:RemoveSelf() -- agressive remove to not trigger anything accidentally
-        end
-    end
+    self:ForAllAliveUnits(pack, function(unit)
+        unit:RemoveSelf() -- agressive remove to not trigger anything accidentally
+    end)
+    pack.units = {}
     for _, spawnerName in ipairs(pack.spawners) do
         SpawnManager:SpawnNPC(spawnerName)
     end
