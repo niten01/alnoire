@@ -73,6 +73,11 @@ function modifier_trap_fire_thinker:OnCreated()
 end
 
 function modifier_trap_fire_thinker:OnIntervalThink()
+    if not EpsTraps:IsActivated() then
+        self:SetTrapActive(false)
+        return
+    end
+
     if self:GetAbility() then
         self:GetAbility():FireTrap()
     end

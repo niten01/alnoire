@@ -13,7 +13,7 @@ function trap_spikes:TriggerSpikes()
     caster:EmitSound('sfx.trap_spikes.shoot')
 
     local sanya = FindSanyaInRadius(caster:GetAbsOrigin(), radius)
-    ScreenShake(caster:GetOrigin(), 5, 0.1, 0.5, 500, 0, true)
+    ScreenShake(caster:GetAbsOrigin(), 5, 0.1, 0.5, 500, 0, true)
 
     if sanya then
         ApplyDamage({
@@ -43,14 +43,27 @@ function modifier_trap_spikes_thinker:GetOverrideAnimation()
     return ACT_DOTA_DISABLED
 end
 
+function modifier_trap_spikes_thinker:SetTrapActive(value)
+    if not IsServer() then return end
+    if value == true then
+        self:StartIntervalThink(0.2)
+    elseif value == false then
+        self:StartIntervalThink(-1);
+    end
+end
+
 function modifier_trap_spikes_thinker:OnCreated()
     if not IsServer() then return end
     self.is_triggered = false
     self.cooldown = 5.0
-    self:StartIntervalThink(0.2)
 end
 
 function modifier_trap_spikes_thinker:OnIntervalThink()
+    if not EpsTraps:IsActivated() then
+        self:SetTrapActive(false)
+        return
+    end
+
     if self.is_triggered then return end
 
     local caster = self:GetCaster()

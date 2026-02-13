@@ -45,11 +45,11 @@
 				[
 					{
 						_class = "AnimFile"
-						name = "idle"
+						name = "channel"
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_IDLE"
-						activity_weight = 1
-						weight_list_name = ""
+						activity_weight = 100
+						weight_list_name = "default"
 						fade_in_time = 0.2
 						fade_out_time = 0.2
 						looping = true
@@ -70,6 +70,49 @@
 					},
 				]
 				default_root_bone_name = ""
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								name = "pendulum_wheel"
+								parent_bone = "pendulum_wheel"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -99.505592, -101.762146, -18.202217 ]
+								hitbox_maxs = [ 106.242699, 105.663818, 42.894516 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "pendulum_rarm"
+								parent_bone = "pendulum_rarm"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -36.241699, -31.941162, -44.403786 ]
+								hitbox_maxs = [ 81.881287, 151.514954, 72.449104 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "pendulum_larm"
+								parent_bone = "pendulum_larm"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -70.875519, -31.823914, -33.658875 ]
+								hitbox_maxs = [ 34.982353, 154.805176, 61.120544 ]
+							},
+						]
+					},
+				]
 			},
 		]
 		model_archetype = ""

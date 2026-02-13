@@ -24,20 +24,10 @@ modifier_trap_pendulum_thinker = class({})
 
 function modifier_trap_pendulum_thinker:IsHidden() return true end
 
-function modifier_trap_pendulum_thinker:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE,
-    }
-end
-
-function modifier_trap_pendulum_thinker:GetOverrideAnimationRate()
-    return self.swing_speed or 1.0
-end
-
 function modifier_trap_pendulum_thinker:SetTrapActive(value)
     if not IsServer() then return end
+    local parent = self:GetParent()
     if value == true then
-        local parent = self:GetParent()
         local attrs = parent.injectedAttributes
         assert(attrs and attrs.trap_speed and attrs.trap_delay)
         self.swing_speed = attrs.trap_speed
@@ -48,8 +38,7 @@ function modifier_trap_pendulum_thinker:SetTrapActive(value)
 
         Timers:CreateTimer(attrs.trap_delay, function()
             Timers:CreateTimer(animLength / 4, function()
-                parent:RemoveGesture(ACT_DOTA_IDLE)
-                parent:StartGesture(ACT_DOTA_IDLE)
+                parent:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, self.swing_speed)
             end)
             self:StartIntervalThink(interval)
         end)
@@ -62,6 +51,11 @@ function modifier_trap_pendulum_thinker:OnCreated()
 end
 
 function modifier_trap_pendulum_thinker:OnIntervalThink()
+    if not EpsTraps:IsActivated() then
+        self:SetTrapActive(false)
+        return
+    end
+
     local caster = self:GetCaster()
 
     local length = 250

@@ -67,7 +67,6 @@ function SpawnManager:InitNPC(spawnerData, spawnerEnt, npc)
         assert(spawnerEnt:HasAttribute(attrName),
             "Some spawner entity does't have " .. attrName .. " attribute, good luck finding it")
         local value = spawnerEnt:Attribute_GetFloatValue(attrName, -1)
-        DebugPrint("======================== " .. value)
         injectedAttributes[attrName] = value
     end
     npc.injectedAttributes = injectedAttributes

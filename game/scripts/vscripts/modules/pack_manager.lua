@@ -10,7 +10,6 @@ end
 function PackManager:OnGameInProgress()
     if not IsServer() then return end
     for packName, packData in EntityData:AllByType('pack') do
-        PrintTable(packData, 2)
         if packData.activateAfterUnitsSpawned then
             self:ActivatePack(packName)
         end
