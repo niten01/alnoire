@@ -351,7 +351,6 @@ function StoryDriver:HasActiveFights()
 end
 
 function StoryDriver:HandleAction(playerID, action)
-  PrintTable(action, 2)
   local handler = Handlers[action.type]
   if not handler then
     error("Unhandled action type: " .. action.type)

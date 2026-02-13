@@ -19,7 +19,9 @@ conditions = {
 d_untitled_passage_12 = {
 priority = 0,
 conditions = {
-{ trigger="trigger_gate_trolls",npc="npc_troll",type="trigger" },
+{ questID="q_reach_city",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
+{ ent_var="first_met_global",value={ true },npc="npc_gate_troll_uruk",type="ent_var" },
+{ trigger="trigger_gate_trolls",type="trigger" },
 },
 },
 d_untitled_passage_13 = {
@@ -396,6 +398,8 @@ d_untitled_passage_84 = {
 priority = 0,
 conditions = {
 { trigger="trigger_gorilla",npc="npc_gorilla",type="trigger" },
+{ ent_var="first_met_global",value={ true },npc="npc_gorilla",type="ent_var" },
+{ questID="q_main_quest_act_1",status=QuestStatus.ACTIVE,step={ 4 },type="quest" },
 },
 },
 d_untitled_passage_85 = {
@@ -419,6 +423,14 @@ priority = 0,
 conditions = {
 { var="act",value={ 0 },type="var" },
 { trigger="trigger_choose_hero",npc="npc_shamanka",type="trigger" },
+},
+},
+d_gorillaagain = {
+priority = 0,
+conditions = {
+{ trigger="trigger_gorilla",npc="npc_gorilla",type="trigger" },
+{ ent_var="first_met_global",value={ false },npc="npc_gorilla",type="ent_var" },
+{ questID="q_main_quest_act_1",status=QuestStatus.ACTIVE,step={ 4 },type="quest" },
 },
 },
 d_redhlup = {
@@ -446,6 +458,14 @@ d_subwaytocity = {
 priority = 0,
 conditions = {
 { interact="npc_subway_to_city",type="interact" },
+},
+},
+d_trollsagain = {
+priority = 0,
+conditions = {
+{ trigger="trigger_gate_trolls",type="trigger" },
+{ questID="q_reach_city",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
+{ ent_var="first_met_global",value={ false },npc="npc_gate_troll_uruk",type="ent_var" },
 },
 },
 d_bouncerhaveticket = {
@@ -877,7 +897,7 @@ next = "d_o2",
 d_nachat_oboronyatsya = {
 text = [[]],
 speaker = [[Банда троллей]],
-npc = "npc_troll",
+npc = "npc_gate_troll_uruk",
 choices = {
 {
 text = [[Закрыть.]],
@@ -1015,9 +1035,9 @@ choices = {
 text = [[*Ну почему я то?!*]],
 next = nil,
 actions = {
-{ target="kill",npc="npc_gorilla",type="fight_start" },
-{ type="gorilla_fight_start" },
+{ pack="pack_gorilla",type="fight_start" },
 { npc="npc_rape_victim",type="kill" },
+{ type="gorilla_fight_start" },
 },
 },
 },
@@ -1207,7 +1227,7 @@ choices = {
 text = [[*Принять вызов.*]],
 next = nil,
 actions = {
-{ target="talk",npc="npc_red",type="fight_start" },
+{ pack="pack_red",nonLethalNPC="npc_red",type="fight_start" },
 },
 },
 },
@@ -1277,7 +1297,7 @@ actions = {
 d_untitled_passage_12 = {
 text = [[*Из ниоткуда явилось три зубастых существа.*]],
 speaker = [[Банда троллей]],
-npc = "npc_troll",
+npc = "npc_gate_troll_uruk",
 choices = {
 {
 text = [[Вы вообще что такое?]],
@@ -1927,7 +1947,7 @@ choices = {
 text = [[*Начать сиять.*]],
 next = nil,
 actions = {
-{ target="talk",npc="npc_red",type="fight_start" },
+{ pack="pack_red",nonLethalNPC="npc_red",type="fight_start" },
 },
 },
 },
@@ -2024,11 +2044,25 @@ next = "d_ty_pervyj_krip_chto_upomyanul_korolya_chto_tebe_o_nem_izvestno",
 d_g = {
 text = [[Мы самые кровожадные воры Заброшенного леса: Урюк, Дирюк и Бе...]],
 speaker = [[Банда троллей]],
-npc = "npc_troll",
+npc = "npc_gate_troll_uruk",
 choices = {
 {
 text = [[Не не, мне не важно кто вы, я спрашивал, что за раса у вас.]],
 next = "d_ne_ne_mne_ne_vazhno_kto_vy_ya_sprashival_chto_za_rasa_u_vas",
+},
+},
+},
+d_gorillaagain = {
+text = [[*Горилла замечает тебя. Огромная туша двигается тебе наствречу.*]],
+speaker = [[...]],
+npc = "npc_gorilla",
+choices = {
+{
+text = [[*Ну почему я то?!*]],
+next = nil,
+actions = {
+{ pack="pack_gorilla",type="fight_start" },
+},
 },
 },
 },
@@ -3545,6 +3579,43 @@ next = nil,
 },
 },
 },
+d_trollsagain = {
+text = [[Эу, пфффть
+*Существо сплевывает на пол.*]],
+speaker = [[Банда троллей]],
+npc = nil,
+choices = {
+{
+text = [[...]],
+next = "d_trollsagainspit",
+},
+},
+},
+d_trollsagainprovo = {
+text = [[Кажется мы уже показали тебе твое место в этом мире. Хочешь попробовать землю на вкус еще раз?]],
+speaker = [[Банда троллей]],
+npc = nil,
+choices = {
+{
+text = [[В этот раз все будет по-другому...]],
+next = nil,
+actions = {
+{ pack="pack_gate_trolls",type="fight_start" },
+},
+},
+},
+},
+d_trollsagainspit = {
+text = [[*Неудачно – часть слюны повисает у него на подбородке. Зеленый поспешно исправляет эту оплошность, а его подельники делают вид, что ничего не заметили*]],
+speaker = [[Банда троллей]],
+npc = nil,
+choices = {
+{
+text = [[...]],
+next = "d_trollsagainprovo",
+},
+},
+},
 d_a_gde_mne_ih_iskat = {
 text = [[Где-то в этом мире, сам не знаю. Я вижу их постоянно, но не могу усмирить. Может и тебе посчастливиться встретить их.]],
 speaker = [[Пьяная панда]],
@@ -3885,6 +3956,17 @@ actions = {
 },
 },
 },
+d_v_etot_raz_vse_budet_podrugomu = {
+text = [[]],
+speaker = [[Банда троллей]],
+npc = nil,
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
 d_valyaj = {
 text = [[Знал ли ты, что на месте Пустоши стоял город, подобно нашему?]],
 speaker = [[Быдло]],
@@ -4011,7 +4093,7 @@ d_vy_voobsche_chto_takoe = {
 text = [[*Главный начал разговор.*
 Ооо новичок подъехал, мы таких любим.]],
 speaker = [[Банда троллей]],
-npc = "npc_troll",
+npc = "npc_gate_troll_uruk",
 choices = {
 {
 text = [[...]],
@@ -4768,15 +4850,13 @@ next = nil,
 d_ne_ne_mne_ne_vazhno_kto_vy_ya_sprashival_chto_za_rasa_u_vas = {
 text = [[Разорвём на части этого черта!!]],
 speaker = [[Банда троллей]],
-npc = "npc_troll",
+npc = "npc_gate_troll_uruk",
 choices = {
 {
 text = [[*Начать обороняться.*]],
 next = nil,
 actions = {
-{ npc="npc_gate_troll_uruk",target="kill",type="fight_start" },
-{ npc="npc_gate_troll_biruk",target="kill",type="fight_start" },
-{ npc="npc_gate_troll_diruk",target="kill",type="fight_start" },
+{ pack="pack_gate_trolls",type="fight_start" },
 },
 },
 },
