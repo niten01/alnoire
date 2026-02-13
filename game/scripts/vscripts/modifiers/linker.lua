@@ -17,4 +17,8 @@ LinkLuaModifier("modifier_summon_distance_check", "modifiers/abilities/modifier_
 -- jungle
 LinkLuaModifier("modifier_axe_sustain", "modifiers/jungle/modifier_axe_sustain", LUA_MODIFIER_MOTION_NONE)
 
+
+-- bosses
+LinkLuaModifier("modifier_mk_summon", "modifiers/bosses/modifier_mk_summon", LUA_MODIFIER_MOTION_NONE)
+
 --LinkLuaModifier('modifier_test_eyes', 'modifiers/modifier_test_eyes', LUA_MODIFIER_MOTION_NONE)

@@ -10,7 +10,7 @@ end
 function PackManager:OnGameInProgress()
     if not IsServer() then return end
     for packName, packData in EntityData:AllByType('pack') do
-        PrintTable(packData, 2)
+        --PrintTable(packData, 2)
         if packData.activateAfterUnitsSpawned then
             self:ActivatePack(packName)
         end
@@ -153,7 +153,7 @@ function PackManager:PackTargetDenyThink(packTargetEnt, packTargetData)
     if not packTargetData then return nil end
     if #packTargetData.units == 0 then return IDLE_THINK_INTERVAL end
 
-    if not UpdateUnits(packTargetData) then
+    if not AnyAlive(packTargetData) then
         print("[ALNOIRE] All units in pack " .. packTargetEnt:GetName() .. " are dead. Disabling beacon thinker.")
         packTargetData.state = "dead"
         return nil

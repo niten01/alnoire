@@ -10,6 +10,7 @@
 		"Level"						"12"
 		"ModelScale" 				"1.0"
 		"ConsideredHero" 			"1"
+		"vscripts"                  "ai/ai_jungle_creep_default.lua"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -31,6 +32,104 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 		"AttackRange"				"600"		// Range within a target can be attacked.
+
+		"AttackRangeActivityModifiers"
+		{
+			"attack_normal_range"	"0"
+			"attack_long_range"		"200"
+		}
+
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"390"
+			"run_fast"	"440"
+		}
+		"HasAggressiveStance"	"0"
+		"particle_folder"		"particles/units/heroes/hero_monkey_king"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"50"
+		"HealthBarOffset"			"170"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"41"		// Experience earn.
+		"BountyGoldMin"				"21"		// Gold earned min.
+		"BountyGoldMax"				"25"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"290"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"450"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		"StatusMana"				"500"		// Base mana.
+		"StatusManaRegen"			"0.75"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	}
+
+	"npc_monkey_king_summon" 
+	{
+        // General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/monkey_king/monkey_king.vmdl"	
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_MonkeyKing"
+		"Level"						"12"
+		"ModelScale" 				"1.0"
+		"ConsideredHero" 			"0"
+		"vscripts"                  "ai/ai_jungle_creep_default.lua"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"monkey_king_boundless_strike"			// Ability 1
+		"Ability2"					"monkey_king_jingu_mastery"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"25"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackRate"				"1.8"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+
+		"AttackRangeActivityModifiers"
+		{
+			"attack_normal_range"	"0"
+			"attack_long_range"		"200"
+		}
+
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"390"
+			"run_fast"	"440"
+		}
+		"particle_folder"		"particles/units/heroes/hero_monkey_king"
+
+		"HasAggressiveStance"	"0"
 
 		// Bounds
 		//----------------------------------------------------------------

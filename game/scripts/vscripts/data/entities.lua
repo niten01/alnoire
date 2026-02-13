@@ -78,6 +78,12 @@ return {
         spawner_monkey_king = {
             npc = "npc_monkey_king",
             modifiers = { "modifier_story_npc" },
+            packID = "pack_mk"
+        },
+        spawner_monkey_king_summon = {
+            npc = "npc_monkey_king_summon",
+            modifiers = { "modifier_story_npc", "modifier_mk_summon"},
+            packID = "pack_mk"
         },
         spawner_brewmaster = {
             npc = "npc_brewmaster",
@@ -246,6 +252,14 @@ return {
             spawners = {
                 "spawner_axe_axe",
                 "spawner_axe_sisipisi",
+            },
+        },
+
+        pack_mk = {
+            activateAfterUnitsSpawned = false,
+            spawners = {
+                "spawner_monkey_king",
+                "spawner_monkey_king_summon",
             },
         },
 

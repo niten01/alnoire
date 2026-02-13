@@ -21,6 +21,7 @@ return {
         "npc_creep_rogach",
         "npc_mustache",
         "npc_monkey_king",
+        "npc_monkey_king_summon",
         "npc_blue_prince",
         "npc_blue_prince",
         "npc_ogre_magi",

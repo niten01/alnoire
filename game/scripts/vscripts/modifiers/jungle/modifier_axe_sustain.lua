@@ -30,7 +30,7 @@ function modifier_axe_sustain:GetModifierBaseAttack_BonusDamage()
 end
 
 function modifier_axe_sustain:GetTexture()
-    return "dragon_knight_breathe_fire"
+    return "axe_berserkers_call"
 end
 
 function modifier_axe_sustain:OnCreated( )
