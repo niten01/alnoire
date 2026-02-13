@@ -90,5 +90,7 @@ end
 function modifier_ski:OnDestroy()
     if not IsServer() then return end
     FindClearSpaceForUnit(self:GetParent(), self:GetParent():GetAbsOrigin(), true)
-    self.wearable:RemoveSelf()
+    if self.wearable and not self.wearable:IsNull() then
+        self.wearable:RemoveSelf()
+    end
 end

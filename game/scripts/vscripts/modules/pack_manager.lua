@@ -10,7 +10,6 @@ end
 function PackManager:OnGameInProgress()
     if not IsServer() then return end
     for packName, packData in EntityData:AllByType('pack') do
-        --PrintTable(packData, 2)
         if packData.activateAfterUnitsSpawned then
             self:ActivatePack(packName)
         end
@@ -48,6 +47,24 @@ function PackManager:ActivatePack(packName)
     pack.state = 'idle'
 end
 
+function PackManager:ResetPackPosition(packName)
+    local pack = self:GetPack(packName)
+    assert(pack, "No such pack: " .. packName)
+
+    self:ForAllAliveUnits(pack, function(unit)
+        if unit.spawnPos then unit:SetAbsOrigin(unit.spawnPos) end
+        if unit.spawnForward then unit:SetForwardVector(unit.spawnForward) end
+    end)
+end
+
+function PackManager:ForAllAliveUnits(pack, fn)
+    for _, unit in ipairs(pack.units) do
+        if unit and not unit:IsNull() and unit:IsAlive() then
+            fn(unit)
+        end
+    end
+end
+
 function PackManager:DeactivatePack(packName)
     assert(packName)
     DebugPrint("[ALNOIRE] Deactivating pack: " .. packName)
@@ -71,6 +88,7 @@ end
 function PackManager:RespawnPack(packName)
     local pack = self:GetPack(packName)
     local oldState = pack.state
+    self:ForAllAliveUnits()
     for _, unit in ipairs(pack.units) do
         if unit and not unit:IsNull() and unit:IsAlive() then
             unit:RemoveSelf() -- agressive remove to not trigger anything accidentally

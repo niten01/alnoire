@@ -21,6 +21,7 @@ require('triggers/flask')
 require('triggers/quest_trigger')
 require('triggers/dialogue_trigger')
 require('triggers/button')
+require('triggers/traps')
 
 require('triggers/startmk')
 
@@ -232,6 +233,7 @@ end
 
 function barebones:InitModules()
   self.modules = {
+    require('modules.intro_movie'),
     require('modules.chatcommand'),
     require('modules.entity_data'),
     require('modules.spawn_manager'),
@@ -244,7 +246,7 @@ function barebones:InitModules()
     require('modules.quest.quest'),
     require('modules.dialogue.dialogue'),
     require('modules.minigames.clashgame'),
-    require('modules.intro_movie'),
+    require('modules.minigames.eps_traps'),
   }
 
   for _, sys in ipairs(self.modules) do sys:Init() end

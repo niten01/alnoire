@@ -1,0 +1,12 @@
+"DOTAUnits"
+{
+    "npc_trap_fire"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/props/traps/barking_dog/barking_dog.vmdl"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+        "Ability1"              "trap_fire"
+        "Level"                 "1"
+        "HealthBarOffset"       "-1"
+    }
+}

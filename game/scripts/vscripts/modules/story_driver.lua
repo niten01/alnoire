@@ -4,6 +4,7 @@ function StoryDriver:Init()
   GameEvents:OnActChange(bind(self.OnActChange, self))
   GameEvents:OnEntityKilled(bind(self.OnEntityKilled, self))
   GameEvents:OnPackWiped(bind(self.OnPackWiped, self))
+  GameEvents:OnCancelLethalDamage(bind(self.OnCancelLethalDamage, self))
   self.activeStoryFights = {}
 end
 
@@ -321,6 +322,14 @@ function StoryDriver:OnEntityKilled(event)
       PackManager:DeactivatePack(packName)
       PackManager:RespawnPack(packName)
     end
+  end
+end
+
+function StoryDriver:OnCancelLethalDamage(event)
+  while #self.activeStoryFights > 0 do
+    local packName = table.remove(self.activeStoryFights, 1)
+    PackManager:DeactivatePack(packName)
+    PackManager:ResetPackPosition(packName)
   end
 end
 

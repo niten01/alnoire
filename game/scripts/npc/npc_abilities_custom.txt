@@ -204,10 +204,28 @@
 		}
 	}
 
-	"trap_fire_arrow"
+	"trap_fire"
 	{
 		"BaseClass"             "ability_lua"
-		"ScriptFile"            "abilities/trap_fire_arrow.lua"
+		"ScriptFile"            "abilities/trap_fire.lua"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"trap_arrow"
+	{
+		"BaseClass"             "ability_lua"
+		"ScriptFile"            "abilities/trap_arrow.lua"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"trap_spikes"
+	{
+		"BaseClass"             "ability_lua"
+		"ScriptFile"            "abilities/trap_spikes.lua"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"trap_pendulum"
+	{
+		"BaseClass"             "ability_lua"
+		"ScriptFile"            "abilities/trap_pendulum.lua"
 		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 

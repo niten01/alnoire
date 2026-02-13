@@ -60,7 +60,6 @@ end
 function Dialogue:StartDialogueForPlayer(playerID, startNodeID)
   if not self.dialogueGraph[startNodeID] then return end
   if self.playerDialogueState[playerID] then return end
-  if StoryDriver:HasActiveFights() then return end
 
   self:TrySetFirstMet(startNodeID)
 
@@ -276,6 +275,7 @@ function Dialogue:OnQueryUpdate(_, args)
 
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
   -- skip talks during fights
+  if StoryDriver:HasActiveFights() then return end
   if not unit:HasModifier("modifier_story_npc") then return end
 
   -- interact

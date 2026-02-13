@@ -4,7 +4,10 @@
 #base "units/boss/npc_ogre_bruiser.txt"
 #base "units/boss/npc_killer.txt"
 
-#base "units/trap/npc_arrow_trap.txt"
+#base "units/trap/npc_trap_arrow.txt"
+#base "units/trap/npc_trap_fire.txt"
+#base "units/trap/npc_trap_spikes.txt"
+#base "units/trap/npc_trap_pendulum.txt"
 
 #base "units/misc/clash_royale.txt"
 
