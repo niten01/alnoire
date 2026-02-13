@@ -184,6 +184,7 @@ return {
         spawner_perekup = {
             npc = "npc_perekup",
             modifiers = { "modifier_story_npc" },
+            packID = "pack_perekup",
         },
         spawner_hermit = {
             npc = "npc_hermit",
@@ -232,6 +233,7 @@ return {
             npc = "npc_genius",
             modifiers = { "modifier_story_npc" },
             deferred = true,
+            packID = "pack_genius"
         },
 
         spawner_concert_fan_ranged = {
@@ -294,6 +296,12 @@ return {
         pack_red = {
             activateAfterUnitsSpawned = false,
         },
+        pack_perekup = {
+            activateAfterUnitsSpawned = false,
+        },
+        pack_genius = {
+            activateAfterUnitsSpawned = false,
+        },
     },
 
     ------------------------------------------------------------
@@ -335,6 +343,7 @@ return {
         door_prologue = {
             clipEntity = "clip_door_prologue",
             openAnimation = "cf_palace_door_open",
+            openSound = "sfx.door_palace.open",
         },
         door_clash_royale = {
             clipEntity = "clip_door_clash_royale",
@@ -343,6 +352,7 @@ return {
         door_forest_1_reward = {
             clipEntity = "clip_door_forest_1_reward",
             openAnimation = "cf_palace_door_open",
+            openSound = "sfx.door_palace.open",
             requiresButtons = {
                 "button_forest_1_reward_1",
                 "button_forest_1_reward_2",
@@ -354,6 +364,7 @@ return {
         door_forest_1_shortcut = {
             clipEntity = "clip_door_forest_1_shortcut",
             openAnimation = "cf_palace_door_open",
+            openSound = "sfx.door_palace.open",
             requiresButtons = {
                 "button_forest_1_shortcut"
             },

@@ -69,6 +69,12 @@ function DoorManager:Open(doorName)
       DoEntFireByInstanceHandle(doorEnt, "SetAnimation", data.openAnimation, 0, nil, nil)
     end
   end
+
+  if data.openSound then
+    local doorEnt = Entities:FindByName(nil, doorName)
+    assert(doorEnt)
+    doorEnt:EmitSound(data.openSound)
+  end
 end
 
 return DoorManager

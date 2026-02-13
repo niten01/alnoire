@@ -2,7 +2,7 @@ GlobalState = GlobalState or {}
 
 function GlobalState:Init()
     self.state = {
-        act = 1,
+        act = 3,
         knows_village_password = false,
         has_village_pass = false,
         has_ski = false,
