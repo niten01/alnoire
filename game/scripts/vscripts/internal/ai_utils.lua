@@ -67,8 +67,8 @@ function DrawDebugCircle(entity, radius)
     if not IsServer() then return end
     if not entity or not radius then return end
     local pfx = ParticleManager:CreateParticle("particles/sanya_debug_radius_ring.vpcf", PATTACH_WORLDORIGIN, nil)
-    ParticleManager:SetParticleControl(pfx, 0, entity:GetAbsOrigin()) 
-    ParticleManager:SetParticleControl(pfx, 2, Vector(radius, 0, 0)) 
+    ParticleManager:SetParticleControl(pfx, 0, entity:GetAbsOrigin() + Vector(0, 0, 50)) 
+    ParticleManager:SetParticleControl(pfx, 2, Vector(radius, 0, 50)) 
     return pfx
 end
 

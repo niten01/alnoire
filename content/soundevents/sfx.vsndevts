@@ -28,4 +28,30 @@
     ]
     vsnd_duration = 1.0
   }
+  sfx.trap_spikes.activate = {
+    type = "dota_update_default"
+    volume = 0.200000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/addons/conquest/spike_trap_plate.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  sfx.trap_spikes.shoot = {
+    type = "dota_update_default"
+    volume = 0.800000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/addons/conquest/spike_trap.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
 }

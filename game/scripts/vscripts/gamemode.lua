@@ -21,6 +21,7 @@ require('triggers/flask')
 require('triggers/quest_trigger')
 require('triggers/dialogue_trigger')
 require('triggers/button')
+require('triggers/traps')
 
 -- This function initializes the game mode and is called before anyone loads into the game
 -- It can be used to pre-initialize any values/tables that will be needed later
@@ -241,8 +242,9 @@ function barebones:InitModules()
     require('modules.story_driver'),
     require('modules.quest.quest'),
     require('modules.dialogue.dialogue'),
-    require('modules.minigames.clashgame'),
     require('modules.intro_movie'),
+    require('modules.minigames.clashgame'),
+    require('modules.minigames.eps_traps'),
   }
 
   for _, sys in ipairs(self.modules) do sys:Init() end

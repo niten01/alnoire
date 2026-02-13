@@ -66,7 +66,10 @@ return {
         "npc_dota_hero_antimage",
 
         -- traps
-        "npc_arrow_trap",
+        "npc_trap_arrow",
+        "npc_trap_fire",
+        "npc_trap_spikes",
+        "npc_trap_pendulum",
 
     },
     models = {
@@ -101,6 +104,7 @@ return {
 
         -- traps
         "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf",
+        "particles/trap_arrow.vpcf",
 
         -- towel summon return
         "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_embers.vpcf",

@@ -48,9 +48,6 @@ function modifier_story_npc:OnCreated()
 	parent.oldNightVisionRange = parent:GetNightTimeVisionRange()
 	parent:SetDayTimeVisionRange(0)
 	parent:SetNightTimeVisionRange(0)
-	if not parent:HasModifier("modifier_phased") then
-		parent:AddNewModifier(parent, nil, "modifier_phased", {})
-	end
 end
 
 function modifier_story_npc:OnDestroy()
@@ -60,7 +57,4 @@ function modifier_story_npc:OnDestroy()
 	parent:SetDayTimeVisionRange(parent.oldDayVisionRange or 700)
 	parent:SetNightTimeVisionRange(parent.oldNightVisionRange or 700)
 	parent:SetNightTimeVisionRange(0)
-	if parent:HasModifier("modifier_phased") then
-		parent:RemoveModifierByName("modifier_phased")
-	end
 end

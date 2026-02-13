@@ -4,7 +4,10 @@ return {
     ------------------------------------------------------------
     spawner = {
         __common = {
-            team = DOTA_TEAM_GOODGUYS
+            team = DOTA_TEAM_GOODGUYS,
+            modifiers = {},
+            deferred = false,
+            injectedAttributes = {},
         },
 
         spawner_subway_city = {
@@ -138,10 +141,27 @@ return {
             npc = "npc_concert_guard",
             modifiers = { "modifier_story_npc" },
         },
-        spawner_arrow_trap = {
-            npc = "npc_arrow_trap",
+        spawner_trap_arrow = {
+            npc = "npc_trap_arrow",
             team = DOTA_TEAM_BADGUYS,
             modifiers = { "modifier_story_npc" },
+        },
+        spawner_trap_fire = {
+            npc = "npc_trap_fire",
+            team = DOTA_TEAM_BADGUYS,
+            modifiers = { "modifier_story_npc" },
+            injectedAttributes = { "trap_delay", "trap_interval" }
+        },
+        spawner_trap_spikes = {
+            npc = "npc_trap_spikes",
+            team = DOTA_TEAM_BADGUYS,
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_trap_pendulum = {
+            npc = "npc_trap_pendulum",
+            team = DOTA_TEAM_BADGUYS,
+            modifiers = { "modifier_story_npc" },
+            injectedAttributes = { "trap_delay", "trap_speed" }
         },
         spawner_storyteller = {
             npc = "npc_storyteller",

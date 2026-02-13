@@ -38,42 +38,54 @@ end
 
 function SpawnManager:SpawnNPC(spawnerName)
     DebugPrint("[ALNOIRE] Trying to spawn using spawner: ", spawnerName)
-    local data = EntityData:ByName(spawnerName)
+    local spawnerData = EntityData:ByName(spawnerName)
     for _, spawnerEnt in ipairs(Entities:FindAllByName(spawnerName)) do
         local origin = spawnerEnt:GetAbsOrigin()
         DebugPrint("\tFound spawner entity: (" .. origin.x .. ";" .. origin.y .. ")")
         local npc = CreateUnitByName(
-            data.npc,
+            spawnerData.npc,
             origin,
             true,
             nil,
             nil,
-            data.team
+            spawnerData.team
         )
-        if not npc then
-            error("Failed to spawn: " .. data.npc)
-        end
-        npc:SetEntityName(data.npc)
-        local fwd = spawnerEnt:GetForwardVector()
-        fwd.z = 0
-        npc:FaceTowards(npc:GetAbsOrigin() + fwd * 100)
-        npc:SetForwardVector(fwd)
+        self:InitNPC(spawnerData, spawnerEnt, npc)
+    end
+end
 
-        for _, modifier in ipairs(data.modifiers or {}) do
-            if not npc:HasModifier(modifier) then
-                npc:AddNewModifier(npc, nil, modifier, {})
-            end
-        end
+function SpawnManager:InitNPC(spawnerData, spawnerEnt, npc)
+    assert(npc, "Failed to spawn: " .. spawnerData.npc)
+    npc:SetEntityName(spawnerData.npc)
+    local fwd = spawnerEnt:GetForwardVector()
+    fwd.z = 0
+    npc:FaceTowards(npc:GetAbsOrigin() + fwd * 100)
+    npc:SetForwardVector(fwd)
 
-        if not EntityData:ByName(data.npc) then
-            EntityData:AddEntity("npc", data.npc, {})
+    local injectedAttributes = {}
+    for _, attrName in ipairs(spawnerData.injectedAttributes) do
+        assert(spawnerEnt:HasAttribute(attrName),
+            "Some spawner entity does't have " .. attrName .. " attribute, good luck finding it")
+        local value = spawnerEnt:Attribute_GetFloatValue(attrName, -1)
+        DebugPrint("======================== " .. value)
+        injectedAttributes[attrName] = value
+    end
+    npc.injectedAttributes = injectedAttributes
+
+    for _, modifier in ipairs(spawnerData.modifiers or {}) do
+        if not npc:HasModifier(modifier) then
+            npc:AddNewModifier(npc, nil, modifier, {})
         end
-        local entData = EntityData:ByName(data.npc)
-        entData.isStory = npc:HasModifier("modifier_story_npc")
-        if data.packID then
-            self:LinkUnitToPack(npc, data)
-            npc.spawnPos = origin
-        end
+    end
+
+    if not EntityData:ByName(spawnerData.npc) then
+        EntityData:AddEntity("npc", spawnerData.npc, {})
+    end
+    local entData = EntityData:ByName(spawnerData.npc)
+    entData.isStory = npc:HasModifier("modifier_story_npc")
+    if spawnerData.packID then
+        self:LinkUnitToPack(npc, spawnerData)
+        npc.spawnPos = npc:GetAbsOrigin()
     end
 end
 
