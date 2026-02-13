@@ -85,6 +85,7 @@ function SpawnManager:InitNPC(spawnerData, spawnerEnt, npc)
     if spawnerData.packID then
         self:LinkUnitToPack(npc, spawnerData)
         npc.spawnPos = npc:GetAbsOrigin()
+        npc.spawnForward = npc:GetForwardVector()
     end
 end
 

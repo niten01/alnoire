@@ -2788,7 +2788,7 @@ choices = {
 text = [[Начнём дуэль.]],
 next = nil,
 actions = {
-{ target="talk",npc="npc_monkey_king",type="fight_start" },
+{ pack="pack_monkey_king",nonLethalNPC="npc_monkey_king",type="fight_start" },
 },
 },
 },
@@ -6267,7 +6267,7 @@ choices = {
 text = [[Начнём.]],
 next = nil,
 actions = {
-{ target="talk",npc="npc_monkey_king",type="fight_start" },
+{ pack="pack_monkey_king",nonLethalNPC="npc_monkey_king",type="fight_start" },
 },
 },
 },

@@ -231,6 +231,7 @@ end
 
 function barebones:InitModules()
   self.modules = {
+    require('modules.intro_movie'),
     require('modules.chatcommand'),
     require('modules.entity_data'),
     require('modules.spawn_manager'),
@@ -242,7 +243,6 @@ function barebones:InitModules()
     require('modules.story_driver'),
     require('modules.quest.quest'),
     require('modules.dialogue.dialogue'),
-    require('modules.intro_movie'),
     require('modules.minigames.clashgame'),
     require('modules.minigames.eps_traps'),
   }

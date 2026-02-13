@@ -81,6 +81,7 @@ return {
         spawner_monkey_king = {
             npc = "npc_monkey_king",
             modifiers = { "modifier_story_npc" },
+            packID = "pack_monkey_king",
         },
         spawner_brewmaster = {
             npc = "npc_brewmaster",
@@ -278,6 +279,16 @@ return {
             activateAfterUnitsSpawned = false,
             spawners = {
                 "spawner_concert_fan_ranged",
+            },
+        },
+        pack_monkey_king = {
+            rangeFastTickRate = 600,
+            rangeRetreat = 600,
+            rangeAggro = 600,
+            denyTarget = nil,
+            activateAfterUnitsSpawned = false,
+            spawners = {
+                "spawner_monkey_king",
             },
         },
     },
