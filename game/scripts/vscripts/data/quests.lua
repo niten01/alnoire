@@ -210,6 +210,12 @@ return {
             {
                 description = "Сообщи о предсказании гиду",
                 objectives = {
+                    { type = "kill", npc = "npc_gorilla" }
+                },
+            },
+            {
+                description = "Сообщи о предсказании гиду",
+                objectives = {
                     { type = "talk", npc = "npc_guide" }
                 },
                 postStepActions = {

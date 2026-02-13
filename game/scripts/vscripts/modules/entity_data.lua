@@ -33,7 +33,7 @@ function EntityData:AddCommonProperties(entityData)
     if not common then return end
     for k, v in pairs(common) do
         if entityData[k] == nil then
-            entityData[k] = v
+            entityData[k] = copy(v)
         end
     end
 end

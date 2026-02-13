@@ -45,7 +45,7 @@ function SpawnManager:SpawnNPC(spawnerName)
         local npc = CreateUnitByName(
             spawnerData.npc,
             origin,
-            true,
+            false,
             nil,
             nil,
             spawnerData.team

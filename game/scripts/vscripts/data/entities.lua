@@ -8,6 +8,7 @@ return {
             modifiers = {},
             deferred = false,
             injectedAttributes = {},
+            packID = nil,
         },
 
         spawner_subway_city = {
@@ -32,6 +33,7 @@ return {
             npc = "npc_gorilla",
             modifiers = { "modifier_story_npc" },
             deferred = true,
+            packID = "pack_gorilla",
         },
         spawner_blue_prince = {
             npc = "npc_blue_prince",
@@ -48,14 +50,17 @@ return {
         spawner_gate_troll_left = {
             npc = "npc_gate_troll_biruk",
             modifiers = { "modifier_story_npc" },
+            packID = "pack_gate_trolls",
         },
         spawner_gate_troll_right = {
             npc = "npc_gate_troll_diruk",
             modifiers = { "modifier_story_npc" },
+            packID = "pack_gate_trolls",
         },
         spawner_gate_troll_center = {
             npc = "npc_gate_troll_uruk",
             modifiers = { "modifier_story_npc" },
+            packID = "pack_gate_trolls",
         },
         spawner_guide_city_entrance = {
             npc = "npc_guide",
@@ -94,6 +99,7 @@ return {
         spawner_ogre_bruiser = {
             npc = "npc_ogre_bruiser",
             modifiers = { "modifier_story_npc" },
+            packID = "pack_ogre_bruiser",
         },
         spawner_rape_victim = {
             npc = "npc_rape_victim",
@@ -132,6 +138,7 @@ return {
             npc = "npc_red",
             modifiers = { "modifier_story_npc" },
             deferred = true,
+            packID = "pack_red"
         },
         spawner_green = {
             npc = "npc_green",
@@ -255,41 +262,37 @@ return {
         },
 
         pack_forest_act1_lizards = {
-            spawners = {
-                "spawner_lizards_venomancer",
-                "spawner_lizards_creep_melee",
-                "spawner_lizards_creep_range",
-            },
         },
 
         pack_forest_act1_axe = {
             thinker = "axe",
             denyTarget = nil,
-            spawners = {
-                "spawner_axe_axe",
-                "spawner_axe_sisipisi",
-            },
         },
 
         pack_concert_crowd = {
             rangeFastTickRate = 1300,
             rangeRetreat = 1300,
             rangeAggro = 1300,
-            denyTarget = nil,
             activateAfterUnitsSpawned = false,
-            spawners = {
-                "spawner_concert_fan_ranged",
-            },
         },
         pack_monkey_king = {
-            rangeFastTickRate = 600,
             rangeRetreat = 600,
             rangeAggro = 600,
-            denyTarget = nil,
             activateAfterUnitsSpawned = false,
-            spawners = {
-                "spawner_monkey_king",
-            },
+        },
+        pack_gate_trolls = {
+            rangeRetreat = 1000,
+            rangeAggro = 600,
+            activateAfterUnitsSpawned = false,
+        },
+        pack_ogre_bruiser = {
+            activateAfterUnitsSpawned = false,
+        },
+        pack_gorilla = {
+            activateAfterUnitsSpawned = false,
+        },
+        pack_red = {
+            activateAfterUnitsSpawned = false,
         },
     },
 

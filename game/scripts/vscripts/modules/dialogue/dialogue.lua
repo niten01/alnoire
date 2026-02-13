@@ -160,8 +160,8 @@ function Dialogue:GetDialogueNodeBestMatchEntrypoint(playerID, premetConditions)
     Notifications:TopToAll({ text = text, duration = 10000 })
   end
 
-  DebugPrint("[ALNOIRE] Dialogue entrypoint matches:")
-  PrintTable(matches, 2)
+  -- DebugPrint("[ALNOIRE] Dialogue entrypoint matches:")
+  -- PrintTable(matches, 2)
 
   return matches[1]
 end
