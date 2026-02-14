@@ -266,7 +266,7 @@ end
 
 function StoryDriver:StartFight(packName, nonLethalNPC)
   local pack = PackManager:GetPack(packName)
-  assert(pack, "No such pack: " .. packName)
+  assert(pack, "No pack to start fight with: " .. packName)
   for _, unit in ipairs(pack.units) do
     DebugPrint("[ALNOIRE] Starting fight with " .. unit:GetName())
     unit:RemoveModifierByName("modifier_story_npc")

@@ -8,7 +8,7 @@ def merge(og: Story, s: Story) -> Story:
         for link in p.links:
             if link.target in og.passages:
                 raise MergeError(
-                    """Accidental link merge (new -> old): 
+                    f"""Accidental link merge (new -> old): 
                     {p.name}
                     --{link.target}->
                     {og.passages[link.target]}"""
@@ -17,13 +17,14 @@ def merge(og: Story, s: Story) -> Story:
         for link in p.links:
             if link.target in s.passages:
                 raise MergeError(
-                    """Accidental link merge (old -> new): 
+                    f"""Accidental link merge (old -> new): 
                     {p.name}
                     --{link.target}->
                     {s.passages[link.target]}"""
                 )
 
-    for id, passage in s.passages.items():
+    for id in list(s.passages.keys()):
+        passage_id = id
         if id in og.passages:
             new_id = f"{id}_merged_{s.title}"
             if new_id in og.passages:
@@ -31,7 +32,8 @@ def merge(og: Story, s: Story) -> Story:
                     f"Colliding passage ids found: {s.title}::{new_id} overrides {og.title}::{new_id}"
                 )
             s.rename(id, new_id)
-        og.passages[id] = passage
+            passage_id = new_id
+        og.passages[id] = s.passages[passage_id]
 
     for id, entrypoint in s.entries.items():
         if id in og.entries:
