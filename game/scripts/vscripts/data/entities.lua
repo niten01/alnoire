@@ -87,13 +87,13 @@ return {
             npc = "npc_monkey_king",
             modifiers = { "modifier_story_npc" },
             packID = "pack_mk",
-            ai_modifier = "modifier_default_creep_ai"
+            ai_modifier = "modifier_default_creep_ai",
         },
         spawner_monkey_king_summon = {
             npc = "npc_monkey_king_summon",
-            modifiers = { "modifier_story_npc", "modifier_mk_summon_idle"},
+            modifiers = { "modifier_story_npc", "modifier_mk_summon_idle" },
             packID = "pack_mk",
-            ai_modifier =  "modifier_default_creep_ai"
+            ai_modifier = "modifier_default_creep_ai",
         },
         spawner_brewmaster = {
             npc = "npc_brewmaster",
@@ -107,6 +107,7 @@ return {
             npc = "npc_ogre_bruiser",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ogre_bruiser",
+            ai_modifier =  "modifier_default_creep_ai",
         },
         spawner_rape_victim = {
             npc = "npc_rape_victim",
@@ -145,7 +146,8 @@ return {
             npc = "npc_red",
             modifiers = { "modifier_story_npc" },
             deferred = true,
-            packID = "pack_red"
+            packID = "pack_red",
+            ai_modifier =  "modifier_default_creep_ai",
         },
         spawner_green = {
             npc = "npc_green",
@@ -201,6 +203,7 @@ return {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
             deferred = true,
+            ai_modifier = "modifier_default_creep_ai",
         },
 
         -- jungle
@@ -248,28 +251,33 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_concert_crowd",
+            ai_modifier = "modifier_default_creep_ai",
         },
         spawner_concert_fan_melee = {
             npc = "npc_ghetto_melee",
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_concert_crowd",
+            ai_modifier = "modifier_default_creep_ai",
         },
 
         spawner_gangster = {
             npc = "npc_gangster",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
+            ai_modifier = "modifier_default_creep_ai",
         },
         spawner_ghetto_ranged = {
             npc = "npc_ghetto_ranged",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
+            ai_modifier = "modifier_default_creep_ai",
         },
         spawner_ghetto_melee = {
             npc = "npc_ghetto_melee",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
+            ai_modifier = "modifier_default_creep_ai",
         },
     },
 
@@ -290,6 +298,7 @@ return {
             spawners = {},
             units = {},
             activateAfterUnitsSpawned = true,
+            stayActivatedOnPlayerDeath = false,
             somebodyNear = false,
             rangeFastTickRate = 2000,
             rangeRetreat = 1300,
@@ -350,6 +359,13 @@ return {
 
         pack_ghetto = {
             activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+        },
+        pack_dream_bad_ending = {
+            rangeRetreat = 999999999,
+            rangeAggro = 999999999,
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
         },
     },
 

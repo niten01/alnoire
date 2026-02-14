@@ -54,22 +54,21 @@ function PackManager:ActivatePack(packName)
     pack.state = 'idle'
 
     PackManager:ForAllAliveUnits(pack, function(unit)
-        self:SetActivateAiForUnit(unit, true)
+        self:SetUnitAIActive(unit, true)
     end)
 end
 
 
-function PackManager:SetActivateAiForUnit(unit, bval)
+function PackManager:SetUnitAIActive(unit, bActive)
     if not IsServer() then return end
-    assert(unit.ai_modifier, "No such ai_modifier for unit: " .. unit:GetName())
-    print(unit.ai_modifier)
+    assert(unit.ai_modifier, "No ai_modifier for unit: " .. unit:GetName())
     local modifier = unit:FindModifierByName(unit.ai_modifier)
     if modifier then
-        modifier:SetThinking(bval)
+        modifier:SetThinking(bActive)
     else
         print("[PackManager] WARNING: Could not find modifier " .. unit.ai_modifier .. " on unit " .. unit:GetUnitName())
     end
-    modifier:SetThinking(bval)
+    modifier:SetThinking(bActive)
 end
 
 function PackManager:ResetPackPosition(packName)
@@ -100,7 +99,7 @@ function PackManager:DeactivatePack(packName)
         DestroyDebugCircle(pfx)
     end
     self:ForAllAliveUnits(pack, function(unit)
-        self:SetActivateAiForUnit(unit, false)
+        self:SetUnitAIActive(unit, false)
     end)
     pack.state = 'off'
 end
@@ -111,7 +110,7 @@ function PackManager:AddUnit(packName, npc)
     table.insert(pack.units, npc)
     npc.packTargetData = pack
     if pack.state ~= 'off' then
-        self:ActivateAiForUnit(npc, true)
+        self:SetUnitAIActive(npc, true)
     end
     DebugPrint("[ALNOIRE] Added " .. npc:GetName() .. " to pack: " .. packName)
 end

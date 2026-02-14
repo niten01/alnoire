@@ -45,6 +45,9 @@ return {
         "npc_perekup",
         "npc_genius",
         "npc_ghetto_ranged",
+        "npc_ghetto_melee",
+
+        "npc_gangster",
 
         "towel_summon",
 

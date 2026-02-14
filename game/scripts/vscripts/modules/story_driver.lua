@@ -289,33 +289,14 @@ function StoryDriver:StartFight(packName, nonLethalNPC)
   table.insert(self.activeStoryFights, packName)
 end
 
-function StoryDriver:SetupAct2()
-  fastRemoveNPC("npc_mystery")
-  SpawnManager:SpawnNPC("spawner_mystery_2")
-  SpawnManager:SpawnNPC("spawner_storyteller")
-
-  SpawnManager:SpawnNPC("spawner_dream")
-  triggerSetEnabled("trigger_black_creep", true)
-
-  SpawnManager:SpawnNPC("spawner_genius")
-
-  SpawnManager:SpawnNPC("spawner_concert_fan_ranged")
-end
-
-function StoryDriver:SetupAct3()
-  fastRemoveNPC("npc_dream")
-  SpawnManager:SpawnNPC("spawner_dream")
-
-  DoorManager:Open("door_ghetto")
-end
-
-function StoryDriver:OnActChange(event)
-  local act = event.act
-  if act == 2 then
-    self:SetupAct2()
-  elseif act == 3 then
-    self:SetupAct3()
+function StoryDriver:StopFight(activeFightIdx)
+  local packName = table.remove(self.activeStoryFights, activeFightIdx)
+  local pack = PackManager:GetPack(packName)
+  assert(pack)
+  if not pack.stayActivatedOnPlayerDeath then
+    PackManager:DeactivatePack(packName)
   end
+  PackManager:RespawnPack(packName)
 end
 
 function StoryDriver:OnEntityKilled(event)
@@ -330,18 +311,24 @@ function StoryDriver:OnEntityKilled(event)
   -- handle fight end
   if victim:IsRealHero() and not victim:IsSpiritBearCustom() then
     while #self.activeStoryFights > 0 do
-      local packName = table.remove(self.activeStoryFights, 1)
-      PackManager:DeactivatePack(packName)
-      PackManager:RespawnPack(packName)
+      local packName = self.activeStoryFights[1]
+      self:StopFight(1)
+      local pack = PackManager:GetPack(packName)
+      assert(pack)
+      if pack.stayActivatedOnPlayerDeath then
+        PackManager:ActivatePack(packName)
+      end
     end
   end
 end
 
 function StoryDriver:OnCancelLethalDamage(event)
-  while #self.activeStoryFights > 0 do
-    local packName = table.remove(self.activeStoryFights, 1)
-    PackManager:DeactivatePack(packName)
-    PackManager:ResetPackPosition(packName)
+  local unit = event.unit
+  for i = #self.activeStoryFights, 1, -1 do
+    local packName = self.activeStoryFights[i]
+    if unit.packTargetData and unit.packTargetData.name == packName then
+      self:StopFight(i)
+    end
   end
 end
 
@@ -360,6 +347,33 @@ end
 
 function StoryDriver:HasActiveFights()
   return #self.activeStoryFights > 0
+end
+
+function StoryDriver:SetupAct2()
+  fastRemoveNPC("npc_mystery")
+  SpawnManager:SpawnNPC("spawner_mystery_2")
+  SpawnManager:SpawnNPC("spawner_storyteller")
+
+  SpawnManager:SpawnNPC("spawner_dream")
+  triggerSetEnabled("trigger_black_creep", true)
+
+  SpawnManager:SpawnNPC("spawner_genius")
+
+  SpawnManager:SpawnNPC("spawner_concert_fan_ranged")
+end
+
+function StoryDriver:SetupAct3()
+  fastRemoveNPC("npc_dream")
+  SpawnManager:SpawnNPC("spawner_dream")
+end
+
+function StoryDriver:OnActChange(event)
+  local act = event.act
+  if act == 2 then
+    self:SetupAct2()
+  elseif act == 3 then
+    self:SetupAct3()
+  end
 end
 
 function StoryDriver:HandleAction(playerID, action)

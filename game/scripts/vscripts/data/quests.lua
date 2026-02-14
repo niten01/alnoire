@@ -289,6 +289,9 @@ return {
         requires = { "q_concert" },
         showExclamation = true,
         noFireworks = true,
+        onAccept = {
+            { type = "open_door", door = "door_ghetto" },
+        },
         steps = {
             {
                 description = "Забери из гетто lean",
@@ -299,7 +302,7 @@ return {
             {
                 description = "Отдай lean крипу",
                 objectives = {
-                    { type = "talk", npc = "npc_dream" }
+                    { type = "manual" }
                 }
             },
         }

@@ -4,9 +4,9 @@ entries = {
 d_untitled_passage = {
 priority = 0,
 conditions = {
-{ trigger="trigger_ghetto_test",npc="npc_gangster",type="trigger" },
-{ questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
-{ var="act",value={ 3 },type="var" },
+{ interact="npc_brewmaster",type="interact" },
+{ questID="q_pandas",status=QuestStatus.INACTIVE,type="quest" },
+{ var="act",value={ 1, 2, 3 },type="var" },
 },
 },
 d_untitled_passage_11 = {
@@ -171,6 +171,7 @@ conditions = {
 { questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
 { trigger="trigger_ghetto_test",npc="npc_gangster",type="trigger" },
 { var="act",value={ 3 },type="var" },
+{ ent_var="first_met_global",value={ true },npc="npc_gangster",type="ent_var" },
 },
 },
 d_untitled_passage_43 = {
@@ -178,6 +179,7 @@ priority = 0,
 conditions = {
 { interact="npc_gangster",type="interact" },
 { ent_var="first_met_global",value={ false },npc="npc_gangster",type="ent_var" },
+{ var="is_ghetto_member",value={ true },type="var" },
 },
 },
 d_untitled_passage_44 = {
@@ -186,6 +188,8 @@ conditions = {
 { interact="npc_dream",type="interact" },
 { questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
 { var="act",value={ 3 },type="var" },
+{ var="is_ghetto_member",value={ true },type="var" },
+{ has_item="item_lean",type="has_item" },
 },
 },
 d_untitled_passage_45 = {
@@ -201,12 +205,13 @@ conditions = {
 { interact="npc_dream",type="interact" },
 { questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
 { var="act",value={ 3 },type="var" },
+{ var="is_ghetto_member",value={ false },type="var" },
+{ has_item="item_lean",type="has_item" },
 },
 },
 d_untitled_passage_47 = {
 priority = 0,
 conditions = {
-{ interact="npc_dream",type="interact" },
 { beat="npc_dream",type="beat" },
 },
 },
@@ -440,7 +445,14 @@ d_ghettodanger = {
 priority = 0,
 conditions = {
 { trigger="trigger_ghetto_danger",type="trigger" },
-{ var="act",value={ 1, 2 },type="var" },
+{ questID="q_ghetto",status=QuestStatus.INACTIVE,type="quest" },
+},
+},
+d_ghettodangerlate = {
+priority = 0,
+conditions = {
+{ questID="q_ghetto",status="incomplete",type="quest" },
+{ trigger="trigger_ghetto_danger",type="trigger" },
 },
 },
 d_gorillaagain = {
@@ -1213,8 +1225,8 @@ next = "d_vau",
 },
 d_razbit_bochku_pinkom = {
 text = [[НЕЕЕЕТ, ЧТО ТЫ НАДЕЛАЛ?! ВСЁ ВЫЛИЛОСЬ. Я ТЕБЯ СЕЙЧАС...]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Ты ж говорил, что она пустая.]],
@@ -1337,8 +1349,8 @@ actions = {
 },
 d_empty = {
 text = [[Вообщем, ты их точно не пропустишь, у них очень выразительные цвета: Красный - злобный малый, Зелёный - твердолобый упырь, Синий - непредсказуемый болван.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[А звать то их как?]],
@@ -1373,16 +1385,13 @@ next = "d_kstati_u_tebya_znakomyj_golos",
 },
 },
 d_untitled_passage = {
-text = [[БРАТКИ! У нас тут мазафакер попался, снимайте с него штаны сейчас же!]],
-speaker = [[Гангстер]],
-npc = "npc_gangster",
+text = [[*Перед твоим взором - покачивающаяся панда. Сильный запах алкоголя ударяет тебе в нос.*]],
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
-text = [[*Выбора нет, придётся забирать силой.*]],
-next = nil,
-actions = {
-{ target="kil",fight_start="npc_gangster",type="fight_start" },
-},
+text = [[Что пьёшь?]],
+next = "d_chto_pesh",
 },
 },
 },
@@ -1627,6 +1636,9 @@ actions = {
 {
 text = [[Не хочу рисковать.]],
 next = "d_neee",
+actions = {
+{ questID="q_ghetto",type="quest_reject" },
+},
 },
 },
 },
@@ -1683,6 +1695,9 @@ choices = {
 {
 text = [[А чем lean тебе поможет?]],
 next = "d_a_chem_lean_tebe_pomozhet",
+actions = {
+{ itemName="item_lean",type="take_item" },
+},
 },
 },
 },
@@ -1705,6 +1720,9 @@ choices = {
 {
 text = [[А чем lean тебе поможет?]],
 next = "d_r8",
+actions = {
+{ itemName="item_lean",type="take_item" },
+},
 },
 },
 },
@@ -1716,6 +1734,9 @@ choices = {
 {
 text = [[Ты чего?]],
 next = "d_ty_chego",
+actions = {
+{ npc="npc_dream",type="kill" },
+},
 },
 },
 },
@@ -2118,8 +2139,8 @@ next = "d_on_i_vpravdu_ochen_skuchaet_po_tebe_ponimaesh",
 },
 d_a2 = {
 text = [[*Существо было удивлено, что ты решил с ним заговорить.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[...]],
@@ -2129,8 +2150,8 @@ next = "d_tak_chto",
 },
 d_a3 = {
 text = [[С тех пор как они перестали следовать моим приказам, жизнь пошла по дну. Люди меня стороняться и обходят. Жена даже из дома выгнала, представляешь?]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Расскажи о сыновьях.]],
@@ -2140,8 +2161,8 @@ next = "d_rasskazhi_o_synovyah",
 },
 d_a4 = {
 text = [[Я думал люди только и могут кричать о величии их Пропавшего Короля. Сидят на жопе и ничего кроме этого не делают. Неужто ты мне поможешь?]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Ты первый крип, что упомянул Короля. Что тебе о нём известно?]],
@@ -2161,6 +2182,17 @@ next = "d_ne_ne_mne_ne_vazhno_kto_vy_ya_sprashival_chto_za_rasa_u_vas",
 },
 },
 d_ghettodanger = {
+text = [[Ты не можешь пошевелиться, тело наотрез отказывается двигаться дальше. В этот раз лучше довериться чутью...]],
+speaker = [[...]],
+npc = nil,
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
+d_ghettodangerlate = {
 text = [[Ты не можешь пошевелиться, тело наотрез отказывается двигаться дальше. В этот раз лучше довериться чутью...]],
 speaker = [[...]],
 npc = nil,
@@ -3373,8 +3405,8 @@ next = "d_stop_a_kak_oni_ladyat_s_zverem",
 },
 d_o5 = {
 text = [[Как вообще я могу быть счастливым, пока они такие не послушные? Это не жизнь. Приходится запивать горе своё. Пока они не воссоединяться, не смогу найти себе места.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[...]],
@@ -3737,8 +3769,8 @@ next = "d_trollsagainprovo",
 },
 d_a_gde_mne_ih_iskat = {
 text = [[Где-то в этом мире, сам не знаю. Я вижу их постоянно, но не могу усмирить. Может и тебе посчастливиться встретить их.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Красный - гневный, Зелёный - упрямый, Синий - своевольный. Запомнил.]],
@@ -3796,8 +3828,8 @@ next = "d_a_kak_mne_poluchit_etu_rekomendatsiu",
 },
 d_a_zvat_to_ih_kak = {
 text = [[Имена?.. Хм... Не припоминаю, я к ним всегда обращаюсь по цвету.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[А где мне их искать?]],
@@ -3933,8 +3965,8 @@ next = "d_net_ne_ponimau",
 },
 d_a_u_kogo_ya_b_tozhe_podvypil = {
 text = [[Не скажу.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Почему?]],
@@ -4383,8 +4415,8 @@ next = "d_sudba_ploho",
 d_daj_togda_hlebnut_iz_tvoego_bochonka = {
 text = [[Охох, всё содержимое уже во мне.
 *Панда шлёпает себя по пузу, а потом стучит по бочке, намекая, что она пустая, однако слышно, что в ней ещё немного осталось.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Я слышу, что пиво ещё есть.]],
@@ -4472,8 +4504,8 @@ next = "d_mozhet_kstati_a_mozhno_mne_odin_filosofskij_kamen",
 },
 d_zhmot = {
 text = [[*После таких слов, он разозлился, поставил бочку на землю и пнул её в тебя.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[*Разбить бочку пинком.*]],
@@ -5377,8 +5409,8 @@ next = "d_dopustim",
 },
 d_pozaimstvoval_mozhet_ukral = {
 text = [[Не твоё дело.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Расскажи откуда, мне для друга надо.]],
@@ -5481,8 +5513,8 @@ next = "d_m4",
 },
 d_pochemu = {
 text = [[Какая мне выгода?]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Дай тогда хлебнуть из твоего бочонка.]],
@@ -5547,8 +5579,8 @@ next = "d_aleks",
 },
 d_prosto_tak_do_takoj_stepeni_ne_napivautsya_chto_ne_tak = {
 text = [[Да беда ужасная настигла. У меня есть три сына, понимаешь, а они сбежали от папки своего, не хотят ладить со мной.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[...]],
@@ -5569,8 +5601,8 @@ next = "d_ladno_poka",
 },
 d_rasskazhi_o_synovyah = {
 text = [[Ооох, они прекрасные, но в последнее время на них что-то нашло, не подчиняются старику. Бывало заставляли меня делать ужасные вещи: воровать, буянить, даже нападать на окружающих... Ох, ужас...]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[...]],
@@ -5701,8 +5733,8 @@ next = "d_vysvobozhdenie",
 },
 d_tak_chto = {
 text = [[Ааргъх... Это какое-то пиво. Позаимствовал у людей.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[А у кого? Я б тоже подвыпил.]],
@@ -5865,8 +5897,8 @@ next = "d_a_pochemu_ty_ne_verneshsya_domoj",
 },
 d_ty_zh_govoril_chto_ona_pustaya = {
 text = [[*Некоторое время он всё ещё был зол, однако, вспомнив причину пьянства, начал плакать.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Просто так до такой степени не напиваются. Что не так?]],
@@ -5917,8 +5949,8 @@ next = "d_a10",
 },
 d_ty_pervyj_krip_chto_upomyanul_korolya_chto_tebe_o_nem_izvestno = {
 text = [[Ааа... О нём мало знаю. Мне кажется когда-то я его даже видел... Или нет?.. Вроде кто-то напал на него. Но когда?]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Хорошо. Я помогу тебе.]],
@@ -6240,8 +6272,8 @@ next = "d_a_iz_chego_eta_zhizha_sostoit",
 },
 d_chto_pesh = {
 text = [[*Панда плюнула в твою сторону, но не попала.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Это было необязательно. Так что пьёшь то?]],
@@ -6495,8 +6527,8 @@ next = "d_pridetsya_chtoto_pridumat",
 },
 d_ya_slyshu_chto_pivo_esche_est = {
 text = [[Неа.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Пьяная панда]],
+npc = "npc_brewmaster",
 choices = {
 {
 text = [[Жмот.]],
@@ -9950,6 +9982,7 @@ text = [[Зайду.]],
 next = "d_zajdu",
 actions = {
 { npc="npc_dream",type="remove" },
+{ questID="q_ghetto",type="quest_end" },
 },
 },
 },
@@ -10166,6 +10199,17 @@ choices = {
 {
 text = [[Привет, панда. Вижу жизнь твоя налаживается.]],
 next = "d_privet_panda_vizhu_zhizn_tvoya_nalazhivaetsya",
+},
+},
+},
+d_dreambadendingleave = {
+text = [[]],
+speaker = [[Крип с мечтой]],
+npc = "npc_dream",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -10553,7 +10597,7 @@ choices = {
 text = [[Всмысле?]],
 next = nil,
 actions = {
-{ target="talk",fight_start="npc_dream",type="fight_start" },
+{ pack="pack_dream_bad_ending",nonLethalNPC="npc_dream",type="fight_start" },
 },
 },
 },
@@ -10631,7 +10675,7 @@ choices = {
 text = [[*Выбора нет, придётся забирать силой.*]],
 next = nil,
 actions = {
-{ target="kil",fight_start="npc_gangster",type="fight_start" },
+{ pack="pack_ghetto",type="fight_start" },
 },
 },
 },
@@ -10663,6 +10707,9 @@ choices = {
 {
 text = [[Респект вам.]],
 next = "d_respekt_vam",
+actions = {
+{ var="is_ghetto_member",value=true,type="set_var" },
+},
 },
 },
 },
@@ -11152,8 +11199,11 @@ speaker = [[Крип с мечтой]],
 npc = "npc_dream",
 choices = {
 {
-text = [[Закрыть.]],
+text = [[Уйти.]],
 next = nil,
+actions = {
+{ questID="q_ghetto",type="quest_end" },
+},
 },
 },
 },
@@ -11643,9 +11693,6 @@ choices = {
 {
 text = [[*Проронить слезу.*]],
 next = "d_proronit_slezu",
-actions = {
-{ questID="q_ghetto",type="quest_end" },
-},
 },
 },
 },
@@ -11792,6 +11839,9 @@ actions = {
 {
 text = [[Неее.]],
 next = "d_neee",
+actions = {
+{ questID="q_ghetto",type="quest_reject" },
+},
 },
 },
 },
@@ -11907,7 +11957,7 @@ next = "d_g2",
 },
 },
 d_ty_teper_pojdesh_v_getto = {
-text = [[Um, я всё ещё простой thug, сечёшь? Те мазафакеры сразу поймут, что я buster, и закличут блэйдом... Я даже ни разу не тегал, yeah...]],
+text = [[Um, я всё ещё простой thug, сечёшь? Те мазафакеры сразу поймут, что я buster, и закличут блэйдом... Я даже ни разу не тегал, you know...]],
 speaker = [[Крип с мечтой]],
 npc = "npc_dream",
 choices = {
@@ -11925,9 +11975,6 @@ choices = {
 {
 text = [[Извини меня...]],
 next = "d_izvini_menya",
-actions = {
-{ questID="q_ghetto",type="quest_end" },
-},
 },
 },
 },

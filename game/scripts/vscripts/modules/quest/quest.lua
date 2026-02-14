@@ -74,6 +74,9 @@ function Quest:StartQuestForAll(questID)
   end
 
   self.questStates:StartQuest(questID)
+  for _, action in ipairs(quest.onAccept or {}) do
+    StoryDriver:HandleAction(nil, action)
+  end
   self:UpdateQuestlog()
 end
 
