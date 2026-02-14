@@ -13,13 +13,17 @@ function modifier_default_creep_ai:SetThinking(bval)
     if not self:GetParent() then return end
     local unit = self:GetParent()
     if not unit:IsAlive() then return end
-    local unit = self:GetParent()
     unit:SetIdleAcquire(false)
     unit:SetAcquisitionRange(0)
     unit:Stop()
     if unit:HasModifier('modifier_story_npc') then
         unit:RemoveModifierByName('modifier_story_npc')
     end
+    if unit:GetTeam() ~= DOTA_TEAM_BADGUYS then
+        unit:SetTeam(DOTA_TEAM_BADGUYS)
+    end
+
+    RemoveAllIdleModifiers(unit)
 
     if bval then
         self:StartIntervalThink(BATTLE_THINK_INTERVAL)
@@ -29,20 +33,18 @@ function modifier_default_creep_ai:SetThinking(bval)
 end
 
 function modifier_default_creep_ai:OnIntervalThink()
-    print("UNIT THINKING")
+    --print("UNIT THINKING")
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
     local beaconData = unit.packTargetData
-    if not beaconData then return BATTLE_THINK_INTERVAL end
+    if not beaconData then return end
 
     local beaconState = beaconData.state
-    if not beaconState or beaconState == 'off' or beaconState == 'dead' then return IDLE_THINK_INTERVAL end
+    if not beaconState or beaconState == 'off' or beaconState == 'dead' then return end
 
     local target = beaconData.target
     local currentPos = unit:GetAbsOrigin()
     local distToSpawn = (currentPos - unit.spawnPos):Length2D()
-
-
     if beaconState == 'aggro' then
         if not unit.aggroStartTime then
             unit.aggroStartTime = GameRules:GetGameTime()
@@ -93,10 +95,13 @@ function modifier_default_creep_ai:OnIntervalThink()
         end
     end
 
+    local target_interval = IDLE_THINK_INTERVAL
     if beaconState == 'aggro' or beaconState == 'retreat' or beaconData.somebodyNear or distToSpawn > 150 then
-        --print('крип battle!')
-        return BATTLE_THINK_INTERVAL
+        target_interval = BATTLE_THINK_INTERVAL
     end
-    --print('крип idle!')
-    return IDLE_THINK_INTERVAL
+    if self.current_interval ~= target_interval then
+        self.current_interval = target_interval
+        self:StartIntervalThink(target_interval)
+        -- print("AI Switch to interval: " .. target_interval)
+    end
 end

@@ -74,6 +74,8 @@ return {
 
     },
     models = {
+        --mk banana
+        "models/props_gameplay/banana_prop_closed_mk.vmdl"
     },
     sounds = {
         "soundevents/sfx.vsndevts",

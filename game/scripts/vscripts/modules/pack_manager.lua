@@ -43,24 +43,33 @@ function PackManager:ActivatePack(packName)
     if pack.thinker == "default" then
         packEntity:SetContextThink("PackTargetDefaultThink", function()
             return self:PackTargetDefaultThink(packEntity, pack)
-        end, IDLE_THINK_INTERVAL)
+        end, BATTLE_THINK_INTERVAL)
     elseif pack.thinker == "axe" then
         packEntity:SetContextThink("PackTargetDenyThink", function()
             return self:PackTargetDenyThink(packEntity, pack)
-        end, IDLE_THINK_INTERVAL)
+        end, BATTLE_THINK_INTERVAL)
     else
         DebugPrint("[ALNOIRE](PackManager) no such thinker for name: ", pack.thinker)
     end
     pack.state = 'idle'
 
-    PackManager:ForAllAliveUnits(pack, self.ActivateAiForUnit)
+    PackManager:ForAllAliveUnits(pack, function(unit)
+        self:SetActivateAiForUnit(unit, true)
+    end)
 end
 
 
-function PackManager:ActivateAiForUnit(unit)
+function PackManager:SetActivateAiForUnit(unit, bval)
     if not IsServer() then return end
     assert(unit.ai_modifier, "No such ai_modifier for unit: " .. unit:GetName())
-    
+    print(unit.ai_modifier)
+    local modifier = unit:FindModifierByName(unit.ai_modifier)
+    if modifier then
+        modifier:SetThinking(bval)
+    else
+        print("[PackManager] WARNING: Could not find modifier " .. unit.ai_modifier .. " on unit " .. unit:GetUnitName())
+    end
+    modifier:SetThinking(bval)
 end
 
 function PackManager:ResetPackPosition(packName)
@@ -90,6 +99,9 @@ function PackManager:DeactivatePack(packName)
     for _, pfx in ipairs(pack.debugPfx or {}) do
         DestroyDebugCircle(pfx)
     end
+    self:ForAllAliveUnits(pack, function(unit)
+        self:SetActivateAiForUnit(unit, false)
+    end)
     pack.state = 'off'
 end
 
@@ -99,7 +111,7 @@ function PackManager:AddUnit(packName, npc)
     table.insert(pack.units, npc)
     npc.packTargetData = pack
     if pack.state ~= 'off' then
-        self:ActivateAiForUnit(npc) 
+        self:ActivateAiForUnit(npc, true)
     end
     DebugPrint("[ALNOIRE] Added " .. npc:GetName() .. " to pack: " .. packName)
 end
