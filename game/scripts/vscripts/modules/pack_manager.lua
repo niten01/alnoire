@@ -72,7 +72,6 @@ function PackManager:SetUnitAIActive(unit, bActive)
     else
         print("[PackManager] WARNING: Could not find modifier " .. unit.ai_modifier .. " on unit " .. unit:GetUnitName())
     end
-    modifier:SetThinking(bActive)
 end
 
 function PackManager:ResetPackPosition(packName)
