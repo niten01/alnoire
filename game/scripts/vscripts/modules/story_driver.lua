@@ -91,6 +91,7 @@ function Handlers.change_act(playerID, action)
   GlobalState:SetAct(action.act)
 end
 
+-- { door = "door_abc" }
 function Handlers.open_door(playerID, action)
   DoorManager:Open(action.door)
 end
@@ -231,6 +232,8 @@ function Handlers.setup_gorilla_scene(playerID, action)
   fastRemoveNPC("npc_guide")
   SpawnManager:SpawnNPC("spawner_guide_forest_entrance")
   triggerSetEnabled("trigger_after_gorilla", true)
+
+  DoorManager:Close("door_city_forest")
 end
 
 function Handlers.gorilla_fight_start(playerID, action)
@@ -299,10 +302,19 @@ function StoryDriver:SetupAct2()
   SpawnManager:SpawnNPC("spawner_concert_fan_ranged")
 end
 
+function StoryDriver:SetupAct3()
+  fastRemoveNPC("npc_dream")
+  SpawnManager:SpawnNPC("spawner_dream")
+
+  DoorManager:Open("door_ghetto")
+end
+
 function StoryDriver:OnActChange(event)
   local act = event.act
   if act == 2 then
     self:SetupAct2()
+  elseif act == 3 then
+    self:SetupAct3()
   end
 end
 

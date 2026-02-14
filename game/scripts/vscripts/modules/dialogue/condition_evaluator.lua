@@ -117,7 +117,7 @@ function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)
         end
         ::continue::
     end
-    if interesting then
+    if not match and interesting then
         DebugPrint("----Fail dialogue condition: " .. failedIndex .. "----")
         PrintTable(conditions, 2)
     end

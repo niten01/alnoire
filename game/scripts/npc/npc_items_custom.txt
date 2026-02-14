@@ -190,11 +190,45 @@
         "ItemPurchasable"               "1"
         "ItemQuality"                   "rare"
     }
-    "item_concert_ticket"
+    "item_recipe_key"
     {
         "ID"                    "3008"
         "BaseClass"             "item_datadriven"
+        "ItemRecipe"          "1" 
+        "ItemCost"            "0" 
+        "ItemResult"          "item_key" 
+        "ItemRequirements"
+        {
+            "01" "item_philosopher_pebble;item_key_part_1;item_key_part_2;item_key_part_3"
+        }
+    }
+    "item_key"
+    {
+        "ID"                    "3009"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "key_full"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+    }
+    "item_concert_ticket"
+    {
+        "ID"                    "3010"
+        "BaseClass"             "item_datadriven"
         "AbilityTextureName"    "concert_ticket"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+    }
+    "item_lean"
+    {
+        "ID"                    "3011"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "lean"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"

@@ -1,6 +1,5 @@
 from src.datatypes import *
 from src.errors import MergeError
-import copy
 
 
 def merge(og: Story, s: Story) -> Story:

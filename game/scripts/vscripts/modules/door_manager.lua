@@ -4,6 +4,9 @@ function DoorManager:Init()
   ChatCommand:LinkDevCommand("-dooropen", function(event, args)
     self:Open(args[1])
   end)
+  ChatCommand:LinkDevCommand("-doorclose", function(event, args)
+    self:Close(args[1])
+  end)
 
   GameEvents:OnButtonPress(function(event)
     for doorName, door in EntityData:AllByType("door") do
@@ -51,15 +54,9 @@ end
 
 function DoorManager:Open(doorName)
   local data = EntityData:ByName(doorName)
-  if not data then
-    error("No data for door: " .. doorName)
-    return
-  end
+  assert(data, "No data for door: " .. doorName)
+  assert(data.clipEntity, "No clip entity for door: " .. doorName)
 
-  if not data.clipEntity then
-    error("No clip entity for door: " .. doorName)
-    return
-  end
   for _, clipEnt in ipairs(Entities:FindAllByName(data.clipEntity)) do
     DoEntFireByInstanceHandle(clipEnt, "Disable", "", 0, nil, nil)
   end
@@ -69,12 +66,28 @@ function DoorManager:Open(doorName)
       DoEntFireByInstanceHandle(doorEnt, "SetAnimation", data.openAnimation, 0, nil, nil)
     end
   end
+end
 
-  if data.openSound then
-    local doorEnt = Entities:FindByName(nil, doorName)
-    assert(doorEnt)
-    doorEnt:EmitSound(data.openSound)
+function DoorManager:Close(doorName)
+  local data = EntityData:ByName(doorName)
+  assert(data, "No data for door: " .. doorName)
+  assert(data.clipEntity, "No clip entity for door: " .. doorName)
+  
+  for _, clipEnt in ipairs(Entities:FindAllByName(data.clipEntity)) do
+    DoEntFireByInstanceHandle(clipEnt, "Enable", "", 0, nil, nil)
   end
+
+  if data.closeAnimation then
+    for _, doorEnt in ipairs(Entities:FindAllByName(doorName)) do
+      DoEntFireByInstanceHandle(doorEnt, "SetAnimation", data.closeAnimation, 0, nil, nil)
+    end
+  end
+
+  -- if data.closeSound then
+  --   local doorEnt = Entities:FindByName(nil, doorName)
+  --   assert(doorEnt)
+  --   doorEnt:EmitSound(data.closeSound)
+  -- end
 end
 
 return DoorManager

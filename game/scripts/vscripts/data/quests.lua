@@ -212,6 +212,9 @@ return {
                 objectives = {
                     { type = "kill", npc = "npc_gorilla" }
                 },
+                postStepActions = {
+                    { type = "open_door", door = "door_city_forest" }
+                }
             },
             {
                 description = "Сообщи о предсказании гиду",
@@ -263,9 +266,9 @@ return {
         steps = {
             {
                 description =
-                "Добудь Философский камень и 3 части ключа: Первый - На вершине Снежной горы, Второй - В пасти чудовища Искажённого леса, Третий - У старушки-медиума",
+                "Восстанови Ключ Пустошей",
                 objectives = {
-                    { type = "take", trigger = "trigger_derek_key" }
+                    { type = "get_item", item = "item_key" }
                 }
             },
             {
@@ -290,7 +293,7 @@ return {
             {
                 description = "Забери из гетто lean",
                 objectives = {
-                    { type = "take", trigger = "trigger_lean" }
+                    { type = "get_item", item = "item_lean" }
                 }
             },
             {

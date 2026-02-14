@@ -11,6 +11,7 @@ function SkiGameEnd(trigger, event)
     local activator = event.activator
     print("[ALNOIRE] ENDED SKI")
     activator:RemoveModifierByName("modifier_ski")
+    activator:RemoveModifierByName("modifier_ski_cold")
     OnSkiEnd({
         playerID = activator:GetPlayerID()
     })

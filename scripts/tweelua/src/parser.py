@@ -84,5 +84,5 @@ def parse_twee(filepath: str) -> Story:
         passage = Passage(name=p.header.name, tags=tags or [], text=text, links=links)
         story.add(passage)
 
-    print(f"Parsed {len(story.passages)} passages with {num_links} links.")
+    print(f"{story.title}: Parsed {len(story.passages)} passages with {num_links} links.")
     return story

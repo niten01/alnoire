@@ -169,7 +169,7 @@ return {
         spawner_trap_pendulum = {
             npc = "npc_trap_pendulum",
             team = DOTA_TEAM_BADGUYS,
-            -- modifiers = { "modifier_story_npc" },
+            modifiers = { "modifier_story_npc" },
             injectedAttributes = { "trap_delay", "trap_speed" }
         },
         spawner_storyteller = {
@@ -242,8 +242,38 @@ return {
             deferred = true,
             packID = "pack_concert_crowd",
         },
+        spawner_concert_fan_melee = {
+            npc = "npc_ghetto_melee",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+            packID = "pack_concert_crowd",
+        },
+
+        spawner_gangster = {
+            npc = "npc_gangster",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_ghetto",
+        },
+        spawner_ghetto_ranged = {
+            npc = "npc_ghetto_ranged",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_ghetto",
+        },
+        spawner_ghetto_melee = {
+            npc = "npc_ghetto_melee",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_ghetto",
+        },
     },
 
+    ------------------------------------------------------------
+    --- Item spawners
+    ------------------------------------------------------------
+    item_spawner = {
+        item_spawner_lean = {
+            item = "item_lean"
+        }
+    },
 
     ------------------------------------------------------------
     --- Packs
@@ -302,6 +332,10 @@ return {
         pack_genius = {
             activateAfterUnitsSpawned = false,
         },
+
+        pack_ghetto = {
+            activateAfterUnitsSpawned = false,
+        },
     },
 
     ------------------------------------------------------------
@@ -348,6 +382,12 @@ return {
         door_clash_royale = {
             clipEntity = "clip_door_clash_royale",
             openAnimation = "open",
+            closeAnimation = "close",
+        },
+        door_city_forest = {
+            clipEntity = "clip_door_city_forest",
+            openAnimation = "gate_open",
+            closeAnimation = "gate_close",
         },
         door_forest_1_reward = {
             clipEntity = "clip_door_forest_1_reward",
@@ -391,6 +431,9 @@ return {
         },
         door_ski = {
             clipEntity = "clip_door_ski"
+        },
+        door_ghetto = {
+            clipEntity = "clip_door_ghetto"
         },
     },
 

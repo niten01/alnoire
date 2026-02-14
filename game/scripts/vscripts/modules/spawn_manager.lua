@@ -25,6 +25,10 @@ function SpawnManager:OnGameInProgress()
     for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
         self.playerRespawnPos[playerID] = defaultRespawnPos
     end
+
+    for spawnerName, _ in EntityData:AllByType("item_spawner") do
+        self:SpawnItem(spawnerName)
+    end
 end
 
 function SpawnManager:OnHeroInGame(hero)
@@ -37,7 +41,7 @@ function SpawnManager:OnHeroInGame(hero)
 end
 
 function SpawnManager:SpawnNPC(spawnerName)
-    DebugPrint("[ALNOIRE] Trying to spawn using spawner: ", spawnerName)
+    DebugPrint("[ALNOIRE] Trying to spawn NPC using spawner: ", spawnerName)
     local spawnerData = EntityData:ByName(spawnerName)
     for _, spawnerEnt in ipairs(Entities:FindAllByName(spawnerName)) do
         local origin = spawnerEnt:GetAbsOrigin()
@@ -92,6 +96,18 @@ end
 function SpawnManager:LinkUnitToPack(npc, spawnerData)
     DebugPrint("[ALNOIRE] Trying to link unit to pack: ", npc:GetUnitName())
     PackManager:AddUnit(spawnerData.packID, npc)
+end
+
+function SpawnManager:SpawnItem(itemSpawnerName)
+    DebugPrint("[ALNOIRE] Trying to spawn item using spawner: ", itemSpawnerName)
+    local spawner = EntityData:ByName(itemSpawnerName)
+    assert(spawner, "No such item spawner: " .. itemSpawnerName)
+    for _, spawnerEnt in ipairs(Entities:FindAllByName(itemSpawnerName)) do
+        local origin = spawnerEnt:GetAbsOrigin()
+        DebugPrint("\tFound spawner entity: (" .. origin.x .. ";" .. origin.y .. ")")
+        local item = CreateItem(spawner.item, nil, nil)
+        CreateItemOnPositionSync(origin, item)
+    end
 end
 
 function SpawnManager:OnNPCSpawned(keys)
