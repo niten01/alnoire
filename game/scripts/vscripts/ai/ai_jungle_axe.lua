@@ -1,5 +1,3 @@
-LinkLuaModifier("modifier_axe_sustain", "modifiers/jungle/modifier_axe_sustain", LUA_MODIFIER_MOTION_NONE)
-
 if not IsServer() then return end
 
 function Spawn()
@@ -8,7 +6,7 @@ function Spawn()
     thisEntity:SetAcquisitionRange(0)
     thisEntity:Stop()
     thisEntity:SetContextThink("DenyAxeThink", DenyAxeThink, IDLE_THINK_INTERVAL)
-    thisEntity:AddNewModifier(thisEntity, nil, "modifier_axe_sustain", {})
+    thisEntity:AddNewModifier(nil, nil, "modifier_axe_sustain", {})
 end
 
 function DenyAxeThink()

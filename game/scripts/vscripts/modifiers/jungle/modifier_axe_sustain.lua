@@ -4,6 +4,10 @@ function modifier_axe_sustain:IsHidden()
     return false
 end
 
+function modifier_axe_sustain:IsDebuff()
+    return false
+end
+
 function modifier_axe_sustain:IsPurgable()
     return false
 end
@@ -26,15 +30,14 @@ function modifier_axe_sustain:GetModifierBaseAttack_BonusDamage()
 end
 
 function modifier_axe_sustain:GetTexture()
-    return "dragon_knight_breathe_fire"
+    return "axe_berserkers_call"
 end
 
-function modifier_axe_sustain:GetEffectName()
-    return "particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf"
-end
-
-function modifier_axe_sustain:GetEffectAttachType()
-    return PATTACH_ABSORIGIN_FOLLOW
+function modifier_axe_sustain:OnCreated( )
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    local pfx = ParticleManager:CreateParticle("particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+    self:AddParticle(pfx, false, false, -1, false, false)
 end
 
 function modifier_axe_sustain:GetModifierIncomingDamage_Percentage()

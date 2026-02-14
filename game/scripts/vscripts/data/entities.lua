@@ -86,7 +86,14 @@ return {
         spawner_monkey_king = {
             npc = "npc_monkey_king",
             modifiers = { "modifier_story_npc" },
-            packID = "pack_monkey_king",
+            packID = "pack_mk",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+        spawner_monkey_king_summon = {
+            npc = "npc_monkey_king_summon",
+            modifiers = { "modifier_story_npc", "modifier_mk_summon_idle"},
+            packID = "pack_mk",
+            ai_modifier =  "modifier_default_creep_ai"
         },
         spawner_brewmaster = {
             npc = "npc_brewmaster",
@@ -299,6 +306,14 @@ return {
         pack_forest_act1_axe = {
             thinker = "axe",
             denyTarget = nil,
+        },
+
+        pack_mk = {
+            activateAfterUnitsSpawned = false,
+            spawners = {
+                "spawner_monkey_king",
+                "spawner_monkey_king_summon",
+            },
         },
 
         pack_concert_crowd = {

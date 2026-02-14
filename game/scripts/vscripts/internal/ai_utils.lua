@@ -98,3 +98,16 @@ function FindSanyaInRadius(centerPoint, radius)
 
     return nil
 end
+
+function RemoveAllIdleModifiers(unit)
+    if not IsServer() then return end
+    if not unit or unit:IsNull() or not unit:IsAlive() then return end
+    local modifiers = unit:FindAllModifiers()
+    
+    for _, mod in ipairs(modifiers) do
+        local modName = mod:GetName()
+        if modName and string.find(string.lower(modName), "idle") then
+            unit:RemoveModifierByName(modName)
+        end
+    end
+end

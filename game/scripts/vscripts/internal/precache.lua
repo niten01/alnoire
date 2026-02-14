@@ -21,6 +21,7 @@ return {
         "npc_creep_rogach",
         "npc_mustache",
         "npc_monkey_king",
+        "npc_monkey_king_summon",
         "npc_blue_prince",
         "npc_blue_prince",
         "npc_ogre_magi",
@@ -73,6 +74,8 @@ return {
 
     },
     models = {
+        --mk banana
+        "models/props_gameplay/banana_prop_closed_mk.vmdl"
     },
     sounds = {
         "soundevents/sfx.vsndevts",

@@ -81,6 +81,11 @@ function SpawnManager:InitNPC(spawnerData, spawnerEnt, npc)
         end
     end
 
+    if spawnerData.ai_modifier then
+        npc:AddNewModifier(npc, nil, spawnerData.ai_modifier, {})
+        npc.ai_modifier = spawnerData.ai_modifier
+    end
+
     if not EntityData:ByName(spawnerData.npc) then
         EntityData:AddEntity("npc", spawnerData.npc, {})
     end
