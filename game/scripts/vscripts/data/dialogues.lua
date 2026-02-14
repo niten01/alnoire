@@ -2991,6 +2991,7 @@ actions = {
 { npc="npc_brewmaster",type="remove" },
 { spawn="spawner_red",type="spawn" },
 { spawn="spawner_green",type="spawn" },
+{ spawn="spawner_blue",type="spawn" },
 },
 },
 },
@@ -11681,9 +11682,6 @@ choices = {
 {
 text = [[Кстати, твои сыновья обещали вернуться, но их не видать. Где они?]],
 next = "d_kstati_tvoi_synovya_obeschali_vernutsya_no_ih_ne_vidat_gde_oni",
-actions = {
-{ questID="q_pandas",type="quest_end" },
-},
 },
 },
 },

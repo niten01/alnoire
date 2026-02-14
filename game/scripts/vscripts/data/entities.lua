@@ -288,6 +288,7 @@ return {
         spawner_blue = {
             npc = "npc_blue",
             modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
     },
 
