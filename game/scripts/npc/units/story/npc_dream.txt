@@ -4,7 +4,16 @@
 	{
 		"Model"						"models/creeps/mega_greevil/mega_greevil.vmdl"
 		"BaseClass"					"npc_dota_creature"
-		"ModelScale" 				"1.0"
+		"ModelScale" 				"1.5"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"StatusHealth"				"2"
+	}
+	"npc_dream_golden" 
+	{
+		"Model"						"models/courier/greevil/gold_greevil.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.5"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"StatusHealth"				"2"
 	}
 }

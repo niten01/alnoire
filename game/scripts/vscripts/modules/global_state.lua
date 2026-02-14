@@ -12,6 +12,8 @@ function GlobalState:Init()
         has_concert_pass = false,
         concert_crowd_met = false,
         concert_crowd_beaten = false,
+
+        is_ghetto_member = false,
     }
 
 
@@ -22,6 +24,9 @@ function GlobalState:Init()
 
     ChatCommand:LinkDevCommand("-setact", function(event, args)
         GlobalState:SetAct(tonumber(args[1]))
+    end)
+    ChatCommand:LinkDevCommand("-getvar", function(event, args)
+        print(args[1], ':', GlobalState:Get()[args[1]])
     end)
 end
 

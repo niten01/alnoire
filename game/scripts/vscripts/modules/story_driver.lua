@@ -6,6 +6,10 @@ function StoryDriver:Init()
   GameEvents:OnPackWiped(bind(self.OnPackWiped, self))
   GameEvents:OnCancelLethalDamage(bind(self.OnCancelLethalDamage, self))
   self.activeStoryFights = {}
+
+  ChatCommand:LinkDevCommand("-startfight", function(event, args)
+    self:StartFight(args[1], args[2])
+  end)
 end
 
 local function fastRemoveNPC(name)
@@ -293,9 +297,7 @@ function StoryDriver:StopFight(activeFightIdx)
   local packName = table.remove(self.activeStoryFights, activeFightIdx)
   local pack = PackManager:GetPack(packName)
   assert(pack)
-  if not pack.stayActivatedOnPlayerDeath then
-    PackManager:DeactivatePack(packName)
-  end
+  PackManager:DeactivatePack(packName)
   PackManager:RespawnPack(packName)
 end
 
@@ -343,10 +345,6 @@ function StoryDriver:OnPackWiped(event)
   if event.packName == "pack_concert_crowd" then
     GlobalState:Get().concert_crowd_beaten = true
   end
-end
-
-function StoryDriver:HasActiveFights()
-  return #self.activeStoryFights > 0
 end
 
 function StoryDriver:SetupAct2()

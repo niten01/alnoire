@@ -3,7 +3,7 @@ function DialogueTriggerOnStartTouch(trigger, event)
     if not activator or not activator:IsRealHero() then return end
     local playerID = activator:GetPlayerID()
 
-    if StoryDriver:HasActiveFights() then return end
+    if PackManager:HasActiveFights() then return end
 
     local premetCondition = { type = "trigger", trigger = trigger:GetName() }
 

@@ -40,14 +40,16 @@ return {
         "npc_leader",
         "npc_xavier",
         "npc_dream",
+        "npc_dream_golden",
         "npc_hermit",
         "npc_green",
         "npc_perekup",
         "npc_genius",
         "npc_ghetto_ranged",
         "npc_ghetto_melee",
-
         "npc_gangster",
+        "npc_blue",
+
 
         "towel_summon",
 

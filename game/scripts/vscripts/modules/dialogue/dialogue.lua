@@ -275,7 +275,7 @@ function Dialogue:OnQueryUpdate(_, args)
 
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
   -- skip talks during fights
-  if StoryDriver:HasActiveFights() then return end
+  if PackManager:HasActiveFights() then return end
   if not unit:HasModifier("modifier_story_npc") then return end
 
   -- interact

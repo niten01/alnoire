@@ -195,8 +195,8 @@ conditions = {
 d_untitled_passage_45 = {
 priority = 0,
 conditions = {
-{ interact="npc_gold",type="interact" },
-{ ent_var="first_met_global",value={ true },npc="npc_gold",type="ent_var" },
+{ interact="npc_dream_golden",type="interact" },
+{ ent_var="first_met_global",value={ true },npc="npc_dream_golden",type="ent_var" },
 },
 },
 d_untitled_passage_46 = {
@@ -431,7 +431,8 @@ conditions = {
 d_untitled_passage_86 = {
 priority = 0,
 conditions = {
-{ interact="npc_gold",type="interact" },
+{ interact="npc_dream_golden",type="interact" },
+{ ent_var="first_met_global",value={ false },npc="npc_dream_golden",type="ent_var" },
 },
 },
 d_untitled_passage_9 = {
@@ -1704,7 +1705,7 @@ actions = {
 d_untitled_passage_45 = {
 text = [[*Что с ним произошло? Он позолотел! Это так lean повлиял?*]],
 speaker = [[Крип-нигер]],
-npc = "npc_gold",
+npc = "npc_dream_golden",
 choices = {
 {
 text = [[*Ваау.*]],
@@ -2085,7 +2086,7 @@ actions = {
 d_untitled_passage_86 = {
 text = [[*Я, пожалуй, пойду.*]],
 speaker = [[...]],
-npc = "npc_gold",
+npc = "npc_dream_golden",
 choices = {
 {
 text = [[Закрыть.]],
@@ -9887,7 +9888,7 @@ next = "d_q16",
 d_vaau = {
 text = [[*Он общается с гангстером. Интересно, о чём?*]],
 speaker = [[Крип-нигер]],
-npc = "npc_gold",
+npc = "npc_dream_golden",
 choices = {
 {
 text = [[*Подслушать.*]],
@@ -9953,7 +9954,7 @@ actions = {
 d_podslushat = {
 text = [[So I hit the corner shop the other day, you understand? I had to get some blunts, you feel me? I'm gettin' a high. I slide back to the crib then a little ho call me, she talkin about i'm tryin' slide thru. I said, "shiit, if you tryin to give me that, man", you feel me so...]],
 speaker = [[Крип-нигер]],
-npc = "npc_gold",
+npc = "npc_dream_golden",
 choices = {
 {
 text = [[...]],
@@ -9983,6 +9984,7 @@ next = "d_zajdu",
 actions = {
 { npc="npc_dream",type="remove" },
 { questID="q_ghetto",type="quest_end" },
+{ spawn="spawner_dream_golden",type="spawn" },
 },
 },
 },
@@ -10012,7 +10014,7 @@ next = "d_n5",
 d_u_nego_vse_horosho_luchshe_ya_pojdu = {
 text = [[*Он осуществил свою мечту.*]],
 speaker = [[Крип-нигер]],
-npc = "npc_gold",
+npc = "npc_dream_golden",
 choices = {
 {
 text = [[Закрыть.]],
@@ -10775,7 +10777,7 @@ next = "d_s",
 d_u2 = {
 text = [[So, next next hour or so, you know what i'm talkin about? I hear knock onb a door. So, I get up, understand? I ran to that shi, i'm thinkin its going to be a littl salty. Open a door, it's a black dood, so i'm like, "the pig done set me up for real." You understand? For real, y'now what i'm sayin?]],
 speaker = [[Крип-нигер]],
-npc = "npc_gold",
+npc = "npc_dream_golden",
 choices = {
 {
 text = [[...]],
@@ -10786,7 +10788,7 @@ next = "d_u5",
 d_u5 = {
 text = [[So the sucka said "give me that shit!" So i already have my phone with me bruh. Nga ain't even had stick on the floor so i pulled out my fucka and said "pussy ass nga we're good". I'm talkin about this nga ass nga ran off fr, you know what i'm talkin about?]],
 speaker = [[Крип-нигер]],
-npc = "npc_gold",
+npc = "npc_dream_golden",
 choices = {
 {
 text = [[...]],
@@ -10797,7 +10799,7 @@ next = "d_u6",
 d_u6 = {
 text = [[So I ain't even had to call my demon G, I ain't even had to call my real nga, you understand me? My my young demon G wasn't even at home at the time so I couldn't even call him if i wanted to, but i had this shi myself like a real hood nga, you understand me?]],
 speaker = [[Крип-нигер]],
-npc = "npc_gold",
+npc = "npc_dream_golden",
 choices = {
 {
 text = [[...]],
@@ -10808,7 +10810,7 @@ next = "d_u7",
 d_u7 = {
 text = [[So youre really tryin to set a young nga up, you understand me? But we all good, we're still here for a bit, young creep-nga, you heard me? I know how i'm rockin.]],
 speaker = [[Крип-нигер]],
-npc = "npc_gold",
+npc = "npc_dream_golden",
 choices = {
 {
 text = [[*У него всё хорошо, лучше я пойду.*]],

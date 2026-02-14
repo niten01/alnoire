@@ -40,24 +40,28 @@ function PackManager:ActivatePack(packName)
         DrawDebugCircle(packEntity, pack.rangeFastTickRate),
     }
 
+    local thinkerFn = nil
     if pack.thinker == "default" then
-        packEntity:SetContextThink("PackTargetDefaultThink", function()
+        thinkerFn = function()
             return self:PackTargetDefaultThink(packEntity, pack)
-        end, BATTLE_THINK_INTERVAL)
+        end
     elseif pack.thinker == "axe" then
-        packEntity:SetContextThink("PackTargetDenyThink", function()
+        thinkerFn = function()
             return self:PackTargetDenyThink(packEntity, pack)
-        end, BATTLE_THINK_INTERVAL)
+        end
     else
-        DebugPrint("[ALNOIRE](PackManager) no such thinker for name: ", pack.thinker)
+        error("[ALNOIRE](PackManager) no such thinker for name: ", pack.thinker)
     end
+
+    assert(thinkerFn)
+    packEntity:SetContextThink("PackTargetThink", thinkerFn, BATTLE_THINK_INTERVAL)
+    thinkerFn()
     pack.state = 'idle'
 
     PackManager:ForAllAliveUnits(pack, function(unit)
         self:SetUnitAIActive(unit, true)
     end)
 end
-
 
 function PackManager:SetUnitAIActive(unit, bActive)
     if not IsServer() then return end
@@ -271,6 +275,13 @@ function PackManager:PackTargetDenyThink(packTargetEnt, packTargetData)
 
     --print('--- beacon battle')
     return BATTLE_THINK_INTERVAL
+end
+
+function PackManager:HasActiveFights()
+    for _, pack in EntityData:AllByType("pack") do
+        if pack.state == 'aggro' then return true end
+    end
+    return false
 end
 
 return PackManager

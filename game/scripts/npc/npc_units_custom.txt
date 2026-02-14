@@ -43,6 +43,7 @@
 #base "units/story/npc_green.txt"
 #base "units/story/npc_hermit.txt"
 #base "units/story/ghetto.txt"
+#base "units/story/npc_blue.txt"
 
 #base "units/towel_summon.txt"
 

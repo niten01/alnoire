@@ -107,7 +107,7 @@ return {
             npc = "npc_ogre_bruiser",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ogre_bruiser",
-            ai_modifier =  "modifier_default_creep_ai",
+            ai_modifier = "modifier_default_creep_ai",
         },
         spawner_rape_victim = {
             npc = "npc_rape_victim",
@@ -147,7 +147,7 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_red",
-            ai_modifier =  "modifier_default_creep_ai",
+            ai_modifier = "modifier_default_creep_ai",
         },
         spawner_green = {
             npc = "npc_green",
@@ -203,7 +203,13 @@ return {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
             deferred = true,
+            packID = "pack_dream_bad_ending",
             ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_dream_golden = {
+            npc = "npc_dream_golden",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
 
         -- jungle
@@ -278,6 +284,10 @@ return {
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_blue = {
+            npc = "npc_blue",
+            modifiers = { "modifier_story_npc" },
         },
     },
 
@@ -358,12 +368,15 @@ return {
         },
 
         pack_ghetto = {
+            rangeRetreat = 1300,
+            rangeAggro = 1300,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
         },
         pack_dream_bad_ending = {
-            rangeRetreat = 999999999,
-            rangeAggro = 999999999,
+            rangeFastTickRate = 9999999,
+            rangeRetreat = 9999999,
+            rangeAggro = 9999999,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
         },

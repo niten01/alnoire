@@ -1,6 +1,7 @@
 modifier_default_creep_ai = class({})
 
 function modifier_default_creep_ai:IsHidden() return true end
+
 function modifier_default_creep_ai:IsPurgable() return false end
 
 function modifier_default_creep_ai:OnCreated()
@@ -27,6 +28,7 @@ function modifier_default_creep_ai:SetThinking(bval)
 
     if bval then
         self:StartIntervalThink(BATTLE_THINK_INTERVAL)
+        self:OnIntervalThink()
     else
         self:StartIntervalThink(-1)
     end
@@ -55,22 +57,22 @@ function modifier_default_creep_ai:OnIntervalThink()
 
     -- деремся сука
     if beaconState == 'aggro' and target and target:IsAlive() then
-        if distToSpawn > beaconData.rangeRetreat then 
+        if distToSpawn > beaconData.rangeRetreat then
             MoveHome(unit)
         else
             local currentTime = GameRules:GetGameTime()
-            
+
             if unit:IsChanneling() or unit:GetCurrentActiveAbility() then
-                return BATTLE_THINK_INTERVAL 
+                return BATTLE_THINK_INTERVAL
             end
 
             local timeInAggro = currentTime - (unit.aggroStartTime or 0)
             unit.lastCastTime = unit.lastCastTime or 0
 
             if timeInAggro >= 5 and (currentTime - unit.lastCastTime) >= 2 then
-                if CastAllAbilities(unit, target)  then
+                if CastAllAbilities(unit, target) then
                     unit.lastCastTime = currentTime
-                    return BATTLE_THINK_INTERVAL 
+                    return BATTLE_THINK_INTERVAL
                 end
             end
             if unit:GetAggroTarget() ~= target then
@@ -78,11 +80,11 @@ function modifier_default_creep_ai:OnIntervalThink()
             end
         end
 
-    -- бежим сука
+        -- бежим сука
     elseif beaconState == 'retreat' then
         MoveHome(unit)
 
-    -- стоим сука
+        -- стоим сука
     elseif beaconState == 'idle' then
         if distToSpawn > 150 then
             MoveHome(unit)
