@@ -3,6 +3,8 @@ GlobalState = GlobalState or {}
 function GlobalState:Init()
     self.state = {
         act = 1,
+
+        freed_island_creeps = false,
         knows_village_password = false,
         has_village_pass = false,
         has_ski = false,

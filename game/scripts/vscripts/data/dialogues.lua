@@ -204,8 +204,9 @@ conditions = {
 d_untitled_passage_49 = {
 priority = 0,
 conditions = {
-{ trigger="trigger_island_third",type="trigger" },
 { var="act",value={ 1, 2 },type="var" },
+{ interact="npc_cat_barrel",type="interact" },
+{ has_item="item_cage_key",type="has_item" },
 },
 },
 d_untitled_passage_59 = {
@@ -472,6 +473,12 @@ d_subwayfake = {
 priority = 0,
 conditions = {
 { interact="npc_subway_fake",type="interact" },
+},
+},
+d_subwayfakereturn = {
+priority = 0,
+conditions = {
+{ interact="npc_subway_fake_return",type="interact" },
 },
 },
 d_subwaytocity = {
@@ -1396,7 +1403,7 @@ d_ty_klanyaeshsya_v_otvet = {
 text = [[*Послышался шум динамиков.*
 Ты... Меня впечталил, конечно.]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_cat_barrel",
 choices = {
 {
 text = [[Рад.]],
@@ -1870,12 +1877,16 @@ next = "d_obidno",
 },
 d_untitled_passage_49 = {
 text = [[*Ты используешь ключ и открываешь клетку.*]],
-speaker = [[Крип-кот в бочке]],
-npc = nil,
+speaker = [[Кот-бочка]],
+npc = "npc_cat_barrel",
 choices = {
 {
 text = [[Вы свободны, убегайте.]],
 next = "d_vy_svobodny_ubegajte",
+actions = {
+{ itemName="item_cage_key",type="take_item" },
+{ var="freed_island_creeps",value=true,type="set_var" },
+},
 },
 },
 },
@@ -3845,6 +3856,26 @@ text = [[ГОЛАЯ ЦМКА!!!]],
 next = nil,
 actions = {
 { target="tp_target_island",type="teleport" },
+{ questID="q_island_escape",type="quest_start" },
+},
+},
+{
+text = [[Я передумал]],
+next = nil,
+},
+},
+},
+d_subwayfakereturn = {
+text = [[На тебя выжидающе смотрит окошко очередного нелегального терминала М.Е.Т.Р.О.]],
+speaker = [[Подозрительный терминал]],
+npc = "npc_subway_fake_return",
+choices = {
+{
+text = [[Куда угодно, только подальше отсюда]],
+next = nil,
+actions = {
+{ target="tp_target_city_fake",type="teleport" },
+{ questID="q_island_escape",type="quest_end" },
 },
 },
 {
@@ -4429,12 +4460,15 @@ next = "d_otets_lubit_tebya_on_zhdet_tebya_vernis_domoj_semya_samoe_vazhnoe_na_s
 },
 d_vy_svobodny_ubegajte = {
 text = [[*Поочерёдно крипы встали и поклонились тебе.*]],
-speaker = [[Крип-кот в бочке]],
-npc = nil,
+speaker = [[Кот-бочка]],
+npc = "npc_cat_barrel",
 choices = {
 {
 text = [[*Ты кланяешься в ответ.*]],
 next = "d_ty_klanyaeshsya_v_otvet",
+actions = {
+{ npc="npc_cat_barrel",type="remove" },
+},
 },
 },
 },
@@ -4941,6 +4975,17 @@ next = "d_dzheffri_ejnshtejn",
 },
 },
 },
+d_kuda_ugodno_tolko_podalshe_otsuda = {
+text = [[]],
+speaker = [[Подозрительный терминал]],
+npc = "npc_subway_fake_return",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
 d_ladno_togda_chast_otsyplu_mozhet_byt = {
 text = [[Всмысле может быть?!]],
 speaker = [[Крип-камыш]],
@@ -4955,7 +5000,7 @@ next = nil,
 d_ladno_poka = {
 text = [[*В стороне ты заметил вход в подземные пути.*]],
 speaker = [[...]],
-npc = nil,
+npc = "npc_cat_barrel",
 choices = {
 {
 text = [[Закрыть.]],
@@ -5754,7 +5799,7 @@ next = "d_o5",
 d_rad = {
 text = [[Но и сильно разочаровал. Ты забрал мой товар, так что с этих пор - оглядывайся.]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_cat_barrel",
 choices = {
 {
 text = [[Ладно, пока.]],

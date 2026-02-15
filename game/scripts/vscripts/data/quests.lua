@@ -106,14 +106,26 @@ return {
         }
     },
     q_island_escape = {
-        giver = "trigger_Epstein",
-        name = "Побег от кумира",
+        giver = "npc_subway_fake",
+        name = "jevacation",
         acts = { 1, 2 },
         steps = {
             {
                 description = "Сбеги с острова",
                 objectives = {
-                    { type = "come", trigger = "trigger_tp_at_home" }
+                    { type = "come", trigger = "trigger_island_fight_1" }
+                }
+            },
+            {
+                description = "Победи охранника",
+                objectives = {
+                    { type = "kill", npc = "npc_island_guard" }
+                }
+            },
+            {
+                description = "Воспользуйся подземным тоннелем",
+                objectives = {
+                    { type = "manual" }
                 }
             },
         }

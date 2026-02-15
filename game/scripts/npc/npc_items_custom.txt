@@ -235,4 +235,15 @@
         "ItemPurchasable"               "1"
         "ItemQuality"                   "rare"
     }
+    "item_cage_key"
+    {
+        "ID"                    "3012"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "cage_key"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+    }
 }

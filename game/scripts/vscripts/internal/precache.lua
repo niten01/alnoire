@@ -33,6 +33,7 @@ return {
         "npc_scientist",
         "npc_red",
         "npc_gorilla",
+        "npc_cat_barrel",
         "npc_island_guard",
 
         "npc_storyteller",

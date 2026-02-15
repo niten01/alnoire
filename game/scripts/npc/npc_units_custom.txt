@@ -34,6 +34,7 @@
 #base "units/story/npc_scientist.txt"
 #base "units/story/npc_red.txt"
 #base "units/story/npc_concert_guard.txt"
+#base "units/story/npc_cat_barrel.txt"
 
 #base "units/story/npc_storyteller.txt"
 #base "units/story/npc_leader.txt"

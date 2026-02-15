@@ -361,6 +361,10 @@ end
 function StoryDriver:SetupAct3()
   fastRemoveNPC("npc_dream")
   SpawnManager:SpawnNPC("spawner_dream")
+
+  if GlobalState:Get().freed_island_creeps then
+    SpawnManager:SpawnNPC("spawner_cat_barrel_city")
+  end
 end
 
 function StoryDriver:OnActChange(event)

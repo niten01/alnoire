@@ -23,6 +23,10 @@ return {
             npc = "npc_subway_fake",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_subway_fake_return = {
+            npc = "npc_subway_fake_return",
+            modifiers = { "modifier_story_npc" },
+        },
 
         spawner_xavier = {
             npc = "npc_xavier",
@@ -38,6 +42,10 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_gorilla",
+        },
+        spawner_island_creeps = {
+            npc = "npc_cat_barrel",
+            modifiers = { "modifier_story_npc" },
         },
         spawner_blue_prince = {
             npc = "npc_blue_prince",
@@ -300,6 +308,10 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
+        spawner_cat_barrel_city = {
+            npc = "npc_cat_barrel",
+            modifiers = { "modifier_story_npc" },
+        },
     },
 
     ------------------------------------------------------------
@@ -364,6 +376,7 @@ return {
         },
         pack_island_guard = {
             activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
         },
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,
@@ -424,6 +437,11 @@ return {
             drop = {
                 "item_concert_ticket",
                 "item_concert_ticket",
+            }
+        },
+        npc_island_guard = {
+            drop = {
+                "item_cage_key",
             }
         },
     },

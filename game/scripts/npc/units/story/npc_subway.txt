@@ -23,4 +23,12 @@
 		"RingRadius"				"200"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	}
+	"npc_subway_fake_return" 
+	{
+		"Model"						"models/subway/subway_fake.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"RingRadius"				"200"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
 }
