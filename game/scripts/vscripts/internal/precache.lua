@@ -1,6 +1,7 @@
 return {
     units = {
         "npc_dota_hero_nevermore",
+        "npc_dota_hero_earthshaker",
 
         "npc_dota_hero_sanya_towel_master",
         "npc_dota_hero_sanya_rapper",

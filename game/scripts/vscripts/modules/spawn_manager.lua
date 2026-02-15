@@ -34,6 +34,12 @@ end
 function SpawnManager:OnHeroInGame(hero)
     if not IsServer() then return end
 
+
+    if GetMapName() == "fight_test" then
+        Timers:CreateTimer(1, function()
+            StoryDriver:StartFight("pack_ogre_bruiser")
+        end)
+    end
     -- if not hero:HasModifier("modifier_anim_translate_thinker") then
     --     hero:AddNewModifier(hero, nil, "modifier_anim_translate_thinker", { duration = -1 })
     -- end

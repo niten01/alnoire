@@ -1,6 +1,8 @@
 // Dota Heroes File
 
 #base "bosses/mk_abilities.txt"
+#base "bosses/ogre_bruiser_abilities.txt"
+
 
 "DOTAAbilities"
 {

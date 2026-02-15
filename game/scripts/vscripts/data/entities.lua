@@ -119,7 +119,7 @@ return {
             npc = "npc_ogre_bruiser",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ogre_bruiser",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_ogre_bruiser_ai",
         },
         spawner_rape_victim = {
             npc = "npc_rape_victim",

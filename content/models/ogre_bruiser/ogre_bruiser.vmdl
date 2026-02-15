@@ -570,7 +570,7 @@
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 20.0
 						reverse = false
 						additional_anim_files = [  ]
 					},
@@ -595,7 +595,7 @@
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 17.0
 						reverse = false
 						additional_anim_files = [  ]
 					},
@@ -620,7 +620,7 @@
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 15.0
 						reverse = false
 						additional_anim_files = [  ]
 					},

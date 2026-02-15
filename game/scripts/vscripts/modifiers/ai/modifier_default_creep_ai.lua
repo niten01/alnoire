@@ -35,8 +35,8 @@ function modifier_default_creep_ai:OnIntervalThink()
     if not beaconData then return end
     local beaconState = beaconData.state
     local target = beaconData.target
-    
-    if not DefaultAiTick(unit) then 
+
+    if not DefaultAiTick(unit) then
         -- деремся сука
         if beaconState == 'aggro' and target and target:IsAlive() then
             local currentTime = GameRules:GetGameTime()
@@ -62,7 +62,7 @@ function modifier_default_creep_ai:OnIntervalThink()
                     Queue = false,
                 })
             end
-        else 
+        else
         end
     end
 

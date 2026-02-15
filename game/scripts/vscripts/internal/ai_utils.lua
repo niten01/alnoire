@@ -10,7 +10,9 @@ function MoveHome(unit)
 end
 
 function CastAllAbilities(unit, target)
-    if unit:IsSilenced() or unit:IsStunned() or unit:IsChanneling() then return false end
+    if unit:IsSilenced() or unit:IsStunned() then return false end
+    local currentAbility = unit:GetCurrentActiveAbility()
+    if currentAbility then return currentAbility end
     local abilityCount = unit:GetAbilityCount()
     for i = 0, abilityCount - 1 do
         local ability = unit:GetAbilityByIndex(i)
@@ -19,6 +21,8 @@ function CastAllAbilities(unit, target)
             local dist = (unit:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
             if dist <= (range + 100) then
                 local behavior = ability:GetBehavior()
+                if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_HIDDEN) ~= 0 then goto continue end
+
                 if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
                     unit:CastAbilityOnTarget(target, ability, -1)
                 elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
@@ -26,9 +30,10 @@ function CastAllAbilities(unit, target)
                 elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then
                     unit:CastAbilityOnPosition(target:GetAbsOrigin(), ability, -1)
                 end
-                return true
+                return ability
             end
         end
+        ::continue::
     end
     return false
 end
@@ -125,6 +130,7 @@ function SetAIModifierActive(modifier, bActive)
 
     if bActive then
         modifier:StartIntervalThink(BATTLE_THINK_INTERVAL)
+        modifier:OnIntervalThink()
     else
         modifier:StartIntervalThink(-1)
     end

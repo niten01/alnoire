@@ -25,10 +25,6 @@ function modifier_ogre_bruiser_ai:OnAttackLanded(event)
     end
 end
 
-function modifier_ogre_bruiser_ai:SetThinking(bval)
-    SetAIModifierActive(self, bval)
-end
-
 function modifier_ogre_bruiser_ai:OnIntervalThink()
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
@@ -37,29 +33,27 @@ function modifier_ogre_bruiser_ai:OnIntervalThink()
     local beaconState = beaconData.state
     local target = beaconData.target
 
-    if not DefaultAiTick(unit) then
-        -- деремся сука
-        if beaconState == 'aggro' and target and target:IsAlive() then
-            if unit.castBonk then
-                if CastAllAbilities(unit, target) then
-                    unit.castBonk = false
-                    return BATTLE_THINK_INTERVAL
-                end
-            end
-
-            if not unit:GetAggroTarget() then
-                ExecuteOrderFromTable({
-                    UnitIndex = unit:entindex(),
-                    OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-                    Position = target:GetAbsOrigin(),
-                    Queue = false,
-                })
-            end
-        else
-            --
-        end
+    if DefaultAiTick(unit) then
+        AdjustTickRate(unit)
+        self:StartIntervalThink(beaconData.currentCreepInterval)
+        return
     end
 
-    AdjustTickRate(unit)
-    self:StartIntervalThink(beaconData.currentCreepInterval)
+    -- деремся сука
+    if beaconState == 'aggro' and target and target:IsAlive() then
+        local ability = CastAllAbilities(unit, target)
+        if ability then
+            return
+            -- self:StartIntervalThink(BATTLE_THINK_INTERVAL + ability:GetCastPoint())
+        end
+
+        if not unit:GetAggroTarget() then
+            ExecuteOrderFromTable({
+                UnitIndex = unit:entindex(),
+                OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                Position = target:GetAbsOrigin(),
+                Queue = false,
+            })
+        end
+    end
 end

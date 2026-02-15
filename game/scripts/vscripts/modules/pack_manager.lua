@@ -68,7 +68,7 @@ function PackManager:SetUnitAIActive(unit, bActive)
     assert(unit.ai_modifier, "No ai_modifier for unit: " .. unit:GetName())
     local modifier = unit:FindModifierByName(unit.ai_modifier)
     if modifier then
-        modifier:SetThinking(bActive)
+        SetAIModifierActive(modifier, bActive)
     else
         print("[PackManager] WARNING: Could not find modifier " .. unit.ai_modifier .. " on unit " .. unit:GetUnitName())
     end
