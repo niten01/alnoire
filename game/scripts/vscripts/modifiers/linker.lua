@@ -26,4 +26,4 @@ LinkLuaModifier("modifier_mk_ai", "modifiers/ai/modifier_mk_ai", LUA_MODIFIER_MO
 -- bosses
 LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)
 
---LinkLuaModifier('modifier_test_eyes', 'modifiers/modifier_test_eyes', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_demon_power', 'modifiers/modifier_demon_power', LUA_MODIFIER_MOTION_NONE)

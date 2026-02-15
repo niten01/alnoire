@@ -227,7 +227,8 @@ return {
         spawner_island_guard = {
             npc = "npc_island_guard",
             modifiers = { "modifier_story_npc" },
-            packID = "pack_island_guard"
+            packID = "pack_island_guard",
+            ai_modifier = "modifier_default_creep_ai",
         },
 
         -- jungle
@@ -311,6 +312,28 @@ return {
         spawner_cat_barrel_city = {
             npc = "npc_cat_barrel",
             modifiers = { "modifier_story_npc" },
+            deferred=true,
+        },
+        spawner_island_fiend = {
+            npc = "npc_island_fiend",
+            modifiers = { "modifier_story_npc" },
+            packID="pack_island_duo",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_island_shadow_demon = {
+            npc = "npc_island_shadow_demon",
+            modifiers = { "modifier_story_npc" },
+            packID="pack_island_duo",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_bomb_place = {
+            npc = "npc_bomb_place",
+            modifiers = { "modifier_story_npc" },
+        },
+        spawner_bomb = {
+            npc = "npc_bomb",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
     },
 
@@ -372,6 +395,10 @@ return {
             activateAfterUnitsSpawned = false,
         },
         pack_island_guard = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+        },
+        pack_island_duo = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
         },
@@ -451,6 +478,9 @@ return {
             clipEntity = "clip_door_prologue",
             openAnimation = "cf_palace_door_open",
             openSound = "sfx.door_palace.open",
+        },
+        door_island_secret = {
+            clipEntity = "clip_door_island_secret",
         },
         door_clash_royale = {
             clipEntity = "clip_door_clash_royale",

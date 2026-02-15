@@ -1,0 +1,75 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "liquid_fx.vfx"
+
+	//---- Translucent ----
+	F_ADDITIVE_BLEND 1
+	F_TRANSLUCENT 1
+
+	//---- Bubbles ----
+	g_flBubbleDepthFalloff "1.500"
+	g_flBubbleOpacity "0.000"
+	g_flBubbleScale "1.855"
+	g_flBubblesMaximum "1.858"
+	g_flBubblesMinimum "0.000"
+	g_flBubbleSpaceScale "0.042"
+	g_flBubbleSpeed "1.000"
+	g_vBubbleColorInner "[1.000000 1.000000 1.000000 0.000000]"
+	g_vBubbleColorOuter "[0.000000 0.133333 1.000000 0.000000]"
+
+	//---- Color ----
+	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordOffset "[-0.550 -1.000]"
+	g_vTexCoordScale "[64.000 0.000]"
+	TextureColor ""
+
+	//---- Liquid FX ----
+	g_flLiquidCenterOffset "2.564"
+	g_flLiquidLevelHeight "-92.308"
+	g_flLiquidWobbleScale "19.872"
+	g_flLiquidWobbleWavelength "0.321"
+
+	//---- Self Illum ----
+	TextureSelfIllumMask ""
+
+	//---- Specular ----
+	g_flSpecularBloom "0.000"
+	g_flSpecularIntensity "1.000"
+	TextureBloom ""
+	TextureReflectance ""
+
+	//---- Translucent ----
+	g_flOpacityScale "1.000"
+	g_flOverbrightFactor "1.176"
+	TextureTranslucency ""
+
+	UnusedVariables
+	{
+		"g_flAlphaAnglePower" "1"
+	}
+
+
+	VariableState
+	{
+		"Bubbles"
+		{
+		}
+		"Color"
+		{
+		}
+		"Liquid FX"
+		{
+		}
+		"Self Illum"
+		{
+		}
+		"Specular"
+		{
+		}
+		"Translucent"
+		{
+		}
+	}
+}

@@ -9,6 +9,14 @@ conditions = {
 { var="act",value={ 1, 2, 3 },type="var" },
 },
 },
+d_untitled_passage_1 = {
+priority = 0,
+conditions = {
+{ interact="npc_cat_barrel",type="interact" },
+{ var="act",value={ 1, 2 },type="var" },
+{ no_item="item_cage_key",type="no_item" },
+},
+},
 d_untitled_passage_11 = {
 priority = 0,
 conditions = {
@@ -473,12 +481,14 @@ d_subwayfake = {
 priority = 0,
 conditions = {
 { interact="npc_subway_fake",type="interact" },
+{ questID="q_island_escape",status=QuestStatus.INACTIVE,type="quest" },
 },
 },
 d_subwayfakereturn = {
 priority = 0,
 conditions = {
 { interact="npc_subway_fake_return",type="interact" },
+{ questID="q_island_escape",status=QuestStatus.ACTIVE,step={ 3 },type="quest" },
 },
 },
 d_subwaytocity = {
@@ -933,7 +943,8 @@ d_untitled_passage_58 = {
 priority = 0,
 conditions = {
 { var="act",value={ 3 },type="var" },
-{ trigger="trigger_island_sixth",type="trigger" },
+{ interact="npc_bomb_place",type="interact" },
+{ questID="q_island_explosion",status=QuestStatus.ACTIVE,step={ 4 },type="quest" },
 },
 },
 d_untitled_passage_59mergedact3 = {
@@ -1013,6 +1024,20 @@ priority = 0,
 conditions = {
 { interact="npc_dream_golden",type="interact" },
 { ent_var="first_met_global",value={ false },npc="npc_dream_golden",type="ent_var" },
+},
+},
+d_subwayfakeact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_subway_fake",type="interact" },
+{ questID="q_island_explosion",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
+},
+},
+d_subwayfakereturnact3 = {
+priority = 0,
+conditions = {
+{ questID="q_island_explosion",status=QuestStatus.ACTIVE,step={ 5 },type="quest" },
+{ interact="npc_subway_fake_return",type="interact" },
 },
 },
 },
@@ -1546,6 +1571,17 @@ choices = {
 {
 text = [[Что пьёшь?]],
 next = "d_chto_pesh",
+},
+},
+},
+d_untitled_passage_1 = {
+text = [[Без ключа эту клетку не открыть]],
+speaker = [[...]],
+npc = "npc_cat_barrel",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -10278,7 +10314,7 @@ next = "d_lukovye_koltsa_govno",
 },
 d_untitled_passage_10 = {
 text = [[Удачи в твоих странствиях!]],
-speaker = [[Пьяная панда]],
+speaker = [[Панда]],
 npc = "npc_brewmaster",
 choices = {
 {
@@ -10519,11 +10555,15 @@ next = nil,
 d_untitled_passage_58 = {
 text = [[*Ты закладываешь бомбу рядом с другой взрывчаткой. Этого точно хватит, чтоб подорвать весь остров.*]],
 speaker = [[...]],
-npc = nil,
+npc = "npc_bomb_place",
 choices = {
 {
 text = [[Готово.]],
 next = "d_gotovo",
+actions = {
+{ npc="npc_bomb_place",type="remove" },
+{ spawn="spawner_bomb",type="spawn" },
+},
 },
 },
 },
@@ -10564,6 +10604,9 @@ actions = {
 {
 text = [[Ща занят, ребятня.]],
 next = "d_scha_zanyat_rebyatnya",
+actions = {
+{ questID="q_island_explosion",type="quest_reject" },
+},
 },
 },
 },
@@ -10638,7 +10681,7 @@ next = nil,
 },
 d_untitled_passage_7 = {
 text = [[*Приближаясь к знакомой уже панде, ты замечаешь сильные изменения. Он больше не пьёт, морда его довольная, а тело более подтянутое.*]],
-speaker = [[Пьяная панда]],
+speaker = [[Панда]],
 npc = "npc_brewmaster",
 choices = {
 {
@@ -10677,6 +10720,28 @@ choices = {
 {
 text = [[Пришлось, иначе бы умер сам.]],
 next = "d_prishlos_inache_by_umer_sam",
+},
+},
+},
+d_escapeisland2 = {
+text = [[]],
+speaker = [[Подозрительный терминал]],
+npc = "npc_subway_fake_return",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
+d_faketerminalcloseact3 = {
+text = [[]],
+speaker = [[Подозрительный терминал]],
+npc = "npc_subway_fake",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -11013,7 +11078,7 @@ next = "d_rasslabtes_kotiki_sam_epshtejn_skazal_chto_ostrov_pust",
 d_n7 = {
 text = [[Что это значит?]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_bomb_place",
 choices = {
 {
 text = [[Сегодня ты умрёшь во второй раз.]],
@@ -11025,7 +11090,7 @@ d_n8 = {
 text = [[*Он впервые занервничал.*
 Л..Ладно извини за всё, я реально вёл себя плохо. Что я могу сделать для тебя?]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_bomb_place",
 choices = {
 {
 text = [[Сядь. Закрой глаза и считай до тысячи.]],
@@ -11201,7 +11266,7 @@ choices = {
 text = [[*Взять новый камень.*]],
 next = "d_vzyat_novyj_kamen",
 actions = {
-{ itemName="philosopher_stone",type="give_item" },
+{ itemName="item_philosopher_pebble",type="give_item" },
 },
 },
 },
@@ -11225,6 +11290,42 @@ choices = {
 {
 text = [[...]],
 next = "d_s",
+},
+},
+},
+d_subwayfakeact3 = {
+text = [[Вместо кассира тебя встречает дощечка, на которой нацарапан единственный пункт назначения...]],
+speaker = [[Подозрительный терминал]],
+npc = "npc_subway_fake",
+choices = {
+{
+text = [[В этот раз без цмки я не уйду... Вперед!]],
+next = nil,
+actions = {
+{ target="tp_target_island",type="teleport" },
+},
+},
+{
+text = [[Я передумал]],
+next = nil,
+},
+},
+},
+d_subwayfakereturnact3 = {
+text = [[На тебя выжидающе смотрит окошко очередного нелегального терминала М.Е.Т.Р.О.]],
+speaker = [[Подозрительный терминал]],
+npc = "npc_subway_fake_return",
+choices = {
+{
+text = [[Куда угодно, только подальше отсюда]],
+next = nil,
+actions = {
+{ target="tp_target_city_fake",type="teleport" },
+},
+},
+{
+text = [[Я передумал]],
+next = nil,
 },
 },
 },
@@ -11296,7 +11397,7 @@ next = "d_prishlos_vstupit_v_ih_bandu_radi_etogo",
 },
 },
 d_a_nu_da = {
-text = [[Ты возьмёшь взрывчатку, отправишься на остров и пройдешь через секкретный проход в деревьях. Поставишь бомбу и, пройдя полосу, вернёшься через М.Е.Т.Р.О. Готов?]],
+text = [[Ты возьмёшь взрывчатку, отправишься на остров и пройдешь через секретный проход в деревьях. Поставишь бомбу и, пройдя полосу, вернёшься через М.Е.Т.Р.О. Готов?]],
 speaker = [[Кот-бочка]],
 npc = "npc_cat_barrel",
 choices = {
@@ -11310,6 +11411,9 @@ actions = {
 {
 text = [[Ща занят, ребятня.]],
 next = "d_scha_zanyat_rebyatnya",
+actions = {
+{ questID="q_island_explosion",type="quest_reject" },
+},
 },
 },
 },
@@ -11332,6 +11436,17 @@ choices = {
 {
 text = [[Насчёт братьев, возвращайся к ним.]],
 next = "d_naschet_bratev_vozvraschajsya_k_nim",
+},
+},
+},
+d_v_etot_raz_bez_tsmki_ya_ne_ujdu_vpered = {
+text = [[]],
+speaker = [[Подозрительный терминал]],
+npc = "npc_subway_fake",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -11420,7 +11535,7 @@ d_gotovo = {
 text = [[*Резкий звук доносится из динамиков.*
 Что готово?]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_bomb_place",
 choices = {
 {
 text = [[Я санта клаус сегодня.]],
@@ -11711,7 +11826,7 @@ next = "d_mozhet_ty_i_prav",
 d_klyanus = {
 text = [[Хорошо... 1, 2, 3, 4, 5, 6, 7, 8...]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_bomb_place",
 choices = {
 {
 text = [[Отлично, продолжай.]],
@@ -11732,7 +11847,7 @@ next = "d_da_dogovorilis_tam_vse_norm",
 },
 d_kstati_tvoi_synovya_obeschali_vernutsya_no_ih_ne_vidat_gde_oni = {
 text = [[Какие сыновья?]],
-speaker = [[Пьяная панда]],
+speaker = [[Панда]],
 npc = "npc_brewmaster",
 choices = {
 {
@@ -11954,7 +12069,7 @@ actions = {
 d_otlichno_prodolzhaj = {
 text = [[*Пришло время сматываться отсюда.*]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_bomb_place",
 choices = {
 {
 text = [[Закрыть.]],
@@ -12052,7 +12167,7 @@ next = "d_s2",
 },
 d_privet_panda_vizhu_zhizn_tvoya_nalazhivaetsya = {
 text = [[Оооо, здравствуй, приятель. Ты не поверишь, сколько всего в моей жизни произошло.]],
-speaker = [[Пьяная панда]],
+speaker = [[Панда]],
 npc = "npc_brewmaster",
 choices = {
 {
@@ -12124,12 +12239,15 @@ choices = {
 {
 text = [[Щекотно.]],
 next = "d_schekotno",
+actions = {
+{ modifier="modifier_demon_power",type="add_modifier" },
+},
 },
 },
 },
 d_rad_za_tebya = {
 text = [[Представь, даже жена меня домой пустила. Когда спросил её о причине, то она ответила, что со мной стало приятней общаться и что я перестал перечить и доводить до конфликтов. Хорошо, что чудеса случаются.]],
-speaker = [[Пьяная панда]],
+speaker = [[Панда]],
 npc = "npc_brewmaster",
 choices = {
 {
@@ -12263,13 +12381,16 @@ choices = {
 {
 text = [[...чувствовать живых существ в радиусе 1 км.]],
 next = "d_chuvstvovat_zhivyh_suschestv_v_radiuse_1_km",
+actions = {
+{ type="happy_cat_fireworks" },
+},
 },
 },
 },
 d_syad_zakroj_glaza_i_schitaj_do_tysyachi = {
 text = [[Если я это сделаю, ты не будешь делать ничего дикого?]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_bomb_place",
 choices = {
 {
 text = [[Клянусь.]],
@@ -12615,7 +12736,7 @@ next = "d_szadi_vas_epshtejn",
 },
 d_ya_vizhu_pit_perestal_da = {
 text = [[Да, и не только. Вся моя жизнь пошла в гору, особенно отношения с другими существами. Точно не уверен почему это произошло, но очень доволен, что так вышло.]],
-speaker = [[Пьяная панда]],
+speaker = [[Панда]],
 npc = "npc_brewmaster",
 choices = {
 {
@@ -12682,7 +12803,7 @@ next = "d_g6",
 d_ya_santa_klaus_segodnya = {
 text = [[Что ты положил туда?]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_bomb_place",
 choices = {
 {
 text = [[Уголь.]],

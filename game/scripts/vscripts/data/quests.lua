@@ -108,6 +108,7 @@ return {
     q_island_escape = {
         giver = "npc_subway_fake",
         name = "jevacation",
+        showExclamation = true,
         acts = { 1, 2 },
         steps = {
             {
@@ -134,6 +135,9 @@ return {
         giver = "npc_cat_barrel",
         name = "Epstein's blow job",
         acts = { 3 },
+        onAccept = {
+            { type = 'setup_island_second_encounter' }
+        },
         steps = {
             {
                 description = "Найди секретный проход",
@@ -150,14 +154,14 @@ return {
             {
                 description = "Одолей демонов",
                 objectives = {
-                    { type = "kill", npc = "npc_shadow_demon_island" },
-                    { type = "kill", npc = "npc_shadow_fiend_island" },
+                    { type = "kill", npc = "npc_island_fiend" },
+                    { type = "kill", npc = "npc_island_shadow_demon" },
                 }
             },
             {
                 description = "Заложи бомбу",
                 objectives = {
-                    { type = "come", trigger = "trigger_bomb" }
+                    { type = "talk", npc = "npc_bomb_place" }
                 }
             },
             {

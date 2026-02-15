@@ -7,7 +7,7 @@ end
 
 function trap_spikes:TriggerSpikes()
     local caster = self:GetCaster()
-    local radius = 250
+    local radius = 170
     local damage = 400
 
     caster:EmitSound('sfx.trap_spikes.shoot')
@@ -67,7 +67,7 @@ function modifier_trap_spikes_thinker:OnIntervalThink()
     if self.is_triggered then return end
 
     local caster = self:GetCaster()
-    local trigger_radius = 150
+    local trigger_radius = 170
 
     local sanya = FindSanyaInRadius(caster:GetAbsOrigin(), trigger_radius)
 

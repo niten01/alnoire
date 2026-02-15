@@ -269,6 +269,33 @@ function Handlers.force_give_drop(playerID, action)
   giveDrop(npcData)
 end
 
+function Handlers.setup_island_second_encounter(playerID, action)
+  triggerSetEnabled("trigger_island_fourth")
+  DoorManager:Open("door_island_secret")
+end
+
+function Handlers.add_modifier(playerID, action)
+  assert(action.modifier)
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  assert(hero)
+  if not hero:HasModifier(action.modifier) then
+    hero:AddNewModifier(nil, nil, action.modifier, { duration = -1 })
+  end
+end
+
+function Handlers.happy_cat_fireworks(playerID, action)
+  local cats = Entities:FindByName(nil, "npc_cat_barrel")
+  assert(cats)
+  local pfx1 = ParticleManager:CreateParticle("particles/themed_fx/cny_fireworks_rockets_a.vpcf",
+    PATTACH_ABSORIGIN_FOLLOW, cats)
+  local pfx2 = ParticleManager:CreateParticle("particles/themed_fx/cny_fireworks_rockets_b.vpcf",
+    PATTACH_ABSORIGIN_FOLLOW, cats)
+    Timers:CreateTimer(5, function()
+      ParticleManager:ReleaseParticleIndex(pfx1)
+      ParticleManager:ReleaseParticleIndex(pfx2)
+    end)
+end
+
 function StoryDriver:StartFight(packName, nonLethalNPC)
   local pack = PackManager:GetPack(packName)
   assert(pack, "No pack to start fight with: " .. packName)

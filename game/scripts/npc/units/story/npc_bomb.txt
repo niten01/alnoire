@@ -1,0 +1,17 @@
+"DOTAUnits"
+{
+	"npc_bomb_place" 
+	{
+		"Model"						"models/island_bomb/bomb_place.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"3.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_bomb" 
+	{
+		"Model"						"models/heroes/techies/fx_techies_remotebomb.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"3.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}

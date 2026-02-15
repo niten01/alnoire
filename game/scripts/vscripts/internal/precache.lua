@@ -1,5 +1,7 @@
 return {
     units = {
+        "npc_dota_hero_nevermore",
+
         "npc_dota_hero_sanya_towel_master",
         "npc_dota_hero_sanya_rapper",
         "npc_dota_hero_sanya_logarithmus",
@@ -35,6 +37,10 @@ return {
         "npc_gorilla",
         "npc_cat_barrel",
         "npc_island_guard",
+        "npc_island_fiend",
+        "npc_island_shadow_demon",
+        "npc_bomb_place",
+        "npc_bomb",
 
         "npc_storyteller",
         "npc_leader",
@@ -138,6 +144,7 @@ return {
         "particles/econ/items/pugna/pugna_ti9_immortal/pugna_ti9_immortal_netherblast_flash_b.vpcf",
 
         -- quests
+        "particles/themed_fx/cny_fireworks_rockets_a.vpcf",
         "particles/themed_fx/cny_fireworks_rockets_b.vpcf",
         "particles/sanya_quest_complete_firework.vpcf",
         "particles/generic_gameplay/generic_has_quest.vpcf",

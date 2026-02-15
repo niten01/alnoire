@@ -1,0 +1,81 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc41:version{12fc9d44-453a-4ae4-b4d9-7e2ac0bbd4e0} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "rendermeshshape0.vmat"
+								to = "models/island_bomb/materials/bomb_place.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								name = "remote_mine_root"
+								parent_bone = "remote_mine_root"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -28.935413, -0.5, -34.773731 ]
+								hitbox_maxs = [ 28.236946, 119.270775, 28.152714 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "remote_mine_squasher"
+								parent_bone = "remote_mine_squasher"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -30.119785, -76.262573, -28.691278 ]
+								hitbox_maxs = [ 30.759987, 3.968445, 39.194405 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/island_bomb/bomb.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		document_sub_type = "ModelDocSubType_None"
+	}
+}

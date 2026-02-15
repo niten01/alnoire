@@ -4,6 +4,7 @@
 #base "units/boss/npc_ogre_bruiser.txt"
 #base "units/boss/npc_killer.txt"
 #base "units/boss/npc_island_guard.txt"
+#base "units/boss/npc_island_duo.txt"
 
 #base "units/trap/npc_trap_arrow.txt"
 #base "units/trap/npc_trap_fire.txt"
@@ -46,6 +47,7 @@
 #base "units/story/npc_hermit.txt"
 #base "units/story/ghetto.txt"
 #base "units/story/npc_blue.txt"
+#base "units/story/npc_bomb.txt"
 
 #base "units/towel_summon.txt"
 

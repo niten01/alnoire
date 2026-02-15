@@ -37,7 +37,7 @@ function SpawnManager:OnHeroInGame(hero)
     -- if not hero:HasModifier("modifier_anim_translate_thinker") then
     --     hero:AddNewModifier(hero, nil, "modifier_anim_translate_thinker", { duration = -1 })
     -- end
-    --hero:AddNewModifier(hero, nil, "modifier_test_eyes", { duration = -1 })
+    -- hero:AddNewModifier(hero, nil, "modifier_test_eyes", { duration = -1 })
 end
 
 function SpawnManager:SpawnNPC(spawnerName)
