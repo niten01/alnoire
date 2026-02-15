@@ -32,7 +32,7 @@ def merge(og: Story, s: Story) -> Story:
                 )
             s.rename(id, new_id)
             passage_id = new_id
-        og.passages[id] = s.passages[passage_id]
+        og.passages[passage_id] = s.passages[passage_id]
 
     for id, entrypoint in s.entries.items():
         if id in og.entries:

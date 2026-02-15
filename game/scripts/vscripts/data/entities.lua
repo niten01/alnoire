@@ -19,6 +19,10 @@ return {
             npc = "npc_subway_to_city",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_subway_fake = {
+            npc = "npc_subway_fake",
+            modifiers = { "modifier_story_npc" },
+        },
 
         spawner_xavier = {
             npc = "npc_xavier",
@@ -212,6 +216,12 @@ return {
             deferred = true,
         },
 
+        spawner_island_guard = {
+            npc = "npc_island_guard",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_island_guard"
+        },
+
         -- jungle
         spawner_lizards_venomancer = {
             npc = "npc_jungle_venomancer",
@@ -352,6 +362,9 @@ return {
             rangeAggro = 600,
             activateAfterUnitsSpawned = false,
         },
+        pack_island_guard = {
+            activateAfterUnitsSpawned = false,
+        },
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,
         },
@@ -412,7 +425,7 @@ return {
                 "item_concert_ticket",
                 "item_concert_ticket",
             }
-        }
+        },
     },
 
     ------------------------------------------------------------
