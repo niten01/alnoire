@@ -1,8 +1,8 @@
 modifier_mk_ai = class({})
 
 function modifier_mk_ai:IsHidden() return true end
-function modifier_mk_ai:IsPurgable() return false end
 
+function modifier_mk_ai:IsPurgable() return false end
 
 function modifier_mk_ai:DeclareFunctions()
     return {
@@ -26,30 +26,8 @@ function modifier_mk_ai:OnAttackLanded(event)
 end
 
 function modifier_mk_ai:SetThinking(bval)
-    if not IsServer() then return end
-    if not self:GetParent() then return end
-    local unit = self:GetParent()
-    if not unit:IsAlive() then return end
-    unit:Stop()
-    unit:SetIdleAcquire(false)
-    unit:SetAcquisitionRange(0)
-    if unit:HasModifier('modifier_story_npc') then
-        unit:RemoveModifierByName('modifier_story_npc')
-    end
-    if unit:GetTeam() ~= DOTA_TEAM_BADGUYS then
-        unit:SetTeam(DOTA_TEAM_BADGUYS)
-    end
-
-    RemoveAllIdleModifiers(unit)
-
-    if bval then
-        self:StartIntervalThink(BATTLE_THINK_INTERVAL)
-    else
-        self:StartIntervalThink(-1)
-    end
+    SetAIModifierActive(self, bval)
 end
-
-
 
 function modifier_mk_ai:OnIntervalThink()
     local unit = self:GetParent()
@@ -58,8 +36,8 @@ function modifier_mk_ai:OnIntervalThink()
     if not beaconData then return end
     local beaconState = beaconData.state
     local target = beaconData.target
-    
-    if not DefaultAiTick(unit) then 
+
+    if not DefaultAiTick(unit) then
         -- деремся сука
         if beaconState == 'aggro' and target and target:IsAlive() then
             if unit.castBonk then
@@ -68,7 +46,7 @@ function modifier_mk_ai:OnIntervalThink()
                     return BATTLE_THINK_INTERVAL
                 end
             end
-            
+
             if not unit:GetAggroTarget() then
                 ExecuteOrderFromTable({
                     UnitIndex = unit:entindex(),
@@ -77,7 +55,7 @@ function modifier_mk_ai:OnIntervalThink()
                     Queue = false,
                 })
             end
-        else 
+        else
             --
         end
     end
