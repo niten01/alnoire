@@ -51,7 +51,12 @@ function DefaultCreepThink()
                 end
             end
             if unit:GetAggroTarget() ~= target then
-                unit:MoveToTargetToAttack(target)
+                ExecuteOrderFromTable({
+                    UnitIndex = unit:entindex(),
+                    OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                    Position = target:GetAbsOrigin(),
+                    Queue = false,
+                })
             end
         end
 

@@ -111,3 +111,71 @@ function RemoveAllIdleModifiers(unit)
         end
     end
 end
+
+function DefaultAiTick(unit)
+    if not IsServer() then return end
+    if not unit or not unit:IsAlive() then return end
+
+    local beaconData = unit.packTargetData
+    if not beaconData then return end
+    local beaconState = beaconData.state
+    if not beaconState or beaconState == 'off' or beaconState == 'dead' then return end
+
+    local target = beaconData.target
+    local currentPos = unit:GetAbsOrigin()
+    local distToSpawn = (currentPos - unit.spawnPos):Length2D()
+
+    if beaconState == 'aggro' then
+        if not unit.aggroStartTime then
+            unit.aggroStartTime = GameRules:GetGameTime()
+        end
+    else
+        unit.aggroStartTime = nil
+    end
+
+    if beaconState == 'aggro' and target and target:IsAlive() then 
+        return false
+    end
+
+    -- бежим сука
+    if beaconState == 'retreat' then
+        MoveHome(unit)
+    end
+
+        -- стоим сука
+    if beaconState == 'idle' then
+        if distToSpawn > 150 then
+            MoveHome(unit)
+        end
+    end
+
+    if beaconState == 'retreat' or beaconState == 'idle' then
+        unit:SetAcquisitionRange(0)
+        if unit:GetHealthPercent() < 100 then
+            unit:Heal(unit:GetMaxHealth() * 0.1, nil)
+        end
+    end
+    return true
+end
+
+
+function AdjustTickRate(unit)
+    if not IsServer() then return end
+    if not unit or not unit:IsAlive() then return end
+
+    local beaconData = unit.packTargetData
+    if not beaconData then return end
+    local beaconState = beaconData.state
+    if not beaconState or beaconState == 'off' or beaconState == 'dead' then return end
+
+    local currentPos = unit:GetAbsOrigin()
+    local distToSpawn = (currentPos - unit.spawnPos):Length2D()
+    local target_interval = IDLE_THINK_INTERVAL
+    if beaconState == 'aggro' or beaconState == 'retreat' or beaconData.somebodyNear or distToSpawn > 150 then
+        target_interval = BATTLE_THINK_INTERVAL
+    end
+    if beaconData.currentCreepInterval ~= target_interval then
+        beaconData.currentCreepInterval = target_interval
+        print("AI Switch to interval: " .. target_interval)
+    end
+end

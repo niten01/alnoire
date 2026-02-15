@@ -69,6 +69,7 @@ return {
         "npc_dota_hero_axe",
         "npc_dota_hero_razor",
         "npc_dota_hero_antimage",
+        "npc_dota_hero_monkey_king",
 
         -- traps
         "npc_trap_arrow",
@@ -86,7 +87,9 @@ return {
         "soundevents/items.vsndevts",
         "soundevents/music.vsndevts",
         "soundevents/hlup.vsndevts",
-        "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+        "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts",
+        "soundevents/voscripts/game_sounds_vo_monkey_king.vsndevts",
+        "soundevents/bosses/bidlo.vsndevts"
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",
@@ -154,5 +157,11 @@ return {
 
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",
+
+        --bosses
+        "particles/econ/items/monkey_king/arcana/monkey_arcana_cloud_start.vpcf",
+        "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_smokepoof.vpcf",
+        "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_stack.vpcf",
+        "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_debuff.vpcf"
     }
 }

@@ -56,7 +56,7 @@ function PackManager:ActivatePack(packName)
     assert(thinkerFn)
     packEntity:SetContextThink("PackTargetThink", thinkerFn, BATTLE_THINK_INTERVAL)
     thinkerFn()
-    pack.state = 'idle'
+    pack.state = 'aggro'
 
     PackManager:ForAllAliveUnits(pack, function(unit)
         self:SetUnitAIActive(unit, true)
