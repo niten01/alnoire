@@ -1,0 +1,28 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  Bidlo.Laugh.Begin = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/monkey_king/monkey_laugh_05.vsnd",
+        "sounds/vo/monkey_king/monkey_laugh_09.vsnd",
+        "sounds/vo/monkey_king/monkey_laugh_07.vsnd",
+        "sounds/vo/monkey_king/monkey_laugh_14.vsnd",
+        "sounds/vo/monkey_king/monkey_laugh_15.vsnd",
+        "sounds/vo/monkey_king/monkey_laugh_11.vsnd",
+        "sounds/vo/monkey_king/monkey_laugh_01.vsnd",
+        "sounds/vo/monkey_king/monkey_laugh_17.vsnd",
+        "sounds/vo/monkey_king/monkey_laugh_16.vsnd",
+
+    ]
+    volume = "3.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+}

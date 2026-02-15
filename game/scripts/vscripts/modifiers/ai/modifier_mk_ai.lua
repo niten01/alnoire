@@ -1,10 +1,31 @@
-modifier_default_creep_ai = class({})
+modifier_mk_ai = class({})
 
-function modifier_default_creep_ai:IsHidden() return true end
+function modifier_mk_ai:IsHidden() return true end
+function modifier_mk_ai:IsPurgable() return false end
 
-function modifier_default_creep_ai:IsPurgable() return false end
 
-function modifier_default_creep_ai:SetThinking(bval)
+function modifier_mk_ai:DeclareFunctions()
+    return {
+        MODIFIER_EVENT_ON_ATTACK_LANDED
+    }
+end
+
+function modifier_mk_ai:OnAttackLanded(event)
+    if not IsServer() then return end
+    local attacker = event.attacker
+    local victim = event.target
+    if attacker == self:GetParent() then
+        if victim:HasModifier('modifier_mk_stack_debuff') then
+            local mod = victim:FindModifierByName('modifier_mk_stack_debuff')
+            if mod:GetStackCount() == 8 then
+                EmitSoundOn("Bidlo.Laugh.Begin", attacker)
+                attacker.castBonk = true
+            end
+        end
+    end
+end
+
+function modifier_mk_ai:SetThinking(bval)
     if not IsServer() then return end
     if not self:GetParent() then return end
     local unit = self:GetParent()
@@ -28,7 +49,9 @@ function modifier_default_creep_ai:SetThinking(bval)
     end
 end
 
-function modifier_default_creep_ai:OnIntervalThink()
+
+
+function modifier_mk_ai:OnIntervalThink()
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
     local beaconData = unit.packTargetData
@@ -39,21 +62,13 @@ function modifier_default_creep_ai:OnIntervalThink()
     if not DefaultAiTick(unit) then 
         -- деремся сука
         if beaconState == 'aggro' and target and target:IsAlive() then
-            local currentTime = GameRules:GetGameTime()
-
-            if unit:IsChanneling() or unit:GetCurrentActiveAbility() then
-                return BATTLE_THINK_INTERVAL
-            end
-
-            local timeInAggro = currentTime - (unit.aggroStartTime or 0)
-            unit.lastCastTime = unit.lastCastTime or 0
-
-            if timeInAggro >= 5 and (currentTime - unit.lastCastTime) >= 2 then
+            if unit.castBonk then
                 if CastAllAbilities(unit, target) then
-                    unit.lastCastTime = currentTime
+                    unit.castBonk = false
                     return BATTLE_THINK_INTERVAL
                 end
             end
+            
             if not unit:GetAggroTarget() then
                 ExecuteOrderFromTable({
                     UnitIndex = unit:entindex(),
@@ -63,6 +78,7 @@ function modifier_default_creep_ai:OnIntervalThink()
                 })
             end
         else 
+            --
         end
     end
 

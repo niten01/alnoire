@@ -87,13 +87,13 @@ return {
             npc = "npc_monkey_king",
             modifiers = { "modifier_story_npc" },
             packID = "pack_mk",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_mk_ai",
         },
         spawner_monkey_king_summon = {
             npc = "npc_monkey_king_summon",
             modifiers = { "modifier_story_npc", "modifier_mk_summon_idle" },
             packID = "pack_mk",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_mk_ai",
         },
         spawner_brewmaster = {
             npc = "npc_brewmaster",
@@ -313,6 +313,7 @@ return {
             rangeFastTickRate = 2000,
             rangeRetreat = 1300,
             rangeAggro = 600,
+            currentCreepInterval = BATTLE_THINK_INTERVAL,
             thinker = "default",
             state = "off",
 
@@ -329,10 +330,6 @@ return {
 
         pack_mk = {
             activateAfterUnitsSpawned = false,
-            spawners = {
-                "spawner_monkey_king",
-                "spawner_monkey_king_summon",
-            },
         },
 
         pack_concert_crowd = {

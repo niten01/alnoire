@@ -1,4 +1,7 @@
 // Dota Heroes File
+
+#base "bosses/mk_abilities.txt"
+
 "DOTAAbilities"
 {
 	"Version"		"1"
