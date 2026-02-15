@@ -113,14 +113,15 @@ function M.CheckConditions(playerID, entryNodeID, conditions, premetConditions)
         if not result then
             match = false
             failedIndex = i
-            break
+            -- fail fast in non-debug
+            if not IsInToolsMode() then break end
         end
         ::continue::
     end
-    if not match and interesting then
+    -- if not match and interesting then
         DebugPrint("----Fail dialogue condition: " .. failedIndex .. "----")
         PrintTable(conditions, 2)
-    end
+    -- end
     return match
 end
 

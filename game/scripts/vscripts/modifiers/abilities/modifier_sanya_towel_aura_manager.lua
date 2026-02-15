@@ -1,6 +1,6 @@
 modifier_sanya_towel_aura_manager = class({})
 
-function modifier_sanya_towel_aura_manager:IsHidden() return false end
+function modifier_sanya_towel_aura_manager:IsHidden() return true end
 function modifier_sanya_towel_aura_manager:IsPurgable() return false end
 function modifier_sanya_towel_aura_manager:RemoveOnDeath()
     return false

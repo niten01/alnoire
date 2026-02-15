@@ -11,6 +11,16 @@ function modifier_model:DeclareFunctions()
   }
 end
 
+function ai:OnIntervalThink()
+  local beaconData = unit.packTargetData
+
+  if DefaultCreepLogic(unit) then
+    return
+  end
+
+  -- деремся сука
+end
+
 function modifier_model:GetModifierModelChange()
   local lvl = self:GetParent():GetLevel()
   self:StartIntervalThink(1)

@@ -42,6 +42,7 @@ end
 
 function SpawnManager:SpawnNPC(spawnerName)
     DebugPrint("[ALNOIRE] Trying to spawn NPC using spawner: ", spawnerName)
+    assert(spawnerName)
     local spawnerData = EntityData:ByName(spawnerName)
     for _, spawnerEnt in ipairs(Entities:FindAllByName(spawnerName)) do
         local origin = spawnerEnt:GetAbsOrigin()

@@ -1,0 +1,11 @@
+"DOTAUnits"
+{
+	"npc_island_guard" 
+	{
+		"Model"						"models/heroes/abyssal_underlord/abyssal_underlord_v2.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.0"
+		"RingRadius"				"200"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}

@@ -102,18 +102,15 @@ end
 
 function Handlers.give_item(playerID, action)
   local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
-  if not hero then
-    error("No hero")
-  end
-  if not action.itemName then
-    error("No itemName")
-  end
+  assert(hero, "No hero")
+  assert(action.itemName, "No itemName")
   local item = hero:AddItemByName(action.itemName)
   if not item then
     local playerHndl = PlayerResource:GetPlayer(playerID)
     item = CreateItem(action.itemName, playerHndl, hero)
     CreateItemOnPositionSync(hero:GetAbsOrigin(), item)
   end
+  assert(item, "Failed to create item: " .. action.itemName)
   item:SetCombineLocked(true)
 end
 
@@ -193,6 +190,7 @@ function Handlers.die(playerID, action)
 end
 
 function Handlers.spawn(playerID, action)
+  assert(action.spawn)
   SpawnManager:SpawnNPC(action.spawn)
 end
 

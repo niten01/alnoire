@@ -6,10 +6,8 @@ return {
         "npc_dota_hero_sanya",
 
         "npc_subway_city",
-        "npc_subway_ski",
-        "npc_subway_village",
-        "npc_subway_concert",
-        "npc_subway_ghetto",
+        "npc_subway_to_city",
+        "npc_subway_fake",
 
         "npc_tormentor",
         "npc_shamanka",
@@ -35,6 +33,7 @@ return {
         "npc_scientist",
         "npc_red",
         "npc_gorilla",
+        "npc_island_guard",
 
         "npc_storyteller",
         "npc_leader",

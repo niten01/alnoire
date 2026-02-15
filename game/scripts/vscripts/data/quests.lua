@@ -171,7 +171,7 @@ return {
 
                 },
                 postStepActions = {
-                    { type = "spawn", npc = "npc_brewmaster" }
+                    { type = "spawn", spawn = "spawner_brewmaster" }
                 }
             },
             {

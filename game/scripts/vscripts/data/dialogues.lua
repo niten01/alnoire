@@ -12,8 +12,8 @@ conditions = {
 d_untitled_passage_11 = {
 priority = 0,
 conditions = {
-{ ent_var="beaten",value={ false },npc="npc_island_guard",type="ent_var" },
 { trigger="trigger_island_fight_1",npc="npc_island_guard",type="trigger" },
+{ ent_var="first_met_global",value={ false },npc="npc_island_guard",type="ent_var" },
 },
 },
 d_untitled_passage_12 = {
@@ -129,10 +129,7 @@ conditions = {
 d_untitled_passage_27 = {
 priority = 0,
 conditions = {
-{ interact="npc_dream",type="interact" },
-{ var="act",value={ 3 },type="var" },
-{ questID="q_ghetto",status=QuestStatus.INACTIVE,type="quest" },
-{ questID="q_concert",status=QuestStatus.COMPLETED,type="quest" },
+{ beat="npc_monkey_king",type="beat" },
 },
 },
 d_untitled_passage_33 = {
@@ -144,98 +141,77 @@ conditions = {
 d_untitled_passage_34 = {
 priority = 0,
 conditions = {
-{ interact="npc_dream",type="interact" },
-{ var="act",value={ 3 },type="var" },
-{ questID="q_ghetto",status=QuestStatus.REJECTED,type="quest" },
+{ interact="npc_rape_victim",type="interact" },
 },
 },
 d_untitled_passage_40 = {
 priority = 0,
 conditions = {
-{ interact="npc_dream",type="interact" },
-{ var="act",value={ 3 },type="var" },
-{ questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
+{ interact="npc_ogre_magi",type="interact" },
+{ questID="q_ogres",status=QuestStatus.INACTIVE,type="quest" },
+{ var="act",value={ 1 },type="var" },
 },
 },
 d_untitled_passage_41 = {
 priority = 0,
 conditions = {
-{ interact="npc_dream",type="interact" },
-{ questID="q_concert",status="incomplete",type="quest" },
-{ var="act",value={ 3, 4 },type="var" },
+{ interact="npc_ogre_magi",type="interact" },
+{ questID="q_ogres",status=QuestStatus.ACTIVE,type="quest" },
+{ questID="q_ogres",status=QuestStatus.ACTIVE,step={ 1, 2, 3 },type="quest" },
 },
 },
 d_untitled_passage_42 = {
 priority = 0,
 conditions = {
-{ questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
-{ trigger="trigger_ghetto_test",npc="npc_gangster",type="trigger" },
-{ var="act",value={ 3 },type="var" },
-{ ent_var="first_met_global",value={ true },npc="npc_gangster",type="ent_var" },
+{ interact="npc_ogre_bruiser",type="interact" },
+{ questID="q_ogres",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
 },
 },
 d_untitled_passage_43 = {
 priority = 0,
 conditions = {
-{ interact="npc_gangster",type="interact" },
-{ ent_var="first_met_global",value={ false },npc="npc_gangster",type="ent_var" },
-{ var="is_ghetto_member",value={ true },type="var" },
+{ beat="npc_ogre_bruiser",type="beat" },
 },
 },
 d_untitled_passage_44 = {
 priority = 0,
 conditions = {
-{ interact="npc_dream",type="interact" },
-{ questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
-{ var="act",value={ 3 },type="var" },
-{ var="is_ghetto_member",value={ true },type="var" },
-{ has_item="item_lean",type="has_item" },
+{ interact="npc_ogre_magi",type="interact" },
+{ questID="q_ogres",status=QuestStatus.ACTIVE,step={ 4 },type="quest" },
 },
 },
 d_untitled_passage_45 = {
 priority = 0,
 conditions = {
-{ interact="npc_dream_golden",type="interact" },
-{ ent_var="first_met_global",value={ true },npc="npc_dream_golden",type="ent_var" },
-},
-},
-d_untitled_passage_46 = {
-priority = 0,
-conditions = {
-{ interact="npc_dream",type="interact" },
-{ questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
-{ var="act",value={ 3 },type="var" },
-{ var="is_ghetto_member",value={ false },type="var" },
-{ has_item="item_lean",type="has_item" },
+{ interact="npc_ogre_magi",type="interact" },
+{ questID="q_ogres",status=QuestStatus.COMPLETED,type="quest" },
 },
 },
 d_untitled_passage_47 = {
 priority = 0,
 conditions = {
-{ beat="npc_dream",type="beat" },
+{ trigger="trigger_island_second",type="trigger" },
+{ var="act",value={ 1, 2 },type="var" },
 },
 },
 d_untitled_passage_48 = {
-priority = 60,
+priority = 0,
 conditions = {
-{ interact="npc_creep_rogach",type="interact" },
-{ ent_var="first_met_in_act",value={ true },npc="npc_creep_rogach",type="ent_var" },
-{ var="act",value={ 3, 4 },type="var" },
+{ var="act",value={ 1, 2 },type="var" },
+{ trigger="trigger_island_fight_1",npc="npc_island_guard",type="trigger" },
 },
 },
 d_untitled_passage_49 = {
-priority = 60,
+priority = 0,
 conditions = {
-{ interact="npc_mustache",type="interact" },
-{ var="act",value={ 3 },type="var" },
-{ ent_var="first_met_in_act",value={ true },npc="npc_mustache",type="ent_var" },
+{ trigger="trigger_island_third",type="trigger" },
+{ var="act",value={ 1, 2 },type="var" },
 },
 },
 d_untitled_passage_59 = {
-priority = 0,
+priority = 100,
 conditions = {
-{ interact="npc_guide",type="interact" },
-{ var="act",value={ 3, 4 },type="var" },
+{ trigger="trigger_village_enter",npc="npc_templar_assasin",type="trigger" },
 },
 },
 d_untitled_passage_60 = {
@@ -246,40 +222,39 @@ conditions = {
 },
 },
 d_untitled_passage_61 = {
-priority = 0,
+priority = 90,
 conditions = {
-{ interact="npc_cat_barrel",type="interact" },
-{ var="act",value={ 3 },type="var" },
-{ questID="q_island_explosion",status=QuestStatus.REJECTED,type="quest" },
+{ interact="npc_templar_assasin",type="interact" },
+{ var="knows_village_password",value={ true },type="var" },
+{ var="has_village_pass",value={ false },type="var" },
 },
 },
 d_untitled_passage_63 = {
-priority = 90,
+priority = 0,
 conditions = {
-{ interact="npc_scientist",type="interact" },
-{ ent_var="first_met_in_act",value={ true },npc="npc_scientist",type="ent_var" },
+{ interact="npc_blue_prince",type="interact" },
+{ questID="q_clash_royale",status=QuestStatus.ACTIVE,step={ 3 },type="quest" },
 },
 },
 d_untitled_passage_64 = {
-priority = 80,
+priority = 0,
 conditions = {
-{ interact="npc_scientist",type="interact" },
-{ ent_var="first_met_in_act",value={ false },npc="npc_scientist",type="ent_var" },
+{ interact="npc_ogre_bruiser",type="interact" },
+{ questID="q_ogres",status=QuestStatus.INACTIVE,type="quest" },
 },
 },
 d_untitled_passage_65 = {
 priority = 0,
 conditions = {
-{ trigger="trigger_key_done",type="trigger" },
-{ var="act",value={ 3 },type="var" },
-{ questID="q_main_quest_act_3",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
+{ interact="npc_ogre_magi",type="interact" },
+{ questID="q_ogres",status=QuestStatus.REJECTED,type="quest" },
 },
 },
 d_untitled_passage_66 = {
 priority = 0,
 conditions = {
-{ interact="npc_leader",type="interact" },
-{ questID="q_main_quest_act_3",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
+{ interact="npc_blue_prince",type="interact" },
+{ questID="q_clash_royale",status=QuestStatus.COMPLETED,type="quest" },
 },
 },
 d_untitled_passage_67 = {
@@ -292,8 +267,9 @@ conditions = {
 d_untitled_passage_68 = {
 priority = 0,
 conditions = {
-{ interact="npc_leader",type="interact" },
-{ questID="q_main_quest_act_3",status=QuestStatus.COMPLETED,type="quest" },
+{ interact="npc_ogre_magi",type="interact" },
+{ var="act",value={ 2, 3, 4 },type="var" },
+{ questID="q_ogres",status="incomplete",type="quest" },
 },
 },
 d_untitled_passage_69 = {
@@ -431,8 +407,8 @@ conditions = {
 d_untitled_passage_86 = {
 priority = 0,
 conditions = {
-{ interact="npc_dream_golden",type="interact" },
-{ ent_var="first_met_global",value={ false },npc="npc_dream_golden",type="ent_var" },
+{ trigger="trigger_after_gorilla",npc="npc_guide",type="trigger" },
+{ var="act",value={ 1 },type="var" },
 },
 },
 d_untitled_passage_9 = {
@@ -464,6 +440,13 @@ conditions = {
 { questID="q_main_quest_act_1",status=QuestStatus.ACTIVE,step={ 4 },type="quest" },
 },
 },
+d_islandfirst = {
+priority = 0,
+conditions = {
+{ trigger="trigger_island_first",type="trigger" },
+{ var="act",value={ 1, 2 },type="var" },
+},
+},
 d_redhlup = {
 priority = 0,
 conditions = {
@@ -483,6 +466,12 @@ d_subwaycity = {
 priority = 0,
 conditions = {
 { interact="npc_subway_city",type="interact" },
+},
+},
+d_subwayfake = {
+priority = 0,
+conditions = {
+{ interact="npc_subway_fake",type="interact" },
 },
 },
 d_subwaytocity = {
@@ -784,6 +773,105 @@ conditions = {
 { questID="q_pandas",status=QuestStatus.COMPLETED,type="quest" },
 },
 },
+d_untitled_passage_27mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_dream",type="interact" },
+{ var="act",value={ 3 },type="var" },
+{ questID="q_ghetto",status=QuestStatus.INACTIVE,type="quest" },
+{ questID="q_concert",status=QuestStatus.COMPLETED,type="quest" },
+},
+},
+d_untitled_passage_34mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_dream",type="interact" },
+{ var="act",value={ 3 },type="var" },
+{ questID="q_ghetto",status=QuestStatus.REJECTED,type="quest" },
+},
+},
+d_untitled_passage_40mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_dream",type="interact" },
+{ var="act",value={ 3 },type="var" },
+{ questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
+},
+},
+d_untitled_passage_41mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_dream",type="interact" },
+{ questID="q_concert",status="incomplete",type="quest" },
+{ var="act",value={ 3, 4 },type="var" },
+},
+},
+d_untitled_passage_42mergedact3 = {
+priority = 0,
+conditions = {
+{ questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
+{ trigger="trigger_ghetto_test",npc="npc_gangster",type="trigger" },
+{ var="act",value={ 3 },type="var" },
+{ ent_var="first_met_global",value={ true },npc="npc_gangster",type="ent_var" },
+},
+},
+d_untitled_passage_43mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_gangster",type="interact" },
+{ ent_var="first_met_global",value={ false },npc="npc_gangster",type="ent_var" },
+{ var="is_ghetto_member",value={ true },type="var" },
+},
+},
+d_untitled_passage_44mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_dream",type="interact" },
+{ questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
+{ var="act",value={ 3 },type="var" },
+{ var="is_ghetto_member",value={ true },type="var" },
+{ has_item="item_lean",type="has_item" },
+},
+},
+d_untitled_passage_45mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_dream_golden",type="interact" },
+{ ent_var="first_met_global",value={ true },npc="npc_dream_golden",type="ent_var" },
+},
+},
+d_untitled_passage_46 = {
+priority = 0,
+conditions = {
+{ interact="npc_dream",type="interact" },
+{ questID="q_ghetto",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
+{ var="act",value={ 3 },type="var" },
+{ var="is_ghetto_member",value={ false },type="var" },
+{ has_item="item_lean",type="has_item" },
+},
+},
+d_untitled_passage_47mergedact3 = {
+priority = 0,
+conditions = {
+{ beat="npc_dream",type="beat" },
+},
+},
+d_untitled_passage_48mergedact3 = {
+priority = 60,
+conditions = {
+{ interact="npc_creep_rogach",type="interact" },
+{ ent_var="first_met_in_act",value={ true },npc="npc_creep_rogach",type="ent_var" },
+{ var="act",value={ 3, 4 },type="var" },
+},
+},
+d_untitled_passage_49mergedact3 = {
+priority = 60,
+conditions = {
+{ interact="npc_mustache",type="interact" },
+{ var="act",value={ 3 },type="var" },
+{ ent_var="first_met_in_act",value={ true },npc="npc_mustache",type="ent_var" },
+},
+},
 d_untitled_passage_50 = {
 priority = 0,
 conditions = {
@@ -841,11 +929,26 @@ conditions = {
 { trigger="trigger_island_sixth",type="trigger" },
 },
 },
+d_untitled_passage_59mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_guide",type="interact" },
+{ var="act",value={ 3, 4 },type="var" },
+},
+},
 d_untitled_passage_6 = {
 priority = 0,
 conditions = {
 { interact="npc_blue",type="interact" },
 { questID="q_pandas",status=QuestStatus.ACTIVE,step={ 1 },type="quest" },
+},
+},
+d_untitled_passage_61mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_cat_barrel",type="interact" },
+{ var="act",value={ 3 },type="var" },
+{ questID="q_island_explosion",status=QuestStatus.REJECTED,type="quest" },
 },
 },
 d_untitled_passage_62 = {
@@ -855,11 +958,54 @@ conditions = {
 { ent_var="beaten",value={ false },npc="npc_shadow_demon",type="ent_var" },
 },
 },
+d_untitled_passage_63mergedact3 = {
+priority = 90,
+conditions = {
+{ interact="npc_scientist",type="interact" },
+{ ent_var="first_met_in_act",value={ true },npc="npc_scientist",type="ent_var" },
+},
+},
+d_untitled_passage_64mergedact3 = {
+priority = 80,
+conditions = {
+{ interact="npc_scientist",type="interact" },
+{ ent_var="first_met_in_act",value={ false },npc="npc_scientist",type="ent_var" },
+},
+},
+d_untitled_passage_65mergedact3 = {
+priority = 0,
+conditions = {
+{ trigger="trigger_key_done",type="trigger" },
+{ var="act",value={ 3 },type="var" },
+{ questID="q_main_quest_act_3",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
+},
+},
+d_untitled_passage_66mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_leader",type="interact" },
+{ questID="q_main_quest_act_3",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
+},
+},
+d_untitled_passage_68mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_leader",type="interact" },
+{ questID="q_main_quest_act_3",status=QuestStatus.COMPLETED,type="quest" },
+},
+},
 d_untitled_passage_7 = {
 priority = 0,
 conditions = {
 { interact="npc_brewmaster",type="interact" },
 { questID="q_pandas",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
+},
+},
+d_untitled_passage_86mergedact3 = {
+priority = 0,
+conditions = {
+{ interact="npc_dream_golden",type="interact" },
+{ ent_var="first_met_global",value={ false },npc="npc_dream_golden",type="ent_var" },
 },
 },
 },
@@ -986,8 +1132,8 @@ next = "d_p4",
 },
 d_nachat_bitvu = {
 text = [[]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Закрыть.]],
@@ -1034,8 +1180,8 @@ next = nil,
 },
 d_ne_snimat = {
 text = [[*Он смотрит в твои глаза, но ты не можешь разобрать какие эмоции он чувствует в данный момент.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Уходи и больше никогда не появляйся здесь.]],
@@ -1067,7 +1213,7 @@ next = nil,
 },
 d_osmotretsya = {
 text = [[*Странно, после выхода из подземного перехода, путь назад просто исчез.*]],
-speaker = [[default]],
+speaker = [[...]],
 npc = nil,
 choices = {
 {
@@ -1171,8 +1317,8 @@ next = nil,
 },
 d_prigrozit_kulakom = {
 text = [[Оуу кей, братан. Ты воистину царь! Слава царю!]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
 text = [[Какой дар преподнесёшь мне сегодня?]],
@@ -1237,8 +1383,8 @@ next = "d_ty_zh_govoril_chto_ona_pustaya",
 },
 d_snyat_s_nego_mantiu = {
 text = [[*Оттолкнув твою руку, он хватает дубину и ударяет себя по голове.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Что...]],
@@ -1272,7 +1418,7 @@ next = "d_j",
 d_ujti = {
 text = [[*Обе головы продолжают спорить.*]],
 speaker = [[Крип-сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Закрыть.]],
@@ -1365,7 +1511,7 @@ next = "d_a4",
 },
 d_14 = {
 text = [[Как будто ты всё-таки старше.]],
-speaker = [[???]],
+speaker = [[Неизвестный]],
 npc = nil,
 choices = {
 {
@@ -1376,7 +1522,7 @@ next = "d_kstati_u_tebya_znakomyj_golos",
 },
 d_20 = {
 text = [[Очень грустно... Чтож, раз уж ты бесполезен, порадуй меня хотя бы шоу.]],
-speaker = [[???]],
+speaker = [[Неизвестный]],
 npc = nil,
 choices = {
 {
@@ -1405,7 +1551,7 @@ choices = {
 text = [[*Приготовиться*]],
 next = nil,
 actions = {
-{ target="kill",type="fight_start" },
+{ pack="pack_island_guard",type="fight_start" },
 },
 },
 },
@@ -1601,13 +1747,13 @@ next = "d_ty_chelovek_ili_krip",
 },
 },
 d_untitled_passage_27 = {
-text = [[*Увидев тебя, пузатый крип начал кидать распальцовку.*]],
-speaker = [[Крип с мечтой]],
-npc = "npc_dream",
+text = [[Л... Ладно. Немного перегнул, но мы в рассчёте, верно? Слава Королю!]],
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
-text = [[Вижу концерт пошёл на пользу.]],
-next = "d_vizhu_kontsert_poshel_na_polzu",
+text = [[Неа, теперь я твой царь.]],
+next = "d_nea_teper_ya_tvoj_tsar",
 },
 },
 },
@@ -1623,154 +1769,124 @@ next = "d_podojti_k_kripu",
 },
 },
 d_untitled_passage_34 = {
-text = [[Решился fasheezi, да brother?]],
-speaker = [[Крип с мечтой]],
-npc = "npc_dream",
+text = [[Вали уже.]],
+speaker = [[Крип-камыш]],
+npc = "npc_rape_victim",
 choices = {
 {
-text = [[Готов попробовать.]],
-next = "d_mogu_poprobovat",
-actions = {
-{ questID="q_ghetto",type="quest_start" },
-},
-},
-{
-text = [[Не хочу рисковать.]],
-next = "d_neee",
-actions = {
-{ questID="q_ghetto",type="quest_reject" },
-},
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
 d_untitled_passage_40 = {
-text = [[One Luv, One Natin.]],
-speaker = [[Крип с мечтой]],
-npc = "npc_dream",
+text = [[*Тебя заинтересовало необычное существо с двумя головами. Но, рассмотрев их лица, ты понял, что диалог будет не из простых.*]],
+speaker = [[...]],
+npc = "npc_ogre_magi",
 choices = {
 {
-text = [[Закрыть.]],
-next = nil,
+text = [[Вы единое целое или две личности?]],
+next = "d_vy_edinoe_tseloe_ili_dve_lichnosti",
 },
 },
 },
 d_untitled_passage_41 = {
-text = [[Похоже не стать мне нигером... Жизнь несправедлива...]],
-speaker = [[Крип с мечтой]],
-npc = "npc_dream",
+text = [[Заброшенный...]],
+speaker = [[Голова умнотуп]],
+npc = "npc_ogre_magi",
 choices = {
 {
-text = [[Закрыть.]],
-next = nil,
+text = [[...]],
+next = "d_les",
 },
 },
 },
 d_untitled_passage_42 = {
-text = [[*Гангстер останавливает тебя.*
-Чего белозадый забыл у нас? Проблем хочешь?]],
-speaker = [[Гангстер]],
-npc = "npc_gangster",
+text = [[*Крип причудливой внешности излучает необычайное спокойствие.*]],
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
-text = [[Всё в порядке, я просто хотел бы попросить немного lean.]],
-next = "d_vse_v_poryadke_ya_prosto_hotel_by_poprosit_nemnogo_lean",
+text = [[Ты случайно не Огр-громила?]],
+next = "d_ty_sluchajno_ne_ogrgromila",
 },
 },
 },
 d_untitled_passage_43 = {
-text = [[В тебе течёт кровь нигера.]],
-speaker = [[Гангстер]],
-npc = "npc_gangster",
+text = [[*Огр-громила пал. Он лежит на земле и смотрит в небо. К нему пришло осознание, что это скорее всего последний раз, когда он может насладиться существованием.*]],
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
-text = [[Закрыть.]],
-next = nil,
+text = [[...]],
+next = "d_m9",
 },
 },
 },
 d_untitled_passage_44 = {
-text = [[*Ты отдаёшь lean. Его дрожащие руки осторожно забирают его, стараясь не пролить ни капли.*]],
-speaker = [[Крип с мечтой]],
-npc = "npc_dream",
+text = [[1: Ооо, это же ты! Добрый человек-помощник.
+2: Реально! Это та спичка!]],
+speaker = [[Сиамский огр]],
+npc = "npc_ogre_magi",
 choices = {
 {
-text = [[А чем lean тебе поможет?]],
-next = "d_a_chem_lean_tebe_pomozhet",
-actions = {
-{ itemName="item_lean",type="take_item" },
-},
+text = [[Мантии на интеллект не существует.]],
+next = "d_mantii_na_intellekt_ne_suschestvuet",
 },
 },
 },
 d_untitled_passage_45 = {
-text = [[*Что с ним произошло? Он позолотел! Это так lean повлиял?*]],
-speaker = [[Крип-нигер]],
-npc = "npc_dream_golden",
-choices = {
-{
-text = [[*Ваау.*]],
-next = "d_vaau",
-},
-},
-},
-d_untitled_passage_46 = {
-text = [[*Ты отдаёшь lean. Его дрожащие руки осторожно забирают его, стараясь не пролить ни капли.*]],
-speaker = [[Крип с мечтой]],
-npc = "npc_dream",
-choices = {
-{
-text = [[А чем lean тебе поможет?]],
-next = "d_r8",
-actions = {
-{ itemName="item_lean",type="take_item" },
-},
-},
-},
-},
-d_untitled_passage_47 = {
-text = [[Я вас всех подвёл...]],
-speaker = [[Крип с мечтой]],
-npc = "npc_dream",
-choices = {
-{
-text = [[Ты чего?]],
-next = "d_ty_chego",
-actions = {
-{ npc="npc_dream",type="kill" },
-},
-},
-},
-},
-d_untitled_passage_48 = {
-text = [[Ты уже близок к цели.]],
-speaker = [[Крип-рогач]],
-npc = "npc_creep_rogach",
-choices = {
-{
-text = [[Какой цели?]],
-next = "d_kakoj_tseli",
-},
-},
-},
-d_untitled_passage_49 = {
-text = [[*Усы приветствуют тебя.*]],
-speaker = [[Человек-усач]],
-npc = "npc_mustache",
-choices = {
-{
-text = [[А теперь я готов?]],
-next = "d_a_teper_ya_gotov",
-},
-},
-},
-d_untitled_passage_59 = {
-text = [[Надеюсь Король вернётся и спасёт всех нас...]],
-speaker = [[Человек-гид]],
-npc = "npc_guide",
+text = [[*Ты не решаешься возвращаться к ним.*]],
+speaker = [[...]],
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Закрыть.]],
 next = nil,
+},
+},
+},
+d_untitled_passage_47 = {
+text = [[Совсем не ожидал, что ты пройдёшь. Мои поздравления.]],
+speaker = [[Эпштейн]],
+npc = nil,
+choices = {
+{
+text = [[Цмка где.]],
+next = "d_tsmka_gde",
+},
+},
+},
+d_untitled_passage_48 = {
+text = [[*Взгляда достаточно, чтобы понять, - это явно не цмка.*]],
+speaker = [[Воин Эпштейна]],
+npc = "npc_island_guard",
+choices = {
+{
+text = [[Обидно.]],
+next = "d_obidno",
+},
+},
+},
+d_untitled_passage_49 = {
+text = [[*Ты используешь ключ и открываешь клетку.*]],
+speaker = [[Крип-кот в бочке]],
+npc = nil,
+choices = {
+{
+text = [[Вы свободны, убегайте.]],
+next = "d_vy_svobodny_ubegajte",
+},
+},
+},
+d_untitled_passage_59 = {
+text = [[*Девушка с угрожающим видом останавливает тебя. Почему-то есть ощущение, что её руки пролили много крови.*]],
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
+choices = {
+{
+text = [[Что-то не так?]],
+next = "d_chtoto_ne_tak",
 },
 },
 },
@@ -1786,64 +1902,68 @@ next = nil,
 },
 },
 d_untitled_passage_61 = {
-text = [[Ты возьмёшь взрывчатку, отправишься на остров и пройдешь через секкретный проход в деревьях. Поставишь бомбу и, пройдя полосу, вернёшься через М.Е.Т.Р.О. Готов?]],
-speaker = [[Кот-бочка]],
-npc = "npc_cat_barrel",
+text = [[*Ты приветствуешь хранительницу.*]],
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
-text = [[Взорвём Эпштейна!]],
-next = "d_vzorvem_epshtejna",
-actions = {
-{ questID="q_island_explosion",type="quest_start" },
-},
-},
-{
-text = [[Ща занят, ребятня.]],
-next = "d_scha_zanyat_rebyatnya",
+text = [[Мне кажется я знаю пароль.]],
+next = "d_mne_kazhetsya_ya_znau_parol",
 },
 },
 },
 d_untitled_passage_63 = {
-text = [[Приветствую, Алекс. Глава сообщил, что тебе нужен Философский камень, верно?]],
-speaker = [[Человек-учёный]],
-npc = "npc_scientist",
+text = [[Человек. Ты великий воин. Земли теперь полностью мои.]],
+speaker = [[Синий Принц]],
+npc = "npc_blue_prince",
 choices = {
 {
-text = [[Да, верно.]],
-next = "d_da_verno",
+text = [[Круто, как там с наградой?]],
+next = "d_kruto_kak_tam_s_nagradoj",
+actions = {
+{ questID="q_clash_royal",type="quest_end" },
+},
 },
 },
 },
 d_untitled_passage_64 = {
-text = [[Алекс, замечал какие у нас дома в деревне?]],
-speaker = [[Человек-учёный]],
-npc = "npc_scientist",
+text = [[Тебе что-то нужно, человек?
+*Спросил крип с необычайно спокойным голосом.*]],
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
-text = [[Да, какие-то тёмные и странные.]],
-next = "d_da_kakieto_temnye_i_strannye",
+text = [[Думаю нет.]],
+next = "d_dumau_net",
 },
 },
 },
 d_untitled_passage_65 = {
-text = [[*Ты чувствуешь, что, перед тем как отдать ключ, стоит подготовиться. Возможно, стоит доделать оставшиеся дела.*]],
-speaker = [[...]],
-npc = nil,
+text = [[Всё-таки поможешь нам?!]],
+speaker = [[Сиамский огр]],
+npc = "npc_ogre_magi",
 choices = {
 {
-text = [[Закрыть.]],
-next = nil,
+text = [[Ладно ладно.]],
+next = "d_ladno",
+actions = {
+{ questID="q_ogres",type="quest_start" },
+},
+},
+{
+text = [[Умные делают всё сами.]],
+next = "d_davajte_sami",
 },
 },
 },
 d_untitled_passage_66 = {
-text = [[*Ты показываешь готовый ключ Главе.*]],
-speaker = [[Глава]],
-npc = "npc_leader",
+text = [[Теперь богач я. Брат бедный.]],
+speaker = [[Крип-Синий Принц]],
+npc = "npc_blue_prince",
 choices = {
 {
-text = [[Он собран.]],
-next = "d_on_sobran",
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -1859,9 +1979,9 @@ next = nil,
 },
 },
 d_untitled_passage_68 = {
-text = [[*Он молится.*]],
-speaker = [[Глава]],
-npc = "npc_leader",
+text = [[Похоже мы больше никогда не встретимся с ним...]],
+speaker = [[Сиамский огр]],
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Закрыть.]],
@@ -2084,13 +2204,14 @@ actions = {
 },
 },
 d_untitled_passage_86 = {
-text = [[*Я, пожалуй, пойду.*]],
-speaker = [[...]],
-npc = "npc_dream_golden",
+text = [[*Гид восторженно подбегает к тебе.*
+Алекс! Ты наш спаситель, всё Королевство благодарит тебя за этот великий подвиг!]],
+speaker = [[Человек-гид]],
+npc = "npc_guide",
 choices = {
 {
-text = [[Закрыть.]],
-next = nil,
+text = [[Да это я.]],
+next = "d_p12",
 },
 },
 },
@@ -2107,8 +2228,8 @@ next = "d_zdraste_ne_podskazhete_gde_ya",
 },
 d_z_eto_camost_a_camost_eto_z = {
 text = [[Теперь ты член этой Деревни. Если расскажешь кому-либо о нашей деятельности, я казню тебя без колебаний.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[Спасибо, верю.]],
@@ -2965,6 +3086,17 @@ next = nil,
 },
 },
 },
+d_islandfirst = {
+text = [[*Кажется тебя обманули, но твою веру так легко не сломить. Кстати, кто такая цмка?*]],
+speaker = [[...]],
+npc = nil,
+choices = {
+{
+text = [[*Осмотреться.*]],
+next = "d_osmotretsya",
+},
+},
+},
 d_j = {
 text = [[Выходи один на один, уёбок.]],
 speaker = [[Быдло]],
@@ -2991,6 +3123,7 @@ actions = {
 { npc="npc_brewmaster",type="remove" },
 { spawn="spawner_red",type="spawn" },
 { spawn="spawner_green",type="spawn" },
+{ spawn="spawner_blue",type="spawn" },
 },
 },
 },
@@ -3009,7 +3142,7 @@ next = nil,
 d_l10 = {
 text = [[И тот дракон харкнул в брата огнём. Я почуял опасность, потому плюнул в огненный шар и потушил его! Так он и спасся.]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -3020,7 +3153,7 @@ next = "d_l11",
 d_l11 = {
 text = [[Вообще-то это я его спас, оттащив брата за дубину, которой он замахивался. Из-за меня дракон промахнулся!]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -3031,7 +3164,7 @@ next = "d_l12",
 d_l12 = {
 text = [[Никто не поверит в твои бредни, ты тот ещё пень!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -3042,7 +3175,7 @@ next = "d_ya_voobsche_ne_pomnu",
 d_l13 = {
 text = [[Брат сказал, что сделает нас умнее. Он отправился искать Мантию на интеллект.]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -3054,7 +3187,7 @@ d_l14 = {
 text = [[2: Похоже Мантию стоит отдать тебе!!
 1: Хорошо ты его!]],
 speaker = [[Сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[*Я что, реально тупее их?*]],
@@ -3065,7 +3198,7 @@ next = "d_l15",
 d_l15 = {
 text = [[Когда найдёшь его - скажи, чтоб шёл домой!]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -3077,7 +3210,7 @@ d_l5 = {
 text = [[*2-ая голова начала говорить пискляво и резко.*
 А колёса твои где? Хихи хи. Неужто уже зима, на лыжи пересел?]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -3088,7 +3221,7 @@ next = "d_l6",
 d_l6 = {
 text = [[Как по твоему я поставлю лыжи на коня. Ты вообще не понимаешь чтоли..? У них копыта.]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -3099,7 +3232,7 @@ next = "d_l7",
 d_l7 = {
 text = [[Никак! Сейчас же лето. Воооо! Я бы налепил на них ролики!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -3110,7 +3243,7 @@ next = "d_l8",
 d_l8 = {
 text = [[На кого?]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Эх...]],
@@ -3121,7 +3254,7 @@ next = "d_eh",
 d_l9 = {
 text = [[Хиихи хих. Не может быть! После встречи с гидом он стал мокреньким, так мы его только согреем!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[В принципе я понял, вы два даунича.]],
@@ -3131,8 +3264,8 @@ next = "d_v_printsipe_ya_ponyal_vy_dva_daunicha",
 },
 d_m = {
 text = [[Я не могу снять её.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Причина?]],
@@ -3142,8 +3275,8 @@ next = "d_prichina",
 },
 d_m1 = {
 text = [[До Мантии, моя жизнь была примитивной и бессмысленной, сейчас же полна новых открытий и откровений.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Ты ведь обещал отдать Мантию им.]],
@@ -3153,8 +3286,8 @@ next = "d_ty_ved_obeschal_otdat_mantiu_im",
 },
 d_m2 = {
 text = [[Моя позиция тверда, ничто не изменит её. Уходи.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Тебе всегда было плевать на них.]],
@@ -3168,8 +3301,8 @@ next = "d_o6",
 },
 d_m3 = {
 text = [[Не нравится мне убивать. Это глупо, тем более ты хороший человек.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Мне тоже, однако выбора нет.]],
@@ -3180,8 +3313,8 @@ next = "d_mne_tozhe_odnako_vybora_net",
 d_m4 = {
 text = [[*Огр хватает твою руку.*
 Сорвав её, я умру, ты ведь это понимаешь?]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Нет. Я оставлю тебя в живых.]],
@@ -3191,8 +3324,8 @@ next = "d_net_ya_ostavlu_tebya_v_zhivyh",
 },
 d_m5 = {
 text = [[*Несколько минут ты смотришь на его труп. В мылсях мелькают фразы из вашего диалога. Ты не решаешься взять мантию.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Закрыть.]],
@@ -3202,8 +3335,8 @@ next = nil,
 },
 d_m6 = {
 text = [[*Он отправился жить. Ты уверен, это его последний день в этих землях.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Закрыть.]],
@@ -3214,7 +3347,7 @@ next = nil,
 d_m7 = {
 text = [[Так и где этот болван?!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Он не вернётся.]],
@@ -3229,7 +3362,7 @@ next = "d_on_umer",
 d_m8 = {
 text = [[*Огр обнял сам себя.*]],
 speaker = [[Крип-сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Закрыть.]],
@@ -3240,8 +3373,8 @@ next = nil,
 d_m9 = {
 text = [[Ты победил в честном поединке.
 *Сказано это было очень спокойно и уверенно. Он ждёт твоих действий.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Почему ты не пытаешься сбежать?]],
@@ -3251,7 +3384,7 @@ next = "d_pochemu_ty_ne_pytaeshsya_sbezhat",
 },
 d_n = {
 text = [[Чудненькое имя. А сколько тебе лет?]],
-speaker = [[???]],
+speaker = [[Неизвестный]],
 npc = nil,
 choices = {
 {
@@ -3266,7 +3399,7 @@ next = "d_14",
 },
 d_n1 = {
 text = [[О, вот и наша героиня прибыла, иди к ней!]],
-speaker = [[default]],
+speaker = [[Эпштейн]],
 npc = nil,
 choices = {
 {
@@ -3277,8 +3410,8 @@ next = nil,
 },
 d_n9 = {
 text = [[Однако, если тебя признают, то выдадут кодовую фразу. Произнеси её и я позволю тебе пройти.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[Хмм...]],
@@ -3395,8 +3528,8 @@ actions = {
 },
 d_o4 = {
 text = [[И потому тот город опустел и со временем превратился в Пустошь. Все, кто там проживают - последователи Короля, однако им не выпал шанс хотя бы увидеть его. Страшная судьба...]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
 text = [[Стоп, а как они ладят с Зверем?]],
@@ -3417,8 +3550,8 @@ next = "d_a3",
 },
 d_o6 = {
 text = [[Оставь слова при себе.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Ты же понимаешь, что я не уйду?]],
@@ -3513,8 +3646,8 @@ next = "d_i_kak_mne_na_eto_reagirovat",
 },
 d_p12 = {
 text = [[Вот возьми. Это, конечно, не сравнится с величиной твоего подвига, но я обязана тебя отблагодарить.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-гид]],
+npc = "npc_guide",
 choices = {
 {
 text = [[Спасибо типо.]],
@@ -3527,8 +3660,8 @@ actions = {
 },
 d_p13 = {
 text = [[И ещё. Приходил один странный крип, загадочный. Он просил передать, чтобы ты встретился с ним. Он ожидает тебя в Королевстве. Удачи!]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-гид]],
+npc = "npc_guide",
 choices = {
 {
 text = [[Хм...]],
@@ -3541,8 +3674,8 @@ actions = {
 },
 d_p14 = {
 text = [[*Ты очень устал, однако придётся двигаться дальше.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-гид]],
+npc = "npc_guide",
 choices = {
 {
 text = [[Закрыть.]],
@@ -3702,6 +3835,24 @@ next = nil,
 },
 },
 },
+d_subwayfake = {
+text = [[Вместо кассира тебя встречает дощечка, на которой нацарапан единственный пункт назначения...]],
+speaker = [[Подозрительный терминал]],
+npc = "npc_subway_fake",
+choices = {
+{
+text = [[ГОЛАЯ ЦМКА!!!]],
+next = nil,
+actions = {
+{ target="tp_target_island",type="teleport" },
+},
+},
+{
+text = [[Я передумал]],
+next = nil,
+},
+},
+},
 d_subwaytocity = {
 text = [[Отсюда можно вернуться в город.]],
 speaker = [[Терминал М.Е.Т.Р.О.]],
@@ -3818,8 +3969,8 @@ actions = {
 },
 d_a_esli_ya_hochu_tuda_popast = {
 text = [[Тогда нужно, чтобы кто-то из наших посчитал тебя достойным и позволил присоединиться к нашим исследованиям.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[А как мне получить эту рекомендацию?]],
@@ -3877,8 +4028,8 @@ next = "d_ogo",
 },
 d_a_kak_mne_poluchit_etu_rekomendatsiu = {
 text = [[Не имею понятия. Охрана тайн - вот моя миссия.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[...]],
@@ -3911,7 +4062,7 @@ next = nil,
 d_a_kuda_on_otpravilsya = {
 text = [[Он пошёл на запад! Боюсь ты не знаешь где это, хих.]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Это сверху.]],
@@ -3944,8 +4095,8 @@ next = "d_i6",
 },
 d_a_pochemu_teper_tam_vse_zabrosheno = {
 text = [[Потому что с приходом Короля, каждый захотел жить под его покровительством. Следовательно, все те за стенами начали переселяться в наш город. Однако из-за прошлых конфликтов приняли далеко не всех.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
 text = [[...]],
@@ -3955,8 +4106,8 @@ next = "d_o4",
 },
 d_a_pochemu_ty_ne_verneshsya_domoj = {
 text = [[Почему? Ты должен сам понимать.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Нет, не понимаю.]],
@@ -4012,7 +4163,7 @@ next = nil,
 d_beru_kachestvom = {
 text = [[Берёшь куда?]],
 speaker = [[Сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Проехали, так чем он вам отплатил?]],
@@ -4048,8 +4199,8 @@ next = "d_menya_zovut",
 },
 d_bhh_haaa_eosh = {
 text = [[Вход в деревню не доступен болванам.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[Умереть.]],
@@ -4085,7 +4236,7 @@ next = "d_h6",
 d_v_printsipe_ya_ponyal_vy_dva_daunicha = {
 text = [[НЕТ! Мы довольно смышлённые, даже думать умеем! А вдвоём наш разум увеличивается в три раза!]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Почему в три.]],
@@ -4097,7 +4248,7 @@ d_v_sebe = {
 text = [[2: Как можно вообще потеряться в себе, он внутри своей головы живёт?
 1: Это невозможно. скорее всего он заблудился.]],
 speaker = [[Крип-сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[*Уйти.*]],
@@ -4121,8 +4272,8 @@ next = nil,
 },
 d_valyaj = {
 text = [[Знал ли ты, что на месте Пустоши стоял город, подобно нашему?]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
 text = [[Нет.]],
@@ -4161,7 +4312,7 @@ actions = {
 d_vash_brat_tak_skazal = {
 text = [[Так ты нашёл его? Он всё ещё ходит с той огромной дубиной, да?]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -4257,7 +4408,7 @@ d_vy_edinoe_tseloe_ili_dve_lichnosti = {
 text = [[*1-ая голова начала говорить медленным занудным тоном.*
 Я Шофёр лимузина. Вожу важных персон. На машине... На конях...]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -4278,7 +4429,7 @@ next = "d_otets_lubit_tebya_on_zhdet_tebya_vernis_domoj_semya_samoe_vazhnoe_na_s
 },
 d_vy_svobodny_ubegajte = {
 text = [[*Поочерёдно крипы встали и поклонились тебе.*]],
-speaker = [[default]],
+speaker = [[Крип-кот в бочке]],
 npc = nil,
 choices = {
 {
@@ -4298,9 +4449,20 @@ next = "d_vsego",
 },
 },
 },
+d_golaya_tsmka = {
+text = [[]],
+speaker = [[Подозрительный терминал]],
+npc = "npc_subway_fake",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
 d_gde_tsmka = {
 text = [[Чуть дальше. Скажи, красавчик, сколько тебе лет?]],
-speaker = [[???]],
+speaker = [[Неизвестный]],
 npc = nil,
 choices = {
 {
@@ -4371,8 +4533,8 @@ next = "d_a_gde_sam_meteorit",
 },
 d_da_oni_svoebraznye_no_hotya_by_provedaj_ih = {
 text = [[Тебе не понять насколько мерзки они для меня.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Но...]],
@@ -4405,7 +4567,7 @@ next = "d_ty_upomyanul_alhimiu_razve_ona_suschestvuet",
 d_davajte_sami = {
 text = [[Похоже мы больше никогда не встретим брата...]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -4471,8 +4633,8 @@ next = nil,
 },
 d_dumau_net = {
 text = [[Тогда возвращайся в безопасноcть, в этом лесу куча кровожадных существ.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Закрыть.]],
@@ -4484,7 +4646,7 @@ d_dumau_on_prav = {
 text = [[*Обе головы хором ответили.*
 У нас два мозга, а у тебя один. Не сравнивай нас с собой!]],
 speaker = [[Сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Беру качеством.]],
@@ -4604,7 +4766,7 @@ next = nil,
 d_i_mantiu = {
 text = [[И мантию прихвати нам!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Ладно.]],
@@ -4624,8 +4786,8 @@ actions = {
 },
 d_i_ne_posporish = {
 text = [[]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Воин Эпштейна]],
+npc = "npc_island_guard",
 choices = {
 {
 text = [[Закрыть.]],
@@ -4691,7 +4853,7 @@ next = "d_ya_togda_tozhe_budu",
 d_i__1 = {
 text = [[Он наш брат! Братьев ценить нужно! Даже человек должен это понять.]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Ну могу да.]],
@@ -4702,7 +4864,7 @@ next = "d_nu_mogu_da",
 d_ischez_s_radarov = {
 text = [[Исчез с радаров!]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[И?]],
@@ -4723,8 +4885,8 @@ next = "d_ne_pomnu_takogo",
 },
 d_kakoj_dar_prepodnesesh_mne_segodnya = {
 text = [[Какой ещё дар?! Ааа... я понял! Информация же пойдёт, да?]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
 text = [[Валяй.]],
@@ -4759,8 +4921,8 @@ next = "d_i_chto_delat_budem",
 },
 d_kruto_kak_tam_s_nagradoj = {
 text = [[Возьми. Большая награда. Для большого человека.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Синий Принц]],
+npc = "npc_blue_prince",
 choices = {
 {
 text = [[Закрыть.]],
@@ -4804,7 +4966,7 @@ next = nil,
 d_ladno = {
 text = [[*Огр дал сам себе пять.*]],
 speaker = [[Сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Закрыть.]],
@@ -4815,7 +4977,7 @@ next = nil,
 d_les = {
 text = [[ЛЕС!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Закрыть.]],
@@ -4836,8 +4998,8 @@ next = "d_udarit_lbom_emu_po_litsu",
 },
 d_mantii_na_intellekt_ne_suschestvuet = {
 text = [[Как так?!]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Сиамский огр]],
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Ваш брат так сказал.]],
@@ -4847,8 +5009,8 @@ next = "d_vash_brat_tak_skazal",
 },
 d_mantiya_proklyata = {
 text = [[Нет. Я просто не хочу быть прежним. Сейчас я владею всеми знаниями мира, это высшее наслаждение.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[...]],
@@ -4877,8 +5039,8 @@ next = "d_h10",
 },
 d_menya_poslal_tvoj_brat_ili_tochnee_bratya = {
 text = [[Понимаю.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Они беспокоются за тебя, вернёшься к ним?]],
@@ -4888,8 +5050,8 @@ next = "d_oni_bespokoutsya_za_tebya_verneshsya_k_nim",
 },
 d_mne_kazhetsya_ya_znau_parol = {
 text = [[Говори.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[Z - это Cамость, а Cамость - это Z.]],
@@ -4903,8 +5065,8 @@ actions = {
 },
 d_mne_tozhe_odnako_vybora_net = {
 text = [[Тогда начнём.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[*Начать битву*]],
@@ -4953,8 +5115,8 @@ next = "d_to_est_ya_ne_smogu_vernutsya",
 },
 d_navernoe_no_umirat_neohota = {
 text = [[ЭТО ПРАВДА. ОДНАКО У МЕНЯ ПРИКАЗ, ИЗВИНИ.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Воин Эпштейна]],
+npc = "npc_island_guard",
 choices = {
 {
 text = [[Понимаю.]],
@@ -4964,7 +5126,7 @@ next = "d_ponimau",
 },
 d_nadeyalsya_chto_smozhem_vstretitsya_vzhivuu = {
 text = [[Ты, к сожалению, староват.]],
-speaker = [[default]],
+speaker = [[Эпштейн]],
 npc = nil,
 choices = {
 {
@@ -5016,7 +5178,7 @@ actions = {
 d_ne_nuzhno_poverte = {
 text = [[Мне кажется он не спичка... Больше он походит на человека. Если мы его подожжём, он сгорит, понимаешь?]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -5026,8 +5188,8 @@ next = "d_l9",
 },
 d_ne_obet_a_obed = {
 text = [[*Ты слышишь странный звук. Грудь ощущается тяжёлой. Повернув голову вниз, ты замечаешь сквозную дыру. Похоже она попала прям в сердце.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[Бххъ... хааа... еошъъ....]],
@@ -5093,8 +5255,8 @@ next = "d_o7",
 },
 d_nea_teper_ya_tvoj_tsar = {
 text = [[Ээу, после битвы совсем оборзел чтоли?!]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
 text = [[*Пригрозить кулаком*]],
@@ -5104,8 +5266,8 @@ next = "d_prigrozit_kulakom",
 },
 d_net_ne_ponimau = {
 text = [[Нынешнему мне не о чем говорить с ними. У вас был диалог, думаю несложно догадаться о чём я.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Да, они своебразные, но хотя бы проведай их.]],
@@ -5115,8 +5277,8 @@ next = "d_da_oni_svoebraznye_no_hotya_by_provedaj_ih",
 },
 d_net = {
 text = [[И наши города были в напряжных таких отношениях. Не воевали, конечно, но злоба была всякая.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
 text = [[А почему теперь там всё заброшено?]],
@@ -5126,8 +5288,8 @@ next = "d_a_pochemu_teper_tam_vse_zabrosheno",
 },
 d_net_ya_ostavlu_tebya_v_zhivyh = {
 text = [[Не выйдет. Я умру как личность.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[*Снять с него Мантию.*]],
@@ -5155,8 +5317,8 @@ next = "d_hm__1",
 },
 d_no = {
 text = [[Ты сейчас начнёшь рассказывать о наших воспоминаниях, братских узах и о том, как они меня однажды спасли. Не нужно этого.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[...]],
@@ -5177,8 +5339,8 @@ next = "d_ponimau_tebya",
 },
 d_nu_i_horosho = {
 text = [[СРАЖЕНИЕ ЗА КОГО-ТО ДРУГОГО ПРИДАСТ ТЕБЕ МОТИВАЦИИ ДРАТЬСЯ В ПОЛНУЮ СИЛУ.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Воин Эпштейна]],
+npc = "npc_island_guard",
 choices = {
 {
 text = [[Так-то да.]],
@@ -5200,7 +5362,7 @@ next = "d_tak_ty_verneshsya_domoj",
 d_nu_mogu_da = {
 text = [[Мы с ним взрывали петарды в лесу, как на нас вышел огромный дракон. Он мог летать. С помощью крыльев.]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Ага.]],
@@ -5221,8 +5383,8 @@ next = "d_i_chto_togda_delat",
 },
 d_obidno = {
 text = [[ЖАЛКО ТЕБЯ РАЗОЧАРОВЫВАТЬ.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Воин Эпштейна]],
+npc = "npc_island_guard",
 choices = {
 {
 text = [[Опять не повезло...]],
@@ -5267,7 +5429,7 @@ d_on_ne_vernetsya = {
 text = [[*Обе головы переглянулись в недоумении.*
 Почему?!]],
 speaker = [[Крип-сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Он потерялся.]],
@@ -5278,7 +5440,7 @@ next = "d_on_poteryalsya",
 d_on_poteryalsya = {
 text = [[Где?!]],
 speaker = [[Крип-сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[В себе.]],
@@ -5289,7 +5451,7 @@ next = "d_v_sebe",
 d_on_srazhalsya_s_drakonom_posle_pobedy_on_pal = {
 text = [[*Они начали смотреть в разные стороны.*]],
 speaker = [[Крип-сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Ценой своей жизни он спас поселение добрых крипов.]],
@@ -5300,7 +5462,7 @@ next = "d_tsenoj_svoej_zhizni_on_spas_poselenie_dobryh_kripov",
 d_on_umer = {
 text = [[*Головы замолкли.*]],
 speaker = [[Крип-сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Он сражался с драконом. После победы, он пал.]],
@@ -5310,8 +5472,8 @@ next = "d_on_srazhalsya_s_drakonom_posle_pobedy_on_pal",
 },
 d_oni_bespokoutsya_za_tebya_verneshsya_k_nim = {
 text = [[Теперь не могу. Но каких-то пару дней назад всё ещё был шанс.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Это связано с Мантией?]],
@@ -5333,8 +5495,8 @@ next = "d_da_i_ya_obozhau_reshat",
 },
 d_opyat_ne_povezlo = {
 text = [[ЧЕМ БЫСТРЕЕ УМРЁШЬ, ТЕМ БЫСТРЕЕ ПРОЙДЁТ ГРУСТЬ.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Воин Эпштейна]],
+npc = "npc_island_guard",
 choices = {
 {
 text = [[Наверное, но умирать неохота...]],
@@ -5355,7 +5517,7 @@ next = "d_znaesh_ya_peredumal",
 },
 d_otkuda_ty_voobsche_govorish = {
 text = [[Остров усеян динамиками, а что?]],
-speaker = [[default]],
+speaker = [[Эпштейн]],
 npc = nil,
 choices = {
 {
@@ -5459,19 +5621,19 @@ next = "d_ya_aleks_voobscheto",
 },
 d_ponimau = {
 text = [[*Вдруг ты замечаешь клетку с крипами: исхудалыми и грустными.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Воин Эпштейна]],
+npc = "npc_island_guard",
 choices = {
 {
-text = [[Те, наверное, как раз жерты Эпштейна, да?]],
-next = "d_te_navernoe_kak_raz_zherty_epshtejna_da",
+text = [[Те, наверное, как раз жертвы Эпштейна, да?]],
+next = "d_te_navernoe_kak_raz_zhertvy_epshtejna_da",
 },
 },
 },
 d_ponyatno = {
 text = [[Знаешь... Если бы ты тогда сражался за нас, то исход мог бы быть совершенно другим... Хотя забудь.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
 text = [[Понятно. Хороший дар ты преподнёс, благодарен тебе.]],
@@ -5481,8 +5643,8 @@ next = "d_ponyatno_horoshij_dar_ty_prepodnes_blagodaren_tebe",
 },
 d_ponyatno_horoshij_dar_ty_prepodnes_blagodaren_tebe = {
 text = [[Получается так...]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
 text = [[Закрыть.]],
@@ -5493,7 +5655,7 @@ next = nil,
 d_pochemu_v_tri = {
 text = [[Потому что в 4!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Я короч пошёл.]],
@@ -5503,8 +5665,8 @@ next = "d_ya_koroch_poshel",
 },
 d_pochemu_ty_ne_pytaeshsya_sbezhat = {
 text = [[В этом нет нужды. Моя жизнь теперь в твоих руках.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[*Потянуться к Мантии.*]],
@@ -5558,8 +5720,8 @@ next = nil,
 },
 d_prichina = {
 text = [[Осознание. Возвращение в прошлую жизнь недопустимо.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Мантия проклята?]],
@@ -5679,8 +5841,8 @@ next = "d_o8",
 },
 d_spasibo_tipo = {
 text = [[Со сменой суток, в Королевстве можешь встретиить новые лица. Возможно, тебе захочется пообщаться с горожанами.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-гид]],
+npc = "npc_guide",
 choices = {
 {
 text = [[Ладно.]],
@@ -5690,8 +5852,8 @@ next = "d_p13",
 },
 d_spasibo_veru = {
 text = [[Добро пожаловать.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[Закрыть.]],
@@ -5701,8 +5863,8 @@ next = nil,
 },
 d_stop_a_kak_oni_ladyat_s_zverem = {
 text = [[Эээ... Этого я не знаю. Я сыканул пойти на охоту с остальными, так что не знаю какая там обстановка.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Быдло]],
+npc = "npc_monkey_king",
 choices = {
 {
 text = [[Понятно.]],
@@ -5713,7 +5875,7 @@ next = "d_ponyatno",
 d_sudba_ploho = {
 text = [[Судьба плохо обходится с умными, брат...]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Закрыть.]],
@@ -5763,22 +5925,22 @@ actions = {
 },
 d_takto_da = {
 text = [[ЧЕМ СЛОЖНЕЕ БИТВА, ТЕМ ВЕСЕЛЕЕ.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Воин Эпштейна]],
+npc = "npc_island_guard",
 choices = {
 {
 text = [[И не поспоришь.]],
 next = nil,
 actions = {
-{ target="kill",type="fight_start" },
+{ pack="pack_island_guard",type="fight_start" },
 },
 },
 },
 },
-d_te_navernoe_kak_raz_zherty_epshtejna_da = {
+d_te_navernoe_kak_raz_zhertvy_epshtejna_da = {
 text = [[ДА.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Воин Эпштейна]],
+npc = "npc_island_guard",
 choices = {
 {
 text = [[У тебя есть ключ от клетки?]],
@@ -5833,7 +5995,7 @@ next = "d_ty_znaesh_o_kom_ya_govoru_on_zhdet_kogda_ty_vossoedinishsya_s_nim_i_sv
 d_tiho_k_chemu_voobsche_eta_istoriya = {
 text = [[А к тому, что брат захотел нас отблагодарить за спасение... Вот...]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -5887,8 +6049,8 @@ next = "d_tebya_ischet_otets_vozvraschajsya_domoj",
 },
 d_ty_ved_obeschal_otdat_mantiu_im = {
 text = [[Верно, но я поддался искушению. Поверь, моим братьям Мантия будет только во вред.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[А почему ты не вернёшься домой?]],
@@ -5909,8 +6071,8 @@ next = "d_prosto_tak_do_takoj_stepeni_ne_napivautsya_chto_ne_tak",
 },
 d_ty_zhe_ponimaesh_chto_ya_ne_ujdu = {
 text = [[Да. Упёртость - удел недалёких. Я понимал, что без драки не обойдётся.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[...]],
@@ -5982,8 +6144,8 @@ next = "d_h6",
 },
 d_ty_sluchajno_ne_ogrgromila = {
 text = [[Да, это я.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[Меня послал твой брат... Или точнее братья.]],
@@ -6019,8 +6181,8 @@ next = "d_mamu_ne_trogaj",
 },
 d_u_tebya_est_kluch_ot_kletki = {
 text = [[ЕСТЬ.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Воин Эпштейна]],
+npc = "npc_island_guard",
 choices = {
 {
 text = [[Ну и хорошо.]],
@@ -6030,8 +6192,8 @@ next = "d_nu_i_horosho",
 },
 d_umeret = {
 text = [[]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[Закрыть.]],
@@ -6041,8 +6203,8 @@ next = nil,
 },
 d_uhodi_i_bolshe_nikogda_ne_poyavlyajsya_zdes = {
 text = [[Спасибо. Никогда не забуду твоего милосердия. Извини, что пришлось разбираться со всем этим.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[...]],
@@ -6091,8 +6253,8 @@ actions = {
 },
 d_hmm = {
 text = [[*Нужно найти кого-то, кто выглядит умным...*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[Закрыть.]],
@@ -6103,7 +6265,7 @@ next = nil,
 d_hmmm = {
 text = [[*Из ниоткуда разнёсся мягкий голос.*
 Добро пожаловать на мой остров! Как тебя зовут?]],
-speaker = [[???]],
+speaker = [[Неизвестный]],
 npc = nil,
 choices = {
 {
@@ -6119,7 +6281,7 @@ next = "d_gde_tsmka",
 d_hot_my_i_starshe = {
 text = [[Хоть мы и старше, он сказал, что мы глуповаты. Думаю, он не прав.]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Думаю он прав.]],
@@ -6134,7 +6296,7 @@ next = "d_l13",
 d_hotya_kuda = {
 text = [[Хотя куда умнее то!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Что за Мантия?]],
@@ -6145,7 +6307,7 @@ next = "d_chto_za_mantiya",
 d_tsenoj_svoej_zhizni_on_spas_poselenie_dobryh_kripov = {
 text = [[*Все четыре глаза поочерёдно заслезились.*]],
 speaker = [[Крип-сиамский огр]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[*Уйти.*]],
@@ -6158,7 +6320,7 @@ actions = {
 },
 d_tsmka_gde = {
 text = [[Сейчас она придёт, пока можешь отдохнуть.]],
-speaker = [[default]],
+speaker = [[Эпштейн]],
 npc = nil,
 choices = {
 {
@@ -6226,7 +6388,7 @@ next = "d_chto_velikogo_on_sovershil",
 d_chto_za_mantiya = {
 text = [[Любой, кто наденет её, станет самым умным в мире!]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[А куда он отправился?]],
@@ -6306,8 +6468,8 @@ next = "d_ee",
 },
 d_chtoto_ne_tak = {
 text = [[Скрытая деревня имеет много тайн. Я дала обет, что буду защищать их от чужих глаз. Уходи, если дорога жизнь.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Человек-хранитель]],
+npc = "npc_templar_assasin",
 choices = {
 {
 text = [[А если я хочу туда попасть?]],
@@ -6321,8 +6483,8 @@ next = "d_ne_obet_a_obed",
 },
 d_chto = {
 text = [[*Свет в его глазах угасает.*]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[...]],
@@ -6384,8 +6546,8 @@ next = "d_p1",
 },
 d_eto_svyazano_s_mantiej = {
 text = [[Да.]],
-speaker = [[default]],
-npc = nil,
+speaker = [[Огр-громила]],
+npc = "npc_ogre_bruiser",
 choices = {
 {
 text = [[...]],
@@ -6396,7 +6558,7 @@ next = "d_m",
 d_eto_sleva = {
 text = [[Ого! Люди всё-таки тоже могут думать. Ваух!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Вообщем Заброшенный лес.]],
@@ -6422,7 +6584,7 @@ next = "d_kak_pojdet",
 d_eh = {
 text = [[Смотри! Этот паренёк вообще как спичка! Давай проведём им по шершавому!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Не нужно, поверьте.]],
@@ -6482,7 +6644,7 @@ next = "d_o8",
 d_ya_voobsche_ne_pomnu = {
 text = [[Я вообще не помню, чтоб ты что-то делал. Значит ты этого не делал!]],
 speaker = [[Голова умнотуп]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[Тихо, к чему вообще эта история?]],
@@ -6507,7 +6669,7 @@ actions = {
 d_ya_koroch_poshel = {
 text = [[Стой! Мы просим твою помощь. Брат наш, Огр-громила, ПОТЕРЯЛСЯ!]],
 speaker = [[Голова подначка]],
-npc = nil,
+npc = "npc_ogre_magi",
 choices = {
 {
 text = [[...]],
@@ -8121,7 +8283,7 @@ choices = {
 text = [[*Влететь в него.*]],
 next = nil,
 actions = {
-{ target="kill",npc="npc_perekup",type="fight_start" },
+{ pack="pack_perekup",type="fight_start" },
 },
 },
 },
@@ -8213,7 +8375,7 @@ choices = {
 text = [[*Сорваться с цепи.*]],
 next = nil,
 actions = {
-{ target="kill",type="fight_start" },
+{ pack="pack_concert_crowd",type="fight_start" },
 },
 },
 },
@@ -9268,7 +9430,7 @@ choices = {
 text = [[*Влететь в него.*]],
 next = nil,
 actions = {
-{ target="kill",npc="npc_perekup",type="fight_start" },
+{ pack="pack_perekup",type="fight_start" },
 },
 },
 },
@@ -10080,6 +10242,158 @@ next = nil,
 },
 },
 },
+d_untitled_passage_27mergedact3 = {
+text = [[*Увидев тебя, пузатый крип начал кидать распальцовку.*]],
+speaker = [[Крип с мечтой]],
+npc = "npc_dream",
+choices = {
+{
+text = [[Вижу концерт пошёл на пользу.]],
+next = "d_vizhu_kontsert_poshel_na_polzu",
+},
+},
+},
+d_untitled_passage_34mergedact3 = {
+text = [[Решился fasheezi, да brother?]],
+speaker = [[Крип с мечтой]],
+npc = "npc_dream",
+choices = {
+{
+text = [[Готов попробовать.]],
+next = "d_mogu_poprobovat",
+actions = {
+{ questID="q_ghetto",type="quest_start" },
+},
+},
+{
+text = [[Не хочу рисковать.]],
+next = "d_neee",
+actions = {
+{ questID="q_ghetto",type="quest_reject" },
+},
+},
+},
+},
+d_untitled_passage_40mergedact3 = {
+text = [[One Luv, One Natin.]],
+speaker = [[Крип с мечтой]],
+npc = "npc_dream",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
+d_untitled_passage_41mergedact3 = {
+text = [[Похоже не стать мне нигером... Жизнь несправедлива...]],
+speaker = [[Крип с мечтой]],
+npc = "npc_dream",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
+d_untitled_passage_42mergedact3 = {
+text = [[*Гангстер останавливает тебя.*
+Чего белозадый забыл у нас? Проблем хочешь?]],
+speaker = [[Гангстер]],
+npc = "npc_gangster",
+choices = {
+{
+text = [[Всё в порядке, я просто хотел бы попросить немного lean.]],
+next = "d_vse_v_poryadke_ya_prosto_hotel_by_poprosit_nemnogo_lean",
+},
+},
+},
+d_untitled_passage_43mergedact3 = {
+text = [[В тебе течёт кровь нигера.]],
+speaker = [[Гангстер]],
+npc = "npc_gangster",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
+d_untitled_passage_44mergedact3 = {
+text = [[*Ты отдаёшь lean. Его дрожащие руки осторожно забирают его, стараясь не пролить ни капли.*]],
+speaker = [[Крип с мечтой]],
+npc = "npc_dream",
+choices = {
+{
+text = [[А чем lean тебе поможет?]],
+next = "d_a_chem_lean_tebe_pomozhet",
+actions = {
+{ itemName="item_lean",type="take_item" },
+},
+},
+},
+},
+d_untitled_passage_45mergedact3 = {
+text = [[*Что с ним произошло? Он позолотел! Это так lean повлиял?*]],
+speaker = [[Крип-нигер]],
+npc = "npc_dream_golden",
+choices = {
+{
+text = [[*Ваау.*]],
+next = "d_vaau",
+},
+},
+},
+d_untitled_passage_46 = {
+text = [[*Ты отдаёшь lean. Его дрожащие руки осторожно забирают его, стараясь не пролить ни капли.*]],
+speaker = [[Крип с мечтой]],
+npc = "npc_dream",
+choices = {
+{
+text = [[А чем lean тебе поможет?]],
+next = "d_r8",
+actions = {
+{ itemName="item_lean",type="take_item" },
+},
+},
+},
+},
+d_untitled_passage_47mergedact3 = {
+text = [[Я вас всех подвёл...]],
+speaker = [[Крип с мечтой]],
+npc = "npc_dream",
+choices = {
+{
+text = [[Ты чего?]],
+next = "d_ty_chego",
+actions = {
+{ npc="npc_dream",type="kill" },
+},
+},
+},
+},
+d_untitled_passage_48mergedact3 = {
+text = [[Ты уже близок к цели.]],
+speaker = [[Крип-рогач]],
+npc = "npc_creep_rogach",
+choices = {
+{
+text = [[Какой цели?]],
+next = "d_kakoj_tseli",
+},
+},
+},
+d_untitled_passage_49mergedact3 = {
+text = [[*Усы приветствуют тебя.*]],
+speaker = [[Человек-усач]],
+npc = "npc_mustache",
+choices = {
+{
+text = [[А теперь я готов?]],
+next = "d_a_teper_ya_gotov",
+},
+},
+},
 d_untitled_passage_50 = {
 text = [[*Кучка крипов. Это они, те кого ты спас с острова.*]],
 speaker = [[Кот-бочка]],
@@ -10168,6 +10482,17 @@ next = "d_gotovo",
 },
 },
 },
+d_untitled_passage_59mergedact3 = {
+text = [[Надеюсь Король вернётся и спасёт всех нас...]],
+speaker = [[Человек-гид]],
+npc = "npc_guide",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
 d_untitled_passage_6 = {
 text = [[*Ты замечаешь существо, двигающееся в хаотичном порядке.*]],
 speaker = [[Синий]],
@@ -10176,6 +10501,24 @@ choices = {
 {
 text = [[Эй ты.]],
 next = "d_ej_ty",
+},
+},
+},
+d_untitled_passage_61mergedact3 = {
+text = [[Ты возьмёшь взрывчатку, отправишься на остров и пройдешь через секкретный проход в деревьях. Поставишь бомбу и, пройдя полосу, вернёшься через М.Е.Т.Р.О. Готов?]],
+speaker = [[Кот-бочка]],
+npc = "npc_cat_barrel",
+choices = {
+{
+text = [[Взорвём Эпштейна!]],
+next = "d_vzorvem_epshtejna",
+actions = {
+{ questID="q_island_explosion",type="quest_start" },
+},
+},
+{
+text = [[Ща занят, ребятня.]],
+next = "d_scha_zanyat_rebyatnya",
 },
 },
 },
@@ -10193,6 +10536,61 @@ actions = {
 },
 },
 },
+d_untitled_passage_63mergedact3 = {
+text = [[Приветствую, Алекс. Глава сообщил, что тебе нужен Философский камень, верно?]],
+speaker = [[Человек-учёный]],
+npc = "npc_scientist",
+choices = {
+{
+text = [[Да, верно.]],
+next = "d_da_verno",
+},
+},
+},
+d_untitled_passage_64mergedact3 = {
+text = [[Алекс, замечал какие у нас дома в деревне?]],
+speaker = [[Человек-учёный]],
+npc = "npc_scientist",
+choices = {
+{
+text = [[Да, какие-то тёмные и странные.]],
+next = "d_da_kakieto_temnye_i_strannye",
+},
+},
+},
+d_untitled_passage_65mergedact3 = {
+text = [[*Ты чувствуешь, что, перед тем как отдать ключ, стоит подготовиться. Возможно, стоит доделать оставшиеся дела.*]],
+speaker = [[...]],
+npc = nil,
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
+d_untitled_passage_66mergedact3 = {
+text = [[*Ты показываешь готовый ключ Главе.*]],
+speaker = [[Глава]],
+npc = "npc_leader",
+choices = {
+{
+text = [[Он собран.]],
+next = "d_on_sobran",
+},
+},
+},
+d_untitled_passage_68mergedact3 = {
+text = [[*Он молится.*]],
+speaker = [[Глава]],
+npc = "npc_leader",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
 d_untitled_passage_7 = {
 text = [[*Приближаясь к знакомой уже панде, ты замечаешь сильные изменения. Он больше не пьёт, морда его довольная, а тело более подтянутое.*]],
 speaker = [[Пьяная панда]],
@@ -10201,6 +10599,17 @@ choices = {
 {
 text = [[Привет, панда. Вижу жизнь твоя налаживается.]],
 next = "d_privet_panda_vizhu_zhizn_tvoya_nalazhivaetsya",
+},
+},
+},
+d_untitled_passage_86mergedact3 = {
+text = [[*Я, пожалуй, пойду.*]],
+speaker = [[...]],
+npc = "npc_dream_golden",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -11681,9 +12090,6 @@ choices = {
 {
 text = [[Кстати, твои сыновья обещали вернуться, но их не видать. Где они?]],
 next = "d_kstati_tvoi_synovya_obeschali_vernutsya_no_ih_ne_vidat_gde_oni",
-actions = {
-{ questID="q_pandas",type="quest_end" },
-},
 },
 },
 },
