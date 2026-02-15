@@ -53,6 +53,7 @@ particles:
 
 * бег
 * блинк, замедляет после применения, + дальность тычки
+    particles/units/heroes/hero_pangolier/pangolier_swashbuckler_dash_rope.vpcf
 * шефнуть оппа - как у снайпера 1x6
 * пассивка с флоу - сбивается уроном, копится за тычки, дает урон
 * косячок - chanelling, копит щит, сбивается
