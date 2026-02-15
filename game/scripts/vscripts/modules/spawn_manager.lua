@@ -147,15 +147,6 @@ function SpawnManager:OnEntityKilled(event)
     local hero = event.killed_unit
     if not hero or not hero:IsRealHero() or hero:IsSpiritBearCustom() then return end
 
-    for npcName, npcData in EntityData:AllByType('npc') do
-        if not npcData.isStory then goto continue end
-        for _, ent in ipairs(Entities:FindAllByName(npcName)) do
-            if not ent:HasModifier("modifier_story_npc") then
-                ent:AddNewModifier(hero, nil, "modifier_story_npc", { duration = -1 })
-            end
-        end
-        ::continue::
-    end
 
     local playerID = hero:GetPlayerOwnerID()
     local respawnPos = self.playerRespawnPos[playerID]

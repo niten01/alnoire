@@ -8,13 +8,13 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_MonkeyKing"
 		"Level"						"12"
-		"ModelScale" 				"1.0"
-		"ConsideredHero" 			"1"
+		"ModelScale" 				"1.1"
+		"ConsideredHero" 			"0"
 
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"monkey_king_boundless_strike"			// Ability 1
-		"Ability2"					"monkey_king_jingu_mastery"			// Ability 2
+		"Ability2"					"mk_passive_custom"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -29,7 +29,7 @@
 		"AttackDamageMax"			"32"		// Damage range max.
 		"AttackRate"				"1.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
 		"AttackRange"				"300"		// Range within a target can be attacked.
 
 		"AttackRangeActivityModifiers"
@@ -79,6 +79,16 @@
 		//----------------------------------------------------------------
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable3" { "ItemDef" "594" }
+				"Wearable1" { "ItemDef" "609" }
+				"Wearable2" { "ItemDef" "608" }
+			}
+		}
 	}
 
 	"npc_monkey_king_summon" 
@@ -95,7 +105,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"monkey_king_boundless_strike"			// Ability 1
-		"Ability2"					"monkey_king_jingu_mastery"			// Ability 2
+		"Ability2"					"mk_passive_custom"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -108,10 +118,10 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"25"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
-		"AttackRate"				"1.8"		// Speed of attack.
+		"AttackRate"				"0.9"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
-		"AttackRange"				"300"		// Range within a target can be attacked.
+		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.
 
 		"AttackRangeActivityModifiers"
 		{
@@ -161,5 +171,15 @@
 		//----------------------------------------------------------------
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable3" { "ItemDef" "594" }
+				"Wearable1" { "ItemDef" "609" }
+			}
+		}
 	}
 }
