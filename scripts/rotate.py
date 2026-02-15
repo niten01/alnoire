@@ -3,7 +3,7 @@ import sys
 from PIL import Image, ImageOps
 from pathlib import Path
 
-directory = Path(os.path.abspath(sys.argv[0])).parent.parent / "content/models/mgtu/materials/textures/people/teacher-char-3d/textures"
+directory = Path(os.path.abspath(sys.argv[0])).parent.parent / "content/models/mgtu/materials/textures/people/student/textures"
 
 for filename in os.listdir(directory):
     if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp')):
