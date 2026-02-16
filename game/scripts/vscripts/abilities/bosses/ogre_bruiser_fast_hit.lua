@@ -1,7 +1,7 @@
 ogre_bruiser_fast_hit = class {}
 
 function ogre_bruiser_fast_hit:GetBehavior()
-    return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
+    return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
 end
 
 function ogre_bruiser_fast_hit:OnAbilityPhaseStart()

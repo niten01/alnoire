@@ -7,7 +7,7 @@ end
 function ogre_bruiser_stun:OnAbilityPhaseStart()
     local caster = self:GetCaster()
     assert(caster)
-    caster:EmitSound("ability.ogre_bruiser.swing")
+    caster:EmitSound("ability.ogre_bruiser.roar")
 end
 
 function ogre_bruiser_stun:OnSpellStart()
@@ -18,9 +18,9 @@ function ogre_bruiser_stun:OnSpellStart()
     local damage = self:GetSpecialValueFor("damage")
     local stunDuration = self:GetSpecialValueFor("duration")
 
-    caster:EmitSound("ability.ogre_bruiser.impact")
+    caster:EmitSound("ability.ogre_bruiser.slam")
 
-    local pfx = ParticleManager:CreateParticle("particles/neutral_fx/ogre_bruiser_smash.vpcf", PATTACH_POINT, caster)
+    local pfx = ParticleManager:CreateParticle("particles/econ/items/earthshaker/deep_magma/deep_magma_10th/deep_magma_10th_echoslam_start.vpcf", PATTACH_POINT, caster)
     ParticleManager:SetParticleControl(pfx, 0, casterPos)
     ParticleManager:ReleaseParticleIndex(pfx)
 

@@ -11,9 +11,10 @@ function ogre_bruiser_fly_hit:OnAbilityPhaseStart()
     caster:EmitSound("ability.ogre_bruiser.swing")
     local jumpDelay = 1.41
     local flyTime = self:GetCastPoint() - jumpDelay
+    local target  = self:GetCursorTarget()
     self.activeTimer = Timers:CreateTimer(jumpDelay, function()
         caster.flyTime = flyTime
-        caster.flyTarget = self:GetCursorTarget():GetAbsOrigin()
+        caster.flyTarget = target:GetAbsOrigin()
         if not caster:HasModifier("modifier_ogre_fly") then
             caster:AddNewModifier(nil, nil, "modifier_ogre_fly", { duration = caster.flyTime })
         end

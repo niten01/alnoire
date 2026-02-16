@@ -17,6 +17,21 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
+  ability.ogre_bruiser.slam = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/earthshaker/arcana_slam_small.vsnd",
+    ]
+    volume = "3.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
   ability.ogre_bruiser.swing = {
     type = "dota_update_default"
     vsnd_files =
@@ -24,6 +39,39 @@
         "sounds/weapons/hero/riki/riki_swing1.vsnd",
     ]
     volume = "1.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.ogre_bruiser.surge = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/dark_seer/dota_dark_seer_surge.vsnd",
+    ]
+    volume = "0.60000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.ogre_bruiser.roar = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/misc/creep_deaths/death_ogre_01.vsnd",
+        "sounds/misc/creep_deaths/death_ogre_02.vsnd",
+        "sounds/misc/creep_deaths/death_ogre_03.vsnd",
+        "sounds/misc/creep_deaths/death_ogre_04.vsnd",
+    ]
+    volume = "0.60000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
     pitch = "1.000000"

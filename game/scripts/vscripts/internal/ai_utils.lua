@@ -10,7 +10,7 @@ function MoveHome(unit)
 end
 
 function IsCasting(unit)
-  return unit:GetCurrentActiveAbility() or unit:IsChanneling()
+    return unit:GetCurrentActiveAbility() or unit:IsChanneling()
 end
 
 local function CastWrapper(unit, target, fn)
@@ -226,13 +226,11 @@ function DefaultAiTick(unit)
         unit.aggroStartTime = nil
     end
 
-    if beaconState == 'aggro' and target and target:IsAlive() then
-        return false
-    end
-
+    local intercept = false
     -- бежим сука
     if beaconState == 'retreat' then
         MoveHome(unit)
+        intercept = true
     end
 
     -- стоим сука
@@ -240,6 +238,7 @@ function DefaultAiTick(unit)
         if distToSpawn > 150 then
             MoveHome(unit)
         end
+        intercept = true
     end
 
     if beaconState == 'retreat' or beaconState == 'idle' then
@@ -248,6 +247,13 @@ function DefaultAiTick(unit)
             unit:Heal(unit:GetMaxHealth() * 0.1, nil)
         end
     end
+
+    if intercept then return true end
+
+    if beaconState == 'aggro' and target and target:IsAlive() then
+        return false
+    end
+
     return true
 end
 
