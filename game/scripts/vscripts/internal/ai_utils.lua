@@ -9,6 +9,61 @@ function MoveHome(unit)
     end
 end
 
+function IsCasting(unit)
+    return unit:GetCurrentActiveAbility() or unit:IsChanneling()
+end
+
+local function CastWrapper(unit, target, fn)
+    if unit:IsSilenced() or unit:IsStunned() then return nil end
+    local currentAbility = unit:GetCurrentActiveAbility()
+    if currentAbility then return currentAbility end
+    local abilityCount = unit:GetAbilityCount()
+    for i = 0, abilityCount - 1 do
+        local ability = unit:GetAbilityByIndex(i)
+        if ability and ability:IsActivated() and ability:IsFullyCastable() and not ability:IsPassive() then
+            local range = ability:GetCastRange(unit:GetAbsOrigin(), target)
+            local dist = (unit:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
+            if dist <= (range + 100) then
+                local behavior = ability:GetBehavior()
+                if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_HIDDEN) ~= 0 then goto continue end
+
+                if fn(ability) then return ability end
+            end
+        end
+        ::continue::
+    end
+    return nil
+end
+
+function CastAvailableAbility(unit, target, ability)
+    local behavior = ability:GetBehavior()
+    assert(behavior)
+
+    if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
+        unit:CastAbilityOnTarget(target, ability, -1)
+    elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
+        unit:CastAbilityNoTarget(ability, -1)
+    elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then
+        unit:CastAbilityOnPosition(target:GetAbsOrigin(), ability, -1)
+    else
+        error("Could not cast ability: " .. ability:GetName())
+    end
+
+    unit.lastCastAbilityName = ability:GetName()
+end
+
+function CastRandomAbility(unit, target, abilityNames)
+    local chosenName = abilityNames[RandomInt(1, #abilityNames)]
+    return CastWrapper(unit, target, function(ability)
+        if ability:GetName() == chosenName then
+            CastAvailableAbility(unit, target, ability)
+            return true
+        end
+        return false
+    end)
+end
+
+-- TODO: rewrite to existing wrappers and utils
 function CastAllAbilities(unit, target)
     if unit:IsSilenced() or unit:IsStunned() then return false end
     local currentAbility = unit:GetCurrentActiveAbility()
@@ -106,6 +161,20 @@ function FindSanyaInRadius(centerPoint, radius)
     return nil
 end
 
+function FindAIEnemies(center, radius)
+    return FindUnitsInRadius(
+        DOTA_TEAM_BADGUYS,
+        center,
+        nil,
+        radius,
+        DOTA_UNIT_TARGET_TEAM_ENEMY,
+        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+        DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
+        FIND_CLOSEST,
+        false
+    )
+end
+
 function RemoveAllIdleModifiers(unit)
     if not IsServer() then return end
     if not unit or unit:IsNull() or not unit:IsAlive() then return end
@@ -159,13 +228,11 @@ function DefaultAiTick(unit)
         unit.aggroStartTime = nil
     end
 
-    if beaconState == 'aggro' and target and target:IsAlive() then
-        return false
-    end
-
+    local intercept = false
     -- бежим сука
     if beaconState == 'retreat' then
         MoveHome(unit)
+        intercept = true
     end
 
     -- стоим сука
@@ -173,6 +240,7 @@ function DefaultAiTick(unit)
         if distToSpawn > 150 then
             MoveHome(unit)
         end
+        intercept = true
     end
 
     if beaconState == 'retreat' or beaconState == 'idle' then
@@ -181,6 +249,13 @@ function DefaultAiTick(unit)
             unit:Heal(unit:GetMaxHealth() * 0.1, nil)
         end
     end
+
+    if intercept then return true end
+
+    if beaconState == 'aggro' and target and target:IsAlive() then
+        return false
+    end
+
     return true
 end
 

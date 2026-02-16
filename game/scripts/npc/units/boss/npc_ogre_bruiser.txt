@@ -12,10 +12,10 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"earthshaker_fissure"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability1"					"ogre_bruiser_fast_hit"			// Ability 1
+		"Ability2"					"ogre_bruiser_fly_hit"			// Ability 2
+		"Ability3"					"ogre_bruiser_dash"			// Ability 3
+		"Ability4"					"ogre_bruiser_stun"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
