@@ -78,6 +78,10 @@ return {
         "npc_dota_hero_razor",
         "npc_dota_hero_antimage",
         "npc_dota_hero_monkey_king",
+        "npc_dota_roshan",
+        "npc_jungle_roshan",
+        "npc_jungle_miniroshan",
+
 
         -- traps
         "npc_trap_arrow",
@@ -88,7 +92,8 @@ return {
     },
     models = {
         --mk banana
-        "models/props_gameplay/banana_prop_closed_mk.vmdl"
+        "models/props_gameplay/banana_prop_closed_mk.vmdl",
+        "models/creeps/roshan_aghanim/roshan_aghanim.vmdl",
     },
     sounds = {
         "soundevents/sfx.vsndevts",

@@ -1,0 +1,40 @@
+"DOTAAbilities"
+{
+    "roshan_custom_passive"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/jungle/roshan_custom_passive"
+		"AbilityTextureName"            "roshan_revengeroar"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+
+		"AbilityValues"
+		{
+			"max_bonus"				"75"
+		}
+	}
+
+    "roshan_custom_clap"
+    {
+        "BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/jungle/roshan_custom_clap"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"            "roshan_slam"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "MaxLevel"                      "2"
+        "AbilityCastPoint"				"0.47 0.65"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_3"
+
+        "AbilityValues"
+		{
+			"radius"            "150 350"
+			"slow_duration"     "1 2"
+			"slow_amount"       "20 50"
+			"damage"            "70 140"
+            "cooldown"          "5.0 8.0"
+		}
+    }
+}

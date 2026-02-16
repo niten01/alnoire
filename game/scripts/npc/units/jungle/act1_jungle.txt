@@ -10,7 +10,6 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
 		"ModelScale" 				"0.75"
-        "vscripts"                  "ai/ai_jungle_creep_default.lua"
 
 		
 		//"Ability1"						"skeleton_king_hellfire_blast"			// Ability 1
@@ -75,7 +74,6 @@
 		"SoundSet"					"Hero_Venomancer"
 		"Level"						"1"
 		"ModelScale" 				"1"
-        "vscripts"                  "ai/ai_jungle_creep_default.lua"
 
 		
 		"Ability1"						"venomancer_plague_ward"			// Ability 1
@@ -150,7 +148,6 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
 		"ModelScale" 				"0.75"
-        "vscripts"                  "ai/ai_jungle_creep_default.lua"
 
 		
 		//"Ability1"						"skeleton_king_hellfire_blast"			// Ability 1
@@ -215,7 +212,6 @@
 		"SoundSet"					"Hero_Axe"
 		"Level"						"3"
 		"ModelScale" 				"1.3"
-        "vscripts"                  "ai/ai_jungle_axe.lua"
 
 		"Ability1"					"axe_battle_hunger"
 		"Ability2"					"axe_berserkers_call"			// Ability 3
@@ -286,7 +282,6 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
 		"ModelScale" 				"0.75"
-        "vscripts"                  "ai/ai_jungle_creep_default.lua"
 
 		
 		//"Ability1"						"skeleton_king_hellfire_blast"			// Ability 1
@@ -313,6 +308,133 @@
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
+
+		"StatusHealth"				"300"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+		}
+	}
+
+	"npc_jungle_roshan"	
+	{
+		// General
+		//----------------------------------------------------------------
+		
+		"Model"						"models/creeps/roshan_aghanim/roshan_aghanim.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Roshan"
+		"Level"						"1"
+		"ModelScale" 				"0.75"
+
+		
+		"Ability1"						"roshan_custom_clap"			// Ability 1
+		"Ability2"						"roshan_custom_passive"			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"1.2"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"180"		// Range within a target can be attacked.		     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"130"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"210"
+		"MovementTurnRate"			"1.0"					
+
+		"StatusHealth"				"300"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+		}
+	}
+	
+	"npc_jungle_miniroshan"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/roshan/roshan.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Roshan"
+		"Level"						"1"
+		"ModelScale" 				"0.35"
+
+		
+		"Ability1"						"roshan_custom_clap"			// Ability 1
+		//"Ability2"					"centaur_hoof_stomp"			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"1.2"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"90"		// Range within a target can be attacked.		     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"130"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"210"					
+		"MovementTurnRate"			"1.0"					
 
 		"StatusHealth"				"300"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.

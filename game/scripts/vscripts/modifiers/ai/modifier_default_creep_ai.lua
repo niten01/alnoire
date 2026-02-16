@@ -4,6 +4,13 @@ function modifier_default_creep_ai:IsHidden() return true end
 
 function modifier_default_creep_ai:IsPurgable() return false end
 
+function modifier_default_creep_ai:OnCreated()
+    if not IsServer() then return end
+    local unit = self:GetParent()
+    unit:SetIdleAcquire(false)
+    unit:SetAcquisitionRange(0)
+end
+
 function modifier_default_creep_ai:SetThinking(bval)
     if not IsServer() then return end
     if not self:GetParent() then return end
@@ -29,6 +36,7 @@ function modifier_default_creep_ai:SetThinking(bval)
 end
 
 function modifier_default_creep_ai:OnIntervalThink()
+    print('tikc')
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
     local beaconData = unit.packTargetData

@@ -16,11 +16,13 @@ function CastAllAbilities(unit, target)
     local abilityCount = unit:GetAbilityCount()
     for i = 0, abilityCount - 1 do
         local ability = unit:GetAbilityByIndex(i)
+        print('abil ' .. ability:GetName())
         if ability and ability:IsActivated() and ability:IsFullyCastable() and not ability:IsPassive() then
             local range = ability:GetCastRange(unit:GetAbsOrigin(), target)
             local dist = (unit:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
             if dist <= (range + 100) then
                 local behavior = ability:GetBehavior()
+                print(behavior)
                 if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_HIDDEN) ~= 0 then goto continue end
 
                 if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
