@@ -18,7 +18,7 @@ function ogre_bruiser_pull:OnSpellStart()
     caster:EmitSound("ability.ogre_bruiser.pull")
 
     local pfx = ParticleManager:CreateParticle("particles/ogre_bruiser_pull.vpcf", PATTACH_POINT, caster)
-    ParticleManager:SetParticleControl(pfx, 0, casterPos)
+    ParticleManager:SetParticleControl(pfx, 0, pos)
     ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx)
 
