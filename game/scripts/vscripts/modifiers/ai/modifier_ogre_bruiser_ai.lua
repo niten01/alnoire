@@ -41,7 +41,7 @@ function modifier_ogre_bruiser_ai:OnIntervalThink()
 
     -- деремся сука
     if beaconState == 'aggro' and target and target:IsAlive() then
-        local ability = CastAllAbilities(unit, target)
+        local ability = CastRandomAbility(unit, target, { "ogre_bruiser_fast_hit", "ogre_bruiser_fly_hit" })
         if ability then
             return
             -- self:StartIntervalThink(BATTLE_THINK_INTERVAL + ability:GetCastPoint())
