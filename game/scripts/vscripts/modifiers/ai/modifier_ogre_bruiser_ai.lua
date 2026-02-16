@@ -25,6 +25,10 @@ function modifier_ogre_bruiser_ai:OnAttackLanded(event)
     end
 end
 
+local function IsUtilAbility(abilityName)
+  return abilityName == "ogre_bruiser_dash" or abilityName=="ogre_bruiser_stun"
+end
+
 function modifier_ogre_bruiser_ai:OnIntervalThink()
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
@@ -39,10 +43,13 @@ function modifier_ogre_bruiser_ai:OnIntervalThink()
         return
     end
 
-    -- деремся сука
     if beaconState == 'aggro' and target and target:IsAlive() then
-        local ability = CastRandomAbility(unit, target, { "ogre_bruiser_fast_hit", "ogre_bruiser_fly_hit" })
-        if ability then
+        -- don't waste two utilities
+        if not IsUtilAbility(unit.lastCastAbilityName)then
+          if CastRandomAbility(unit, target, { "ogre_bruiser_dash", "ogre_bruiser_stun" }) then return end
+        end
+
+        if CastRandomAbility(unit, target, { "ogre_bruiser_fast_hit", "ogre_bruiser_fly_hit" }) then
             return
             -- self:StartIntervalThink(BATTLE_THINK_INTERVAL + ability:GetCastPoint())
         end

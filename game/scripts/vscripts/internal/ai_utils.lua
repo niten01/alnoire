@@ -9,6 +9,10 @@ function MoveHome(unit)
     end
 end
 
+function IsCasting(unit)
+  return unit:GetCurrentActiveAbility() or unit:IsChanneling()
+end
+
 local function CastWrapper(unit, target, fn)
     if unit:IsSilenced() or unit:IsStunned() then return nil end
     local currentAbility = unit:GetCurrentActiveAbility()
@@ -31,7 +35,7 @@ local function CastWrapper(unit, target, fn)
     return nil
 end
 
-function CastAbility(unit, target, ability)
+function CastAvailableAbility(unit, target, ability)
     local behavior = ability:GetBehavior()
     assert(behavior)
 
@@ -44,13 +48,15 @@ function CastAbility(unit, target, ability)
     else
         error("Could not cast ability: " .. ability:GetName())
     end
+
+    unit.lastCastAbilityName = ability:GetName()
 end
 
 function CastRandomAbility(unit, target, abilityNames)
     local chosenName = abilityNames[RandomInt(1, #abilityNames)]
     return CastWrapper(unit, target, function(ability)
         if ability:GetName() == chosenName then
-            CastAbility(unit, target, ability)
+            CastAvailableAbility(unit, target, ability)
             return true
         end
         return false
