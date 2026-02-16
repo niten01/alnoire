@@ -404,7 +404,6 @@ return {
         },
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,
-            stayActivatedOnPlayerDeath = true,
         },
         pack_gorilla = {
             activateAfterUnitsSpawned = false,
