@@ -32,11 +32,29 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
+  ability.ogre_bruiser.pull = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/misc/crownfall/comet_impact.vsnd",
+    ]
+    volume = "3.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
   ability.ogre_bruiser.swing = {
     type = "dota_update_default"
     vsnd_files =
     [
         "sounds/weapons/hero/riki/riki_swing1.vsnd",
+        "sounds/weapons/hero/earthshaker/fist_swing1.vsnd",
+        "sounds/weapons/hero/earthshaker/fist_swing2.vsnd",
+        "sounds/weapons/hero/earthshaker/fist_swing3.vsnd",
     ]
     volume = "1.00000"
     pitch_rand_min = "0.050000"

@@ -10,23 +10,8 @@ function modifier_ogre_bruiser_ai:DeclareFunctions()
     }
 end
 
-function modifier_ogre_bruiser_ai:OnAttackLanded(event)
-    if not IsServer() then return end
-    local attacker = event.attacker
-    local victim = event.target
-    if attacker == self:GetParent() then
-        if victim:HasModifier('modifier_mk_stack_debuff') then
-            local mod = victim:FindModifierByName('modifier_mk_stack_debuff')
-            if mod:GetStackCount() == 8 then
-                EmitSoundOn("Bidlo.Laugh.Begin", attacker)
-                attacker.castBonk = true
-            end
-        end
-    end
-end
-
 local function IsUtilAbility(abilityName)
-  return abilityName == "ogre_bruiser_dash" or abilityName=="ogre_bruiser_stun"
+    return abilityName == "ogre_bruiser_dash" or abilityName == "ogre_bruiser_stun" or abilityName == "ogre_bruiser_pull"
 end
 
 function modifier_ogre_bruiser_ai:OnIntervalThink()
@@ -45,8 +30,8 @@ function modifier_ogre_bruiser_ai:OnIntervalThink()
 
     if beaconState == 'aggro' and target and target:IsAlive() then
         -- don't waste two utilities
-        if not IsUtilAbility(unit.lastCastAbilityName)then
-          if CastRandomAbility(unit, target, { "ogre_bruiser_dash", "ogre_bruiser_stun" }) then return end
+        if not IsUtilAbility(unit.lastCastAbilityName) then
+            if CastRandomAbility(unit, target, { "ogre_bruiser_dash", "ogre_bruiser_stun", "ogre_bruiser_pull" }) then return end
         end
 
         if CastRandomAbility(unit, target, { "ogre_bruiser_fast_hit", "ogre_bruiser_fly_hit" }) then

@@ -9,14 +9,13 @@ function ogre_bruiser_fly_hit:OnAbilityPhaseStart()
     local caster = self:GetCaster()
     assert(caster)
     caster:EmitSound("ability.ogre_bruiser.swing")
-    local jumpDelay = 1.41
-    local flyTime = self:GetCastPoint() - jumpDelay
-    local target  = self:GetCursorTarget()
+    local jumpDelay  = 1.41
+    local flyTime    = self:GetCastPoint() - jumpDelay
+    local target     = self:GetCursorTarget()
     self.activeTimer = Timers:CreateTimer(jumpDelay, function()
-        caster.flyTime = flyTime
         caster.flyTarget = target:GetAbsOrigin()
         if not caster:HasModifier("modifier_ogre_fly") then
-            caster:AddNewModifier(nil, nil, "modifier_ogre_fly", { duration = caster.flyTime })
+            caster:AddNewModifier(nil, nil, "modifier_ogre_fly", { duration = flyTime })
         end
     end)
 end
@@ -73,12 +72,12 @@ function modifier_ogre_fly:OnCreated()
     if not IsServer() then return end
 
     local parent = self:GetParent()
-    self.flyTarget = parent.flyTarget
+    local target = parent.flyTarget
     parent.flyTarget = nil
-    assert(self.flyTarget)
-    local time = parent.flyTime
+    assert(target)
+    local time = self:GetDuration()
     assert(time)
-    local dir = self.flyTarget - parent:GetAbsOrigin()
+    local dir = target - parent:GetAbsOrigin()
     local dist = #dir
     local weaponOffset = 200
     self.distance = dist - weaponOffset
