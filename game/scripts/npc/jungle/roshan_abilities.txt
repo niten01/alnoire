@@ -35,5 +35,10 @@
 			"damage"            "70 140"
             "cooldown"          "5.0 8.0"
 		}
+		"precache"
+		{
+			"particle"      "particles/roshan_custom_slap.vpcf",
+			"particle"      "particles/roshan_custom_slap_mini.vpcf",
+		}
     }
 }

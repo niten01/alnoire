@@ -342,13 +342,11 @@
 		
 		"Model"						"models/creeps/roshan_aghanim/roshan_aghanim.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"Roshan"
 		"Level"						"1"
 		"ModelScale" 				"0.75"
-
-		
 		"Ability1"						"roshan_custom_clap"			// Ability 1
 		"Ability2"						"roshan_custom_passive"			// Ability 2
+		"SoundSet"						"Roshan"
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4
 
@@ -405,9 +403,10 @@
 		//----------------------------------------------------------------
 		"Model"						"models/creeps/roshan/roshan.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"Roshan"
 		"Level"						"1"
 		"ModelScale" 				"0.35"
+		"SoundSet"						"Roshan"
+
 
 		
 		"Ability1"						"roshan_custom_clap"			// Ability 1

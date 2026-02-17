@@ -36,7 +36,7 @@ function modifier_roshan_custom_passive:OnDeath(params)
     local killedUnit = params.unit
     if not killedUnit or not killedUnit.packTargetData then return end
 
-    if unit.packTargetData == killedUnit.packTargetData and killedUnit.isBabyRoshan then
+    if unit.packTargetData == killedUnit.packTargetData then
         self:IncrementStackCount()
     end
 end

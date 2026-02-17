@@ -6,10 +6,14 @@ roshan_custom_clap = class({})
 function roshan_custom_clap:Spawn()
     if not IsServer() then return end
     if not self:GetCaster() then return end
-    if self:GetCaster():GetUnitName() == "npc_jungle_miniroshan" then
+    local caster = self:GetCaster()
+    if caster:GetUnitName() == "npc_jungle_miniroshan" then
         self:SetLevel(1)
-    else self:SetLevel(2)
+    else 
+        self:SetLevel(2)
+        --self:SetLevel(2)
     end
+
 end
 
 function roshan_custom_clap:OnSpellStart()
@@ -32,7 +36,22 @@ function roshan_custom_clap:OnSpellStart()
         false
     )
 
-    
+    if caster:GetUnitName() == "npc_jungle_miniroshan" then
+        self.pfx = ParticleManager:CreateParticle("particles/roshan_custom_slap_mini.vpcf", PATTACH_POINT, caster)
+        ParticleManager:SetParticleControl(self.pfx, 0, caster:GetAbsOrigin())
+        ParticleManager:SetParticleControl(self.pfx, 1, Vector(50, 0, 0))
+        ParticleManager:SetParticleControl(self.pfx, 4, Vector(5, 0, 0))
+        EmitSoundOn('Roshan.Mini.Slap', caster)
+
+    else 
+        self.pfx = ParticleManager:CreateParticle("particles/roshan_custom_slap.vpcf", PATTACH_POINT, caster)
+        ParticleManager:SetParticleControl(self.pfx, 0, caster:GetAbsOrigin())
+        ParticleManager:SetParticleControl(self.pfx, 1, Vector(100, 0, 0))
+        EmitSoundOn('Roshan.Slap', caster)
+    end
+    if self.pfx then
+        ParticleManager:ReleaseParticleIndex(self.pfx)
+    end
     for _, enemy in pairs(enemies) do
         ApplyDamage({
             victim = enemy,
@@ -41,9 +60,6 @@ function roshan_custom_clap:OnSpellStart()
             damage_type = DAMAGE_TYPE_MAGICAL,
             ability = self,
         })
-        local pfx = ParticleManager:CreateParticle( "particles/econ/items/earthshaker/baron_minotaur/baron_minotaur_fissure_parent.vpcf", PATTACH_POINT,  caster)
-        ParticleManager:SetParticleControl(pfx, 0, caster:GetAbsOrigin())
-        ParticleManager:ReleaseParticleIndex(pfx)
         enemy:AddNewModifier(caster, self, "modifier_roshan_custom_clap", {duration = slow_duration})
     end
 end
@@ -65,7 +81,7 @@ function roshan_custom_clap:GetCastAnimation()
 end
 
 function roshan_custom_clap:GetBehavior()
-    return DOTA_ABILITY_BEHAVIOR_NO_TARGET
+    return DOTA_ABILITY_BEHAVIOR_POINT
 end
 
 ----------------------

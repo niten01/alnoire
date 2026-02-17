@@ -261,12 +261,14 @@ return {
 
         spawner_roshan_big = {
             npc = "npc_jungle_roshan",
+            modifiers = {"modifier_cust_rosh"},
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_roshan",
             ai_modifier = "modifier_default_creep_ai"
         },
         spawner_miniroshan = {
             npc = "npc_jungle_miniroshan",
+            modifiers = {"modifier_cust_rosh"},
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_roshan",
             ai_modifier = "modifier_default_creep_ai"
