@@ -17,6 +17,7 @@ LinkLuaModifier("modifier_summon_distance_check", "modifiers/abilities/modifier_
 
 -- jungle
 LinkLuaModifier("modifier_axe_sustain", "modifiers/jungle/modifier_axe_sustain", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_cust_rosh", "modifiers/jungle/modifier_cust_rosh", LUA_MODIFIER_MOTION_NONE)
 
 
 -- ai

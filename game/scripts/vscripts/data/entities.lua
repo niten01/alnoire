@@ -259,6 +259,21 @@ return {
             packID = "pack_forest_act1_axe",
         },
 
+        spawner_roshan_big = {
+            npc = "npc_jungle_roshan",
+            modifiers = {"modifier_cust_rosh"},
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_roshan",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+        spawner_miniroshan = {
+            npc = "npc_jungle_miniroshan",
+            modifiers = {"modifier_cust_rosh"},
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_roshan",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+
         spawner_dream_concert = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
@@ -367,11 +382,18 @@ return {
         },
 
         pack_forest_act1_lizards = {
+            stayActivatedOnPlayerDeath = true
         },
 
         pack_forest_act1_axe = {
             thinker = "axe",
             denyTarget = nil,
+            stayActivatedOnPlayerDeath = true
+
+        },
+
+        pack_forest_act1_roshan = {
+            stayActivatedOnPlayerDeath = true
         },
 
         pack_mk = {

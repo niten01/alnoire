@@ -78,6 +78,10 @@ return {
         "npc_dota_hero_razor",
         "npc_dota_hero_antimage",
         "npc_dota_hero_monkey_king",
+        "npc_dota_roshan",
+        "npc_jungle_roshan",
+        "npc_jungle_miniroshan",
+
 
         -- traps
         "npc_trap_arrow",
@@ -88,7 +92,8 @@ return {
     },
     models = {
         --mk banana
-        "models/props_gameplay/banana_prop_closed_mk.vmdl"
+        "models/props_gameplay/banana_prop_closed_mk.vmdl",
+        "models/creeps/roshan_aghanim/roshan_aghanim.vmdl",
     },
     sounds = {
         "soundevents/sfx.vsndevts",
@@ -98,6 +103,7 @@ return {
         "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts",
         "soundevents/voscripts/game_sounds_vo_monkey_king.vsndevts",
         "soundevents/bosses/bidlo.vsndevts",
+        "soundevents/jungle/junglerosh.vsndevts", 
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",
@@ -163,7 +169,6 @@ return {
 
         -- jungle
         "particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf",
-
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",
 
