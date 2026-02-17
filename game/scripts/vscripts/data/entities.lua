@@ -391,7 +391,6 @@ return {
         },
 
         pack_forest_act1_roshan = {
-            activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true
         },
 

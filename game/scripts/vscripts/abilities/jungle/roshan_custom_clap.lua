@@ -41,7 +41,7 @@ function roshan_custom_clap:OnSpellStart()
             damage_type = DAMAGE_TYPE_MAGICAL,
             ability = self,
         })
-        local pfx = ParticleManager:CreateParticle( "particles/neutral_fx/roshan_slam.vpcf", PATTACH_POINT,  caster)
+        local pfx = ParticleManager:CreateParticle( "particles/econ/items/earthshaker/baron_minotaur/baron_minotaur_fissure_parent.vpcf", PATTACH_POINT,  caster)
         ParticleManager:SetParticleControl(pfx, 0, caster:GetAbsOrigin())
         ParticleManager:ReleaseParticleIndex(pfx)
         enemy:AddNewModifier(caster, self, "modifier_roshan_custom_clap", {duration = slow_duration})
@@ -53,6 +53,10 @@ function roshan_custom_clap:GetCooldown()
 end
 
 function roshan_custom_clap:GetAOERadius()
+    return self:GetSpecialValueFor('radius')
+end
+
+function roshan_custom_clap:GetCastRange()
     return self:GetSpecialValueFor('radius')
 end
 

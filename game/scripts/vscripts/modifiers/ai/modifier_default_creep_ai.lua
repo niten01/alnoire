@@ -11,30 +11,6 @@ function modifier_default_creep_ai:OnCreated()
     unit:SetAcquisitionRange(0)
 end
 
-function modifier_default_creep_ai:SetThinking(bval)
-    if not IsServer() then return end
-    if not self:GetParent() then return end
-    local unit = self:GetParent()
-    if not unit:IsAlive() then return end
-    unit:Stop()
-    unit:SetIdleAcquire(false)
-    unit:SetAcquisitionRange(0)
-    if unit:HasModifier('modifier_story_npc') then
-        unit:RemoveModifierByName('modifier_story_npc')
-    end
-    if unit:GetTeam() ~= DOTA_TEAM_BADGUYS then
-        unit:SetTeam(DOTA_TEAM_BADGUYS)
-    end
-
-    RemoveAllIdleModifiers(unit)
-
-    if bval then
-        self:StartIntervalThink(BATTLE_THINK_INTERVAL)
-    else
-        self:StartIntervalThink(-1)
-    end
-end
-
 function modifier_default_creep_ai:OnIntervalThink()
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
@@ -61,6 +37,7 @@ function modifier_default_creep_ai:OnIntervalThink()
                     return BATTLE_THINK_INTERVAL
                 end
             end
+            --print(unit:GetAbilityByIndex(0):GetCooldown())
             if not unit:GetAggroTarget() then
                 ExecuteOrderFromTable({
                     UnitIndex = unit:entindex(),
