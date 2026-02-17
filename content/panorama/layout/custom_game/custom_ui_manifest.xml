@@ -1,10 +1,18 @@
 <root>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/playertables_base.js" />
+  </scripts>
   <Panel>
+    <CustomUIElement type="Hud"
+      layoutfile="file://{resources}/layout/custom_game/resource_manifest.xml" />
+
     <!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/intro.xml" /> -->
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/dialogue_hud.xml" />
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/quest_log.xml" />
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/selection.xml" />
     <CustomUIElement type="Hud"
       layoutfile="file://{resources}/layout/custom_game/barebones_hud_base.xml" />
+    <CustomUIElement type="Hud"
+      layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" />
   </Panel>
 </root>

@@ -29,17 +29,24 @@ function SpawnManager:OnGameInProgress()
     for spawnerName, _ in EntityData:AllByType("item_spawner") do
         self:SpawnItem(spawnerName)
     end
+
+    ChatCommand:LinkCommand("-zv", function(event)
+        local npc = Entities:FindByName(nil, "npc_guide")
+        -- npc:AddSpeechBubble(1, "#pidr", 20.0, 0, 0)
+        DebugPrint("sldfjaosdf")
+        WorldPanels:CreateWorldPanelForAll({
+            layout = "file://{resources}/layout/custom_game/dialogue_bubble.xml",
+            entity = npc,
+            entityHeight = 410,
+            duration = 5,
+        })
+    end)
 end
 
 function SpawnManager:OnHeroInGame(hero)
     if not IsServer() then return end
 
 
-    if GetMapName() == "fight_test" then
-        Timers:CreateTimer(1, function()
-            StoryDriver:StartFight("pack_ogre_bruiser")
-        end)
-    end
     -- if not hero:HasModifier("modifier_anim_translate_thinker") then
     --     hero:AddNewModifier(hero, nil, "modifier_anim_translate_thinker", { duration = -1 })
     -- end
@@ -81,6 +88,7 @@ function SpawnManager:InitNPC(spawnerData, spawnerEnt, npc)
         injectedAttributes[attrName] = value
     end
     npc.injectedAttributes = injectedAttributes
+    npc.spawnerName = spawnerData.name
 
     for _, modifier in ipairs(spawnerData.modifiers or {}) do
         if not npc:HasModifier(modifier) then

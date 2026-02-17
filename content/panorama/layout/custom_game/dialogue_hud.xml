@@ -8,18 +8,13 @@
   </scripts>
 
   <Panel class="DialogueRoot">
-    <CustomUIElement type="Hud"
-      layoutfile="file://{resources}/layout/custom_game/dialogue_portraits_manifest.xml" />
-    <!-- Darken / blur the world while dialogue is open -->
     <Panel id="WorldFX" class="WorldFX" />
 
-    <!-- Letterbox bars -->
     <Panel id="CineBars" class="CineBars" hittest="false">
       <Panel class="Bar BarTop" />
       <Panel class="Bar BarBottom" />
     </Panel>
 
-    <!-- Main container -->
     <Panel id="DialogueShell" class="DialogueShell" hittest="false">
       <Panel id="DialogueFrame" class="DialogueFrame" hittest="true">
 
@@ -38,7 +33,6 @@
           </Panel>
         </Panel>
 
-        <!-- RIGHT: text + choices -->
         <Panel class="RightCol">
           <Panel class="TextArea">
             <Label id="DialogueText" class="DialogueText" text="..." />
@@ -53,7 +47,6 @@
         </Panel>
       </Panel>
 
-      <!-- top-right skip -->
       <TextButton id="SkipButton" class="SkipButton" text="SKIP" />
     </Panel>
   </Panel>

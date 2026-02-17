@@ -2,6 +2,7 @@
 
 #base "bosses/mk_abilities.txt"
 #base "bosses/ogre_bruiser_abilities.txt"
+#base "bosses/island_guard_abilities.txt"
 
 
 "DOTAAbilities"

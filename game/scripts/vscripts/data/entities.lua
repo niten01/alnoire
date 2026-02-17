@@ -98,13 +98,13 @@ return {
         spawner_monkey_king = {
             npc = "npc_monkey_king",
             modifiers = { "modifier_story_npc" },
-            packID = "pack_mk",
+            packID = "pack_monkey_king",
             ai_modifier = "modifier_mk_ai",
         },
         spawner_monkey_king_summon = {
             npc = "npc_monkey_king_summon",
             modifiers = { "modifier_story_npc", "modifier_mk_summon_idle" },
-            packID = "pack_mk",
+            packID = "pack_monkey_king",
             ai_modifier = "modifier_mk_ai",
         },
         spawner_brewmaster = {

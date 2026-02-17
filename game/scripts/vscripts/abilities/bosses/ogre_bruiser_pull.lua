@@ -22,7 +22,7 @@ function ogre_bruiser_pull:OnSpellStart()
     ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    local enemies = FindAIEnemies(pos, radius)
+    local enemies = FindEnemiesForAI(pos, radius)
     for _, ent in ipairs(enemies) do
         ent.ogrePullTarget = pos
         ent:AddNewModifier(caster, self, "modifier_ogre_pull", { duration = pullDuration })
