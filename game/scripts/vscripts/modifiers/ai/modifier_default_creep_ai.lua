@@ -36,7 +36,6 @@ function modifier_default_creep_ai:SetThinking(bval)
 end
 
 function modifier_default_creep_ai:OnIntervalThink()
-    print('tikc')
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
     local beaconData = unit.packTargetData
@@ -56,7 +55,7 @@ function modifier_default_creep_ai:OnIntervalThink()
             local timeInAggro = currentTime - (unit.aggroStartTime or 0)
             unit.lastCastTime = unit.lastCastTime or 0
 
-            if timeInAggro >= 5 and (currentTime - unit.lastCastTime) >= 2 then
+            if timeInAggro >= 3 and (currentTime - unit.lastCastTime) >= 2 then
                 if CastAllAbilities(unit, target) then
                     unit.lastCastTime = currentTime
                     return BATTLE_THINK_INTERVAL

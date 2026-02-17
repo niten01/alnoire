@@ -41,8 +41,10 @@ function roshan_custom_clap:OnSpellStart()
             damage_type = DAMAGE_TYPE_MAGICAL,
             ability = self,
         })
+        local pfx = ParticleManager:CreateParticle( "particles/neutral_fx/roshan_slam.vpcf", PATTACH_POINT,  caster)
+        ParticleManager:SetParticleControl(pfx, 0, caster:GetAbsOrigin())
+        ParticleManager:ReleaseParticleIndex(pfx)
         enemy:AddNewModifier(caster, self, "modifier_roshan_custom_clap", {duration = slow_duration})
-        
     end
 end
 
@@ -56,6 +58,10 @@ end
 
 function roshan_custom_clap:GetCastAnimation()
     return ACT_DOTA_CAST_ABILITY_3
+end
+
+function roshan_custom_clap:GetBehavior()
+    return DOTA_ABILITY_BEHAVIOR_NO_TARGET
 end
 
 ----------------------

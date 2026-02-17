@@ -169,6 +169,8 @@ return {
 
         -- jungle
         "particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf",
+        "particles/neutral_fx/roshan_slam.vpcf",
+
 
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",

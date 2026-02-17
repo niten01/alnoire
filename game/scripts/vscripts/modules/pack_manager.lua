@@ -227,7 +227,6 @@ function PackManager:PackTargetDenyThink(packTargetEnt, packTargetData)
         packTargetData.target = nil
         packTargetData.denyTarget = nil
         packTargetData.somebodyNear = false
-        print('--- beacon idle')
         return IDLE_THINK_INTERVAL
     end
 

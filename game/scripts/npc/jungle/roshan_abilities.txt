@@ -20,7 +20,6 @@
     {
         "BaseClass"                     "ability_lua"
 		"ScriptFile"                    "abilities/jungle/roshan_custom_clap"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"            "roshan_slam"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
