@@ -81,6 +81,8 @@ return {
         "npc_dota_roshan",
         "npc_jungle_roshan",
         "npc_jungle_miniroshan",
+        "npc_jungle_techies",
+        "npc_dota_hero_techies",
 
 
         -- traps

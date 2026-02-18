@@ -274,6 +274,16 @@ return {
             ai_modifier = "modifier_default_creep_ai"
         },
 
+
+        spawner_techies_1 = {
+            npc = "npc_jungle_techies",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_techies",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+
+
+
         spawner_dream_concert = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
@@ -393,6 +403,10 @@ return {
         },
 
         pack_forest_act1_roshan = {
+            stayActivatedOnPlayerDeath = true
+        },
+
+        pack_forest_act1_techies = {
             stayActivatedOnPlayerDeath = true
         },
 
