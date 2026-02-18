@@ -182,7 +182,7 @@ function FindSanyaInRadius(centerPoint, radius)
   return nil
 end
 
-function FindEnemiesForAI(center, radius)
+function FindEnemiesForAIInRadius(center, radius)
   return FindUnitsInRadius(
     DOTA_TEAM_BADGUYS,
     center,
@@ -315,15 +315,35 @@ function AdjustTickRate(unit)
   end
 end
 
-function PointsAlongRing(center, radius, numPoints)
+-- startAngle is optional (default 0)
+function PointsAlongRing(center, radius, numPoints, startAngle)
   local points = {}
   local angleStep = (2 * math.pi) / numPoints
+  local startAngle = startAngle or 0
 
   for i = 1, numPoints do
-    local angle = (i - 1) * angleStep
+    local angle = startAngle + (i - 1) * angleStep
 
     local px = center.x + radius * math.cos(angle)
     local py = center.y + radius * math.sin(angle)
+
+    table.insert(points, Vector(px, py, 0))
+  end
+
+  return points
+end
+
+-- minRadius is optional (default 0)
+function RandomPointsInCircle(center, radius, numPoints, minRadius)
+  local minRadius = minRadius or 0
+  local points = {}
+  for i = 1, numPoints do
+    local dist = RandomFloat(minRadius, radius)
+    local angle = RandomFloat(0, 2 * math.pi)
+
+    local px = center.x + dist * math.cos(angle)
+    local py = center.y + dist * math.sin(angle)
+
 
     table.insert(points, Vector(px, py, 0))
   end

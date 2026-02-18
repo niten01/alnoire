@@ -49,7 +49,7 @@ function ogre_bruiser_fly_hit:OnSpellStart()
     ParticleManager:SetParticleControl(pfx, 0, pos)
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    local enemies = FindEnemiesForAI(pos, radius)
+    local enemies = FindEnemiesForAIInRadius(pos, radius)
     for _, ent in ipairs(enemies) do
         ApplyDamage({
             victim = ent,
