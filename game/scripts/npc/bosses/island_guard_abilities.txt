@@ -54,4 +54,28 @@
             "particle"      "particles/units/heroes/heroes_underlord/underlord_firestorm_pre.vpcf"
         }
     }   
+    "island_guard_laser"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/island_guard_laser.lua"
+        "AbilityTextureName"            "abyssal_underlord_firestorm"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+        "AbilityCastPoint"              "0.57"
+        "AbilityCooldown"               "3.0" 
+        "AbilityCastRange"        		"9000"
+        
+        "AbilityValues"
+        {
+            "damage"                "300"
+            "width"                "50"
+            "length"                "1500"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/units/heroes/heroes_underlord/abyssal_underlord_firestorm_wave.vpcf"
+            "particle"      "particles/units/heroes/heroes_underlord/underlord_firestorm_pre.vpcf"
+        }
+    }   
 }
