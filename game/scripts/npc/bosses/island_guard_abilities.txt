@@ -8,7 +8,7 @@
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
         "AbilityCastPoint"              "0.57"
-        "AbilityCooldown"               "5.0" 
+        "AbilityCooldown"               "4.0" 
         "AbilityCastRange"        		"9000"
         
         "AbilityValues"
@@ -36,7 +36,7 @@
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
         "AbilityCastPoint"              "0.30"
-        "AbilityCooldown"               "10.0" 
+        "AbilityCooldown"               "8.0" 
         "AbilityCastRange"        		"9000"
         
         "AbilityValues"
@@ -65,7 +65,7 @@
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
         "AbilityCastPoint"              "0.53"
-        "AbilityCooldown"               "3.0" 
+        "AbilityCooldown"               "1.0" 
         "AbilityCastRange"        		"9000"
         
         "AbilityValues"
@@ -78,7 +78,7 @@
         "precache"
         {
             "particle"      "particles/econ/items/tinker/tinker_ti10_immortal_laser/tinker_ti10_immortal_laser.vpcf"
-            "particle"      "particles/units/heroes/heroes_underlord/underlord_firestorm_pre.vpcf"
+            "particle"      "particles/ui_mouseactions/range_finder_line_moving_dash.vpcf"
         }
     }   
 }

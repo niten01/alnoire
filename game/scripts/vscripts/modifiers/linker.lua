@@ -24,6 +24,7 @@ LinkLuaModifier("modifier_cust_rosh", "modifiers/jungle/modifier_cust_rosh", LUA
 LinkLuaModifier("modifier_default_creep_ai", "modifiers/ai/modifier_default_creep_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mk_ai", "modifiers/ai/modifier_mk_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_ogre_bruiser_ai", "modifiers/ai/modifier_ogre_bruiser_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_island_guard_ai", "modifiers/ai/modifier_island_guard_ai", LUA_MODIFIER_MOTION_NONE)
 
 -- bosses
 LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)

@@ -29,7 +29,7 @@ function island_guard_firestorm:ShowWarning()
 
   caster:EmitSound("ability.island_guard.firestorm.warning")
 
-  return 1
+  return 0.8
 end
 
 function island_guard_firestorm:GetBehavior()
@@ -53,10 +53,6 @@ function island_guard_firestorm:OnSpellStart()
           "particles/units/heroes/heroes_underlord/abyssal_underlord_firestorm_wave.vpcf", PATTACH_WORLDORIGIN, caster)
         ParticleManager:SetParticleControl(pfx, 0, point)
         ParticleManager:ReleaseParticleIndex(pfx)
-        local ds = DrawDebugCircle(point, radius)
-        Timers:CreateTimer(3, function()
-          DestroyDebugCircle(ds)
-        end)
 
         local enemies = FindEnemiesForAIInRadius(point, radius)
         for _, ent in ipairs(enemies) do

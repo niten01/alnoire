@@ -4,11 +4,6 @@ function modifier_ogre_bruiser_ai:IsHidden() return true end
 
 function modifier_ogre_bruiser_ai:IsPurgable() return false end
 
-function modifier_ogre_bruiser_ai:DeclareFunctions()
-    return {
-        MODIFIER_EVENT_ON_ATTACK_LANDED
-    }
-end
 
 local function IsUtilAbility(abilityName)
     return abilityName == "ogre_bruiser_dash" or abilityName == "ogre_bruiser_stun" or abilityName == "ogre_bruiser_pull"

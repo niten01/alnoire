@@ -10,9 +10,9 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"island_guard_root"			
-		"Ability2"					""			
-		"Ability3"					""			
+		"Ability1"					"island_guard_firestorm"			
+		"Ability2"					"island_guard_root"			
+		"Ability3"					"island_guard_laser"			
 		"Ability4"					""			
 		"Ability5"					""			
 
@@ -59,6 +59,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementTurnRate"			"3.0"
 		"MovementSpeed"				"0"		// Speed.			
 
 		// Status

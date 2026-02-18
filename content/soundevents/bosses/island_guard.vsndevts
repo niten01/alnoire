@@ -77,4 +77,19 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
+  ability.island_guard.laser.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/arc_warden/spark_wraith_cast.vsnd",
+    ]
+    volume = "5.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
 }

@@ -228,7 +228,7 @@ return {
             npc = "npc_island_guard",
             modifiers = { "modifier_story_npc" },
             packID = "pack_island_guard",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_island_guard_ai",
         },
 
         -- jungle

@@ -125,6 +125,8 @@ return {
         "particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_ice_b_ti5.vpcf",
         "particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_ice_c_ti5.vpcf",
         "particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_explode_ti5.vpcf",
+        "particles/ui_mouseactions/range_finder_cone.vpcf",
+        "particles/ui_mouseactions/range_finder_cone_long.vpcf",
 
         -- traps
         "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf",
