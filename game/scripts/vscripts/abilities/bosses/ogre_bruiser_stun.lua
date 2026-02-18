@@ -24,7 +24,7 @@ function ogre_bruiser_stun:OnSpellStart()
     ParticleManager:SetParticleControl(pfx, 0, casterPos)
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    local enemies = FindAIEnemies(casterPos, radius)
+    local enemies = FindEnemiesForAIInRadius(casterPos, radius)
     for _, ent in ipairs(enemies) do
         ApplyDamage({
             victim = ent,

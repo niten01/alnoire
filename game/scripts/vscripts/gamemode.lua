@@ -12,6 +12,7 @@ require('filters')
 
 require('libraries/animations')
 require('libraries/notifications')
+require('libraries/worldpanels')
 
 require('modifiers/linker')
 

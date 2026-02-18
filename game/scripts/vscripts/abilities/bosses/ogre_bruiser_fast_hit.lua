@@ -1,7 +1,7 @@
 ogre_bruiser_fast_hit = class {}
 
 function ogre_bruiser_fast_hit:GetBehavior()
-    return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
+    return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_AOE
 end
 
 function ogre_bruiser_fast_hit:OnAbilityPhaseStart()
@@ -26,7 +26,7 @@ function ogre_bruiser_fast_hit:OnSpellStart()
     ParticleManager:SetParticleControl(pfx, 0, pos)
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    local enemies = FindAIEnemies(pos, radius)
+    local enemies = FindEnemiesForAIInRadius(pos, radius)
     for _, ent in ipairs(enemies) do
         ApplyDamage({
             victim = ent,

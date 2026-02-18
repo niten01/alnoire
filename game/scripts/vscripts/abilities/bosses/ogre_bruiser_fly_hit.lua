@@ -2,7 +2,7 @@ ogre_bruiser_fly_hit = class {}
 LinkLuaModifier("modifier_ogre_fly", "abilities/bosses/ogre_bruiser_fly_hit.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
 
 function ogre_bruiser_fly_hit:GetBehavior()
-    return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
+    return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_AOE
 end
 
 function ogre_bruiser_fly_hit:OnAbilityPhaseStart()
@@ -49,7 +49,7 @@ function ogre_bruiser_fly_hit:OnSpellStart()
     ParticleManager:SetParticleControl(pfx, 0, pos)
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    local enemies = FindAIEnemies(pos, radius)
+    local enemies = FindEnemiesForAIInRadius(pos, radius)
     for _, ent in ipairs(enemies) do
         ApplyDamage({
             victim = ent,

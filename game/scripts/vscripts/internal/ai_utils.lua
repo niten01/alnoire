@@ -7,6 +7,16 @@ function MoveHome(unit)
   if dist > 50 then
     unit:MoveToPosition(unit.spawnPos)
   end
+
+  Timers:CreateTimer(0.1, function()
+    local dist = (unit:GetAbsOrigin() - unit.spawnPos):Length2D()
+    if dist < 5 then
+      local turnPos = unit.spawnPos + unit.spawnForward * 2
+      unit:MoveToPosition(turnPos)
+    else
+      return 0.1
+    end
+  end)
 end
 
 function IsCasting(unit)
@@ -26,7 +36,7 @@ end
 
 function CanCastAbility(unit, target, ability)
   if unit:IsSilenced() or unit:IsStunned() then return false end
-  if unit:GetCurrentActiveAbility() then return false end
+  if IsCasting(unit) then return false end
   if not ability or not ability:IsActivated() or not ability:IsFullyCastable() or ability:IsPassive() then return false end
   local range = ability:GetCastRange(unit:GetAbsOrigin(), TargetUnitOrNil(target))
   local dist = #(unit:GetAbsOrigin() - GetTargetPos(target))
@@ -35,10 +45,10 @@ function CanCastAbility(unit, target, ability)
   return dist <= (range + 100)
 end
 
-local function CastWrapper(unit, target, fn)
+local function CastIterWrapper(unit, target, fn)
+  -- always intercept when casting another ability
+  if IsCasting(unit) then return true end
   if unit:IsSilenced() then return nil end
-  local currentAbility = unit:GetCurrentActiveAbility()
-  if currentAbility then return currentAbility end
   local abilityCount = unit:GetAbilityCount()
   for i = 0, abilityCount - 1 do
     local ability = unit:GetAbilityByIndex(i)
@@ -49,71 +59,61 @@ local function CastWrapper(unit, target, fn)
   return nil
 end
 
-function CastAvailableAbility(unit, target, ability)
+-- give appropriate cast order given ability is castable
+function GiveCastOrder(unit, target, ability)
   local behavior = ability:GetBehavior()
   assert(behavior)
+
+  local cast = function()
+    if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
+      unit:CastAbilityOnTarget(target, ability, -1)
+    elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
+      unit:CastAbilityNoTarget(ability, -1)
+    elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then
+      unit:CastAbilityOnPosition(target:GetAbsOrigin(), ability, -1)
+    else
+      error("Could not cast ability: " .. ability:GetName())
+    end
+    unit.lastCastAbilityName = ability:GetName()
+  end
 
   if ability.ShowWarning then
     local delay = ability:ShowWarning() or 1
     unit.isCasting = true
     Timers:CreateTimer(delay, function()
+      cast()
       unit.isCasting = false
     end)
-    -- TODO
-  end
-
-  if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
-    unit:CastAbilityOnTarget(target, ability, -1)
-  elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
-    unit:CastAbilityNoTarget(ability, -1)
-  elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then
-    unit:CastAbilityOnPosition(target:GetAbsOrigin(), ability, -1)
   else
-    error("Could not cast ability: " .. ability:GetName())
+    cast()
   end
+end
 
-  unit.lastCastAbilityName = ability:GetName()
+function CastAbility(unit, target, abilityName)
+  if IsCasting(unit) then return true end
+  if unit:IsSilenced() then return false end
+  local ability = unit:FindAbilityByName(abilityName)
+  assert(ability)
+  if not CanCastAbility(unit, target, abilityName) then return false end
+  GiveCastOrder(unit, target, abilityName)
 end
 
 function CastRandomAbility(unit, target, abilityNames)
   local chosenName = abilityNames[RandomInt(1, #abilityNames)]
-  return CastWrapper(unit, target, function(ability)
+  return CastIterWrapper(unit, target, function(ability)
     if ability:GetName() == chosenName then
-      CastAvailableAbility(unit, target, ability)
+      GiveCastOrder(unit, target, ability)
       return true
     end
     return false
   end)
 end
 
--- TODO: rewrite to existing wrappers and utils
 function CastAllAbilities(unit, target)
-  if unit:IsSilenced() or unit:IsStunned() then return false end
-  local currentAbility = unit:GetCurrentActiveAbility()
-  if currentAbility then return currentAbility end
-  local abilityCount = unit:GetAbilityCount()
-  for i = 0, abilityCount - 1 do
-    local ability = unit:GetAbilityByIndex(i)
-    if ability and ability:IsActivated() and ability:IsFullyCastable() and not ability:IsPassive() then
-      local range = ability:GetCastRange(unit:GetAbsOrigin(), target)
-      local dist = (unit:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
-      if dist <= (range + 100) then
-        local behavior = ability:GetBehavior()
-        if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_HIDDEN) ~= 0 then goto continue end
-
-        if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
-          unit:CastAbilityOnTarget(target, ability, -1)
-        elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
-          unit:CastAbilityNoTarget(ability, -1)
-        elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then
-          unit:CastAbilityOnPosition(target:GetAbsOrigin(), ability, -1)
-        end
-        return ability
-      end
-    end
-    ::continue::
-  end
-  return false
+  return CastIterWrapper(unit, target, function(ability)
+    GiveCastOrder(unit, target, ability)
+    return true
+  end)
 end
 
 function SetAllAbilitiesCooldown(unit, fcooldown)
@@ -182,7 +182,7 @@ function FindSanyaInRadius(centerPoint, radius)
   return nil
 end
 
-function FindAIEnemies(center, radius)
+function FindEnemiesForAIInRadius(center, radius)
   return FindUnitsInRadius(
     DOTA_TEAM_BADGUYS,
     center,
@@ -209,6 +209,20 @@ function RemoveAllIdleModifiers(unit)
   end
 end
 
+function AddAllIdleModifiers(unit)
+  if not IsServer() then return end
+  if not unit or unit:IsNull() or not unit:IsAlive() then return end
+  assert(unit.spawnerName)
+  local spawnerData = EntityData:ByName(unit.spawnerName)
+  local modifiers = spawnerData.modifiers
+
+  for _, modName in ipairs(modifiers) do
+    if modName and string.find(string.lower(modName), "idle") then
+      unit:AddNewModifier(nil, nil, modName, { duration = -1 })
+    end
+  end
+end
+
 function SetAIModifierActive(modifier, bActive)
   if not IsServer() then return end
   if not modifier:GetParent() then return end
@@ -218,12 +232,12 @@ function SetAIModifierActive(modifier, bActive)
   unit:SetIdleAcquire(false)
   unit:SetAcquisitionRange(0)
 
-  RemoveAllIdleModifiers(unit)
-
   if bActive then
+    RemoveAllIdleModifiers(unit)
     modifier:StartIntervalThink(BATTLE_THINK_INTERVAL)
     modifier:OnIntervalThink()
   else
+    AddAllIdleModifiers(unit)
     modifier:StartIntervalThink(-1)
   end
 end
@@ -299,4 +313,40 @@ function AdjustTickRate(unit)
     beaconData.currentCreepInterval = target_interval
     print("AI Switch to interval: " .. target_interval)
   end
+end
+
+-- startAngle is optional (default 0)
+function PointsAlongRing(center, radius, numPoints, startAngle)
+  local points = {}
+  local angleStep = (2 * math.pi) / numPoints
+  local startAngle = startAngle or 0
+
+  for i = 1, numPoints do
+    local angle = startAngle + (i - 1) * angleStep
+
+    local px = center.x + radius * math.cos(angle)
+    local py = center.y + radius * math.sin(angle)
+
+    table.insert(points, Vector(px, py, 0))
+  end
+
+  return points
+end
+
+-- minRadius is optional (default 0)
+function RandomPointsInCircle(center, radius, numPoints, minRadius)
+  local minRadius = minRadius or 0
+  local points = {}
+  for i = 1, numPoints do
+    local dist = RandomFloat(minRadius, radius)
+    local angle = RandomFloat(0, 2 * math.pi)
+
+    local px = center.x + dist * math.cos(angle)
+    local py = center.y + dist * math.sin(angle)
+
+
+    table.insert(points, Vector(px, py, 0))
+  end
+
+  return points
 end

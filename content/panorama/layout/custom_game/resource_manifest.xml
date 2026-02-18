@@ -1,0 +1,22 @@
+<root>
+    <Panel style="visibility: collapse;">
+        <Panel id="__precache_container" style="visibility:collapse;">
+            <CustomUIElement type="Hud"
+                layoutfile="file://{resources}/layout/custom_game/dialogue_bubble.xml" />
+            <Image src="file://{images}/custom_game/portraits/default.psd" />
+            <Image src="file://{images}/custom_game/portraits/npc_xavier.psd" />
+            <Image src="file://{images}/custom_game/portraits/tormentor.psd" />
+            <Image src="file://{images}/custom_game/portraits/gate_trolls.psd" />
+            <Image src="file://{images}/custom_game/portraits/shamanka.psd" />
+            <Image src="file://{images}/custom_game/portraits/blue_prince.psd" />
+            <Image src="file://{images}/custom_game/portraits/monkey_king.psd" />
+            <Image src="file://{images}/custom_game/portraits/bob.psd" />
+            <Image src="file://{images}/custom_game/portraits/rogach.psd" />
+            <Image src="file://{images}/custom_game/portraits/mustache.psd" />
+            <Image src="file://{images}/custom_game/portraits/brewmaster.psd" />
+            <Image src="file://{images}/custom_game/portraits/ogre_right.psd" />
+            <Image src="file://{images}/custom_game/portraits/ogre_left.psd" />
+            <Image src="file://{images}/custom_game/portraits/ogre_both.psd" />
+        </Panel>
+    </Panel>
+</root>

@@ -290,10 +290,10 @@ function Handlers.happy_cat_fireworks(playerID, action)
     PATTACH_ABSORIGIN_FOLLOW, cats)
   local pfx2 = ParticleManager:CreateParticle("particles/themed_fx/cny_fireworks_rockets_b.vpcf",
     PATTACH_ABSORIGIN_FOLLOW, cats)
-    Timers:CreateTimer(5, function()
-      ParticleManager:ReleaseParticleIndex(pfx1)
-      ParticleManager:ReleaseParticleIndex(pfx2)
-    end)
+  Timers:CreateTimer(5, function()
+    ParticleManager:ReleaseParticleIndex(pfx1)
+    ParticleManager:ReleaseParticleIndex(pfx2)
+  end)
 end
 
 function StoryDriver:StartFight(packName, nonLethalNPC)
@@ -322,8 +322,10 @@ function StoryDriver:StopFight(activeFightIdx)
   local packName = table.remove(self.activeStoryFights, activeFightIdx)
   local pack = PackManager:GetPack(packName)
   assert(pack)
+  PackManager:ForAllAliveUnits(pack, function(unit)
+    unit:AddNewModifier(unit, nil, "modifier_story_npc", { duration = -1 })
+  end)
   PackManager:DeactivatePack(packName)
-  PackManager:RespawnPack(packName)
 end
 
 function StoryDriver:OnEntityKilled(event)
@@ -337,15 +339,18 @@ function StoryDriver:OnEntityKilled(event)
 
   -- handle fight end
   if victim:IsRealHero() and not victim:IsSpiritBearCustom() then
-    while #self.activeStoryFights > 0 do
-      local packName = self.activeStoryFights[1]
-      self:StopFight(1)
-      local pack = PackManager:GetPack(packName)
-      assert(pack)
-      if pack.stayActivatedOnPlayerDeath then
-        PackManager:ActivatePack(packName)
+    Timers:CreateTimer(5, function()
+      while #self.activeStoryFights > 0 do
+        local packName = self.activeStoryFights[1]
+        self:StopFight(1)
+        PackManager:RespawnPack(packName)
+        local pack = PackManager:GetPack(packName)
+        assert(pack)
+        if pack.stayActivatedOnPlayerDeath then
+          PackManager:ActivatePack(packName)
+        end
       end
-    end
+    end)
   end
 end
 
@@ -354,7 +359,9 @@ function StoryDriver:OnCancelLethalDamage(event)
   for i = #self.activeStoryFights, 1, -1 do
     local packName = self.activeStoryFights[i]
     if unit.packTargetData and unit.packTargetData.name == packName then
+      PackManager:ResetPackPosition(packName)
       self:StopFight(i)
+      break
     end
   end
 end
@@ -362,7 +369,7 @@ end
 function StoryDriver:OnPackWiped(event)
   for i, packName in ipairs(self.activeStoryFights) do
     if packName == event.packName then
-      table.remove(self.activeStoryFights, i)
+      self:StopFight(i)
       break
     end
   end
@@ -395,6 +402,12 @@ function StoryDriver:SetupAct3()
 end
 
 function StoryDriver:OnActChange(event)
+  if GetMapName() == "fight_test" then
+    Timers:CreateTimer(1, function()
+      StoryDriver:StartFight("pack_island_guard")
+    end)
+  end
+
   local act = event.act
   if act == 2 then
     self:SetupAct2()
