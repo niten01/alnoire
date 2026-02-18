@@ -78,7 +78,7 @@ function GiveCastOrder(unit, target, ability)
   end
 
   if ability.ShowWarning then
-    local delay = ability:ShowWarning() or 1
+    local delay = ability:ShowWarning(GetTargetPos(target)) or 1
     unit.isCasting = true
     Timers:CreateTimer(delay, function()
       cast()
@@ -188,6 +188,20 @@ function FindEnemiesForAIInRadius(center, radius)
     center,
     nil,
     radius,
+    DOTA_UNIT_TARGET_TEAM_ENEMY,
+    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+    DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
+    FIND_CLOSEST,
+    false
+  )
+end
+
+function FindEnemiesForAIInLine(p1, p2, width)
+  return FindUnitsInLine(
+    DOTA_TEAM_BADGUYS,
+    p1, p2,
+    nil,
+    width,
     DOTA_UNIT_TARGET_TEAM_ENEMY,
     DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
     DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
