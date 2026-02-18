@@ -1,7 +1,7 @@
 island_guard_firestorm = class {}
 
 function island_guard_firestorm:ShowWarning()
-  local oneWaveDelay = 1
+  local oneWaveDelay = self:GetSpecialValueFor("wave_delay")
   local numWaves = self:GetSpecialValueFor("num_waves")
   local shotsPerWave = self:GetSpecialValueFor("shots_per_wave")
   local radiusIncrease = self:GetSpecialValueFor("wave_radius_increase")
@@ -12,14 +12,14 @@ function island_guard_firestorm:ShowWarning()
   self.waves = {}
   self.wavesDelays = {}
   for i = 1, numWaves, 1 do
-    local wavePoints = PointsAlongRing(casterPos, radiusIncrease * i, shotsPerWave, (i - 1) * math.pi / 6)
+    local wavePoints = PointsAlongRing(casterPos, radiusIncrease * i, shotsPerWave, (i - 1) * math.pi / 12)
     local waveDelay = (i - 1) * oneWaveDelay
     table.insert(self.waves, wavePoints)
     table.insert(self.wavesDelays, waveDelay)
     Timers:CreateTimer(waveDelay, function()
       for _, point in ipairs(wavePoints) do
         local pfx = ParticleManager:CreateParticle(
-          "particles/units/heroes/heroes_underlord/underlord_firestorm_pre.vpcf", PATTACH_WORLDORIGIN, caster)
+          "particles/units/heroes/heroes_underlord/underlord_firestorm_pre_a.vpcf", PATTACH_WORLDORIGIN, caster)
         ParticleManager:SetParticleControl(pfx, 0, point)
         ParticleManager:ReleaseParticleIndex(pfx)
       end
@@ -53,6 +53,10 @@ function island_guard_firestorm:OnSpellStart()
           "particles/units/heroes/heroes_underlord/abyssal_underlord_firestorm_wave.vpcf", PATTACH_WORLDORIGIN, caster)
         ParticleManager:SetParticleControl(pfx, 0, point)
         ParticleManager:ReleaseParticleIndex(pfx)
+        local ds = DrawDebugCircle(point, radius)
+        Timers:CreateTimer(3, function()
+          DestroyDebugCircle(ds)
+        end)
 
         local enemies = FindEnemiesForAIInRadius(point, radius)
         for _, ent in ipairs(enemies) do

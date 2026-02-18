@@ -23,6 +23,51 @@
         "sounds/weapons/hero/underlord/firestorm01.vsnd",
         "sounds/weapons/hero/underlord/firestorm02.vsnd",
     ]
+    volume = "0.40000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.island_guard.root.warning = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/underlord/pit_of_malice_start.vsnd",
+    ]
+    volume = "0.80000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.island_guard.root.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/underlord/pit_of_malice.vsnd",
+    ]
+    volume = "0.10000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.island_guard.root.catch = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/underlord/pit_target_hero.vsnd",
+    ]
     volume = "1.00000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"

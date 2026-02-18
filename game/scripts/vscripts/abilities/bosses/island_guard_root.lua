@@ -11,8 +11,9 @@ function island_guard_root:ShowWarning()
   self.points = RandomPointsInCircle(casterPos, scatterRadius, numAreas, 100)
   for _, point in ipairs(self.points) do
     local pfx = ParticleManager:CreateParticle(
-      "particles/units/heroes/heroes_underlord/underlord_root_pre.vpcf", PATTACH_WORLDORIGIN, caster)
+      "particles/units/heroes/heroes_underlord/underlord_pitofmalice_pre.vpcf", PATTACH_WORLDORIGIN, caster)
     ParticleManager:SetParticleControl(pfx, 0, point)
+    ParticleManager:SetParticleControl(pfx, 1, Vector(areaRadius, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx)
   end
 
@@ -28,6 +29,7 @@ end
 function island_guard_root:OnSpellStart()
   local caster = self:GetCaster()
   assert(caster)
+  local areaRadius = self:GetSpecialValueFor("area_radius")
   local areaDuration = self:GetSpecialValueFor("area_duration")
 
   assert(self.points)
@@ -36,8 +38,10 @@ function island_guard_root:OnSpellStart()
     EmitSoundOnLocationWithCaster(point, "ability.island_guard.root.hit", caster)
 
     local pfx = ParticleManager:CreateParticle(
-      "particles/units/heroes/heroes_underlord/abyssal_underlord_root_wave.vpcf", PATTACH_WORLDORIGIN, caster)
+      "particles/units/heroes/heroes_underlord/underlord_pitofmalice.vpcf", PATTACH_WORLDORIGIN, caster)
     ParticleManager:SetParticleControl(pfx, 0, point)
+    ParticleManager:SetParticleControl(pfx, 1, Vector(areaRadius, 0, 0))
+    ParticleManager:SetParticleControl(pfx, 2, Vector(areaDuration, 0, 0))
     table.insert(self.pfxs, pfx)
   end
 
@@ -58,9 +62,18 @@ function island_guard_root:AreasThink()
     local enemies = FindEnemiesForAIInRadius(point, areaRadius)
     for _, ent in ipairs(enemies) do
       if not ent:HasModifier("modifier_rooted") and
-          curTime - (ent.islandGuardLastRooted or -1) > rootCooldown then
+          curTime - (ent.islandGuardLastRooted or -1) > rootCooldown + rootDuration then
         ent.islandGuardLastRooted = curTime
+        ent:EmitSound("ability.island_guard.root.catch")
         ent:AddNewModifier(self:GetCaster(), self, "modifier_rooted", { duration = rootDuration })
+        local rootPfx = ParticleManager:CreateParticle(
+          "particles/units/heroes/heroes_underlord/abyssal_underlord_pitofmalice_stun.vpcf", PATTACH_ABSORIGIN_FOLLOW,
+          ent)
+        ParticleManager:SetParticleControlEnt(rootPfx, 0, ent, PATTACH_ABSORIGIN_FOLLOW, "", Vector(0, 0, 0), true)
+        Timers:CreateTimer(rootDuration, function()
+          ParticleManager:DestroyParticle(rootPfx, false)
+          ParticleManager:ReleaseParticleIndex(rootPfx)
+        end)
       end
     end
   end
@@ -68,7 +81,7 @@ function island_guard_root:AreasThink()
   self.remainingDuration = self.remainingDuration - interval
   if self.remainingDuration <= 0 then
     for _, pfx in ipairs(self.pfxs) do
-      ParticleManager:DestroyParticle(pfx, false)
+      -- ParticleManager:DestroyParticle(pfx, false)
       ParticleManager:ReleaseParticleIndex(pfx)
     end
     return nil

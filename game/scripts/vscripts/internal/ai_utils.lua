@@ -146,12 +146,12 @@ function AnyAlive(packTargetData)
   return hasAliveUnits
 end
 
-function DrawDebugCircle(entity, radius)
+function DrawDebugCircle(target, radius)
   if not IsServer() then return end
-  if not entity or not radius then return end
+  if not target or not radius then return end
   local pfx = ParticleManager:CreateParticle("particles/sanya_debug_radius_ring.vpcf", PATTACH_WORLDORIGIN, nil)
-  ParticleManager:SetParticleControl(pfx, 0, entity:GetAbsOrigin() + Vector(0, 0, 50))
-  ParticleManager:SetParticleControl(pfx, 2, Vector(radius, 0, 50))
+  ParticleManager:SetParticleControl(pfx, 0, GetTargetPos(target) )
+  ParticleManager:SetParticleControl(pfx, 2, Vector(radius, 0, 0))
   return pfx
 end
 

@@ -33,6 +33,6 @@ function island_guard_laser:OnSpellStart()
   ParticleManager:SetParticleControl(pfx, 0, point)
   ParticleManager:ReleaseParticleIndex(pfx)
 
-  local enemies = FindEnemiesForAIInLine(caster:GetAbsOrigin(), )
+  -- local enemies = FindEnemiesForAIInLine(caster:GetAbsOrigin(),)
   -- TODO
 end
