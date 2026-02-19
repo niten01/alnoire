@@ -776,7 +776,7 @@ return {
                 { var = "concert_crowd_met",       value = { true }, type = "var" },
             },
         },
-        d_xavierstart = {
+        d_xavierfightstart = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_concert_crowd", type = "trigger" },
@@ -1038,6 +1038,360 @@ return {
             conditions = {
                 { questID = "q_island_explosion",    status = QuestStatus.ACTIVE, step = { 5 }, type = "quest" },
                 { interact = "npc_subway_fake_return", type = "interact" },
+            },
+        },
+        d_untitled_passagemergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_knight", type = "interact" },
+            },
+        },
+        d_untitled_passage_1mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_bug", type = "interact" },
+            },
+        },
+        d_untitled_passage_10mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_cat", type = "interact" },
+            },
+        },
+        d_untitled_passage_11mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_drone", type = "interact" },
+            },
+        },
+        d_untitled_passage_12mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_donkeys", type = "interact" },
+            },
+        },
+        d_untitled_passage_13mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_bh", type = "interact" },
+            },
+        },
+        d_untitled_passage_14mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_chest", type = "interact" },
+            },
+        },
+        d_untitled_passage_15mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_skeleton", type = "interact" },
+            },
+        },
+        d_untitled_passage_16mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_smart", type = "interact" },
+            },
+        },
+        d_untitled_passage_17mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_crocodile", type = "interact" },
+            },
+        },
+        d_untitled_passage_18mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_sniffer", type = "interact" },
+            },
+        },
+        d_untitled_passage_19mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_roshanchik", type = "interact" },
+            },
+        },
+        d_untitled_passage_2mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_alkash", type = "interact" },
+            },
+        },
+        d_untitled_passage_20mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_bober", type = "interact" },
+            },
+        },
+        d_untitled_passage_21mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_rabbit", type = "interact" },
+            },
+        },
+        d_untitled_passage_22mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_boar", type = "interact" },
+            },
+        },
+        d_untitled_passage_23mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_raccoon", type = "interact" },
+            },
+        },
+        d_untitled_passage_24mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_parrot", type = "interact" },
+            },
+        },
+        d_untitled_passage_25mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_mushroom_1", type = "interact" },
+            },
+        },
+        d_untitled_passage_26mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_mushroom_2", type = "interact" },
+            },
+        },
+        d_untitled_passage_27mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_mushroom_3", type = "interact" },
+            },
+        },
+        d_untitled_passage_28 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_plant", type = "interact" },
+            },
+        },
+        d_untitled_passage_29 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_octopus_1", type = "interact" },
+            },
+        },
+        d_untitled_passage_3 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_pivo", type = "interact" },
+            },
+        },
+        d_untitled_passage_30 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_purple", type = "interact" },
+            },
+        },
+        d_untitled_passage_31 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_sea_horse", type = "interact" },
+            },
+        },
+        d_untitled_passage_32 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_octopus_2", type = "interact" },
+            },
+        },
+        d_untitled_passage_33mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_turtle", type = "interact" },
+            },
+        },
+        d_untitled_passage_34mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_crab", type = "interact" },
+            },
+        },
+        d_untitled_passage_35 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_axolotl", type = "interact" },
+            },
+        },
+        d_untitled_passage_36 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_muhomor", type = "interact" },
+            },
+        },
+        d_untitled_passage_37 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_navi", type = "interact" },
+            },
+        },
+        d_untitled_passage_38 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_cripple_dog", type = "interact" },
+            },
+        },
+        d_untitled_passage_39 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_demon", type = "interact" },
+            },
+        },
+        d_untitled_passage_4 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_chicken", type = "interact" },
+            },
+        },
+        d_untitled_passage_40mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_pudge_dog", type = "interact" },
+            },
+        },
+        d_untitled_passage_41mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_evil_shop", type = "interact" },
+            },
+        },
+        d_untitled_passage_42mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_black_wizard", type = "interact" },
+            },
+        },
+        d_untitled_passage_43mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_doom", type = "interact" },
+            },
+        },
+        d_untitled_passage_44mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_bones", type = "interact" },
+            },
+        },
+        d_untitled_passage_45mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_babka_2", type = "interact" },
+            },
+        },
+        d_untitled_passage_46mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_pig", type = "interact" },
+            },
+        },
+        d_untitled_passage_47mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_blue_frog", type = "interact" },
+            },
+        },
+        d_untitled_passage_48mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_statue", type = "interact" },
+            },
+        },
+        d_untitled_passage_49mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_winter_cat", type = "interact" },
+            },
+        },
+        d_untitled_passage_5 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_carpet", type = "interact" },
+            },
+        },
+        d_untitled_passage_50mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_demon_book", type = "interact" },
+            },
+        },
+        d_untitled_passage_51 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_gold_wizard", type = "interact" },
+            },
+        },
+        d_untitled_passage_52mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_blue_zombie", type = "interact" },
+            },
+        },
+        d_untitled_passage_53mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_gold_cat", type = "interact" },
+            },
+        },
+        d_untitled_passage_54mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_grandpa", type = "interact" },
+            },
+        },
+        d_untitled_passage_55mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_gold_hamster", type = "interact" },
+            },
+        },
+        d_untitled_passage_56mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_aghanim", type = "interact" },
+            },
+        },
+        d_untitled_passage_57mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_gold_dp", type = "interact" },
+            },
+        },
+        d_untitled_passage_58mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_taksa", type = "interact" },
+            },
+        },
+        d_untitled_passage_6mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_pudge", type = "interact" },
+            },
+        },
+        d_untitled_passage_7mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_hamster", type = "interact" },
+            },
+        },
+        d_untitled_passage_8mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_koala", type = "interact" },
+            },
+        },
+        d_untitled_passage_9mergedbubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_shop", type = "interact" },
             },
         },
     },
@@ -7176,6 +7530,7 @@ return {
                     actions = {
                         { var = "concert_crowd_met", value = true,      type = "set_var" },
                         { pack = "pack_concert_crowd", type = "fight_start" },
+                        { type = "music_stop" },
                     },
                 },
             },
@@ -7580,7 +7935,7 @@ return {
                     text = [[Не хочу как-то.]],
                     next = nil,
                     actions = {
-                        { target = "kill", npc = "npc_genius", type = "fight_start" },
+                        { pack = "pack_genius", type = "fight_start" },
                     },
                 },
             },
@@ -8604,14 +8959,16 @@ That was dope, you're feeling me, yeah]],
                     next = nil,
                     actions = {
                         { pack = "pack_concert_crowd", type = "fight_start" },
+                        { type = "music_stop" },
                     },
                 },
             },
         },
-        d_xavierstart = {
+        d_xavierfightstart = {
             text = [[*Ты не веришь своим глазам. Это же Xavier. Настоящий.*]],
             speaker = [[...]],
             npc = nil,
+            focus = "npc_xavier",
             choices = {
                 {
                     text = [[ЧТО?!]],
@@ -9729,7 +10086,7 @@ x * (x^2 + 1)^3]],
                     text = [[Получается ты неуч, а я крутой типо.]],
                     next = nil,
                     actions = {
-                        { target = "kill", npc = "npc_genius", type = "fight_start" },
+                        { pack = "pack_genius", type = "fight_start" },
                     },
                 },
             },
@@ -10231,7 +10588,7 @@ But luckily it's here you feel me?]],
                     text = [[*В чём же я ошибся?*]],
                     next = nil,
                     actions = {
-                        { target = "kill", npc = "npc_genius", type = "fight_start" },
+                        { pack = "pack_genius", type = "fight_start" },
                     },
                 },
             },
@@ -13109,6 +13466,726 @@ But luckily it's here you feel me?]],
                 {
                     text = [[Ember Spirit.]],
                     next = "d_ember_spirit",
+                },
+            },
+        },
+        d_untitled_passagemergedbubbles = {
+            text = [[Никакая пакость не пройдёт через эти врата!]],
+            speaker = [[default]],
+            npc = "npc_courier_knight",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_1mergedbubbles = {
+            text = [[Тяжело пиздец.]],
+            speaker = [[default]],
+            npc = "npc_courier_bug",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_10mergedbubbles = {
+            text = [[Мяу. Стоп… Зачем мне мяукать, если я могу говорить? Мяу.]],
+            speaker = [[default]],
+            npc = "npc_courier_cat",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_11mergedbubbles = {
+            text = [[НЕ ХОТЕЛ БЫ ПОУПРАВЛЯТЬ МНОЮ?
+АКАДЕМИИ ТРЕБУЮТСЯ ПИЛОТЫ.
+ЕДИНОВРЕМЕННАЯ ВЫПЛАТА - 5000 ЗОЛОТА.]],
+            speaker = [[default]],
+            npc = "npc_courier_drone",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_12mergedbubbles = {
+            text = [[Когда-нибудь мы станем цербером!]],
+            speaker = [[default]],
+            npc = "npc_courier_donkeys",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_13mergedbubbles = {
+            text = [[Эти нигеры ещё заплатят! Bloods соберутся и отомстят! Прям точно!]],
+            speaker = [[default]],
+            npc = "npc_courier_bh",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_14mergedbubbles = {
+            text = [[У меня всё тело болит… Почему каждый думает, что я мимик?]],
+            speaker = [[default]],
+            npc = "npc_courier_chest",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_15mergedbubbles = {
+            text = [[Хорошо, что меня впустили, я уж думал умру.]],
+            speaker = [[default]],
+            npc = "npc_courier_skeleton",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_16mergedbubbles = {
+            text = [[Магистратуру закончу и точно возьмут в Академию!]],
+            speaker = [[default]],
+            npc = "npc_courier_smart",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_17mergedbubbles = {
+            text = [[Как открыть сумку то.]],
+            speaker = [[default]],
+            npc = "npc_courier_crocodile",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_18mergedbubbles = {
+            text = [[Откуда идёт этот запах?]],
+            speaker = [[default]],
+            npc = "npc_courier_sniffer",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_19mergedbubbles = {
+            text = [[Какие у меня дибилы в семье, они реально поверили, что там был сыр! Теперь они все зонби…]],
+            speaker = [[default]],
+            npc = "npc_courier_roshanchik",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_2mergedbubbles = {
+            text = [[Сынуля, а не найдётся для старика монетка на опохмелиться?
+Ну и вали тогда.]],
+            speaker = [[default]],
+            npc = "npc_courier_alkash",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_20mergedbubbles = {
+            text = [[Колёса забыл вырезать бля.]],
+            speaker = [[default]],
+            npc = "npc_courier_bober",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_21mergedbubbles = {
+            text = [[В лесу неплохо, знаешь ли.]],
+            speaker = [[default]],
+            npc = "npc_courier_rabbit",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_22mergedbubbles = {
+            text = [[НЕ. ЕШЬ. ГРИБ.]],
+            speaker = [[default]],
+            npc = "npc_courier_boar",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_23mergedbubbles = {
+            text = [[Привет, паренёк. Будь осторожнее, тут полно дикарей.]],
+            speaker = [[default]],
+            npc = "npc_courier_raccoon",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_24mergedbubbles = {
+            text = [[Пик-пик… Лучше бы я, лучше б… Пик-пик.]],
+            speaker = [[default]],
+            npc = "npc_courier_parrot",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_25mergedbubbles = {
+            text = [[Вкуууусный грибочек.]],
+            speaker = [[default]],
+            npc = "npc_courier_mushroom_1",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_26mergedbubbles = {
+            text = [[Чё так штыриит то.]],
+            speaker = [[default]],
+            npc = "npc_courier_mushroom_2",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_27mergedbubbles = {
+            text = [[Я сейчас стою или лежу. Или сижу.]],
+            speaker = [[default]],
+            npc = "npc_courier_mushroom_3",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_28 = {
+            text = [[Лес даёт и забирает. Лес есть судья.]],
+            speaker = [[default]],
+            npc = "npc_courier_plant",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_29 = {
+            text = [[Где-то там был снежный человек… Блин, потерял его из виду…]],
+            speaker = [[default]],
+            npc = "npc_courier_octopus_1",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_3 = {
+            text = [[Не стесняйся, бери флягу и напивайся вдоволь.
+В бочке всегда можешь брать добавки.
+Пьём весь день!]],
+            speaker = [[default]],
+            npc = "npc_courier_pivo",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_30 = {
+            text = [[Ламинария, чука, нори, вакаме, фукус… Остались ли водоросли, что я не пробовал? Надеюсь да.]],
+            speaker = [[default]],
+            npc = "npc_courier_purple",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_31 = {
+            text = [[Вот бы люди не боялись нас.]],
+            speaker = [[default]],
+            npc = "npc_courier_sea_horse",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_32 = {
+            text = [[Салаги, бегом драить палубу, живо!]],
+            speaker = [[default]],
+            npc = "npc_courier_octopus_2",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_33mergedbubbles = {
+            text = [[Тут такой кайф.
+Вода водичка, ммм]],
+            speaker = [[default]],
+            npc = "npc_courier_turtle",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_34mergedbubbles = {
+            text = [[Я-я их не уби-ивал, я-я просто д-доедаю их, п-поверь!]],
+            speaker = [[default]],
+            npc = "npc_courier_crab",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_35 = {
+            text = [[Не трогай меня. Одно касание: и ты и я - трупы.]],
+            speaker = [[default]],
+            npc = "npc_courier_axolotl",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_36 = {
+            text = [[Вся моя семья подсела на грибы! Ха-ха-ха!
+Микродозинг мухомор хорошее настроение!!!!]],
+            speaker = [[default]],
+            npc = "npc_courier_muhomor",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_37 = {
+            text = [[Продолжай битву, я пока чаю попью.]],
+            speaker = [[default]],
+            npc = "npc_courier_navi",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_38 = {
+            text = [[Эээх, а когда-то и я тут сражался.
+Сейчас уже возраст не позволяет…]],
+            speaker = [[default]],
+            npc = "npc_courier_cripple_dog",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_39 = {
+            text = [[Это королевская стычка, сучки! Наша колода сильнее!]],
+            speaker = [[default]],
+            npc = "npc_courier_demon",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_4 = {
+            text = [[Я не петушара, слышь. НЕ ПЕТУХ Я!]],
+            speaker = [[default]],
+            npc = "npc_courier_chicken",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_40mergedbubbles = {
+            text = [[Воды.]],
+            speaker = [[default]],
+            npc = "npc_courier_pudge_dog",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_41mergedbubbles = {
+            text = [[Радуйся, что я прикован. Так бы и избил твоё смазливое личико.]],
+            speaker = [[default]],
+            npc = "npc_courier_evil_shop",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_42mergedbubbles = {
+            text = [[Я не из банды, просто загорать люблю. Я сантехник вообще.]],
+            speaker = [[default]],
+            npc = "npc_courier_black_wizard",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_43mergedbubbles = {
+            text = [[ПОВОРАЧИВАЙ НАЗАД, СНЕЖОК. ЗДЕСЬ ВЫЖИВАЮТ ТОЛЬКО САМЫЕ КОНЧЕНЫЕ.]],
+            speaker = [[default]],
+            npc = "npc_courier_doom",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_44mergedbubbles = {
+            text = [[Смотри сколько тут сокровищ раскидано, я унесу столько, сколько смогу хах!]],
+            speaker = [[default]],
+            npc = "npc_courier_bones",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_45mergedbubbles = {
+            text = [[Интересно, как там сестричка поживает… Нас разлучили так давно…]],
+            speaker = [[default]],
+            npc = "npc_courier_babka_2",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_46mergedbubbles = {
+            text =
+            [[Стой! Я с миром. Прошлое не заботит меня, все те конфликты между нами уже позади. Нужно наслаждаться тем, что мы всё ещё живы.]],
+            speaker = [[default]],
+            npc = "npc_courier_pig",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_47mergedbubbles = {
+            text = [[Все мы слепы.]],
+            speaker = [[default]],
+            npc = "npc_courier_blue_frog",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_48mergedbubbles = {
+            text = [[Проходи мимо, я сплю.]],
+            speaker = [[default]],
+            npc = "npc_courier_statue",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_49mergedbubbles = {
+            text = [[Как ты меня заметил, я же невидимый?]],
+            speaker = [[default]],
+            npc = "npc_courier_winter_cat",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_5 = {
+            text = [[Ковёр покупай эу! Как не хочешь?!
+Ну и иди тогда…
+О! П-по прямой иди, хых.]],
+            speaker = [[default]],
+            npc = "npc_courier_carpet",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_50mergedbubbles = {
+            text = [[Начинать всегда стоит с того, что сеет сомнения.]],
+            speaker = [[default]],
+            npc = "npc_courier_demon_book",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_51 = {
+            text = [[Представь, люди из гетто обуздали электричество, восхитительно!]],
+            speaker = [[default]],
+            npc = "npc_courier_gold_wizard",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_52mergedbubbles = {
+            text = [[Буэа.. фуууфюю жвввааээ...]],
+            speaker = [[default]],
+            npc = "npc_courier_blue_zombie",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_53mergedbubbles = {
+            text =
+            [[Здесь мы отдыхаем. Умным необходимо место, где можно выпустить пар или расслабиться, присоединяйся.]],
+            speaker = [[default]],
+            npc = "npc_courier_gold_cat",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_54mergedbubbles = {
+            text = [[Хомячок, советую почитать Ницше. Почерпнёшь много нового.]],
+            speaker = [[default]],
+            npc = "npc_courier_grandpa",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_55mergedbubbles = {
+            text = [[Хорошо, а ты тогда почитай Берсерк. Очень глубокое произведение.]],
+            speaker = [[default]],
+            npc = "npc_courier_gold_hamster",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_56mergedbubbles = {
+            text = [[Это я, Великий Аганим! Э… Почему я осёл? Ну… не выспался.]],
+            speaker = [[default]],
+            npc = "npc_courier_aghanim",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_57mergedbubbles = {
+            text = [[Не подходи ко мне. Я не общаюсь с теми, кто моется.]],
+            speaker = [[default]],
+            npc = "npc_courier_gold_dp",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_58mergedbubbles = {
+            text = [[Способны ли мы управлять своими желаниями? Или всё уже предопределено?]],
+            speaker = [[default]],
+            npc = "npc_courier_taksa",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_6mergedbubbles = {
+            text = [[СВИЖЕЕ МЙАСССООООООО]],
+            speaker = [[default]],
+            npc = "npc_courier_pudge",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_7mergedbubbles = {
+            text = [[До яиц не дотягиваюсь ай яй яй…]],
+            speaker = [[default]],
+            npc = "npc_courier_hamster",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_8mergedbubbles = {
+            text = [[При-иветствую! Я бы сыграл с тобой в нарды-ы, но ты, к сожалению, человечи-ишко]],
+            speaker = [[default]],
+            npc = "npc_courier_koala",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_9mergedbubbles = {
+            text = [[Ух, давай меняться, сделки очень выгодные!]],
+            speaker = [[default]],
+            npc = "npc_courier_shop",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
                 },
             },
         },

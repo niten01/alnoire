@@ -19,7 +19,7 @@ var entities = [];
 
 function WorldPanelChange(id, changes, dels)
 {
-  //$.Msg("change ", id, ' -- ', changes, ' -- ', dels);
+  $.Msg("change ", id, ' -- ', changes, ' -- ', dels);
   for (var k in changes){
     var wp = panels[k];
     if (!wp){
@@ -32,11 +32,11 @@ function WorldPanelChange(id, changes, dels)
         wp.panel.DeleteAsync(0);
 
       wp.panel = $.CreatePanel( "Panel", $.GetContextPanel(), "" );
+      wp.panel.Data = wp.data;
       wp.panel.BLoadLayout(changes[k].layout, false, false);
       wp.panel.WorldPanel = wp;
       wp.panel.OnEdge = false;
       wp.panel.OffScreen = false;
-      wp.panel.Data = wp.data;
       wp.panel.DeleteWorldPanel = function(pan){ 
         return function(){
           pan.DeleteAsync(0);

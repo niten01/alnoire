@@ -160,14 +160,13 @@ function barebones:OnHeroInGame(hero)
 				hero:MakeVisibleToTeam(DOTA_TEAM_GOODGUYS, 0.5)
 				hero:MakeVisibleToTeam(DOTA_TEAM_BADGUYS, 0.5)
 
-				-- Do custom stuff
-				OnHeroInGameEvent(hero)
-
 				-- Reentrant check
 				PlayerResource.PlayerData[playerID].already_set_hero = true
 				DebugPrint("[BAREBONES] OnHeroInGame - Hero " ..
 					hero:GetUnitName() .. " set for the player with ID: " .. playerID)
 			end
+
+			OnHeroInGameEvent(hero)
 		end
 	end)
 end

@@ -4,11 +4,12 @@ function island_guard_root:ShowWarning()
   local scatterRadius = self:GetSpecialValueFor("scatter_radius")
   local numAreas = self:GetSpecialValueFor("num_areas")
   local areaRadius = self:GetSpecialValueFor("area_radius")
+  local minDist = self:GetSpecialValueFor("min_distance_from_caster")
 
   local caster = self:GetCaster()
   assert(caster)
   local casterPos = caster:GetAbsOrigin()
-  self.points = RandomPointsInCircle(casterPos, scatterRadius, numAreas, 100)
+  self.points = RandomPointsInCircle(casterPos, scatterRadius, numAreas, minDist)
   for _, point in ipairs(self.points) do
     local pfx = ParticleManager:CreateParticle(
       "particles/units/heroes/heroes_underlord/underlord_pitofmalice_pre.vpcf", PATTACH_WORLDORIGIN, caster)

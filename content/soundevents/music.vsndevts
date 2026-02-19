@@ -36,21 +36,47 @@
     volume = "2.500000"
   }
   // ---------------------------------------------------------
-  music.concert.A = {
+  music.concert.explore = {
     type = "dota_update_battle_music"
     vsnd_files =
     [
-      "sounds/music/xaviersobased_double_whammy.vsnd"
+      "sounds/music/concert_explore_1.vsnd",
+      "sounds/music/concert_explore_2.vsnd",
+      "sounds/music/concert_explore_3.vsnd",
+      "sounds/music/concert_explore_4.vsnd",
     ]
-    volume = "2.500000"
+    volume = "5.500000"
+    fade_out = "2.0"
+    fade_in = "5.0"
   }
-  music.concert.B = {
+  music.concert.combat = {
     type = "dota_update_battle_music"
     vsnd_files =
     [
-      "sounds/music/xaviersobased_nikes.vsnd"
+      "sounds/music/concert_combat.vsnd"
     ]
-    volume = "2.500000"
+    volume = "5.500000"
+    fade_in = "0.0"
+    fade_out = "5.0"
+  }
+  music.concert.precombat = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/concert_precombat.vsnd"
+    ]
+    volume = "5.500000"
+    fade_in = "1.0"
+  }
+  music.concert_muted.explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/concert_muted_explore.vsnd"
+    ]
+    volume = "3.500000"
+    fade_out = "2.0"
+    fade_in = "2.0"
   }
   // ---------------------------------------------------------
   music.forest.explore = {
@@ -116,7 +142,7 @@
     [
       "sounds/music/city_explore.vsnd"
     ]
-    volume = "2.500000"
+    volume = "3.500000"
     fade_out = "2.0"
   }
   music.city.combat = {
@@ -125,7 +151,7 @@
     [
       "sounds/music/city_combat.vsnd"
     ]
-    volume = "2.500000"
+    volume = "3.500000"
     fade_out = "2.0"
   }
   // ---------------------------------------------------------

@@ -5,7 +5,7 @@ LinkLuaModifier("modifier_towel_summon_dash", "modifiers/abilities/modifier_towe
 function towel_summon_dash:OnSpellStart()
     if not IsServer() then return end
     local caster = self:GetCaster()
-    local owner = caster:GetOwner()
+    caster:EmitSound("ability.towel_master.towel_summon_dash")
 
     if not caster:HasModifier("modifier_towel_summon_dash") then
         caster:AddNewModifier(caster, self, "modifier_towel_summon_dash", {})

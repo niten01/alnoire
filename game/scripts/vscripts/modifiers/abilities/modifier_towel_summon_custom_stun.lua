@@ -19,6 +19,7 @@ function modifier_towel_summon_custom_stun:OnCreated()
     local unit = self:GetParent()
     if not unit then return end
     unit:Stop()
+    unit:EmitSound("ability.towel_master.towel_summon.stun")
     local pfx_stun = ParticleManager:CreateParticle("particles/generic_gameplay/generic_stunned.vpcf", PATTACH_OVERHEAD_FOLLOW, unit)
     self:AddParticle(pfx_stun, false, false, -1, false, false)
     unit:StartGesture(ACT_DOTA_DISABLED)

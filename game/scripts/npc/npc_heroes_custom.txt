@@ -130,6 +130,8 @@
     "Model"                                               "models/sanya/sanya_towel_master.vmdl"
     "ModelScale"                                          "0.85"
     "BotImplemented"                                      "0"
+    "SoundSet"                                            "Hero_TowelMaster"
+    "GameSoundsFile"                                      "soundevents/sanya_soundset.vsndevts"
 
     "MovementCapabilities"                                "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementTurnRate"                                    "1.5"
@@ -138,10 +140,12 @@
     "AttackCapabilities"                                  "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageMin"                                     "70"
     "AttackDamageMax"                                     "75"
-    "AttackRange"                                         "150"
+    "AttackRange"                                         "500"
     "AttackRate"                                          "1.7"
+		"AttackAnimationPoint"		                            "0.40"		
     "BaseAttackSpeed"                                     "100"
-    "AttackAnimationPoint"                                "0.33"
+		"ProjectileModel"			                                "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+		"ProjectileSpeed"			                                "1300"				     
     "AttackSpeedActivityModifiers"
     {
       "fast"                                              "170"
@@ -257,12 +261,6 @@
     "AttackRate"                                          "1.7"
     "BaseAttackSpeed"                                     "100"
     "AttackAnimationPoint"                                "0.33"
-    "AttackSpeedActivityModifiers"
-    {
-      "fast"                                              "170"
-      "faster"                                            "275"
-      "fastest"                                           "350"
-    }
 
     "ArmorPhysical"                                       "3"
     "MagicalResistance"                                   "25"
@@ -463,12 +461,10 @@
 
     "BoundsHullName"                                      "DOTA_HULL_SIZE_HERO"
 
-    "precache"
-    {
-      // "model"                                             "models/heroes/sohei/bepis_sohei/bepis_sohei_base.vmdl"
-      // "particle"                                          "particles/hero/sohei/arcana/dbz/dbz_flare_core.vpcf"
-      // "particle"                                          "particles/hero/sohei/arcana/pepsi/pepsi_flare_core.vpcf"
-    }
+		"precache"
+		{
+        	"soundfile"			"soundevents/heroes/towel_master.vsndevts"
+		}
     // "particle_folder"                                     "particles/hero/sohei"
     // "GameSoundsFile"                                      "soundevents/units/game_sounds_sohei.vsndevts"
     // "SoundSet"                                            "Sohei"

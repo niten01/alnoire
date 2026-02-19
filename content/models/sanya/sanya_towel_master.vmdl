@@ -178,7 +178,7 @@
 						_class = "AnimFile"
 						name = "attack_chop"
 						is_default_idle_anim = false
-						activity_name = ""
+						activity_name = "DOTA_"
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
@@ -439,7 +439,7 @@
 						_class = "AnimFile"
 						name = "attack_leftswipe"
 						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_ATTACK"
+						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
@@ -464,7 +464,7 @@
 						_class = "AnimFile"
 						name = "attack_rightswipe"
 						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_ATTACK"
+						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
@@ -542,7 +542,7 @@
 							},
 						]
 						is_default_idle_anim = false
-						activity_name = ""
+						activity_name = "ACT_DOTA_RUN"
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
@@ -556,6 +556,31 @@
 						animgraph_additive = false
 						delete_from_compiled_model = false
 						source_filename = "models/sanya/animations/run_haste.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "attack_ranged"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/attack_ranged.fbx"
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
@@ -1046,6 +1071,15 @@
 						parent_bone = "head"
 						relative_origin = [ 1.381516, 10.006832, 4.290788 ]
 						relative_angles = [ -37.07188, -12.738563, 28.284437 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_attack1"
+						parent_bone = "Weapon_0"
+						relative_origin = [ 19.017578, 2.560673, 8.994522 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
 					},

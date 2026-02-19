@@ -17,16 +17,19 @@ function sanya_towel_root:OnSpellStart()
     local point = self:GetCursorPosition()
     local radius = self:GetSpecialValueFor("aoe_radius")
     local duration = self:GetSpecialValueFor("duration")
-    local pfx = ParticleManager:CreateParticle("particles/econ/items/treant_protector/treant_ti10_immortal_head/treant_ti10_immortal_overgrowth_cast.vpcf", PATTACH_WORLDORIGIN, nil)
+    local pfx = ParticleManager:CreateParticle(
+    "particles/econ/items/treant_protector/treant_ti10_immortal_head/treant_ti10_immortal_overgrowth_cast.vpcf",
+        PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, point)
     ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx)
+    EmitSoundOnLocationWithCaster(point, "ability.towel_master.towel_root", caster)
 
     local enemies = FindUnitsInRadius(
         caster:GetTeamNumber(),
         point,
         nil,
-        radius, 
+        radius,
         DOTA_UNIT_TARGET_TEAM_ENEMY,
         DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
         DOTA_UNIT_TARGET_FLAG_NONE,
@@ -35,6 +38,6 @@ function sanya_towel_root:OnSpellStart()
     )
 
     for _, enemy in pairs(enemies) do
-        enemy:AddNewModifier(caster, self, "modifier_sanya_towel_root", {duration = duration})
+        enemy:AddNewModifier(caster, self, "modifier_sanya_towel_root", { duration = duration })
     end
 end

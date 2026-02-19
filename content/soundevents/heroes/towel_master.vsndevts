@@ -1,0 +1,141 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  ability.towel_master.towel_summon.spawn = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_summon_spawn.vsnd",
+    ]
+    volume = "3.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.towel_master.towel_summon.stun = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_summon_stun.vsnd",
+    ]
+    volume = "2.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.towel_master.towel_summon_explosion = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_explosion.vsnd",
+    ]
+    volume = "2.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.towel_master.towel_summon_overpower = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_summon_rage_1.vsnd",
+        "sounds/towel_master/tm_summon_rage_2.vsnd",
+    ]
+    volume = "2.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.towel_master.towel_summon_dash = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_charge.vsnd",
+    ]
+    volume = "2.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.towel_master.towel_summon_return = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_teleport.vsnd",
+    ]
+    volume = "1.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.towel_master.towel_summon_return.interrupt = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_teleport_cancel.vsnd",
+    ]
+    volume = "1.30000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.towel_master.towel_dash = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_slide_1.vsnd",
+        "sounds/towel_master/tm_slide_2.vsnd",
+    ]
+    volume = "2.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.towel_master.towel_root = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_roots.vsnd",
+    ]
+    volume = "2.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+}

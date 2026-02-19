@@ -20,10 +20,13 @@ function Music:Init()
         self.musicState[event.playerID].musicSet = event.musicSet
     end)
     GameEvents:OnHeroInGame(function(hero)
+        DebugPrint("[ALNOIRE] Starting music thinker for hero: " .. hero:GetName())
         hero:SetContextThink("MusicThinker", function()
             return self:HeroMusicThink(hero)
         end, MUSIC_THINK_INTERVAL)
     end)
+    GameEvents:OnDialogueStart(bind(self.OnDialogueStart, self))
+    GameEvents:OnEntityKilled(bind(self.OnEntityKilled, self))
 end
 
 function Music:StartCustomMusic(playerID, soundName)
@@ -50,7 +53,7 @@ function Music:HeroMusicThink(hero)
     local newSoundState = "explore"
     local t0 = GameRules:GetGameTime()
 
-    if hero:IsAttacking() or hero:GetAggroTarget() ~= nil then
+    if PackManager:HasActiveFights() then
         state.lastInCombat = t0
     end
 
@@ -66,6 +69,23 @@ function Music:HeroMusicThink(hero)
     end
 
     return MUSIC_THINK_INTERVAL
+end
+
+function Music:OnDialogueStart(event)
+    local playerID = event.playerID
+    local nodeID = event.startNodeID
+    if nodeID == "d_xavierfightstart" or nodeID == "d_xavierfightagain" then
+        self:StartCustomMusic(playerID, "music.concert.precombat")
+    end
+end
+
+function Music:OnEntityKilled(event)
+    local victim = event.killed_unit
+    if victim:IsRealHero() and not victim:IsSpiritBearCustom() then
+        local playerID = victim:GetPlayerOwnerID()
+        self:StopCustomMusic(playerID)
+        self.musicState[playerID].musicSet = "silence"
+    end
 end
 
 return Music

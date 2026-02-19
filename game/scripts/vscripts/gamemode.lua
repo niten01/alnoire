@@ -12,6 +12,7 @@ require('filters')
 
 require('libraries/animations')
 require('libraries/notifications')
+require('libraries/playertables')
 require('libraries/worldpanels')
 
 require('modifiers/linker')
@@ -23,6 +24,7 @@ require('triggers/quest_trigger')
 require('triggers/dialogue_trigger')
 require('triggers/button')
 require('triggers/traps')
+require('triggers/interact_hint')
 
 require('triggers/startmk')
 

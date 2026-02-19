@@ -1,0 +1,402 @@
+"DOTAUnits"
+{
+	"npc_courier_knight" 
+	{
+		"Model"						"models/items/courier/beaverknight_s2/beaverknight_s2.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.8"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_bug" 
+	{
+		"Model"						"models/items/courier/scribbinsthescarab/scribbinsthescarab.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_alkash" 
+	{
+		"Model"						"models/items/courier/blotto_and_stick/blotto.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.2"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_pivo" 
+	{
+		"Model"						"models/items/courier/coco_the_courageous/coco_the_courageous.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.25"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_chicken" 
+	{
+		"Model"						"models/items/courier/mighty_chicken/mighty_chicken.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_carpet" 
+	{
+		"Model"						"models/courier/smeevil_magic_carpet/smeevil_magic_carpet.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.8"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_pudge" 
+	{
+		"Model"						"models/courier/minipudge/minipudge.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.4"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_hamster" 
+	{
+		"Model"						"models/items/courier/hamster_courier/hamster_courier_lv1.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.3"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_koala" 
+	{
+		"Model"						"models/items/courier/happy_koala/happy_koala.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.23"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_shop" 
+	{
+		"Model"						"models/props_gameplay/shopkeeper_fountain/shopkeeper_fountain.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_cat" 
+	{
+		"Model"						"models/items/courier/mh_palico_courier/mh_palico_courier_leather.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.5"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_drone" 
+	{
+		"Model"						"models/courier/courier_mech/courier_mech_flying.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.53"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_donkeys" 
+	{
+		"Model"						"models/courier/donkey_trio/mesh/donkey_trio.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.44"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_bh" 
+	{
+		"Model"						"models/courier/huntling/huntling.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_chest" 
+	{
+		"Model"						"models/courier/lockjaw/lockjaw.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_skeleton" 
+	{
+		"Model"						"models/items/courier/boooofus_courier/boooofus_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.88"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_crocodile" 
+	{
+		"Model"						"models/items/courier/loco_the_crocodile_courier/loco_the_crocodile_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_sniffer" 
+	{
+		"Model"						"models/items/courier/wabbit_the_mighty_courier_of_heroes/wabbit_the_mighty_courier_of_heroes.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_smart" 
+	{
+		"Model"						"models/items/courier/boris_baumhauer/boris_baumhauer.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.23"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_roshanchik" 
+	{
+		"Model"						"models/creeps/baby_rosh_halloween/baby_rosh_dire/baby_rosh_dire.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_aghanim" 
+	{
+		"Model"						"models/courier/aghanim_courier/aghanim_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.48"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_grandpa" 
+	{
+		"Model"						"models/items/courier/dplus_zao_jun_the_stove_god/dplus_zao_jun_the_stove_god.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.5"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_gold_hamster" 
+	{
+		"Model"						"models/items/courier/hamster_courier/hamster_courier_lv7.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.70"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_gold_cat" 
+	{
+		"Model"						"models/items/courier/courier_ti10_radiant/courier_ti10_radiant_lvl7/courier_ti10_radiant_lvl7.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_gold_wizard" 
+	{
+		"Model"						"models/courier/sw_donkey/sw_donkey_10th_anniversary.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_blue_zombie" 
+	{
+		"Model"						"models/items/courier/pw_zombie/pw_zombie.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.41"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_taksa" 
+	{
+		"Model"						"models/items/courier/waldi_the_faithful/waldi_the_faithful.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.71"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_demon_book" 
+	{
+		"Model"						"models/items/courier/bookwyrm/bookwyrm.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.6"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_gold_dp" 
+	{
+		"Model"						"models/items/courier/krobeling_gold/krobeling_gold.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.13"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_black_wizard" 
+	{
+		"Model"						"models/courier/donkey_unicorn/donkey_unicorn.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_pudge_dog" 
+	{
+		"Model"						"models/items/courier/butch_pudge_dog/butch_pudge_dog.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_bober" 
+	{
+		"Model"						"models/items/courier/weplay_beaver/weplay_beaver.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_rabbit" 
+	{
+		"Model"						"models/items/courier/arneyb_rabbit/arneyb_rabbit.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_boar" 
+	{
+		"Model"						"models/courier/mighty_boar/mighty_boar.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_raccoon" 
+	{
+		"Model"						"models/courier/badger/courier_badger.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_parrot" 
+	{
+		"Model"						"models/courier/skippy_parrot/skippy_parrot.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_mushroom_1" 
+	{
+		"Model"						"models/mushlings/mushling1.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.1"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_mushroom_2" 
+	{
+		"Model"						"models/mushlings/mushling2.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.2"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_mushroom_3" 
+	{
+		"Model"						"models/mushlings/mushling3.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"3.8"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_muhomor" 
+	{
+		"Model"						"models/items/courier/shroomy/shroomy.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_plant" 
+	{
+		"Model"						"models/items/undying/flesh_golem/ti9_cache_undying_carnivorous_parasitism_golem/ti9_cache_undying_carnivorous_parasitism_golem.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_octopus_1" 
+	{
+		"Model"						"models/courier/octopus/octopus.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_octopus_2" 
+	{
+		"Model"						"models/items/courier/g1_courier/g1_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.5"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_purple" 
+	{
+		"Model"						"models/items/dark_willow/dw_2021_immortal/dw_2021_immortal_jex.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.52"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_sea_horse" 
+	{
+		"Model"						"models/items/courier/frosty_the_courier/frosty_the_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_turtle" 
+	{
+		"Model"						"models/items/courier/nexon_turtle_01_grey/nexon_turtle_01_grey.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_crab" 
+	{
+		"Model"						"models/items/courier/hermit_crab/hermit_crab.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_axolotl" 
+	{
+		"Model"						"models/items/courier/axolotl/axolotl.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_navi" 
+	{
+		"Model"						"models/courier/navi_courier/navi_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_cripple_dog" 
+	{
+		"Model"						"models/items/courier/billy_bounceback/billy_bounceback.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_demon" 
+	{
+		"Model"						"models/courier/imp/imp.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_evil_shop" 
+	{
+		"Model"						"models/heroes/shopkeeper_dire/shopkeeper_dire.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_doom" 
+	{
+		"Model"						"models/courier/doom_demihero_courier/doom_demihero_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_bones" 
+	{
+		"Model"						"models/items/courier/autumn_wards_courier/autumn_wards_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_babka_2" 
+	{
+		"Model"						"models/items/courier/babka_bewitcher_blue/babka_bewitcher_blue_flying.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_blue_frog" 
+	{
+		"Model"						"models/items/courier/mango_the_courier/mango_the_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.27"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_pig" 
+	{
+		"Model"						"models/items/courier/bajie_pig/bajie_pig.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}

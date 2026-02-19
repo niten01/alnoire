@@ -4,5 +4,6 @@ LinkLuaModifier("modifier_towel_summon_overpower", "modifiers/abilities/modifier
 function towel_summon_overpower:OnSpellStart()
     if not IsServer() then return end
     local caster = self:GetCaster()
+    caster:EmitSound("ability.towel_master.towel_summon_overpower")
     caster:AddNewModifier(caster, self, 'modifier_towel_summon_overpower', {duration = self:GetSpecialValueFor('buff_duration') or 10.0})
 end

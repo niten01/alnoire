@@ -8,6 +8,6 @@
     </scripts>
 
     <Panel class="BubbleRoot">
-        <Label id="BubbleText" text="JS ERROR!" />
+        <Label id="BubbleText" text="" />
     </Panel>
 </root>
