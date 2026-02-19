@@ -1,0 +1,8 @@
+fight_test
+{
+	material materials/overviews/fight_test.vmat
+	pos_x -1280
+	pos_y 1280
+	scale 2.500
+}
+
