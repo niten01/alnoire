@@ -285,14 +285,13 @@ function DefaultAiTick(unit)
 
   -- стоим сука
   if beaconState == 'idle' then
-    if distToSpawn > 150 then
+    if distToSpawn > 300 then
       MoveHome(unit)
     end
     intercept = true
   end
 
   if beaconState == 'retreat' or beaconState == 'idle' then
-    unit:SetAcquisitionRange(0)
     if unit:GetHealthPercent() < 100 then
       unit:Heal(unit:GetMaxHealth() * 0.1, nil)
     end

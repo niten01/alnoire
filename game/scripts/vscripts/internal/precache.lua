@@ -144,6 +144,8 @@ return {
         "npc_dota_roshan",
         "npc_jungle_roshan",
         "npc_jungle_miniroshan",
+        "npc_jungle_techies",
+        "npc_dota_hero_techies",
 
 
         -- traps
@@ -167,7 +169,8 @@ return {
         "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts",
         "soundevents/voscripts/game_sounds_vo_monkey_king.vsndevts",
         "soundevents/bosses/bidlo.vsndevts",
-        "soundevents/jungle/junglerosh.vsndevts",
+        "soundevents/jungle/junglerosh.vsndevts", 
+        "soundevents/jungle/jungletechies.vsndevts", 
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",

@@ -1,4 +1,4 @@
-USE_DEBUG = true                  -- Should we print statements on almost every function/event call? For debugging.
+USE_DEBUG = true -- Should we print statements on almost every function/event call? For debugging.
 
 INTERACTION_RADIUS = 500
 DOOR_PASSWORD_RADIUS = 500
@@ -6,7 +6,7 @@ DOOR_PASSWORD_RADIUS = 500
 MUSIC_COMBAT_DECAY = 5
 MUSIC_THINK_INTERVAL = 0.5
 
-IDLE_THINK_INTERVAL = 0.5 
+IDLE_THINK_INTERVAL = 0.5
 BATTLE_THINK_INTERVAL = 0.5
 
 SAFE_BLINK_PRECISION = 5 -- Smaller means more precise
@@ -33,23 +33,23 @@ TREE_REGROW_TIME = 300.0          -- How long should it take individual trees to
 --GOLD_TICK_TIME = 1.0                    -- How long should we wait in seconds between gold ticks? SetGoldPerTick DOESN'T WORK
 --ADDITIONAL_GPM = 100                    -- Uncomment this if you want additional gold per minute beside default
 
-NORMAL_START_GOLD = 0                    -- Starting Gold
+NORMAL_START_GOLD = 0                   -- Starting Gold
 
-RECOMMENDED_BUILDS_DISABLED = true       -- Should we disable the recommended item builds for heroes? Turns the panel for showing recommended items at the shop off/on.
-CAMERA_DISTANCE_OVERRIDE = 1134.0        -- How far out should we allow the camera to go? 1134 is the default in Dota.
+RECOMMENDED_BUILDS_DISABLED = true      -- Should we disable the recommended item builds for heroes? Turns the panel for showing recommended items at the shop off/on.
+CAMERA_DISTANCE_OVERRIDE = 1134.0       -- How far out should we allow the camera to go? 1134 is the default in Dota.
 
-MINIMAP_ICON_SIZE = 1                    -- What icon size should we use for our heroes?
-MINIMAP_CREEP_ICON_SIZE = 1              -- What icon size should we use for creeps?
-MINIMAP_RUNE_ICON_SIZE = 1               -- What icon size should we use for runes?
+MINIMAP_ICON_SIZE = 1                   -- What icon size should we use for our heroes?
+MINIMAP_CREEP_ICON_SIZE = 1             -- What icon size should we use for creeps?
+MINIMAP_RUNE_ICON_SIZE = 1              -- What icon size should we use for runes?
 
-BUYBACK_ENABLED = false                  -- Should we allow players to buyback when they die?
-CUSTOM_BUYBACK_COST_ENABLED = false      -- Should we use a custom buyback cost setting?
-CUSTOM_BUYBACK_COOLDOWN_ENABLED = false  -- Should we use a custom buyback time?
-CUSTOM_BUYBACK_COOLDOWN_TIME = 480.0     -- Custom buyback cooldown time (needed if CUSTOM_BUYBACK_COOLDOWN_ENABLED is true).
-BUYBACK_FIXED_GOLD_COST = 500            -- Fixed custom buyback gold cost (needed if CUSTOM_BUYBACK_COST_ENABLED is true).
+BUYBACK_ENABLED = false                 -- Should we allow players to buyback when they die?
+CUSTOM_BUYBACK_COST_ENABLED = false     -- Should we use a custom buyback cost setting?
+CUSTOM_BUYBACK_COOLDOWN_ENABLED = false -- Should we use a custom buyback time?
+CUSTOM_BUYBACK_COOLDOWN_TIME = 480.0    -- Custom buyback cooldown time (needed if CUSTOM_BUYBACK_COOLDOWN_ENABLED is true).
+BUYBACK_FIXED_GOLD_COST = 500           -- Fixed custom buyback gold cost (needed if CUSTOM_BUYBACK_COST_ENABLED is true).
 
-CUSTOM_SCAN_COOLDOWN = 210               -- Custom cooldown of Scan in seconds. Doesn't affect Scan's starting cooldown!
-CUSTOM_GLYPH_COOLDOWN = 300              -- Custom cooldown of Glyph in seconds. Doesn't affect Glyph's starting cooldown!
+CUSTOM_SCAN_COOLDOWN = 210              -- Custom cooldown of Scan in seconds. Doesn't affect Scan's starting cooldown!
+CUSTOM_GLYPH_COOLDOWN = 300             -- Custom cooldown of Glyph in seconds. Doesn't affect Glyph's starting cooldown!
 
 -- TODO: only for testing
 DISABLE_FOG_OF_WAR_ENTIRELY = false      -- Should we disable fog of war entirely for both teams?
@@ -87,24 +87,24 @@ for i = 2, MAX_LEVEL do
 	XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i - 1] + i * 100
 end
 
-ENABLE_FIRST_BLOOD = true                 -- Should we enable first blood for the first kill in this game?
-HIDE_KILL_BANNERS = false                 -- Should we hide the kill banners that show when a player is killed?
-LOSE_GOLD_ON_DEATH = false                -- Should we have players lose the normal amount of dota gold on death?
-SHOW_ONLY_PLAYER_INVENTORY = false        -- Should we allow players to only see their own inventory even when selecting other units?
-DISABLE_STASH_PURCHASING = false          -- Should we prevent players from being able to buy items into their stash when not at a shop?
-DISABLE_ANNOUNCER = true                 -- Should we disable the announcer from working in the game?
-FORCE_PICKED_HERO =
-"npc_dota_hero_sanya_towel_master"                     -- What hero should we force all players to spawn as? (e.g. "npc_dota_hero_axe").  Use nil to allow players to pick their own hero.
+ENABLE_FIRST_BLOOD                           = true  -- Should we enable first blood for the first kill in this game?
+HIDE_KILL_BANNERS                            = false -- Should we hide the kill banners that show when a player is killed?
+LOSE_GOLD_ON_DEATH                           = false -- Should we have players lose the normal amount of dota gold on death?
+SHOW_ONLY_PLAYER_INVENTORY                   = false -- Should we allow players to only see their own inventory even when selecting other units?
+DISABLE_STASH_PURCHASING                     = false -- Should we prevent players from being able to buy items into their stash when not at a shop?
+DISABLE_ANNOUNCER                            = true  -- Should we disable the announcer from working in the game?
+FORCE_PICKED_HERO                            =
+"npc_dota_hero_sanya_towel_master"                   -- What hero should we force all players to spawn as? (e.g. "npc_dota_hero_axe").  Use nil to allow players to pick their own hero.
 -- This will not work if "EnablePickRules" is "1" in 'addoninfo.txt'!
 
-ADD_ITEM_TO_HERO_ON_SPAWN = false -- Add an example item to the picked hero when he spawns?
+ADD_ITEM_TO_HERO_ON_SPAWN                    = false -- Add an example item to the picked hero when he spawns?
 
-CUSTOM_RESPAWN_TIME = 20 
+CUSTOM_RESPAWN_TIME                          = 20
 
 FOUNTAIN_CONSTANT_MANA_REGEN                 = -1    -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_MANA_REGEN               = -1    -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_HEALTH_REGEN             = -1    -- What should we use for the percentage fountain health regen?  Use -1 to keep the default dota behavior.
-MAXIMUM_ATTACK_SPEED                         = 1000   -- What should we use for the maximum attack speed?
+MAXIMUM_ATTACK_SPEED                         = 1000  -- What should we use for the maximum attack speed?
 MINIMUM_ATTACK_SPEED                         = 10    -- What should we use for the minimum attack speed?
 
 DISABLE_DAY_NIGHT_CYCLE                      = false -- Should we disable the day night cycle from naturally occurring? (Manual adjustment still possible)
@@ -114,11 +114,11 @@ ENABLE_PAUSING                               = true  -- Should we allow players 
 
 FORCE_MINIMAP_ON_THE_LEFT                    = false -- Should we disable hud flip aka force the default dota hud positions?
 
-USE_DEFAULT_RUNE_SYSTEM                      = true -- Should we use the default dota rune spawn timings and the same runes as dota have?
-BOUNTY_RUNE_SPAWN_INTERVAL                   = 300  -- How long in seconds should we wait between bounty rune spawns? BUGGED! WORKS FOR POWERUPS TOO!
-POWER_RUNE_SPAWN_INTERVAL                    = 120  -- How long in seconds should we wait between power-up runes spawns? BUGGED! WORKS FOR BOUNTIES TOO!
+USE_DEFAULT_RUNE_SYSTEM                      = true  -- Should we use the default dota rune spawn timings and the same runes as dota have?
+BOUNTY_RUNE_SPAWN_INTERVAL                   = 300   -- How long in seconds should we wait between bounty rune spawns? BUGGED! WORKS FOR POWERUPS TOO!
+POWER_RUNE_SPAWN_INTERVAL                    = 120   -- How long in seconds should we wait between power-up runes spawns? BUGGED! WORKS FOR BOUNTIES TOO!
 
-ENABLED_RUNES                                = {}   -- Which power-up runes should be enabled to spawn in our game mode?
+ENABLED_RUNES                                = {}    -- Which power-up runes should be enabled to spawn in our game mode?
 ENABLED_RUNES[DOTA_RUNE_DOUBLEDAMAGE]        = true
 ENABLED_RUNES[DOTA_RUNE_HASTE]               = true
 ENABLED_RUNES[DOTA_RUNE_ILLUSION]            = true

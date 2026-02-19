@@ -340,7 +340,17 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
-        spawner_dream_concert         = {
+
+        spawner_techies_1 = {
+            npc = "npc_jungle_techies",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_techies",
+            ai_modifier = "modifier_techies_ai"
+        },
+
+
+
+        spawner_dream_concert = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -463,8 +473,14 @@ return {
             stayActivatedOnPlayerDeath = true
         },
 
+        pack_forest_act1_techies = {
+            rangeFastTickRate = 2000,
+            rangeAggro = 600,
+            stayActivatedOnPlayerDeath = true,
+        },
+
         pack_mk = {
-            activateAfterUnitsSpawned = false,
+            activateAfterUnitsSpawned = true,
         },
 
         pack_concert_crowd = {
