@@ -1,0 +1,54 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  JungleTech.Laugh.One = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/techies/tech_happy_31.vsnd",
+      ]
+      
+      volume = 50.0
+      pitch = 1.0
+      pitch_rand_min = -0.05
+      pitch_rand_max = 0.05
+
+      soundlevel = 0.0
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+  JungleTech.Laugh.Two = 
+  {
+     type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/techies/tech_kill_13.vsnd",
+      ]
+      
+      volume = 50.0
+      pitch = 1.0
+      pitch_rand_min = -0.1
+      pitch_rand_max = 0.1
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+  JungleTech.Laugh.Three = 
+  {
+     type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/techies/tech_kill_23.vsnd",
+      ]
+      
+      volume = 50.0
+      pitch = 1.0
+      pitch_rand_min = -0.1
+      pitch_rand_max = 0.1
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+}

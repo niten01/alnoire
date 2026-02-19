@@ -106,6 +106,7 @@ return {
         "soundevents/voscripts/game_sounds_vo_monkey_king.vsndevts",
         "soundevents/bosses/bidlo.vsndevts",
         "soundevents/jungle/junglerosh.vsndevts", 
+        "soundevents/jungle/jungletechies.vsndevts", 
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",

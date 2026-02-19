@@ -261,14 +261,14 @@ return {
 
         spawner_roshan_big = {
             npc = "npc_jungle_roshan",
-            modifiers = {"modifier_cust_rosh"},
+            modifiers = { "modifier_cust_rosh" },
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_roshan",
             ai_modifier = "modifier_default_creep_ai"
         },
         spawner_miniroshan = {
             npc = "npc_jungle_miniroshan",
-            modifiers = {"modifier_cust_rosh"},
+            modifiers = { "modifier_cust_rosh" },
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_roshan",
             ai_modifier = "modifier_default_creep_ai"
@@ -279,7 +279,7 @@ return {
             npc = "npc_jungle_techies",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies",
-            ai_modifier = "modifier_default_creep_ai"
+            ai_modifier = "modifier_techies_ai"
         },
 
 
@@ -337,18 +337,18 @@ return {
         spawner_cat_barrel_city = {
             npc = "npc_cat_barrel",
             modifiers = { "modifier_story_npc" },
-            deferred=true,
+            deferred = true,
         },
         spawner_island_fiend = {
             npc = "npc_island_fiend",
             modifiers = { "modifier_story_npc" },
-            packID="pack_island_duo",
+            packID = "pack_island_duo",
             ai_modifier = "modifier_default_creep_ai",
         },
         spawner_island_shadow_demon = {
             npc = "npc_island_shadow_demon",
             modifiers = { "modifier_story_npc" },
-            packID="pack_island_duo",
+            packID = "pack_island_duo",
             ai_modifier = "modifier_default_creep_ai",
         },
         spawner_bomb_place = {
@@ -407,11 +407,13 @@ return {
         },
 
         pack_forest_act1_techies = {
-            stayActivatedOnPlayerDeath = true
+            rangeFastTickRate = 2000,
+            rangeAggro = 600,
+            stayActivatedOnPlayerDeath = true,
         },
 
         pack_mk = {
-            activateAfterUnitsSpawned = false,
+            activateAfterUnitsSpawned = true,
         },
 
         pack_concert_crowd = {

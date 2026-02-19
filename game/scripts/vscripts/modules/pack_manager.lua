@@ -159,7 +159,7 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
     local rangeRetreat = pack.rangeRetreat
     local pos = packEnt:GetAbsOrigin()
 
-    local enemies = FindUnitsInRadius(
+    local enemiesAggro = FindUnitsInRadius(
         DOTA_TEAM_BADGUYS,
         pos,
         nil,
@@ -170,7 +170,19 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
         FIND_CLOSEST,
         false
     )
-    if #enemies == 0 then
+
+    local enemiesInFOW = FindUnitsInRadius(
+        DOTA_TEAM_BADGUYS,
+        pos,
+        nil,
+        rangeFastTickRate,
+        DOTA_UNIT_TARGET_TEAM_ENEMY,
+        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+        DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
+        FIND_CLOSEST,
+        false
+    )
+    if #enemiesInFOW == 0 then
         pack.state = "idle"
         pack.target = nil
         pack.somebodyNear = false
@@ -178,7 +190,12 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
     end
 
     pack.somebodyNear = true
-    local target = enemies[1]
+    if #enemiesAggro == 0 then
+        return BATTLE_THINK_INTERVAL
+    end
+    local target = enemiesAggro[1]
+    print('target')
+    print(target)
     local dist = (target:GetAbsOrigin() - pos):Length2D()
 
     if (pack.state == 'idle' or pack.state == 'retreat' or pack.state == 'prepare') and dist <= rangeAggro then
