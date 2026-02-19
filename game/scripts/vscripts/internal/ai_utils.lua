@@ -78,7 +78,7 @@ function GiveCastOrder(unit, target, ability)
   end
 
   if ability.ShowWarning then
-    local delay = ability:ShowWarning() or 1
+    local delay = ability:ShowWarning(GetTargetPos(target)) or 1
     unit.isCasting = true
     Timers:CreateTimer(delay, function()
       cast()
@@ -94,8 +94,9 @@ function CastAbility(unit, target, abilityName)
   if unit:IsSilenced() then return false end
   local ability = unit:FindAbilityByName(abilityName)
   assert(ability)
-  if not CanCastAbility(unit, target, abilityName) then return false end
-  GiveCastOrder(unit, target, abilityName)
+  if not CanCastAbility(unit, target, ability) then return false end
+  GiveCastOrder(unit, target, ability)
+  return true
 end
 
 function CastRandomAbility(unit, target, abilityNames)
@@ -146,12 +147,12 @@ function AnyAlive(packTargetData)
   return hasAliveUnits
 end
 
-function DrawDebugCircle(entity, radius)
+function DrawDebugCircle(target, radius)
   if not IsServer() then return end
-  if not entity or not radius then return end
+  if not target or not radius then return end
   local pfx = ParticleManager:CreateParticle("particles/sanya_debug_radius_ring.vpcf", PATTACH_WORLDORIGIN, nil)
-  ParticleManager:SetParticleControl(pfx, 0, entity:GetAbsOrigin() + Vector(0, 0, 50))
-  ParticleManager:SetParticleControl(pfx, 2, Vector(radius, 0, 50))
+  ParticleManager:SetParticleControl(pfx, 0, GetTargetPos(target))
+  ParticleManager:SetParticleControl(pfx, 2, Vector(radius, 0, 0))
   return pfx
 end
 
@@ -193,6 +194,18 @@ function FindEnemiesForAIInRadius(center, radius)
     DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
     FIND_CLOSEST,
     false
+  )
+end
+
+function FindEnemiesForAIInLine(p1, p2, width)
+  return FindUnitsInLine(
+    DOTA_TEAM_BADGUYS,
+    p1, p2,
+    nil,
+    width,
+    DOTA_UNIT_TARGET_TEAM_ENEMY,
+    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+    DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
   )
 end
 
@@ -312,6 +325,36 @@ function AdjustTickRate(unit)
     beaconData.currentCreepInterval = target_interval
     print("AI Switch to interval: " .. target_interval)
   end
+end
+
+function ShowLineWarningGeneric(p1, p2, width, duration)
+  local dist = #(p1 - p2)
+  local particleName = "particles/ui_mouseactions/range_finder_cone.vpcf"
+  if dist > 1440 then
+    particleName = "particles/ui_mouseactions/range_finder_cone_long.vpcf"
+  end
+  local pfx = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, nil)
+  ParticleManager:SetParticleControl(pfx, 1, p1)
+  ParticleManager:SetParticleControl(pfx, 2, p1)
+  ParticleManager:SetParticleControl(pfx, 3, Vector(width, width, 0))
+  ParticleManager:SetParticleControl(pfx, 4, Vector(255, 0, 0))
+  local remainingDuration = duration
+  local interval = 0.01
+  local step = dist / (duration / interval)
+  local dir = (p2 - p1):Normalized()
+  local curEnd = p1
+  Timers:CreateTimer(interval, function()
+    curEnd = curEnd + dir * step
+    ParticleManager:SetParticleControl(pfx, 2, curEnd)
+    remainingDuration = remainingDuration - interval
+    if remainingDuration <= 0 then
+      ParticleManager:DestroyParticle(pfx, false)
+      ParticleManager:ReleaseParticleIndex(pfx)
+      return nil
+    else
+      return interval
+    end
+  end)
 end
 
 -- startAngle is optional (default 0)

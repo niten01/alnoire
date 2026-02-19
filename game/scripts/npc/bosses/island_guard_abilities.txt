@@ -6,24 +6,25 @@
         "ScriptFile"                    "abilities/bosses/island_guard_firestorm.lua"
         "AbilityTextureName"            "abyssal_underlord_firestorm"
         
-        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
         "AbilityCastPoint"              "0.57"
-        "AbilityCooldown"               "10.0" 
+        "AbilityCooldown"               "4.0" 
         "AbilityCastRange"        		"9000"
         
         "AbilityValues"
         {
-            "radius"                "150"
-            "damage"                "300"
-            "num_waves"             "4"
-            "shots_per_wave"        "5"
-            "wave_radius_increase"  "500"
+            "radius"                "70"
+            "damage"                "100"
+            "num_waves"             "12"
+            "wave_delay"            "0.4"
+            "shots_per_wave"        "12"
+            "wave_radius_increase"  "230"
         }
 
         "precache"
         {
             "particle"      "particles/units/heroes/heroes_underlord/abyssal_underlord_firestorm_wave.vpcf"
-            "particle"      "particles/units/heroes/heroes_underlord/underlord_firestorm_pre.vpcf"
+            "particle"      "particles/units/heroes/heroes_underlord/underlord_firestorm_pre_a.vpcf"
         }
     }   
 
@@ -34,15 +35,15 @@
         "AbilityTextureName"            "abyssal_underlord_firestorm"
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
-        "AbilityCastPoint"              "0.57"
-        "AbilityCooldown"               "10.0" 
+        "AbilityCastPoint"              "0.30"
+        "AbilityCooldown"               "8.0" 
         "AbilityCastRange"        		"9000"
         
         "AbilityValues"
         {
-            "area_radius"                "350"
+            "area_radius"            "350"
             "scatter_radius"         "3000"
-            "num_areas"              "10"
+            "num_areas"              "20"
             "area_duration"          "5"
             "root_duration"          "2"
             "root_cooldown"          "1"
@@ -50,8 +51,34 @@
 
         "precache"
         {
-            "particle"      "particles/units/heroes/heroes_underlord/abyssal_underlord_firestorm_wave.vpcf"
-            "particle"      "particles/units/heroes/heroes_underlord/underlord_firestorm_pre.vpcf"
+            "particle"      "particles/warning_circle.vpcf"
+            "particle"      "particles/units/heroes/heroes_underlord/underlord_pitofmalice_pre.vpcf"
+            "particle"      "particles/units/heroes/heroes_underlord/underlord_pitofmalice.vpcf"
+            "particle"      "particles/units/heroes/heroes_underlord/abyssal_underlord_pitofmalice_stun.vpcf"
+        }
+    }   
+    "island_guard_laser"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/island_guard_laser.lua"
+        "AbilityTextureName"            "abyssal_underlord_firestorm"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCastPoint"              "0.53"
+        "AbilityCooldown"               "1.0" 
+        "AbilityCastRange"        		"9000"
+        
+        "AbilityValues"
+        {
+            "damage"                "300"
+            "width"                "50"
+            "length"                "1500"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/econ/items/tinker/tinker_ti10_immortal_laser/tinker_ti10_immortal_laser.vpcf"
+            "particle"      "particles/ui_mouseactions/range_finder_line_moving_dash.vpcf"
         }
     }   
 }

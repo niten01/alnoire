@@ -340,14 +340,13 @@ function StoryDriver:OnEntityKilled(event)
   -- handle fight end
   if victim:IsRealHero() and not victim:IsSpiritBearCustom() then
     Timers:CreateTimer(5, function()
-      while #self.activeStoryFights > 0 do
-        local packName = self.activeStoryFights[1]
-        self:StopFight(1)
-        PackManager:RespawnPack(packName)
+      for i = #self.activeStoryFights, 1, -1 do
+        local packName = self.activeStoryFights[i]
         local pack = PackManager:GetPack(packName)
         assert(pack)
-        if pack.stayActivatedOnPlayerDeath then
-          PackManager:ActivatePack(packName)
+        if not pack.stayActivatedOnPlayerDeath then
+          self:StopFight(1)
+          PackManager:RespawnPack(packName)
         end
       end
     end)

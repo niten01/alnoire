@@ -7,13 +7,12 @@
 		"ModelScale" 				"2.0"
 		"Level"						  "7"
 		"ConsideredHero" 		"1"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"island_guard_firestorm"			
-		"Ability2"					""			
-		"Ability3"					""			
+		"Ability2"					"island_guard_root"			
+		"Ability3"					"island_guard_laser"			
 		"Ability4"					""			
 		"Ability5"					""			
 
@@ -59,8 +58,9 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"290"		// Speed.			
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementTurnRate"			"3.0"
+		"MovementSpeed"				"0"		// Speed.			
 
 		// Status
 		//----------------------------------------------------------------
