@@ -194,8 +194,6 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
         return BATTLE_THINK_INTERVAL
     end
     local target = enemiesAggro[1]
-    print('target')
-    print(target)
     local dist = (target:GetAbsOrigin() - pos):Length2D()
 
     if (pack.state == 'idle' or pack.state == 'retreat' or pack.state == 'prepare') and dist <= rangeAggro then

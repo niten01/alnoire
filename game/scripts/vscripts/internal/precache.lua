@@ -105,8 +105,8 @@ return {
         "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts",
         "soundevents/voscripts/game_sounds_vo_monkey_king.vsndevts",
         "soundevents/bosses/bidlo.vsndevts",
-        "soundevents/jungle/junglerosh.vsndevts", 
-        "soundevents/jungle/jungletechies.vsndevts", 
+        "soundevents/jungle/junglerosh.vsndevts",
+        "soundevents/jungle/jungletechies.vsndevts",
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",
@@ -174,6 +174,7 @@ return {
 
         -- jungle
         "particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf",
+        "particles/techies_poofout.vpcf",
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",
 

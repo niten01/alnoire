@@ -461,7 +461,7 @@
 		}
 	}
 
-	"npc_jungle_techies"	
+	"npc_jungle_techies_2"	
 	{
 		// General
 		//----------------------------------------------------------------
@@ -470,6 +470,10 @@
 		"Level"						"1"
 		"ModelScale" 				"0.7"
 		"SoundSet"					"Hero_Techies"
+
+		// Custom kv fields
+		"JungleTechSoundIndex"		"One"
+		"JungleTechTauntName"		"ACT_DOTA_DISABLED"
 
 
 		
@@ -527,11 +531,169 @@
 			"XPGain"					"15"
 			"AttachWearables"
 			{
-				"Wearable1" { "ItemDef" "489" } // weapon
-				"Wearable2" { "ItemDef" "491" } // Squee
-				"Wearable3" { "ItemDef" "487" } // Spoon
-				"Wearable4" { "ItemDef" "492" } // Spleen
-				"Wearable5" { "ItemDef" "490" } // Cart
+				"Wearable1" { "ItemDef" "9962" } // weapon
+				"Wearable2" { "ItemDef" "9963" } // Squee &
+				"Wearable3" { "ItemDef" "9964" } // Spoon
+				"Wearable4" { "ItemDef" "9965" } // Spleen &
+				"Wearable5" { "ItemDef" "9966" } // Cart
+			}
+		}
+	}
+		"npc_jungle_techies_1"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/techies/techies.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"Level"						"1"
+		"ModelScale" 				"0.7"
+		"SoundSet"					"Hero_Techies"
+
+		// Custom kv fields
+		"JungleTechSoundIndex"		"Two"
+		"JungleTechTauntName"		"ACT_DOTA_VICTORY"
+
+
+
+		
+		"Ability1"						"techies_suicide"			// Ability 1
+		//"Ability2"					"centaur_hoof_stomp"			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"1.700000"		// Speed of attack.
+		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
+		"AttackRange"				"290"		// Range within a target can be attacked.		  
+		"ProjectileModel"			"particles/units/heroes/hero_techies/techies_base_attack.vpcf"
+		"ProjectileSpeed"			"900"
+		"particle_folder"			"particles/units/heroes/hero_techies"
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"130"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"210"					
+		"MovementTurnRate"			"1.0"					
+
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "33056" } // weapon
+				"Wearable2" { "ItemDef" "33052" } // Squee
+				"Wearable3" { "ItemDef" "33053" } // Spoon
+				"Wearable4" { "ItemDef" "33054" } // Spleen
+				"Wearable5" { "ItemDef" "33055" } // Cart
+			}
+		}
+	}
+		"npc_jungle_techies_3"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/techies/techies.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"Level"						"1"
+		"ModelScale" 				"0.7"
+		"SoundSet"					"Hero_Techies"
+
+		// Custom kv fields
+		"JungleTechSoundIndex"		"Three"
+		"JungleTechTauntName"		"ACT_DOTA_VICTORY"
+
+
+
+		
+		"Ability1"						"techies_suicide"			// Ability 1
+		//"Ability2"					"centaur_hoof_stomp"			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"1.700000"		// Speed of attack.
+		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
+		"AttackRange"				"290"		// Range within a target can be attacked.		  
+		"ProjectileModel"			"particles/units/heroes/hero_techies/techies_base_attack.vpcf"
+		"ProjectileSpeed"			"900"
+		"particle_folder"			"particles/units/heroes/hero_techies"
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"130"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"210"					
+		"MovementTurnRate"			"1.0"					
+
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "13529" } // weapon
+				"Wearable2" { "ItemDef" "13526" } // Squee
+				"Wearable3" { "ItemDef" "13530" } // Spoon
+				"Wearable4" { "ItemDef" "13528" } // Spleen
+				"Wearable5" { "ItemDef" "13527" } // Cart
 			}
 		}
 	}

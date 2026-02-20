@@ -28,7 +28,7 @@
           "sounds/vo/techies/tech_kill_13.vsnd",
       ]
       
-      volume = 50.0
+      volume = 60.0
       pitch = 1.0
       pitch_rand_min = -0.1
       pitch_rand_max = 0.1
@@ -44,7 +44,58 @@
           "sounds/vo/techies/tech_kill_23.vsnd",
       ]
       
-      volume = 50.0
+      volume = 80.0
+      pitch = 1.0
+      pitch_rand_min = -0.1
+      pitch_rand_max = 0.1
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+
+  JungleTech.Death.One = 
+  {
+     type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/techies/tech_death_01.vsnd",
+      ]
+      
+      volume = 40.0
+      pitch = 1.0
+      pitch_rand_min = -0.1
+      pitch_rand_max = 0.1
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+
+  JungleTech.Death.Two = 
+  {
+     type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/techies/tech_death_15.vsnd",
+      ]
+      
+      volume = 40.0
+      pitch = 1.0
+      pitch_rand_min = -0.1
+      pitch_rand_max = 0.1
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+
+  JungleTech.Death.Three = 
+  {
+     type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/techies/tech_death_18.vsnd",
+      ]
+      
+      volume = 40.0
       pitch = 1.0
       pitch_rand_min = -0.1
       pitch_rand_max = 0.1

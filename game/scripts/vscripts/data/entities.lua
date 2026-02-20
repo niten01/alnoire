@@ -276,9 +276,21 @@ return {
 
 
         spawner_techies_1 = {
-            npc = "npc_jungle_techies",
+            npc = "npc_jungle_techies_1",
             team = DOTA_TEAM_BADGUYS,
-            packID = "pack_forest_act1_techies",
+            packID = "pack_forest_act1_techies_1",
+            ai_modifier = "modifier_techies_ai"
+        },
+        spawner_techies_2 = {
+            npc = "npc_jungle_techies_2",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_techies_2",
+            ai_modifier = "modifier_techies_ai"
+        },
+        spawner_techies_3 = {
+            npc = "npc_jungle_techies_3",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_techies_3",
             ai_modifier = "modifier_techies_ai"
         },
 
@@ -406,9 +418,22 @@ return {
             stayActivatedOnPlayerDeath = true
         },
 
-        pack_forest_act1_techies = {
+        pack_forest_act1_techies_1 = {
             rangeFastTickRate = 2000,
             rangeAggro = 600,
+            rangeRetreat = 700,
+            stayActivatedOnPlayerDeath = true,
+        },
+        pack_forest_act1_techies_2 = {
+            rangeFastTickRate = 2000,
+            rangeAggro = 600,
+            rangeRetreat = 700,
+            stayActivatedOnPlayerDeath = true,
+        },
+        pack_forest_act1_techies_3 = {
+            rangeFastTickRate = 2000,
+            rangeAggro = 600,
+            rangeRetreat = 700,
             stayActivatedOnPlayerDeath = true,
         },
 
