@@ -70,8 +70,19 @@ function modifier_techies_ai:OnIntervalThink()
             local currentSpeed = target:GetIdealSpeed()
             local targetDir = target:GetForwardVector()
             local targetVel = targetDir * currentSpeed
-            castPos = targetPos + targetVel * leadTime
-        else
+            local predictedPos = targetPos + targetVel * leadTime
+            local bPathClear = GridNav:CanFindPath(targetPos, predictedPos)
+            local bPointBlocked = GridNav:IsBlocked(predictedPos)
+            local bTraversable = GridNav:IsTraversable(predictedPos)
+            print(bPathClear)
+            print(bPointBlocked)
+            print(bTraversable)
+
+            if bPathClear and not bPointBlocked and bTraversable then
+                castPos = predictedPos
+            else
+                castPos = targetPos
+            end
         end
 
         local abil = unit:GetAbilityByIndex(0)
