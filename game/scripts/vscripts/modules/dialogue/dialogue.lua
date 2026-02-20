@@ -40,6 +40,7 @@ function Dialogue:Init()
   local dialogues = require('data.dialogues')
   self.entryPoints = dialogues.entries
   self.dialogueGraph = dialogues.nodes
+  self.bubbleStateActive = {}
 
   CustomGameEventManager:RegisterListener("dialogue_choice", bind(self.OnDialogueChoice, self))
   CustomGameEventManager:RegisterListener("query_update", bind(self.OnQueryUpdate, self))
@@ -57,6 +58,21 @@ function Dialogue:Init()
     TableLength(self.dialogueGraph) .. " dialogue nodes with " .. TableLength(self.entryPoints) .. " entry points.")
 end
 
+local function FindClosestToHero(hero, entityName)
+  assert(entityName)
+  local entities = Entities:FindAllByName(entityName)
+  local minDist = math.huge
+  local minEnt = nil
+  for _, ent in ipairs(entities) do
+    local dist = #(ent:GetAbsOrigin() - hero:GetAbsOrigin())
+    if dist < minDist then
+      minDist = dist
+      minEnt = ent
+    end
+  end
+  return minEnt
+end
+
 function Dialogue:StartDialogueForPlayer(playerID, startNodeID)
   if not self.dialogueGraph[startNodeID] then return end
   if self.playerDialogueState[playerID] then return end
@@ -68,15 +84,45 @@ function Dialogue:StartDialogueForPlayer(playerID, startNodeID)
     error("No barebones assigned hero")
   end
 
-  CenterCameraOnUnit(playerID, hero)
+  local startNode = self.dialogueGraph[startNodeID]
+  local focusUnit = hero
+  if startNode.focus then
+    focusUnit = FindClosestToHero(hero, startNode.focus)
+    assert(focusUnit, "No unit to focus")
+  elseif startNode.npc then
+    focusUnit = FindClosestToHero(hero, startNode.npc) or focusUnit
+  end
+  CenterCameraOnUnit(playerID, focusUnit)
   hero:AddNewModifier(nil, nil, "modifier_dialogue_player", { duration = -1 })
 
   self:ShowDialogueNode(playerID, startNodeID)
 
   OnDialogueStartEvent({
     playerID = playerID,
-    startNode = startNodeID
+    startNodeID = startNodeID
   })
+end
+
+function Dialogue:ShowDialogueBubble(startNodeID)
+  local startNode = self.dialogueGraph[startNodeID]
+  assert(startNode.npc, "Bubble node has no npc")
+  local npc = Entities:FindByName(nil, startNode.npc)
+  assert(npc, "No NPC to show dialogue bubble")
+  local duration = 8
+  if not self.bubbleStateActive[npc:GetName()] then
+    self.bubbleStateActive[npc:GetName()] = true
+    WorldPanels:CreateWorldPanelForAll({
+      layout = "file://{resources}/layout/custom_game/dialogue_bubble.xml",
+      entity = npc,
+      entityHeight = 300,
+      duration = duration,
+      data = { text = startNode.text }
+    })
+
+    Timers:CreateTimer(duration, function()
+      self.bubbleStateActive[npc:GetName()] = nil
+    end)
+  end
 end
 
 function Dialogue:TrySetFirstMet(startNodeID)
@@ -282,8 +328,14 @@ function Dialogue:OnQueryUpdate(_, args)
   local entrypoint = self:GetDialogueNodeBestMatchEntrypoint(playerID,
     { { type = "interact", interact = unit:GetUnitName() } })
   if entrypoint then
+    local entryNode = self.dialogueGraph[entrypoint.nodeID]
+    assert(entryNode)
     PlayerResource:ResetSelection(playerID)
-    self:StartDialogueForPlayer(playerID, entrypoint.nodeID)
+    if entryNode.is_bubble then
+      self:ShowDialogueBubble(entrypoint.nodeID)
+    else
+      self:StartDialogueForPlayer(playerID, entrypoint.nodeID)
+    end
   end
 
   OnUnitInteractEvent({ playerID = playerID, unit = unit })

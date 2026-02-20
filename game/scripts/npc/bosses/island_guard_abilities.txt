@@ -7,7 +7,7 @@
         "AbilityTextureName"            "abyssal_underlord_firestorm"
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
-        "AbilityCastPoint"              "0.57"
+        "AbilityCastPoint"              "0.7"
         "AbilityCooldown"               "4.0" 
         "AbilityCastRange"        		"9000"
         
@@ -43,9 +43,10 @@
         {
             "area_radius"            "350"
             "scatter_radius"         "3000"
-            "num_areas"              "20"
+            "min_distance_from_caster" "400"
+            "num_areas"              "15"
             "area_duration"          "5"
-            "root_duration"          "2"
+            "root_duration"          "1"
             "root_cooldown"          "1"
         }
 

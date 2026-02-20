@@ -45,6 +45,8 @@ function modifier_towel_dash:OnCreated()
         ParticleManager:SetParticleControlEnt(self.dashTrail, 3, parent, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc",
             Vector(0, 0, 0), true)
 
+        parent:EmitSound("ability.towel_master.towel_dash")
+
         if self:ApplyHorizontalMotionController() then
             self.time = 0
         else

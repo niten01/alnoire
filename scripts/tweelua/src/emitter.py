@@ -43,6 +43,10 @@ class LuaEmitter:
         self.lines.append(f"text = [[{node.text}]],")
         self.lines.append(f"speaker = [[{node.speaker or 'default'}]],")
         self.lines.append(f"npc = {self._format_value(node.npc)},")
+        if node.is_bubble:
+            self.lines.append(f"is_bubble = {self._format_value(node.is_bubble)},")
+        if node.focus:
+            self.lines.append(f"focus = {self._format_value(node.focus)},")
         self.lines.append("choices = {")
         for link in node.links:
             self.lines.append("{")

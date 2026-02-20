@@ -31,15 +31,6 @@ function SpawnManager:OnGameInProgress()
     end
 
     ChatCommand:LinkCommand("-zv", function(event)
-        local npc = Entities:FindByName(nil, "npc_guide")
-        -- npc:AddSpeechBubble(1, "#pidr", 20.0, 0, 0)
-        DebugPrint("sldfjaosdf")
-        WorldPanels:CreateWorldPanelForAll({
-            layout = "file://{resources}/layout/custom_game/dialogue_bubble.xml",
-            entity = npc,
-            entityHeight = 410,
-            duration = 5,
-        })
     end)
 end
 
@@ -106,10 +97,10 @@ function SpawnManager:InitNPC(spawnerData, spawnerEnt, npc)
     end
     local entData = EntityData:ByName(spawnerData.npc)
     entData.isStory = npc:HasModifier("modifier_story_npc")
+    npc.spawnPos = npc:GetAbsOrigin()
+    npc.spawnForward = npc:GetForwardVector()
     if spawnerData.packID then
         self:LinkUnitToPack(npc, spawnerData)
-        npc.spawnPos = npc:GetAbsOrigin()
-        npc.spawnForward = npc:GetForwardVector()
     end
 end
 

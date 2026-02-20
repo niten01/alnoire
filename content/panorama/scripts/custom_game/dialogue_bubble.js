@@ -31,6 +31,8 @@
         tick();
     }
 
-    typewriter($.GetContextPanel().Data.text || "Pidaras ebaniy, zabil text dobaaaaaaaa", 55)
+    $.Schedule(0.1, () => {
+        typewriter($.GetContextPanel().Data.text || "Pidaras ebaniy, zabil text dobaaaaaaaa", 55)
+    })
     // label.text = $.GetContextPanel().Data.text || "PIDARAS EBANIY, ZABIL TEXT DOBAVIT AHAHAHAHA"
 })();

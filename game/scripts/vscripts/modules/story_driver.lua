@@ -299,11 +299,11 @@ end
 function StoryDriver:StartFight(packName, nonLethalNPC)
   local pack = PackManager:GetPack(packName)
   assert(pack, "No pack to start fight with: " .. packName)
-  for _, unit in ipairs(pack.units) do
+  PackManager:ForAllAliveUnits(pack, function(unit)
     DebugPrint("[ALNOIRE] Starting fight with " .. unit:GetName())
     unit:RemoveModifierByName("modifier_story_npc")
     unit:SetTeam(DOTA_TEAM_BADGUYS)
-  end
+  end)
 
   PackManager:ActivatePack(packName)
 
@@ -385,10 +385,12 @@ function StoryDriver:SetupAct2()
 
   SpawnManager:SpawnNPC("spawner_dream")
   triggerSetEnabled("trigger_black_creep", true)
+  triggerSetEnabled("zone_concert_muted", true)
 
   SpawnManager:SpawnNPC("spawner_genius")
 
   SpawnManager:SpawnNPC("spawner_concert_fan_ranged")
+  SpawnManager:SpawnNPC("spawner_concert_fan_melee")
 end
 
 function StoryDriver:SetupAct3()

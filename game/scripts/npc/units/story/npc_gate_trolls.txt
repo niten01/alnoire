@@ -14,7 +14,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1
-		"Ability2"					"forest_troll_high_priest_mana_aura"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 

@@ -20,6 +20,8 @@ class Passage:
     links: List[Link] = field(default_factory=list)
     speaker: str | None = field(default=None)
     npc: str | None = field(default=None)
+    focus: str | None = field(default=None)
+    is_bubble : bool = False
 
     def __repr__(self) -> str:
         return (

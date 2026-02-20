@@ -48,7 +48,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"50"
-		"HealthBarOffset"			"170"
+		"HealthBarOffset"			"550"
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -82,6 +82,17 @@
 		"precache"
 		{
         	"soundfile"			"soundevents/bosses/island_guard.vsndevts"
+		}
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "622" } // head
+				"Wearable2" { "ItemDef" "19113" } // head
+				"Wearable3" { "ItemDef" "9742" } // weapon
+				"Wearable4" { "ItemDef" "14200" } // armor
+			}
 		}
 	}
 }

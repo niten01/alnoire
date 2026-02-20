@@ -127,6 +127,24 @@ class StoryTransformer:
         if len(speaker_tags) != 0:
             passage.speaker = speaker_tags[0].fields["speaker"].replace("_", " ")
 
+    def _set_bubble(self, passage: Passage):
+        bubble_tags = [t for t in passage.tags if t.type == "bubble"]
+        if len(bubble_tags) > 1:
+            raise TransformError(
+                f'More than 1 bubble tag found in node: "{passage.name}"'
+            )
+        if len(bubble_tags) != 0:
+            passage.is_bubble = bubble_tags[0].fields["bubble"]
+
+    def _set_focus(self, passage: Passage):
+        focus_tags = [t for t in passage.tags if t.type == "focus"]
+        if len(focus_tags) > 1:
+            raise TransformError(
+                f'More than 1 focus tag found in node: "{passage.name}"'
+            )
+        if len(focus_tags) != 0:
+            passage.focus = focus_tags[0].fields["focus"]
+
     def _try_infer_npc(self, tags: List[DataDict]) -> str | None:
         for t in tags:
             npc = (
@@ -172,6 +190,8 @@ class StoryTransformer:
             self._add_entries_from(passage)
             self._set_speaker(passage)
             self._set_npc(passage)
+            self._set_bubble(passage)
+            self._set_focus(passage)
 
         for passage in self.story.passages.values():
             self._try_propagate_speaker(passage)

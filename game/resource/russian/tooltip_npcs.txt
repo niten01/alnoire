@@ -20,3 +20,4 @@
 "npc_red" "Красный"
 "npc_concert_guard" "Вышибала"
 "npc_xavier" "xaviersobased"
+"npc_island_guard"		"Страж острова"

@@ -7,6 +7,7 @@ LinkLuaModifier('modifier_story_lethal_damage_tracking', 'modifiers/modifier_sto
 LinkLuaModifier('modifier_story_weak_hit_tracking', 'modifiers/modifier_story_weak_hit_tracking',
     LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_dialogue_player', 'modifiers/modifier_dialogue_player', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_training_dummy', 'modifiers/modifier_training_dummy', LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_tower', 'modifiers/modifier_tower', LUA_MODIFIER_MOTION_NONE)

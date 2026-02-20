@@ -59,6 +59,10 @@
 			"cooldown"					"10.0 10.0 10.0 10.0"
 			"radius"					"1200 1200 1200 1200"
 		}
+		"precache"
+		{
+			"particle"					"particles/sanya_summon_emerge.vpcf"
+		}
 	}
 	"sanya_towel_summon_return"
 	{

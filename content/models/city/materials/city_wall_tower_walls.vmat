@@ -16,4 +16,15 @@ Layer0
 	//---- Normal Map ----
 	g_flBumpStrength "1.000"
 	TextureNormal "models/city/modular-medieval-wall-realistic/textures/lambert14sg_normal_opengl.png"
+
+
+	VariableState
+	{
+		"Color"
+		{
+		}
+		"Normal Map"
+		{
+		}
+	}
 }
