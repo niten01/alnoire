@@ -225,7 +225,7 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_red",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_red_ai",
         },
         spawner_green                 = {
             npc = "npc_green",
@@ -251,7 +251,7 @@ return {
         spawner_trap_spikes           = {
             npc = "npc_trap_spikes",
             team = DOTA_TEAM_BADGUYS,
-            modifiers = { "modifier_story_npc" },
+            -- modifiers = { "modifier_story_npc" },
         },
         spawner_trap_pendulum         = {
             npc = "npc_trap_pendulum",
@@ -539,6 +539,8 @@ return {
             activateAfterUnitsSpawned = false,
         },
         pack_red = {
+            rangeRetreat = 2000,
+            rangeAggro = 2000,
             activateAfterUnitsSpawned = false,
         },
         pack_perekup = {

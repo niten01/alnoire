@@ -12,19 +12,19 @@ function trap_spikes:TriggerSpikes()
 
     caster:EmitSound('sfx.trap_spikes.shoot')
 
-    local sanya = FindSanyaInRadius(caster:GetAbsOrigin(), radius)
+    local enemies = FindEnemiesForAIInRadius(caster:GetAbsOrigin(), radius)
     ScreenShake(caster:GetAbsOrigin(), 5, 0.1, 0.5, 500, 0, true)
 
-    if sanya then
+    for _, ent in ipairs(enemies) do
         ApplyDamage({
-            victim = sanya,
+            victim = ent,
             attacker = caster,
             damage = damage,
             damage_type = DAMAGE_TYPE_PHYSICAL,
             ability = self
         })
 
-        sanya:AddNewModifier(caster, self, "modifier_stunned", { duration = 0.5 })
+        ent:AddNewModifier(caster, self, "modifier_stunned", { duration = 0.5 })
     end
 end
 
@@ -32,6 +32,17 @@ end
 modifier_trap_spikes_thinker = class({})
 
 function modifier_trap_spikes_thinker:IsHidden() return true end
+
+function modifier_trap_spikes_thinker:CheckState()
+	return {
+		[MODIFIER_STATE_INVULNERABLE] = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
+		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR_FOR_ENEMIES]   = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR_FOR_OTHER_PLAYERS]   = true,
+        [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+	}
+end
 
 function modifier_trap_spikes_thinker:DeclareFunctions()
     return {
@@ -66,22 +77,22 @@ function modifier_trap_spikes_thinker:OnIntervalThink()
 
     if self.is_triggered then return end
 
-    local caster = self:GetCaster()
+    local parent = self:GetParent()
     local trigger_radius = 170
 
-    local sanya = FindSanyaInRadius(caster:GetAbsOrigin(), trigger_radius)
+    local enemies = FindEnemiesForAIInRadius(parent:GetAbsOrigin(), trigger_radius)
 
-    if sanya then
+    if #enemies > 0 then
         self:BeginTrapSequence()
     end
 end
 
 function modifier_trap_spikes_thinker:BeginTrapSequence()
     self.is_triggered = true
-    local caster = self:GetCaster()
+    local parent = self:GetParent()
 
-    caster:EmitSound("sfx.trap_spikes.activate")
-    caster:StartGesture(ACT_DOTA_ATTACK)
+    parent:EmitSound("sfx.trap_spikes.activate")
+    parent:StartGesture(ACT_DOTA_ATTACK)
 
     local delay = 1
 

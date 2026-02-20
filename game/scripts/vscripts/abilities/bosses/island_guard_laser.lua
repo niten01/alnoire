@@ -16,7 +16,7 @@ function island_guard_laser:ShowWarning(targetPos)
   local casterPos = caster:GetAbsOrigin()
 
   self.endPos = self:GetEndPos(targetPos)
-  ShowLineWarningGeneric(casterPos, self.endPos, width, delay)
+  ShowGenericLineWarning(casterPos, self.endPos, width, delay)
 
   return delay
 end

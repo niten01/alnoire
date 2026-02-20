@@ -23,7 +23,7 @@ function sanya_towel_summon_return:OnSpellStart()
             "particles/econ/events/fall_2021/agh_aura_fall_2021_parent.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
         self.channel_pfx_summon = ParticleManager:CreateParticle(
             "particles/econ/events/fall_2022/agh/agh_aura_fall2022_lvl2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster.summon)
-        caster:EmitSound("ability.towel_master.towel_summon_return")
+        caster:EmitSound("ability.towel_master.towel_summon_return.channel")
         caster:StartGestureWithPlaybackRate(ACT_DOTA_DISABLED, 0.25)
     end
 end
@@ -62,6 +62,7 @@ function sanya_towel_summon_return:OnChannelFinish(bInterrupted)
                 caster.summon)
             ParticleManager:ReleaseParticleIndex(pfx)
             ParticleManager:DestroyParticle(pfx, true)
+            caster:EmitSound("ability.towel_master.towel_summon_return.end")
         end
     else
         local pfx_interrupted = ParticleManager:CreateParticle(

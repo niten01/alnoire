@@ -4,6 +4,7 @@
 #base "jungle/roshan_abilities.txt"
 #base "bosses/ogre_bruiser_abilities.txt"
 #base "bosses/island_guard_abilities.txt"
+#base "bosses/red_abilities.txt"
 #base "jungle/techies_abilities.txt"
 
 "DOTAAbilities"
@@ -52,6 +53,8 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityTextureName"            "towel_summon"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+        "AbilityCastPoint"              "2.13"
 		
 		"AbilityManaCost"               "0"
 		"AbilityValues"
@@ -62,6 +65,7 @@
 		"precache"
 		{
 			"particle"					"particles/sanya_summon_emerge.vpcf"
+			"particle"					"particles/sanya_summon_emerge_impact_smoke.vpcf"
 		}
 	}
 	"sanya_towel_summon_return"
@@ -211,7 +215,7 @@
 		{
 			"damage"					"100 150"
 			"radius"					"150 150"
-			"speed"						"1200 1200"
+			"acceleration"				"200"
 		}
 	}
 

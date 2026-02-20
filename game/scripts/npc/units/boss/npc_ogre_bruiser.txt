@@ -5,7 +5,6 @@
 		"Model"						"models/ogre_bruiser/ogre_bruiser.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"ModelScale" 				"1.0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"ConsideredHero" 			"1"
 		"Level"						"7"
 		"AutoAttacksByDefault" "0"

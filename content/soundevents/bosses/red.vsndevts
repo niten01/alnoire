@@ -1,14 +1,13 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 
 {
-  ability.ogre_bruiser.impact = {
+  ability.red.radiance.channel = {
     type = "dota_update_default"
     vsnd_files =
     [
-        "sounds/misc/ogre_smash_01.vsnd",
-        "sounds/misc/ogre_smash_02.vsnd",
+        "sounds/weapons/hero/brewmaster/cyclone_lp.vsnd",
     ]
-    volume = "3.00000"
+    volume = "0.70000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
@@ -16,14 +15,15 @@
     mixgroup = "weapons"
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
+    volume_fade_in = "1.3"
   }
-  ability.ogre_bruiser.slam = {
+  ability.red.radiance.start_channel = {
     type = "dota_update_default"
     vsnd_files =
     [
-        "sounds/weapons/hero/earthshaker/arcana_slam_small.vsnd",
+        "sounds/weapons/hero/brewmaster/primal_split_cast.vsnd",
     ]
-    volume = "3.00000"
+    volume = "1.00000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
@@ -31,30 +31,13 @@
     mixgroup = "weapons"
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
+    volume_fade_in = "0.4"
   }
-  ability.ogre_bruiser.pull = {
+  ability.red.radiance.end_channel = {
     type = "dota_update_default"
     vsnd_files =
     [
-        "sounds/misc/crownfall/comet_impact.vsnd",
-    ]
-    volume = "3.00000"
-    pitch_rand_min = "0.050000"
-    pitch_rand_max = "0.050000"
-    pitch = "1.000000"
-    soundlevel = "81.000000"
-    mixgroup = "weapons"
-    volume_fade_out = "0.600000"
-    spread_radius = "300.000000"
-  }
-  ability.ogre_bruiser.swing = {
-    type = "dota_update_default"
-    vsnd_files =
-    [
-        "sounds/weapons/hero/riki/riki_swing1.vsnd",
-        "sounds/weapons/hero/earthshaker/fist_swing1.vsnd",
-        "sounds/weapons/hero/earthshaker/fist_swing2.vsnd",
-        "sounds/weapons/hero/earthshaker/fist_swing3.vsnd",
+        "sounds/weapons/hero/brewmaster/primal_split_spawn.vsnd",
     ]
     volume = "1.00000"
     pitch_rand_min = "0.050000"
@@ -65,13 +48,13 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
-  ability.ogre_bruiser.surge = {
+  ability.red.radiance.apply = {
     type = "dota_update_default"
     vsnd_files =
     [
-        "sounds/weapons/hero/dark_seer/dota_dark_seer_surge.vsnd",
+        "sounds/weapons/hero/ember_spirit/flame_guard_cast.vsnd",
     ]
-    volume = "0.60000"
+    volume = "2.00000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
@@ -80,16 +63,58 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
-  ability.ogre_bruiser.roar = {
+  ability.red.radiance.loop = {
     type = "dota_update_default"
     vsnd_files =
     [
-        "sounds/misc/creep_deaths/death_ogre_01.vsnd",
-        "sounds/misc/creep_deaths/death_ogre_02.vsnd",
-        "sounds/misc/creep_deaths/death_ogre_03.vsnd",
-        "sounds/misc/creep_deaths/death_ogre_04.vsnd",
+        "sounds/weapons/hero/ember_spirit/flame_guard_loop.vsnd",
     ]
-    volume = "0.60000"
+    volume = "1.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.red.fireball.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/ogre_magi/fireblast_target.vsnd",
+    ]
+    volume = "2.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.red.blink.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/red_blink_impact.vsnd",
+    ]
+    volume = "2.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.red.machine_gun.shoot = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/red_machine_gun_shoot.vsnd",
+    ]
+    volume = "0.80000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
