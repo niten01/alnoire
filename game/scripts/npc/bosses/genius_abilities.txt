@@ -1,0 +1,144 @@
+"DOTAAbilities"
+{
+    "oracle_fortunes_end"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Oracle.FortunesEnd.Target"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"850"
+		"AbilityCastPoint"				"0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18 14 10 6"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"channel_time"
+			{
+				"value"								"2.5"
+			}
+			"damage"
+			{
+				"value"					"0"
+			}
+			"bolt_speed"				"1200"
+			"minimum_purge_duration"
+			{
+				"value"								"0.75"
+				"special_bonus_unique_oracle_2"		"+0.5"
+			}
+			"maximum_purge_duration"
+			{
+				"value"								"2.75"
+				"special_bonus_unique_oracle_2"		"+0.5"
+			}
+			"radius"								
+			{
+				"value"		"350"
+				"affected_by_aoe_increase"	"1"
+			}
+			"damage_per_buff"				
+			{
+				"value"					"0"
+				"special_bonus_unique_oracle_damage_per_purge"			"+0"
+			}	
+			"heal_per_debuff"
+			{
+				"value"					"0"
+				"special_bonus_unique_oracle_damage_per_purge"			"+0"
+			}
+			"purge_constantly"
+			{
+				"special_bonus_unique_oracle_7"		"=1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+    "oracle_purifying_flames"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Oracle.PurifyingFlames.Damage"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"850"
+		"AbilityCastPoint"				"0.10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"damage"				"100"
+				"heal_per_second"		"25"
+				"total_heal_tooltip"	"250"
+				"duration"				"10"
+				"tick_rate"				"0.1"
+				"damage_modifier"
+				{
+					"value"				"1"
+					"special_bonus_unique_oracle_8"	"+25%"
+				}
+				"AbilityCooldown"
+				{
+					"value"							"2.5"
+					"special_bonus_unique_oracle_5"	"-1"
+				}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	} 
+    "genius_push"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/genius_push.lua"
+        "AbilityTextureName"            "earthshaker_fissure"
+        
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+        "AbilityCastPoint"              "0.47"
+        "AbilityCooldown"               "5.0" 
+        "AbilityCastRange"        		"250"
+        
+        "AbilityValues"
+        {
+            "radius"                "700"
+            "time"                  "0.2"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/genius_push_sphere.vpcf"
+        }
+    }
+
+}

@@ -400,7 +400,7 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_genius",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_genius_ai",
         },
 
         spawner_concert_fan_ranged   = {

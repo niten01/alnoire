@@ -11,7 +11,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"oracle_fortunes_end"			
+		"Ability1"					"genius_push"			
 		"Ability2"					""			
 		"Ability3"					""			
 		"Ability4"					""			

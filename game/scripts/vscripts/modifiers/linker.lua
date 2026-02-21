@@ -8,6 +8,7 @@ LinkLuaModifier('modifier_story_weak_hit_tracking', 'modifiers/modifier_story_we
     LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_dialogue_player', 'modifiers/modifier_dialogue_player', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_training_dummy', 'modifiers/modifier_training_dummy', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_move', 'modifiers/modifier_move', LUA_MODIFIER_MOTION_HORIZONTAL)
 
 LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_tower', 'modifiers/modifier_tower', LUA_MODIFIER_MOTION_NONE)
@@ -30,11 +31,12 @@ LinkLuaModifier("modifier_mk_ai", "modifiers/ai/modifier_mk_ai", LUA_MODIFIER_MO
 LinkLuaModifier("modifier_techies_ai", "modifiers/ai/modifier_techies_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_ogre_bruiser_ai", "modifiers/ai/modifier_ogre_bruiser_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_island_guard_ai", "modifiers/ai/modifier_island_guard_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_red_ai", "modifiers/ai/modifier_red_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_genius_ai", "modifiers/ai/modifier_genius_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shrooms_ai", "modifiers/ai/modifier_shrooms_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shrooms_furion_ai", "modifiers/ai/modifier_shrooms_furion_ai", LUA_MODIFIER_MOTION_NONE)
 
 
-LinkLuaModifier("modifier_red_ai", "modifiers/ai/modifier_red_ai", LUA_MODIFIER_MOTION_NONE)
 
 -- bosses
 LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)
