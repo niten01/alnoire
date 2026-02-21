@@ -117,15 +117,17 @@ def process_files(base_dir: Path):
     #     "",
     #     f"\t\t// Generated from {os.path.relpath(file_path, base_dir)}",
     # ]
-    eng_tokens = thread_map(
-        translate_token,
-        rus_tokens,
-        max_workers=WORKERS,
-        desc=f"Translating tokens",
-        unit="token",
-    )
-    write_localization_file(base_dir.parent / "addon_english.txt", eng_tokens)
+    # eng_tokens = thread_map(
+    #     translate_token,
+    #     rus_tokens,
+    #     max_workers=WORKERS,
+    #     desc=f"Translating tokens",
+    #     unit="token",
+    # )
+    # write_localization_file(base_dir.parent / "addon_english.txt", eng_tokens)
     write_localization_file(base_dir.parent / "addon_russian.txt", rus_tokens)
+    # TODO: remove in release
+    write_localization_file(base_dir.parent / "addon_english.txt", rus_tokens)
 
 
 if __name__ == "__main__":
@@ -134,25 +136,25 @@ if __name__ == "__main__":
         Path(os.path.abspath(sys.argv[0])).parent.parent / "game/resource/russian"
     )
     try:
-        cmd = [
-            "libretranslate",
-            "--port",
-            str(PORT),
-            "--load-only",
-            f"{SOURCE_LANG},{TARGET_LANG}",
-            "--translation-cache",
-            "all",
-            "--threads",
-            str(cpu_count()),
-        ]
-        server_process = subprocess.Popen(
-            cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
-        )
+        # cmd = [
+        #     "libretranslate",
+        #     "--port",
+        #     str(PORT),
+        #     "--load-only",
+        #     f"{SOURCE_LANG},{TARGET_LANG}",
+        #     "--translation-cache",
+        #     "all",
+        #     "--threads",
+        #     str(cpu_count()),
+        # ]
+        # server_process = subprocess.Popen(
+        #     cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+        # )
 
-        if wait_for_server():
-            process_files(base_dir)
-        else:
-            print("Error: Server timed out.")
+        # if wait_for_server():
+        process_files(base_dir)
+    # else:
+    #     print("Error: Server timed out.")
 
     except KeyboardInterrupt:
         print("\nStopping script...")
