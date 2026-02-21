@@ -1,0 +1,55 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  JungleFurion.Death = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/furion/furi_death_08.vsnd",
+      ]
+      
+      volume = 40.0
+      pitch = 1.0
+      pitch_rand_min = -0.05
+      pitch_rand_max = 0.05
+
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+    JungleFurion.Cast.First = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/furion/furi_move_10.vsnd",
+      ]
+      
+      volume = 40.0
+      pitch = 1.0
+      pitch_rand_min = -0.05
+      pitch_rand_max = 0.05
+
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+    JungleFurion.Cast.Second = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/furion/furi_ability_force_05.vsnd",
+      ]
+      
+      volume = 40.0
+      pitch = 1.0
+      pitch_rand_min = -0.05
+      pitch_rand_max = 0.05
+
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+}
