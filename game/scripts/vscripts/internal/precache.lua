@@ -146,6 +146,9 @@ return {
         "npc_jungle_miniroshan",
         "npc_jungle_techies",
         "npc_dota_hero_techies",
+        "npc_dota_hero_furion",
+        "npc_dota_hero_meepo",
+        "npc_dota_hero_nyx_assassin",
 
 
         -- traps
@@ -159,6 +162,10 @@ return {
         --mk banana
         "models/props_gameplay/banana_prop_closed_mk.vmdl",
         "models/creeps/roshan_aghanim/roshan_aghanim.vmdl",
+
+        -- shrooms
+        "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_mushroom.vmdl",
+        "models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged_mushroom.vmdl",
     },
     sounds = {
         "soundevents/sfx.vsndevts",
@@ -171,6 +178,8 @@ return {
         "soundevents/bosses/bidlo.vsndevts",
         "soundevents/jungle/junglerosh.vsndevts",
         "soundevents/jungle/jungletechies.vsndevts",
+        "soundevents/jungle/junglefurion.vsndevts",
+
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",
@@ -239,6 +248,7 @@ return {
         -- jungle
         "particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf",
         "particles/techies_poofout.vpcf",
+        "particles/shrooms_dig.vpcf",
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",
 

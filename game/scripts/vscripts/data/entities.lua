@@ -52,7 +52,7 @@ return {
         spawner_courier_bober         = { npc = "npc_courier_bober", modifiers = { "modifier_story_npc" } },
         spawner_courier_rabbit        = { npc = "npc_courier_rabbit", modifiers = { "modifier_story_npc" } },
         spawner_courier_boar          = { npc = "npc_courier_boar", modifiers = { "modifier_story_npc" } },
-        spawner_courier_raccoon        = { npc = "npc_courier_raccoon", modifiers = { "modifier_story_npc" } },
+        spawner_courier_raccoon       = { npc = "npc_courier_raccoon", modifiers = { "modifier_story_npc" } },
         spawner_courier_parrot        = { npc = "npc_courier_parrot", modifiers = { "modifier_story_npc" } },
         spawner_courier_mushroom_1    = { npc = "npc_courier_mushroom_1", modifiers = { "modifier_story_npc" } },
         spawner_courier_mushroom_2    = { npc = "npc_courier_mushroom_2", modifiers = { "modifier_story_npc" } },
@@ -341,33 +341,61 @@ return {
         },
 
 
-        spawner_techies_1 = {
+        spawner_techies_1            = {
             npc = "npc_jungle_techies_1",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_1",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_techies_2 = {
+        spawner_techies_2            = {
             npc = "npc_jungle_techies_2",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_2",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_techies_3 = {
+        spawner_techies_3            = {
             npc = "npc_jungle_techies_3",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_3",
             ai_modifier = "modifier_techies_ai"
         },
+        spawner_shroom_melee         = {
+            npc = "npc_jungle_shroom_melee",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_shrooms",
+            ai_modifier = "modifier_shrooms_ai"
+        },
+        spawner_shroom_ranged        = {
+            npc = "npc_jungle_shroom_ranged",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_shrooms",
+            ai_modifier = "modifier_shrooms_ai"
+        },
+        spawner_shroom_ranged_second = {
+            npc = "npc_jungle_shroom_ranged_second",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_shrooms",
+            ai_modifier = "modifier_shrooms_ai"
+        },
+        spawner_shroom_melee_second  = {
+            npc = "npc_jungle_shroom_melee_second",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_shrooms",
+            ai_modifier = "modifier_shrooms_ai"
+        },
+        spawner_shroom_furion        = {
+            npc = "npc_jungle_shroom_furion",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_shrooms",
+            ai_modifier = "modifier_shrooms_furion_ai"
+        },
 
-
-
-        spawner_dream_concert = {
+        spawner_dream_concert        = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_genius                = {
+        spawner_genius               = {
             npc = "npc_genius",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -375,14 +403,14 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
-        spawner_concert_fan_ranged    = {
+        spawner_concert_fan_ranged   = {
             npc = "npc_ghetto_ranged",
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_concert_crowd",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_concert_fan_melee     = {
+        spawner_concert_fan_melee    = {
             npc = "npc_ghetto_melee",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -390,51 +418,51 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
-        spawner_gangster              = {
+        spawner_gangster             = {
             npc = "npc_gangster",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_ghetto_ranged         = {
+        spawner_ghetto_ranged        = {
             npc = "npc_ghetto_ranged",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_ghetto_melee          = {
+        spawner_ghetto_melee         = {
             npc = "npc_ghetto_melee",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_blue                  = {
+        spawner_blue                 = {
             npc = "npc_blue",
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_cat_barrel_city       = {
+        spawner_cat_barrel_city      = {
             npc = "npc_cat_barrel",
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_island_fiend          = {
+        spawner_island_fiend         = {
             npc = "npc_island_fiend",
             modifiers = { "modifier_story_npc" },
             packID = "pack_island_duo",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_island_shadow_demon   = {
+        spawner_island_shadow_demon  = {
             npc = "npc_island_shadow_demon",
             modifiers = { "modifier_story_npc" },
             packID = "pack_island_duo",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_bomb_place            = {
+        spawner_bomb_place           = {
             npc = "npc_bomb_place",
             modifiers = { "modifier_story_npc" },
         },
-        spawner_bomb                  = {
+        spawner_bomb                 = {
             npc = "npc_bomb",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -501,6 +529,12 @@ return {
             rangeFastTickRate = 2000,
             rangeAggro = 600,
             rangeRetreat = 700,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_forest_act1_shrooms = {
+            rangeFastTickRate = 2000,
+            rangeAggro = 700,
             stayActivatedOnPlayerDeath = true,
         },
 

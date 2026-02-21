@@ -40,6 +40,8 @@ function PackManager:ActivatePack(packName)
         DrawDebugCircle(packEntity, pack.rangeFastTickRate),
     }
 
+    pack.vId = AddFOWViewer(DOTA_TEAM_BADGUYS, packEntity:GetAbsOrigin(), pack.rangeAggro, 36000, false)
+    DebugPrint("[ALNOIRE] Added fow viewer for pack: " .. packName)
     local thinkerFn = nil
     if pack.thinker == "default" then
         thinkerFn = function()
@@ -98,6 +100,11 @@ function PackManager:DeactivatePack(packName)
     local pack = self:GetPack(packName)
     if pack.state == 'off' then return end
 
+    if self.vId then
+        RemoveFOWViewer(DOTA_TEAM_BADGUYS, self.vId)
+    else
+        DebugPrint("[ALNOIRE] Deactivating fow viewer for pack: " .. packName)
+    end
     for _, pfx in ipairs(pack.debugPfx or {}) do
         DestroyDebugCircle(pfx)
     end
