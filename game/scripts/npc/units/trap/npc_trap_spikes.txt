@@ -8,5 +8,7 @@
         "Ability1"              "trap_spikes"
         "Level"                 "1"
         "HealthBarOffset"       "-1"
+        "HullRadius"            "0"
+        "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
     }
 }

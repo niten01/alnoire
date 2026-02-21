@@ -40,8 +40,8 @@ function CanCastAbility(unit, target, ability)
   if not ability or not ability:IsActivated() or not ability:IsFullyCastable() or ability:IsPassive() then return false end
   local range = ability:GetCastRange(unit:GetAbsOrigin(), TargetUnitOrNil(target))
   local dist = #(unit:GetAbsOrigin() - GetTargetPos(target))
-  local behavior = ability:GetBehavior()
-  if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_HIDDEN) ~= 0 then return false end
+  local behavior = ability:GetBehaviorInt()
+  if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_HIDDEN) ~= 0 or ability:IsHidden() then return false end
   return dist <= (range + 100)
 end
 
@@ -61,7 +61,7 @@ end
 
 -- give appropriate cast order given ability is castable
 function GiveCastOrder(unit, target, ability)
-  local behavior = ability:GetBehavior()
+  local behavior = ability:GetBehaviorInt()
   assert(behavior)
 
   local cast = function()
@@ -70,7 +70,7 @@ function GiveCastOrder(unit, target, ability)
     elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
       unit:CastAbilityNoTarget(ability, -1)
     elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then
-      unit:CastAbilityOnPosition(target:GetAbsOrigin(), ability, -1)
+      unit:CastAbilityOnPosition(GetTargetPos(target), ability, -1)
     else
       error("Could not cast ability: " .. ability:GetName())
     end
@@ -167,9 +167,9 @@ function FindSanyaInRadius(centerPoint, radius)
     centerPoint,
     nil,
     radius,
-    DOTA_UNIT_TARGET_TEAM_ENEMY,
+    DOTA_UNIT_TARGET_TEAM_BOTH,
     DOTA_UNIT_TARGET_HERO,
-    DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS,
+    DOTA_UNIT_TARGET_FLAG_NONE,
     FIND_CLOSEST,
     false
   )
@@ -327,7 +327,7 @@ function AdjustTickRate(unit)
   end
 end
 
-function ShowLineWarningGeneric(p1, p2, width, duration)
+function ShowGenericLineWarning(p1, p2, width, duration)
   local dist = #(p1 - p2)
   local particleName = "particles/ui_mouseactions/range_finder_cone.vpcf"
   if dist > 1440 then
@@ -354,6 +354,18 @@ function ShowLineWarningGeneric(p1, p2, width, duration)
     else
       return interval
     end
+  end)
+end
+
+function ShowGenericCircleWarning(center, radius, duration)
+  local particleName = "particles/warning_circle.vpcf"
+  local pfx = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, nil)
+  ParticleManager:SetParticleControl(pfx, 0, center)
+  ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 0, 0))
+  ParticleManager:SetParticleControl(pfx, 2, Vector(duration, 0, 0))
+  Timers:CreateTimer(duration, function()
+    ParticleManager:DestroyParticle(pfx, false)
+    ParticleManager:ReleaseParticleIndex(pfx)
   end)
 end
 
@@ -391,4 +403,34 @@ function RandomPointsInCircle(center, radius, numPoints, minRadius)
   end
 
   return points
+end
+
+-- creates a fan of N lines spread in +-alpha (in degrees) around given line
+function PointsFan(startPos, endPos, numPoints, alpha)
+  local endPoints = {}
+  local alphaRad = math.rad(alpha)
+
+  local dx = endPos.x - startPos.x
+  local dy = endPos.y - startPos.y
+
+  local baseAngle = math.atan2(dy, dx)
+  local length = math.sqrt(dx * dx + dy * dy)
+
+  if numPoints <= 1 then
+    return { endPos }
+  end
+
+  for i = 0, numPoints - 1 do
+    local fraction = i / (numPoints - 1)
+
+    local relativeAngle = -alphaRad + (fraction * (alphaRad * 2))
+    local finalAngle = baseAngle + relativeAngle
+
+    local newEndX = startPos.x + math.cos(finalAngle) * length
+    local newEndY = startPos.y + math.sin(finalAngle) * length
+
+    table.insert(endPoints, Vector(newEndX, newEndY, endPos.z))
+  end
+
+  return endPoints
 end

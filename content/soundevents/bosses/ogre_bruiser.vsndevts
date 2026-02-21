@@ -13,7 +13,7 @@
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
     soundlevel = "81.000000"
-    mixgroup = "Weapons"
+    mixgroup = "weapons"
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
@@ -28,7 +28,7 @@
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
     soundlevel = "81.000000"
-    mixgroup = "Weapons"
+    mixgroup = "weapons"
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
@@ -43,7 +43,7 @@
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
     soundlevel = "81.000000"
-    mixgroup = "Weapons"
+    mixgroup = "weapons"
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
@@ -61,7 +61,7 @@
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
     soundlevel = "81.000000"
-    mixgroup = "Weapons"
+    mixgroup = "weapons"
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
@@ -76,7 +76,7 @@
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
     soundlevel = "81.000000"
-    mixgroup = "Weapons"
+    mixgroup = "weapons"
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
@@ -94,7 +94,7 @@
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
     soundlevel = "81.000000"
-    mixgroup = "Weapons"
+    mixgroup = "weapons"
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }

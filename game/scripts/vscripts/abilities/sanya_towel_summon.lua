@@ -12,11 +12,25 @@ function sanya_towel_summon:GetCooldown()
     return self:GetSpecialValueFor('cooldown')
 end
 
+function sanya_towel_summon:OnAbilityPhaseStart()
+    local caster = self:GetCaster()
+    local inFrontOfCaster = caster:GetAbsOrigin() + caster:GetForwardVector() * 100
+    local pfx = ParticleManager:CreateParticle("particles/sanya_summon_emerge.vpcf", PATTACH_WORLDORIGIN,
+        self:GetCaster())
+    ParticleManager:SetParticleControl(pfx, 0, inFrontOfCaster)
+    ParticleManager:ReleaseParticleIndex(pfx)
+    caster:EmitSound("ability.towel_master.towel_summon.buildup")
+
+    self.summonSpawnPoint = inFrontOfCaster
+end
+
 function sanya_towel_summon:OnSpellStart()
     if not IsServer() then return end
     local caster = self:GetCaster()
     local playerID = caster:GetPlayerOwnerID()
-    local unit = CreateUnitByName("towel_summon", caster:GetAbsOrigin(), true, caster, caster:GetOwner(), caster:GetTeamNumber())
+    assert(self.summonSpawnPoint)
+    local unit = CreateUnitByName("towel_summon", self.summonSpawnPoint, true, caster, caster:GetOwner(),
+        caster:GetTeamNumber())
     unit:SetControllableByPlayer(playerID, true)
     unit:SetOwner(caster)
     unit:SetIdleAcquire(false)
@@ -26,18 +40,21 @@ function sanya_towel_summon:OnSpellStart()
     self:UpgradeBear(self, unit)
     unit:AddNewModifier(caster, self, "modifier_summon_distance_check", {})
     unit:SetBaseMoveSpeed(caster:GetBaseMoveSpeed())
-    local pfx = ParticleManager:CreateParticle("particles/creatures/aghanim/portal_summon_b0a.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+    local pfx = ParticleManager:CreateParticle("particles/creatures/aghanim/portal_summon_b0a.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW, unit)
     ParticleManager:ReleaseParticleIndex(pfx)
-    pfx = ParticleManager:CreateParticle("particles/sanya_summon_emerge.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+    pfx = ParticleManager:CreateParticle("particles/sanya_summon_emerge_impact_smoke.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW, unit)
     ParticleManager:ReleaseParticleIndex(pfx)
-    caster:EmitSound("ability.towel_master.towel_summon.spawn")
+
+    unit:EmitSound("ability.towel_master.towel_summon.spawn")
+
     self:SetFrozenCooldown(true)
     caster:SwapAbilities("sanya_towel_summon", "sanya_towel_summon_return", false, true)
     local spell_return = caster:FindAbilityByName("sanya_towel_summon_return")
     if spell_return then
         spell_return:StartCooldown(0.5)
     end
-   
 end
 
 function sanya_towel_summon:OnUpgrade()

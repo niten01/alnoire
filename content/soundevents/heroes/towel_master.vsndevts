@@ -1,13 +1,28 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 
 {
+  ability.towel_master.towel_summon.buildup = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_summon_spawn_buildup.vsnd",
+    ]
+    volume = "1.50000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
   ability.towel_master.towel_summon.spawn = {
     type = "dota_update_default"
     vsnd_files =
     [
-        "sounds/towel_master/tm_summon_spawn.vsnd",
+        "sounds/towel_master/tm_summon_spawn_impact.vsnd",
     ]
-    volume = "3.00000"
+    volume = "1.50000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
@@ -77,11 +92,26 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
-  ability.towel_master.towel_summon_return = {
+  ability.towel_master.towel_summon_return.channel = {
     type = "dota_update_default"
     vsnd_files =
     [
         "sounds/towel_master/tm_teleport.vsnd",
+    ]
+    volume = "1.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.towel_master.towel_summon_return.end = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_teleport_end.vsnd",
     ]
     volume = "1.00000"
     pitch_rand_min = "0.050000"

@@ -489,4 +489,35 @@
       }
     }
   }
+  "models/red/red.vmdl"
+  {
+    "PortraitLightPosition"                               "7.72 -42.29 240.60"
+    "PortraitLightAngles"                                 "49.51 49.99 0.00"
+    "PortraitLightFOV"                                    "69"
+    "PortraitLightDistance"                               "377"
+    "PortraitLightColor"                                  "254 153 150"
+    "PortraitShadowColor"                                 "74 69 25"
+    "PortraitShadowScale"                                 "5.000000"
+    "PortraitAmbientColor"                                "192 84 0"
+    "PortraitAmbientScale"                                "5.000000"
+    "PortraitSpecularColor"                               "251 74 84"
+    "PortraitBackgroundTexture"                           "materials/vgui/hud/heroportraits/portraitbackground_windrunner.vmat"
+    "PortraitBackgroundColor1"                            "1 .4 0"
+    "PortraitBackgroundColor2"                            "1 .4 0"
+    "PortraitBackgroundColor3"                            "1 .4 0"
+    "PortraitBackgroundColor4"                            "1 .4 0"
+    "PortraitLightScale"                                  "3.250000"
+    "PortraitGroundShadowScale"                           "1.500000"
+    "PortraitAmbientDirection"                            "-36.120 79.950 -36.690"
+    "PortraitAnimationActivity"                           "ACT_DOTA_IDLE"
+    "cameras"
+    {
+      "default"
+      {
+        "PortraitPosition"                                "265.15 -146.94 16.99"
+        "PortraitAngles"                                  "337.19 149.05 0.00"
+        "PortraitFOV"                                     "11"
+      }
+    }
+  }
 }

@@ -4,6 +4,7 @@ function PackManager:Init()
     GameEvents:OnGameInProgress(bind(self.OnGameInProgress, self))
     ChatCommand:LinkDevCommand("-junglerespawn", function(event, args)
         self:RespawnPack(args[1])
+        self:ActivatePack(args[1])
     end)
 end
 
@@ -34,6 +35,7 @@ function PackManager:ActivatePack(packName)
         DebugPrint("[???] (PackManager) no entity for pack: ", packName)
         return
     end
+    PrintTable(pack)
     pack.debugPfx = {
         DrawDebugCircle(packEntity, pack.rangeAggro),
         DrawDebugCircle(packEntity, pack.rangeRetreat),

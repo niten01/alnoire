@@ -218,14 +218,14 @@ return {
         spawner_training_dummy        = {
             npc = "npc_training_dummy",
             modifiers = { "modifier_training_dummy" },
-            team = DOTA_TEAM_NEUTRALS,
+            team = DOTA_TEAM_BADGUYS,
         },
         spawner_red                   = {
             npc = "npc_red",
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_red",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_red_ai",
         },
         spawner_green                 = {
             npc = "npc_green",
@@ -251,7 +251,7 @@ return {
         spawner_trap_spikes           = {
             npc = "npc_trap_spikes",
             team = DOTA_TEAM_BADGUYS,
-            modifiers = { "modifier_story_npc" },
+            -- modifiers = { "modifier_story_npc" },
         },
         spawner_trap_pendulum         = {
             npc = "npc_trap_pendulum",
@@ -573,6 +573,9 @@ return {
             activateAfterUnitsSpawned = false,
         },
         pack_red = {
+            rangeRetreat = 6000,
+            rangeFastTickRate = 6000,
+            rangeAggro = 6000,
             activateAfterUnitsSpawned = false,
         },
         pack_perekup = {
@@ -605,6 +608,7 @@ return {
         zone_prologue = { musicSet = "silence", respawnPoint = "respawn_prologue" },
         zone_forest_1 = { musicSet = "forest", respawnPoint = "respawn_forest_1" },
         zone_city = { musicSet = "city", respawnPoint = "respawn_city", },
+        zone_ski = { musicSet = "ski", respawnPoint = "respawn_city", },
         zone_wastelands = { musicSet = "wastelands", respawnPoint = "respawn_wastelands" },
         zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_ghetto" },
         zone_concert_muted = { musicSet = "concert_muted", respawnPoint = "respawn_concert" },
