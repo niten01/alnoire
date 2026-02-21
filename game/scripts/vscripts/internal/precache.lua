@@ -149,6 +149,7 @@ return {
         "npc_dota_hero_furion",
         "npc_dota_hero_meepo",
         "npc_dota_hero_nyx_assassin",
+        "npc_dota_neutral_gnoll_assassin",
 
 
         -- traps

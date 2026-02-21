@@ -378,6 +378,20 @@ return {
             ai_modifier = "modifier_shrooms_furion_ai"
         },
 
+        spawner_gnoll               = {
+            npc = "npc_jungle_gnoll",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_dragnolls",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+
+        spawner_ancdragon           = {
+            npc = "npc_jungle_ancdragon",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_dragnolls",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+
         spawner_dream_concert       = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
@@ -523,6 +537,12 @@ return {
         pack_forest_act1_shrooms = {
             rangeFastTickRate = 2000,
             rangeAggro = 700,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_forest_act1_dragnolls = {
+            rangeFastTickRate = 2000,
+            rangeAggro = 900,
             stayActivatedOnPlayerDeath = true,
         },
 
