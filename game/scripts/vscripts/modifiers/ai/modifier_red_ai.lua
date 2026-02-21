@@ -1,4 +1,5 @@
 modifier_red_ai = class({})
+LinkLuaModifier("modifier_red_tired", "modifiers/ai/modifier_red_ai.lua", LUA_MODIFIER_MOTION_NONE)
 
 function modifier_red_ai:IsHidden() return true end
 
@@ -10,6 +11,16 @@ function modifier_red_ai:OnCreated()
     assert(self.blinkLeftTarget and self.blinkRightTarget, "No npc_red blink targets, add them, or use a proper map")
 
     self.blinkUsed = false
+    self.tired = false
+end
+
+function modifier_red_ai:MakeTired(unit)
+    self.tired = true
+    Timers:CreateTimer(1.3, function()
+        local duration = 5
+        unit:AddNewModifier(nil, nil, "modifier_red_tired", { duration = duration })
+        Timers:CreateTimer(duration, function() self.tired = false end)
+    end)
 end
 
 function modifier_red_ai:OnIntervalThink()
@@ -39,9 +50,14 @@ function modifier_red_ai:OnIntervalThink()
             return
         end
 
+        if self.tired then return end
+
         if self.blinkUsed and CastAbility(unit, target, "red_machine_gun") then
             if unit.lastCastAbilityName == "red_machine_gun" then
                 self.blinkUsed = false
+                if RandomFloat(0, 1) < 0.7 then
+                    self:MakeTired(unit)
+                end
             end
             return
         end
@@ -60,4 +76,37 @@ function modifier_red_ai:OnIntervalThink()
             return
         end
     end
+end
+
+-------------------------------------------------------------------------
+
+modifier_red_tired = class {}
+
+function modifier_red_tired:OnCreated()
+    if not IsServer() then return end
+    self:GetParent():EmitSound("ability.red.tired")
+end
+
+function modifier_red_tired:CheckState()
+    return {
+        [MODIFIER_STATE_SILENCED] = true,
+        [MODIFIER_STATE_STUNNED] = true,
+        [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
+        [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
+    }
+end
+
+function modifier_red_tired:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
+        MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
+    }
+end
+
+function modifier_red_tired:GetActivityTranslationModifiers()
+    return "tired"
+end
+
+function modifier_red_tired:GetOverrideAnimation()
+    return ACT_DOTA_IDLE
 end

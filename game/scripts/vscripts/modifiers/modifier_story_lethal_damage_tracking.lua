@@ -16,7 +16,7 @@ function modifier_story_lethal_damage_tracking:OnTakeDamage(params)
     local parent = self:GetParent()
     if params.unit ~= parent then return end
 
-    if (params.unit:GetHealth() - params.damage) <= 1 then
+    if params.unit:GetHealth() <= 1 then
         local attackerPlayerID = params.attacker:GetPlayerOwnerID()
             or params.attacker:GetPlayerOwner():GetPlayerID()
         params.unit:SetHealth(1)

@@ -218,7 +218,7 @@ return {
         spawner_training_dummy        = {
             npc = "npc_training_dummy",
             modifiers = { "modifier_training_dummy" },
-            team = DOTA_TEAM_NEUTRALS,
+            team = DOTA_TEAM_BADGUYS,
         },
         spawner_red                   = {
             npc = "npc_red",
@@ -539,8 +539,9 @@ return {
             activateAfterUnitsSpawned = false,
         },
         pack_red = {
-            rangeRetreat = 2000,
-            rangeAggro = 2000,
+            rangeRetreat = 6000,
+            rangeFastTickRate = 6000,
+            rangeAggro = 6000,
             activateAfterUnitsSpawned = false,
         },
         pack_perekup = {
@@ -573,6 +574,7 @@ return {
         zone_prologue = { musicSet = "silence", respawnPoint = "respawn_prologue" },
         zone_forest_1 = { musicSet = "forest", respawnPoint = "respawn_forest_1" },
         zone_city = { musicSet = "city", respawnPoint = "respawn_city", },
+        zone_ski = { musicSet = "ski", respawnPoint = "respawn_city", },
         zone_wastelands = { musicSet = "wastelands", respawnPoint = "respawn_wastelands" },
         zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_ghetto" },
         zone_concert_muted = { musicSet = "concert_muted", respawnPoint = "respawn_concert" },

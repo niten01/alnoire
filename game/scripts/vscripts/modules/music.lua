@@ -85,6 +85,10 @@ function Music:OnEntityKilled(event)
         local playerID = victim:GetPlayerOwnerID()
         self:StopCustomMusic(playerID)
         self.musicState[playerID].musicSet = "silence"
+        Timers:CreateTimer(CUSTOM_RESPAWN_TIME+5, function()
+            StopGlobalSound(self.musicState[playerID].current)
+            EmitGlobalSound(self.musicState[playerID].current)
+        end)
     end
 end
 

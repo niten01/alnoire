@@ -13,7 +13,7 @@ function red_blink:OnSpellStart()
     local damage = self:GetSpecialValueFor("damage")
 
     local pfx = ParticleManager:CreateParticle(
-        "particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7_gold.vpcf", PATTACH_ABSORIGIN, caster)
+        "particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7_gold.vpcf", PATTACH_WORLDORIGIN, caster)
     ParticleManager:SetParticleControl(pfx, 0, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 10, 1))
     ParticleManager:ReleaseParticleIndex(pfx)
@@ -32,7 +32,7 @@ function red_blink:OnSpellStart()
 
     caster:SetAbsOrigin(self:GetCursorPosition())
     local pfx = ParticleManager:CreateParticle(
-        "particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7_gold.vpcf", PATTACH_ABSORIGIN, caster)
+        "particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7_gold.vpcf", PATTACH_WORLDORIGIN, caster)
     ParticleManager:SetParticleControl(pfx, 0, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 10, 5))
     ParticleManager:ReleaseParticleIndex(pfx)

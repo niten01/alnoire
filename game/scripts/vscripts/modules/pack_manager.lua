@@ -34,6 +34,7 @@ function PackManager:ActivatePack(packName)
         DebugPrint("[???] (PackManager) no entity for pack: ", packName)
         return
     end
+    PrintTable(pack)
     pack.debugPfx = {
         DrawDebugCircle(packEntity, pack.rangeAggro),
         DrawDebugCircle(packEntity, pack.rangeRetreat),

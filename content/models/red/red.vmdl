@@ -337,7 +337,7 @@
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_IDLE"
 						activity_weight = 1
-						weight_list_name = ""
+						weight_list_name = "default"
 						fade_in_time = 0.2
 						fade_out_time = 0.2
 						looping = true
@@ -389,7 +389,7 @@
 							{
 								_class = "ExtractMotion"
 								extract_tx = true
-								extract_ty = true
+								extract_ty = false
 								extract_tz = false
 								extract_rz = false
 								linear = false
@@ -489,6 +489,64 @@
 						animgraph_additive = false
 						delete_from_compiled_model = false
 						source_filename = "models/red/animations/cast_spray.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "disabled"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_DISABLED"
+						activity_weight = 1
+						weight_list_name = "default"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/red/animations/disabled.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "tired"
+						children = 
+						[
+							{
+								_class = "ActivityModifier"
+								activity_name = "tired"
+								activity_weight = 100
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 100
+						weight_list_name = "default"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/red/animations/tired.fbx"
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
