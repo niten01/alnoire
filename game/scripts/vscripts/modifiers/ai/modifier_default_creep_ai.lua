@@ -39,6 +39,7 @@ function modifier_default_creep_ai:OnIntervalThink()
             end
             --print(unit:GetAbilityByIndex(0):GetCooldown())
             if not unit:GetAggroTarget() then
+                DebugPrint("jsoief")
                 ExecuteOrderFromTable({
                     UnitIndex = unit:entindex(),
                     OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
