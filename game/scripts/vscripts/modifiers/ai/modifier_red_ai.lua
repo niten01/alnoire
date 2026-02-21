@@ -62,7 +62,9 @@ function modifier_red_ai:OnIntervalThink()
             return
         end
 
-        if CastAbility(unit, target, "red_radiance") then return end
+        if CastAbility(unit, target, "red_radiance") then
+            return
+        end
         if CastAbility(unit, target, "red_fireball") then return end
 
         -- everything on CD, do the trick

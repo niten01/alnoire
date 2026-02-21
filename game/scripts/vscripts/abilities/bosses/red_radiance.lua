@@ -39,7 +39,8 @@ function red_radiance:OnChannelFinish(bInterrupted)
         ms = ms - sprintSpeed
     end
 
-    ms = ms + sprintSpeed - 1
+    local bonusMS = self:GetSpecialValueFor("bonus_ms")
+    ms = ms + sprintSpeed + bonusMS
 
     local duration = self:GetSpecialValueFor("duration")
     local dps = self:GetSpecialValueFor("damage_per_sec")

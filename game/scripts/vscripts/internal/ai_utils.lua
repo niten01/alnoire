@@ -41,7 +41,7 @@ function CanCastAbility(unit, target, ability)
   local range = ability:GetCastRange(unit:GetAbsOrigin(), TargetUnitOrNil(target))
   local dist = #(unit:GetAbsOrigin() - GetTargetPos(target))
   local behavior = ability:GetBehaviorInt()
-  if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_HIDDEN) ~= 0 then return false end
+  if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_HIDDEN) ~= 0 or ability:IsHidden() then return false end
   return dist <= (range + 100)
 end
 
