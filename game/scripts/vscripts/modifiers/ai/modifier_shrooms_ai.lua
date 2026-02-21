@@ -9,12 +9,13 @@ function modifier_shrooms_ai:OnCreated()
     local kv = GetUnitKeyValuesByName(unitName)
     local mushroom_model = "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_mushroom.vmdl"
     self.undergroundDepth = 78
-    self.isSecondGroup = string.match(unitName, "_second") ~= nil
+    self.isSecondGroup = true
     if kv then
         local creepType = kv["JungleShroomCreepType"] or "melee"
         if creepType ~= 'melee' then
             mushroom_model = "models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged_mushroom.vmdl"
             self.undergroundDepth = 95
+            self.isSecondGroup = false
         end
     end
 

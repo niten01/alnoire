@@ -1,0 +1,19 @@
+"DOTAAbilities"
+{
+    "gnoll_slow_passive"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/jungle/gnoll_slow_passive"
+		"AbilityTextureName"            "gnoll_assassin_envenomed_weapon"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+			"debuffDuration"			"6.0"
+            "slowDebuff"                "150"
+            "turnRateDebuffPercent"            "0.1"
+		}
+	}
+}
