@@ -302,28 +302,33 @@ return {
         spawner_lizards_venomancer    = {
             npc = "npc_jungle_venomancer",
             team = DOTA_TEAM_BADGUYS,
-            packID = "pack_forest_act1_lizards"
+            packID = "pack_forest_act1_lizards",
+            ai_modifier = "modifier_default_creep_ai"
         },
         spawner_lizards_creep_melee   = {
             npc = "npc_jungle_creep_melee",
             team = DOTA_TEAM_BADGUYS,
-            packID = "pack_forest_act1_lizards"
+            packID = "pack_forest_act1_lizards",
+            ai_modifier = "modifier_default_creep_ai"
         },
         spawner_lizards_creep_range   = {
             npc = "npc_jungle_creep_range",
             team = DOTA_TEAM_BADGUYS,
-            packID = "pack_forest_act1_lizards"
+            packID = "pack_forest_act1_lizards",
+            ai_modifier = "modifier_default_creep_ai"
         },
 
         spawner_axe_axe               = {
             npc = "npc_jungle_axe",
             team = DOTA_TEAM_BADGUYS,
-            packID = "pack_forest_act1_axe"
+            packID = "pack_forest_act1_axe",
+            ai_modifier = "modifier_axe_ai"
         },
         spawner_axe_sisipisi          = {
             npc = "npc_jungle_sisipisi",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_axe",
+            ai_modifier = "modifier_default_creep_ai"
         },
 
         spawner_roshan_big            = {
@@ -506,8 +511,6 @@ return {
         },
 
         pack_forest_act1_axe = {
-            thinker = "axe",
-            denyTarget = nil,
             stayActivatedOnPlayerDeath = true
 
         },

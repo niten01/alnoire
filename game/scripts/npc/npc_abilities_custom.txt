@@ -10,6 +10,7 @@
 #base "jungle/techies_abilities.txt"
 #base "jungle/gnoll_abilities.txt"
 #base "jungle/ancdragon_abilities.txt"
+#base "jungle/axe_abilities.txt"
 
 
 
@@ -252,44 +253,5 @@
 		"BaseClass"             "ability_lua"
 		"ScriptFile"            "abilities/trap_pendulum.lua"
 		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	}
-
-	"axe_battle_hunger"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastPoint"              "0.3"
-		"AbilityCastRange"              "1000"
-		"AbilityCooldown"               "6.0"
-		"AbilityManaCost"               "0"
-		"AbilityDamage"					"20.0"
-		"AbilityModifierSupportValue"	"0.1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"              "FIELD_FLOAT"
-				"duration"              "10.0 10.0 10.0 10.0"
-			}
-			"02"
-			{
-				"var_type"              "FIELD_INTEGER"
-				"damage_per_second"     "20.0 20.0 20.0 20.0" 
-			}
-			"03" 
-			{
-				"var_type"              "FIELD_INTEGER"
-				"slow"                  "-12 -12 -12 -12"
-			}
-			"04"
-			{
-				"var_type"              "FIELD_INTEGER"
-				"speed_bonus"           "12 12 12 12"
-			}
-		}
 	}
 }

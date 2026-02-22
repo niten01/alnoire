@@ -28,6 +28,7 @@ LinkLuaModifier("modifier_cust_rosh", "modifiers/jungle/modifier_cust_rosh", LUA
 
 -- ai
 LinkLuaModifier("modifier_default_creep_ai", "modifiers/ai/modifier_default_creep_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_axe_ai", "modifiers/ai/modifier_axe_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mk_ai", "modifiers/ai/modifier_mk_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_techies_ai", "modifiers/ai/modifier_techies_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_ogre_bruiser_ai", "modifiers/ai/modifier_ogre_bruiser_ai", LUA_MODIFIER_MOTION_NONE)
