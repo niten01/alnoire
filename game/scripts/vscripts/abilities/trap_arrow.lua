@@ -10,6 +10,7 @@ function trap_arrow:FireTrap(origin, range)
 
     caster:StartGesture(ACT_DOTA_ATTACK)
 
+    local attrs = caster.injectedAttributes
     local fwd = caster:GetForwardVector()
     local projectile_info = {
         Ability = self,
@@ -23,7 +24,7 @@ function trap_arrow:FireTrap(origin, range)
         bReplaceExisting = false,
         iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
         iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-        vVelocity = fwd * 800,
+        vVelocity = fwd * attrs.trap_speed,
         bProvidesVision = true,
         iVisionRadius = 200,
         iVisionTeamNumber = caster:GetTeamNumber()
@@ -84,7 +85,7 @@ function modifier_trap_arrow_thinker:SetTrapActive(value)
         self.range = finalDistance
 
         local attrs = parent.injectedAttributes
-        assert(attrs and attrs.trap_interval and attrs.trap_delay)
+        assert(attrs and attrs.trap_interval and attrs.trap_delay and attrs.trap_speed)
         Timers:CreateTimer(attrs.trap_delay, function()
             self:OnIntervalThink()
             self:StartIntervalThink(attrs.trap_interval)

@@ -24,6 +24,17 @@ modifier_trap_pendulum_thinker = class({})
 
 function modifier_trap_pendulum_thinker:IsHidden() return true end
 
+function modifier_trap_pendulum_thinker:CheckState()
+	return {
+		[MODIFIER_STATE_INVULNERABLE] = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
+		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR_FOR_ENEMIES]   = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR_FOR_OTHER_PLAYERS]   = true,
+        [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+	}
+end
+
 function modifier_trap_pendulum_thinker:SetTrapActive(value)
     if not IsServer() then return end
     local parent = self:GetParent()
@@ -64,6 +75,7 @@ function modifier_trap_pendulum_thinker:OnIntervalThink()
     local startPos = origin - rightVec * length
     local endPos = origin + rightVec * length
 
+    DebugDrawLine(startPos, endPos, 255, 0, 0, false, 1)
     local enemies = FindUnitsInLine(
         caster:GetTeamNumber(),
         startPos,

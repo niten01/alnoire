@@ -229,6 +229,10 @@
 		"BaseClass"             "ability_lua"
 		"ScriptFile"            "abilities/trap_fire.lua"
 		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"precache"
+		{
+			"particle"		"particles/trap_fire.vpcf"
+		}
 	}
 	"trap_arrow"
 	{

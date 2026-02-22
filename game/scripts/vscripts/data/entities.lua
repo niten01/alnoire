@@ -240,7 +240,7 @@ return {
             npc = "npc_trap_arrow",
             team = DOTA_TEAM_BADGUYS,
             modifiers = { "modifier_story_npc" },
-            injectedAttributes = { "trap_delay", "trap_interval" }
+            injectedAttributes = { "trap_delay", "trap_interval", "trap_speed" }
         },
         spawner_trap_fire             = {
             npc = "npc_trap_fire",
