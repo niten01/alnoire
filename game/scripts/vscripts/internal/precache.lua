@@ -253,6 +253,8 @@ return {
         "particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf",
         "particles/techies_poofout.vpcf",
         "particles/shrooms_dig.vpcf",
+        "particles/econ/items/axe/axe_cinder/axe_cinder_battle_hunger.vpcf",
+
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",
 

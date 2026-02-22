@@ -1,0 +1,38 @@
+"DOTAAbilities"
+{
+    "axe_custom_hunger"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/jungle/axe_custom_hunger"
+		"AbilityTextureName"            "axe_battle_hunger"
+        "MaxLevel"						"1"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"2000"
+        
+        // Time		
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"4.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"1"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "duration"      "10.0"
+            "damagePerSec"  "10.0"
+            "slowAmount"    "50"
+        }
+    }	
+}
