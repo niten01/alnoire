@@ -11,11 +11,12 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"genius_flare"			
-		"Ability2"					""			
-		"Ability3"					""			
-		"Ability4"					""			
-		"Ability5"					""			
+		"Ability1"					"oracle_fortunes_end"			
+		"Ability2"					"oracle_purifying_flames"			
+		"Ability3"					"genius_push"			
+		"Ability4"					"genius_flare"			
+		"Ability5"					"genius_rain"			
+		"Ability6"					"oracle_false_promise"			
 
 		// Armor
 		//----------------------------------------------------------------

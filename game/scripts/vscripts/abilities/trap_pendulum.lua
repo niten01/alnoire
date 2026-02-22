@@ -69,7 +69,7 @@ function modifier_trap_pendulum_thinker:OnIntervalThink()
 
     local caster = self:GetCaster()
 
-    local length = 250
+    local length = 450
     local origin = caster:GetAbsOrigin()
     local rightVec = caster:GetRightVector():Normalized()
     local startPos = origin - rightVec * length

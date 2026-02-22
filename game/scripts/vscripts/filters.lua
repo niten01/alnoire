@@ -67,9 +67,10 @@ function barebones:OrderFilter(filter_table)
 		local unit_with_order
 		if units["0"] then
 			unit_with_order = EntIndexToHScript(units["0"])
+			unit_with_order.lastMoveOrder = Vector(destination_x, destination_y, 0)
 		end
 	end
-	
+
 	-- Example 3: Disable item sharing for a custom courier that everyone can control
 	--[[
 	if order == DOTA_UNIT_ORDER_DROP_ITEM or order == DOTA_UNIT_ORDER_GIVE_ITEM then
@@ -104,8 +105,9 @@ function barebones:DamageFilter(keys)
 	end
 
 	local damage_type = keys.damagetype_const
-	local inflictor = keys.entindex_inflictor_const	-- keys.entindex_inflictor_const is nil if damage is not caused by an ability
-	local damage_after_reductions = keys.damage 	-- keys.damage is damage after reductions without spell amplifications
+	local inflictor = keys
+	.entindex_inflictor_const                    -- keys.entindex_inflictor_const is nil if damage is not caused by an ability
+	local damage_after_reductions = keys.damage  -- keys.damage is damage after reductions without spell amplifications
 
 	-- Damage types:
 	-- DAMAGE_TYPE_NONE = 0
@@ -125,7 +127,7 @@ function barebones:DamageFilter(keys)
 	if attacker:IsNull() or victim:IsNull() then
 		return false
 	end
-	
+
 	-- Update the gold bounty of the hero before he dies
 	if USE_CUSTOM_HERO_GOLD_BOUNTY then
 		if attacker:IsControllableByAnyPlayer() and victim:IsRealHero() and not victim:IsSpiritBearCustom() and not victim:IsTempestDouble() and not victim:IsClone() and damage_after_reductions >= victim:GetHealth() then
@@ -136,9 +138,10 @@ function barebones:DamageFilter(keys)
 			-- Adjust Gold bounty
 			local gold_bounty
 			if hero_streak > 2 then
-				gold_bounty = HERO_KILL_GOLD_BASE + hero_level*HERO_KILL_GOLD_PER_LEVEL + (hero_streak-2)*HERO_KILL_GOLD_PER_STREAK
+				gold_bounty = HERO_KILL_GOLD_BASE + hero_level * HERO_KILL_GOLD_PER_LEVEL +
+				(hero_streak - 2) * HERO_KILL_GOLD_PER_STREAK
 			else
-				gold_bounty = HERO_KILL_GOLD_BASE + hero_level*HERO_KILL_GOLD_PER_LEVEL
+				gold_bounty = HERO_KILL_GOLD_BASE + hero_level * HERO_KILL_GOLD_PER_LEVEL
 			end
 
 			victim:SetMinimumGoldBounty(gold_bounty)
@@ -153,7 +156,7 @@ end
 function barebones:ModifierFilter(keys)
 	--PrintTable(keys)
 
-	local unit_with_modifier 
+	local unit_with_modifier
 	if keys.entindex_parent_const then
 		unit_with_modifier = EntIndexToHScript(keys.entindex_parent_const)
 	end
@@ -190,12 +193,12 @@ end
 function barebones:ProjectileFilter(keys)
 	--PrintTable(keys)
 
-	local can_be_dodged = keys.dodgeable                   -- values: 1 for yes, 0 for no
-	local ability_index = keys.entindex_ability_const      -- value if not ability: -1
+	local can_be_dodged = keys.dodgeable           -- values: 1 for yes, 0 for no
+	local ability_index = keys.entindex_ability_const -- value if not ability: -1
 	local source_index = keys.entindex_source_const
 	local target_index = keys.entindex_target_const
 	local expire_time = keys.expire_time
-	local is_an_attack_projectile = keys.is_attack         -- values: 1 for yes or 0 for no
+	local is_an_attack_projectile = keys.is_attack -- values: 1 for yes or 0 for no
 	local max_impact_time = keys.max_impact_time
 	local projectile_speed = keys.move_speed
 
@@ -208,7 +211,7 @@ function barebones:BountyRuneFilter(keys)
 
 	local gold_bounty = keys.gold_bounty
 	local playerID = keys.player_id_const
-	local xp_bounty = keys.xp_bounty		-- value: 0
+	local xp_bounty = keys.xp_bounty -- value: 0
 
 	return true
 end
@@ -295,8 +298,9 @@ function barebones:InventoryFilter(keys)
 
 	local unit_with_inventory_index = keys.inventory_parent_entindex_const -- -1 if not defined
 	local item_index = keys.item_entindex_const
-	local owner_index = keys.item_parent_entindex_const -- -1 if not defined
-	local item_slot = keys.suggested_slot -- slot in which the item should be put, usually its -1 meaning put in the first free slot
+	local owner_index = keys.item_parent_entindex_const                 -- -1 if not defined
+	local item_slot = keys
+	.suggested_slot                                                     -- slot in which the item should be put, usually its -1 meaning put in the first free slot
 
 	-- Item slots:
 	-- Inventory slots: DOTA_ITEM_SLOT_1 - DOTA_ITEM_SLOT_9
@@ -320,7 +324,7 @@ function barebones:InventoryFilter(keys)
 		unit_name = unit_with_inventory:GetUnitName()
 	end
 
-	local item 
+	local item
 	if item_index then
 		item = EntIndexToHScript(item_index)
 	end

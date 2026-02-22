@@ -17,8 +17,8 @@ function trap_arrow:FireTrap(origin, range)
         EffectName = "particles/trap_arrow.vpcf",
         vSpawnOrigin = origin,
         fDistance = range,
-        fStartRadius = 100,
-        fEndRadius = 100,
+        fStartRadius = 50,
+        fEndRadius = 50,
         Source = caster,
         bHasFrontalCone = false,
         bReplaceExisting = false,
@@ -79,7 +79,7 @@ function modifier_trap_arrow_thinker:SetTrapActive(value)
         local forward = parent:GetForwardVector()
         local attachHndl = parent:ScriptLookupAttachment("nozzle")
         local startPos = parent:GetAttachmentOrigin(attachHndl)
-        local finalDistance = self:GetClippedRange(startPos, forward, 1000)
+        local finalDistance = self:GetClippedRange(startPos, forward, 3000)
 
         self.nozzlePos = startPos
         self.range = finalDistance
