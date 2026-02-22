@@ -8,11 +8,22 @@ function modifier_move:OnCreated(kv)
     self.time = self:GetDuration()
     self.distance = self.speed * self.time
     self.travelled = 0
+    local parent = self:GetParent()
+    if kv.activity then
+        parent:StartGesture(kv.activity)
+        self.activity = kv.activity
+    end
 
     if self:ApplyHorizontalMotionController() then
         self.time = 0
     else
         self:Destroy()
+    end
+end
+
+function modifier_move:OnDestroy()
+    if self.activity then
+        self:GetParent():FadeGesture(self.activity)
     end
 end
 

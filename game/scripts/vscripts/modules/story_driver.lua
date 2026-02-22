@@ -405,7 +405,8 @@ end
 function StoryDriver:OnActChange(event)
   if GetMapName() == "fight_test" then
     Timers:CreateTimer(1, function()
-      StoryDriver:StartFight("pack_genius")
+      SpawnManager:SpawnNPC("spawner_gorilla")
+      StoryDriver:StartFight("pack_gorilla")
     end)
   end
 
