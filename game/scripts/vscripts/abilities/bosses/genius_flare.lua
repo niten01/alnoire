@@ -17,7 +17,8 @@ function genius_flare:OnSpellStart()
 
     assert(self.targetPos)
     self.pfx = {}
-    -- EmitSoundOnLocationWithCaster(point, "ability.island_guard.root.hit", caster)
+    EmitSoundOnLocationWithCaster(self.targetPos, "ability.genius.flare.cast", caster)
+    EmitSoundOnLocationWithCaster(self.targetPos, "ability.genius.flare.loop", caster)
 
     local pfx = ParticleManager:CreateParticle(
         "particles/econ/items/skywrath_mage/skywrath_arcana/skywrath_arcana_mystic_flare_v2_ambient.vpcf",
@@ -39,10 +40,11 @@ function genius_flare:AreasThink(info)
     local tickRate = self:GetSpecialValueFor("tick_rate")
     local dps = self:GetSpecialValueFor("damage_per_second")
     local damage = dps * tickRate
-    local areaRadius = self:GetSpecialValueFor("area_radius")
+    local areaRadius = self:GetSpecialValueFor("radius")
 
     local enemies = FindEnemiesForAIInRadius(info.pos, areaRadius)
     for _, ent in ipairs(enemies) do
+        EmitSoundOnLocationForPlayer("ability.genius.flare.hit", ent:GetAbsOrigin(), ent:GetPlayerOwnerID())
         ApplyDamage({
             victim = ent,
             attacker = self:GetCaster(),
@@ -54,10 +56,6 @@ function genius_flare:AreasThink(info)
 
     info.remainingDuration = info.remainingDuration - tickRate
     if info.remainingDuration <= 0 then
-        -- for _, pfx in ipairs(self.pfxs) do
-        --     -- ParticleManager:DestroyParticle(pfx, false)
-        --     -- ParticleManager:ReleaseParticleIndex(pfx)
-        -- end
         return nil
     else
         return tickRate

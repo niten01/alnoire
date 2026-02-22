@@ -1,0 +1,50 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  ability.genius.flare.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/skywrath/mystic_flare_cast.vsnd",
+    ]
+    volume = "1.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.genius.flare.loop = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/skywrath/mystic_flare.vsnd",
+    ]
+    volume = "0.70000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+    volume_fade_in = "0.3"
+  }
+  ability.genius.flare.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/skywrath/mystic_flare_target.vsnd",
+    ]
+    volume = "0.50000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+}

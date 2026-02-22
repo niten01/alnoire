@@ -3,7 +3,7 @@
     "npc_trap_fire"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/props/traps/barking_dog/barking_dog.vmdl"
+        "Model"                 "models/barking_dog/barking_dog.vmdl"
 		"ModelScale" 				"1.9"
 		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
         "Ability1"              "trap_fire"

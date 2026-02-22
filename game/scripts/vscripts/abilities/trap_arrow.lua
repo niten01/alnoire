@@ -61,7 +61,7 @@ function modifier_trap_arrow_thinker:GetClippedRange(origin, direction, maxRange
     for i = 1, maxRange, 1 do
         local checkPos = origin + (direction * i)
 
-        if GetGroundHeight(checkPos, nil) > baseHeight + 50 then
+        if GetGroundHeight(checkPos, nil) > baseHeight + 150 then
             finalDistance = i
             break
         end

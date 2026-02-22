@@ -11,12 +11,15 @@ function trap_fire:FireTrap()
     caster:FadeGesture(ACT_DOTA_ATTACK)
     caster:StartGesture(ACT_DOTA_ATTACK)
 
+    local attachHndl = caster:ScriptLookupAttachment("nozzle")
+    local startPos = caster:GetAttachmentOrigin(attachHndl)
     local forward = caster:GetForwardVector()
+    forward.z = 0
 
     local projectile_info = {
         Ability = self,
         EffectName = "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf",
-        vSpawnOrigin = caster:GetAbsOrigin(),
+        vSpawnOrigin = startPos,
         fDistance = 300,
         fStartRadius = 70,
         fEndRadius = 70,
