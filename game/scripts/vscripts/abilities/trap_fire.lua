@@ -18,7 +18,7 @@ function trap_fire:FireTrap()
 
     local projectile_info = {
         Ability = self,
-        EffectName = "particles/trap_fire.vpcf",
+        EffectName = "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf",
         vSpawnOrigin = startPos,
         fDistance = 300,
         fStartRadius = 70,
