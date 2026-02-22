@@ -79,7 +79,7 @@ function modifier_trap_arrow_thinker:SetTrapActive(value)
         local forward = parent:GetForwardVector()
         local attachHndl = parent:ScriptLookupAttachment("nozzle")
         local startPos = parent:GetAttachmentOrigin(attachHndl)
-        local finalDistance = self:GetClippedRange(startPos, forward, 1000)
+        local finalDistance = self:GetClippedRange(startPos, forward, 3000)
 
         self.nozzlePos = startPos
         self.range = finalDistance
