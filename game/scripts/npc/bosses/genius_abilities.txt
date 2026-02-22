@@ -124,8 +124,8 @@
         "AbilityTextureName"            "earthshaker_fissure"
         
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
-        "AbilityCastPoint"              "0.47"
+        "AbilityCastAnimation"          "ACT_DOTA_FLAIL"
+        "AbilityCastPoint"              "0.27"
         "AbilityCooldown"               "5.0" 
         "AbilityCastRange"        		"250"
         
@@ -138,6 +138,32 @@
         "precache"
         {
             "particle"      "particles/genius_push_sphere.vpcf"
+        }
+    }
+    "genius_flare"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/genius_flare.lua"
+        "AbilityTextureName"            "skywrath_mage_mystic_flare"
+        
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+        "AbilityCastPoint"              "0.47"
+        "AbilityCooldown"               "1.0" 
+        "AbilityCastRange"        		"250"
+        
+        "AbilityValues"
+        {
+            "radius"                "150"
+            "duration"              "2"
+			"damage_per_second"		"100"
+			"tick_rate"				"0.1"
+			"warning_delay"			"0.4"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/econ/items/skywrath_mage/skywrath_arcana/skywrath_arcana_mystic_flare_v2_ambient.vpcf"
         }
     }
 

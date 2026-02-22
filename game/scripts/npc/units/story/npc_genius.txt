@@ -11,7 +11,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"genius_push"			
+		"Ability1"					"genius_flare"			
 		"Ability2"					""			
 		"Ability3"					""			
 		"Ability4"					""			

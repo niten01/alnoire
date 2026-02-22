@@ -32,6 +32,6 @@ function modifier_genius_ai:OnIntervalThink()
         --     return
         -- end
 
-        if CastAbility(unit, target, "genius_push") then return end
+        if CastAbility(unit, target, "genius_flare") then return end
     end
 end
