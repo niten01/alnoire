@@ -106,7 +106,7 @@
     soundlevel = "81.000000"
     mixgroup = "weapons"
     volume_fade_out = "0.600000"
-    spread_radius = "300.000000"
+    spread_radius = "3000.000000"
   }
   ability.red.machine_gun.shoot = {
     type = "dota_update_default"

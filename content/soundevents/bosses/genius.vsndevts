@@ -47,4 +47,34 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
+  ability.genius.rain.loop = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/oracle/enc/rain_of_destiny.vsnd",
+    ]
+    volume = "0.70000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "1.500000"
+    spread_radius = "2000.000000"
+  }
+  ability.genius.push.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/disruptor/repulsion.vsnd",
+    ]
+    volume = "0.80000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
 }

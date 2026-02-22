@@ -21,4 +21,6 @@ function genius_push:OnSpellStart()
 
     local pfx = ParticleManager:CreateParticle("particles/genius_push_sphere.vpcf", PATTACH_ABSORIGIN, caster)
     ParticleManager:ReleaseParticleIndex(pfx)
+
+    caster:EmitSound("ability.genius.push.cast")
 end
