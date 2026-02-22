@@ -71,10 +71,14 @@ function SpawnManager:InitNPC(spawnerData, spawnerEnt, npc)
     npc:FaceTowards(npc:GetAbsOrigin() + fwd * 100)
     npc:SetForwardVector(fwd)
 
+    local spawnerPos = spawnerEnt:GetAbsOrigin()
     local injectedAttributes = {}
     for _, attrName in ipairs(spawnerData.injectedAttributes) do
         assert(spawnerEnt:HasAttribute(attrName),
-            "Some spawner entity does't have " .. attrName .. " attribute, good luck finding it")
+            "Some spawner entity does't have " ..
+            attrName ..
+            " attribute, good luck finding it, coords: (" .. tostring(spawnerPos.x) .. "; " .. tostring(spawnerPos.y) ..
+            ")")
         local value = spawnerEnt:Attribute_GetFloatValue(attrName, -1)
         injectedAttributes[attrName] = value
     end
