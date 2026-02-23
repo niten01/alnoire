@@ -52,7 +52,7 @@ CUSTOM_SCAN_COOLDOWN = 210              -- Custom cooldown of Scan in seconds. D
 CUSTOM_GLYPH_COOLDOWN = 300             -- Custom cooldown of Glyph in seconds. Doesn't affect Glyph's starting cooldown!
 
 -- TODO: only for testing
-DISABLE_FOG_OF_WAR_ENTIRELY = true       -- Should we disable fog of war entirely for both teams?
+DISABLE_FOG_OF_WAR_ENTIRELY = false       -- Should we disable fog of war entirely for both teams?
 USE_UNSEEN_FOG_OF_WAR = true             -- Should we make unseen and fogged areas of the map completely black until uncovered by each team?
 -- NOTE: DISABLE_FOG_OF_WAR_ENTIRELY must be false for USE_UNSEEN_FOG_OF_WAR to work
 USE_STANDARD_DOTA_BOT_THINKING = false   -- Should we have bots act like they would in Dota? (This requires 3 lanes, vanilla items, vanilla heroes etc)

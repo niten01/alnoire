@@ -20,7 +20,7 @@ function trap_fire:FireTrap()
         Ability = self,
         EffectName = "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf",
         vSpawnOrigin = startPos,
-        fDistance = 300,
+        fDistance = 250,
         fStartRadius = 70,
         fEndRadius = 70,
         Source = caster,
