@@ -272,7 +272,8 @@ return {
         "particles/shrooms_dig.vpcf",
         "particles/econ/items/axe/axe_cinder/axe_cinder_battle_hunger.vpcf",
         "particles/neutral_fx/ursa_thunderclap.vpcf",
-        "particles/econ/events/seasonal_reward_line_fall_2025/lotus_orb_fallrewardline_2025_shield.vpcf",
+        "particles/units/heroes/hero_lich/lich_ice_age.vpcf",
+        "particles/neutral_fx/ogre_magi_frost_armor.vpcf",
 
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",

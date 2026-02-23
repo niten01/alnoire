@@ -53,10 +53,15 @@ function modifier_bear_shield:GetModifierIncomingDamage_Percentage()
     return -dmredPercent
 end
 
-function modifier_bear_shield:GetEffectName()
-    return "particles/econ/events/seasonal_reward_line_fall_2025/lotus_orb_fallrewardline_2025_shield.vpcf"
-end
-
-function modifier_bear_shield:GetEffectAttachType()
-    return PATTACH_ABSORIGIN_FOLLOW
+function modifier_bear_shield:OnCreated()
+    if not IsServer() then return end
+    local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_lich/lich_ice_age.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+    local pfx2 = ParticleManager:CreateParticle("particles/neutral_fx/ogre_magi_frost_armor.vpcf",
+        PATTACH_OVERHEAD_FOLLOW, self:GetParent())
+    ParticleManager:SetParticleControlEnt(pfx, 1, self:GetParent(), PATTACH_POINT_FOLLOW, 'attach_origin',
+        self:GetCaster():GetAbsOrigin(), true)
+    ParticleManager:SetParticleControl(pfx, 2, Vector(0, 0, 0))
+    self:AddParticle(pfx, false, false, -1, false, false)
+    self:AddParticle(pfx2, false, false, -1, false, false)
 end
