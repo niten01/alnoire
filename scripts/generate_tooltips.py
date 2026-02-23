@@ -3,12 +3,12 @@ import re
 from dataclasses import dataclass
 import time
 import subprocess
-import requests
+# import requests
 import sys
 from pathlib import Path
 from multiprocessing import cpu_count
-from tqdm import tqdm
-from tqdm.contrib.concurrent import thread_map
+# from tqdm import tqdm
+# from tqdm.contrib.concurrent import thread_map
 
 SOURCE_LANG = "ru"
 TARGET_LANG = "en"
@@ -104,7 +104,8 @@ def process_files(base_dir: Path):
         return
 
     rus_tokens = []
-    for file_path in tqdm(files, desc="Loading Files", unit="file"):
+    # for file_path in tqdm(files, desc="Loading Files", unit="file"):
+    for file_path in files:
         with open(file_path, "r", encoding="utf-8") as f:
             lines = f.readlines()
             for line in lines:
