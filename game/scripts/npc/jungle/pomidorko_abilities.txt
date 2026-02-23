@@ -1,0 +1,102 @@
+"DOTAAbilities"
+{
+    "pomidorko_clap"
+    {
+        "BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/jungle/pomidorko_clap"
+		"AbilityTextureName"            "polar_furbolg_ursa_warrior_thunder_clap"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "MaxLevel"                      "1"
+        "AbilityCastPoint"				"0.7"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_1"
+
+        "AbilityValues"
+		{
+			"radius"            "350"
+			"duration"          "3.0"
+			"slowAmount"        "70"
+            "attackSpeedSlow"   "50"
+			"damage"            "100"
+            "cooldown"          "5.0"
+		}
+    }
+
+    "lich_frost_nova"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Ability.FrostNova"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"575 600 625 650"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDuration"				"4.0"			
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1 120 130 140"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.3"	// Primarily about the damage
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{	
+			"AbilityCooldown"
+			{
+				"value"		"9.0"
+				"special_bonus_unique_lich_3" "-3.5"
+			}
+			"radius"				
+			{
+				"value"		"200"
+				"special_bonus_unique_lich_6" "+125"
+					"affected_by_aoe_increase"	"1"
+			}
+			"slow_movement_speed"	"-25"
+			"slow_attack_speed_primary"		"-40 -40 -50 -60"
+			"damage"			"200 80 120 160"
+			"aoe_damage"			
+			{
+				"value"			"80 120 160 200"
+				"special_bonus_unique_lich_6" "+125"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+
+    "bear_shield"
+    {
+        "BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/jungle/bear_shield"
+		"AbilityTextureName"            "antimage_counterspell"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "MaxLevel"                      "1"
+
+        "AbilityValues"
+		{
+			"duration"      "3.0"
+            "cooldown"      "3.5"
+            "blockPercent"  "90.0"
+            "castRange"     "1000"
+		}
+    }
+}

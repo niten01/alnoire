@@ -133,25 +133,40 @@ return {
         "npc_dota_custom_king_tower_good",
 
         -- jungle creeps
-        "npc_jungle_creep_melee",
-        "npc_jungle_creep_range",
-        "npc_jungle_axe",
-        "npc_jungle_venomancer",
-        "npc_jungle_sisipisi",
         "npc_dota_hero_venomancer",
         "npc_dota_hero_axe",
         "npc_dota_hero_razor",
         "npc_dota_hero_antimage",
         "npc_dota_hero_monkey_king",
         "npc_dota_roshan",
-        "npc_jungle_roshan",
-        "npc_jungle_miniroshan",
-        "npc_jungle_techies",
         "npc_dota_hero_techies",
         "npc_dota_hero_furion",
         "npc_dota_hero_meepo",
         "npc_dota_hero_nyx_assassin",
         "npc_dota_neutral_gnoll_assassin",
+        "npc_dota_neutral_polar_furbolg_ursa_warrior",
+        "npc_dota_neutral_ice_shaman",
+        "npc_dota_hero_lich",
+        "npc_dota_neutral_ogre_mauler",
+
+        "npc_jungle_venomancer",
+        "npc_jungle_creep_melee",
+        "npc_jungle_creep_range",
+        "npc_jungle_axe",
+        "npc_jungle_sisipisi",
+        "npc_jungle_roshan",
+        "npc_jungle_miniroshan",
+        "npc_jungle_techies_1",
+        "npc_jungle_techies_2",
+        "npc_jungle_techies_3",
+        "npc_jungle_shroom_melee",
+        "npc_jungle_shroom_ranged",
+        "npc_jungle_shroom_furion",
+        "npc_jungle_gnoll",
+        "npc_jungle_ancdragon",
+        "npc_jungle_pomidorko",
+        "npc_jungle_icebear",
+        "npc_jungle_bufferbear",
 
 
         -- traps
@@ -182,6 +197,7 @@ return {
         "soundevents/jungle/junglerosh.vsndevts",
         "soundevents/jungle/jungletechies.vsndevts",
         "soundevents/jungle/junglefurion.vsndevts",
+        "soundevents/jungle/junglebears.vsndevts",
 
     },
     particles = {
@@ -254,6 +270,8 @@ return {
         "particles/techies_poofout.vpcf",
         "particles/shrooms_dig.vpcf",
         "particles/econ/items/axe/axe_cinder/axe_cinder_battle_hunger.vpcf",
+        "particles/neutral_fx/ursa_thunderclap.vpcf",
+        "particles/econ/events/seasonal_reward_line_fall_2025/lotus_orb_fallrewardline_2025_shield.vpcf",
 
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",
