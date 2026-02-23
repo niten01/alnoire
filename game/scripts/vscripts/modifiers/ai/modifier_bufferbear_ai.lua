@@ -7,7 +7,7 @@ function modifier_bufferbear_ai:OnIntervalThink()
 
     local beaconData = unit.packTargetData
     if not beaconData then
-        self:StartIntervalThink(0.5)
+        self:StartIntervalThink(BATTLE_THINK_INTERVAL)
         return
     end
 
@@ -15,7 +15,7 @@ function modifier_bufferbear_ai:OnIntervalThink()
     if unit:IsChanneling() or unit:GetCurrentActiveAbility() then
         isBusyThisTick = true
     end
-    if not isBusyThisTick then
+    if not isBusyThisTick and beaconData.state == "aggro" then
         local abilityShield = unit:FindAbilityByName("bear_shield")
         if abilityShield and abilityShield:GetLevel() > 0 and abilityShield:IsFullyCastable() then
             local allies = FindUnitsInRadius(
@@ -36,7 +36,7 @@ function modifier_bufferbear_ai:OnIntervalThink()
             for _, ally in pairs(allies) do
                 if ally ~= unit and ally.packTargetData == beaconData and ally:IsAlive() then
                     local damageTime = ally:GetLastDamageTime()
-                    if damageTime > latestDamageTime then
+                    if damageTime > latestDamageTime and (GameRules:GetGameTime() - damageTime) < 5 then
                         latestDamageTime = damageTime
                         shieldCandidate = ally
                     end
