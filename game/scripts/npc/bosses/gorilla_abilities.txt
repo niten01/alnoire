@@ -55,18 +55,15 @@
         "precache"
         {
             "particle"      "particles/units/heroes/hero_primal_beast/primal_beast_onslaught_charge_active.vpcf"
-            "particle"      "particles/units/heroes/hero_windrunner/wr_taunt_kiss_heart.vpcf"
-            "particle"      "particles/econ/events/plus/high_five/high_five_lvl3_hearts_impact.vpcf"
-            "particle"      "particles/gorilla_umm_process.vpcf"
         }
     }   
     "gorilla_clones"
     {
         "BaseClass"                     "ability_lua"
-        "ScriptFile"                    "abilities/bosses/gorilla_arc.lua"
+        "ScriptFile"                    "abilities/bosses/gorilla_clones.lua"
         "AbilityTextureName"            "primal_beast_onslaught"
         
-        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
         "AbilityCastPoint"              "0.3"
         "AbilityCooldown"               "5.0" 
         "AbilityCastRange"        		"9999"
@@ -74,20 +71,20 @@
         
         "AbilityValues"
         {
-            "distance"             "300"
+            "distance"             "1500"
+            "clone_speed"          "1000"
             "damage"               "10"
             "umm_duration"         "3"
             "travel_time"          "2"
-            "capture_radius"       "200"
-            "warning_delay"        "0.1"
+            "capture_radius"       "150"
+            "warning_delay"         "0.2"
+            "num_shots"             "4"
+            "spread"                "45"
         }
 
         "precache"
         {
-            "particle"      "particles/units/heroes/hero_primal_beast/primal_beast_onslaught_charge_active.vpcf"
-            "particle"      "particles/units/heroes/hero_windrunner/wr_taunt_kiss_heart.vpcf"
-            "particle"      "particles/econ/events/plus/high_five/high_five_lvl3_hearts_impact.vpcf"
-            "particle"      "particles/gorilla_umm_process.vpcf"
+            "particle"      "particles/gorilla_clone_trail.vpcf"
         }
     }   
 }

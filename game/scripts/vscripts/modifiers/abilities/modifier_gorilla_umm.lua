@@ -60,6 +60,7 @@ function modifier_gorilla_umm:OnDestroy()
 
     ParticleManager:DestroyParticle(self.pfx, false)
     ParticleManager:ReleaseParticleIndex(self.pfx)
+    FindClearSpaceForUnit(parent, parent:GetAbsOrigin(), true)
 end
 
 function modifier_gorilla_umm:OnIntervalThink()

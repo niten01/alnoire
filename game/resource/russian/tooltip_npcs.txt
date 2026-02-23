@@ -22,3 +22,4 @@
 "npc_xavier" "xaviersobased"
 "npc_island_guard"		"Страж острова"
 "npc_genius"		"Гений"
+"npc_gorilla"       "Горилла"

@@ -26,9 +26,18 @@ end
 function gorilla_arc:OnSpellStart()
     if not IsServer() then return end
     local caster = self:GetCaster()
+    local radius = self:GetSpecialValueFor("capture_radius")
+    local ummDuration = self:GetSpecialValueFor("umm_duration")
+    local damage = self:GetSpecialValueFor("damage")
+
     assert(self.arcInfo)
     caster.gorillaArcInfo = self.arcInfo
     caster:AddNewModifier(caster, self, "modifier_gorilla_arc", { duration = self:GetSpecialValueFor("travel_time") })
+    caster:AddNewModifier(caster, self, "modifier_gorilla_capture", {
+        radius = radius,
+        ummDuration = ummDuration,
+        damage = damage
+    })
 end
 
 ---------------------------------------------------------------
@@ -52,6 +61,11 @@ function modifier_gorilla_arc:OnCreated(kv)
     self:StartIntervalThink(interval)
 
     parent:StartGesture(ACT_DOTA_RUN)
+
+    self.pfx = ParticleManager:CreateParticle(
+        "particles/units/heroes/hero_primal_beast/primal_beast_onslaught_charge_active.vpcf", PATTACH_ABSORIGIN_FOLLOW,
+        parent)
+    ParticleManager:SetParticleControlEnt(pfx, 0, parent, PATTACH_ABSORIGIN_FOLLOW, "", Vector(300, 0, 0), true)
 end
 
 function modifier_gorilla_arc:OnDestroy()
@@ -59,6 +73,9 @@ function modifier_gorilla_arc:OnDestroy()
     local parent = self:GetParent()
     parent:FadeGesture(ACT_DOTA_RUN)
     FindClearSpaceForUnit(parent, parent:GetAbsOrigin(), true)
+
+    ParticleManager:DestroyParticle(self.pfx, false)
+    ParticleManager:ReleaseParticleIndex(self.pfx)
 end
 
 function modifier_gorilla_arc:OnIntervalThink()

@@ -23,6 +23,6 @@ function modifier_gorilla_ai:OnIntervalThink()
     end
 
     if beaconState == 'aggro' and target and target:IsAlive() then
-        if CastAbility(unit, target, "gorilla_arc") then return end
+        if CastAbility(unit, target, "gorilla_clones") then return end
     end
 end
