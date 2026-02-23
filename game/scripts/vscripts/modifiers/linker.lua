@@ -20,6 +20,7 @@ LinkLuaModifier('modifier_blink_evade', 'modifiers/abilities/modifier_blink_evad
 LinkLuaModifier("modifier_summon_distance_check", "modifiers/abilities/modifier_summon_distance_check",
     LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_gorilla_umm", "modifiers/abilities/modifier_gorilla_umm", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_gorilla_capture", "modifiers/abilities/modifier_gorilla_capture", LUA_MODIFIER_MOTION_NONE)
 
 -- jungle
 LinkLuaModifier("modifier_axe_sustain", "modifiers/jungle/modifier_axe_sustain", LUA_MODIFIER_MOTION_NONE)
