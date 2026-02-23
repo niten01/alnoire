@@ -223,6 +223,7 @@ return {
         "particles/ui_mouseactions/range_finder_cone.vpcf",
         "particles/ui_mouseactions/range_finder_cone_long.vpcf",
         "particles/warning_circle.vpcf",
+        "particles/warning_rope.vpcf",
 
         -- traps
         "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf",
