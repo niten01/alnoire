@@ -6,6 +6,7 @@
 #base "bosses/island_guard_abilities.txt"
 #base "bosses/red_abilities.txt"
 #base "bosses/genius_abilities.txt"
+#base "bosses/gorilla_abilities.txt"
 #base "jungle/techies_abilities.txt"
 #base "jungle/gnoll_abilities.txt"
 #base "jungle/ancdragon_abilities.txt"

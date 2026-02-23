@@ -102,6 +102,7 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_gorilla",
+            ai_modifier = "modifier_gorilla_ai",
         },
         spawner_island_creeps         = {
             npc = "npc_cat_barrel",
