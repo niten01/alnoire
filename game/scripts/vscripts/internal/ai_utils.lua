@@ -147,12 +147,17 @@ function AnyAlive(packTargetData)
   return hasAliveUnits
 end
 
-function DrawDebugCircle(target, radius)
+function DrawDebugCircle(target, radius, duration)
   if not IsServer() then return end
   if not target or not radius then return end
   local pfx = ParticleManager:CreateParticle("particles/sanya_debug_radius_ring.vpcf", PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 0, GetTargetPos(target))
   ParticleManager:SetParticleControl(pfx, 2, Vector(radius, 0, 0))
+  if duration then
+    Timers:CreateTimer(duration, function()
+      DestroyDebugCircle(pfx)
+    end)
+  end
   return pfx
 end
 
@@ -369,6 +374,26 @@ function ShowGenericCircleWarning(center, radius, duration)
   end)
 end
 
+function ShowGenericArcWarning(arcInfo, width, duration)
+  local interval = 0.01
+  local nSteps = duration / interval
+  local iter = arcInfo:Iterate(nSteps)
+  local point = iter()
+  local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
+  ParticleManager:SetParticleControl(pfx, 1, Vector(width, 0, 0))
+  Timers:CreateTimer(0, function()
+    ParticleManager:SetParticleControl(pfx, 0, point)
+    point = iter()
+    if point then
+      return interval
+    else
+      ParticleManager:DestroyParticle(pfx, false)
+      ParticleManager:ReleaseParticleIndex(pfx)
+      return nil
+    end
+  end)
+end
+
 -- startAngle is optional (default 0)
 function PointsAlongRing(center, radius, numPoints, startAngle)
   local points = {}
@@ -433,4 +458,82 @@ function PointsFan(startPos, endPos, numPoints, alpha)
   end
 
   return endPoints
+end
+
+ArcInfo = class {}
+
+function ArcInfo:constructor(center, radius, startAngle, sweep, startPoint, endPoint)
+  self.center = center
+  self.radius = radius
+  self.startAngle = startAngle
+  self.sweep = sweep
+  self.startPoint = startPoint
+  self.endPoint = endPoint
+end
+
+function ArcInfo:Iterate(nSteps)
+  local i = 0
+  return function()
+    if i > nSteps then return nil end
+
+    local t = i / nSteps
+    local currentAngle = self.startAngle + (self.sweep * t)
+
+    local px = self.center.x + self.radius * math.cos(currentAngle)
+    local py = self.center.y + self.radius * math.sin(currentAngle)
+
+    i = i + 1
+    return Vector(px, py, 0)
+  end
+end
+
+function ArcInfo:Length()
+  return self.radius * self.sweep
+end
+
+-- returns an ArcInfo object that has :Iterate(nSteps) iterator
+function PointsArc(startPoint, midPoint, endPoint)
+  startPoint.z = 0
+  midPoint.z = 0
+  endPoint.z = 0
+  local x1, y1 = startPoint.x, startPoint.y
+  local x2, y2 = midPoint.x, midPoint.y
+  local x3, y3 = endPoint.x, endPoint.y
+
+  local D = 2 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2))
+
+  if math.abs(D) < 1e-9 then
+    error("Points are collinear; cannot form an arc.")
+  end
+
+  local h          = ((x1 ^ 2 + y1 ^ 2) * (y2 - y3) + (x2 ^ 2 + y2 ^ 2) * (y3 - y1) + (x3 ^ 2 + y3 ^ 2) * (y1 - y2)) / D
+  local k          = ((x1 ^ 2 + y1 ^ 2) * (x3 - x2) + (x2 ^ 2 + y2 ^ 2) * (x1 - x3) + (x3 ^ 2 + y3 ^ 2) * (x2 - x1)) / D
+
+  local center     = Vector(h, k, 0)
+  local radius     = #(startPoint - center)
+
+  local startAngle = math.atan2(y1 - k, x1 - h)
+  local midAngle   = math.atan2(y2 - k, x2 - h)
+  local endAngle   = math.atan2(y3 - k, x3 - h)
+
+  local sweep      = endAngle - startAngle
+
+  if sweep < -math.pi then sweep = sweep + 2 * math.pi end
+  if sweep > math.pi then sweep = sweep - 2 * math.pi end
+
+  local midSweep = midAngle - startAngle
+  if midSweep < -math.pi then midSweep = midSweep + 2 * math.pi end
+  if midSweep > math.pi then midSweep = midSweep - 2 * math.pi end
+
+  if (midSweep > 0) ~= (sweep > 0) then
+    sweep = (sweep > 0) and (sweep - 2 * math.pi) or (sweep + 2 * math.pi)
+  end
+
+  return ArcInfo(
+    center,
+    radius,
+    startAngle,
+    sweep,
+    startPoint,
+    endPoint)
 end
