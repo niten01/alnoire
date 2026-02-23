@@ -318,6 +318,25 @@ return {
             ai_modifier = "modifier_default_creep_ai"
         },
 
+        spawner_pomidorko             = {
+            npc = "npc_jungle_pomidorko",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_bears",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+        spawner_icebear               = {
+            npc = "npc_jungle_icebear",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_bears",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+        spawner_bufferbear            = {
+            npc = "npc_jungle_bufferbear",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_bears",
+            ai_modifier = "modifier_bufferbear_ai"
+        },
+
         spawner_axe_axe               = {
             npc = "npc_jungle_axe",
             team = DOTA_TEAM_BADGUYS,
@@ -507,6 +526,10 @@ return {
         },
 
         pack_forest_act1_lizards = {
+            stayActivatedOnPlayerDeath = true
+        },
+
+        pack_forest_act1_bears = {
             stayActivatedOnPlayerDeath = true
         },
 

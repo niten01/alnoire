@@ -11,6 +11,7 @@
 #base "jungle/gnoll_abilities.txt"
 #base "jungle/ancdragon_abilities.txt"
 #base "jungle/axe_abilities.txt"
+#base "jungle/pomidorko_abilities.txt"
 
 
 
