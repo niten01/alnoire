@@ -8,6 +8,7 @@ function modifier_move:OnCreated(kv)
     self.time = self:GetDuration()
     self.distance = self.speed * self.time
     self.travelled = 0
+    self.pfx = kv.pfx
     local parent = self:GetParent()
     if kv.activity then
         parent:StartGesture(kv.activity)
@@ -24,6 +25,11 @@ end
 function modifier_move:OnDestroy()
     if self.activity then
         self:GetParent():FadeGesture(self.activity)
+    end
+
+    if self.pfx then
+        ParticleManager:DestroyParticle(self.pfx, false)
+        ParticleManager:ReleaseParticleIndex(self.pfx)
     end
 end
 
