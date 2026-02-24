@@ -337,6 +337,20 @@ return {
             ai_modifier = "modifier_bufferbear_ai"
         },
 
+        spawner_apple_melee           = {
+            npc = "npc_jungle_apple_melee",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_apples",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+
+        spawner_apple_ranged          = {
+            npc = "npc_jungle_apple_ranged",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_apples",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+
         spawner_axe_axe               = {
             npc = "npc_jungle_axe",
             team = DOTA_TEAM_BADGUYS,
@@ -366,56 +380,71 @@ return {
         },
 
 
-        spawner_techies_1           = {
+        spawner_techies_1     = {
             npc = "npc_jungle_techies_1",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_1",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_techies_2           = {
+        spawner_techies_2     = {
             npc = "npc_jungle_techies_2",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_2",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_techies_3           = {
+        spawner_techies_3     = {
             npc = "npc_jungle_techies_3",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_3",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_shroom_melee        = {
+        spawner_shroom_melee  = {
             npc = "npc_jungle_shroom_melee",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_shrooms",
             ai_modifier = "modifier_shrooms_ai"
         },
-        spawner_shroom_ranged       = {
+        spawner_shroom_ranged = {
             npc = "npc_jungle_shroom_ranged",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_shrooms",
             ai_modifier = "modifier_shrooms_ai"
         },
-        spawner_shroom_furion       = {
+        spawner_shroom_furion = {
             npc = "npc_jungle_shroom_furion",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_shrooms",
             ai_modifier = "modifier_shrooms_furion_ai"
         },
 
-        spawner_gnoll               = {
+        spawner_gnoll         = {
             npc = "npc_jungle_gnoll",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_dragnolls",
             ai_modifier = "modifier_default_creep_ai"
         },
 
-        spawner_ancdragon           = {
+        spawner_ancdragon     = {
             npc = "npc_jungle_ancdragon",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_dragnolls",
             ai_modifier = "modifier_default_creep_ai"
         },
+
+        spawner_perdun        = {
+            npc = "npc_jungle_perdun",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_perdun",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+
+        spawner_perdun_flower = {
+            npc = "npc_jungle_perdun_flower",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_forest_act1_perdun",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+
 
         spawner_dream_concert       = {
             npc = "npc_dream",
@@ -539,6 +568,13 @@ return {
             rangeAggro = 700,
         },
 
+        pack_forest_act1_apples = {
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1400,
+            rangeAggro = 700,
+        },
+
         pack_forest_act1_axe = {
             stayActivatedOnPlayerDeath = true
 
@@ -577,6 +613,14 @@ return {
             rangeFastTickRate = 2000,
             rangeAggro = 900,
             stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_forest_act1_perdun = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+            flower = "npc_jungle_perdun_flower",
         },
 
         pack_mk = {
