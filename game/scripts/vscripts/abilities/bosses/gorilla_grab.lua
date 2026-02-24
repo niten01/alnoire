@@ -15,7 +15,9 @@ function gorilla_grab:OnSpellStart()
   local damage = self:GetSpecialValueFor("damage")
   local enemies = FindEnemiesForAIInRadius(caster:GetAbsOrigin(), radius)
   for _, ent in ipairs(enemies) do
+    caster:AddNewModifier(caster, self, "modifier_gorilla_umm", { duration = duration, damage = 0 })
     ent:AddNewModifier(caster, self, "modifier_gorilla_umm", { duration = duration, damage = damage })
     break
   end
+  caster:EmitSound("ability.gorilla.grab")
 end

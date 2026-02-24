@@ -540,14 +540,14 @@ return {
         },
 
         pack_forest_act1_axe = {
-            stayActivatedOnPlayerDeath = true
+            stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 1700,
             rangeRetreat = 1400,
             rangeAggro = 700,
         },
 
         pack_forest_act1_roshan = {
-            stayActivatedOnPlayerDeath = true
+            stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 2000,
             rangeRetreat = 1000,
             rangeAggro = 800,

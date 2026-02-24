@@ -28,6 +28,8 @@ function gorilla_dash:OnSpellStart()
         caster)
     ParticleManager:SetParticleControlEnt(pfx, 0, caster, PATTACH_ABSORIGIN_FOLLOW, "", Vector(300, 0, 0), true)
 
+    caster:EmitSound("ability.gorilla.dash")
+
     caster:AddNewModifier(caster, self, "modifier_move", {
         directionX = dir.x,
         directionY = dir.y,

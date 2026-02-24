@@ -23,6 +23,11 @@ function modifier_gorilla_ai:OnIntervalThink()
     end
 
     if beaconState == 'aggro' and target and target:IsAlive() then
+        if unit:HasModifier("modifier_move") or unit:HasModifier("modifier_gorilla_arc") then return end
+
+        if CastAbility(unit, target, "gorilla_dash") then return end
+        if CastAbility(unit, target, "gorilla_grab") then return end
         if CastAbility(unit, target, "gorilla_clones") then return end
+        if CastAbility(unit, target, "gorilla_arc") then return end
     end
 end

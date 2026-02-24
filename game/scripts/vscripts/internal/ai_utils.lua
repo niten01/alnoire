@@ -82,7 +82,9 @@ function GiveCastOrder(unit, target, ability)
     unit.isCasting = true
     Timers:CreateTimer(delay, function()
       cast()
-      unit.isCasting = false
+      Timers:CreateTimer(0.1, function()
+        unit.isCasting = false
+      end)
     end)
   else
     cast()
