@@ -246,4 +246,29 @@
         "ItemPurchasable"               "1"
         "ItemQuality"                   "rare"
     }
+    "item_sling"
+    {
+        "ID"                            "3013"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_sling"
+        "AbilityTextureName"            "sling"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+        "AbilityCastPoint"              "0.2"
+        "AbilityCooldown"               "3.0"
+        "AbilityCastRange"              "500"
+
+        "precache"
+        {
+            "particle"		"particles/base_attacks/ranged_siege_good.vpcf"
+        }
+    }
 }

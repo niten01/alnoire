@@ -140,6 +140,13 @@ return {
                 { beat = "npc_monkey_king", type = "beat" },
             },
         },
+        d_untitled_passage_3 = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_ogre_bruiser", type = "interact" },
+                { questID = "q_ogres",         status = "incomplete", type = "quest" },
+            },
+        },
         d_untitled_passage_33 = {
             priority = 0,
             conditions = {
@@ -1178,7 +1185,7 @@ return {
                 { interact = "npc_courier_octopus_1", type = "interact" },
             },
         },
-        d_untitled_passage_3 = {
+        d_untitled_passage_3mergedbubbles = {
             priority = 0,
             conditions = {
                 { interact = "npc_courier_pivo", type = "interact" },
@@ -2160,6 +2167,18 @@ return {
                 },
             },
         },
+        d_untitled_passage_3 = {
+            text = [[Тебе что-то нужно, человек?
+*Спросил крип с необычайно спокойным голосом.*]],
+            speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
+            choices = {
+                {
+                    text = [[Думаю нет.]],
+                    next = "d_dumau_net",
+                },
+            },
+        },
         d_untitled_passage_33 = {
             text = [[Пс... Эй, ты. Подойди.]],
             speaker = [[Крип-камыш]],
@@ -2740,6 +2759,20 @@ return {
                 {
                     text = [[Закрыть.]],
                     next = nil,
+                },
+            },
+        },
+        d_giveprasha = {
+            text = [[*На последнем издыхании предвестник протягивет тебе какой-то предмет... Это праща...*]],
+            speaker = [[Крип-предвестник апокалипсиса]],
+            npc = "npc_predvestnik",
+            choices = {
+                {
+                    text = [[...]],
+                    next = "d_p11",
+                    actions = {
+                        { itemName = "item_sling", type = "give_item" },
+                    },
                 },
             },
         },
@@ -4091,7 +4124,7 @@ return {
             choices = {
                 {
                     text = [[...]],
-                    next = "d_p11",
+                    next = "d_giveprasha",
                 },
             },
         },
@@ -4318,7 +4351,7 @@ return {
                     },
                 },
                 {
-                    text = [[Я передумал]],
+                    text = [[Зайду попозже]],
                     next = nil,
                 },
             },
@@ -13748,7 +13781,7 @@ But luckily it's here you feel me?]],
                 },
             },
         },
-        d_untitled_passage_3 = {
+        d_untitled_passage_3mergedbubbles = {
             text = [[Не стесняйся, бери флягу и напивайся вдоволь.
 В бочке всегда можешь брать добавки.
 Пьём весь день!]],

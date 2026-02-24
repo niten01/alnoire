@@ -99,7 +99,7 @@ return {
         },
         spawner_gorilla               = {
             npc = "npc_gorilla",
-            modifiers = { "modifier_story_npc" },
+            modifiers = { "modifier_story_npc", "modifier_invulnerable" },
             deferred = true,
             packID = "pack_gorilla",
             ai_modifier = "modifier_gorilla_ai",
