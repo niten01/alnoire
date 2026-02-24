@@ -85,6 +85,36 @@
         "precache"
         {
             "particle"      "particles/gorilla_clone_trail.vpcf"
+            "particle"      "particles/units/heroes/hero_windrunner/wr_taunt_kiss_heart.vpcf"
+            "particle"      "particles/econ/events/plus/high_five/high_five_lvl3_hearts_impact.vpcf"
+            "particle"      "particles/gorilla_umm_process.vpcf"
+        }
+    }   
+    "gorilla_grab"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/gorilla_grab.lua"
+        "AbilityTextureName"            "primal_beast_onslaught"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+        "AbilityCastPoint"              "0.5"
+        "AbilityCooldown"               "5.0" 
+        "AbilityCastRange"        		  "350"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        
+        "AbilityValues"
+        {
+            "radius"               "350"
+            "damage"               "10"
+            "umm_duration"         "3"
+            "warning_delay"         "0.1"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/units/heroes/hero_windrunner/wr_taunt_kiss_heart.vpcf"
+            "particle"      "particles/econ/events/plus/high_five/high_five_lvl3_hearts_impact.vpcf"
+            "particle"      "particles/gorilla_umm_process.vpcf"
         }
     }   
 }
