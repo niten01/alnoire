@@ -1,0 +1,35 @@
+"DOTAAbilities"
+{
+    "perdun_flower_passive"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/jungle/perdun_flower_passive"
+		"AbilityTextureName"            "treant_living_armor"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+			"healAmountPerUnit"           "30"
+		}
+	}
+
+    "perdun_fart_passive"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/jungle/perdun_fart_passive"
+		"AbilityTextureName"            "treant_living_armor"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+            "initialDamage"           "70"
+            "damagePerUnit"           "15"
+			"initialRadius"           "700"
+            "radiusPerUnit"           "150"
+		}
+	}
+}
