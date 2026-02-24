@@ -1,10 +1,12 @@
+LinkLuaModifier("modifier_axe_sustain", "modifiers/jungle/modifier_axe_sustain", LUA_MODIFIER_MOTION_NONE)
 modifier_axe_ai = class({})
 
 
 function modifier_axe_ai:OnCreated()
     if not IsServer() then return end
     local unit = self:GetParent()
-    unit:AddNewModifier(unit, nil, 'modifier_axe_sustain', {})
+    local abil = unit:GetAbilityByIndex(0)
+    unit:AddNewModifier(unit, abil, 'modifier_axe_sustain', {})
 end
 
 function modifier_axe_ai:OnIntervalThink()

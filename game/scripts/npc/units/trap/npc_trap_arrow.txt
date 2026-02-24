@@ -10,4 +10,4 @@
         "Level"                 "1"
         "HealthBarOffset"       "-1"
     }
-}
+}   

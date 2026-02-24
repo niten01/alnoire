@@ -33,10 +33,11 @@ function modifier_axe_sustain:GetTexture()
     return "axe_berserkers_call"
 end
 
-function modifier_axe_sustain:OnCreated( )
+function modifier_axe_sustain:OnCreated()
     if not IsServer() then return end
     local parent = self:GetParent()
-    local pfx = ParticleManager:CreateParticle("particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+    local pfx = ParticleManager:CreateParticle("particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW, parent)
     self:AddParticle(pfx, false, false, -1, false, false)
 end
 
