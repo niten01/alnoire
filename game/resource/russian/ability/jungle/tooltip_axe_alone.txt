@@ -1,0 +1,3 @@
+"DOTA_Tooltip_modifier_axe_sustain"		            "Братва"
+"DOTA_Tooltip_modifier_axe_sustain_SummaryDescription" ""
+"DOTA_Tooltip_modifier_axe_sustain_Description"		"Акс получает удовольствие от просмотра битвы своих подсосов, пока эффект активен, получаемый Аксом урон сильно снижается, но сам он не будет атаковать."

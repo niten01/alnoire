@@ -23,7 +23,6 @@ LinkLuaModifier("modifier_gorilla_umm", "modifiers/abilities/modifier_gorilla_um
 LinkLuaModifier("modifier_gorilla_capture", "modifiers/abilities/modifier_gorilla_capture", LUA_MODIFIER_MOTION_NONE)
 
 -- jungle
-LinkLuaModifier("modifier_axe_sustain", "modifiers/jungle/modifier_axe_sustain", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_cust_rosh", "modifiers/jungle/modifier_cust_rosh", LUA_MODIFIER_MOTION_NONE)
 
 
