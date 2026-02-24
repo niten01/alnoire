@@ -26,6 +26,10 @@ function modifier_gorilla_umm:OnCreated(kv)
     if not IsServer() then return end
     local parent = self:GetParent()
     local attacker = self:GetCaster()
+
+    parent:RemoveModifierByName("modifier_move")
+    parent:RemoveModifierByName("modifier_gorilla_arc")
+
     self.ogPosition = parent:GetAbsOrigin()
     parent:SetAbsOrigin(attacker:GetAbsOrigin())
     parent:SetForwardVector(attacker:GetForwardVector())
@@ -43,7 +47,7 @@ function modifier_gorilla_umm:OnCreated(kv)
     end
 
     local headOffset = 320
-    pfx = ParticleManager:CreateParticle("particles/econ/events/plus/high_five/high_five_lvl3_hearts_impact.vpcf",
+    local pfx = ParticleManager:CreateParticle("particles/econ/events/plus/high_five/high_five_lvl3_hearts_impact.vpcf",
         PATTACH_ABSORIGIN, parent)
     ParticleManager:SetParticleControl(pfx, 0, parent:GetAbsOrigin() + Vector(0, 0, headOffset))
     ParticleManager:ReleaseParticleIndex(pfx)
@@ -51,6 +55,8 @@ function modifier_gorilla_umm:OnCreated(kv)
     self.pfx = ParticleManager:CreateParticle("particles/gorilla_umm_process.vpcf",
         PATTACH_ABSORIGIN, parent)
     ParticleManager:SetParticleControl(self.pfx, 3, parent:GetAbsOrigin() + Vector(0, 0, headOffset / 2))
+
+    parent:EmitSound("ability.gorilla.umm")
 end
 
 function modifier_gorilla_umm:OnDestroy()

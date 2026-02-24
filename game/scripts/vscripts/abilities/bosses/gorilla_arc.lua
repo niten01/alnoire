@@ -38,6 +38,8 @@ function gorilla_arc:OnSpellStart()
         ummDuration = ummDuration,
         damage = damage
     })
+
+    caster:EmitSound("ability.gorilla.arc")
 end
 
 ---------------------------------------------------------------
@@ -65,7 +67,7 @@ function modifier_gorilla_arc:OnCreated(kv)
     self.pfx = ParticleManager:CreateParticle(
         "particles/units/heroes/hero_primal_beast/primal_beast_onslaught_charge_active.vpcf", PATTACH_ABSORIGIN_FOLLOW,
         parent)
-    ParticleManager:SetParticleControlEnt(pfx, 0, parent, PATTACH_ABSORIGIN_FOLLOW, "", Vector(300, 0, 0), true)
+    ParticleManager:SetParticleControlEnt(self.pfx, 0, parent, PATTACH_ABSORIGIN_FOLLOW, "", Vector(300, 0, 0), true)
 end
 
 function modifier_gorilla_arc:OnDestroy()

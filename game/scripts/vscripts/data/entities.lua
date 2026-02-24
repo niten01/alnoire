@@ -557,7 +557,7 @@ return {
         pack_forest_act1_lizards = {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 2000,
-            rangeRetreat = 1300,
+            rangeRetreat = 1500,
             rangeAggro = 1000,
         },
 
@@ -576,12 +576,17 @@ return {
         },
 
         pack_forest_act1_axe = {
-            stayActivatedOnPlayerDeath = true
-
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 1700,
+            rangeRetreat = 1400,
+            rangeAggro = 700,
         },
 
         pack_forest_act1_roshan = {
-            stayActivatedOnPlayerDeath = true
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1000,
+            rangeAggro = 800,
         },
 
         pack_forest_act1_techies_1 = {
@@ -606,12 +611,14 @@ return {
         pack_forest_act1_shrooms = {
             rangeFastTickRate = 2000,
             rangeAggro = 700,
+            rangeRetreat = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_forest_act1_dragnolls = {
             rangeFastTickRate = 2000,
             rangeAggro = 900,
+            rangeRetreat = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 
@@ -655,7 +662,7 @@ return {
             activateAfterUnitsSpawned = false,
         },
         pack_gorilla = {
-            activateAfterUnitsSpawned = false,
+            activateAfterUnitsSpawned = true,
         },
         pack_red = {
             rangeRetreat = 6000,

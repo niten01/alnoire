@@ -9,11 +9,12 @@
 		"Level"						"1"
 		"ModelScale" 				"1.5"
 		"ConsideredHero" 			"1"
+		"AutoAttacksByDefault" 		"0"
 
-		"Ability1"					"gorilla_clones"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability1"					"gorilla_dash"			// Ability 1
+		"Ability2"					"gorilla_arc"			// Ability 2
+		"Ability3"					"gorilla_clones"			// Ability 3
+		"Ability4"					"gorilla_grab"			// Ability 4
 
 		"ArmorPhysical"				"1"			
 
@@ -22,7 +23,7 @@
 		"AttackDamageMax"			"36"		// Damage range max.
 		"AttackRate"				"1.6"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 
 		"RingRadius"				"40"
@@ -47,6 +48,11 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"precache"
+		{
+        	"soundfile"			"soundevents/bosses/gorilla.vsndevts"
+		}
 	}
 
 }

@@ -10,6 +10,7 @@ function gorilla_clones:ShowWarning(targetPos)
     local dir = (targetPos - casterPos):Normalized()
     local endPos = casterPos + dir * self:GetSpecialValueFor("distance")
     self.endPoints = PointsFan(casterPos, endPos, numShots, spread)
+    self.startPoint = casterPos
 
     for _, point in ipairs(self.endPoints) do
         ShowGenericLineWarning(casterPos, point, radius, warningDelay)
@@ -25,6 +26,7 @@ function gorilla_clones:OnSpellStart()
     local cloneSpeed = self:GetSpecialValueFor("clone_speed")
     local radius = self:GetSpecialValueFor("capture_radius")
 
+    assert(self.startPoint)
     assert(self.endPoints)
     self.projectiles = {}
     for _, point in ipairs(self.endPoints) do
@@ -33,7 +35,7 @@ function gorilla_clones:OnSpellStart()
         local p = ProjectileManager:CreateLinearProjectile({
             Ability = self,
             EffectName = "particles/gorilla_clone_trail.vpcf",
-            vSpawnOrigin = casterPos,
+            vSpawnOrigin = self.startPoint,
             vVelocity = dir * cloneSpeed,
             fDistance = distance,
             fStartRadius = radius,
@@ -48,9 +50,11 @@ function gorilla_clones:OnSpellStart()
         })
         table.insert(self.projectiles, p)
     end
+    caster:EmitSound("ability.gorilla.clones")
 end
 
 function gorilla_clones:OnProjectileHit(target, location)
+    if not target then return end
     local caster = self:GetCaster()
     local ummDuration = self:GetSpecialValueFor("umm_duration")
     local damage = self:GetSpecialValueFor("damage")
