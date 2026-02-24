@@ -541,9 +541,9 @@ return {
 
         pack_forest_act1_axe = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 1700,
-            rangeRetreat = 1400,
-            rangeAggro = 700,
+            rangeFastTickRate = 1000,
+            rangeRetreat = 600,
+            rangeAggro = 500,
         },
 
         pack_forest_act1_roshan = {
@@ -573,9 +573,9 @@ return {
         },
 
         pack_forest_act1_shrooms = {
-            rangeFastTickRate = 2000,
-            rangeAggro = 700,
-            rangeRetreat = 1000,
+            rangeFastTickRate = 1000,
+            rangeAggro = 500,
+            rangeRetreat = 800,
             stayActivatedOnPlayerDeath = true,
         },
 
