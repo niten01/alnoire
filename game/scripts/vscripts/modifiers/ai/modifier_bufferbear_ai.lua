@@ -64,7 +64,6 @@ function modifier_bufferbear_ai:OnIntervalThink()
         end
     else
         if self.isTaunting then
-            -- print("Stopping Dance!")
             unit:FadeGesture(ACT_DOTA_DISABLED)
             self.isTaunting = false
         end
