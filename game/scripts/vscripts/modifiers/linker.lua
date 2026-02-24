@@ -43,7 +43,6 @@ LinkLuaModifier("modifier_bufferbear_ai", "modifiers/ai/modifier_bufferbear_ai",
 
 
 
-
 -- bosses
 LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)
 

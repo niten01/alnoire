@@ -148,6 +148,10 @@ return {
         "npc_dota_neutral_ice_shaman",
         "npc_dota_hero_lich",
         "npc_dota_neutral_ogre_mauler",
+        "npc_dota_neutral_alpha_wolf",
+        "npc_dota_neutral_dark_troll_warlord",
+        "npc_dota_hero_undying",
+        "npc_dota_hero_treant",
 
         "npc_jungle_venomancer",
         "npc_jungle_creep_melee",
@@ -167,6 +171,10 @@ return {
         "npc_jungle_pomidorko",
         "npc_jungle_icebear",
         "npc_jungle_bufferbear",
+        "npc_jungle_apple_melee",
+        "npc_jungle_apple_ranged",
+        "npc_jungle_perdun",
+        "npc_jungle_perdun_flower",
 
 
         -- traps
@@ -184,6 +192,10 @@ return {
         -- shrooms
         "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_mushroom.vmdl",
         "models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged_mushroom.vmdl",
+
+        -- perdun flowers
+        "models/heroes/dawnbreaker/debut/models/flowers/battlemaiden_flower_5.vmdl",
+        "models/items/furion/treant_flower_1.vmdl",
     },
     sounds = {
         "soundevents/sfx.vsndevts",
@@ -198,6 +210,8 @@ return {
         "soundevents/jungle/jungletechies.vsndevts",
         "soundevents/jungle/junglefurion.vsndevts",
         "soundevents/jungle/junglebears.vsndevts",
+        "soundevents/jungle/jungleperdun.vsndevts",
+
 
     },
     particles = {
@@ -274,6 +288,8 @@ return {
         "particles/neutral_fx/ursa_thunderclap.vpcf",
         "particles/units/heroes/hero_lich/lich_ice_age.vpcf",
         "particles/neutral_fx/ogre_magi_frost_armor.vpcf",
+        "particles/generic_gameplay/generic_lifesteal.vpcf",
+        "particles/units/heroes/hero_pudge/pudge_rot.vpcf",
 
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",
