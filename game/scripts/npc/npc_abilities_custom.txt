@@ -111,7 +111,7 @@
 		"AbilityValues"
 		{
 			"aoe_radius"				"150 300 450 600"
-			"duration"					"1.0 2.0 3.0 4.0"
+			"duration"					"2.5 3.0 3.5 4.0"
 			"damage_amp_pct"			"20 30 40 50"
 		}
 	}
@@ -129,7 +129,7 @@
 
 		"AbilityValues"
 		{
-			"radius"					"300 400 500 600"
+			"radius"					"400 450 500 550"
 			"hp_regen"					"10.0 20.0 30.0 40.0"
 		}
 	}
@@ -149,9 +149,9 @@
 
 		"AbilityValues"
 		{
-			"radius"					"300 400 500 600"
+			"radius"					"400 450 500 550"
 			"bonus_damage"				"30 40 50 60"
-			"hp_per_sec"				"1.5 1.5 1.5 1.5"
+			"hp_per_sec"				"1.5 2 2.5 3"
 		}
 	}
 
@@ -170,8 +170,8 @@
 
 		"AbilityValues"
 		{
-			"radius"					"300 400 500 600"
-			"miss_chance"				"10 15 30 40"
+			"radius"					"400 450 500 550"
+			"miss_chance"				"10 15 20 25"
 			"speed_bonus"				"50 60 70 80"
 		}
 	}
@@ -188,7 +188,7 @@
 		"AbilityCooldown"				"5.0"
 		"AbilityValues"
 		{
-			"damage"					"300 500"
+			"damage"					"500 800"
 			"radius"					"400 400"
 			"delay"						"5.0 5.0"
 		}
@@ -207,7 +207,7 @@
 		"AbilityValues"
 		{
 			"asb_per_attack"				"3 5"
-			"buff_duration"					"3.0 6.0"
+			"buff_duration"					"6.0 6.0"
 		}
 	}
 
