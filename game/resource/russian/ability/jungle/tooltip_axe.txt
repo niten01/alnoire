@@ -1,0 +1,17 @@
+"DOTA_Tooltip_ability_axe_custom_hunger"		            "Горелка"
+"DOTA_Tooltip_ability_axe_custom_hunger_Lore"		            "Акс смотреть как саня гореть."
+"DOTA_Tooltip_Ability_axe_custom_hunger_SummaryDescription" ""
+"DOTA_Tooltip_ability_axe_custom_hunger_Description"		"Акс заставляет врага испытывать невыносимую жажду битвы, отчего тот получает магический урон каждую секунду, пока не убьет врага."
+
+"DOTA_Tooltip_modifier_axe_sustain"		            "Братва"
+"DOTA_Tooltip_modifier_axe_sustain_SummaryDescription" ""
+"DOTA_Tooltip_modifier_axe_sustain_Description"		"Акс получает удовольствие от просмотра битвы своих подсосов, пока эффект активен, получаемый Аксом урон сильно снижается, но сам он не будет атаковать."
+
+"DOTA_Tooltip_ability_axe_berserkers_call"		            "К НОГЕ"
+"DOTA_Tooltip_ability_axe_berserkers_call_Lore"		            "Не трожь моих фанатов"
+"DOTA_Tooltip_Ability_axe_berserkers_call_SummaryDescription" ""
+"DOTA_Tooltip_ability_axe_berserkers_call_Description"		"Акс принимает удар на себя, доблестно оберегая своих фанатов от твоих вонючих рук."
+
+"DOTA_Tooltip_modifier_axe_custom_hunger_debuff"		            "Горелка"
+"DOTA_Tooltip_modifier_axe_custom_hunger_debuff_SummaryDescription" ""
+"DOTA_Tooltip_modifier_axe_custom_hunger_debuff_Description"		"Аххххх... прогревааает."
