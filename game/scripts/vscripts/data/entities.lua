@@ -570,35 +570,35 @@ return {
 
         pack_forest_act1_apples = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1400,
-            rangeAggro = 700,
+            rangeFastTickRate = 1600,
+            rangeRetreat = 1600,
+            rangeAggro = 900,
         },
 
         pack_forest_act1_axe = {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 1000,
-            rangeRetreat = 600,
-            rangeAggro = 500,
+            rangeRetreat = 800,
+            rangeAggro = 550,
         },
 
         pack_forest_act1_roshan = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1000,
-            rangeAggro = 800,
+            rangeFastTickRate = 1300,
+            rangeRetreat = 900,
+            rangeAggro = 650,
         },
 
         pack_forest_act1_techies_1 = {
-            rangeFastTickRate = 2000,
-            rangeAggro = 600,
-            rangeRetreat = 700,
+            rangeFastTickRate = 900,
+            rangeAggro = 300,
+            rangeRetreat = 500,
             stayActivatedOnPlayerDeath = true,
         },
         pack_forest_act1_techies_2 = {
-            rangeFastTickRate = 2000,
-            rangeAggro = 600,
-            rangeRetreat = 700,
+            rangeFastTickRate = 900,
+            rangeAggro = 300,
+            rangeRetreat = 500,
             stayActivatedOnPlayerDeath = true,
         },
         pack_forest_act1_techies_3 = {
@@ -609,15 +609,15 @@ return {
         },
 
         pack_forest_act1_shrooms = {
-            rangeFastTickRate = 1000,
+            rangeFastTickRate = 1300,
             rangeAggro = 500,
-            rangeRetreat = 800,
+            rangeRetreat = 900,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_forest_act1_dragnolls = {
-            rangeFastTickRate = 2000,
-            rangeAggro = 900,
+            rangeFastTickRate = 1400,
+            rangeAggro = 600,
             rangeRetreat = 1000,
             stayActivatedOnPlayerDeath = true,
         },
