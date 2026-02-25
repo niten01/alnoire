@@ -19,7 +19,6 @@ require('modifiers/linker')
 
 require('triggers/zones')
 require('triggers/ski')
-require('triggers/flask')
 require('triggers/quest_trigger')
 require('triggers/dialogue_trigger')
 require('triggers/button')
