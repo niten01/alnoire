@@ -10,7 +10,7 @@
           "sounds/vo/furion/furi_death_08.vsnd",
       ]
       
-      volume = 40.0
+      volume = 11.0
       pitch = 1.0
       pitch_rand_min = -0.05
       pitch_rand_max = 0.05
@@ -27,7 +27,7 @@
           "sounds/vo/furion/furi_move_10.vsnd",
       ]
       
-      volume = 40.0
+      volume = 9.0
       pitch = 1.0
       pitch_rand_min = -0.05
       pitch_rand_max = 0.05
@@ -44,7 +44,7 @@
           "sounds/vo/furion/furi_ability_force_05.vsnd",
       ]
       
-      volume = 40.0
+      volume = 15.0
       pitch = 1.0
       pitch_rand_min = -0.05
       pitch_rand_max = 0.05
