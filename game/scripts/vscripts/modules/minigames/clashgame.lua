@@ -137,7 +137,6 @@ function ClashGame:SpawnMegaCreep()
     local rand = math.random()
     local spawnPos
     local target
-    print("AAAAAAAAAAAAAAAAAAAA " .. rand)
     if rand >= 0.5 then
         spawnPos = Entities:FindByName(nil, "spawn_mega_left")
         target = Entities:FindByName(nil, "agro_for_dire_left")

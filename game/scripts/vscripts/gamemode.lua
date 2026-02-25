@@ -250,6 +250,7 @@ function barebones:InitModules()
     require('modules.dialogue.dialogue'),
     require('modules.minigames.clashgame'),
     require('modules.minigames.eps_traps'),
+    require('modules.flaskmanager'),
   }
 
   for _, sys in ipairs(self.modules) do sys:Init() end
