@@ -8,12 +8,12 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
         "MaxLevel"                      "1"
-        "AbilityCastPoint"				"0.7"
+        "AbilityCastPoint"				"0.9"
         "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_1"
 
         "AbilityValues"
 		{
-			"radius"            "100"
+			"radius"            "150"
 			"duration"          "2.0"
 			"slowAmount"        "70"
             "attackSpeedSlow"   "50"
@@ -69,10 +69,10 @@
 			}
 			"slow_movement_speed"	"-25"
 			"slow_attack_speed_primary"		"-40 -40 -50 -60"
-			"damage"			"100 80 120 160"
+			"damage"			"80 80 120 160"
 			"aoe_damage"			
 			{
-				"value"			"100 120 160 200"
+				"value"			"80 120 160 200"
 				"special_bonus_unique_lich_6" "+125"
 			}
 		}
