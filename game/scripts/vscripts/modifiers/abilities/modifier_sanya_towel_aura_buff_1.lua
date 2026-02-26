@@ -1,17 +1,35 @@
 modifier_sanya_towel_aura_buff_1 = class({})
 
 function modifier_sanya_towel_aura_buff_1:IsHidden() return false end
+
 function modifier_sanya_towel_aura_buff_1:IsPurgable() return false end
+
 function modifier_sanya_towel_aura_buff_1:IsDebuff() return false end
 
-function modifier_sanya_towel_aura_buff_1:GetModifierConstantHealthRegen()
+function modifier_sanya_towel_aura_buff_1:OnCreated()
+    if not IsServer() then return end
     local ability = self:GetAbility()
-    return ability:GetSpecialValueFor('hp_regen')
+    self.hp_regen = ability:GetSpecialValueFor('hp_regen') or 10
+    self.decreaseMult = ability:GetSpecialValueFor('decreaseMult') or 0.7
+    self.delayBeforeReset = ability:GetSpecialValueFor('delayBeforeReset') or 1.0
+    self:StartIntervalThink(1.0)
 end
 
-function modifier_sanya_towel_aura_buff_1:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
-    }
-end
+function modifier_sanya_towel_aura_buff_1:OnIntervalThink()
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    local abil = self:GetAbility()
+    local currentTime = GameRules:GetGameTime()
+    local lastHitTime = parent:GetLastDamageTime()
+    local healAmount = self.hp_regen
+    if currentTime - lastHitTime <= self.delayBeforeReset then
+        healAmount = healAmount * self.decreaseMult
+    end
 
+    parent:Heal(healAmount, abil)
+
+    local pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW, parent)
+    ParticleManager:ReleaseParticleIndex(pfx)
+    SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, healAmount, nil)
+end

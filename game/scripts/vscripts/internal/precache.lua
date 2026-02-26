@@ -186,6 +186,9 @@ return {
         "npc_jungle_perdun",
         "npc_jungle_perdun_flower",
 
+        -- ocean
+        "npc_dota_goodguys_siege_upgraded",
+
 
         -- traps
         "npc_trap_arrow",
@@ -207,10 +210,14 @@ return {
         "models/heroes/dawnbreaker/debut/models/flowers/battlemaiden_flower_5.vmdl",
         "models/items/furion/treant_flower_1.vmdl",
 
+        -- axe arcana
+        "models/items/axe/ti9_jungle_axe/axe_bare.vmdl",
+
         -- clash
         "models/items/tiny/scarlet_quarry/scarlet_quarry_03.vmdl",
         "models/items/tiny/lionheart_kings_moving_castle_t2/lionheart_kings_moving_castle_t2.vmdl",
         "models/items/undying/flesh_golem/deathmatch_dominator_golem/deathmatch_dominator_golem.vmdl",
+
     },
     sounds = {
         "soundevents/sfx.vsndevts",

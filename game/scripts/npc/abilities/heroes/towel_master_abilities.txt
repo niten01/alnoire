@@ -94,6 +94,9 @@
 		{
 			"radius"					"400 450 500 550"
 			"hp_regen"					"10.0 20.0 30.0 40.0"
+			"decreaseMult"				"0.70 0.70 0.70 0.70"
+			"delayBeforeReset"			"1.2 1.2 1.2 1.2"
+
 		}
 	}
 
