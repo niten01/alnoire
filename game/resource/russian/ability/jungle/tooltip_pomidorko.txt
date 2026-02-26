@@ -1,0 +1,19 @@
+"DOTA_Tooltip_ability_pomidorko_clap"		            "Шлепок"
+"DOTA_Tooltip_ability_pomidorko_clap_Lore"		            "Огурцы... Помидоры..."
+"DOTA_Tooltip_Ability_pomidorko_clap_SummaryDescription" ""
+"DOTA_Tooltip_ability_pomidorko_clap_Description"		"Помидорка шлепает, создавая волну, наносящую урон и снижающую скорость передвижения и атаки всех врагов в радиусе."
+
+"DOTA_Tooltip_modifier_pomidorka_clap_debuff"		            "Шлепок"
+"DOTA_Tooltip_modifier_pomidorka_clap_debuff_SummaryDescription" ""
+"DOTA_Tooltip_modifier_pomidorka_clap_debuff_Description"		"Кажется, тебя шлепнули"
+
+
+"DOTA_Tooltip_ability_lich_frost_nova"		            "Морозный бах"
+"DOTA_Tooltip_ability_lich_frost_nova_Lore"		            "Брррррр"
+"DOTA_Tooltip_Ability_lich_frost_nova_SummaryDescription" ""
+"DOTA_Tooltip_ability_lich_frost_nova_Description"		"Колдун создает морозный взрыв, который наносит урон, замедляет и снижает скорость атаки жертвы."
+
+"DOTA_Tooltip_ability_bear_shield"		            "Защита"
+"DOTA_Tooltip_ability_bear_shield_Lore"		            "Чет впадлу куда-то ходить... кого-то бить..."
+"DOTA_Tooltip_Ability_bear_shield_SummaryDescription" ""
+"DOTA_Tooltip_ability_bear_shield_Description"		"Клерик все-таки решает помочь своим друзьям, сотворяя сильнейший барьер, поглощающий практически весь входящий урон. Он выбирает цель для барьера по своему усмотрению..."

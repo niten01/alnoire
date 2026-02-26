@@ -154,6 +154,10 @@ return {
         "npc_dota_hero_treant",
 
         "npc_jungle_venomancer",
+        "npc_dota_venomancer_plague_ward_1",
+        "npc_dota_venomancer_plague_ward_2",
+        "npc_dota_venomancer_plague_ward_3",
+        "npc_dota_venomancer_plague_ward_4",
         "npc_jungle_creep_melee",
         "npc_jungle_creep_range",
         "npc_jungle_axe",

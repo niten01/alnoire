@@ -1,0 +1,4 @@
+"DOTA_Tooltip_ability_venomancer_plague_ward"		            "Чумное дитятко"
+"DOTA_Tooltip_ability_venomancer_plague_ward_Lore"		            "Хочу дома слышать топот дестких ножек... а стоп..."
+"DOTA_Tooltip_Ability_venomancer_plague_ward_SummaryDescription" ""
+"DOTA_Tooltip_ability_venomancer_plague_ward_Description"		"Мамочка никогда не приходит одна, с ней всегда ее детки."

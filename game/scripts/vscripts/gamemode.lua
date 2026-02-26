@@ -19,7 +19,6 @@ require('modifiers/linker')
 
 require('triggers/zones')
 require('triggers/ski')
-require('triggers/flask')
 require('triggers/quest_trigger')
 require('triggers/dialogue_trigger')
 require('triggers/button')
@@ -250,6 +249,7 @@ function barebones:InitModules()
     require('modules.dialogue.dialogue'),
     require('modules.minigames.clashgame'),
     require('modules.minigames.eps_traps'),
+    require('modules.flaskmanager'),
   }
 
   for _, sys in ipairs(self.modules) do sys:Init() end

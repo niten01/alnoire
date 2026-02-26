@@ -19,9 +19,9 @@
 
 		"ArmorPhysical"				"1"			// Physical protection.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"45"		// Damage range min.
-		"AttackDamageMax"			"50"		// Damage range max.
-		"AttackRate"				"0.5"		// Speed of attack.
+		"AttackDamageMin"			"2"		// Damage range min.
+		"AttackDamageMax"			"5"		// Damage range max.
+		"AttackRate"				"0.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"70"		// Range within a target can be attacked.
@@ -39,7 +39,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"270"					
 
-		"StatusHealth"				"200"		// Base health.
+		"StatusHealth"				"100"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -83,9 +83,9 @@
 
 		"ArmorPhysical"				"1"			// Physical protection.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"3"		// Damage range min.
-		"AttackDamageMax"			"5"		// Damage range max.
-		"AttackRate"				"0.5"		// Speed of attack.
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"40"		// Damage range max.
+		"AttackRate"				"1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"450"		// Range within a target can be attacked.
@@ -103,7 +103,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"270"					
 
-		"StatusHealth"				"200"		// Base health.
+		"StatusHealth"				"600"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -138,6 +138,154 @@
 			}
 		}
 	}
+
+	"npc_dota_venomancer_plague_ward_1"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_venomancer_plagueward"	// Class of entity of link to.
+		"Model"						"models/heroes/venomancer/venomancer_ward.vmdl"	// Model.
+		"SoundSet"					"Hero_VenomancerWard"					// Name of sound set.
+		"Level"						"1"
+		"ModelScale" 				"0.8"
+		"SelectionGroup"			"Venomancer_Wards"
+		"UnitLabel"			"plaguewards"
+		"wearable"				"684"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"creep_piercing"			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"				"0"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"10"			// Damage range min.
+		"AttackDamageMax"			"14"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.4"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_venomancer/venomancer_plague_ward_projectile.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1900"		// Speed of projectile.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"170"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementSpeed"				"0"			// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+			// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"75"		// Base health.
+		"StatusHealthRegen"			"0.25"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		//Inventory
+		"HasInventory"				"0"
+
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_venomancer_plague_ward.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_venomancer_plague_ward.vpcf"
+		}
+	}
+	
+	"npc_dota_venomancer_plague_ward_2"
+	{
+		"include_keys_from" "npc_dota_venomancer_plague_ward_1"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackDamageMin"			"22"		// Damage range min.
+		"AttackDamageMax"			"26"		// Damage range max.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"250"		// Base health.
+	}
+	
+	"npc_dota_venomancer_plague_ward_3"
+	{
+		"include_keys_from" "npc_dota_venomancer_plague_ward_1"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"34"		// Damage range max.
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"350"		// Base health.
+	}
+
+	"npc_dota_venomancer_plague_ward_4"
+	{
+		"include_keys_from" "npc_dota_venomancer_plague_ward_1"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackDamageMin"			"38"		// Damage range min.
+		"AttackDamageMax"			"42"		// Damage range max.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"450"		// Base health.
+	}
+
+
 	"npc_jungle_creep_range"	
 	{
 		// General
@@ -158,8 +306,8 @@
 		"ArmorPhysical"				"1"			// Physical protection.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"3"		// Damage range min.
-		"AttackDamageMax"			"5"		// Damage range max.
-		"AttackRate"				"0.5"		// Speed of attack.
+		"AttackDamageMax"			"6"		// Damage range max.
+		"AttackRate"				"0.6"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"300"		// Range within a target can be attacked.
@@ -177,7 +325,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"270"					
 
-		"StatusHealth"				"200"		// Base health.
+		"StatusHealth"				"50"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -219,9 +367,9 @@
 
 		"ArmorPhysical"				"4"			// Physical protection.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"100"		// Damage range min.
-		"AttackDamageMax"			"110"		// Damage range max.
-		"AttackRate"				"0.5"		// Speed of attack.
+		"AttackDamageMin"			"20"		// Damage range min.
+		"AttackDamageMax"			"30"		// Damage range max.
+		"AttackRate"				"1.2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.     
@@ -237,7 +385,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"350"					
 
-		"StatusHealth"				"700"		// Base health.
+		"StatusHealth"				"600"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"10.0"		// Mana regeneration rate.		 
@@ -292,8 +440,8 @@
 		"ArmorPhysical"				"5"			// Physical protection.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"4"		// Damage range min.
-		"AttackDamageMax"			"5"		// Damage range max.
-		"AttackRate"				"0.4"		// Speed of attack.
+		"AttackDamageMax"			"7"		// Damage range max.
+		"AttackRate"				"0.6"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"80"		// Range within a target can be attacked.		     
@@ -1054,8 +1202,8 @@
 
 		"ArmorPhysical"				"1"			// Physical protection.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"5"		// Damage range min.
-		"AttackDamageMax"			"10"		// Damage range max.
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
 		"AttackRate"				"0.9"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
@@ -1072,9 +1220,9 @@
 		"BountyGoldMax"				"1"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"320"					
+		"MovementSpeed"				"300"					
 
-		"StatusHealth"				"200"		// Base health.
+		"StatusHealth"				"500"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -1119,8 +1267,8 @@
 
 		"ArmorPhysical"				"1"			// Physical protection.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"5"		// Damage range min.
-		"AttackDamageMax"			"10"		// Damage range max.
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"25"		// Damage range max.
 		"AttackRate"				"1.3"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
@@ -1137,9 +1285,9 @@
 		"BountyGoldMax"				"1"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"320"					
+		"MovementSpeed"				"280"					
 
-		"StatusHealth"				"200"		// Base health.
+		"StatusHealth"				"400"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -1196,7 +1344,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"320"					
 
-		"StatusHealth"				"400"		// Base health.
+		"StatusHealth"				"800"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -1241,9 +1389,9 @@
 
 		"ArmorPhysical"				"1"			// Physical protection.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"45"		// Damage range min.
-		"AttackDamageMax"			"50"		// Damage range max.
-		"AttackRate"				"0.5"		// Speed of attack.
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"40"		// Damage range max.
+		"AttackRate"				"1.2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"70"		// Range within a target can be attacked.
@@ -1259,9 +1407,9 @@
 		"BountyGoldMax"				"1"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"					
+		"MovementSpeed"				"250"					
 
-		"StatusHealth"				"200"		// Base health.
+		"StatusHealth"				"250"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -1306,14 +1454,14 @@
 
 		"ArmorPhysical"				"1"			// Physical protection.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"3"		// Damage range min.
-		"AttackDamageMax"			"5"		// Damage range max.
-		"AttackRate"				"0.5"		// Speed of attack.
+		"AttackDamageMin"			"20"		// Damage range min.
+		"AttackDamageMax"			"30"		// Damage range max.
+		"AttackRate"				"0.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"500"		// Range within a target can be attacked.
+		"AttackRange"				"300"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
-		"ProjectileSpeed"			"1200"		// Speed of projectile.		     
+		"ProjectileSpeed"			"1000"		// Speed of projectile.		     
 
 		// Bounds
 		"RingRadius"				"40"
@@ -1324,7 +1472,7 @@
 		"BountyGoldMax"				"1"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"					
+		"MovementSpeed"				"240"					
 
 		"StatusHealth"				"200"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
