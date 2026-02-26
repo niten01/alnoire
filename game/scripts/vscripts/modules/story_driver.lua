@@ -405,6 +405,13 @@ end
 function StoryDriver:OnActChange(event)
   if GetMapName() == "fight_test" then
     Timers:CreateTimer(1, function()
+      for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+        local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+        if not hero then error("No hero") end
+        local fwd = hero:GetForwardVector()
+        hero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_sanya_rapper", 0, 0)
+        hero:SetForwardVector(fwd)
+      end
       -- SpawnManager:SpawnNPC("spawner_gorilla")
       StoryDriver:StartFight("pack_perekup")
     end)
