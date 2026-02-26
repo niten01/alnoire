@@ -27,9 +27,10 @@ function ClashGame:Init()
 
     }
 
-    self.good_creep_name = "npc_xavier"
-    self.bad_creep_name = "npc_xavier"
-    self.mega_creep_name = "mega_sanya"
+    self.good_creep_name = "npc_clash_creep_radiant"
+    self.bad_creep_name = "npc_clash_creep_dire"
+    self.bad_creep_ranged_name = "npc_clash_creep_dire_ranged"
+    self.mega_creep_name = "npc_clash_creep_mega_sanya_1"
     GameEvents:OnQuestTrigger(function(event)
         if event.triggerName ~= "trigger_clash_arena" then return end
 
@@ -106,8 +107,17 @@ function ClashGame:CreateCreepGroup(spawner, team, targetName)
     if not self.isActive then return end
     local target = Entities:FindByName(nil, targetName)
     local spawnPos = spawner:GetAbsOrigin()
-    for i = 1, 3 do
-        local unit = CreateUnitByName(self.bad_creep_name, spawnPos + RandomVector(100), true, nil, nil, team)
+    local cur_unit = self.bad_creep_name
+    if team and team == DOTA_TEAM_GOODGUYS then
+        cur_unit = self.good_creep_name
+    end
+    for i = 1, 4 do
+        if i == 4 and team == DOTA_TEAM_BADGUYS then
+            cur_unit = self.bad_creep_ranged_name
+        elseif i == 4 and team == DOTA_TEAM_GOODGUYS then
+            break
+        end
+        local unit = CreateUnitByName(cur_unit, spawnPos + RandomVector(100), true, nil, nil, team)
         unit:AddNewModifier(unit, nil, 'modifier_clash_unit', {})
         if unit then
             if target then

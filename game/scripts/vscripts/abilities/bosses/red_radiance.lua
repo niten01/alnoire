@@ -1,5 +1,5 @@
 red_radiance = class({})
-LinkLuaModifier("modifier_red_radiance", "abilities/bosses/red_radiance.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
+LinkLuaModifier("modifier_red_radiance", "abilities/bosses/red_radiance.lua", LUA_MODIFIER_MOTION_NONE)
 
 
 

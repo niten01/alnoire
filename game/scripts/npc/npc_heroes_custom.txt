@@ -291,7 +291,7 @@
 
     "Ability1"                                               "sanya_sprint"
     "Ability2"                                               "rapper_flow"
-    "Ability3"                                               ""
+    "Ability3"                                               "rapper_spliff"
     "Ability4"                                               ""
     "Ability5"                                               ""
     "Ability8"                                               ""

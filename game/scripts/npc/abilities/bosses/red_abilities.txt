@@ -6,7 +6,7 @@
         "ScriptFile"                    "abilities/bosses/red_radiance.lua"
         "AbilityTextureName"            "ember_spirit_flame_guard"
         
-        "AbilityChannelAnimation"          "ACT_DOTA_CHANNEL_ABILITY_1"
+        "AbilityChannelAnimation"       "ACT_DOTA_CHANNEL_ABILITY_1"
 		"AbilityChannelTime"			"4.0"
         "AbilityCooldown"               "20.0" 
         "AbilityCastRange"        		"9999"
