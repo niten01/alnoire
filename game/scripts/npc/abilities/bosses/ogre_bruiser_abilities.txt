@@ -15,8 +15,8 @@
         
         "AbilityValues"
         {
-            "radius"                "250"
-            "damage"                "300"
+            "radius"                "300"
+            "damage"                "200"
         }
 
         "precache"
@@ -39,8 +39,8 @@
         
         "AbilityValues"
         {
-            "radius"                "250"
-            "damage"                "300"
+            "radius"                "125"
+            "damage"                "250"
         }
 
         "precache"
@@ -82,8 +82,8 @@
         
         "AbilityValues"
         {
-            "radius"                "400"
-            "damage"                "100"
+            "radius"                "300"
+            "damage"                "300"
             "duration"              "1.5"
         }
 

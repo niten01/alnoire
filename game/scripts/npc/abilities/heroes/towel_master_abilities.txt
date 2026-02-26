@@ -93,10 +93,14 @@
 		"AbilityValues"
 		{
 			"radius"					"400 450 500 550"
+<<<<<<< HEAD
 			"hp_regen"					"10.0 20.0 30.0 40.0"
 			"decreaseMult"				"0.70 0.70 0.70 0.70"
 			"delayBeforeReset"			"1.2 1.2 1.2 1.2"
 
+=======
+			"hp_regen"					"10.0 15.0 20.0 25.0"
+>>>>>>> 04f219ae229fd62683396b8a9e4ad99b81ee9d68
 		}
 	}
 
