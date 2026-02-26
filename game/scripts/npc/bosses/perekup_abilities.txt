@@ -1,0 +1,38 @@
+"DOTAAbilities"
+{
+    "perekup_shuffleshot"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/perekup_shuffleshot.lua"
+        "AbilityTextureName"            "ogre_magi_multicast"
+        
+        "AbilityChannelAnimation"       "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCastPoint"              "0.47" 
+        "AbilityCooldown"               "5.0" 
+        "AbilityCastRange"        		"9999"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+        
+        "AbilityValues"
+        {
+            "warning_delay"         "0.1"
+            "distance"              "3000"
+            "projectile_radius"     "50"
+            "speed"                 "800"
+            // values min max
+            "damage"                "10 50"
+            "heal"                  "50 200"
+            "stun_duration"         "0.5 2"
+            "root_duration"         "0.2 2"
+            "dot_duration"          "2 10"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/perekup_snowball.vpcf"
+            "particle"      "particles/dev/library/base_tracking_projectile_model.vpcf"
+            "particle"      "particles/econ/events/ti9/ti9_monkey_projectile_object.vpcf"
+            "particle"      "particles/econ/items/bristleback/ti7_head_nasal_goo/bristleback_ti7_nasal_goo_proj_ball_r.vpcf"
+            "particle"      "particles/econ/items/dragon_knight/dk_persona/dk_persona_dragon_tail_dragon_form_proj_core.vpcf"
+        }
+    }   
+}

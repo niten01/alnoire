@@ -490,7 +490,7 @@ function ArcInfo:Iterate(nSteps)
 end
 
 function ArcInfo:Length()
-  return self.radius * self.sweep
+  return math.abs(self.radius * self.sweep)
 end
 
 -- returns an ArcInfo object that has :Iterate(nSteps) iterator

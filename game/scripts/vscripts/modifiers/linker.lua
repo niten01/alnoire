@@ -37,6 +37,7 @@ LinkLuaModifier("modifier_island_guard_ai", "modifiers/ai/modifier_island_guard_
 LinkLuaModifier("modifier_red_ai", "modifiers/ai/modifier_red_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_genius_ai", "modifiers/ai/modifier_genius_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_gorilla_ai", "modifiers/ai/modifier_gorilla_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_perekup_ai", "modifiers/ai/modifier_perekup_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shrooms_ai", "modifiers/ai/modifier_shrooms_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shrooms_furion_ai", "modifiers/ai/modifier_shrooms_furion_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_bufferbear_ai", "modifiers/ai/modifier_bufferbear_ai", LUA_MODIFIER_MOTION_NONE)

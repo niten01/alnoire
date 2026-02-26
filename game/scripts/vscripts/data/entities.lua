@@ -273,6 +273,7 @@ return {
             npc = "npc_perekup",
             modifiers = { "modifier_story_npc" },
             packID = "pack_perekup",
+            ai_modifier = "modifier_perekup_ai",
         },
         spawner_hermit                = {
             npc = "npc_hermit",
@@ -662,7 +663,7 @@ return {
             activateAfterUnitsSpawned = false,
         },
         pack_gorilla = {
-            activateAfterUnitsSpawned = true,
+            activateAfterUnitsSpawned = false,
         },
         pack_red = {
             rangeRetreat = 6000,

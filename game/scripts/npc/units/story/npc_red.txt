@@ -5,7 +5,7 @@
 		"Model"						"models/red/red.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"ModelScale" 				"1.3"
-		"Level"						"7"
+		"Level"						"4"
 		"ConsideredHero" 			"1"
 		"AutoAttacksByDefault" "0"
 
