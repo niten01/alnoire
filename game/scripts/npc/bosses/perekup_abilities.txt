@@ -8,7 +8,7 @@
         
         "AbilityChannelAnimation"       "ACT_DOTA_CAST_ABILITY_1"
         "AbilityCastPoint"              "0.47" 
-        "AbilityCooldown"               "5.0" 
+        "AbilityCooldown"               "0.0" 
         "AbilityCastRange"        		"9999"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
         
@@ -17,9 +17,9 @@
             "warning_delay"         "0.1"
             "distance"              "3000"
             "projectile_radius"     "50"
-            "speed"                 "800"
+
             // values min max
-            "damage"                "10 50"
+            "damage"                "50 200"
             "heal"                  "50 200"
             "stun_duration"         "0.5 2"
             "root_duration"         "0.2 2"
@@ -28,11 +28,27 @@
 
         "precache"
         {
+            "particle"      "particles/units/heroes/hero_warlock/warlock_fatal_bonds_icon_chains.vpcf"
+            "particle"      "particles/econ/events/seasonal_reward_line_fall_2025/radiant_fountain_regen_fallrewardline_2025_heal_symbols_start_burst.vpcf"
+            "particle"      "particles/econ/items/viper/viper_ti7_immortal/viper_poison_crimson_debuff_ti7.vpcf"
+            "particle"      "particles/units/heroes/hero_riki/riki_backstab.vpcf"
+
+            "particle"      "particles/econ/items/beastmaster/mh_beastmaster/mh_beastmaster_golden_wildaxe.vpcf"
             "particle"      "particles/perekup_snowball.vpcf"
             "particle"      "particles/dev/library/base_tracking_projectile_model.vpcf"
-            "particle"      "particles/econ/events/ti9/ti9_monkey_projectile_object.vpcf"
+            "particle"      "particles/perekup_shit.vpcf"
             "particle"      "particles/econ/items/bristleback/ti7_head_nasal_goo/bristleback_ti7_nasal_goo_proj_ball_r.vpcf"
             "particle"      "particles/econ/items/dragon_knight/dk_persona/dk_persona_dragon_tail_dragon_form_proj_core.vpcf"
+            "particle"      "particles/perekup_hammer_1.vpcf"
+            "particle"      "particles/econ/items/ancient_apparition/aa_2021_immortal/aa_2021_immortal_chilling_projectile_model.vpcf"
+            "particle"      "particles/econ/items/weaver/weaver_golden_immortal_ti7/weaver_golden_swarm_projectile_ti7_main_model.vpcf"
+            "particle"      "particles/events/crownfall/survivors/imperia_portal_projectile_model.vpcf"
+            "particle"      "particles/events/crownfall/fighting_game/fighting_game_tusk_ice_shards_projectile_stout_model.vpcf"
+            "particle"      "particles/units/heroes/hero_dark_willow/dark_willow_bramble_projectile_model.vpcf"
+            "particle"      "particles/units/heroes/hero_ringmaster/ringmaster_strongman_potion_projectile_model.vpcf"
+            "particle"      "particles/units/heroes/hero_ringmaster/ringmaster_weighted_pie_projectile_model_original.vpcf"
+            "particle"      "particles/econ/items/elder_titan/elder_titan_2021/elder_titan_2021_earth_splitter_orb_projectile.vpcf"
+            "particle"      "particles/hw_fx/hw_candy_2022_projectile_k.vpcf"
         }
     }   
 }

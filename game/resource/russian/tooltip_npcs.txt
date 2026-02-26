@@ -23,3 +23,4 @@
 "npc_island_guard"		"Страж острова"
 "npc_genius"		"Гений"
 "npc_gorilla"       "Горилла"
+"npc_perekup"       "Перекуп"

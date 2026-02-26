@@ -80,7 +80,7 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"precache"
 		{
-        	"soundfile"			"soundevents/bosses/red.vsndevts"
+        	"soundfile"			"soundevents/bosses/perekup.vsndevts"
 		}
 	}
 }

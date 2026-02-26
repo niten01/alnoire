@@ -1,0 +1,108 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  ability.perekup.throw = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/misc/hot_potato/hot_pot_projectile.vsnd",
+        "sounds/npc_abilities/perekup_throw_1.vsnd",
+        "sounds/weapons/hero/tiny/tiny_toss_throw.vsnd",
+        "sounds/weapons/hero/dragon_knight/sword_swing1.vsnd",
+    ]
+    volume = "2.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.150000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "600.000000"
+  }
+  ability.perekup.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/perekup_hit_1.vsnd",
+        "sounds/weapons/hero/shared/impacts/sword_impact4.vsnd",
+        "sounds/weapons/hero/sniper/projectile_impact01.vsnd",
+        "sounds/weapons/hero/spirit_breaker/charge_impact.vsnd",
+        "sounds/weapons/hero/tiny/tiny_tree_impact_01.vsnd",
+        "sounds/weapons/hero/shredder/timberchain_impact.vsnd"
+    ]
+    volume = "2.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.150000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "600.000000"
+  }
+  ability.perekup.heal = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/creep/neutral/troll_priest_heal.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "600.000000"
+  }
+  ability.perekup.damage = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/pudge/dismember_swing1.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "600.000000"
+  }
+  ability.perekup.stun = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/misc/soundboard/ti9_head_bonk.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "600.000000"
+  }
+  ability.perekup.root = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/ember_spirit/searing_chains_target01.vsnd",
+        "sounds/weapons/hero/ember_spirit/searing_chains_target02.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "600.000000"
+  }
+  ability.perekup.dot = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/dazzle/poison_impact.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "600.000000"
+  }
+} 
