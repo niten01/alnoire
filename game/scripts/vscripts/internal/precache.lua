@@ -126,7 +126,9 @@ return {
         "towel_summon",
 
         "npc_shooter",
-        "mega_sanya",
+        "npc_clash_creep_radiant",
+        "npc_clash_creep_dire",
+        "npc_clash_creep_mega_sanya_1",
         "npc_dota_custom_tower_bad",
         "npc_dota_custom_tower_good",
         "npc_dota_custom_king_tower_bad",
@@ -152,6 +154,8 @@ return {
         "npc_dota_neutral_dark_troll_warlord",
         "npc_dota_hero_undying",
         "npc_dota_hero_treant",
+        "npc_dota_hero_tiny",
+
 
         "npc_jungle_venomancer",
         "npc_dota_venomancer_plague_ward_1",
@@ -200,6 +204,11 @@ return {
         -- perdun flowers
         "models/heroes/dawnbreaker/debut/models/flowers/battlemaiden_flower_5.vmdl",
         "models/items/furion/treant_flower_1.vmdl",
+
+        -- clash
+        "models/items/tiny/scarlet_quarry/scarlet_quarry_03.vmdl",
+        "models/items/tiny/lionheart_kings_moving_castle_t2/lionheart_kings_moving_castle_t2.vmdl",
+        "models/items/undying/flesh_golem/deathmatch_dominator_golem/deathmatch_dominator_golem.vmdl",
     },
     sounds = {
         "soundevents/sfx.vsndevts",

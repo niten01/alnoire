@@ -27,9 +27,9 @@ function ClashGame:Init()
 
     }
 
-    self.good_creep_name = "npc_xavier"
-    self.bad_creep_name = "npc_xavier"
-    self.mega_creep_name = "mega_sanya"
+    self.good_creep_name = "npc_clash_creep_radiant"
+    self.bad_creep_name = "npc_clash_creep_dire"
+    self.mega_creep_name = "npc_clash_creep_mega_sanya_1"
     GameEvents:OnQuestTrigger(function(event)
         if event.triggerName ~= "trigger_clash_arena" then return end
 
