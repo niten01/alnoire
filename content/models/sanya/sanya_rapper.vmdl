@@ -57,6 +57,10 @@
 								from = "torn_denim.vmat"
 								to = "models/sanya/materials/sanya_denim_torn.vmat"
 							},
+							{
+								from = "black-pistol.vmat"
+								to = "materials/models/heroes/axe/axe_hair_color.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""
@@ -85,71 +89,6 @@
 				[
 					{
 						_class = "AnimFile"
-						name = "run"
-						children = 
-						[
-							{
-								_class = "ExtractMotion"
-								extract_tx = true
-								extract_ty = true
-								extract_tz = false
-								extract_rz = false
-								linear = false
-								quadratic = false
-								extract_initial_offset = false
-								root_bone_name = ""
-								motion_type = "Uniform"
-							},
-						]
-						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_RUN"
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = true
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						animgraph_additive = false
-						delete_from_compiled_model = false
-						source_filename = "models/sanya/animations/run.fbx"
-						import_bone_scales = false
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-						additional_anim_files = [  ]
-					},
-					{
-						_class = "AnimFile"
-						name = "idle"
-						is_default_idle_anim = false
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = true
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						animgraph_additive = false
-						delete_from_compiled_model = false
-						source_filename = "models/sanya/animations/idle.fbx"
-						import_bone_scales = false
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-						additional_anim_files = [  ]
-					},
-					{
-						_class = "AnimFile"
 						name = "idle_capture"
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_CAPTURE"
@@ -175,56 +114,6 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "idle_statue"
-						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_IDLE_STATUE"
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = true
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						animgraph_additive = false
-						delete_from_compiled_model = false
-						source_filename = "models/sanya/animations/idle.fbx"
-						import_bone_scales = false
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-						additional_anim_files = [  ]
-					},
-					{
-						_class = "AnimFile"
-						name = "attack_chop"
-						is_default_idle_anim = false
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						animgraph_additive = false
-						delete_from_compiled_model = false
-						source_filename = "models/sanya/animations/attack_chop.fbx"
-						import_bone_scales = false
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-						additional_anim_files = [  ]
-					},
-					{
-						_class = "AnimFile"
 						name = "flail"
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_FLAIL"
@@ -241,84 +130,6 @@
 						animgraph_additive = false
 						delete_from_compiled_model = false
 						source_filename = "models/sanya/animations/flail.fbx"
-						import_bone_scales = false
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-						additional_anim_files = [  ]
-					},
-					{
-						_class = "AnimFile"
-						name = "idle_aggressive"
-						children = 
-						[
-							{
-								_class = "ActivityModifier"
-								activity_name = "aggressive"
-								activity_weight = 1
-							},
-						]
-						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_IDLE"
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = true
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						animgraph_additive = false
-						delete_from_compiled_model = false
-						source_filename = "models/sanya/animations/idle_aggressive.fbx"
-						import_bone_scales = false
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-						additional_anim_files = [  ]
-					},
-					{
-						_class = "AnimFile"
-						name = "run_aggressive"
-						children = 
-						[
-							{
-								_class = "ExtractMotion"
-								extract_tx = true
-								extract_ty = true
-								extract_tz = false
-								extract_rz = false
-								linear = false
-								quadratic = false
-								extract_initial_offset = false
-								root_bone_name = ""
-								motion_type = "Uniform"
-							},
-							{
-								_class = "ActivityModifier"
-								activity_name = "aggressive"
-								activity_weight = 1
-							},
-						]
-						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_RUN"
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = true
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						animgraph_additive = false
-						delete_from_compiled_model = false
-						source_filename = "models/sanya/animations/run_aggressive.fbx"
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
@@ -369,81 +180,6 @@
 						animgraph_additive = false
 						delete_from_compiled_model = false
 						source_filename = "models/sanya/animations/death.fbx"
-						import_bone_scales = false
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-						additional_anim_files = [  ]
-					},
-					{
-						_class = "AnimFile"
-						name = "attack_fist_1"
-						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_ATTACK"
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						animgraph_additive = false
-						delete_from_compiled_model = false
-						source_filename = "models/sanya/animations/attack_fist_1.fbx"
-						import_bone_scales = false
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-						additional_anim_files = [  ]
-					},
-					{
-						_class = "AnimFile"
-						name = "attack_fist_3"
-						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_ATTACK"
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						animgraph_additive = false
-						delete_from_compiled_model = false
-						source_filename = "models/sanya/animations/attack_fist_3.fbx"
-						import_bone_scales = false
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-						additional_anim_files = [  ]
-					},
-					{
-						_class = "AnimFile"
-						name = "attack_fist_2"
-						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_ATTACK"
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						animgraph_additive = false
-						delete_from_compiled_model = false
-						source_filename = "models/sanya/animations/attack_fist_2.fbx"
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
@@ -539,6 +275,71 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "run_alt"
+						children = 
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = false
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								extract_initial_offset = false
+								root_bone_name = ""
+								motion_type = "Uniform"
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/run_alt.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "attack_ranged_gun"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/attack_ranged_gun.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 45.0
 						reverse = false
 						additional_anim_files = [  ]
 					},
@@ -1006,6 +807,15 @@
 						name = "attach_hitloc"
 						parent_bone = "spine_3"
 						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_attack1"
+						parent_bone = "hand_R"
+						relative_origin = [ -33.509338, -8.120071, 11.352341 ]
 						relative_angles = [ 0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false

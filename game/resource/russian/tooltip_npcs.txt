@@ -24,3 +24,4 @@
 "npc_genius"		"Гений"
 "npc_gorilla"       "Горилла"
 "npc_perekup"       "Перекуп"
+"npc_training_dummy" "Тренировочный манекен"

@@ -16,7 +16,7 @@ function modifier_training_dummy:OnTakeDamage(params)
     local parent = self:GetParent()
     if params.unit ~= parent then return end
 
-    if (params.unit:GetHealth() - params.damage) <= 1 then
+    if params.unit:GetHealth() <= 1 then
         parent:SetHealth(parent:GetMaxHealth())
     end
 end

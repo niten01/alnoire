@@ -1,0 +1,77 @@
+.StackBarContainer {
+    width: 250px;
+    height: 32px;
+    vertical-align: bottom;
+    horizontal-align: center;
+    margin-bottom: 220px; 
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.ReplaceMana {
+    margin-bottom: 0px;
+    width: 100%; 
+}
+
+#StackBarBackground {
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    /* border: 2px solid #333; */
+    /* border-radius: 4px; */
+    box-shadow: inset 0px 0px 3px #000;
+}
+
+#StackBarFill {
+    width: 0%; /* Driven by JS */
+    height: 100%;
+    background-color: gradient( linear, 0% 0%, 100% 0%, from( #f7f473 ), to( #b8821e ) );
+    transition-property: width, background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+/* Effects at high stacks */
+.HighStacks #StackBarFill {
+    background-color: gradient( linear, 0% 0%, 100% 0%, from( #f59e0b ), to( #ef4444 ) );
+    box-shadow: 0px 0px 12px #f59e0b22;
+}
+
+#StackCountLabel {
+    align: center center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
+
+.MaxStacksShake #StackBarBackground {
+    animation-name: Shake;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+.MaxStacks #MaxStackGlow {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ffffff;
+    animation-name: PulseGlow;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes 'PulseGlow' {
+    0% { box-shadow: inset 0px 0px 2px #ffffff; opacity: 0.01;   }
+    50% { box-shadow: inset 0px 0px 6px #ffffff; opacity: 0.2; }
+    100% { box-shadow: inset 0px 0px 2px #ffffff; opacity: 0.01; }
+}
+
+@keyframes 'Shake' {
+    0% {     transform: translateX(0)       translateY(0); }
+    16% {    transform: translateX(1px)     translateY(1px); }
+    32% {    transform: translateX(-1px)     translateY(-1px); }
+    48% {    transform: translateX(1px)    translateY(-1px); }
+    64% {    transform: translateX(-1px)    translateY(1px); }
+    100% {   transform: translateX(0)       translateY(0); }
+}

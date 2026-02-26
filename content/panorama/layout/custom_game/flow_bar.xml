@@ -1,0 +1,17 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/flow_bar.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/flow_bar.js" />
+    </scripts>
+
+    <Panel class="StackBarContainer" hittest="false">
+        <Panel id="StackBarBackground">
+            <Panel id="StackBarFill" />
+            <Panel id="StackBarReflections" />
+            <Label id="StackCountLabel" text="0" />
+            <Panel id="MaxStackGlow" />
+        </Panel>
+    </Panel>
+</root>

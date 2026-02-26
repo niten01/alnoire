@@ -15,4 +15,19 @@
 			"damage_pct_per_stack"		"1"
 		}
 	}
+	"rapper_spliff"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/rapper_spliff.lua"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELING"
+		"AbilityTextureName"		"rapper_flow"
+		"MaxLevel"					"1"
+		"RequiredLevel"				"1"
+
+		"AbilityValues"
+		{
+			"max_stacks"				"500"
+			"damage_pct_per_stack"		"1"
+		}
+	}
 }
