@@ -128,6 +128,7 @@ return {
         "npc_shooter",
         "npc_clash_creep_radiant",
         "npc_clash_creep_dire",
+        "npc_clash_creep_dire_ranged",
         "npc_clash_creep_mega_sanya_1",
         "npc_dota_custom_tower_bad",
         "npc_dota_custom_tower_good",
@@ -155,6 +156,7 @@ return {
         "npc_dota_hero_undying",
         "npc_dota_hero_treant",
         "npc_dota_hero_tiny",
+        "npc_dota_hero_lion",
 
 
         "npc_jungle_venomancer",
