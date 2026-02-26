@@ -2,7 +2,7 @@ ogre_bruiser_fly_hit = class {}
 LinkLuaModifier("modifier_ogre_fly", "abilities/bosses/ogre_bruiser_fly_hit.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
 
 function ogre_bruiser_fly_hit:GetBehavior()
-    return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_AOE
+    return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
 end
 
 function ogre_bruiser_fly_hit:OnAbilityPhaseStart()
@@ -11,11 +11,19 @@ function ogre_bruiser_fly_hit:OnAbilityPhaseStart()
     caster:EmitSound("ability.ogre_bruiser.swing")
     local jumpDelay  = 1.41
     local flyTime    = self:GetCastPoint() - jumpDelay
-    local target     = self:GetCursorTarget()
+    local targetEnt  = self:GetCursorTarget()
     self.activeTimer = Timers:CreateTimer(jumpDelay, function()
-        caster.flyTarget = target:GetAbsOrigin()
-        if not caster:HasModifier("modifier_ogre_fly") then
-            caster:AddNewModifier(nil, nil, "modifier_ogre_fly", { duration = flyTime })
+        local target = targetEnt:GetAbsOrigin()
+        caster.flyTarget = target
+        if not caster:HasModifier("modifier_move") then
+            local dir = (target - caster:GetAbsOrigin())
+            local speed = #dir / flyTime
+            caster:AddNewModifier(nil, nil, "modifier_move", {
+                directionX = dir.x,
+                directionY = dir.y,
+                speed = speed,
+                duration = flyTime
+            })
         end
     end)
 end
