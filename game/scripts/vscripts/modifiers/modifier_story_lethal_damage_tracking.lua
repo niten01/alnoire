@@ -25,6 +25,7 @@ function modifier_story_lethal_damage_tracking:OnTakeDamage(params)
         }))
         if not parent:HasModifier("modifier_story_npc") then
             parent:AddNewModifier(parent, nil, "modifier_story_npc", { duration = -1 })
+            parent:SetTeam(DOTA_TEAM_GOODGUYS)
         end
         self:Destroy()
     end

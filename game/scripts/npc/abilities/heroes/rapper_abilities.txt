@@ -11,7 +11,7 @@
 
 		"AbilityValues"
 		{
-			"max_stacks"				"500"
+			"max_stacks"				"50"
 			"damage_pct_per_stack"		"1"
 		}
 	}
@@ -31,6 +31,28 @@
 		{
 			"max_shield"				"200 500 1000 2000"
 			"shield_per_sec"			"100 200"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/rapper_spliff_head_smoke.vpcf"
+			"particle"		"particles/neutral_fx/miniboss_minion_shield_core.vpcf"
+		}
+	}
+	"rapper_strife"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/rapper_strife.lua"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"		"rapper_strife"
+        "AbilityCooldown"               "5.0" 
+		"MaxLevel"						"3"
+		"RequiredLevel"					"1"
+
+		"AbilityValues"
+		{
+			"duration"					"10"
+			"shots_per_sec"				"5 10"
 		}
 
 		"precache"

@@ -22,7 +22,6 @@ function UpdateStackBar() {
 }
 
 function SetUIPosition(replaceMana) {
-    var unit = Players.GetLocalPlayerPortraitUnit();
 
     var container = $.GetContextPanel();
     var hud = $.GetContextPanel().FindAncestor("DotaHud");

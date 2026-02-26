@@ -2,7 +2,7 @@ GlobalState = GlobalState or {}
 
 function GlobalState:Init()
     self.state = {
-        act = 1,
+        act = 0,
 
         freed_island_creeps = false,
         knows_village_password = false,

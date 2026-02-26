@@ -3,9 +3,6 @@ LinkLuaModifier("modifier_sanya_towel_root", "modifiers/abilities/modifier_sanya
 sanya_towel_root = class({})
 
 function sanya_towel_root:Spawn()
-    if IsServer() then
-        self:SetLevel(1)
-    end
 end
 
 function sanya_towel_root:GetAOERadius()

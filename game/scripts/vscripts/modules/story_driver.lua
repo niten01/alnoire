@@ -406,6 +406,7 @@ end
 function StoryDriver:OnActChange(event)
   if GetMapName() == "fight_test" then
     Timers:CreateTimer(2, function()
+      StoryDriver:StartFight("pack_perekup")
       for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
         local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
         if not hero then error("No hero") end
@@ -415,7 +416,6 @@ function StoryDriver:OnActChange(event)
         hero:RemoveSelf()
       end
       -- SpawnManager:SpawnNPC("spawner_gorilla")
-      StoryDriver:StartFight("pack_perekup")
     end)
   end
 

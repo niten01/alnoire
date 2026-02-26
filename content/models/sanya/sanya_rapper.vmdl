@@ -346,6 +346,54 @@
 					{
 						_class = "AnimFile"
 						name = "spliff_channel"
+						children = 
+						[
+							{
+								_class = "AnimFile"
+								name = "run_haste"
+								children = 
+								[
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = false
+										extract_tz = false
+										extract_rz = false
+										linear = false
+										quadratic = false
+										extract_initial_offset = false
+										root_bone_name = ""
+										motion_type = "Uniform"
+									},
+									{
+										_class = "ActivityModifier"
+										activity_name = "haste"
+										activity_weight = 100
+									},
+								]
+								is_default_idle_anim = false
+								activity_name = "ACT_DOTA_RUN"
+								activity_weight = 100
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								animgraph_additive = false
+								delete_from_compiled_model = false
+								source_filename = "models/sanya/animations/run_haste.fbx"
+								import_bone_scales = false
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+								additional_anim_files = [  ]
+							},
+						]
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_CHANNEL_ABILITY_1"
 						activity_weight = 1
@@ -361,6 +409,84 @@
 						animgraph_additive = false
 						delete_from_compiled_model = false
 						source_filename = "models/sanya/animations/spliff_channel.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "run_double_barrel"
+						children = 
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = false
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								extract_initial_offset = false
+								root_bone_name = ""
+								motion_type = "Uniform"
+							},
+							{
+								_class = "ActivityModifier"
+								activity_name = "focusfire"
+								activity_weight = 1
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/run_double_barrel.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "idle_double_barrel"
+						children = 
+						[
+							{
+								_class = "ActivityModifier"
+								activity_name = "focusfire"
+								activity_weight = 100
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 100
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/idle_double_barrel.fbx"
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1

@@ -29,4 +29,7 @@ function item_sling:OnProjectileHit(target, location)
     if not target then return end
     if not IsServer() then return end
     target:SetHealth(target:GetHealth() - 1)
+    if target:GetHealth() == 0 then
+        target:Kill(self, self:GetCaster())
+    end
 end
