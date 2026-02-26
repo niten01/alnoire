@@ -5540,7 +5540,7 @@ choices = {
 text = [[*Начать битву*]],
 next = nil,
 actions = {
-{ target="talk",npc="npc_ogre_bruiser",type="fight_start" },
+{ pack="pack_ogre_bruiser",nonLethalNPC="npc_ogre_bruiser",type="fight_start" },
 },
 },
 },

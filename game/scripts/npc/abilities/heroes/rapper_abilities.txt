@@ -19,15 +19,24 @@
 	{
 		"BaseClass"					"ability_lua"
 		"ScriptFile" 				"abilities/rapper_spliff.lua"
-		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELING"
-		"AbilityTextureName"		"rapper_flow"
-		"MaxLevel"					"1"
-		"RequiredLevel"				"1"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityTextureName"		"rapper_spliff"
+        "AbilityChannelAnimation"       "ACT_DOTA_CHANNEL_ABILITY_1"
+		"AbilityChannelTime"			"10.0"
+        "AbilityCooldown"               "1.0" 
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
 
 		"AbilityValues"
 		{
-			"max_stacks"				"500"
-			"damage_pct_per_stack"		"1"
+			"max_shield"				"200 500 1000 2000"
+			"shield_per_sec"			"100 200"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/rapper_spliff_head_smoke.vpcf"
+			"particle"		"particles/neutral_fx/miniboss_minion_shield_core.vpcf"
 		}
 	}
 }
