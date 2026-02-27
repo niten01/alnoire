@@ -7,7 +7,7 @@
         "AbilityTextureName"            "earthshaker_fissure"
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
-        "AbilityCastPoint"              "1.25"
+        "AbilityCastPoint"              "1.5"
         "AbilityCooldown"               "5.0" 
         "AbilityCastRange"        		"400"
         "AbilityUnitTargetTeam"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -15,7 +15,7 @@
         
         "AbilityValues"
         {
-            "radius"                "300"
+            "radius"                "275"
             "damage"                "200"
         }
 
@@ -39,8 +39,8 @@
         
         "AbilityValues"
         {
-            "radius"                "125"
-            "damage"                "250"
+            "radius"                "150"
+            "damage"                "150"
         }
 
         "precache"
@@ -82,7 +82,7 @@
         
         "AbilityValues"
         {
-            "radius"                "300"
+            "radius"                "350"
             "damage"                "300"
             "duration"              "1.5"
         }
