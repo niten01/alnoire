@@ -51,8 +51,9 @@
 
 		"AbilityValues"
 		{
-			"duration"					"10"
-			"shots_per_sec"				"5 10"
+			// "duration_per_stack"	    "0.03"
+			"duration_per_stack"	    "10"
+			"attack_speed_bonus"		"100 200 300"
 		}
 
 		"precache"
