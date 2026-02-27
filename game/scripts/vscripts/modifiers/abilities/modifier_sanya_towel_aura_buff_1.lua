@@ -19,10 +19,8 @@ function modifier_sanya_towel_aura_buff_1:OnIntervalThink()
     if not IsServer() then return end
     local parent = self:GetParent()
     local abil = self:GetAbility()
-    local currentTime = GameRules:GetGameTime()
-    local lastHitTime = parent:GetLastDamageTime()
     local healAmount = self.hp_regen
-    if currentTime - lastHitTime <= self.delayBeforeReset then
+    if self.lastHitTime and (GameRules:GetGameTime() - self.lastHitTime) <= self.delayBeforeReset then
         healAmount = healAmount * self.decreaseMult
     end
 
@@ -32,4 +30,17 @@ function modifier_sanya_towel_aura_buff_1:OnIntervalThink()
         PATTACH_ABSORIGIN_FOLLOW, parent)
     ParticleManager:ReleaseParticleIndex(pfx)
     SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, healAmount, nil)
+end
+
+function modifier_sanya_towel_aura_buff_1:DeclareFunctions()
+    return {
+        MODIFIER_EVENT_ON_TAKEDAMAGE
+    }
+end
+
+function modifier_sanya_towel_aura_buff_1:OnTakeDamage(params)
+    local parent = self:GetParent()
+    if params.unit == parent then
+        self.lastHitTime = GameRules:GetGameTime()
+    end
 end
