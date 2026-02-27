@@ -179,7 +179,7 @@
     "Ability8"                                               "sanya_towel_aura_2"
     "Ability9"                                               "sanya_towel_aura_3"
     "Ability10"                                              "sanya_towel_summon_return"
-    "Ability11"                                              ""
+    "Ability11"                                              "tusk_ice_shards"
     // "Ability7"                                            "sohei_innate_oaa"
     // "Ability8"                                            "generic_hidden"
     // "Ability9"                                            "generic_hidden"

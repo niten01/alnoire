@@ -141,7 +141,7 @@
 		"ModelScale" 				"0.75"
 
 		
-		//"Ability1"						"skeleton_king_hellfire_blast"			// Ability 1
+		"Ability1"						"tusk_walrus_punch"			// Ability 1
 		//"Ability2"					"centaur_hoof_stomp"			// Ability 2
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4
@@ -203,7 +203,7 @@
 		"ModelScale" 				"0.75"
 
 		
-		//"Ability1"						"skeleton_king_hellfire_blast"			// Ability 1
+		"Ability1"						"tusk_ice_shards"			// Ability 1
 		//"Ability2"					"centaur_hoof_stomp"			// Ability 2
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4
