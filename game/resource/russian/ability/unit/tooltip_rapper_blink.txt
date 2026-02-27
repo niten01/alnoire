@@ -1,0 +1,5 @@
+"DOTA_Tooltip_ability_rapper_blink"		            "Варп"
+"DOTA_Tooltip_Ability_rapper_blink_SummaryDescription" ""
+"DOTA_Tooltip_ability_rapper_blink_Description"		"Использует мощный выброс лимфатической энергии, искажая пространство вокруг себя, чтобы мгновенно переместиться в указанном направлении."
+"DOTA_Tooltip_ability_rapper_blink_Note0"		    "Не может быть использован через уровни ландшафта."
+"DOTA_Tooltip_ability_rapper_blink_Lore"		    "CКУААА"

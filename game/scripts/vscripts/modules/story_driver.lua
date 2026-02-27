@@ -5,6 +5,7 @@ function StoryDriver:Init()
   GameEvents:OnEntityKilled(bind(self.OnEntityKilled, self))
   GameEvents:OnPackWiped(bind(self.OnPackWiped, self))
   GameEvents:OnCancelLethalDamage(bind(self.OnCancelLethalDamage, self))
+  GameEvents:OnGameInProgress(bind(self.OnGameInProgress, self))
   self.activeStoryFights = {}
 
   ChatCommand:LinkDevCommand("-startfight", function(event, args)
@@ -403,28 +404,34 @@ function StoryDriver:SetupAct3()
   end
 end
 
-function StoryDriver:OnActChange(event)
+function StoryDriver:OnGameInProgress()
+  if not IsServer() then return end
+
   if GetMapName() == "fight_test" then
     Timers:CreateTimer(2, function()
       StoryDriver:StartFight("pack_perekup")
-      -- for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-      --   local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
-      --   if not hero then error("No hero") end
-      --   local fwd = hero:GetForwardVector()
-      --   local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_sanya_rapper", 0, 0)
-      --   newHero:SetForwardVector(fwd)
-      --   hero:RemoveSelf()
-      --   newHero:HeroLevelUp(true)
-      --   newHero:HeroLevelUp(true)
-      --   newHero:HeroLevelUp(true)
-      --   newHero:HeroLevelUp(true)
-      --   newHero:HeroLevelUp(true)
-      --   newHero:HeroLevelUp(true)
-      -- end
+      for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+        if PlayerResource:IsRealPlayer(playerID) and PlayerResource:IsValidPlayerID(playerID) then
+          local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+          if not hero then error("No hero") end
+          local fwd = hero:GetForwardVector()
+          local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_sanya_rapper", 0, 0)
+          newHero:SetForwardVector(fwd)
+          hero:RemoveSelf()
+          newHero:HeroLevelUp(true)
+          newHero:HeroLevelUp(true)
+          newHero:HeroLevelUp(true)
+          newHero:HeroLevelUp(true)
+          newHero:HeroLevelUp(true)
+          newHero:HeroLevelUp(true)
+        end
+      end
       -- SpawnManager:SpawnNPC("spawner_gorilla")
     end)
   end
+end
 
+function StoryDriver:OnActChange(event)
   local act = event.act
   if act == 2 then
     self:SetupAct2()

@@ -24,15 +24,36 @@ function modifier_rapper_flow:IsHidden() return false end
 function modifier_rapper_flow:IsPurgable() return false end
 
 function modifier_rapper_flow:OnCreated()
-    self:SetStackCount(0)
+    if not IsServer() then return end
+
+    self:SetHasCustomTransmitterData(true)
+
     self.damagePctPerStack = self:GetAbility():GetSpecialValueFor("damage_pct_per_stack")
     self.maxStacks = self:GetAbility():GetSpecialValueFor("max_stacks")
+    self.bonusDamage = 0
 end
 
 modifier_rapper_flow.OnRefresh = modifier_rapper_flow.OnCreated
 
+function modifier_rapper_flow:AddCustomTransmitterData()
+    return {
+        stackCount = self:GetStackCount(),
+        maxStacks = self.maxStacks,
+        damagePctPerStack = self.damagePctPerStack,
+        bonusDamage = self.bonusDamage,
+    }
+end
+
+function modifier_rapper_flow:HandleCustomTransmitterData(data)
+    self:SetStackCount(data.stackCount)
+    self.maxStacks = data.maxStacks
+    self.damagePctPerStack = data.damagePctPerStack
+    self.bonusDamage = data.bonusDamage
+end
+
 function modifier_rapper_flow:DeclareFunctions()
     return {
+        MODIFIER_PROPERTY_TOOLTIP,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
         MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
     }
@@ -42,6 +63,8 @@ function modifier_rapper_flow:OnStackCountChanged()
     if not IsServer() then return end
     local pid = self:GetParent():GetPlayerOwnerID()
     PlayerTables:SetTableValue("flow_bar_" .. tostring(pid), "stackCount", self:GetStackCount())
+    self.bonusDamage = self.damagePctPerStack * self:GetStackCount()
+    self:SendBuffRefreshToClients()
 end
 
 function modifier_rapper_flow:OnAttackLanded(params)
@@ -52,5 +75,9 @@ function modifier_rapper_flow:OnAttackLanded(params)
 end
 
 function modifier_rapper_flow:GetModifierDamageOutgoing_Percentage()
-    return self:GetStackCount() * self.damagePctPerStack
+    return self.bonusDamage
+end
+
+function modifier_rapper_flow:OnTooltip()
+    return self:GetModifierDamageOutgoing_Percentage()
 end

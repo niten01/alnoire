@@ -320,7 +320,6 @@ function Dialogue:OnQueryUpdate(_, args)
   if not hero or hero:IsNull() then return end
 
   if unit:GetRangeToUnit(hero) > INTERACTION_RADIUS then return end
-    DebugPrint("slkdfjalsdf")
   if PackManager:HasActiveFights() then return end
   if not unit:HasModifier("modifier_story_npc") then return end
 

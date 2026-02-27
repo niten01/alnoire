@@ -101,7 +101,7 @@
     // special_bonus_unique_sohei_8_oaa - Flurry of Blows bonus attacks and duration
     // special_bonus_unique_sohei_9_oaa - Repulsive Palm bonus strength damage
 
-    "AbilityTalentStart"                                  "10"
+    "AbilityTalentStart"                                  "100"
 
     "UnitRelationshipClass"                               "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
     "HasInventory"                                        "1"
@@ -219,7 +219,7 @@
     // }
 
 
-    "AbilityTalentStart"                                  "10"
+    "AbilityTalentStart"                                  "100"
 
     "UnitRelationshipClass"                               "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
     "HasInventory"                                        "1"
@@ -248,8 +248,8 @@
     "Model"                                               "models/sanya/sanya_rapper.vmdl"
     "ModelScale"                                          "0.85"
     "BotImplemented"                                      "0"
-    "SoundSet"                                            "Hero_TowelMaster"
-    "GameSoundsFile"                                      "soundevents/sanya_soundset.vsndevts"
+    "SoundSet"                                            "Hero_Sniper"
+    // "GameSoundsFile"                                      "soundevents/sanya_soundset.vsndevts"
 
     "MovementCapabilities"                                "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementTurnRate"                                    "0.9"
@@ -290,10 +290,10 @@
     "AbilityLayout"				                                "6"
 
     "Ability1"                                               "sanya_sprint"
-    "Ability2"                                               "rapper_flow"
+    "Ability2"                                               "rapper_blink"
     "Ability3"                                               "rapper_spliff"
     "Ability4"                                               "rapper_strife"
-    "Ability5"                                               ""
+    "Ability5"                                               "rapper_flow"
     "Ability8"                                               ""
     "Ability9"                                               ""
     "Ability10"                                              ""
@@ -337,7 +337,7 @@
     // }
 
 
-    "AbilityTalentStart"                                  "10"
+    "AbilityTalentStart"                                  "100"
 
     "UnitRelationshipClass"                               "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
     "HasInventory"                                        "1"
@@ -456,7 +456,7 @@
     // special_bonus_unique_sohei_8_oaa - Flurry of Blows bonus attacks and duration
     // special_bonus_unique_sohei_9_oaa - Repulsive Palm bonus strength damage
 
-    "AbilityTalentStart"                                  "10"
+    "AbilityTalentStart"                                  "100"
 
     "UnitRelationshipClass"                               "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
     "HasInventory"                                        "1"
