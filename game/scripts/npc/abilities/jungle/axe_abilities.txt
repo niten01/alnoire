@@ -35,4 +35,20 @@
             "slowAmount"    "50"
         }
     }	
+    
+    "axe_sustain"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/jungle/axe_sustain"
+		"AbilityTextureName"            "axe_berserkers_call"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+
+		"AbilityValues"
+		{
+			"bonusDamage"               "200"
+			"damageReductionPercent"    "90.0"
+		}
+	}
 }

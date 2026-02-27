@@ -363,13 +363,13 @@
 
 		"Ability1"					"axe_custom_hunger"
 		"Ability2"					"axe_berserkers_call"			// Ability 3
-		//"Ability3"					"axe_culling_blade"			// Ability 4
+		"Ability3"					"axe_sustain"			// Ability 4
 
 		"ArmorPhysical"				"4"			// Physical protection.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"20"		// Damage range min.
 		"AttackDamageMax"			"30"		// Damage range max.
-		"AttackRate"				"2.0	"		// Speed of attack.
+		"AttackRate"				"2.0"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.     
