@@ -446,6 +446,19 @@ return {
             ai_modifier = "modifier_default_creep_ai"
         },
 
+        spawner_ocean_creep   = {
+            npc = "npc_ocean_creep_range",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_catapa",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+        spawner_ocean_siege   = {
+            npc = "npc_ocean_siege",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_catapa",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+
 
         spawner_dream_concert       = {
             npc = "npc_dream",
@@ -629,6 +642,13 @@ return {
             rangeAggro = 900,
             stayActivatedOnPlayerDeath = true,
             flower = "npc_jungle_perdun_flower",
+        },
+
+        pack_ocean_act2_catapa = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
         },
 
         pack_mk = {

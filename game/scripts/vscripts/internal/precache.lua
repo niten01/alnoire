@@ -157,6 +157,7 @@ return {
         "npc_dota_hero_treant",
         "npc_dota_hero_tiny",
         "npc_dota_hero_lion",
+        "npc_dota_hero_tusk",
 
 
         "npc_jungle_venomancer",
@@ -186,8 +187,14 @@ return {
         "npc_jungle_perdun",
         "npc_jungle_perdun_flower",
 
-        -- ocean
+        -- ocean creeps
         "npc_dota_goodguys_siege_upgraded",
+        "npc_dota_creep_goodguys_ranged",
+        "npc_ocean_creep_range",
+        "npc_ocean_siege",
+        "npc_ocean_tusik_mini_a",
+        "npc_ocean_tusik_mini_b",
+        "npc_ocean_tusik_papa",
 
 
         -- traps
@@ -217,6 +224,8 @@ return {
         "models/items/tiny/scarlet_quarry/scarlet_quarry_03.vmdl",
         "models/items/tiny/lionheart_kings_moving_castle_t2/lionheart_kings_moving_castle_t2.vmdl",
         "models/items/undying/flesh_golem/deathmatch_dominator_golem/deathmatch_dominator_golem.vmdl",
+
+
 
     },
     sounds = {

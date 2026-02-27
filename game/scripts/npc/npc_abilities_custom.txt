@@ -14,6 +14,7 @@
 #base "abilities/jungle/pomidorko_abilities.txt"
 #base "abilities/jungle/perdun_abilities.txt"
 #base "abilities/jungle/roshan_abilities.txt"
+#base "abilities/ocean/siege_abilities.txt"
 
 #base "abilities/heroes/towel_master_abilities.txt"
 #base "abilities/heroes/rapper_abilities.txt"
