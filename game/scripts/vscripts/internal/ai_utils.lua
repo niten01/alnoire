@@ -190,6 +190,20 @@ function FindSanyaInRadius(centerPoint, radius)
   return nil
 end
 
+function FindEnemiesForSanyaInRadius(center, radius)
+  return FindUnitsInRadius(
+    DOTA_TEAM_GOODGUYS,
+    center,
+    nil,
+    radius,
+    DOTA_UNIT_TARGET_TEAM_ENEMY,
+    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+    DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
+    FIND_CLOSEST,
+    false
+  )
+end
+
 function FindEnemiesForAIInRadius(center, radius)
   return FindUnitsInRadius(
     DOTA_TEAM_BADGUYS,

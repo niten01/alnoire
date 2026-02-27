@@ -292,7 +292,7 @@
     "Ability1"                                               "sanya_sprint"
     "Ability2"                                               "rapper_flow"
     "Ability3"                                               "rapper_spliff"
-    "Ability4"                                               ""
+    "Ability4"                                               "rapper_strife"
     "Ability5"                                               ""
     "Ability8"                                               ""
     "Ability9"                                               ""
