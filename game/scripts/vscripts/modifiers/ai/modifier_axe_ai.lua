@@ -1,12 +1,12 @@
-LinkLuaModifier("modifier_axe_sustain", "modifiers/jungle/modifier_axe_sustain", LUA_MODIFIER_MOTION_NONE)
 modifier_axe_ai = class({})
 
 
 function modifier_axe_ai:OnCreated()
     if not IsServer() then return end
     local unit = self:GetParent()
-    local abil = unit:GetAbilityByIndex(0)
-    unit:AddNewModifier(unit, abil, 'modifier_axe_sustain', {})
+    local abilSustain = unit:FindAbilityByName("axe_sustain")
+    abilSustain:ToggleAbility()
+    self.abilSustain = abilSustain
 end
 
 function modifier_axe_ai:OnIntervalThink()
@@ -31,7 +31,8 @@ function modifier_axe_ai:OnIntervalThink()
             end
         end
         if not hasGroupMembers then
-            unit:RemoveModifierByName('modifier_axe_sustain')
+            self.abilSustain:ToggleAbility()
+            -- unit:RemoveModifierByName('modifier_axe_sustain')
         end
     end
 

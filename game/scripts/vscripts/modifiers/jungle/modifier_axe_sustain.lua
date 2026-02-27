@@ -26,23 +26,26 @@ function modifier_axe_sustain:GetDisableAutoAttack()
 end
 
 function modifier_axe_sustain:GetModifierBaseAttack_BonusDamage()
-    return 200
-end
-
-function modifier_axe_sustain:GetTexture()
-    return "axe_berserkers_call"
+    if not self.damageBonus then
+        return 0
+    end
+    return self.damageBonus
 end
 
 function modifier_axe_sustain:OnCreated()
     if not IsServer() then return end
     local parent = self:GetParent()
+    local abil = self:GetAbility()
+    self.damageBonus = abil:GetSpecialValueFor('bonusDamage') or 200
+    self.damageReductionPercent = abil:GetSpecialValueFor('damageReductionPercent') or 90.0
     local pfx = ParticleManager:CreateParticle("particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf",
         PATTACH_ABSORIGIN_FOLLOW, parent)
     self:AddParticle(pfx, false, false, -1, false, false)
 end
 
 function modifier_axe_sustain:GetModifierIncomingDamage_Percentage()
-    return -90
+    if not self.damageReductionPercent then return 0 end
+    return -self.damageReductionPercent
 end
 
 function modifier_axe_sustain:OnAttackLanded(args)
