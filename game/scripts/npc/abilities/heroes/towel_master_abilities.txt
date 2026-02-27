@@ -32,7 +32,7 @@
 		"AbilityManaCost"               "0"
 		"AbilityValues"
 		{
-			"cooldown"					"10.0 10.0 10.0 10.0"
+			"cooldown"					"20.0 20.0 20.0 20.0"
 			"radius"					"1200 1200 1200 1200"
 		}
 		"precache"
@@ -75,7 +75,7 @@
 		{
 			"aoe_radius"				"150 300 450 600"
 			"duration"					"2.5 3.0 3.5 4.0"
-			"damage_amp_pct"			"20 30 40 50"
+			"damage_amp_pct"			"20 25 30 35"
 		}
 	}
 	"sanya_towel_aura_1"
@@ -93,14 +93,10 @@
 		"AbilityValues"
 		{
 			"radius"					"400 450 500 550"
-<<<<<<< HEAD
-			"hp_regen"					"10.0 20.0 30.0 40.0"
-			"decreaseMult"				"0.70 0.70 0.70 0.70"
-			"delayBeforeReset"			"1.2 1.2 1.2 1.2"
+			"hp_regen"					"30.0 40.0 50.0 60.0"
+			"decreaseMult"				"0.30 0.30 0.30 0.30"
+			"delayBeforeReset"			"1.0 1.0 1.0 1.0"
 
-=======
-			"hp_regen"					"10.0 15.0 20.0 25.0"
->>>>>>> 04f219ae229fd62683396b8a9e4ad99b81ee9d68
 		}
 	}
 
