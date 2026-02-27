@@ -15,9 +15,9 @@ function modifier_custom_sprint_passive:OnTakeDamage(params)
     local parent = self:GetParent()
     local ability = self:GetAbility()
     if params.unit == parent and params.attacker ~= parent and params.attacker ~= nil then
-        if ability:GetToggleState() then
+        -- if ability:GetToggleState() then
             ability:ToggleAbility()
-        end
+        -- end
         ability:StartCooldown(5.0)
     end
 end

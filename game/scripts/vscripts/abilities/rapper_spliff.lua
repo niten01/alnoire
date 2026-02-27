@@ -46,6 +46,7 @@ function modifier_rapper_spliff_shield:AddShield(amount)
     self.currentShield = self.currentShield + amount
     if self.currentShield > self.maxShield then
         self.currentShield = self.maxShield
+        self:GetParent():InterruptChannel()
     end
     self:SendBuffRefreshToClients()
 end

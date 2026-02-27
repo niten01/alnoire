@@ -1,0 +1,7 @@
+"DOTA_Tooltip_ability_rapper_spliff"		            "Сплиф"
+"DOTA_Tooltip_Ability_rapper_spliff_SummaryDescription" ""
+"DOTA_Tooltip_ability_rapper_spliff_Description"		"Затягивается *НЕРАЗБОРЧИВО*, значиельно повышая свой болевой порог."
+"DOTA_Tooltip_ability_rapper_spliff_Note0"		    "Урон в щит не сбивает флоу и другие способности."
+"DOTA_Tooltip_ability_rapper_spliff_Lore"		    "Говорят, что после вступления в силу 230.3 УК РФ, этот скилл качают в 2 раза реже"
+"DOTA_Tooltip_ability_rapper_spliff_max_shield"		"МАКС. ЩИТ:"
+"DOTA_Tooltip_ability_rapper_spliff_shield_per_sec"	"ЩИТ В СЕКУНДУ:"

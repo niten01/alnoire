@@ -29,6 +29,17 @@ function modifier_rapper_strife:OnCreated(kv)
 
     self.attackSpeedBonus = kv.attackSpeedBonus
     self:StartIntervalThink(0.01)
+    self.hasTarget = false
+    self.alternateFire = false
+    self:GetParent():Stop()
+end
+
+modifier_rapper_strife.OnRefresh = modifier_rapper_strife.OnCreated
+
+function modifier_rapper_strife:CheckState()
+    return {
+        [MODIFIER_STATE_DISARMED] = true
+    }
 end
 
 function modifier_rapper_strife:DeclareFunctions()
@@ -36,7 +47,8 @@ function modifier_rapper_strife:DeclareFunctions()
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
 
-        MODIFIER_EVENT_ON_TAKEDAMAGE
+        MODIFIER_EVENT_ON_TAKEDAMAGE,
+        MODIFIER_EVENT_ON_ATTACK,
     }
 end
 
@@ -50,15 +62,42 @@ end
 
 function modifier_rapper_strife:OnTakeDamage(params)
     if not IsServer() then return end
-    DebugPrint(params.damage_category)
+    if params.unit ~= self:GetParent() then return end
+    self:Destroy()
+end
+
+function modifier_rapper_strife:OnAttack(params)
+    local parent = self:GetParent()
+    ScreenShake(parent:GetAbsOrigin(), 2, 2, 0.5, 3000, 0, true)
+    if not IsServer() then return end
+    if params.attacker ~= parent then return end
+
+    self.alternateFire = not self.alternateFire
+    ProjectileManager:CreateTrackingProjectile({
+        Target = params.target,
+        Source = parent,
+        Ability = self:GetAbility(),
+        EffectName = parent:GetRangedProjectileName(),
+        iMoveSpeed = parent:GetProjectileSpeed(),
+        iSourceAttachment = self.alternateFire and DOTA_PROJECTILE_ATTACHMENT_ATTACK_1 or
+            DOTA_PROJECTILE_ATTACHMENT_ATTACK_2,
+        bDrawsOnMinimap = false,
+        bDodgeable = true,
+        bIsAttack = true,
+        bVisibleToEnemies = true,
+        bReplaceExisting = false,
+        flExpireTime = GameRules:GetGameTime() + 10,
+        bProvidesVision = false,
+    })
 end
 
 function modifier_rapper_strife:OnIntervalThink()
     if not IsServer() then return end
     local parent = self:GetParent()
-    local enemies = FindEnemiesForSanyaInRadius(parent:GetAbsOrigin(), parent:Script_GetAttackRange())
+    local enemies = FindEnemiesForSanyaInRadius(parent:GetAbsOrigin(), parent:Script_GetAttackRange() + 1)
     local target = enemies[1]
+    self.hasTarget = not not target
     if not target then return end
 
-    parent:PerformAttack(target, true, true, false, false, true, false, false)
+    parent:PerformAttack(target, true, true, false, false, false, false, false)
 end

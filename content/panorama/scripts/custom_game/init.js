@@ -1,24 +1,26 @@
 function HidePickScreen() {
-	const dotaHud = $.GetContextPanel().GetParent().GetParent();
-	if (Game.GameStateIsBefore(DOTA_GameState.DOTA_GAMERULES_STATE_HERO_SELECTION)) {
-		dotaHud.FindChild("PreGame").visible = false;
-	}
-	else if (Game.GameStateIs(DOTA_GameState.DOTA_GAMERULES_STATE_HERO_SELECTION)) {
-		dotaHud.FindChild("PreGame").visible = true;
-	}
-	else if (Game.GameStateIs(DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME)) {
-		dotaHud.FindChild("PreGame").visible = false;
+	if (Game.GameStateIs(DOTA_GameState.DOTA_GAMERULES_STATE_GAME_IN_PROGRESS)) {
+		const hud = $.GetContextPanel().FindAncestor("DotaHud");
+		const hideAllChildren = (node) => {
+			node.style.visibility = "collapse";
+			for (const child of node.Children()) {
+				child.style.visibility = "collapse";
+				hideAllChildren(child);
+			}
+		}
+		hideAllChildren(hud.FindChildTraverse("StatBranch"))
+		hideAllChildren(hud.FindChildTraverse("StatBranchDrawer"))
+		hideAllChildren(hud.FindChildTraverse("level_stats_frame"))
 	}
 }
 
-(function()
-{
-	GameEvents.Subscribe( "game_rules_state_change", HidePickScreen );
+(function () {
+	GameEvents.Subscribe("game_rules_state_change", HidePickScreen);
 })();
 
 // Uncomment any of the following lines in order to disable that portion of the default UI
 
-//GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );      		//Time of day (clock).
+GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_AGHANIMS_STATUS, false);
 //GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, false );     			//Heroes and team score at the top of the HUD.
 //GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, false );      	//Lefthand flyout scoreboard.
 //GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL, false );     		//Hero actions UI.
@@ -41,7 +43,7 @@ function HidePickScreen() {
 // These lines set up the panorama colors used by each team (for game select/setup, etc)
 GameUI.CustomUIConfig().team_colors = {}
 GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_GOODGUYS] = "#3dd296;";
-GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_BADGUYS ] = "#F3C909;";
+GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_BADGUYS] = "#F3C909;";
 GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_1] = "#c54da8;";
 GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_2] = "#FF6C00;";
 GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_3] = "#3455FF;";

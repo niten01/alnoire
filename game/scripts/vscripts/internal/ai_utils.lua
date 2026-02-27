@@ -9,6 +9,7 @@ function MoveHome(unit)
   end
 
   Timers:CreateTimer(0.1, function()
+    if not unit or unit:IsNull() then return end
     local dist = (unit:GetAbsOrigin() - unit.spawnPos):Length2D()
     if dist < 5 then
       local turnPos = unit.spawnPos + unit.spawnForward * 2

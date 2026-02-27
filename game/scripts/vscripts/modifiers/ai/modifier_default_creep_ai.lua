@@ -39,37 +39,34 @@ function modifier_default_creep_ai:OnIntervalThink()
     local beaconState = beaconData.state
     local target = beaconData.target
 
-    if not DefaultAiTick(unit) then
-        -- деремся сука
-        if beaconState == 'aggro' and target and target:IsAlive() then
-            local currentTime = GameRules:GetGameTime()
-
-            if unit:IsChanneling() or unit:GetCurrentActiveAbility() then
-                return BATTLE_THINK_INTERVAL
-            end
-
-            local timeInAggro = currentTime - (unit.aggroStartTime or 0)
-            unit.lastCastTime = unit.lastCastTime or 0
-
-            if timeInAggro >= 2.5 and (currentTime - unit.lastCastTime) >= 2 then
-                if CastAllAbilities(unit, target) then
-                    unit.lastCastTime = currentTime
-                    return BATTLE_THINK_INTERVAL
-                end
-            end
-            --print(unit:GetAbilityByIndex(0):GetCooldown())
-            if not unit:GetAggroTarget() then
-                ExecuteOrderFromTable({
-                    UnitIndex = unit:entindex(),
-                    OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-                    Position = target:GetAbsOrigin(),
-                    Queue = false,
-                })
-            end
-        else
-        end
+    if DefaultAiTick(unit) then
+        AdjustTickRate(unit)
+        self:StartIntervalThink(beaconData.currentCreepInterval)
+        return
     end
 
-    AdjustTickRate(unit)
-    self:StartIntervalThink(beaconData.currentCreepInterval)
+    -- деремся сука
+    if beaconState == 'aggro' and target and target:IsAlive() then
+        local currentTime = GameRules:GetGameTime()
+
+        local timeInAggro = currentTime - (unit.aggroStartTime or 0)
+        unit.lastCastTime = unit.lastCastTime or 0
+
+        if timeInAggro >= 2.5 and (currentTime - unit.lastCastTime) >= 2 then
+            if CastAllAbilities(unit, target) then
+                unit.lastCastTime = currentTime
+                return BATTLE_THINK_INTERVAL
+            end
+        end
+
+        if not unit:GetAggroTarget() then
+            ExecuteOrderFromTable({
+                UnitIndex = unit:entindex(),
+                OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                Position = target:GetAbsOrigin(),
+                Queue = false,
+            })
+        end
+    else
+    end
 end
