@@ -231,7 +231,8 @@
 
     "precache"
     {
-      // "model"                                             "models/heroes/sohei/bepis_sohei/bepis_sohei_base.vmdl"
+      "soundfile"         "soundevents/heroes/towel_master.vsndevts"
+      // "model"          k                                   "models/heroes/sohei/bepis_sohei/bepis_sohei_base.vmdl"
       // "particle"                                          "particles/hero/sohei/arcana/dbz/dbz_flare_core.vpcf"
       // "particle"                                          "particles/hero/sohei/arcana/pepsi/pepsi_flare_core.vpcf"
     }
@@ -289,11 +290,12 @@
 
     "AbilityLayout"				                                "6"
 
-    "Ability1"                                               "sanya_sprint"
+    "Ability1"                                               "rapper_souljah"
     "Ability2"                                               "rapper_blink"
     "Ability3"                                               "rapper_spliff"
-    "Ability4"                                               "rapper_strife"
-    "Ability5"                                               "rapper_flow"
+    "Ability4"                                               "sanya_sprint"
+    "Ability5"                                               "rapper_strife"
+    "Ability6"                                               "rapper_flow"
     "Ability8"                                               ""
     "Ability9"                                               ""
     "Ability10"                                              ""
@@ -349,6 +351,7 @@
 
     "precache"
     {
+      "soundfile"                                            "soundevents/heroes/rapper.vsndevts"
       // "model"                                             "models/heroes/sohei/bepis_sohei/bepis_sohei_base.vmdl"
       // "particle"                                          "particles/hero/sohei/arcana/dbz/dbz_flare_core.vpcf"
       // "particle"                                          "particles/hero/sohei/arcana/pepsi/pepsi_flare_core.vpcf"

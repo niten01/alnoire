@@ -51,13 +51,14 @@
 
 		"AbilityValues"
 		{
-			// "duration_per_stack"	    "0.03"
-			"duration_per_stack"	    "10"
+			"duration_per_stack"	    "0.25"
 			"attack_speed_bonus"		"200 400 800"
+			"flow_per_shot"				"5 2 1"
 		}
 
 		"precache"
 		{
+			"particle"		"particles/rapper_strife_buff.vpcf"
 		}
 	}
 	"rapper_blink"
@@ -77,12 +78,43 @@
 		"AbilityValues"
 		{
 			"range"						"500"
+			"buff_duration"				"3"
+			"ms_reduction"				"50"
+			"attack_range_bonus"		"400"
 		}
 
 		"precache"
 		{
 			"particle" 		"particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_start.vpcf"
 			"particle" 		"particles/econ/events/fall_2022/blink/blink_dagger_end_fall2022.vpcf"
+		}
+	}
+	"rapper_souljah"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/rapper_souljah.lua"
+		"AbilityType"				"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityTextureName"		"rapper_souljah"
+		"AbilityChannelAnimation"	"ACT_DOTA_CHANNEL_ABILITY_3"
+		"AbilityChannelTime"		"2.5"
+		"AbilityCastPoint"			"0.2"
+        "AbilityCooldown"               "5.0" 
+		"AbilityCastRange"				"300"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+
+		"AbilityValues"
+		{
+			"num_shots"					"10 20 30 40"
+			"spread"					"20"
+			"shot_speed"				"1000"
+			"projectile_radius"			"30"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/rapper_souljah_projectile.vpcf"
 		}
 	}
 }
