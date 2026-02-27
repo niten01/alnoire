@@ -171,11 +171,11 @@
 
     "AbilityLayout"				                                "6"
 
-    "Ability1"                                               "sanya_sprint"
+    "Ability1"                                               "sanya_towel_root"
     "Ability2"                                               "sanya_towel_dash"
-    "Ability3"                                               "sanya_towel_summon"
-    "Ability4"                                               "sanya_towel_root"
-    "Ability5"                                               "sanya_towel_aura_1"
+    "Ability3"                                               "sanya_towel_aura_1"
+    "Ability7"                                               "sanya_towel_summon"
+    "Ability4"                                               "sanya_sprint"
     "Ability8"                                               "sanya_towel_aura_2"
     "Ability9"                                               "sanya_towel_aura_3"
     "Ability10"                                              "sanya_towel_summon_return"
