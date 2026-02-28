@@ -89,7 +89,7 @@ function GiveCastOrder(unit, target, ability)
     end)
   else
     cast()
-    Timers:CreateTimer(ability:GetCastPoint() + 0.1, function()
+    Timers:CreateTimer(ability:GetCastPoint() + 0.01, function()
       unit.isCasting = false
     end)
   end

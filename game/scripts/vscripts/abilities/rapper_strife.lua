@@ -150,6 +150,7 @@ function modifier_rapper_strife:OnIntervalThink()
     self.hasTarget = not not target
     if not target then return end
 
+    parent:FaceTowards(target:GetAbsOrigin())
     parent:PerformAttack(target, true, true, false, false, false, false, false)
 end
 
