@@ -68,8 +68,10 @@ function modifier_rapper_flow:OnStackCountChanged()
 end
 
 function modifier_rapper_flow:OnAttackLanded(params)
+    if not IsServer() then return end
     if params.attacker ~= self:GetParent() then return end
     if self:GetStackCount() >= self.maxStacks then return end
+    if self:GetParent():HasModifier("modifier_rapper_strife") then return end
 
     self:IncrementStackCount()
 end

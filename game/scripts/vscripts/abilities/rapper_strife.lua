@@ -28,13 +28,28 @@ function modifier_rapper_strife:OnCreated(kv)
     if not IsServer() then return end
 
     self.attackSpeedBonus = kv.attackSpeedBonus
+    self.flowPerShot = self:GetAbility():GetSpecialValueFor("flow_per_shot")
     self:StartIntervalThink(0.01)
     self.hasTarget = false
     self.alternateFire = false
     self:GetParent():Stop()
+
+    local parent = self:GetParent()
+    self.pfxs = {}
+    local pfx = ParticleManager:CreateParticle("particles/rapper_strife_buff.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW, parent)
+    table.insert(self.pfxs, pfx)
 end
 
 modifier_rapper_strife.OnRefresh = modifier_rapper_strife.OnCreated
+
+function modifier_rapper_strife:OnDestroy()
+    if not IsServer() then return end
+    for _, pfx in pairs(self.pfxs) do
+        ParticleManager:DestroyParticle(pfx, false)
+        ParticleManager:ReleaseParticleIndex(pfx)
+    end
+end
 
 function modifier_rapper_strife:CheckState()
     return {
@@ -49,7 +64,14 @@ function modifier_rapper_strife:DeclareFunctions()
 
         MODIFIER_EVENT_ON_TAKEDAMAGE,
         MODIFIER_EVENT_ON_ATTACK,
+        MODIFIER_EVENT_ON_ABILITY_START
     }
+end
+
+function modifier_rapper_strife:OnAbilityStart(kv)
+    if not IsServer() then return end
+    if kv.ability == self then return end
+    self:Destroy()
 end
 
 function modifier_rapper_strife:GetModifierAttackSpeedBonus_Constant()
@@ -68,9 +90,14 @@ end
 
 function modifier_rapper_strife:OnAttack(params)
     local parent = self:GetParent()
-    ScreenShake(parent:GetAbsOrigin(), 2, 2, 0.5, 3000, 0, true)
+    ScreenShake(parent:GetAbsOrigin(), 2, 2, 0.5, 5000, 0, true)
+
     if not IsServer() then return end
     if params.attacker ~= parent then return end
+
+    local flow = parent:FindModifierByName("modifier_rapper_flow")
+    assert(flow)
+    flow:SetStackCount(math.max(0, flow:GetStackCount() - self.flowPerShot))
 
     self.alternateFire = not self.alternateFire
     ProjectileManager:CreateTrackingProjectile({
