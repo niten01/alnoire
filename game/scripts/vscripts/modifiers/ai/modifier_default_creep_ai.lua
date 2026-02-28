@@ -52,10 +52,12 @@ function modifier_default_creep_ai:OnIntervalThink()
         local timeInAggro = currentTime - (unit.aggroStartTime or 0)
         unit.lastCastTime = unit.lastCastTime or 0
 
+        if IsCasting(unit) then return end
+
         if timeInAggro >= 2.5 and (currentTime - unit.lastCastTime) >= 2 then
             if CastAllAbilities(unit, target) then
                 unit.lastCastTime = currentTime
-                return BATTLE_THINK_INTERVAL
+                return 
             end
         end
 
