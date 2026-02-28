@@ -55,8 +55,15 @@ function modifier_rapper_flow:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_TOOLTIP,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_EVENT_ON_TAKEDAMAGE,
         MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
     }
+end
+
+function modifier_rapper_flow:OnTakeDamage(params)
+    if not IsServer() then return end
+    if params.unit ~= self:GetParent() then return end
+    self:DecrementStackCount()
 end
 
 function modifier_rapper_flow:OnStackCountChanged()

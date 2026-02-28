@@ -59,7 +59,7 @@
 							},
 							{
 								from = "black-pistol.vmat"
-								to = "materials/models/heroes/axe/axe_hair_color.vmat"
+								to = "materials/models/items/drow/drow_arcana/drow_test_metal_dark.vmat"
 							},
 						]
 						use_global_default = false
@@ -339,7 +339,7 @@
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
-						framerate = 45.0
+						framerate = 40.0
 						reverse = false
 						additional_anim_files = [  ]
 					},
@@ -552,7 +552,7 @@
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
-						fade_out_time = 0.2
+						fade_out_time = 0.4
 						looping = false
 						delta = false
 						worldSpace = false

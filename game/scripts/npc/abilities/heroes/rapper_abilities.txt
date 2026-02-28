@@ -43,6 +43,7 @@
 	{
 		"BaseClass"					"ability_lua"
 		"ScriptFile" 				"abilities/rapper_strife.lua"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"		"rapper_strife"
         "AbilityCooldown"               "5.0" 
@@ -101,15 +102,15 @@
 		"AbilityChannelTime"		"2.5"
 		"AbilityCastPoint"			"0.2"
         "AbilityCooldown"               "5.0" 
-		"AbilityCastRange"				"300"
+		"AbilityCastRange"				"400"
 		"MaxLevel"						"4"
 		"RequiredLevel"					"1"
 
 		"AbilityValues"
 		{
 			"num_shots"					"10 20 30 40"
-			"spread"					"20"
-			"shot_speed"				"1000"
+			"spread"					"30"
+			"shot_speed"				"2500"
 			"projectile_radius"			"30"
 		}
 

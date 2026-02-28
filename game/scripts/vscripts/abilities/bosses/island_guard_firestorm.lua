@@ -18,6 +18,7 @@ function island_guard_firestorm:ShowWarning()
     table.insert(self.wavesDelays, waveDelay)
     Timers:CreateTimer(waveDelay, function()
       for _, point in ipairs(wavePoints) do
+        point.z = casterPos.z
         local pfx = ParticleManager:CreateParticle(
           "particles/units/heroes/heroes_underlord/underlord_firestorm_pre_a.vpcf", PATTACH_WORLDORIGIN, caster)
         ParticleManager:SetParticleControl(pfx, 0, point)

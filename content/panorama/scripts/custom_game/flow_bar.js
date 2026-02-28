@@ -21,7 +21,6 @@ function UpdateStackBar() {
 }
 
 function SetUIPosition(replaceMana) {
-    $.Msg(replaceMana)
     var container = $.GetContextPanel();
     var hud = $.GetContextPanel().FindAncestor("DotaHud");
     var manaBar = hud.FindChildTraverse("ManaContainer");

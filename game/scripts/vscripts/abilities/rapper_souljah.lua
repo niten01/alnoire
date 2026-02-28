@@ -6,9 +6,9 @@ function rapper_souljah:RandomEndPointInFan()
     local range = self:GetCastRange(casterPos, nil)
 
     local baseAngle = math.atan2(self.direction.y, self.direction.x)
-    local fraction = RandomFloat(0, 1)
+    local fraction = RandomFloat(-1, 1)
 
-    local relativeAngle = -self.spreadRad + (fraction * (self.spreadRad * 2))
+    local relativeAngle = fraction * self.spreadRad
     local finalAngle = baseAngle + relativeAngle
     local endPos = Vector(
         casterPos.x + range * math.cos(finalAngle),

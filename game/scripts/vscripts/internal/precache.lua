@@ -4,6 +4,7 @@ return {
         "npc_dota_hero_shadow_demon",
         "npc_dota_hero_earthshaker",
         "npc_dota_hero_oracle",
+        "npc_dota_hero_abyssal_underlord",
 
         "npc_dota_hero_sanya_towel_master",
         "npc_dota_hero_sanya_rapper",

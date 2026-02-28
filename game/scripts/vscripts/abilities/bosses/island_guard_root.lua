@@ -11,8 +11,9 @@ function island_guard_root:ShowWarning()
   local casterPos = caster:GetAbsOrigin()
   self.points = RandomPointsInCircle(casterPos, scatterRadius, numAreas, minDist)
   for _, point in ipairs(self.points) do
+    point.z = casterPos.z
     local pfx = ParticleManager:CreateParticle(
-      "particles/units/heroes/heroes_underlord/underlord_pitofmalice_pre.vpcf", PATTACH_WORLDORIGIN, caster)
+      "particles/units/heroes/heroes_underlord/underlord_pitofmalice_pre.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, point)
     ParticleManager:SetParticleControl(pfx, 1, Vector(areaRadius, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx)
@@ -28,6 +29,7 @@ function island_guard_root:GetBehavior()
 end
 
 function island_guard_root:OnSpellStart()
+  if not IsServer() then return end
   local caster = self:GetCaster()
   assert(caster)
   local areaRadius = self:GetSpecialValueFor("area_radius")
@@ -39,7 +41,7 @@ function island_guard_root:OnSpellStart()
     EmitSoundOnLocationWithCaster(point, "ability.island_guard.root.hit", caster)
 
     local pfx = ParticleManager:CreateParticle(
-      "particles/units/heroes/heroes_underlord/underlord_pitofmalice.vpcf", PATTACH_WORLDORIGIN, caster)
+      "particles/units/heroes/heroes_underlord/underlord_pitofmalice.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, point)
     ParticleManager:SetParticleControl(pfx, 1, Vector(areaRadius, 0, 0))
     ParticleManager:SetParticleControl(pfx, 2, Vector(areaDuration, 0, 0))
