@@ -508,6 +508,7 @@
 					m_Stops = [  ]
 				}
 			}
+			m_nControlPointNumber = 5
 		},
 		{
 			_class = "C_INIT_InitFloat"
@@ -549,6 +550,10 @@
 			_class = "C_OP_PositionLock"
 			m_flEndTime_min = 0.1
 			m_flEndTime_max = 0.1
+			m_TransformInput = 
+			{
+				m_nControlPoint = 5
+			}
 		},
 		{
 			_class = "C_OP_OscillateScalarSimple"

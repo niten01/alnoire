@@ -196,7 +196,7 @@
     [
         "sounds/rapper/rapper_crack.vsnd",
     ]
-    volume = "1.00000"
+    volume = "2.00000"
     pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "Weapons"

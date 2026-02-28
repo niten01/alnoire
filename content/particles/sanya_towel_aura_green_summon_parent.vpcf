@@ -311,14 +311,14 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/sanya_towel_aura_red_summon_trail.vpcf"
+			m_ChildRef = resource:"particles/sanya_towel_aura_green_summon_trail.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/sanya_towel_aura_red_summon_trail.vpcf"
+			m_ChildRef = resource:"particles/sanya_towel_aura_green_summon_trail.vpcf"
 			m_flDelay = 0.33
 		},
 		{
-			m_ChildRef = resource:"particles/sanya_towel_aura_red_summon_trail.vpcf"
+			m_ChildRef = resource:"particles/sanya_towel_aura_green_summon_trail.vpcf"
 			m_flDelay = 0.66
 		},
 	]

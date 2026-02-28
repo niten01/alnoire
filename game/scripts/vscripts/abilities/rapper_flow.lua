@@ -63,7 +63,10 @@ end
 function modifier_rapper_flow:OnTakeDamage(params)
     if not IsServer() then return end
     if params.unit ~= self:GetParent() then return end
-    self:DecrementStackCount()
+
+    if params.damage > 0 then
+        self:DecrementStackCount()
+    end
 end
 
 function modifier_rapper_flow:OnStackCountChanged()

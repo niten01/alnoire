@@ -15,7 +15,9 @@ function HidePickScreen() {
 }
 
 (function () {
-	GameEvents.Subscribe("game_rules_state_change", HidePickScreen);
+	GameEvents.Subscribe("game_rules_state_change", () => {
+		$.Schedule(1, HidePickScreen)
+	});
 })();
 
 // Uncomment any of the following lines in order to disable that portion of the default UI

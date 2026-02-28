@@ -84,7 +84,19 @@ end
 function modifier_rapper_spliff_shield:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT,
+        MODIFIER_EVENT_ON_TAKEDAMAGE
     }
+end
+
+function modifier_rapper_spliff_shield:OnTakeDamage(params)
+    if not IsServer() then return end
+    if params.unit ~= self:GetParent() then return end
+
+    local parent = self:GetParent()
+    local activeAbility = parent:GetCurrentActiveAbility()
+    if parent:IsChanneling() and  activeAbility and activeAbility:GetAbilityName() == "rapper_spliff" then  
+        parent:InterruptChannel()
+    end
 end
 
 function modifier_rapper_spliff_shield:GetModifierIncomingDamageConstant(params)

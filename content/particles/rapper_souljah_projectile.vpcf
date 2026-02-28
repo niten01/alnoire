@@ -750,7 +750,7 @@
 			m_ChildRef = resource:"particles/rapper_souljah_pointblanc.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_muzzle.vpcf"
+			m_ChildRef = resource:"particles/rapper_souljah_muzzle.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/rapper_souljah_glow_tracking.vpcf"

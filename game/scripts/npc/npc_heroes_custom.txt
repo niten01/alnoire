@@ -145,7 +145,7 @@
 		"AttackAnimationPoint"		                            "0.330000"		
     "BaseAttackSpeed"                                     "100"
 		"ProjectileModel"			                                "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
-		"ProjectileSpeed"			                                "1300"				     
+		"ProjectileSpeed"			                                "5000"				     
     "AttackSpeedActivityModifiers"
     {
       "fast"                                              "170"

@@ -617,8 +617,7 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 255, 194, 123 ]
-			m_ColorMax = [ 255, 131, 84 ]
+			m_ColorMax = [ 83, 132, 255 ]
 		},
 		{
 			_class = "C_INIT_RandomSequence"
@@ -655,7 +654,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 153, 22, 0 ]
+			m_ColorFade = [ 61, 113, 255 ]
 		},
 		{
 			_class = "C_OP_EndCapTimedDecay"
