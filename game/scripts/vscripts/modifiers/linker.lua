@@ -41,6 +41,7 @@ LinkLuaModifier("modifier_perekup_ai", "modifiers/ai/modifier_perekup_ai", LUA_M
 LinkLuaModifier("modifier_shrooms_ai", "modifiers/ai/modifier_shrooms_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shrooms_furion_ai", "modifiers/ai/modifier_shrooms_furion_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_bufferbear_ai", "modifiers/ai/modifier_bufferbear_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tusik_shard_ai", "modifiers/ai/modifier_tusik_shard_ai", LUA_MODIFIER_MOTION_NONE)
 
 
 

@@ -470,7 +470,7 @@ return {
             npc = "npc_ocean_tusik_mini_b",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tusiki",
-            ai_modifier = "modifier_default_creep_ai"
+            ai_modifier = "modifier_tusik_shard_ai"
         },
 
 
