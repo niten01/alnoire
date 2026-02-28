@@ -83,7 +83,7 @@
         "sounds/rapper/rapper_blink_sfx_4.vsnd",
         "sounds/rapper/rapper_blink_sfx_5.vsnd",
     ]
-    volume = "1.00000"
+    volume = "2.00000"
     pitch = "1.000000"
     pitch_rand_min = "-0.10000"
     pitch_rand_max = "0.10000"
