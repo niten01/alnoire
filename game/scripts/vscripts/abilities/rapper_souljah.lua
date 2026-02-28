@@ -44,6 +44,7 @@ end
 function rapper_souljah:Fire()
     local caster = self:GetCaster()
     local endPos, spreadFraction = self:RandomEndPointInFan()
+    local range = self:GetCastRange(caster:GetAbsOrigin(), nil)
 
     local attIdx = caster:ScriptLookupAttachment((spreadFraction <= 0) and "attach_attack2" or "attach_attack1")
     local startPos = caster:GetAttachmentOrigin(attIdx)
@@ -56,7 +57,7 @@ function rapper_souljah:Fire()
         EffectName = "particles/rapper_souljah_projectile.vpcf",
         vSpawnOrigin = startPos,
         vVelocity = dir * self.shotSpeed,
-        fDistance = #(endPos - startPos),
+        fDistance = range,
         fStartRadius = self.projectileRadius,
         fEndRadius = self.projectileRadius,
         Source = caster,
