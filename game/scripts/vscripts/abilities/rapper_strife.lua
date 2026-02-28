@@ -1,5 +1,6 @@
 rapper_strife = class {}
 LinkLuaModifier("modifier_rapper_strife", "abilities/rapper_strife.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_rapper_strife_max", "abilities/rapper_strife.lua", LUA_MODIFIER_MOTION_NONE)
 
 function rapper_strife:OnSpellStart()
     if not IsServer() then return end
@@ -7,11 +8,25 @@ function rapper_strife:OnSpellStart()
     local flow = caster:FindModifierByName("modifier_rapper_flow")
     assert(flow)
 
+    if flow:GetStackCount() == 0 then
+        caster:EmitSound("ability.rapper.strife.fail")
+        return
+    end
 
     caster:AddNewModifier(caster, self, "modifier_rapper_strife", {
         duration = flow:GetStackCount() * self:GetSpecialValueFor("duration_per_stack"),
         attackSpeedBonus = self:GetSpecialValueFor("attack_speed_bonus")
     })
+
+    if flow:GetStackCount() >= flow.maxStacks then
+        caster:AddNewModifier(caster, self, "modifier_rapper_strife_max", {
+            duration = -1,
+            pulseDamage = self:GetSpecialValueFor("perfect_pulse_damage"),
+            pulseRadius = self:GetSpecialValueFor("perfect_pulse_radius"),
+            damageReduction = self:GetSpecialValueFor("perfect_incoming_damage_reduction_pct"),
+            numPulses = self:GetSpecialValueFor("perfect_num_pulses"),
+        })
+    end
 end
 
 ------------------------------------------------------------------
@@ -35,20 +50,17 @@ function modifier_rapper_strife:OnCreated(kv)
     self:GetParent():Stop()
 
     local parent = self:GetParent()
-    self.pfxs = {}
-    local pfx = ParticleManager:CreateParticle("particles/rapper_strife_buff.vpcf",
+    self.pfx = ParticleManager:CreateParticle("particles/rapper_strife_buff.vpcf",
         PATTACH_ABSORIGIN_FOLLOW, parent)
-    table.insert(self.pfxs, pfx)
 end
-
-modifier_rapper_strife.OnRefresh = modifier_rapper_strife.OnCreated
 
 function modifier_rapper_strife:OnDestroy()
     if not IsServer() then return end
-    for _, pfx in pairs(self.pfxs) do
-        ParticleManager:DestroyParticle(pfx, false)
-        ParticleManager:ReleaseParticleIndex(pfx)
-    end
+    ParticleManager:DestroyParticle(self.pfx, false)
+    ParticleManager:ReleaseParticleIndex(self.pfx)
+
+    local parent = self:GetParent()
+    parent:RemoveModifierByName("modifier_rapper_strife_max")
 end
 
 function modifier_rapper_strife:CheckState()
@@ -70,7 +82,7 @@ end
 
 function modifier_rapper_strife:OnAbilityStart(kv)
     if not IsServer() then return end
-    if kv.ability == self then return end
+    if kv.ability == self:GetAbility() then return end
     self:Destroy()
 end
 
@@ -94,6 +106,18 @@ function modifier_rapper_strife:OnAttack(params)
 
     if not IsServer() then return end
     if params.attacker ~= parent then return end
+
+    local perfect_mod = parent:FindModifierByName("modifier_rapper_strife_max")
+    if perfect_mod then
+        perfect_mod:OnIntervalThink()
+        local SPA = parent:GetSecondsPerAttack(false)
+        if SPA >= 0.2 then
+            Timers:CreateTimer(SPA / 2, function()
+                if not perfect_mod or perfect_mod:IsNull() then return end
+                perfect_mod:OnIntervalThink()
+            end)
+        end
+    end
 
     local flow = parent:FindModifierByName("modifier_rapper_flow")
     assert(flow)
@@ -127,4 +151,122 @@ function modifier_rapper_strife:OnIntervalThink()
     if not target then return end
 
     parent:PerformAttack(target, true, true, false, false, false, false, false)
+end
+
+------------------------------------------------------------
+
+modifier_rapper_strife_max = class {}
+
+function modifier_rapper_strife_max:IsHidden() return false end
+
+function modifier_rapper_strife_max:IsDebuff() return false end
+
+function modifier_rapper_strife_max:IsPurgable() return false end
+
+function modifier_rapper_strife_max:OnCreated(kv)
+    if not IsServer() then return end
+    self.numPulses = kv.numPulses
+    self:SetStackCount(self.numPulses)
+
+    self.pulseDamage = kv.pulseDamage
+    self.pulseRadius = kv.pulseRadius
+    self.damageReduction = kv.damageReduction
+    self.pattern = {
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false,
+        false
+    }
+    self.totalPulses = 0
+    self.loopSounds = {
+        "ability.rapper.strife.perfect_pulse",
+        "ability.rapper.strife.perfect_pulse_low",
+        "ability.rapper.strife.perfect_pulse_very_low",
+    }
+    self.currentStep = 0
+    self.currentLoop = 1
+
+    local parent = self:GetParent()
+    self.pfx = ParticleManager:CreateParticle(
+        "particles/rapper_strife_perfect_buff.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW, parent)
+    ParticleManager:SetParticleControlEnt(self.pfx, 5, parent, PATTACH_POINT_FOLLOW, "attach_hitloc",
+        parent:GetAbsOrigin(), true)
+end
+
+function modifier_rapper_strife_max:OnDestroy()
+    if not IsServer() then return end
+    ParticleManager:DestroyParticle(self.pfx, false)
+    ParticleManager:ReleaseParticleIndex(self.pfx)
+end
+
+function modifier_rapper_strife_max:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+    }
+end
+
+function modifier_rapper_strife_max:CheckState()
+    return {
+        [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+    }
+end
+
+function modifier_rapper_strife_max:GetModifierIncomingDamage_Percentage()
+    return -self.damageReduction
+end
+
+function modifier_rapper_strife_max:OnIntervalThink()
+    if not IsServer() then return end
+    local parent = self:GetParent()
+
+    self.currentStep = self.currentStep + 1
+    if self.currentStep > #self.pattern then
+        self.currentStep = 1
+        self.currentLoop = self.currentLoop + 1
+    end
+    if self.currentStep % 2 == 1 then
+        parent:EmitSound("ability.rapper.strife.perfect_pulse_tick")
+    end
+
+    if not self.pattern[self.currentStep] then return end
+
+    self.totalPulses = self.totalPulses + 1
+    self:DecrementStackCount()
+
+    if not IsServer() then return end
+
+    local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_primal_beast/primal_beast_trample.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW, parent)
+    ParticleManager:SetParticleControl(pfx, 1, Vector(self.pulseRadius, 0, 0))
+    ParticleManager:ReleaseParticleIndex(pfx)
+
+    parent:EmitSound(self.loopSounds[self.currentLoop])
+
+    local enemies = FindEnemiesForSanyaInRadius(parent:GetAbsOrigin(), self.pulseRadius)
+    for _, ent in ipairs(enemies) do
+        ApplyDamage({
+            victim = ent,
+            attacker = parent,
+            damage = self.pulseDamage,
+            damage_type = DAMAGE_TYPE_PHYSICAL,
+            ability = self,
+        })
+    end
+
+    if self.totalPulses >= self.numPulses then
+        self:Destroy()
+    end
 end

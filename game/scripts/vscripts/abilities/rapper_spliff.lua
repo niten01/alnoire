@@ -11,6 +11,14 @@ function rapper_spliff:OnSpellStart()
 
     self.pfx = ParticleManager:CreateParticle("particles/rapper_spliff_head_smoke.vpcf", PATTACH_CUSTOMORIGIN, caster)
     ParticleManager:SetParticleControlEnt(self.pfx, 0, caster, PATTACH_POINT_FOLLOW, "attach_head", Vector(0, 0, 0), true)
+
+    local maxShield = self:GetSpecialValueFor("max_shield")
+    local shield = caster:FindModifierByName("modifier_rapper_spliff_shield")
+    if shield and shield.currentShield == maxShield then
+        caster:EmitSound("ability.rapper.spliff.cast.max")
+    else
+        caster:EmitSound("ability.rapper.spliff.cast")
+    end
 end
 
 function rapper_spliff:OnChannelThink(interval)
@@ -68,6 +76,9 @@ function modifier_rapper_spliff_shield:OnDestroy()
     if not IsServer() then return end
     ParticleManager:DestroyParticle(self.pfx, false)
     ParticleManager:ReleaseParticleIndex(self.pfx)
+
+    local parent = self:GetParent()
+    parent:EmitSound("ability.rapper.spliff.break")
 end
 
 function modifier_rapper_spliff_shield:DeclareFunctions()

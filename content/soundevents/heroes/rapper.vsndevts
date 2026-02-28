@@ -1,6 +1,48 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 
 {
+  Hero_Rapper.Attack = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_shot_1.vsnd",
+        "sounds/rapper/rapper_shot_2.vsnd",
+        "sounds/rapper/rapper_shot_3.vsnd",
+        "sounds/rapper/rapper_shot_4.vsnd",
+        "sounds/rapper/rapper_shot_5.vsnd",
+        "sounds/rapper/rapper_shot_6.vsnd",
+        "sounds/rapper/rapper_shot_7.vsnd",
+    ]
+    volume = "1.00000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  Hero_Rapper.Footsteps = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/physics/footsteps/hero/shared/general01.vsnd",
+        "sounds/physics/footsteps/hero/shared/general02.vsnd",
+        "sounds/physics/footsteps/hero/shared/general03.vsnd",
+        "sounds/physics/footsteps/hero/shared/general04.vsnd",
+        "sounds/physics/footsteps/hero/shared/general05.vsnd",
+        "sounds/physics/footsteps/hero/shared/general06.vsnd",
+        "sounds/physics/footsteps/hero/shared/general07.vsnd",
+    ]
+    volume = "0.10000"
+    // pitch_rand_min = "0.050000"
+    // pitch_rand_max = "0.050000"
+    pitch = "1.900000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
   ability.rapper.blink.from = {
     type = "dota_update_default"
     vsnd_files =
@@ -25,6 +67,149 @@
     volume = "1.50000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.rapper.blink.sfx = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_blink_sfx_1.vsnd",
+        // "sounds/rapper/rapper_blink_sfx_2.vsnd",
+        // "sounds/rapper/rapper_blink_sfx_3.vsnd",
+        "sounds/rapper/rapper_blink_sfx_4.vsnd",
+        "sounds/rapper/rapper_blink_sfx_5.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.10000"
+    pitch_rand_max = "0.10000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.rapper.strife.fail = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_strife_fail.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.rapper.strife.perfect_pulse = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_strife_perfect_pulse.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.rapper.strife.perfect_pulse_low = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_strife_perfect_pulse.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "0.815000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.rapper.strife.perfect_pulse_very_low = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_strife_perfect_pulse.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "0.750000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.rapper.strife.perfect_pulse_tick = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_strife_perfect_pulse_tick.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "0.700000"
+    pitch_rand_min = "0.000000"
+    pitch_rand_max = "0.200000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.rapper.spliff.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_smoke_1.vsnd",
+        "sounds/rapper/rapper_smoke_2.vsnd",
+        "sounds/rapper/rapper_smoke_3.vsnd",
+        "sounds/rapper/rapper_smoke_4.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.rapper.spliff.cast.max = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_smoke_max.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.100000"
+    pitch_rand_max = "0.100000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.rapper.spliff.break = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_crack.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.rapper.souljah.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/rapper/rapper_burst.vsnd",
+    ]
+    volume = "1.00000"
     pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "Weapons"

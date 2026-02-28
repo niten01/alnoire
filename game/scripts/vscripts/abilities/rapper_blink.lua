@@ -17,6 +17,7 @@ function rapper_blink:OnSpellStart()
     ParticleManager:ReleaseParticleIndex(pfx)
 
     EmitSoundOnLocationWithCaster(destination, "ability.rapper.blink.to", caster)
+    EmitSoundOnLocationWithCaster(destination, "ability.rapper.blink.sfx", caster)
     pfx = ParticleManager:CreateParticle("particles/econ/events/fall_2022/blink/blink_dagger_end_fall2022.vpcf",
         PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, destination)

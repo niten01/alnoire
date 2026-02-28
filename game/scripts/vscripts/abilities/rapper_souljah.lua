@@ -15,7 +15,13 @@ function rapper_souljah:RandomEndPointInFan()
         casterPos.y + range * math.sin(finalAngle),
         0
     )
-    return endPos
+    return endPos, fraction
+end
+
+function rapper_souljah:OnAbilityPhaseStart()
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    caster:EmitSound("ability.rapper.souljah.cast")
 end
 
 function rapper_souljah:OnSpellStart()
@@ -33,19 +39,18 @@ function rapper_souljah:OnSpellStart()
     self.elapsedTime = 0
     self.shotsFired = 0
     self.interval = duration / self.numShots
-    self.alternateFire = false
 end
 
 function rapper_souljah:Fire()
     local caster = self:GetCaster()
-    local endPos = self:RandomEndPointInFan()
+    local endPos, spreadFraction = self:RandomEndPointInFan()
 
-    self.alternateFire = not self.alternateFire
-    local attIdx = caster:ScriptLookupAttachment(self.alternateFire and "attach_attack1" or "attach_attack2")
+    local attIdx = caster:ScriptLookupAttachment((spreadFraction <= 0) and "attach_attack2" or "attach_attack1")
     local startPos = caster:GetAttachmentOrigin(attIdx)
     local dir = (endPos - startPos):Normalized()
     dir.z = 0
 
+    caster:EmitSound("Hero_Rapper.Attack")
     ProjectileManager:CreateLinearProjectile({
         Ability = self,
         EffectName = "particles/rapper_souljah_projectile.vpcf",

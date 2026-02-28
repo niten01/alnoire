@@ -45,6 +45,7 @@
 		"ScriptFile" 				"abilities/rapper_strife.lua"
 		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"		"rapper_strife"
         "AbilityCooldown"               "5.0" 
 		"MaxLevel"						"3"
@@ -55,11 +56,18 @@
 			"duration_per_stack"	    "0.25"
 			"attack_speed_bonus"		"200 400 800"
 			"flow_per_shot"				"5 2 1"
+			"perfect_buff_duration"		"5"
+			"perfect_num_pulses"		"11"
+			"perfect_incoming_damage_reduction_pct" "20 40 80"
+			"perfect_pulse_radius"		"150 250 400 500"
+			"perfect_damage_per_pulse" "100 300 500 800"
 		}
 
 		"precache"
 		{
 			"particle"		"particles/rapper_strife_buff.vpcf"
+			"particle"		"particles/units/heroes/hero_primal_beast/primal_beast_trample.vpcf"
+			"particle"		"particles/rapper_strife_perfect_buff.vpcf"
 		}
 	}
 	"rapper_blink"
@@ -96,11 +104,13 @@
 		"BaseClass"					"ability_lua"
 		"ScriptFile" 				"abilities/rapper_souljah.lua"
 		"AbilityType"				"DOTA_ABILITY_TYPE_BASIC"
+        "AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityTextureName"		"rapper_souljah"
 		"AbilityChannelAnimation"	"ACT_DOTA_CHANNEL_ABILITY_3"
+		"AbilityCastAnimation"	    "ACT_DOTA_CHANNEL_ABILITY_3"
 		"AbilityChannelTime"		"2.5"
-		"AbilityCastPoint"			"0.2"
+		"AbilityCastPoint"			"0.6"
         "AbilityCooldown"               "5.0" 
 		"AbilityCastRange"				"400"
 		"MaxLevel"						"4"

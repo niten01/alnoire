@@ -1,6 +1,63 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 
 {
+  Hero_TowelMaster.Attack = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_attack_1.vsnd",
+        "sounds/towel_master/tm_attack_2.vsnd",
+        "sounds/towel_master/tm_attack_3.vsnd",
+    ]
+    volume = "1.50000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  Hero_TowelMaster.Footsteps = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/physics/footsteps/hero/chen/footstep01.vsnd",
+        "sounds/physics/footsteps/hero/chen/footstep02.vsnd",
+        "sounds/physics/footsteps/hero/chen/footstep03.vsnd",
+        "sounds/physics/footsteps/hero/chen/footstep04.vsnd",
+        "sounds/physics/footsteps/hero/chen/footstep05.vsnd",
+        "sounds/physics/footsteps/hero/chen/footstep06.vsnd",
+    ]
+    volume = "0.10000"
+    // pitch_rand_min = "0.050000"
+    // pitch_rand_max = "0.050000"
+    pitch = "1.900000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  Hero_TowelSummon.Attack = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_summon_attack_1.vsnd",
+        "sounds/towel_master/tm_summon_attack_2.vsnd",
+        "sounds/towel_master/tm_summon_attack_3.vsnd",
+        "sounds/towel_master/tm_summon_attack_4.vsnd",
+        "sounds/towel_master/tm_summon_attack_5.vsnd",
+        "sounds/towel_master/tm_summon_attack_6.vsnd",
+    ]
+    volume = "1.50000"
+    pitch_rand_min = "0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
   ability.towel_master.towel_summon.buildup = {
     type = "dota_update_default"
     vsnd_files =
