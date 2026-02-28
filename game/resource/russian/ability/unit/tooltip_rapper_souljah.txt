@@ -1,0 +1,5 @@
+"DOTA_Tooltip_ability_rapper_souljah"		            "SWAG Souljah"
+"DOTA_Tooltip_Ability_rapper_souljah_SummaryDescription" ""
+"DOTA_Tooltip_ability_rapper_souljah_Description"		"Уничтожает всех оппов в небольшой области перед собой при помощи экспериментальной модификации глоков. Применяет эффекты атаки."
+"DOTA_Tooltip_ability_rapper_souljah_Lore"		    "Первые версии полуавтоматической модификации глока были применены в великой якуто-бурятской войне 1837 года."
+"DOTA_Tooltip_ability_rapper_souljah_num_shots" "КОЛИЧЕСТВО ВЫСТРЕЛОВ:"

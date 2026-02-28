@@ -36,7 +36,7 @@
 		"precache"
 		{
 			"particle"		"particles/rapper_spliff_head_smoke.vpcf"
-			"particle"		"particles/neutral_fx/miniboss_minion_shield_core.vpcf"
+			"particle"		"particles/rapper_spliff_shield.vpcf"
 		}
 	}
 	"rapper_strife"
@@ -87,6 +87,7 @@
 		{
 			"particle" 		"particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_start.vpcf"
 			"particle" 		"particles/econ/events/fall_2022/blink/blink_dagger_end_fall2022.vpcf"
+			"particle"		"particles/rapper_blink_buff.vpcf"
 		}
 	}
 	"rapper_souljah"

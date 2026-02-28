@@ -86,3 +86,12 @@ function rapper_souljah:OnChannelThink(dt)
         end
     end
 end
+
+function rapper_souljah:OnChannelFinish(bInterrupted)
+    if not IsServer() then return end
+    if bInterrupted then return end
+
+    if self.shotsFired < self.numShots then
+        self:Fire()
+    end
+end

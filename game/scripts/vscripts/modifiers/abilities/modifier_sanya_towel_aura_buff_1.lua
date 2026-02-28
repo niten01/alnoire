@@ -13,6 +13,14 @@ function modifier_sanya_towel_aura_buff_1:OnCreated()
     self.decreaseMult = ability:GetSpecialValueFor('decreaseMult') or 0.7
     self.delayBeforeReset = ability:GetSpecialValueFor('delayBeforeReset') or 1.0
     self:StartIntervalThink(1.0)
+
+    self.pfx = ParticleManager:CreateParticle("particles/sanya_towel_aura_green_summon.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+end
+
+function modifier_sanya_towel_aura_buff_1:OnDestroy()
+    if not IsServer() then return end
+    ParticleManager:DestroyParticle(self.pfx, false)
+    ParticleManager:ReleaseParticleIndex(self.pfx)
 end
 
 function modifier_sanya_towel_aura_buff_1:OnIntervalThink()

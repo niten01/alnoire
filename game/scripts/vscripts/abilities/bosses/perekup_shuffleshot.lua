@@ -288,6 +288,7 @@ function modifier_shuffleshot_dot:OnCreated(kv)
     local interval = 0.3
     self.damagePerTick = kv.damage / (self:GetDuration() / interval)
     self.damageType = RandomDamageType()
+    self.attacker = self:GetAbility():GetCaster()
     self:StartIntervalThink(interval)
 
     self.pfx = ParticleManager:CreateParticle(
@@ -304,10 +305,11 @@ function modifier_shuffleshot_dot:OnDestroy()
 end
 
 function modifier_shuffleshot_dot:OnIntervalThink()
+    if not IsServer() then return end
     local parent = self:GetParent()
     ApplyDamage({
         victim = parent,
-        attacker = self:GetAbility():GetCaster(),
+        attacker = self.attacker,
         damage = self.damagePerTick,
         damage_type = RandomDamageType(),
         ability = self,

@@ -21,7 +21,7 @@ function modifier_sanya_towel_aura_buff_2:OnCreated()
     local parent = self:GetParent()
     local ability = self:GetAbility()
     self.damage_percent = ability:GetSpecialValueFor('hp_per_sec')
-    local pfx = ParticleManager:CreateParticle("models/heroes/phantom_assassin_persona/debut/particles/pa_badguy/pa_badguy_bladeimpact_blood_drops.vpcf", PATTACH_ABSORIGIN, parent)
+    local pfx = ParticleManager:CreateParticle("particles/sanya_towel_aura_red_summon.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
     self:AddParticle( pfx, false, false, -1, false, false )
     self:StartIntervalThink(1.0)
 end

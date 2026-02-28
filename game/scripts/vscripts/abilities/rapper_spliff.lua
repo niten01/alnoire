@@ -60,9 +60,8 @@ function modifier_rapper_spliff_shield:OnCreated()
     self:SetHasCustomTransmitterData(true)
 
     local parent = self:GetParent()
-    self.pfx = ParticleManager:CreateParticle("particles/neutral_fx/miniboss_minion_shield_core.vpcf",
+    self.pfx = ParticleManager:CreateParticle("particles/rapper_spliff_shield.vpcf",
         PATTACH_ABSORIGIN_FOLLOW, parent)
-    ParticleManager:SetParticleControl(self.pfx, 1, Vector(0, 0, 0))
 end
 
 function modifier_rapper_spliff_shield:OnDestroy()

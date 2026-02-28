@@ -410,22 +410,22 @@ function StoryDriver:OnGameInProgress()
   if GetMapName() == "fight_test" then
     Timers:CreateTimer(2, function()
       StoryDriver:StartFight("pack_perekup")
-      for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-        if PlayerResource:IsRealPlayer(playerID) and PlayerResource:IsValidPlayerID(playerID) then
-          local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
-          if not hero then error("No hero") end
-          local fwd = hero:GetForwardVector()
-          local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_sanya_rapper", 0, 0)
-          newHero:SetForwardVector(fwd)
-          hero:RemoveSelf()
-          newHero:HeroLevelUp(true)
-          newHero:HeroLevelUp(true)
-          newHero:HeroLevelUp(true)
-          newHero:HeroLevelUp(true)
-          newHero:HeroLevelUp(true)
-          newHero:HeroLevelUp(true)
-        end
-      end
+      -- for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+      --   if PlayerResource:IsRealPlayer(playerID) and PlayerResource:IsValidPlayerID(playerID) then
+      --     local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+      --     if not hero then error("No hero") end
+      --     local fwd = hero:GetForwardVector()
+      --     local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_sanya_rapper", 0, 0)
+      --     newHero:SetForwardVector(fwd)
+      --     hero:RemoveSelf()
+      --     newHero:HeroLevelUp(true)
+      --     newHero:HeroLevelUp(true)
+      --     newHero:HeroLevelUp(true)
+      --     newHero:HeroLevelUp(true)
+      --     newHero:HeroLevelUp(true)
+      --     newHero:HeroLevelUp(true)
+      --   end
+      -- end
       -- SpawnManager:SpawnNPC("spawner_gorilla")
     end)
   end

@@ -76,6 +76,32 @@
 								root_bone_name = ""
 								motion_type = "Uniform"
 							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 2
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_TowelMaster.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 12
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_TowelMaster.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
 						]
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_RUN"
@@ -278,6 +304,32 @@
 								_class = "ActivityModifier"
 								activity_name = "aggressive"
 								activity_weight = 1
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 8
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_TowelMaster.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 19
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_TowelMaster.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
 							},
 						]
 						is_default_idle_anim = false
@@ -526,7 +578,7 @@
 							{
 								_class = "ExtractMotion"
 								extract_tx = true
-								extract_ty = true
+								extract_ty = false
 								extract_tz = false
 								extract_rz = false
 								linear = false
@@ -539,6 +591,32 @@
 								_class = "ActivityModifier"
 								activity_name = "haste"
 								activity_weight = 1
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 12
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_TowelMaster.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 1
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_TowelMaster.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
 							},
 						]
 						is_default_idle_anim = false
