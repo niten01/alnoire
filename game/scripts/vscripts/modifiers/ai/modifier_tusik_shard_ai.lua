@@ -48,13 +48,27 @@ function modifier_tusik_shard_ai:OnIntervalThink()
     -- деремся сука
     if beaconState == 'aggro' and target and target:IsAlive() then
         local currentTime = GameRules:GetGameTime()
-
+        local casterPos = unit:GetAbsOrigin()
+        local targetPos = target:GetAbsOrigin()
+        local distance = (targetPos - casterPos):Length2D()
         unit.aggroStartTime = unit.aggroStartTime or currentTime
         unit.lastCastTime = unit.lastCastTime or 0
         local timeInAggro = currentTime - (unit.aggroStartTime or 0)
 
         if timeInAggro >= 2.5 and (currentTime - unit.lastCastTime) >= 2 then
             self:CastSpellWithOffSet(unit, target:GetAbsOrigin(), 150)
+        end
+
+        if not IsCasting(unit) then
+            local desiredDistance = 700
+            local tolerance = 150
+
+            if math.abs(distance - desiredDistance) > tolerance then
+                local direction = (targetPos - casterPos):Normalized()
+                local movePoint = targetPos - (direction * desiredDistance)
+
+                unit:MoveToPosition(movePoint)
+            end
         end
     else
         unit.aggroStartTime = nil
