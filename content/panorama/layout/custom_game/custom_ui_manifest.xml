@@ -1,6 +1,8 @@
 <root>
   <scripts>
     <include src="file://{resources}/scripts/custom_game/playertables_base.js" />
+    <include src="file://{resources}/scripts/custom_game/custom_indicator.js" />
+    <include src="file://{resources}/scripts/custom_game/vector_targeting.js" />
     <include src="file://{resources}/scripts/custom_game/init.js" />
   </scripts>
   <Panel>

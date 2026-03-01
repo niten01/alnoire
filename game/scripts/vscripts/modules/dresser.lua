@@ -18,13 +18,21 @@ function Dresser:Init()
         }
     }
 
-    -- GameEvents:OnHeroInGame(function(hero)
-    --     if not IsServer() then return end
-    --     local defaultWearables = self.classWearables[hero:GetUnitName()]
-    --     for _, wearablePath in ipairs(defaultWearables) do
-    --         AttachCustomWearable(hero, wearablePath)
-    --     end
-    -- end)
+    GameEvents:OnHeroInGame(function(hero)
+        if not IsServer() then return end
+        if hero:GetUnitName() ~= "npc_dota_hero_sanya_logarithmus" then return end
+
+        hero.bladePfx = ParticleManager:CreateParticle("particles/logarithmus_blade_effect.vpcf", PATTACH_CUSTOMORIGIN,
+            hero)
+        ParticleManager:SetParticleControlEnt(hero.bladePfx, 1, hero, PATTACH_POINT_FOLLOW, "attach_blade_start",
+            Vector(0, 0, 0), false)
+        ParticleManager:SetParticleControlEnt(hero.bladePfx, 2, hero, PATTACH_POINT_FOLLOW, "attach_blade_end",
+            Vector(0, 0, 0), false)
+        -- local defaultWearables = self.classWearables[hero:GetUnitName()]
+        -- for _, wearablePath in ipairs(defaultWearables) do
+        --     AttachCustomWearable(hero, wearablePath)
+        -- end
+    end)
 end
 
 return Dresser

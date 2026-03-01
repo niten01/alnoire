@@ -6,7 +6,7 @@ else
 	DebugPrint("[BAREBONES] If this is not your first time, you probably used script_reload in console.")
 end
 
-require('internal.util')
+require('internal.utils')
 require('internal.ai_utils')
 
 require('libraries.timers')          -- Core lua library
