@@ -6,16 +6,22 @@ function rapper_souljah:RandomEndPointInFan()
     local range = self:GetCastRange(casterPos, nil)
 
     local baseAngle = math.atan2(self.direction.y, self.direction.x)
-    local fraction = RandomFloat(0, 1)
+    local fraction = RandomFloat(-1, 1)
 
-    local relativeAngle = -self.spreadRad + (fraction * (self.spreadRad * 2))
+    local relativeAngle = fraction * self.spreadRad
     local finalAngle = baseAngle + relativeAngle
     local endPos = Vector(
         casterPos.x + range * math.cos(finalAngle),
         casterPos.y + range * math.sin(finalAngle),
         0
     )
-    return endPos
+    return endPos, fraction
+end
+
+function rapper_souljah:OnAbilityPhaseStart()
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    caster:EmitSound("ability.rapper.souljah.cast")
 end
 
 function rapper_souljah:OnSpellStart()
@@ -33,25 +39,25 @@ function rapper_souljah:OnSpellStart()
     self.elapsedTime = 0
     self.shotsFired = 0
     self.interval = duration / self.numShots
-    self.alternateFire = false
 end
 
 function rapper_souljah:Fire()
     local caster = self:GetCaster()
-    local endPos = self:RandomEndPointInFan()
+    local endPos, spreadFraction = self:RandomEndPointInFan()
+    local range = self:GetCastRange(caster:GetAbsOrigin(), nil)
 
-    self.alternateFire = not self.alternateFire
-    local attIdx = caster:ScriptLookupAttachment(self.alternateFire and "attach_attack1" or "attach_attack2")
+    local attIdx = caster:ScriptLookupAttachment((spreadFraction <= 0) and "attach_attack2" or "attach_attack1")
     local startPos = caster:GetAttachmentOrigin(attIdx)
     local dir = (endPos - startPos):Normalized()
     dir.z = 0
 
+    caster:EmitSound("Hero_Rapper.Attack")
     ProjectileManager:CreateLinearProjectile({
         Ability = self,
         EffectName = "particles/rapper_souljah_projectile.vpcf",
         vSpawnOrigin = startPos,
         vVelocity = dir * self.shotSpeed,
-        fDistance = #(endPos - startPos),
+        fDistance = range,
         fStartRadius = self.projectileRadius,
         fEndRadius = self.projectileRadius,
         Source = caster,
@@ -84,5 +90,14 @@ function rapper_souljah:OnChannelThink(dt)
         else
             break
         end
+    end
+end
+
+function rapper_souljah:OnChannelFinish(bInterrupted)
+    if not IsServer() then return end
+    if bInterrupted then return end
+
+    if self.shotsFired < self.numShots then
+        self:Fire()
     end
 end

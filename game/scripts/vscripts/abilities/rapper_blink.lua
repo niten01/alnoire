@@ -17,6 +17,7 @@ function rapper_blink:OnSpellStart()
     ParticleManager:ReleaseParticleIndex(pfx)
 
     EmitSoundOnLocationWithCaster(destination, "ability.rapper.blink.to", caster)
+    EmitSoundOnLocationWithCaster(destination, "ability.rapper.blink.sfx", caster)
     pfx = ParticleManager:CreateParticle("particles/econ/events/fall_2022/blink/blink_dagger_end_fall2022.vpcf",
         PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, destination)
@@ -55,11 +56,11 @@ function modifier_rapper_postblink:IsDebuff() return false end
 function modifier_rapper_postblink:IsPurgable() return false end
 
 function modifier_rapper_postblink:OnCreated()
-    if not IsServer() then return end
-
-    local parent = self:GetParent()
-    self.pfx = ParticleManager:CreateParticle("particles/rapper_blink_buff.vpcf",
-        PATTACH_ABSORIGIN_FOLLOW, parent)
+    if IsServer() then
+        local parent = self:GetParent()
+        self.pfx = ParticleManager:CreateParticle("particles/rapper_blink_buff.vpcf",
+            PATTACH_ABSORIGIN_FOLLOW, parent)
+    end
 
     self.msReduction = self:GetAbility():GetSpecialValueFor("ms_reduction")
     self.attackRangeBonus = self:GetAbility():GetSpecialValueFor("attack_range_bonus")

@@ -111,8 +111,7 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 120, 106, 99, 255 ]
-			m_ColorMin = [ 199, 199, 199, 255 ]
+			m_ColorMax = [ 194, 188, 185 ]
 		},
 		{
 			_class = "C_INIT_InitFloat"

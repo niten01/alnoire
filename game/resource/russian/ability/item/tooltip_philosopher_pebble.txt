@@ -1,3 +1,3 @@
-"DOTA_Tooltip_ability_item_philosopher_pebble"	        "Философский камень"
+"DOTA_Tooltip_ability_item_philosopher_pebble"	        "Философский камешек"
 "DOTA_Tooltip_ability_item_philosopher_pebble_Lore"	    "Переливающийся гладкий камешек. Кажется он излучает тепло."
 "DOTA_Tooltip_ability_item_philosopher_pebble_bonus_health" "+$health"

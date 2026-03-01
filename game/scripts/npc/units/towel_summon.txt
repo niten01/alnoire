@@ -6,8 +6,8 @@
 		//----------------------------------------------------------------
 		"Model"						"models/towel_summon/sanya_towel_summon.vmdl"	// Model.
 		"BaseClass"					"npc_dota_lone_druid_bear"
-		"SoundSet"					"n_creep_Melee"
-		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"SoundSet"					"Hero_TowelSummon"
+		"GameSoundsFile"			"soundevents/sanya_soundset.vsndevts"
 		"ConsideredHero"			"1"
 		"Level"						"1"
 		"ModelScale" 				"1.3"

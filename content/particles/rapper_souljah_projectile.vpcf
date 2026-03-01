@@ -731,25 +731,26 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_blast.vpcf"
+			m_ChildRef = resource:"particles/rapper_souljah_smoke.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_glow.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_spray.vpcf"
+			m_bDisableChild = true
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_shell.vpcf"
+			m_ChildRef = resource:"particles/rapper_souljah_shells.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/rapper_souljah_shake.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_pointblank.vpcf"
+			m_ChildRef = resource:"particles/rapper_souljah_pointblanc.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_muzzle.vpcf"
+			m_ChildRef = resource:"particles/rapper_souljah_muzzle.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/rapper_souljah_glow_tracking.vpcf"

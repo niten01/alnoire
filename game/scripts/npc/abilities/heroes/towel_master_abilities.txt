@@ -47,12 +47,16 @@
 		"ScriptFile"                    "abilities/sanya_towel_summon_return"
 		"MaxLevel"                      "4"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName"            "towel_summon_return"
 		
 		"AbilityChannelTime"			"5.0"
 		"AbilityCooldown"               "5.0" // кд для телепортации к ноге
 		"AbilityManaCost"               "0"
+		"precache"
+		{
+			"particle"		"particles/sanya_summon_return_summon.vpcf"
+		}
 	}
 	"sanya_towel_root"
 	{
@@ -96,7 +100,11 @@
 			"hp_regen"					"30.0 40.0 50.0 60.0"
 			"decreaseMult"				"0.30 0.30 0.30 0.30"
 			"delayBeforeReset"			"1.0 1.0 1.0 1.0"
+		}
 
+		"precache"
+		{
+			"particle"		"particles/sanya_towel_aura_green_summon.vpcf"
 		}
 	}
 
@@ -119,6 +127,11 @@
 			"bonus_damage"				"30 40 50 60"
 			"hp_per_sec"				"1.5 2 2.5 3"
 		}
+
+		"precache"
+		{
+			"particle"		"particles/sanya_towel_aura_red_summon.vpcf"
+		}
 	}
 
 	"sanya_towel_aura_3"
@@ -139,6 +152,11 @@
 			"radius"					"400 450 500 550"
 			"miss_chance"				"10 15 20 25"
 			"speed_bonus"				"50 60 70 80"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/sanya_towel_aura_blue_summon.vpcf"
 		}
 	}
 

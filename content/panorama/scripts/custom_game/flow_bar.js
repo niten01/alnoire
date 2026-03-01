@@ -21,7 +21,6 @@ function UpdateStackBar() {
 }
 
 function SetUIPosition(replaceMana) {
-
     var container = $.GetContextPanel();
     var hud = $.GetContextPanel().FindAncestor("DotaHud");
     var manaBar = hud.FindChildTraverse("ManaContainer");
@@ -42,7 +41,9 @@ function SetUIPosition(replaceMana) {
 (function () {
     GameEvents.Subscribe("dota_player_update_selected_unit", UpdateStackBar);
     GameEvents.Subscribe("dota_player_update_query_unit", UpdateStackBar);
-	GameEvents.Subscribe( "game_rules_state_change", UpdateStackBar );
+    GameEvents.Subscribe("game_rules_state_change", () => {
+        $.Schedule(1, UpdateStackBar);
+    });
 
     PlayerTables.SubscribeNetTableListener(PT_NAME, UpdateStackBar)
     UpdateStackBar()

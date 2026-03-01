@@ -11,6 +11,13 @@ function StoryDriver:Init()
   ChatCommand:LinkDevCommand("-startfight", function(event, args)
     self:StartFight(args[1], args[2])
   end)
+
+  ChatCommand:LinkDevCommand("-class", function(event, args)
+    self:HandleAction(event.playerID, {
+      type = "change_hero",
+      hero = "npc_dota_hero_sanya_" .. tostring(args[1])
+    })
+  end)
 end
 
 local function fastRemoveNPC(name)
@@ -426,7 +433,7 @@ function StoryDriver:OnGameInProgress()
           newHero:HeroLevelUp(true)
         end
       end
-      -- SpawnManager:SpawnNPC("spawner_gorilla")
+      SpawnManager:SpawnNPC("spawner_gorilla")
     end)
   end
 end

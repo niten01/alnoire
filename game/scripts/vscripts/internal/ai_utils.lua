@@ -78,9 +78,9 @@ function GiveCastOrder(unit, target, ability)
     unit.lastCastAbilityName = ability:GetName()
   end
 
+  unit.isCasting = true
   if ability.ShowWarning then
     local delay = ability:ShowWarning(GetTargetPos(target)) or 1
-    unit.isCasting = true
     Timers:CreateTimer(delay, function()
       cast()
       Timers:CreateTimer(0.1, function()
@@ -89,6 +89,9 @@ function GiveCastOrder(unit, target, ability)
     end)
   else
     cast()
+    Timers:CreateTimer(ability:GetCastPoint() + 0.01, function()
+      unit.isCasting = false
+    end)
   end
 end
 
