@@ -116,10 +116,10 @@ function modifier_rapper_souljah:IsPurgable() return false end
 
 function modifier_rapper_souljah:DeclareFunctions()
     return {
-        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
+        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE
     }
 end
 
-function modifier_rapper_souljah:GetModifierDamageOutgoing_Percentage()
+function modifier_rapper_souljah:GetModifierBaseDamageOutgoing_Percentage()
     return -self:GetAbility():GetSpecialValueFor("damage_reduction_pct")
 end
