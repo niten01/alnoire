@@ -56,6 +56,7 @@ function modifier_rapper_flow:DeclareFunctions()
         MODIFIER_PROPERTY_TOOLTIP,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
         MODIFIER_EVENT_ON_TAKEDAMAGE,
+        MODIFIER_EVENT_ON_DEATH,
         MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
     }
 end
@@ -75,6 +76,12 @@ function modifier_rapper_flow:OnStackCountChanged()
     PlayerTables:SetTableValue("flow_bar_" .. tostring(pid), "stackCount", self:GetStackCount())
     self.bonusDamage = self.damagePctPerStack * self:GetStackCount()
     self:SendBuffRefreshToClients()
+end
+
+function modifier_rapper_flow:OnDeath(params)
+    if not IsServer() then return end
+    if params.unit ~= self:GetParent() then return end
+    self:SetStackCount(0)
 end
 
 function modifier_rapper_flow:OnAttackLanded(params)

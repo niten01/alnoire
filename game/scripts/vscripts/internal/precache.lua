@@ -225,7 +225,6 @@ return {
         "soundevents/items.vsndevts",
         "soundevents/music.vsndevts",
         "soundevents/hlup.vsndevts",
-        "soundevents/sanya.vsndevts",
         "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts",
         "soundevents/voscripts/game_sounds_vo_monkey_king.vsndevts",
         "soundevents/bosses/bidlo.vsndevts",

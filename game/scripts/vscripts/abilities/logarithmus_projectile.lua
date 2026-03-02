@@ -15,24 +15,32 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
   if not IsServer() then return end
   local caster = self:GetCaster()
   local casterPos = caster:GetAbsOrigin()
-  local turnMaxRange = self:GetCastRange(casterPos, nil)
-  local speed = self:GetSpecialValueFor("projectile_speed")
+  local travelTime = self:GetSpecialValueFor("projectile_travel_time")
   local radius = self:GetSpecialValueFor("projectile_radius")
 
-  local dir = (vStartLocation - casterPos)
-  dir.z = 0
-  local clampedTurnPos = casterPos + dir:Normalized() * math.min(turnMaxRange, #dir)
-  dir = dir:Normalized()
+  vStartLocation.z = casterPos.z
+  local endPos = vStartLocation + vDirection * self:GetVectorTargetRange()
 
-  vDirection.z = 0
-  local arcInfo = PointsArc(casterPos, clampedTurnPos, vDirection * self:GetVectorTargetRange())
-  local totalTime = arcInfo:Length() / speed
-  local arcIter = arcInfo:UnstableIterator()
+  local parabolaInfo = PointsParabola(casterPos, vStartLocation, endPos)
+
+  local parabolaIter = parabolaInfo:UnstableIterator()
   local pfx = ParticleManager:CreateParticle(
-  "particles/econ/items/beastmaster/mh_beastmaster/mh_beastmaster_golden_wildaxe.vpcf", PATTACH_WORLDORIGIN, nil)
+    "particles/econ/items/beastmaster/mh_beastmaster/mh_beastmaster_golden_wildaxe.vpcf", PATTACH_WORLDORIGIN, nil)
+  local interval = 0.01
+  local lastTime = GameRules:GetGameTime()
   Timers:CreateTimer(0, function()
-    -- TODO
-    return FrameTime()
+    local curTime = GameRules:GetGameTime()
+    local dt = curTime - lastTime
+    lastTime = curTime
+
+    local curPoint = parabolaIter(dt / travelTime)
+    if not curPoint then
+      ParticleManager:DestroyParticle(pfx, false)
+      ParticleManager:ReleaseParticleIndex(pfx)
+      return nil
+    end
+    ParticleManager:SetParticleControl(pfx, 0, curPoint)
+    return interval
   end)
 
 

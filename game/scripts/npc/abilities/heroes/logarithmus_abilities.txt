@@ -107,10 +107,10 @@
             "forward_offset" "150"
 		}
 
-    "precache"
-    {
-        "particle"		"particles/logarithmus_anchor.vpcf"
-    }
+		"precache"
+		{
+			"particle"		"particles/logarithmus_anchor.vpcf"
+		}
 	}
 	"logarithmus_projectile"
 	{
@@ -135,12 +135,12 @@
 		{
             "vector_range"      "300"
             "projectile_radius" "50"
-            "projectile_speed"  "3000"
+            "projectile_travel_time" "0.3"
 		}
 
-    "precache"
-    {
-        "particle"		"particles/logarithmus_anchor.vpcf"
-    }
+		"precache"
+		{
+			"particle"		"particles/econ/items/beastmaster/mh_beastmaster/mh_beastmaster_golden_wildaxe.vpcf"
+		}
 	}
 }

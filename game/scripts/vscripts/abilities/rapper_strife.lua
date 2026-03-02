@@ -34,9 +34,7 @@ end
 modifier_rapper_strife = class {}
 
 function modifier_rapper_strife:IsHidden() return false end
-
 function modifier_rapper_strife:IsDebuff() return false end
-
 function modifier_rapper_strife:IsPurgable() return false end
 
 function modifier_rapper_strife:OnCreated(kv)

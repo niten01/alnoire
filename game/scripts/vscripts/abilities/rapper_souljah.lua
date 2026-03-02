@@ -41,7 +41,7 @@ function rapper_souljah:OnSpellStart()
     self.shotsFired = 0
     self.interval = duration / self.numShots
 
-    caster:AddNewModifier(caster, self, "modifier_rapper_souljah", { duration = duration })
+    caster:AddNewModifier(caster, self, "modifier_rapper_souljah", { duration = -1 })
 end
 
 function rapper_souljah:Fire()
