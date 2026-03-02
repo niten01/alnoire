@@ -122,6 +122,7 @@
 			"spread"					"30"
 			"shot_speed"				"2500"
 			"projectile_radius"			"30"
+			"damage_reduction_pct"		"50 40 20 10"
 		}
 
 		"precache"
