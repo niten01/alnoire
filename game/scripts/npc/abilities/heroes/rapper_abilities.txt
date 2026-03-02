@@ -11,7 +11,7 @@
 
 		"AbilityValues"
 		{
-			"max_stacks"				"50"
+			"max_stacks"				"100"
 			"damage_pct_per_stack"		"1"
 		}
 	}
@@ -22,15 +22,15 @@
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityTextureName"		"rapper_spliff"
         "AbilityChannelAnimation"       "ACT_DOTA_CHANNEL_ABILITY_1"
-		"AbilityChannelTime"			"10.0"
-        "AbilityCooldown"               "1.0" 
+		"AbilityChannelTime"			"5.0"
+        "AbilityCooldown"               "8.0" 
 		"MaxLevel"						"4"
 		"RequiredLevel"					"1"
 
 		"AbilityValues"
 		{
-			"max_shield"				"200 500 1000 2000"
-			"shield_per_sec"			"100 200"
+			"max_shield"				"300 450 600 750"
+			"shield_per_sec"			"60 90 120 150"
 		}
 
 		"precache"
@@ -47,20 +47,20 @@
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"		"rapper_strife"
-        "AbilityCooldown"               "5.0" 
+        "AbilityCooldown"               "40.0" 
 		"MaxLevel"						"3"
 		"RequiredLevel"					"1"
 
 		"AbilityValues"
 		{
-			"duration_per_stack"	    "0.25"
-			"attack_speed_bonus"		"200 400 800"
-			"flow_per_shot"				"5 2 1"
+			"duration_per_stack"	    "0.1"
+			"attack_speed_bonus"		"200 400 600"
+			"flow_per_shot"				"4"
 			"perfect_buff_duration"		"5"
 			"perfect_num_pulses"		"11"
-			"perfect_incoming_damage_reduction_pct" "20 40 80"
-			"perfect_pulse_radius"		"150 250 400 500"
-			"perfect_damage_per_pulse" "100 300 500 800"
+			"perfect_incoming_damage_reduction_pct" "30 40 50"
+			"perfect_pulse_radius"		"150 250 350"
+			"perfect_damage_per_pulse" "100 200 300"
 		}
 
 		"precache"
@@ -86,9 +86,9 @@
 
 		"AbilityValues"
 		{
-			"range"						"500"
+			"range"						"700"
 			"buff_duration"				"3"
-			"ms_reduction"				"50"
+			"ms_reduction"				"100"
 			"attack_range_bonus"		"400"
 		}
 
@@ -109,16 +109,16 @@
 		"AbilityTextureName"		"rapper_souljah"
 		"AbilityChannelAnimation"	"ACT_DOTA_CHANNEL_ABILITY_3"
 		"AbilityCastAnimation"	    "ACT_DOTA_CHANNEL_ABILITY_3"
-		"AbilityChannelTime"		"2.5"
+		"AbilityChannelTime"		"2.0"
 		"AbilityCastPoint"			"0.6"
-        "AbilityCooldown"               "5.0" 
+        "AbilityCooldown"               "10.0" 
 		"AbilityCastRange"				"400"
 		"MaxLevel"						"4"
 		"RequiredLevel"					"1"
 
 		"AbilityValues"
 		{
-			"num_shots"					"10 20 30 40"
+			"num_shots"					"20 30 40 50"
 			"spread"					"30"
 			"shot_speed"				"2500"
 			"projectile_radius"			"30"

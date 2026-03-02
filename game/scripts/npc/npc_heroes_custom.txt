@@ -258,11 +258,11 @@
     "MovementSpeed"                                       "300"
 
     "AttackCapabilities"                                  "DOTA_UNIT_CAP_RANGED_ATTACK"
-    "AttackDamageMin"                                     "11"
-    "AttackDamageMax"                                     "13"
+    "AttackDamageMin"                                     "16"
+    "AttackDamageMax"                                     "19"
     "AttackRange"                                         "550"
-    "AttackRate"                                          "1.6"
-		"AttackAnimationPoint"		                            "0.330000"		
+    "AttackRate"                                          "1.5"
+		"AttackAnimationPoint"		                            "0.170000"		
     "BaseAttackSpeed"                                     "100"
 		"ProjectileModel"			                                "particles/units/heroes/hero_sniper/sniper_base_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			                                "3000"				     
@@ -274,7 +274,7 @@
     }
 
     "ArmorPhysical"                                       "0"
-    "MagicalResistance"                                   "0"
+    "MagicalResistance"                                   "25"
 
     "StatusHealthRegen"                                   "0"
     "StatusHealth"                                        "200"
@@ -282,10 +282,10 @@
     "StatusMana"                                          "75"
 
     "AttributePrimary"                                    "DOTA_ATTRIBUTE_AGILITY"
-    "AttributeBaseStrength"                               "20"
-    "AttributeStrengthGain"                               "2.5"
-    "AttributeBaseAgility"                                "22"
-    "AttributeAgilityGain"                                "2.8"
+    "AttributeBaseStrength"                               "3"
+    "AttributeStrengthGain"                               "1"
+    "AttributeBaseAgility"                                "27"
+    "AttributeAgilityGain"                                "3.2"
     "AttributeBaseIntelligence"                           "13"
     "AttributeIntelligenceGain"                           "1.4"
 
