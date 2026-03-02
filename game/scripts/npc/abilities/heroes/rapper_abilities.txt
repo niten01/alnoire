@@ -12,7 +12,7 @@
 		"AbilityValues"
 		{
 			"max_stacks"				"100"
-			"damage_pct_per_stack"		"1"
+			"damage_pct_per_stack"		"0.5"
 		}
 	}
 	"rapper_spliff"
@@ -122,7 +122,7 @@
 			"spread"					"30"
 			"shot_speed"				"3000"
 			"projectile_radius"			"30"
-			"damage_reduction_pct"		"100 40 20 10"
+			"damage_reduction_pct"		"80 85 90 95"
 		}
 
 		"precache"
