@@ -274,16 +274,16 @@
     }
 
     "ArmorPhysical"                                       "0"
-    "MagicalResistance"                                   "25"
+    "MagicalResistance"                                   "40"
 
     "StatusHealthRegen"                                   "0"
-    "StatusHealth"                                        "200"
+    "StatusHealth"                                        "150"
     "StatusManaRegen"                                     "0.0"
     "StatusMana"                                          "75"
 
     "AttributePrimary"                                    "DOTA_ATTRIBUTE_AGILITY"
-    "AttributeBaseStrength"                               "3"
-    "AttributeStrengthGain"                               "1"
+    "AttributeBaseStrength"                               "20"
+    "AttributeStrengthGain"                               "2.0"
     "AttributeBaseAgility"                                "27"
     "AttributeAgilityGain"                                "3.2"
     "AttributeBaseIntelligence"                           "13"
