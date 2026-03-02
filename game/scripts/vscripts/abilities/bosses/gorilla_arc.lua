@@ -57,7 +57,7 @@ function modifier_gorilla_arc:OnCreated(kv)
     self.arcInfo = parent.gorillaArcInfo
     parent.gorillaArcInfo = nil
     local interval = 0.01
-    self.iter = self.arcInfo:Iterate(self:GetDuration() / interval)
+    self.iter = self.arcInfo:StableIterator(self:GetDuration() / interval)
     self.point = self.iter()
     self.z = parent:GetAbsOrigin().z
     self:StartIntervalThink(interval)

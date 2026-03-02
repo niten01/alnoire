@@ -409,7 +409,7 @@ end
 function ShowGenericArcWarning(arcInfo, width, duration)
   local interval = 0.01
   local nSteps = duration / interval
-  local iter = arcInfo:Iterate(nSteps)
+  local iter = arcInfo:StableIterator(nSteps)
   local point = iter()
   local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 1, Vector(width, 0, 0))
@@ -503,7 +503,7 @@ function ArcInfo:constructor(center, radius, startAngle, sweep, startPoint, endP
   self.endPoint = endPoint
 end
 
-function ArcInfo:Iterate(nSteps)
+function ArcInfo:StableIterator(nSteps)
   local i = 0
   return function()
     if i > nSteps then return nil end
@@ -519,11 +519,32 @@ function ArcInfo:Iterate(nSteps)
   end
 end
 
+-- Returns a function that can be called with delta values that accumulate to 1.0 at traversal finish.
+-- i.e. iter(0.05) - iter(0.3) - iter(0.15) - iter(0.5) which will yield proportional steps
+-- usable in iter(dt/totalTime) scenarios
+function ArcInfo:UnstableIterator()
+  local elapsed = 0
+
+  return function(dt)
+    if elapsed >= 1 then return nil end
+
+    dt = dt or 0
+
+    local currentAngle = self.startAngle + (self.sweep * elapsed)
+
+    local px = self.center.x + self.radius * math.cos(currentAngle)
+    local py = self.center.y + self.radius * math.sin(currentAngle)
+
+    elapsed = math.min(elapsed + dt, 1)
+    return Vector(px, py, 0)
+  end
+end
+
 function ArcInfo:Length()
   return math.abs(self.radius * self.sweep)
 end
 
--- returns an ArcInfo object that has :Iterate(nSteps) iterator
+-- returns an ArcInfo object that has several iterators
 function PointsArc(startPoint, midPoint, endPoint)
   startPoint.z = 0
   midPoint.z = 0
