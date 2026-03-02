@@ -194,7 +194,8 @@ return {
         "npc_ocean_creep_range",
         "npc_ocean_siege",
         "npc_ocean_tusik_mini_a",
-        "npc_ocean_tusik_mini_b",
+        "npc_ocean_tusik_mini_b_1",
+        "npc_ocean_tusik_mini_b_2",
         "npc_ocean_tusik_papa",
 
 
@@ -226,8 +227,8 @@ return {
         "models/items/tiny/lionheart_kings_moving_castle_t2/lionheart_kings_moving_castle_t2.vmdl",
         "models/items/undying/flesh_golem/deathmatch_dominator_golem/deathmatch_dominator_golem.vmdl",
 
-
-
+        -- ocean
+        "models/creeps/ice_biome/tuskfolk/tuskfolk001b_f.vmdl",
     },
     sounds = {
         "soundevents/sfx.vsndevts",

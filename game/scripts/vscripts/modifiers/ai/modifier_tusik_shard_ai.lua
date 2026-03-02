@@ -25,6 +25,11 @@ function modifier_tusik_shard_ai:OnCreated()
     unit:SetAcquisitionRange(0)
 
     local unitName = unit:GetUnitName()
+    if unitName and string.find(string.lower(unitName), "2") then
+        self.delayAggro = 5.0
+    else
+        self.delayAggro = 2.0
+    end
     local kv = GetUnitKeyValuesByName(unitName)
     if kv then
         self.customDeathSound = kv["CustomDeathSound"]
@@ -55,13 +60,13 @@ function modifier_tusik_shard_ai:OnIntervalThink()
         unit.lastCastTime = unit.lastCastTime or 0
         local timeInAggro = currentTime - (unit.aggroStartTime or 0)
 
-        if timeInAggro >= 2.5 and (currentTime - unit.lastCastTime) >= 2 then
+        if timeInAggro >= (self.delayAggro or 2.5) and (currentTime - unit.lastCastTime) >= 2 then
             self:CastSpellWithOffSet(unit, target:GetAbsOrigin(), 150)
         end
 
         if not IsCasting(unit) then
-            local desiredDistance = 700
-            local tolerance = 150
+            local desiredDistance = 400
+            local tolerance = 100
 
             if math.abs(distance - desiredDistance) > tolerance then
                 local direction = (targetPos - casterPos):Normalized()
