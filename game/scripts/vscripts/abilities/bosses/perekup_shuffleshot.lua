@@ -162,7 +162,7 @@ function perekup_shuffleshot:ArcCast()
     assert(self.arcInfo)
     -- local numPoints = (self.arcInfo:Length() / speed) / 0.01
     local numPoints = 50
-    local arcIter = self.arcInfo:Iterate(numPoints)
+    local arcIter = self.arcInfo:StableIterator(numPoints)
     local curPoint = arcIter()
     local pfx = ParticleManager:CreateParticle(
         GetRandomTableElement(self.particles), PATTACH_WORLDORIGIN,
