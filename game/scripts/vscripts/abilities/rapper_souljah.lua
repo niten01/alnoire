@@ -1,4 +1,5 @@
 rapper_souljah = class {}
+LinkLuaModifier("modifier_rapper_souljah", "abilities/rapper_souljah.lua", LUA_MODIFIER_MOTION_NONE)
 
 function rapper_souljah:RandomEndPointInFan()
     local caster = self:GetCaster()
@@ -39,6 +40,8 @@ function rapper_souljah:OnSpellStart()
     self.elapsedTime = 0
     self.shotsFired = 0
     self.interval = duration / self.numShots
+
+    caster:AddNewModifier(caster, self, "modifier_rapper_souljah", { duration = -1 })
 end
 
 function rapper_souljah:Fire()
@@ -95,9 +98,28 @@ end
 
 function rapper_souljah:OnChannelFinish(bInterrupted)
     if not IsServer() then return end
-    if bInterrupted then return end
 
-    if self.shotsFired < self.numShots then
+    if not bInterrupted and self.shotsFired < self.numShots then
         self:Fire()
     end
+
+    self:GetCaster():RemoveModifierByName("modifier_rapper_souljah")
+end
+
+-------------------------------------------------------
+
+modifier_rapper_souljah = class {}
+
+function modifier_rapper_souljah:IsHidden() return true end
+
+function modifier_rapper_souljah:IsPurgable() return false end
+
+function modifier_rapper_souljah:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE
+    }
+end
+
+function modifier_rapper_souljah:GetModifierBaseDamageOutgoing_Percentage()
+    return -self:GetAbility():GetSpecialValueFor("damage_reduction_pct")
 end

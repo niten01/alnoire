@@ -235,7 +235,6 @@ return {
         "soundevents/items.vsndevts",
         "soundevents/music.vsndevts",
         "soundevents/hlup.vsndevts",
-        "soundevents/sanya.vsndevts",
         "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts",
         "soundevents/voscripts/game_sounds_vo_monkey_king.vsndevts",
         "soundevents/bosses/bidlo.vsndevts",
@@ -271,6 +270,8 @@ return {
         "particles/ui_mouseactions/range_finder_cone_long.vpcf",
         "particles/warning_circle.vpcf",
         "particles/warning_rope.vpcf",
+        "particles/ui_mouseactions/custom_range_finder_cone.vpcf",
+        "particles/ui_mouseactions/custom_range_finder_cone_dual.vpcf",
 
         -- traps
         "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf",

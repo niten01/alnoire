@@ -1,0 +1,102 @@
+logarithmus_throw = class {}
+LinkLuaModifier("modifier_logarithmus_throw_inactive", "abilities/logarithmus_throw", LUA_MODIFIER_MOTION_NONE)
+
+function logarithmus_throw:Spawn()
+    if not IsServer() then
+        CustomIndicator:RegisterAbility(self)
+    end
+end
+
+function logarithmus_throw:CreateCustomIndicator(position, unit, behavior)
+    if behavior ~= DOTA_CLICK_BEHAVIOR_CAST then return end
+    local caster = self:GetCaster()
+
+    self.indicator = ParticleManager:CreateParticle("particles/ui_mouseactions/custom_range_finder_cone.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW, caster)
+    local width = self:GetSpecialValueFor("width")
+    ParticleManager:SetParticleControl(self.indicator, 3, Vector(width, width, 0))
+    ParticleManager:SetParticleControl(self.indicator, 4, Vector(0, 255, 0))
+
+    self:UpdateCustomIndicator(position, unit, behavior)
+end
+
+function logarithmus_throw:UpdateCustomIndicator(position, unit, behavior)
+    if behavior ~= DOTA_CLICK_BEHAVIOR_CAST then return end
+
+    local casterPos = self:GetCaster():GetAbsOrigin()
+    ParticleManager:SetParticleControl(self.indicator, 1, casterPos)
+
+    local dir = (position - casterPos):Normalized()
+    local range = self:GetCastRange(casterPos, nil)
+    local endPos = casterPos + dir * range
+    ParticleManager:SetParticleControl(self.indicator, 2, endPos)
+end
+
+function logarithmus_throw:DestroyCustomIndicator(position, unit, behavior)
+    if behavior ~= DOTA_CLICK_BEHAVIOR_CAST then return end
+
+    ParticleManager:DestroyParticle(self.indicator, false)
+    ParticleManager:ReleaseParticleIndex(self.indicator)
+    self.indicator = nil
+end
+
+function logarithmus_throw:Slice(from, to)
+    local pfx = ParticleManager:CreateParticle("particles/logarithmus_step.vpcf", PATTACH_WORLDORIGIN, nil)
+    ParticleManager:SetParticleControl(pfx, 0, from)
+    ParticleManager:SetParticleControl(pfx, 1, to)
+    ParticleManager:ReleaseParticleIndex(pfx)
+
+    local enemies = FindEnemiesForSanyaInLine(from, to, self:GetSpecialValueFor("width"))
+    for _, ent in ipairs(enemies) do
+        PlayLogarithmusImpaleEffect(ent, from)
+        ApplyDamage({
+            victim = ent,
+            attacker = self:GetCaster(),
+            damage = self:GetAbilityDamage(),
+            damage_type = self:GetAbilityDamageType(),
+            ability = self,
+        })
+    end
+end
+
+function logarithmus_throw:OnSpellStart()
+    local caster = self:GetCaster()
+    local inactiveDuration = self:GetSpecialValueFor("end_inactive_animation_point") - self:GetCastPoint()
+
+    caster:AddNewModifier(caster, self, "modifier_logarithmus_throw_inactive", { duration = inactiveDuration })
+
+    PlayLogarithmusBladeEffect(caster, 1.5)
+
+    local casterPos = caster:GetAbsOrigin()
+    -- local bladeIdx = caster:ScriptLookupAttachment("attach_blade_start")
+    -- local casterPos = caster:GetAttachmentOrigin(bladeIdx)
+
+    local targetPos = self:GetCursorPosition()
+    targetPos.z = casterPos.z
+    local dir = (targetPos - casterPos):Normalized()
+    local endPos = casterPos + dir * self:GetCastRange(casterPos, nil)
+    local secondSlashDelay = self:GetSpecialValueFor("second_slash_animation_point") - self:GetCastPoint()
+
+    self:Slice(casterPos, endPos)
+
+    Timers:CreateTimer(secondSlashDelay, function()
+        self:Slice(endPos, casterPos)
+    end)
+end
+
+------------------------------------------------------------
+
+modifier_logarithmus_throw_inactive = class {}
+
+function modifier_logarithmus_throw_inactive:IsHidden() return true end
+
+function modifier_logarithmus_throw_inactive:IsPurgable() return false end
+
+function modifier_logarithmus_throw_inactive:CheckState()
+    return {
+        [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
+        [MODIFIER_STATE_IGNORING_STOP_ORDERS] = true,
+        [MODIFIER_STATE_SILENCED] = true,
+        [MODIFIER_STATE_DISARMED] = true,
+    }
+end

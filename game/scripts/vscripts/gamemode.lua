@@ -14,6 +14,7 @@ require('libraries/animations')
 require('libraries/notifications')
 require('libraries/playertables')
 require('libraries/worldpanels')
+require('libraries/vector_targeting')
 
 require('modifiers/linker')
 

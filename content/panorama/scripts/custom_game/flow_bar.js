@@ -42,7 +42,7 @@ function SetUIPosition(replaceMana) {
     GameEvents.Subscribe("dota_player_update_selected_unit", UpdateStackBar);
     GameEvents.Subscribe("dota_player_update_query_unit", UpdateStackBar);
     GameEvents.Subscribe("game_rules_state_change", () => {
-        $.Schedule(1, UpdateStackBar);
+        $.Schedule(3, UpdateStackBar);
     });
 
     PlayerTables.SubscribeNetTableListener(PT_NAME, UpdateStackBar)

@@ -1,0 +1,146 @@
+"DOTAAbilities"
+{
+	"logarithmus_concentration"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_concentration.lua"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityTextureName"		"logarithmus_concentration"
+		"MaxLevel"					"1"
+		"RequiredLevel"				"1"
+
+		"AbilityValues"
+		{
+			"magical_damage_per_stack"	"50"
+			"lifesteal_pct_per_stack"	"5"
+		}
+	}
+	"logarithmus_step"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_step.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+
+		"AbilityTextureName"		"logarithmus_concentration"
+        "AbilityCastRange"		    "0"
+        "AbilityCastPoint"		    "0.2"
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+        "AbilityCooldown"           "5.0" 
+		"MaxLevel"					"3"
+		"RequiredLevel"				"1"
+
+        "AbilityDamage"             "100 200 300 400"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		"AbilityValues"
+		{
+            "blink_range"           "800"
+            "vector_range"          "300"
+            "stab_width"            "50"
+            "max_sequential_uses"   "3 3 4 5"
+            "recast_decay"     "1"
+		}
+
+        "precache"
+        {
+            "particle"		"particles/logarithmus_step.vpcf"
+            "particle"		"particles/logarithmus_step_simplified.vpcf"
+            "particle"      "particles/logarithmus_step_impale.vpcf"
+        }
+	}
+	"logarithmus_throw"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_throw.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+
+		"AbilityTextureName"		"logarithmus_throw"
+        "AbilityCastRange"		    "630"
+        "AbilityCastPoint"		    "0.35"
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+        "AbilityCooldown"           "5.0" 
+		"MaxLevel"					"3"
+		"RequiredLevel"				"1"
+
+        "AbilityDamage"                 "100 200 300 400"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		"AbilityValues"
+		{
+            "width"                 "50"
+            "animation_duration"    "1.35"
+            "end_inactive_animation_point"  "0.9"
+            "second_slash_animation_point"  "0.8"   
+		}
+
+        "precache"
+        {
+            "particle"		"particles/logarithmus_step.vpcf"
+            "particle"      "particles/logarithmus_step_impale.vpcf"
+        }
+	}
+	"logarithmus_anchor"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_anchor.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"AbilityTextureName"		"logarithmus_anchor"
+        "AbilityCastPoint"		    "0.0"
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_7"
+        "AbilityCooldown"           "5.0" 
+		"MaxLevel"					"3"
+		"RequiredLevel"				"1"
+
+        "AbilityDamage"                 "100 200 300 400"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		"AbilityValues"
+		{
+            "duration"      "8.0"
+            "forward_offset" "150"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/logarithmus_anchor.vpcf"
+		}
+	}
+	"logarithmus_projectile"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_projectile.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+
+		"AbilityTextureName"		"logarithmus_projectile"
+		"AbilityCastPoint"		    "0.24"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastRange"        	"800"
+		"AbilityCooldown"           "5.0" 
+		"MaxLevel"					"3"
+		"RequiredLevel"				"1"
+
+        "AbilityDamage"                 "100 200 300 400"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		"AbilityValues"
+		{
+            "vector_range"      "300"
+            "projectile_radius" "50"
+            "projectile_travel_time" "0.3"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/econ/items/beastmaster/mh_beastmaster/mh_beastmaster_golden_wildaxe.vpcf"
+		}
+	}
+}

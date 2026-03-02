@@ -72,6 +72,11 @@ function modifier_rapper_spliff_shield:OnCreated()
         PATTACH_ABSORIGIN_FOLLOW, parent)
 end
 
+function modifier_rapper_spliff_shield:OnRefresh()
+    if not IsServer() then return end
+    self.maxShield = self:GetAbility():GetSpecialValueFor("max_shield")
+end
+
 function modifier_rapper_spliff_shield:OnDestroy()
     if not IsServer() then return end
     ParticleManager:DestroyParticle(self.pfx, false)
@@ -94,7 +99,7 @@ function modifier_rapper_spliff_shield:OnTakeDamage(params)
 
     local parent = self:GetParent()
     local activeAbility = parent:GetCurrentActiveAbility()
-    if parent:IsChanneling() and  activeAbility and activeAbility:GetAbilityName() == "rapper_spliff" then  
+    if parent:IsChanneling() and activeAbility and activeAbility:GetAbilityName() == "rapper_spliff" then
         parent:InterruptChannel()
     end
 end

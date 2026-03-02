@@ -208,6 +208,18 @@ function FindEnemiesForSanyaInRadius(center, radius)
   )
 end
 
+function FindEnemiesForSanyaInLine(p1, p2, width)
+  return FindUnitsInLine(
+    DOTA_TEAM_GOODGUYS,
+    p1, p2,
+    nil,
+    width,
+    DOTA_UNIT_TARGET_TEAM_ENEMY,
+    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+    DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+  )
+end
+
 function FindEnemiesForAIInRadius(center, radius)
   return FindUnitsInRadius(
     DOTA_TEAM_BADGUYS,
@@ -397,7 +409,7 @@ end
 function ShowGenericArcWarning(arcInfo, width, duration)
   local interval = 0.01
   local nSteps = duration / interval
-  local iter = arcInfo:Iterate(nSteps)
+  local iter = arcInfo:StableIterator(nSteps)
   local point = iter()
   local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 1, Vector(width, 0, 0))
@@ -480,6 +492,7 @@ function PointsFan(startPos, endPos, numPoints, alpha)
   return endPoints
 end
 
+------------------------------------------------------------
 ArcInfo = class {}
 
 function ArcInfo:constructor(center, radius, startAngle, sweep, startPoint, endPoint)
@@ -491,7 +504,7 @@ function ArcInfo:constructor(center, radius, startAngle, sweep, startPoint, endP
   self.endPoint = endPoint
 end
 
-function ArcInfo:Iterate(nSteps)
+function ArcInfo:StableIterator(nSteps)
   local i = 0
   return function()
     if i > nSteps then return nil end
@@ -507,11 +520,37 @@ function ArcInfo:Iterate(nSteps)
   end
 end
 
+-- Returns a function that can be called with delta values that accumulate to 1.0 at traversal finish.
+-- i.e. iter(0.05) - iter(0.3) - iter(0.15) - iter(0.5) which will yield proportional steps
+-- usable in iter(dt/totalTime) scenarios
+function ArcInfo:UnstableIterator()
+  local elapsed = 0
+  local reachedEnd = false
+
+  return function(dt)
+    if reachedEnd then return nil end
+    dt = dt or 0
+
+    local currentAngle = self.startAngle + (self.sweep * elapsed)
+
+    local px = self.center.x + self.radius * math.cos(currentAngle)
+    local py = self.center.y + self.radius * math.sin(currentAngle)
+
+    if elapsed >= 1 then
+      reachedEnd = true
+    end
+
+    elapsed = math.min(elapsed + dt, 1)
+
+    return Vector(px, py, 0)
+  end
+end
+
 function ArcInfo:Length()
   return math.abs(self.radius * self.sweep)
 end
 
--- returns an ArcInfo object that has :Iterate(nSteps) iterator
+-- returns an ArcInfo object that has several iterators
 function PointsArc(startPoint, midPoint, endPoint)
   startPoint.z = 0
   midPoint.z = 0
@@ -537,7 +576,6 @@ function PointsArc(startPoint, midPoint, endPoint)
   local endAngle   = math.atan2(y3 - k, x3 - h)
 
   local sweep      = endAngle - startAngle
-
   if sweep < -math.pi then sweep = sweep + 2 * math.pi end
   if sweep > math.pi then sweep = sweep - 2 * math.pi end
 
@@ -545,15 +583,71 @@ function PointsArc(startPoint, midPoint, endPoint)
   if midSweep < -math.pi then midSweep = midSweep + 2 * math.pi end
   if midSweep > math.pi then midSweep = midSweep - 2 * math.pi end
 
-  if (midSweep > 0) ~= (sweep > 0) then
+  if (midSweep > 0) ~= (sweep > 0) or math.abs(midSweep) > math.abs(sweep) then
     sweep = (sweep > 0) and (sweep - 2 * math.pi) or (sweep + 2 * math.pi)
   end
 
-  return ArcInfo(
-    center,
-    radius,
-    startAngle,
-    sweep,
+  return ArcInfo(center, radius, startAngle, sweep, startPoint, endPoint)
+end
+
+---------------------------------------------------------------------------------------------------
+ParabolaInfo = class {}
+
+function ParabolaInfo:constructor(startPoint, endPoint, ctrlPoint)
+  self.startPoint = startPoint
+  self.ctrlPoint = ctrlPoint
+  self.endPoint = endPoint
+end
+
+function ParabolaInfo:GetPoint(fraction)
+  local invT = 1 - fraction
+  return (self.startPoint * (invT ^ 2)) +
+      (self.ctrlPoint * (2 * invT * fraction)) +
+      (self.endPoint * (fraction ^ 2))
+end
+
+-- see ArcInfo:UnstableIterator
+function ParabolaInfo:UnstableIterator()
+  local t = 0
+  local reachedEnd = false
+
+  return function(dt)
+    if reachedEnd then return nil end
+
+    dt = dt or 0
+    local point = self:GetPoint(t)
+    DebugPrint(point, t)
+
+    if t >= 1 then
+      reachedEnd = true
+    end
+
+    t = math.min(t + dt, 1)
+
+    return point
+  end
+end
+
+-- see ArcInfo:StableIterator
+function ParabolaInfo:StableIterator(numPoints)
+  local i = 0
+
+  return function()
+    if i > numPoints then return nil end
+
+    local point = self:GetPoint(i / numPoints)
+    i = i + 1
+    return point
+  end
+end
+
+-- returns ParabolaInfo
+function PointsParabola(startPoint, midPoint, endPoint)
+  local ctrlPoint = (midPoint * 2) - (startPoint * 0.5) - (endPoint * 0.5)
+
+  return ParabolaInfo(
     startPoint,
-    endPoint)
+    endPoint,
+    ctrlPoint
+  )
 end
