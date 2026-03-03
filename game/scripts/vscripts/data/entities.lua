@@ -607,7 +607,7 @@ return {
         pack_forest_act1_bears = {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 2000,
-            rangeRetreat = 1400,
+            rangeRetreat = 1150,
             rangeAggro = 700,
         },
 
@@ -620,9 +620,9 @@ return {
 
         pack_forest_act1_axe = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 1000,
-            rangeRetreat = 800,
-            rangeAggro = 550,
+            rangeFastTickRate = 1200,
+            rangeRetreat = 900,
+            rangeAggro = 650,
         },
 
         pack_forest_act1_roshan = {
@@ -659,16 +659,16 @@ return {
         },
 
         pack_forest_act1_dragnolls = {
-            rangeFastTickRate = 1400,
-            rangeAggro = 600,
-            rangeRetreat = 1000,
+            rangeFastTickRate = 1600,
+            rangeAggro = 830,
+            rangeRetreat = 1300,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_forest_act1_perdun = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1200,
+            rangeRetreat = 900,
+            rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
             flower = "npc_jungle_perdun_flower",
         },

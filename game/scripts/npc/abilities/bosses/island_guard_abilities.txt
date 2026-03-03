@@ -8,13 +8,13 @@
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
         "AbilityCastPoint"              "0.7"
-        "AbilityCooldown"               "4.0" 
+        "AbilityCooldown"               "2.5" 
         "AbilityCastRange"        		"9000"
         
         "AbilityValues"
         {
             "radius"                "70"
-            "damage"                "100"
+            "damage"                "200"
             "num_waves"             "12"
             "wave_delay"            "0.4"
             "shots_per_wave"        "12"
@@ -66,7 +66,7 @@
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
         "AbilityCastPoint"              "0.53"
-        "AbilityCooldown"               "1.0" 
+        "AbilityCooldown"               "1.5" 
         "AbilityCastRange"        		"9000"
         
         "AbilityValues"

@@ -11,9 +11,9 @@
 
 		"AbilityValues"
 		{
-			"debuffDuration"			"6.0"
-            "slowDebuff"                "150"
-            "turnRateDebuffPercent"            "0.1"
+			"debuffDuration"			"4.0"
+            "slowDebuff"                "100"
+            "turnRateDebuffPercent"            "0.15"
 		}
 	}
 }

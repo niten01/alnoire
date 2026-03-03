@@ -23,7 +23,8 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"			// Physical protection.
+		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"         "30"
 
 		// Attack
 		//----------------------------------------------------------------
@@ -55,14 +56,14 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"200"		// Base health.
+		"StatusHealth"				"10"		// Base health.
 		"StatusHealthRegen"			"0"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.	
 
 		"AttributePrimary"                                    "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"                               "15"
-        "AttributeStrengthGain"                               "2.5"
+        "AttributeBaseStrength"                               "20"
+        "AttributeStrengthGain"                               "2.0"
         "AttributeBaseAgility"                                "15"
         "AttributeAgilityGain"                                "2.1"
         "AttributeBaseIntelligence"                           "17"

@@ -30,8 +30,9 @@ function modifier_logarithmus_anchor:IsPurgable() return false end
 
 function modifier_logarithmus_anchor:OnCreated(kv)
     if not IsServer() then return end
+    self.anchorLocation = Vector(kv.locationX, kv.locationY, self:GetParent():GetAbsOrigin().z)
     self.pfx = ParticleManager:CreateParticle("particles/logarithmus_anchor.vpcf", PATTACH_WORLDORIGIN, nil)
-    ParticleManager:SetParticleControl(self.pfx, 0, Vector(kv.locationX, kv.locationY, self:GetParent():GetAbsOrigin().z))
+    ParticleManager:SetParticleControl(self.pfx, 0, self.anchorLocation)
 end
 
 function modifier_logarithmus_anchor:OnRefresh(kv)

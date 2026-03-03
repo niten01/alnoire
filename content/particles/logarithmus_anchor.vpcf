@@ -346,7 +346,6 @@
 		{
 			m_ChildRef = resource:"particles/logarithmus_anchor_flash.vpcf"
 			m_bEndCap = true
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/logarithmus_anchor_impact.vpcf"

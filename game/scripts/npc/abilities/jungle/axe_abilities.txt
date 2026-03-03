@@ -47,7 +47,7 @@
 
 		"AbilityValues"
 		{
-			"bonusDamage"               "30"
+			"bonusDamage"               "40"
 			"damageReductionPercent"    "90.0"
 		}
 	}

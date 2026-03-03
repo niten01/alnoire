@@ -494,6 +494,15 @@
 						weight = 1.0
 						ignore_rotation = false
 					},
+					{
+						_class = "Attachment"
+						name = "attach_fist_L"
+						parent_bone = "finger_middle_0_L"
+						relative_origin = [ 0.0, -1.865173, 0.000027 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
 				]
 			},
 			{

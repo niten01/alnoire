@@ -13,7 +13,7 @@
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastRange"				"1400"
+        "AbilityCastRange"				"400"
         "AbilityCastPoint"				"0.3 0.3 0.3 0.3"
         
         // Time		
@@ -30,11 +30,11 @@
         {
             "radius"						
             {
-                "value"			"300"
+                "value"			"250"
                 "affected_by_aoe_increase"		"1"
             }
-            "damage"			"10"
-            "duration"			"10.0 9 10 12"
+            "damage"			"30"
+            "duration"			"8.0 9 10 12"
             "burn_interval"			"0.5"
         }
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"

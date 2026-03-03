@@ -616,7 +616,6 @@ function ParabolaInfo:UnstableIterator()
 
     dt = dt or 0
     local point = self:GetPoint(t)
-    DebugPrint(point, t)
 
     if t >= 1 then
       reachedEnd = true
@@ -639,6 +638,16 @@ function ParabolaInfo:StableIterator(numPoints)
     i = i + 1
     return point
   end
+end
+
+function ParabolaInfo:Length()
+  local length = 0
+  local prevPoint = self.startPoint
+  for point in self:StableIterator(200) do
+    length = length + #(prevPoint - point)
+    prevPoint = point
+  end
+  return length
 end
 
 -- returns ParabolaInfo
