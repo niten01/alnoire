@@ -131,10 +131,13 @@
 					m_nScalarAttribute = 3
 					m_nVectorAttribute = 6
 					m_nVectorComponent = 0
+					m_bReverseOrder = false
 					m_flRandomMin = 0.0
 					m_flRandomMax = 1.0
 					m_bHasRandomSignFlip = false
+					m_nRandomSeed = -1
 					m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+					m_strSnapshotSubset = ""
 					m_flLOD0 = 0.0
 					m_flLOD1 = 0.0
 					m_flLOD2 = 0.0
@@ -165,6 +168,7 @@
 					m_flNotchedRangeMax = 1.0
 					m_flNotchedOutputOutside = 0.0
 					m_flNotchedOutputInside = 1.0
+					m_nRoundType = "PF_ROUND_TYPE_NEAREST"
 					m_nBiasType = "PF_BIAS_TYPE_STANDARD"
 					m_flBiasParameter = 0.0
 					m_Curve = 
@@ -185,10 +189,13 @@
 					m_nScalarAttribute = 3
 					m_nVectorAttribute = 6
 					m_nVectorComponent = 0
+					m_bReverseOrder = false
 					m_flRandomMin = 0.0
 					m_flRandomMax = 1.0
 					m_bHasRandomSignFlip = false
+					m_nRandomSeed = -1
 					m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+					m_strSnapshotSubset = ""
 					m_flLOD0 = 0.0
 					m_flLOD1 = 0.0
 					m_flLOD2 = 0.0
@@ -219,6 +226,7 @@
 					m_flNotchedRangeMax = 1.0
 					m_flNotchedOutputOutside = 0.0
 					m_flNotchedOutputInside = 1.0
+					m_nRoundType = "PF_ROUND_TYPE_NEAREST"
 					m_nBiasType = "PF_BIAS_TYPE_STANDARD"
 					m_flBiasParameter = 0.0
 					m_Curve = 
@@ -239,10 +247,13 @@
 					m_nScalarAttribute = 3
 					m_nVectorAttribute = 6
 					m_nVectorComponent = 0
+					m_bReverseOrder = false
 					m_flRandomMin = 0.0
 					m_flRandomMax = 1.0
 					m_bHasRandomSignFlip = false
+					m_nRandomSeed = -1
 					m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+					m_strSnapshotSubset = ""
 					m_flLOD0 = 0.0
 					m_flLOD1 = 0.0
 					m_flLOD2 = 0.0
@@ -273,6 +284,7 @@
 					m_flNotchedRangeMax = 1.0
 					m_flNotchedOutputOutside = 0.0
 					m_flNotchedOutputInside = 1.0
+					m_nRoundType = "PF_ROUND_TYPE_NEAREST"
 					m_nBiasType = "PF_BIAS_TYPE_STANDARD"
 					m_flBiasParameter = 0.0
 					m_Curve = 
@@ -293,10 +305,13 @@
 					m_nScalarAttribute = 3
 					m_nVectorAttribute = 6
 					m_nVectorComponent = 0
+					m_bReverseOrder = false
 					m_flRandomMin = 0.0
 					m_flRandomMax = 1.0
 					m_bHasRandomSignFlip = false
+					m_nRandomSeed = -1
 					m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+					m_strSnapshotSubset = ""
 					m_flLOD0 = 0.0
 					m_flLOD1 = 0.0
 					m_flLOD2 = 0.0
@@ -327,6 +342,7 @@
 					m_flNotchedRangeMax = 1.0
 					m_flNotchedOutputOutside = 0.0
 					m_flNotchedOutputInside = 1.0
+					m_nRoundType = "PF_ROUND_TYPE_NEAREST"
 					m_nBiasType = "PF_BIAS_TYPE_STANDARD"
 					m_flBiasParameter = 0.0
 					m_Curve = 
@@ -371,15 +387,7 @@
 					[
 						{
 							m_flPosition = 0.157623
-							m_Color = [ 171, 205, 231 ]
-						},
-						{
-							m_flPosition = 0.565891
-							m_Color = [ 7, 61, 81 ]
-						},
-						{
-							m_flPosition = 1.0
-							m_Color = [ 2, 6, 31 ]
+							m_Color = [ 255, 255, 255 ]
 						},
 					]
 				}
