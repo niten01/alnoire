@@ -5,7 +5,7 @@
 		"Model"						"models/heroes/abyssal_underlord/abyssal_underlord_v2.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"ModelScale" 				"2.0"
-		"Level"						  "7"
+		"Level"						  "1"
 		"ConsideredHero" 		"1"
 
 		// Abilities
@@ -52,9 +52,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"41"		// Experience earn.
-		"BountyGoldMin"				"21"		// Gold earned min.
-		"BountyGoldMax"				"25"		// Gold earned max.
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
@@ -64,7 +64,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"450"		// Base health.
+		"StatusHealth"				"1250"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
 		"StatusMana"				"5000"		// Base mana.
 		"StatusManaRegen"			"100.0"		// Mana regeneration rate.		 
@@ -72,7 +72,7 @@
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
 
 		// Team
 		//----------------------------------------------------------------

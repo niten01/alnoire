@@ -383,7 +383,7 @@
 		"BountyGoldMax"				"1"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"350"					
+		"MovementSpeed"				"370"					
 
 		"StatusHealth"				"400"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
@@ -1344,7 +1344,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"320"					
 
-		"StatusHealth"				"600"		// Base health.
+		"StatusHealth"				"800"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 

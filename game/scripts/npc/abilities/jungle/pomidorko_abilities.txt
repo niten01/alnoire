@@ -96,7 +96,7 @@
 			"duration"      "1.5"
             "cooldown"      "2.5"
             "blockPercent"  "90.0"
-            "castRange"     "1000"
+            "castRange"     "3000"
 		}
     }
 }
