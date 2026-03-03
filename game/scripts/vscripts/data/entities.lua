@@ -667,7 +667,7 @@ return {
 
         pack_forest_act1_perdun = {
             rangeFastTickRate = 1200,
-            rangeRetreat = 900,
+            rangeRetreat = 1000,
             rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
             flower = "npc_jungle_perdun_flower",
