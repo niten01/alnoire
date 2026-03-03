@@ -29,6 +29,14 @@ function rapper_strife:OnSpellStart()
     end
 end
 
+function rapper_strife:OnUpgrade()
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    local flowAbility = caster:FindAbilityByName("rapper_flow")
+    assert(flowAbility)
+    flowAbility:UpgradeAbility(true)
+end
+
 ------------------------------------------------------------------
 
 modifier_rapper_strife = class {}

@@ -15,19 +15,31 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
   if not IsServer() then return end
   local caster = self:GetCaster()
   local casterPos = caster:GetAbsOrigin()
-  local travelTime = self:GetSpecialValueFor("projectile_travel_time")
+  local speed = self:GetSpecialValueFor("projectile_speed")
   local radius = self:GetSpecialValueFor("projectile_radius")
+
+  local fistIdx = caster:ScriptLookupAttachment("attach_fist_L")
+  local startPos = caster:GetAttachmentOrigin(fistIdx)
 
   vStartLocation.z = casterPos.z
   local endPos = vStartLocation + vDirection * self:GetVectorTargetRange()
 
-  local parabolaInfo = PointsParabola(casterPos, vStartLocation, endPos)
+  local parabolaInfo = PointsParabola(startPos, vStartLocation, endPos)
 
   local parabolaIter = parabolaInfo:UnstableIterator()
   local pfx = ParticleManager:CreateParticle(
-    "particles/econ/items/beastmaster/mh_beastmaster/mh_beastmaster_golden_wildaxe.vpcf", PATTACH_WORLDORIGIN, nil)
+    "particles/logarithmus_projectile.vpcf", PATTACH_WORLDORIGIN, nil)
+  ParticleManager:SetParticleControl(pfx, 0, startPos)
+  ParticleManager:SetParticleControl(pfx, 2, Vector(speed - 150, 0, 0))
+  local function destroyPfx()
+    ParticleManager:DestroyParticle(pfx, false)
+    ParticleManager:ReleaseParticleIndex(pfx)
+  end
+
+  local travelTime = parabolaInfo:Length() / speed
   local interval = 0.01
   local lastTime = GameRules:GetGameTime()
+  local prevPoint = nil
   Timers:CreateTimer(0, function()
     local curTime = GameRules:GetGameTime()
     local dt = curTime - lastTime
@@ -35,68 +47,39 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
 
     local curPoint = parabolaIter(dt / travelTime)
     if not curPoint then
-      ParticleManager:DestroyParticle(pfx, false)
-      ParticleManager:ReleaseParticleIndex(pfx)
+      destroyPfx()
       return nil
     end
-    ParticleManager:SetParticleControl(pfx, 0, curPoint)
+    curPoint.z = startPos.z
+
+    ParticleManager:SetParticleControl(pfx, 1, curPoint)
+
+    local enemies = FindEnemiesForSanyaInRadius(curPoint, radius)
+    for _, ent in ipairs(enemies) do
+      destroyPfx()
+      self:OnProjectileHit(ent, (prevPoint and curPoint - prevPoint) or Vector(0, 0, 0))
+      return nil
+    end
+    prevPoint = curPoint
     return interval
   end)
-
-
-
-  -- local pfx = ParticleManager:CreateParticle("particles/logarithmus_projectile_simplified.vpcf", PATTACH_ABSORIGIN, caster)
-  -- ParticleManager:SetParticleControl(pfx, 0, casterPos)
-  -- ParticleManager:SetParticleControl(pfx, 1, turnPos)
-  -- ParticleManager:ReleaseParticleIndex(pfx)
-  --
-  -- local hitPos = turnPos + vDirection * self:GetVectorTargetRange()
-  -- hitPos.z = casterPos.z
-  --
-  -- caster:SetAbsOrigin(turnPos)
-  -- FindClearSpaceForUnit(caster, turnPos, true)
-  -- caster:SetForwardVector(vDirection)
-  -- caster:FaceTowards(hitPos)
-  --
-  -- pfx = ParticleManager:CreateParticle("particles/logarithmus_projectile.vpcf", PATTACH_WORLDORIGIN, nil)
-  -- ParticleManager:SetParticleControl(pfx, 0, turnPos)
-  -- ParticleManager:SetParticleControl(pfx, 1, hitPos)
-  -- ParticleManager:ReleaseParticleIndex(pfx)
-  --
-  -- PlayLogarithmusBladeEffect(caster, 1.0)
-  --
-  -- local enemies = FindEnemiesForSanyaInLine(turnPos, hitPos, self:GetSpecialValueFor("stab_width"))
-  -- for _, ent in ipairs(enemies) do
-  --     PlayLogarithmusImpaleEffect(ent, turnPos)
-  --     ApplyDamage({
-  --         victim = ent,
-  --         attacker = caster,
-  --         damage = self:GetAbilityDamage(),
-  --         damage_type = self:GetAbilityDamageType(),
-  --         ability = self,
-  --     })
-  -- end
-  --
-  -- if #enemies > 0 then
-  --     self.sequentialUses = self.sequentialUses + 1
-  --     if self.sequentialUses < self:GetSpecialValueFor("max_sequential_uses") then
-  --         caster:AddNewModifier(caster, self, "modifier_logarithmus_projectile_recastable", {
-  --             duration = self:GetSpecialValueFor("recast_decay")
-  --         })
-  --     else
-  --         self.sequentialUses = 0
-  --     end
-  -- end
 end
 
-function logarithmus_projectile:OnProjectileHit(target, location)
+function logarithmus_projectile:OnProjectileHit(target, direction)
   if not IsServer() or not target then return end
   local caster = self:GetCaster()
+  local targetPos = target:GetAbsOrigin()
+  direction = direction:Normalized()
+  direction.z = 0
+  local dirEmpty = #direction == 0
+  if dirEmpty then
+    direction = caster:GetForwardVector()
+  end
+  local endPos = targetPos - direction * 30
 
-  FindClearSpaceForUnit(caster, location, true)
-  local fwd = (target:GetAbsOrigin() - location):Normalized()
-  caster:SetForwardVector(fwd)
-  caster:FaceTowards(target)
+  FindClearSpaceForUnit(caster, endPos, true)
+  caster:SetForwardVector(direction)
+  caster:FaceTowards(targetPos)
   ApplyDamage({
     victim = target,
     attacker = caster,

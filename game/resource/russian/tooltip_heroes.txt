@@ -1,5 +1,5 @@
 "npc_dota_hero_sanya"		            "Саня"
 "npc_dota_hero_sanya_towel_master"		"Towel Master"
-"towel_summon"	                    	"Полотенцевый монстр"
+"towel_summon"	                    	"Раб Чистоты"
 "npc_dota_hero_sanya_rapper"			"Кварц-ксеон"
 "npc_dota_hero_sanya_logarithmus"		"Интегралус"

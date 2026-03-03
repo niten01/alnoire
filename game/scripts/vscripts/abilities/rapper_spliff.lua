@@ -21,6 +21,15 @@ function rapper_spliff:OnSpellStart()
     end
 end
 
+function rapper_spliff:OnUpgrade()
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    local shield = caster:FindModifierByName("modifier_rapper_spliff_shield")
+    if shield then
+        shield:ForceRefresh()
+    end
+end
+
 function rapper_spliff:OnChannelThink(interval)
     if not IsServer() then return end
 
