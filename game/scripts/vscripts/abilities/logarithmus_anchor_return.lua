@@ -1,5 +1,20 @@
 logarithmus_anchor_return = class {}
 
+function logarithmus_anchor_return:Spawn()
+  if not IsServer() then return end
+  self:SetHidden(true)
+end
+
+function logarithmus_anchor_return:OnUpgrade()
+  if not IsServer() then return end
+  local caster = self:GetCaster()
+  local anchorAbility = caster:FindAbilityByName("logarithmus_anchor")
+  assert(anchorAbility)
+  if anchorAbility:GetLevel() ~= self:GetLevel() then
+    anchorAbility:SetLevel(self:GetLevel())
+  end
+end
+
 function logarithmus_anchor_return:OnSpellStart()
   if not IsServer() then return end
   local caster = self:GetCaster()
@@ -29,4 +44,6 @@ function logarithmus_anchor_return:OnSpellStart()
   local dir = (anchorPos - casterPos):Normalized()
   caster:SetForwardVector(dir)
   caster:FaceTowards(anchorPos + dir * 100)
+
+  caster:RemoveModifierByName("modifier_logarithmus_anchor")
 end

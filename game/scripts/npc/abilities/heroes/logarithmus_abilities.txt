@@ -118,11 +118,11 @@
 		"ScriptFile" 				"abilities/logarithmus_anchor_return.lua"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_DONT_RESUME_MOVEMENT"
 
 		"AbilityTextureName"		"logarithmus_anchor_return"
-        "AbilityCastPoint"		    "0.0"
-        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_7"
+        "AbilityCastPoint"		    "0.2"
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
         "AbilityCooldown"           "0.0" 
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
@@ -132,7 +132,7 @@
 
 		"AbilityValues"
 		{
-      "width"                 "50"
+      		"width"                 "50"
 		}
 
 		"precache"
@@ -148,7 +148,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
-		"AbilityTextureName"		"logarithmus_anchor"
+		"AbilityTextureName"		"logarithmus_alt_anchor"
         "AbilityCastPoint"		    "0.0"
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_7"
         "AbilityCooldown"           "5.0" 
@@ -160,13 +160,14 @@
 
 		"AbilityValues"
 		{
-            "duration"      "8.0"
+            "delay"      "3.0"
             "forward_offset" "150"
+			"radius" 	"300"
 		}
 
 		"precache"
 		{
-			"particle"		"particles/logarithmus_anchor.vpcf"
+			"particle"		"particles/logarithmus_alt_anchor.vpcf"
 		}
 	}
 	"logarithmus_projectile"
@@ -198,6 +199,27 @@
 		"precache"
 		{
 			"particle"		"particles/logarithmus_projectile.vpcf"
+		}
+	}
+	"logarithmus_ult"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_ult.lua"
+
+		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		"AbilityTextureName"		"logarithmus_ult"
+		"AbilityCooldown"           "5.0" 
+		"MaxLevel"					"1"
+		"RequiredLevel"				"1"
+
+		"AbilityValues"
+		{
+		}
+
+		"precache"
+		{
 		}
 	}
 }

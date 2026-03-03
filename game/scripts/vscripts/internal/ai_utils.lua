@@ -66,6 +66,7 @@ function GiveCastOrder(unit, target, ability)
   assert(behavior)
 
   local cast = function()
+    unit:Stop()
     if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
       unit:CastAbilityOnTarget(target, ability, -1)
     elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then

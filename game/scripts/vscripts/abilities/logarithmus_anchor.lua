@@ -1,6 +1,16 @@
 logarithmus_anchor = class {}
 LinkLuaModifier("modifier_logarithmus_anchor", "abilities/logarithmus_anchor.lua", LUA_MODIFIER_MOTION_NONE)
 
+function logarithmus_anchor:OnUpgrade()
+  if not IsServer() then return end
+  local caster = self:GetCaster()
+  local returnAbility = caster:FindAbilityByName("logarithmus_anchor_return")
+  assert(returnAbility)
+  if returnAbility:GetLevel() ~= self:GetLevel() then
+    returnAbility:SetLevel(self:GetLevel())
+  end
+end
+
 function logarithmus_anchor:OnSpellStart()
     if not IsServer() then return end
     local caster = self:GetCaster()
@@ -33,6 +43,9 @@ function modifier_logarithmus_anchor:OnCreated(kv)
     self.anchorLocation = Vector(kv.locationX, kv.locationY, self:GetParent():GetAbsOrigin().z)
     self.pfx = ParticleManager:CreateParticle("particles/logarithmus_anchor.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(self.pfx, 0, self.anchorLocation)
+
+    local parent = self:GetParent()
+    parent:SwapAbilities("logarithmus_anchor", "logarithmus_anchor_return", false, true)
 end
 
 function modifier_logarithmus_anchor:OnRefresh(kv)
@@ -45,4 +58,6 @@ function modifier_logarithmus_anchor:OnDestroy()
     if not IsServer() then return end
     ParticleManager:DestroyParticle(self.pfx, false)
     ParticleManager:ReleaseParticleIndex(self.pfx)
+    local parent = self:GetParent()
+    parent:SwapAbilities("logarithmus_anchor", "logarithmus_anchor_return", true, false)
 end
