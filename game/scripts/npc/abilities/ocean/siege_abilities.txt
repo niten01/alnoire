@@ -1,0 +1,17 @@
+"DOTAAbilities"
+{
+    "ocean_siege_passive"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/ocean/ocean_siege_passive"
+		"AbilityTextureName"            ""
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+
+		}
+	}
+}

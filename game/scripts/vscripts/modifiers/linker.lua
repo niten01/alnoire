@@ -26,6 +26,7 @@ LinkLuaModifier("modifier_gorilla_capture", "modifiers/abilities/modifier_gorill
 
 -- jungle
 LinkLuaModifier("modifier_cust_rosh", "modifiers/jungle/modifier_cust_rosh", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tusik_papa_hide", "modifiers/ocean/modifier_tusik_papa_hide", LUA_MODIFIER_MOTION_NONE)
 
 
 -- ai
@@ -42,6 +43,8 @@ LinkLuaModifier("modifier_perekup_ai", "modifiers/ai/modifier_perekup_ai", LUA_M
 LinkLuaModifier("modifier_shrooms_ai", "modifiers/ai/modifier_shrooms_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shrooms_furion_ai", "modifiers/ai/modifier_shrooms_furion_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_bufferbear_ai", "modifiers/ai/modifier_bufferbear_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tusik_shard_ai", "modifiers/ai/modifier_tusik_shard_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tusik_uppercut_ai", "modifiers/ai/modifier_tusik_uppercut_ai", LUA_MODIFIER_MOTION_NONE)
 
 
 

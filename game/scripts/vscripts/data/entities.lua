@@ -381,69 +381,111 @@ return {
         },
 
 
-        spawner_techies_1     = {
+        spawner_techies_1      = {
             npc = "npc_jungle_techies_1",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_1",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_techies_2     = {
+        spawner_techies_2      = {
             npc = "npc_jungle_techies_2",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_2",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_techies_3     = {
+        spawner_techies_3      = {
             npc = "npc_jungle_techies_3",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_3",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_shroom_melee  = {
+        spawner_shroom_melee   = {
             npc = "npc_jungle_shroom_melee",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_shrooms",
             ai_modifier = "modifier_shrooms_ai"
         },
-        spawner_shroom_ranged = {
+        spawner_shroom_ranged  = {
             npc = "npc_jungle_shroom_ranged",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_shrooms",
             ai_modifier = "modifier_shrooms_ai"
         },
-        spawner_shroom_furion = {
+        spawner_shroom_furion  = {
             npc = "npc_jungle_shroom_furion",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_shrooms",
             ai_modifier = "modifier_shrooms_furion_ai"
         },
 
-        spawner_gnoll         = {
+        spawner_gnoll          = {
             npc = "npc_jungle_gnoll",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_dragnolls",
             ai_modifier = "modifier_default_creep_ai"
         },
 
-        spawner_ancdragon     = {
+        spawner_ancdragon      = {
             npc = "npc_jungle_ancdragon",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_dragnolls",
             ai_modifier = "modifier_default_creep_ai"
         },
 
-        spawner_perdun        = {
+        spawner_perdun         = {
             npc = "npc_jungle_perdun",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_perdun",
             ai_modifier = "modifier_default_creep_ai"
         },
 
-        spawner_perdun_flower = {
+        spawner_perdun_flower  = {
             npc = "npc_jungle_perdun_flower",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_perdun",
             ai_modifier = "modifier_default_creep_ai"
+        },
+
+        spawner_ocean_creep    = {
+            npc = "npc_ocean_creep_range",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_catapa",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+        spawner_ocean_siege    = {
+            npc = "npc_ocean_siege",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_catapa",
+            ai_modifier = "modifier_default_creep_ai"
+        },
+
+        spawner_tusik_mini_a   = {
+            npc = "npc_ocean_tusik_mini_a",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_tusiki",
+            ai_modifier = "modifier_tusik_uppercut_ai"
+        },
+
+        spawner_tusik_mini_b_1 = {
+            npc = "npc_ocean_tusik_mini_b_1",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_tusiki",
+            ai_modifier = "modifier_tusik_shard_ai"
+        },
+
+        spawner_tusik_mini_b_2 = {
+            npc = "npc_ocean_tusik_mini_b_2",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_tusiki",
+            ai_modifier = "modifier_tusik_shard_ai"
+        },
+
+        spawner_tusik_papa     = {
+            npc = "npc_ocean_tusik_papa",
+            modifiers = { "modifier_tusik_papa_hide" },
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_tusiki",
+            ai_modifier = "modifier_default_creep_ai",
         },
 
 
@@ -565,7 +607,7 @@ return {
         pack_forest_act1_bears = {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 2000,
-            rangeRetreat = 1400,
+            rangeRetreat = 1150,
             rangeAggro = 700,
         },
 
@@ -578,9 +620,9 @@ return {
 
         pack_forest_act1_axe = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 1000,
-            rangeRetreat = 800,
-            rangeAggro = 550,
+            rangeFastTickRate = 1200,
+            rangeRetreat = 900,
+            rangeAggro = 650,
         },
 
         pack_forest_act1_roshan = {
@@ -617,22 +659,32 @@ return {
         },
 
         pack_forest_act1_dragnolls = {
-            rangeFastTickRate = 1400,
-            rangeAggro = 600,
-            rangeRetreat = 1000,
+            rangeFastTickRate = 1600,
+            rangeAggro = 830,
+            rangeRetreat = 1300,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_forest_act1_perdun = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1200,
+            rangeRetreat = 1000,
+            rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
             flower = "npc_jungle_perdun_flower",
         },
 
-        pack_mk = {
-            activateAfterUnitsSpawned = true,
+        pack_ocean_act2_catapa = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_ocean_act2_tusiki = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
         },
 
         pack_concert_crowd = {

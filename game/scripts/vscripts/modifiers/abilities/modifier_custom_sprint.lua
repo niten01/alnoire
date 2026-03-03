@@ -17,7 +17,6 @@ function modifier_custom_sprint:GetActivityTranslationModifiers()
     return 'haste'
 end
 
-
 function modifier_custom_sprint:GetModifierMoveSpeedBonus_Constant()
     return self:GetAbility():GetSpecialValueFor('sprint_speed')
 end
@@ -50,12 +49,14 @@ function modifier_custom_sprint:DisableSprint()
     local ability = self:GetAbility()
     local caster = self:GetCaster()
 
-    if ability and ability:GetToggleState() then
-        ability:ToggleAbility()
+    if ability then
+        if ability:GetToggleState() then
+            ability:ToggleAbility()
+            caster:RemoveModifierByName("modifier_custom_sprint")
+            local pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_manaburn.vpcf",
+                PATTACH_ABSORIGIN_FOLLOW, caster)
+            ParticleManager:ReleaseParticleIndex(pfx)
+        end
         ability:StartCooldown(self:GetAbility():GetSpecialValueFor('sprint_damage_cooldown'))
-        caster:RemoveModifierByName("modifier_custom_sprint")
-        local pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_manaburn.vpcf",
-            PATTACH_ABSORIGIN_FOLLOW, caster)
-        ParticleManager:ReleaseParticleIndex(pfx)
     end
 end
