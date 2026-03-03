@@ -211,6 +211,9 @@ return {
         "models/props_gameplay/banana_prop_closed_mk.vmdl",
         "models/creeps/roshan_aghanim/roshan_aghanim.vmdl",
 
+        -- tusik papa hide
+        "models/heroes/tuskarr/tuskarr_sigil.vmdl",
+
         -- shrooms
         "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_mushroom.vmdl",
         "models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged_mushroom.vmdl",

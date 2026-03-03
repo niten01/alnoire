@@ -6,7 +6,8 @@ function modifier_tusik_shard_ai:IsPurgable() return false end
 
 function modifier_tusik_shard_ai:DeclareFunctions()
     return {
-        MODIFIER_EVENT_ON_DEATH
+        MODIFIER_EVENT_ON_DEATH,
+        MODIFIER_EVENT_ON_TAKEDAMAGE
     }
 end
 
@@ -15,6 +16,18 @@ function modifier_tusik_shard_ai:OnDeath(params)
     local parent = self:GetParent()
     if params.unit == parent then
         EmitSoundOn(self.customDeathSound, parent)
+    end
+end
+
+function modifier_tusik_shard_ai:OnTakeDamage(params)
+    local parent = self:GetParent()
+    if params.attacker == parent and params.inflictor then
+        if self.papa then
+            local mod = self.papa:FindModifierByName('modifier_tusik_papa_spellAmp')
+            if mod then
+                mod:IncrementStackCount()
+            end
+        end
     end
 end
 
@@ -43,6 +56,27 @@ function modifier_tusik_shard_ai:OnIntervalThink()
     if not beaconData then return end
     local beaconState = beaconData.state
     local target = beaconData.target
+
+    if not self.papa then
+        local allies = FindUnitsInRadius(
+            unit:GetTeam(),
+            beaconData.pos,
+            nil,
+            beaconData.rangeRetreat + 100,
+            DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+            DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
+            DOTA_UNIT_TARGET_FLAG_NONE,
+            FIND_ANY_ORDER,
+            false
+        )
+
+        for _, ally in ipairs(allies) do
+            if ally and ally:GetUnitName() == 'npc_ocean_tusik_papa' then
+                self.papa = ally
+            end
+        end
+    end
+
 
     if DefaultAiTick(unit) then
         AdjustTickRate(unit)

@@ -26,7 +26,7 @@ LinkLuaModifier("modifier_gorilla_capture", "modifiers/abilities/modifier_gorill
 
 -- jungle
 LinkLuaModifier("modifier_cust_rosh", "modifiers/jungle/modifier_cust_rosh", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_tusik_papa_increase", "modifiers/jungle/modifier_tusik_papa_increase", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tusik_papa_hide", "modifiers/ocean/modifier_tusik_papa_hide", LUA_MODIFIER_MOTION_NONE)
 
 
 -- ai

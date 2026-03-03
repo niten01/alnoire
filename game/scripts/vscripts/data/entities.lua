@@ -482,9 +482,10 @@ return {
 
         spawner_tusik_papa     = {
             npc = "npc_ocean_tusik_papa",
+            modifiers = { "modifier_tusik_papa_hide" },
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tusiki",
-            ai_modifier = "modifier_default_creep_ai"
+            ai_modifier = "modifier_default_creep_ai",
         },
 
 
@@ -684,10 +685,6 @@ return {
             rangeRetreat = 1200,
             rangeAggro = 900,
             stayActivatedOnPlayerDeath = true,
-        },
-
-        pack_mk = {
-            activateAfterUnitsSpawned = true,
         },
 
         pack_concert_crowd = {

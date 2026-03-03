@@ -6,8 +6,16 @@ function modifier_mk_ai:IsPurgable() return false end
 
 function modifier_mk_ai:DeclareFunctions()
     return {
-        MODIFIER_EVENT_ON_ATTACK_LANDED
+        MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_EVENT_ON_ABILITY_FULLY_CAST
     }
+end
+
+function modifier_mk_ai:OnAbilityFullyCast(params)
+    local parent = self:GetParent()
+    if params.unit == parent then
+        parent.castBonk = false
+    end
 end
 
 function modifier_mk_ai:OnAttackLanded(event)
@@ -25,10 +33,6 @@ function modifier_mk_ai:OnAttackLanded(event)
     end
 end
 
-function modifier_mk_ai:SetThinking(bval)
-    SetAIModifierActive(self, bval)
-end
-
 function modifier_mk_ai:OnIntervalThink()
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
@@ -41,13 +45,18 @@ function modifier_mk_ai:OnIntervalThink()
         -- деремся сука
         if beaconState == 'aggro' and target and target:IsAlive() then
             if unit.castBonk then
-                if CastAllAbilities(unit, target) then
-                    unit.castBonk = false
-                    return BATTLE_THINK_INTERVAL
-                end
+                local ability = unit:GetAbilityByIndex(0)
+                ExecuteOrderFromTable({
+                    UnitIndex = unit:entindex(),
+                    OrderType = DOTA_UNIT_ORDER_CAST_POSITION,
+                    Position = target:GetAbsOrigin(),
+                    AbilityIndex = ability:entindex(),
+                    Queue = false,
+                })
+                return BATTLE_THINK_INTERVAL
             end
 
-            if not unit:GetAggroTarget() then
+            if not unit:GetAggroTarget() and not unit.castBonk then
                 ExecuteOrderFromTable({
                     UnitIndex = unit:entindex(),
                     OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,

@@ -14,15 +14,6 @@ end
 function modifier_tusik_uppercut_ai:OnAbilityFullyCast(params)
     local parent = self:GetParent()
     if params.unit == parent then
-        if self.punch_target then
-            if not self.punch_target:HasModifier('modifier_tusik_papa_increase') then
-                self.punch_target:AddNewModifier(parent, nil, 'modifier_tusik_papa_increase', { duration = 20.0 })
-            else
-                local mod = self.punch_target:FindModifierByName("modifier_tusik_papa_increase")
-                mod:IncrementStackCount()
-            end
-            self.punch_target = nil
-        end
         if self.papa then
             local mod = self.papa:FindModifierByName('modifier_tusik_papa_spellAmp')
             if mod then
@@ -33,9 +24,10 @@ function modifier_tusik_uppercut_ai:OnAbilityFullyCast(params)
 end
 
 function modifier_tusik_uppercut_ai:OnDeath(params)
-    if not self.customDeathSound then return end
     local parent = self:GetParent()
+
     if params.unit == parent then
+        if not self.customDeathSound then return end
         EmitSoundOn(self.customDeathSound, parent)
     end
 end
@@ -61,28 +53,34 @@ function modifier_tusik_uppercut_ai:OnIntervalThink()
     local beaconState = beaconData.state
     local target = beaconData.target
 
+    if not self.papa then
+        local allies = FindUnitsInRadius(
+            unit:GetTeam(),
+            beaconData.pos,
+            nil,
+            beaconData.rangeRetreat + 100,
+            DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+            DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
+            DOTA_UNIT_TARGET_FLAG_NONE,
+            FIND_ANY_ORDER,
+            false
+        )
+
+        for _, ally in ipairs(allies) do
+            if ally and ally:GetUnitName() == 'npc_ocean_tusik_papa' then
+                self.papa = ally
+                local ability = self.papa:GetAbilityByIndex(0)
+                if ability then
+                    ability:SetLevel(2)
+                end
+            end
+        end
+    end
+
     if DefaultAiTick(unit) then
         AdjustTickRate(unit)
         self:StartIntervalThink(beaconData.currentCreepInterval)
         return
-    end
-
-    local allies = FindUnitsInRadius(
-        unit:GetTeam(),
-        beaconData.pos,
-        nil,
-        beaconData.rangeRetreat + 100,
-        DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-        DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
-        DOTA_UNIT_TARGET_FLAG_NONE,
-        FIND_ANY_ORDER,
-        false
-    )
-
-    for _, ally in ipairs(allies) do
-        if ally and ally:GetUnitName() == 'npc_ocean_tusik_papa' then
-            self.papa = ally
-        end
     end
     -- деремся сука
     if beaconState == 'aggro' and target and target:IsAlive() then
@@ -95,7 +93,6 @@ function modifier_tusik_uppercut_ai:OnIntervalThink()
 
         if timeInAggro >= 2.5 and (currentTime - unit.lastCastTime) >= 2 then
             if CastAllAbilities(unit, target) then
-                self.punch_target = target
                 unit.lastCastTime = currentTime
                 return
             end
