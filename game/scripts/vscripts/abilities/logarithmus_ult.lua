@@ -4,6 +4,8 @@ LinkLuaModifier("modifier_logarithmus_ult", "abilities/logarithmus_ult", LUA_MOD
 function logarithmus_ult:Spawn()
     self.altAbilityMap = {
         logarithmus_anchor = "logarithmus_alt_anchor",
+        logarithmus_step = "logarithmus_alt_step",
+        logarithmus_throw = "logarithmus_alt_throw",
     }
     self.lastAbilityName = nil
 
@@ -20,11 +22,7 @@ function logarithmus_ult:OnSpellStart()
     if not self.lastAbilityName then return end
     local caster = self:GetCaster()
     local altAbilityName = self.altAbilityMap[self.lastAbilityName]
-    DebugPrint(altAbilityName)
-    if not altAbilityName then
-        DebugPrint("No alt ability for: " .. self.lastAbilityName)
-        return
-    end
+    assert(altAbilityName)
     caster:SwapAbilities("logarithmus_ult", altAbilityName, false, true)
 end
 
@@ -33,7 +31,9 @@ end
 modifier_logarithmus_ult = class {}
 
 function modifier_logarithmus_ult:IsHidden() return true end
+
 function modifier_logarithmus_ult:IsPurgable() return false end
+
 function modifier_logarithmus_ult:IsPermanent() return true end
 
 function modifier_logarithmus_ult:DeclareFunctions()
@@ -44,12 +44,13 @@ end
 
 function modifier_logarithmus_ult:OnAbilityFullyCast(params)
     local abilityName = params.ability:GetAbilityName()
-    DebugPrint(abilityName)
     if string.find(abilityName, "_alt_") then
         if IsServer() then
             self:GetCaster():SwapAbilities("logarithmus_ult", abilityName, true, false)
         end
-    elseif abilityName ~= "logarithmus_ult" then
-        self:GetAbility().lastAbilityName = abilityName
+    else
+        local ability = self:GetAbility()
+        if not ability.altAbilityMap[abilityName] then return end
+        ability.lastAbilityName = abilityName
     end
 end

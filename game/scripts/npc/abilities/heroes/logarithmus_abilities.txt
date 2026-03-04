@@ -56,28 +56,29 @@
 		"ScriptFile" 				"abilities/logarithmus_alt_step.lua"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 
 		"AbilityTextureName"		"logarithmus_alt_step"
         "AbilityCastRange"		    "0"
-        "AbilityCastPoint"		    "0.2"
-        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+        "AbilityCastPoint"		    "0.3"
+        "AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_2"
         "AbilityCooldown"           "5.0" 
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"             "100 200 300 400"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
 		{
-            "dash_range"           "300"
-            "spin_radius"          "200"
+            "dash_range"           "500"
+            "spin_radius"          "300"
+			"dash_time"		       "0.4"
+			"dps" 				   "100 200 300 400"
 		}
 
         "precache"
         {
-            "particle"		"particles/logarithmus_step.vpcf"
+            "particle"		"particles/logarithmus_spin.vpcf"
             "particle"		"particles/logarithmus_step_simplified.vpcf"
             "particle"      "particles/logarithmus_step_impale.vpcf"
         }
@@ -107,6 +108,38 @@
             "animation_duration"    "1.35"
             "end_inactive_animation_point"  "0.9"
             "second_slash_animation_point"  "0.8"   
+		}
+
+        "precache"
+        {
+            "particle"		"particles/logarithmus_step.vpcf"
+            "particle"      "particles/logarithmus_step_impale.vpcf"
+        }
+	}
+	"logarithmus_alt_throw"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_alt_throw.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+
+		"AbilityTextureName"		"logarithmus_alt_throw"
+        "AbilityCastRange"		    "400"
+        "AbilityCastPoint"		    "0.35"
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+        "AbilityCooldown"           "5.0" 
+		"MaxLevel"					"3"
+		"RequiredLevel"				"1"
+
+        "AbilityDamage"                 "100 200 300 400"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		"AbilityValues"
+		{
+            "width"                 "50"
+            "animation_duration"    "1.35"
+            "tp_animation_point"    "0.8"
 		}
 
         "precache"
@@ -150,7 +183,7 @@
 		"ScriptFile" 				"abilities/logarithmus_anchor_return.lua"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_DONT_RESUME_MOVEMENT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		"AbilityTextureName"		"logarithmus_anchor_return"
         "AbilityCastPoint"		    "0.2"
@@ -178,7 +211,7 @@
 		"ScriptFile" 				"abilities/logarithmus_alt_anchor.lua"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 
 		"AbilityTextureName"		"logarithmus_alt_anchor"
         "AbilityCastPoint"		    "0.0"
@@ -200,6 +233,7 @@
 		"precache"
 		{
 			"particle"		"particles/logarithmus_alt_anchor.vpcf"
+			"particle"		"particles/logarithmus_explosion.vpcf"
 		}
 	}
 	"logarithmus_projectile"
@@ -260,9 +294,9 @@
 		"ScriptFile" 				"abilities/logarithmus_clone.lua"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_DONT_RESUME_MOVEMENT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 
-		"AbilityTextureName"		"logarithmus_anchor_return"
+		"AbilityTextureName"		"logarithmus_clone"
         "AbilityCastPoint"		    "0.2"
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
         "AbilityCooldown"           "0.0" 
@@ -275,14 +309,21 @@
 		"AbilityValues"
 		{
       		"width"                 "50"
-          "distance"              "500"
-          "fly_time"              "0.1"
-          "swing_delay"           "1"
+			"distance"              "500"
+			"fly_time"              "0.1"
+			"swing_delay"           "1"
+
+			// this shit is hardcoded asf, change with care
+			"swing_radius"	      "300"
+			"swing_angle_width"	  "180"
+			"swing_animation_point_norm" "0.45"
 		}
 
 		"precache"
 		{
-			"particle"		"particles/logarithmus_step.vpcf"
+			"particle"		"particles/logarithmus_remnant.vpcf"
+			"particle"		"particles/logarithmus_step_simplified.vpcf"
+			"particle"		"particles/logarithmus_clone_swing.vpcf"
 		}
 	}
 }

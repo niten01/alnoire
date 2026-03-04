@@ -14,7 +14,7 @@ end
 
 modifier_logarithmus_concentration = class {}
 
-function modifier_logarithmus_concentration:IsHidden() return self:GetStackCount() > 0 end
+function modifier_logarithmus_concentration:IsHidden() return false end
 
 function modifier_logarithmus_concentration:IsPurgable() return false end
 

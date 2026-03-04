@@ -221,6 +221,37 @@ function FindEnemiesForSanyaInLine(p1, p2, width)
   )
 end
 
+-- find enemies fo curTeam in segment starting at center, with direction of vector, radius is #vector and total width of cone in degrees is angle
+function FindEnemiesInSegment(curTeam, center, vector, angle)
+  local units = FindUnitsInRadius(
+    curTeam,
+    center,
+    nil,
+    #vector,
+    DOTA_UNIT_TARGET_TEAM_ENEMY,
+    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+    DOTA_UNIT_TARGET_FLAG_NONE,
+    FIND_ANY_ORDER,
+    false
+  )
+
+  local unitsInSector = {}
+
+  local cosHalfAngle = math.cos(math.rad(angle / 2))
+
+  local dirNormalized = vector:Normalized()
+  for _, unit in pairs(units) do
+    local vToUnit = (unit:GetOrigin() - center):Normalized()
+    local dotProduct = dirNormalized:Dot(vToUnit)
+
+    if dotProduct >= cosHalfAngle then
+      table.insert(unitsInSector, unit)
+    end
+  end
+
+  return unitsInSector
+end
+
 function FindEnemiesForAIInRadius(center, radius)
   return FindUnitsInRadius(
     DOTA_TEAM_BADGUYS,

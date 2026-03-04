@@ -1,21 +1,13 @@
-logarithmus_throw = class {}
-LinkLuaModifier("modifier_logarithmus_throw_inactive", "abilities/logarithmus_throw", LUA_MODIFIER_MOTION_NONE)
+logarithmus_alt_throw = class {}
 
-function logarithmus_throw:Spawn()
+function logarithmus_alt_throw:Spawn()
     if not IsServer() then
         CustomIndicator:RegisterAbility(self)
     end
+    self:SetHidden(true)
 end
 
-function logarithmus_throw:OnUpgrade()
-    if not IsServer() then return end
-    local caster = self:GetCaster()
-    local alt = caster:FindAbilityByName("logarithmus_alt_throw")
-    assert(alt)
-    alt:SetLevel(self:GetLevel())
-end
-
-function logarithmus_throw:CreateCustomIndicator(position, unit, behavior)
+function logarithmus_alt_throw:CreateCustomIndicator(position, unit, behavior)
     if behavior ~= DOTA_CLICK_BEHAVIOR_CAST then return end
     local caster = self:GetCaster()
 
@@ -28,7 +20,7 @@ function logarithmus_throw:CreateCustomIndicator(position, unit, behavior)
     self:UpdateCustomIndicator(position, unit, behavior)
 end
 
-function logarithmus_throw:UpdateCustomIndicator(position, unit, behavior)
+function logarithmus_alt_throw:UpdateCustomIndicator(position, unit, behavior)
     if behavior ~= DOTA_CLICK_BEHAVIOR_CAST then return end
 
     local casterPos = self:GetCaster():GetAbsOrigin()
@@ -40,7 +32,7 @@ function logarithmus_throw:UpdateCustomIndicator(position, unit, behavior)
     ParticleManager:SetParticleControl(self.indicator, 2, endPos)
 end
 
-function logarithmus_throw:DestroyCustomIndicator(position, unit, behavior)
+function logarithmus_alt_throw:DestroyCustomIndicator(position, unit, behavior)
     if behavior ~= DOTA_CLICK_BEHAVIOR_CAST then return end
 
     ParticleManager:DestroyParticle(self.indicator, false)
@@ -48,7 +40,7 @@ function logarithmus_throw:DestroyCustomIndicator(position, unit, behavior)
     self.indicator = nil
 end
 
-function logarithmus_throw:Slice(from, to)
+function logarithmus_alt_throw:Slice(from, to)
     local pfx = ParticleManager:CreateParticle("particles/logarithmus_step.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, from)
     ParticleManager:SetParticleControl(pfx, 1, to)
@@ -67,44 +59,29 @@ function logarithmus_throw:Slice(from, to)
     end
 end
 
-function logarithmus_throw:OnSpellStart()
+function logarithmus_alt_throw:OnSpellStart()
     local caster = self:GetCaster()
-    local inactiveDuration = self:GetSpecialValueFor("end_inactive_animation_point") - self:GetCastPoint()
+    local inactiveDuration = self:GetSpecialValueFor("tp_animation_point") - self:GetCastPoint()
 
     caster:AddNewModifier(caster, self, "modifier_logarithmus_throw_inactive", { duration = inactiveDuration })
 
     PlayLogarithmusBladeEffect(caster, 1.5)
 
     local casterPos = caster:GetAbsOrigin()
-    -- local bladeIdx = caster:ScriptLookupAttachment("attach_blade_start")
-    -- local casterPos = caster:GetAttachmentOrigin(bladeIdx)
-
     local targetPos = self:GetCursorPosition()
     targetPos.z = casterPos.z
     local dir = (targetPos - casterPos):Normalized()
     local endPos = casterPos + dir * self:GetCastRange(casterPos, nil)
-    local secondSlashDelay = self:GetSpecialValueFor("second_slash_animation_point") - self:GetCastPoint()
-
     self:Slice(casterPos, endPos)
 
-    Timers:CreateTimer(secondSlashDelay, function()
-        self:Slice(endPos, casterPos)
+    endPos = GetSafeBlinkDestination(casterPos, endPos)
+    endPos = GetClearSpaceForUnit(caster, endPos)
+
+    Timers:CreateTimer(inactiveDuration, function()
+        if not caster:IsAlive() then return end
+        self:Slice(casterPos, endPos)
+        caster:SetAbsOrigin(endPos)
+        caster:SetForwardVector(dir)
+        caster:FaceTowards(endPos + dir)
     end)
-end
-
-------------------------------------------------------------
-
-modifier_logarithmus_throw_inactive = class {}
-
-function modifier_logarithmus_throw_inactive:IsHidden() return true end
-
-function modifier_logarithmus_throw_inactive:IsPurgable() return false end
-
-function modifier_logarithmus_throw_inactive:CheckState()
-    return {
-        [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
-        [MODIFIER_STATE_IGNORING_STOP_ORDERS] = true,
-        [MODIFIER_STATE_SILENCED] = true,
-        [MODIFIER_STATE_DISARMED] = true,
-    }
 end

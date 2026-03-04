@@ -1,6 +1,11 @@
 logarithmus_alt_step = class {}
 LinkLuaModifier("modifier_logarithmus_alt_step", "abilities/logarithmus_alt_step", LUA_MODIFIER_MOTION_NONE)
 
+function logarithmus_alt_step:Spawn()
+    if not IsServer() then return end
+    self:SetHidden(true)
+end
+
 function logarithmus_alt_step:GetCastRange(vLocation, hTarget)
     if IsClient() then
         return self:GetSpecialValueFor("dash_range")
@@ -8,52 +13,86 @@ function logarithmus_alt_step:GetCastRange(vLocation, hTarget)
     return 0
 end
 
+function logarithmus_alt_step:OnAbilityPhaseStart()
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    local casterPos = caster:GetAbsOrigin()
+
+     self.endPos = self:GetCursorPosition()
+    self.endPos.z = casterPos.z
+    self.endPos = GetSafeBlinkDestination(casterPos, self.endPos, self:GetSpecialValueFor("dash_range"))
+
+    -- local pfx = ParticleManager:CreateParticle("particles/logarithmus_step_simplified.vpcf", PATTACH_ABSORIGIN, caster)
+    -- ParticleManager:SetParticleControl(pfx, 0, casterPos)
+    -- ParticleManager:SetParticleControl(pfx, 1, self.endPos)
+    -- ParticleManager:ReleaseParticleIndex(pfx)
+end
 
 function logarithmus_alt_step:OnSpellStart()
     if not IsServer() then return end
     local caster = self:GetCaster()
     local casterPos = caster:GetAbsOrigin()
 
-    local blinkPos = self:GetCursorPosition()
-    blinkPos.z = casterPos.z
-    blinkPos = GetSafeBlinkDestination(casterPos, blinkPos, self:GetSpecialValueFor("dash_range"))
+    assert(self.endPos)
+    local dir = self.endPos - casterPos
+    local duration = self:GetSpecialValueFor("dash_time")
+    local speed = dir:Length() / duration
 
-    -- local pfx = ParticleManager:CreateParticle("particles/logarithmus_step_simplified.vpcf", PATTACH_ABSORIGIN, caster)
-    -- ParticleManager:SetParticleControl(pfx, 0, casterPos)
-    -- ParticleManager:SetParticleControl(pfx, 1, blinkPos)
-    -- ParticleManager:ReleaseParticleIndex(pfx)
+    caster:AddNewModifier(caster, self, "modifier_move", {
+        directionX = dir.x,
+        directionY = dir.y,
+        speed = speed,
+        duration = duration,
+        activity = ACT_DOTA_CHANNEL_ABILITY_2
+    })
 
-    local hitPos = blinkPos + vDirection * self:GetVectorTargetRange()
-    hitPos.z = casterPos.z
+    caster:AddNewModifier(caster, self, "modifier_logarithmus_alt_step", {
+        dps = self:GetSpecialValueFor("dps"),
+        radius = self:GetSpecialValueFor("spin_radius"),
+        duration = duration,
+    })
 
-    caster:SetAbsOrigin(blinkPos)
-    FindClearSpaceForUnit(caster, blinkPos, true)
-    caster:SetForwardVector(vDirection)
-    caster:FaceTowards(hitPos)
-
-    pfx = ParticleManager:CreateParticle("particles/logarithmus_step.vpcf", PATTACH_WORLDORIGIN, nil)
-    ParticleManager:SetParticleControl(pfx, 0, blinkPos)
-    ParticleManager:SetParticleControl(pfx, 1, hitPos)
-    ParticleManager:ReleaseParticleIndex(pfx)
-
-    PlayLogarithmusBladeEffect(caster, 1.0)
-
-    local enemies = FindEnemiesForSanyaInLine(blinkPos, hitPos, self:GetSpecialValueFor("stab_width"))
-    for _, ent in ipairs(enemies) do
-        PlayLogarithmusImpaleEffect(ent, blinkPos)
-        ApplyDamage({
-            victim = ent,
-            attacker = caster,
-            damage = self:GetAbilityDamage(),
-            damage_type = self:GetAbilityDamageType(),
-            ability = self,
-        })
-    end
+    PlayLogarithmusBladeEffect(caster, duration + 0.8)
 end
-
 
 ------------------------------------------------------------------
 
 modifier_logarithmus_alt_step = class {}
 
 
+function modifier_logarithmus_alt_step:OnCreated(kv)
+    if not IsServer() then return end
+
+    local interval = 0.1
+    self.damagePerInterval = kv.dps * interval
+    self.radius = kv.radius
+
+    self.pfx = ParticleManager:CreateParticle("particles/logarithmus_spin.vpcf", PATTACH_ABSORIGIN_FOLLOW,
+    self:GetParent())
+    ParticleManager:SetParticleControl(self.pfx, 5, Vector(self.radius, 1, 1))
+
+    self:StartIntervalThink(interval)
+end
+
+function modifier_logarithmus_alt_step:OnDestroy()
+    if not IsServer() then return end
+    ParticleManager:DestroyParticle(self.pfx, false)
+    ParticleManager:ReleaseParticleIndex(self.pfx)
+end
+
+function modifier_logarithmus_alt_step:OnIntervalThink()
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    local parentPos = parent:GetAbsOrigin()
+    local enemies = FindEnemiesForSanyaInRadius(parentPos, self.radius)
+    for _, ent in ipairs(enemies) do
+        PlayLogarithmusImpaleEffect(ent, parentPos)
+        ApplyDamage({
+            victim = ent,
+            attacker = parent,
+            damage = self.damagePerInterval,
+            damage_type = self:GetAbility():GetAbilityDamageType(),
+            ability = self,
+        })
+    end
+end

@@ -12,6 +12,10 @@ function logarithmus_anchor_return:OnUpgrade()
   assert(anchorAbility)
   if anchorAbility:GetLevel() ~= self:GetLevel() then
     anchorAbility:SetLevel(self:GetLevel())
+
+    local alt = caster:FindAbilityByName("logarithmus_alt_anchor")
+    assert(alt)
+    alt:SetLevel(self:GetLevel())
   end
 end
 
@@ -24,13 +28,14 @@ function logarithmus_anchor_return:OnSpellStart()
   local anchorPos = anchorMod.anchorLocation
   anchorPos = GetSafeBlinkDestination(casterPos, anchorPos, #(anchorPos - casterPos))
 
-  local pfx = ParticleManager:CreateParticle("particles/logarithmus_step_simplified.vpcf", PATTACH_ABSORIGIN, caster)
+  local pfx = ParticleManager:CreateParticle("particles/logarithmus_step.vpcf", PATTACH_ABSORIGIN, caster)
   ParticleManager:SetParticleControl(pfx, 0, casterPos)
   ParticleManager:SetParticleControl(pfx, 1, anchorPos)
   ParticleManager:ReleaseParticleIndex(pfx)
 
   local enemies = FindEnemiesForSanyaInLine(casterPos, anchorPos, self:GetSpecialValueFor("width"))
   for _, ent in pairs(enemies) do
+    PlayLogarithmusImpaleEffect(ent, casterPos)
     ApplyDamage({
       victim = ent,
       attacker = caster,

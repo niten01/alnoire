@@ -56,7 +56,7 @@ function CheckAbilityVectorTargeting(panel){
 			if(GameUI.GetClickBehaviors() == 9 ){
 				OnVectorTargetingStart(netTable.startWidth, netTable.endWidth, netTable.castLength, netTable.dual, netTable.ignoreArrow);
 			}
-		} else {
+		} else if (abilityIndex == currentlyActiveVectorTargetAbility) {
 			OnVectorTargetingEnd();
 		}
 	}

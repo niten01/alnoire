@@ -2,13 +2,17 @@ logarithmus_anchor = class {}
 LinkLuaModifier("modifier_logarithmus_anchor", "abilities/logarithmus_anchor.lua", LUA_MODIFIER_MOTION_NONE)
 
 function logarithmus_anchor:OnUpgrade()
-  if not IsServer() then return end
-  local caster = self:GetCaster()
-  local returnAbility = caster:FindAbilityByName("logarithmus_anchor_return")
-  assert(returnAbility)
-  if returnAbility:GetLevel() ~= self:GetLevel() then
-    returnAbility:SetLevel(self:GetLevel())
-  end
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    local returnAbility = caster:FindAbilityByName("logarithmus_anchor_return")
+    assert(returnAbility)
+    if returnAbility:GetLevel() ~= self:GetLevel() then
+        returnAbility:SetLevel(self:GetLevel())
+
+        local alt = caster:FindAbilityByName("logarithmus_alt_anchor")
+        assert(alt)
+        alt:SetLevel(self:GetLevel())
+    end
 end
 
 function logarithmus_anchor:OnSpellStart()

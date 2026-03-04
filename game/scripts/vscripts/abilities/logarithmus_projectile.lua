@@ -80,6 +80,8 @@ function logarithmus_projectile:OnProjectileHit(target, direction)
   FindClearSpaceForUnit(caster, endPos, true)
   caster:SetForwardVector(direction)
   caster:FaceTowards(targetPos)
+
+  PlayLogarithmusImpaleEffect(target, endPos)
   ApplyDamage({
     victim = target,
     attacker = caster,

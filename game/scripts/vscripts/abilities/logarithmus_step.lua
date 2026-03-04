@@ -5,6 +5,14 @@ function logarithmus_step:Spawn()
     self.sequentialUses = 0
 end
 
+function logarithmus_step:OnUpgrade()
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    local alt = caster:FindAbilityByName("logarithmus_alt_step")
+    assert(alt)
+    alt:SetLevel(self:GetLevel())
+end
+
 function logarithmus_step:GetCastRange(vLocation, hTarget)
     if IsClient() then
         return self:GetSpecialValueFor("blink_range")

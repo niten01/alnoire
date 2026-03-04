@@ -11,21 +11,22 @@ function logarithmus_alt_anchor:OnSpellStart()
     local casterPos = caster:GetAbsOrigin()
     local fwd = caster:GetForwardVector()
     local offset = self:GetSpecialValueFor("forward_offset")
-    local point = casterPos + fwd * offset
-    local safePoint = GetSafeBlinkDestination(casterPos, point, offset)
-    if offset - #(safePoint - casterPos) < 10 then
-        safePoint = casterPos - fwd * offset
-    end
-    safePoint = GetClearSpaceForUnit(caster, point)
+    local altAnchorPos = casterPos + fwd * offset
 
     local pfx = ParticleManager:CreateParticle("particles/logarithmus_alt_anchor.vpcf", PATTACH_WORLDORIGIN, nil)
-    ParticleManager:SetParticleControl(pfx, 0, safePoint)
+    ParticleManager:SetParticleControl(pfx, 0, altAnchorPos)
 
     Timers:CreateTimer(self:GetSpecialValueFor("delay"), function()
         ParticleManager:DestroyParticle(pfx, false)
         ParticleManager:ReleaseParticleIndex(pfx)
-        local enemies = FindEnemiesForSanyaInRadius(safePoint, self:GetSpecialValueFor("radius"))
+        
+        local pfx = ParticleManager:CreateParticle("particles/logarithmus_explosion.vpcf", PATTACH_WORLDORIGIN, nil)
+        ParticleManager:SetParticleControl(pfx, 0, altAnchorPos)
+        ParticleManager:ReleaseParticleIndex(pfx)
+
+        local enemies = FindEnemiesForSanyaInRadius(altAnchorPos, self:GetSpecialValueFor("radius"))
         for _, ent in pairs(enemies) do
+            PlayLogarithmusImpaleEffect(ent, altAnchorPos)
             ApplyDamage({
                 victim = ent,
                 attacker = caster,
