@@ -20,10 +20,6 @@ function logarithmus_step:GetVectorTargetRange()
     return self:GetSpecialValueFor("vector_range")
 end
 
-function logarithmus_step:GetBehavior()
-    return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING
-end
-
 function logarithmus_step:OnVectorCastStart(vStartLocation, vDirection)
     if not IsServer() then return end
     local caster = self:GetCaster()

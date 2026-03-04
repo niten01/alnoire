@@ -23,7 +23,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
 
-		"AbilityTextureName"		"logarithmus_concentration"
+		"AbilityTextureName"		"logarithmus_step"
         "AbilityCastRange"		    "0"
         "AbilityCastPoint"		    "0.2"
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -41,6 +41,38 @@
             "stab_width"            "50"
             "max_sequential_uses"   "3 3 4 5"
             "recast_decay"     "1"
+		}
+
+        "precache"
+        {
+            "particle"		"particles/logarithmus_step.vpcf"
+            "particle"		"particles/logarithmus_step_simplified.vpcf"
+            "particle"      "particles/logarithmus_step_impale.vpcf"
+        }
+	}
+	"logarithmus_alt_step"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_alt_step.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+
+		"AbilityTextureName"		"logarithmus_alt_step"
+        "AbilityCastRange"		    "0"
+        "AbilityCastPoint"		    "0.2"
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+        "AbilityCooldown"           "5.0" 
+		"MaxLevel"					"3"
+		"RequiredLevel"				"1"
+
+        "AbilityDamage"             "100 200 300 400"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		"AbilityValues"
+		{
+            "dash_range"           "300"
+            "spin_radius"          "200"
 		}
 
         "precache"
@@ -220,6 +252,37 @@
 
 		"precache"
 		{
+		}
+	}
+	"logarithmus_clone"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_clone.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_DONT_RESUME_MOVEMENT"
+
+		"AbilityTextureName"		"logarithmus_anchor_return"
+        "AbilityCastPoint"		    "0.2"
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+        "AbilityCooldown"           "0.0" 
+		"MaxLevel"					"3"
+		"RequiredLevel"				"1"
+
+        "AbilityDamage"                 "100 200 300 400"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		"AbilityValues"
+		{
+      		"width"                 "50"
+          "distance"              "500"
+          "fly_time"              "0.1"
+          "swing_delay"           "1"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/logarithmus_step.vpcf"
 		}
 	}
 }

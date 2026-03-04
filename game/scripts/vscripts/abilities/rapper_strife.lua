@@ -103,6 +103,7 @@ end
 function modifier_rapper_strife:OnTakeDamage(params)
     if not IsServer() then return end
     if params.unit ~= self:GetParent() then return end
+    if params.damage == 0 then return end
     self:Destroy()
 end
 
