@@ -225,7 +225,7 @@
 			m_ChildRef = resource:"particles/logarithmus_remnant_light.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/logarithmus_remnant_image.vpcf"
+			m_ChildRef = resource:"particles/logarithmus_alt_remnant_image.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_ember_spirit/ember_spirit_fire_remnant_glow.vpcf"
