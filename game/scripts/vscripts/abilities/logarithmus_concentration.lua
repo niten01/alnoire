@@ -25,7 +25,8 @@ function modifier_logarithmus_concentration:DeclareFunctions()
     }
 end
 
-function modifier_logarithmus_concentration:OnAbilityFullyCast()
+function modifier_logarithmus_concentration:OnAbilityFullyCast(params)
+    if params.unit ~= self:GetParent() then return end
     self:IncrementStackCount()
 end
 

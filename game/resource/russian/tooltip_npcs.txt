@@ -25,3 +25,5 @@
 "npc_gorilla"       "Горилла"
 "npc_perekup"       "Перекуп"
 "npc_training_dummy" "Тренировочный манекен"
+"npc_goden" "Годень"
+"npc_goden_summon" "Солдат Годеня"

@@ -383,7 +383,7 @@
 
 		"precache"
 		{
-			"particle"		"particles/logarithmus_remnant.vpcf"
+			"particle"		"particles/logarithmus_alt_remnant.vpcf"
 			"particle"		"particles/logarithmus_step_simplified.vpcf"
 		}
 	}

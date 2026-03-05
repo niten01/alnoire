@@ -117,6 +117,26 @@ function CastRandomAbility(unit, target, abilityNames)
   end)
 end
 
+function CastRandomAvailableAbility(unit, target, abilityNames)
+  local availNames = {}
+  for _, abilityName in pairs(abilityNames) do
+    local ability = unit:FindAbilityByName(abilityName)
+    assert(ability)
+    if CanCastAbility(unit, target, ability) then
+      table.insert(availNames, abilityName)
+    end
+  end
+
+  local chosenName = availNames[RandomInt(1, #availNames)]
+  return CastIterWrapper(unit, target, function(ability)
+    if ability:GetName() == chosenName then
+      GiveCastOrder(unit, target, ability)
+      return true
+    end
+    return false
+  end)
+end
+
 function CastAllAbilities(unit, target)
   return CastIterWrapper(unit, target, function(ability)
     GiveCastOrder(unit, target, ability)

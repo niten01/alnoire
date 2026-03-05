@@ -6,12 +6,12 @@
 		"ScriptFile" 				"abilities/rapper_flow.lua"
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
 		"AbilityTextureName"		"rapper_flow"
-		"MaxLevel"					"4"
+		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
 		"AbilityValues"
 		{
-			"max_stacks"				"100 100 200 200"
+			"max_stacks"				"100 100 200"
 			"damage_pct_per_stack"		"0.5"
 			"stacks_per_attack"			"1 1 3"
 		}

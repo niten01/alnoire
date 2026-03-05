@@ -27,7 +27,7 @@ function logarithmus_alt_clone:OnSpellStart()
         if i == realPointIdx then goto continue end
 
         local dir = (targetPos - point):Normalized()
-        local clonePfx = ParticleManager:CreateParticle("particles/logarithmus_remnant.vpcf", PATTACH_WORLDORIGIN, nil)
+        local clonePfx = ParticleManager:CreateParticle("particles/logarithmus_alt_remnant.vpcf", PATTACH_WORLDORIGIN, nil)
         ParticleManager:SetParticleControl(clonePfx, 0, point)
         ParticleManager:SetParticleControl(clonePfx, 1, point - dir * 10)
         ParticleManager:SetParticleControl(clonePfx, 2, Vector(17, 0, 0)) -- attack_clone_chop

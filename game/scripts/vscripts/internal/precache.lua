@@ -102,6 +102,8 @@ return {
         "npc_scientist",
         "npc_red",
         "npc_gorilla",
+        "npc_goden",
+        "npc_goden_summon",
         "npc_cat_barrel",
         "npc_island_guard",
         "npc_island_fiend",

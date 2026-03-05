@@ -298,6 +298,47 @@ return {
             packID = "pack_island_guard",
             ai_modifier = "modifier_island_guard_ai",
         },
+        spawner_goden                 = {
+            npc = "npc_goden",
+            packID = "pack_goden",
+            ai_modifier = "modifier_goden_ai",
+            team = DOTA_TEAM_BADGUYS,
+        },
+        spawner_goden_summon_1          = {
+            npc = "npc_goden_summon",
+            packID = "pack_goden",
+            ai_modifier = "modifier_default_creep_ai",
+            team = DOTA_TEAM_BADGUYS,
+            deferred = true,
+        },
+        spawner_goden_summon_2          = {
+            npc = "npc_goden_summon",
+            packID = "pack_goden",
+            ai_modifier = "modifier_default_creep_ai",
+            team = DOTA_TEAM_BADGUYS,
+            deferred = true,
+        },
+        spawner_goden_summon_3          = {
+            npc = "npc_goden_summon",
+            packID = "pack_goden",
+            ai_modifier = "modifier_default_creep_ai",
+            team = DOTA_TEAM_BADGUYS,
+            deferred = true,
+        },
+        spawner_goden_summon_4          = {
+            npc = "npc_goden_summon",
+            packID = "pack_goden",
+            ai_modifier = "modifier_default_creep_ai",
+            team = DOTA_TEAM_BADGUYS,
+            deferred = true,
+        },
+        spawner_goden_summon_5          = {
+            npc = "npc_goden_summon",
+            packID = "pack_goden",
+            ai_modifier = "modifier_default_creep_ai",
+            team = DOTA_TEAM_BADGUYS,
+            deferred = true,
+        },
 
         -- jungle
         spawner_lizards_venomancer    = {
@@ -709,6 +750,10 @@ return {
         },
         pack_island_duo = {
             activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+        },
+        pack_goden = {
+            activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
         },
         pack_ogre_bruiser = {

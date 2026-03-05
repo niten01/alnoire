@@ -7,6 +7,7 @@
 #base "abilities/bosses/genius_abilities.txt"
 #base "abilities/bosses/gorilla_abilities.txt"
 #base "abilities/bosses/perekup_abilities.txt"
+#base "abilities/bosses/goden_abilities.txt"
 #base "abilities/jungle/techies_abilities.txt"
 #base "abilities/jungle/gnoll_abilities.txt"
 #base "abilities/jungle/ancdragon_abilities.txt"
