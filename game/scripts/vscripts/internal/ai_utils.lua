@@ -458,7 +458,7 @@ function ShowGenericArcWarning(arcInfo, width, duration)
   end)
 end
 
--- startAngle is optional (default 0)
+-- startAngle (IN RADIANS) is optional (default 0)
 function PointsAlongRing(center, radius, numPoints, startAngle)
   local points = {}
   local angleStep = (2 * math.pi) / numPoints

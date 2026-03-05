@@ -29,6 +29,13 @@ function modifier_logarithmus_concentration:OnAbilityFullyCast()
     self:IncrementStackCount()
 end
 
+function modifier_logarithmus_concentration:CalcMagicalDamage()
+    local stackCount = self:GetStackCount()
+    local ability = self:GetAbility()
+    local damage = stackCount * ability:GetSpecialValueFor("magical_damage_per_stack")
+    return damage
+end
+
 function modifier_logarithmus_concentration:OnAttackLanded(params)
     if params.attacker ~= self:GetParent() then return end
     local stackCount = self:GetStackCount()
@@ -39,8 +46,9 @@ function modifier_logarithmus_concentration:OnAttackLanded(params)
 
     local parent = self:GetParent()
     local ability = self:GetAbility()
-    local damage = stackCount * ability:GetSpecialValueFor("magical_damage_per_stack") 
+    local damage = self:CalcMagicalDamage()
     local lifestealFraction = stackCount * ability:GetSpecialValueFor("lifesteal_pct_per_stack") / 100
+    lifestealFraction = math.max(1, lifestealFraction)
     ApplyDamage({
         victim = params.target,
         attacker = parent,
@@ -48,6 +56,5 @@ function modifier_logarithmus_concentration:OnAttackLanded(params)
         damage_type = DAMAGE_TYPE_MAGICAL,
         ability = self,
     })
-    DebugPrint(damage, lifestealFraction, damage* lifestealFraction)
     parent:HealWithParams(damage * lifestealFraction, ability, false, true, parent, true)
 end

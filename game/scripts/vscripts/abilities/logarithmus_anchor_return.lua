@@ -45,6 +45,7 @@ function logarithmus_anchor_return:OnSpellStart()
     })
   end
 
+  caster:Stop()
   FindClearSpaceForUnit(caster, anchorPos, true)
   local dir = (anchorPos - casterPos):Normalized()
   caster:SetForwardVector(dir)

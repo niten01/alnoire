@@ -76,6 +76,9 @@
 			}
 			m_nOutputField = 13
 		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+		},
 	]
 	m_Operators = 
 	[
@@ -161,6 +164,9 @@
 				}
 			}
 			m_nOutputField = 13
+		},
+		{
+			_class = "C_OP_MovementPlaceOnGround"
 		},
 	]
 	m_Renderers = 

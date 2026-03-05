@@ -399,7 +399,7 @@
     "StatusManaRegen"                                     "0.0"
     "StatusMana"                                          "75"
 
-    "AttributePrimary"                                    "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributePrimary"                                    "DOTA_ATTRIBUTE_ALL"
     "AttributeBaseStrength"                               "23"
     "AttributeStrengthGain"                               "3.8"
     "AttributeBaseAgility"                                "15"
@@ -424,6 +424,8 @@
     "Ability11"                                              "logarithmus_alt_anchor"
     "Ability12"                                              "logarithmus_alt_step"
     "Ability13"                                              "logarithmus_alt_throw"
+    "Ability14"                                              "logarithmus_alt_projectile"
+    "Ability15"                                              "logarithmus_alt_clone"
 
     // "Ability12"                                           "special_bonus_unique_sohei_7_oaa"
     // "Ability13"                                           "special_bonus_unique_sohei_2_oaa"

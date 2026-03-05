@@ -1,10 +1,18 @@
 logarithmus_clone = class {}
 
+function logarithmus_clone:OnUpgrade()
+  if not IsServer() then return end
+  local caster = self:GetCaster()
+  local alt = caster:FindAbilityByName("logarithmus_alt_clone")
+  assert(alt)
+  alt:SetLevel(self:GetLevel())
+end
+
 function logarithmus_clone:OnSpellStart()
   if not IsServer() then return end
   local caster = self:GetCaster()
   local casterPos = caster:GetAbsOrigin()
-  local distance = self:GetSpecialValueFor("distance")
+  local distance = self:GetCastRange(casterPos, nil)
   local flyTime = self:GetSpecialValueFor("fly_time")
   local fwd = caster:GetForwardVector()
   local back = -fwd

@@ -3,8 +3,9 @@ logarithmus_alt_throw = class {}
 function logarithmus_alt_throw:Spawn()
     if not IsServer() then
         CustomIndicator:RegisterAbility(self)
+    else
+        self:SetHidden(true)
     end
-    self:SetHidden(true)
 end
 
 function logarithmus_alt_throw:CreateCustomIndicator(position, unit, behavior)
@@ -63,7 +64,7 @@ function logarithmus_alt_throw:OnSpellStart()
     local caster = self:GetCaster()
     local inactiveDuration = self:GetSpecialValueFor("tp_animation_point") - self:GetCastPoint()
 
-    caster:AddNewModifier(caster, self, "modifier_logarithmus_throw_inactive", { duration = inactiveDuration })
+    caster:AddNewModifier(caster, self, "modifier_logarithmus_casting", { duration = inactiveDuration })
 
     PlayLogarithmusBladeEffect(caster, 1.5)
 

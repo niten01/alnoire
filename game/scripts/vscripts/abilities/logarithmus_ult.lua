@@ -6,6 +6,8 @@ function logarithmus_ult:Spawn()
         logarithmus_anchor = "logarithmus_alt_anchor",
         logarithmus_step = "logarithmus_alt_step",
         logarithmus_throw = "logarithmus_alt_throw",
+        logarithmus_projectile = "logarithmus_alt_projectile",
+        logarithmus_clone = "logarithmus_alt_clone",
     }
     self.lastAbilityName = nil
 

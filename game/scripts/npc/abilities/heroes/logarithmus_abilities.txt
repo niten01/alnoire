@@ -273,12 +273,12 @@
 		"ScriptFile" 				"abilities/logarithmus_alt_projectile.lua"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 
 		"AbilityTextureName"		"logarithmus_alt_projectile"
 		"AbilityCastPoint"		    "0.4"
 		"AbilityCastAnimation"		"ACT_DOTA_OVERRIDE_ABILITY_4"
-		"AbilityCastRange"        	"1200"
+		"AbilityCastRange"        	"800"
 		"AbilityCooldown"           "5.0" 
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
@@ -289,8 +289,8 @@
 		"AbilityValues"
 		{
             "projectile_radius"  "50"
-            "projectile_speed"   "1200"
-			"num_projectiles"	 "10"
+            "projectile_speed"   "1700"
+			"num_projectiles"	 "5"
 			"max_duration"		 "3"
 		}
 
@@ -331,7 +331,8 @@
 		"AbilityTextureName"		"logarithmus_clone"
         "AbilityCastPoint"		    "0.2"
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
-        "AbilityCooldown"           "0.0" 
+        "AbilityCooldown"           "5.0" 
+		"AbilityCastRange"			"500"
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
@@ -340,8 +341,6 @@
 
 		"AbilityValues"
 		{
-      		"width"                 "50"
-			"distance"              "500"
 			"fly_time"              "0.1"
 			"swing_delay"           "1"
 
@@ -356,6 +355,36 @@
 			"particle"		"particles/logarithmus_remnant.vpcf"
 			"particle"		"particles/logarithmus_step_simplified.vpcf"
 			"particle"		"particles/logarithmus_clone_swing.vpcf"
+		}
+	}
+	"logarithmus_alt_clone"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_alt_clone.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityTextureName"		"logarithmus_alt_clone"
+        // "AbilityCastPoint"		    "0.4"
+        // "AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_6"
+        "AbilityCooldown"           "5.0" 
+		"MaxLevel"					"3"
+		"RequiredLevel"				"1"
+
+		"AbilityCastRange"			"300"
+		"AbilityValues"
+		{
+			"clone_duration"			 "1.33"
+			"clone_attack_point" 		 "0.45"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/logarithmus_remnant.vpcf"
+			"particle"		"particles/logarithmus_step_simplified.vpcf"
 		}
 	}
 }

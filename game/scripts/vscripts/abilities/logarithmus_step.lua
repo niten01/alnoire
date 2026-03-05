@@ -94,6 +94,8 @@ function modifier_logarithmus_step_recastable:OnCreated()
     self:GetAbility():EndCooldown()
 end
 
+modifier_logarithmus_step_recastable.OnRefresh = modifier_logarithmus_step_recastable.OnCreated
+
 function modifier_logarithmus_step_recastable:OnDestroy()
     if not IsServer() then return end
     local ability = self:GetAbility()

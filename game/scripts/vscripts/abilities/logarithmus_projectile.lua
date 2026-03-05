@@ -1,6 +1,11 @@
 logarithmus_projectile = class {}
 
-function logarithmus_projectile:Spawn()
+function logarithmus_projectile:OnUpgrade()
+  if not IsServer() then return end
+  local caster = self:GetCaster()
+  local alt = caster:FindAbilityByName("logarithmus_alt_projectile")
+  assert(alt)
+  alt:SetLevel(self:GetLevel())
 end
 
 function logarithmus_projectile:GetVectorTargetStartRadius()
