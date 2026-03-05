@@ -187,11 +187,11 @@
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityTextureName"            "towel_summon_overpower"
 		"AbilityManaCost"               "0"
-		"AbilityCooldown"				"5.0"
+		"AbilityCooldown"				"16.0"
 		"AbilityValues"
 		{
-			"asb_per_attack"				"5 8"
-			"buff_duration"					"6.0 6.0"
+			"asb_per_attack"				"20 24"
+			"buff_duration"					"8.0 8.0"
 		}
 	}
 
@@ -204,7 +204,7 @@
 		"AbilityType"                   "DOTA_ABILITY_TYPE_PURE"
 		"AbilityTextureName"            "towel_summon_dash"
 		"AbilityManaCost"               "0"
-		"AbilityCooldown"				"13.0"
+		"AbilityCooldown"				"18.0"
 		"AbilityValues"
 		{
 			"damage"					"200 400"
