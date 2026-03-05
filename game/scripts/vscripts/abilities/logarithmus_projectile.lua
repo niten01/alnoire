@@ -30,7 +30,7 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
   local pfx = ParticleManager:CreateParticle(
     "particles/logarithmus_projectile.vpcf", PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 0, startPos)
-  ParticleManager:SetParticleControl(pfx, 2, Vector(speed - 150, 0, 0))
+  ParticleManager:SetParticleControl(pfx, 2, Vector(speed - 120, 0, 0))
   local function destroyPfx()
     ParticleManager:DestroyParticle(pfx, false)
     ParticleManager:ReleaseParticleIndex(pfx)

@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 96
 	m_flCullRadius = -1.0
-	m_ConstantColor = [ 255, 0, 0, 255 ]
+	m_ConstantColor = [ 252, 252, 252, 255 ]
 	m_nBehaviorVersion = 12
 	m_nFirstMultipleOverride_BackwardCompat = 5
 	m_controlPointConfigurations = 
@@ -203,6 +203,7 @@
 							m_flLiteralValue = 1.0
 						}
 					}
+					m_nTextureBlendMode = "SPRITECARD_TEXTURE_BLEND_LUMINANCE"
 				},
 			]
 		},

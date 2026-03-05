@@ -11,7 +11,7 @@
 
 		"AbilityValues"
 		{
-			"max_stacks"				"100 100 200"
+			"max_stacks"				"100 150 200 200"
 			"damage_pct_per_stack"		"0.5"
 			"stacks_per_attack"			"1 1 3"
 		}
