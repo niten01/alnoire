@@ -88,6 +88,7 @@ end
 
 function modifier_rapper_strife:OnAbilityStart(kv)
     if not IsServer() then return end
+    if kv.unit ~= self:GetParent() then return end
     if kv.ability == self:GetAbility() then return end
     self:Destroy()
 end

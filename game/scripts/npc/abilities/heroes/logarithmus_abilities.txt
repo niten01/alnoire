@@ -267,6 +267,38 @@
 			"particle"		"particles/logarithmus_projectile.vpcf"
 		}
 	}
+	"logarithmus_alt_projectile"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/logarithmus_alt_projectile.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"AbilityTextureName"		"logarithmus_alt_projectile"
+		"AbilityCastPoint"		    "0.4"
+		"AbilityCastAnimation"		"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastRange"        	"1200"
+		"AbilityCooldown"           "5.0" 
+		"MaxLevel"					"3"
+		"RequiredLevel"				"1"
+
+        "AbilityDamage"                 "100 200 300 400"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		"AbilityValues"
+		{
+            "projectile_radius"  "50"
+            "projectile_speed"   "1200"
+			"num_projectiles"	 "10"
+			"max_duration"		 "3"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/logarithmus_projectile.vpcf"
+		}
+	}
 	"logarithmus_ult"
 	{
 		"BaseClass"					"ability_lua"
