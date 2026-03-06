@@ -105,7 +105,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "80 110 140"
+        "AbilityDamage"                 "70 110 140"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -138,7 +138,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "80 110 140"
+        "AbilityDamage"                 "70 110 140"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
