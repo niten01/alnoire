@@ -85,8 +85,10 @@ function logarithmus_throw:OnSpellStart()
     local secondSlashDelay = self:GetSpecialValueFor("second_slash_animation_point") - self:GetCastPoint()
 
     self:Slice(casterPos, endPos)
+    caster:EmitSound("ability.logarithmus.throw.first")
 
     Timers:CreateTimer(secondSlashDelay, function()
         self:Slice(endPos, casterPos)
+        caster:EmitSound("ability.logarithmus.throw.second")
     end)
 end

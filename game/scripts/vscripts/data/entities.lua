@@ -592,8 +592,8 @@ return {
             packID = "pack_island_duo",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_island_shadow_demon = {
-            npc = "npc_island_shadow_demon",
+        spawner_island_demon = {
+            npc = "npc_island_demon",
             modifiers = { "modifier_story_npc" },
             packID = "pack_island_duo",
             ai_modifier = "modifier_default_creep_ai",

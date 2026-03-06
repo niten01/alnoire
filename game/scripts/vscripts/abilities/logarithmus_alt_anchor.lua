@@ -16,13 +16,18 @@ function logarithmus_alt_anchor:OnSpellStart()
     local pfx = ParticleManager:CreateParticle("particles/logarithmus_alt_anchor.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, altAnchorPos)
 
+    EmitSoundOnLocationWithCaster(altAnchorPos, "ability.logarithmus.alt_anchor.cast", caster)
+    EmitSoundOnLocationWithCaster(altAnchorPos, "ability.logarithmus.alt_anchor.prehit", caster)
+
     Timers:CreateTimer(self:GetSpecialValueFor("delay"), function()
         ParticleManager:DestroyParticle(pfx, false)
         ParticleManager:ReleaseParticleIndex(pfx)
-        
+
         local pfx = ParticleManager:CreateParticle("particles/logarithmus_explosion.vpcf", PATTACH_WORLDORIGIN, nil)
         ParticleManager:SetParticleControl(pfx, 0, altAnchorPos)
         ParticleManager:ReleaseParticleIndex(pfx)
+
+        EmitSoundOnLocationWithCaster(altAnchorPos, "ability.logarithmus.alt_anchor.hit", caster)
 
         local enemies = FindEnemiesForSanyaInRadius(altAnchorPos, self:GetSpecialValueFor("radius"))
         for _, ent in pairs(enemies) do

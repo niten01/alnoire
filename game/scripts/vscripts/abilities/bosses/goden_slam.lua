@@ -21,7 +21,6 @@ function goden_slam:OnSpellStart()
 
     caster:EmitSound("ability.goden.slam.cast")
 
-    DrawDebugCircle(casterPos, radius, 3)
     local enemies = FindEnemiesForAIInRadius(casterPos, radius)
     for _, ent in ipairs(enemies) do
         ApplyDamage({

@@ -370,6 +370,8 @@
     "Model"                                               "models/sanya/sanya_logarithmus.vmdl"
     "ModelScale"                                          "0.85"
     "HasAggressiveStance"                                 "1"
+    "SoundSet"                                            "Hero_Logarithmus"
+    "GameSoundsFile"                                      "soundevents/heroes/logarithmus.vsndevts"
 
     "BotImplemented"                                      "0"
 

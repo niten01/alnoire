@@ -217,6 +217,32 @@
 								root_bone_name = ""
 								motion_type = "Uniform"
 							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 1
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 10
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
 						]
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_RUN"
@@ -261,6 +287,32 @@
 								_class = "ActivityModifier"
 								activity_name = "aggressive"
 								activity_weight = 1
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 8
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 18
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
 							},
 						]
 						is_default_idle_anim = false
@@ -628,6 +680,77 @@
 						animgraph_additive = false
 						delete_from_compiled_model = false
 						source_filename = "models/sanya/animations/flail.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "run_haste"
+						children = 
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = false
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								extract_initial_offset = false
+								root_bone_name = ""
+								motion_type = "Uniform"
+							},
+							{
+								_class = "ActivityModifier"
+								activity_name = "haste"
+								activity_weight = 1
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 11
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 0
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/run_haste.fbx"
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1

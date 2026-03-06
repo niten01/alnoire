@@ -11,9 +11,9 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"nevermore_shadowraze1"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability1"					"shadow_fiend_shadowraze_a_lua"			// Ability 1
+		"Ability2"					"shadow_fiend_shadowraze_b_lua"			// Ability 2
+		"Ability3"					"shadow_fiend_shadowraze_c_lua"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
@@ -77,7 +77,7 @@
 			}
 		}
 	}
-	"npc_island_shadow_demon" 
+	"npc_island_demon" 
 	{
 		"Model"						"models/heroes/shadow_demon/shadow_demon.vmdl"
 		"BaseClass"					"npc_dota_creature"
