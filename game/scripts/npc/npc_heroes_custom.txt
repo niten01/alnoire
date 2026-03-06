@@ -428,7 +428,6 @@
     "Ability13"                                              "logarithmus_alt_throw"
     "Ability14"                                              "logarithmus_alt_projectile"
     "Ability15"                                              "logarithmus_alt_clone"
-    "Ability16"                                              "shadow_fiend_shadowraze_b_lua"
 
     // "Ability12"                                           "special_bonus_unique_sohei_7_oaa"
     // "Ability13"                                           "special_bonus_unique_sohei_2_oaa"

@@ -39,6 +39,10 @@ function modifier_island_fiend_ai:OnIntervalThink()
 end
 
 function modifier_island_fiend_ai:BlinkSequence(unit, target)
+    local razeDelay = 1
+
+    if self.blinkSeqStep ~= 0 then return true end
+
     if CastAbility(unit, target, "island_fiend_blink") then
         if unit.lastCastAbilityName == "island_fiend_blink" then
             self.blinkSeqStep = 1
@@ -46,29 +50,41 @@ function modifier_island_fiend_ai:BlinkSequence(unit, target)
         return true
     end
 
-    if self.blinkSeqStep == 1 then
-        if CastAbility(unit, target, "shadow_fiend_shadowraze_a_lua") then
-            if unit.lastCastAbilityName == "shadow_fiend_shadowraze_a_lua" then
-                self.blinkSeqStep = 2
-                self.blinkSeqTarget = target:GetAbsOrigin()
-            end
-            return true
-        end
-    elseif self.blinkSeqStep == 2 then
-        if CastAbility(unit, self.blinkSeqTarget, "shadow_fiend_shadowraze_b_lua") then
-            if unit.lastCastAbilityName == "shadow_fiend_shadowraze_b_lua" then
-                self.blinkSeqStep = 3
-            end
-            return true
-        end
-    elseif self.blinkSeqStep == 3 then
-        if CastAbility(unit, self.blinkSeqTarget, "shadow_fiend_shadowraze_c_lua") then
-            if unit.lastCastAbilityName == "shadow_fiend_shadowraze_c_lua" then
+    Timers:CreateTimer(razeDelay, function()
+        GiveCastOrder(unit, target, unit:FindAbilityByName("shadow_fiend_shadowraze_a_lua"))
+        self.blinkSeqTarget = target:GetAbsOrigin()
+        Timers:CreateTimer(razeDelay, function()
+            GiveCastOrder(unit, self.blinkSeqTarget, unit:FindAbilityByName("shadow_fiend_shadowraze_b_lua"))
+            Timers:CreateTimer(razeDelay, function()
+                GiveCastOrder(unit, self.blinkSeqTarget, unit:FindAbilityByName("shadow_fiend_shadowraze_c_lua"))
                 self.blinkSeqStep = 0
-            end
-            return true
-        end
-    end
+            end)
+        end)
+    end)
+
+    -- if self.blinkSeqStep == 1 then
+    --     if CastAbility(unit, target, "shadow_fiend_shadowraze_a_lua") then
+    --         if unit.lastCastAbilityName == "shadow_fiend_shadowraze_a_lua" then
+    --             self.blinkSeqStep = 2
+    --             self.blinkSeqTarget = target:GetAbsOrigin()
+    --         end
+    --         return true
+    --     end
+    -- elseif self.blinkSeqStep == 2 then
+    --     if CastAbility(unit, self.blinkSeqTarget, "shadow_fiend_shadowraze_b_lua") then
+    --         if unit.lastCastAbilityName == "shadow_fiend_shadowraze_b_lua" then
+    --             self.blinkSeqStep = 3
+    --         end
+    --         return true
+    --     end
+    -- elseif self.blinkSeqStep == 3 then
+    --     if CastAbility(unit, self.blinkSeqTarget, "shadow_fiend_shadowraze_c_lua") then
+    --         if unit.lastCastAbilityName == "shadow_fiend_shadowraze_c_lua" then
+    --             self.blinkSeqStep = 0
+    --         end
+    --         return true
+    --     end
+    -- end
 
     return false
 end

@@ -45,4 +45,7 @@ function modifier_logarithmus_concentration:OnAttackLanded(params)
         ability = self,
     })
     parent:HealWithParams(damage * lifestealFraction, ability, false, true, parent, true)
+
+    local pfx = ParticleManager:CreateParticle("particles/logarithmus_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+    ParticleManager:ReleaseParticleIndex(pfx)
 end
