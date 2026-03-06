@@ -90,7 +90,8 @@ function logarithmus_throw:OnSpellStart()
     caster:EmitSound("ability.logarithmus.throw.first")
 
     Timers:CreateTimer(secondSlashDelay, function()
-        hit = hit or self:Slice(endPos, casterPos)
+        local hit2 = self:Slice(endPos, casterPos)
+        hit = hit or hit2
         caster:EmitSound("ability.logarithmus.throw.second")
 
         if hit then

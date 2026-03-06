@@ -83,7 +83,8 @@ function logarithmus_alt_throw:OnSpellStart()
 
     Timers:CreateTimer(inactiveDuration, function()
         if not caster:IsAlive() then return end
-        hit = hit or self:Slice(casterPos, endPos)
+        local hit2 = self:Slice(casterPos, endPos)
+        hit = hit or hit2
         caster:EmitSound("ability.logarithmus.alt_throw.second")
 
         caster:Stop()

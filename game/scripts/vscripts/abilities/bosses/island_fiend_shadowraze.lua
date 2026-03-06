@@ -31,7 +31,7 @@ function shadowraze.OnSpellStart(this)
     -- get references
     local caster = this:GetCaster()
     local casterPos = caster:GetAbsOrigin()
-    local distance = this:GetCastRange(casterPos, nil)
+    local distance = this:GetSpecialValueFor("range")
     local front = this:GetCaster():GetForwardVector():Normalized()
     local target_pos = this:GetCaster():GetAbsOrigin() + front * distance
     local target_radius = this:GetSpecialValueFor("shadowraze_radius")

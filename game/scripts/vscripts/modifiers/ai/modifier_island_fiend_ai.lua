@@ -7,6 +7,7 @@ function modifier_island_fiend_ai:IsPurgable() return false end
 function modifier_island_fiend_ai:OnCreated()
     local parent = self:GetParent()
     self.blinkSeqStep = 0
+    self.blinkSeqTarget = nil
 end
 
 function modifier_island_fiend_ai:OnIntervalThink()
@@ -49,18 +50,19 @@ function modifier_island_fiend_ai:BlinkSequence(unit, target)
         if CastAbility(unit, target, "shadow_fiend_shadowraze_a_lua") then
             if unit.lastCastAbilityName == "shadow_fiend_shadowraze_a_lua" then
                 self.blinkSeqStep = 2
+                self.blinkSeqTarget = target:GetAbsOrigin()
             end
             return true
         end
     elseif self.blinkSeqStep == 2 then
-        if CastAbility(unit, target, "shadow_fiend_shadowraze_b_lua") then
+        if CastAbility(unit, self.blinkSeqTarget, "shadow_fiend_shadowraze_b_lua") then
             if unit.lastCastAbilityName == "shadow_fiend_shadowraze_b_lua" then
                 self.blinkSeqStep = 3
             end
             return true
         end
     elseif self.blinkSeqStep == 3 then
-        if CastAbility(unit, target, "shadow_fiend_shadowraze_c_lua") then
+        if CastAbility(unit, self.blinkSeqTarget, "shadow_fiend_shadowraze_c_lua") then
             if unit.lastCastAbilityName == "shadow_fiend_shadowraze_c_lua" then
                 self.blinkSeqStep = 0
             end
