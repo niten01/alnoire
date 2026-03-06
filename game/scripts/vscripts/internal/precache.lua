@@ -164,6 +164,8 @@ return {
         "npc_dota_hero_invoker",
         "npc_dota_hero_zuus",
         "npc_dota_hero_crystal_maiden",
+        "npc_dota_necronomicon_archer_1",
+        "npc_dota_hero_rattletrap",
 
 
 
