@@ -11,8 +11,8 @@
 
 		"AbilityValues"
 		{
-			"magical_damage_per_stack"	"10"
-			"lifesteal_pct_per_stack"	"5"
+			"magical_damage_per_stack"	"5"
+			"lifesteal_pct_per_stack"	"15"
 			"max_stacks"				"20"
 		}
 	}
@@ -32,7 +32,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"             "70 140 210"
+        "AbilityDamage"             "60 70 80"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -74,7 +74,7 @@
             "dash_range"           "500"
             "spin_radius"          "300"
 			"dash_time"		       "0.4"
-			"dps" 				   "160 200 240"
+			"dps" 				   "190 240 290"
 		}
 
         "precache"
@@ -164,7 +164,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "180 220 260"
+        "AbilityDamage"                 "160 200 240"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -193,7 +193,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "180 220 260"
+        "AbilityDamage"                 "160 200 240"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -221,7 +221,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "170 200 230"
+        "AbilityDamage"                 "140 180 220"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -253,7 +253,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "120 150 180"
+        "AbilityDamage"                 "140 170 200"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -284,14 +284,14 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "50 60 70"
+        "AbilityDamage"                 "40 50 60"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
 		{
             "projectile_radius"  "50"
             "projectile_speed"   "1700"
-			"num_projectiles"	 "5"
+			"num_projectiles"	 "4"
 			"max_duration"		 "3"
 		}
 
@@ -337,7 +337,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "170 210 240"
+        "AbilityDamage"                 "200 250 300"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -375,7 +375,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "100 200 300 400"
+        "AbilityDamage"                 "160 200 240"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityCastRange"			"300"
 		"AbilityValues"
