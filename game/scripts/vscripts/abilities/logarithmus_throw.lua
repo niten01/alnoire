@@ -1,10 +1,17 @@
 logarithmus_throw = class {}
-LinkLuaModifier("modifier_logarithmus_throw_inactive", "abilities/logarithmus_throw", LUA_MODIFIER_MOTION_NONE)
 
 function logarithmus_throw:Spawn()
     if not IsServer() then
         CustomIndicator:RegisterAbility(self)
     end
+end
+
+function logarithmus_throw:OnUpgrade()
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    local alt = caster:FindAbilityByName("logarithmus_alt_throw")
+    assert(alt)
+    alt:SetLevel(self:GetLevel())
 end
 
 function logarithmus_throw:CreateCustomIndicator(position, unit, behavior)
@@ -63,7 +70,7 @@ function logarithmus_throw:OnSpellStart()
     local caster = self:GetCaster()
     local inactiveDuration = self:GetSpecialValueFor("end_inactive_animation_point") - self:GetCastPoint()
 
-    caster:AddNewModifier(caster, self, "modifier_logarithmus_throw_inactive", { duration = inactiveDuration })
+    caster:AddNewModifier(caster, self, "modifier_logarithmus_casting", { duration = inactiveDuration })
 
     PlayLogarithmusBladeEffect(caster, 1.5)
 
@@ -78,25 +85,10 @@ function logarithmus_throw:OnSpellStart()
     local secondSlashDelay = self:GetSpecialValueFor("second_slash_animation_point") - self:GetCastPoint()
 
     self:Slice(casterPos, endPos)
+    caster:EmitSound("ability.logarithmus.throw.first")
 
     Timers:CreateTimer(secondSlashDelay, function()
         self:Slice(endPos, casterPos)
+        caster:EmitSound("ability.logarithmus.throw.second")
     end)
-end
-
-------------------------------------------------------------
-
-modifier_logarithmus_throw_inactive = class {}
-
-function modifier_logarithmus_throw_inactive:IsHidden() return true end
-
-function modifier_logarithmus_throw_inactive:IsPurgable() return false end
-
-function modifier_logarithmus_throw_inactive:CheckState()
-    return {
-        [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
-        [MODIFIER_STATE_IGNORING_STOP_ORDERS] = true,
-        [MODIFIER_STATE_SILENCED] = true,
-        [MODIFIER_STATE_DISARMED] = true,
-    }
 end

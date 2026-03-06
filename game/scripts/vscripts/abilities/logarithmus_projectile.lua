@@ -1,6 +1,11 @@
 logarithmus_projectile = class {}
 
-function logarithmus_projectile:Spawn()
+function logarithmus_projectile:OnUpgrade()
+  if not IsServer() then return end
+  local caster = self:GetCaster()
+  local alt = caster:FindAbilityByName("logarithmus_alt_projectile")
+  assert(alt)
+  alt:SetLevel(self:GetLevel())
 end
 
 function logarithmus_projectile:GetVectorTargetStartRadius()
@@ -30,11 +35,13 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
   local pfx = ParticleManager:CreateParticle(
     "particles/logarithmus_projectile.vpcf", PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 0, startPos)
-  ParticleManager:SetParticleControl(pfx, 2, Vector(speed - 150, 0, 0))
+  ParticleManager:SetParticleControl(pfx, 2, Vector(speed - 120, 0, 0))
   local function destroyPfx()
     ParticleManager:DestroyParticle(pfx, false)
     ParticleManager:ReleaseParticleIndex(pfx)
   end
+
+  caster:EmitSound("ability.logarithmus.projectile.cast")
 
   local travelTime = parabolaInfo:Length() / speed
   local interval = 0.01
@@ -48,6 +55,8 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
     local curPoint = parabolaIter(dt / travelTime)
     if not curPoint then
       destroyPfx()
+
+      EmitSoundOnLocationWithCaster(prevPoint or startPos, "ability.logarithmus.projectile.hit", caster)
       return nil
     end
     curPoint.z = startPos.z
@@ -57,6 +66,9 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
     local enemies = FindEnemiesForSanyaInRadius(curPoint, radius)
     for _, ent in ipairs(enemies) do
       destroyPfx()
+
+      EmitSoundOnLocationWithCaster(curPoint, "ability.logarithmus.projectile.hit", caster)
+
       self:OnProjectileHit(ent, (prevPoint and curPoint - prevPoint) or Vector(0, 0, 0))
       return nil
     end
@@ -80,6 +92,8 @@ function logarithmus_projectile:OnProjectileHit(target, direction)
   FindClearSpaceForUnit(caster, endPos, true)
   caster:SetForwardVector(direction)
   caster:FaceTowards(targetPos)
+
+  PlayLogarithmusImpaleEffect(target, endPos)
   ApplyDamage({
     victim = target,
     attacker = caster,

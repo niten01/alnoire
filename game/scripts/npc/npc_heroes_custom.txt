@@ -283,7 +283,7 @@
 
     "AttributePrimary"                                    "DOTA_ATTRIBUTE_AGILITY"
     "AttributeBaseStrength"                               "20"
-    "AttributeStrengthGain"                               "2.0"
+    "AttributeStrengthGain"                               "1.0"
     "AttributeBaseAgility"                                "27"
     "AttributeAgilityGain"                                "3.2"
     "AttributeBaseIntelligence"                           "13"
@@ -370,6 +370,8 @@
     "Model"                                               "models/sanya/sanya_logarithmus.vmdl"
     "ModelScale"                                          "0.85"
     "HasAggressiveStance"                                 "1"
+    "SoundSet"                                            "Hero_Logarithmus"
+    "GameSoundsFile"                                      "soundevents/heroes/logarithmus.vsndevts"
 
     "BotImplemented"                                      "0"
 
@@ -378,8 +380,8 @@
     "MovementSpeed"                                       "305"
 
     "AttackCapabilities"                                  "DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"                                     "1000"
-    "AttackDamageMax"                                     "1000"
+    "AttackDamageMin"                                     "25"
+    "AttackDamageMax"                                     "30"
     "AttackRange"                                         "150"
     "AttackRate"                                          "1.7"
     "BaseAttackSpeed"                                     "100"
@@ -392,33 +394,40 @@
     }
 
     "ArmorPhysical"                                       "3"
-    "MagicalResistance"                                   "25"
+    "MagicalResistance"                                   "30"
 
     "StatusHealthRegen"                                   "3.25"
     "StatusHealth"                                        "200"
     "StatusManaRegen"                                     "0.0"
     "StatusMana"                                          "75"
 
-    "AttributePrimary"                                    "DOTA_ATTRIBUTE_STRENGTH"
-    "AttributeBaseStrength"                               "23"
-    "AttributeStrengthGain"                               "3.8"
+    "AttributePrimary"                                    "DOTA_ATTRIBUTE_ALL"
+    "AttributeBaseStrength"                               "20"
+    "AttributeStrengthGain"                               "1.7"
     "AttributeBaseAgility"                                "15"
-    "AttributeAgilityGain"                                "2.1"
+    "AttributeAgilityGain"                                "1.5"
     "AttributeBaseIntelligence"                           "17"
     "AttributeIntelligenceGain"                           "1.5"
+
+    "AbilityLayout"				                                "6"
 
     "Ability1"                                               "logarithmus_projectile"
     "Ability2"                                               "logarithmus_step"
     "Ability3"                                               "logarithmus_throw"
-    "Ability4"                                               "sanya_sprint"
+    "Ability4"                                               "logarithmus_clone"
     "Ability5"                                               "logarithmus_anchor"
-    "Ability6"                                               "logarithmus_concentration"
+    "Ability6"                                               "logarithmus_ult"
+    "Ability7"                                               "logarithmus_concentration"
     // "Ability7"                                            "sohei_innate_oaa"
     // "Ability8"                                            "generic_hidden"
-    // "Ability9"                                            "generic_hidden"
+    "Ability9"                                               "sanya_sprint"
 
-    // "Ability10"                                           "special_bonus_strength_10"
-    // "Ability11"                                           "special_bonus_unique_sohei_3_oaa"
+    "Ability10"                                              "logarithmus_anchor_return"
+    "Ability11"                                              "logarithmus_alt_anchor"
+    "Ability12"                                              "logarithmus_alt_step"
+    "Ability13"                                              "logarithmus_alt_throw"
+    "Ability14"                                              "logarithmus_alt_projectile"
+    "Ability15"                                              "logarithmus_alt_clone"
 
     // "Ability12"                                           "special_bonus_unique_sohei_7_oaa"
     // "Ability13"                                           "special_bonus_unique_sohei_2_oaa"

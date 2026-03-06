@@ -5,6 +5,14 @@ function logarithmus_step:Spawn()
     self.sequentialUses = 0
 end
 
+function logarithmus_step:OnUpgrade()
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    local alt = caster:FindAbilityByName("logarithmus_alt_step")
+    assert(alt)
+    alt:SetLevel(self:GetLevel())
+end
+
 function logarithmus_step:GetCastRange(vLocation, hTarget)
     if IsClient() then
         return self:GetSpecialValueFor("blink_range")
@@ -20,14 +28,11 @@ function logarithmus_step:GetVectorTargetRange()
     return self:GetSpecialValueFor("vector_range")
 end
 
-function logarithmus_step:GetBehavior()
-    return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING
-end
-
 function logarithmus_step:OnVectorCastStart(vStartLocation, vDirection)
     if not IsServer() then return end
     local caster = self:GetCaster()
     local casterPos = caster:GetAbsOrigin()
+    local maxSequentialUses = self:GetSpecialValueFor("max_sequential_uses")
 
     local blinkPos = vStartLocation
     blinkPos.z = casterPos.z
@@ -38,6 +43,8 @@ function logarithmus_step:OnVectorCastStart(vStartLocation, vDirection)
     ParticleManager:SetParticleControl(pfx, 1, blinkPos)
     ParticleManager:ReleaseParticleIndex(pfx)
 
+    EmitSoundOnLocationWithCaster(casterPos, "ability.logarithmus.alt_projectile.start", caster)
+
     local hitPos = blinkPos + vDirection * self:GetVectorTargetRange()
     hitPos.z = casterPos.z
 
@@ -45,6 +52,12 @@ function logarithmus_step:OnVectorCastStart(vStartLocation, vDirection)
     FindClearSpaceForUnit(caster, blinkPos, true)
     caster:SetForwardVector(vDirection)
     caster:FaceTowards(hitPos)
+
+    if self.sequentialUses == maxSequentialUses - 1 then
+        EmitSoundOnLocationWithCaster(blinkPos, "ability.logarithmus.step.cast_max", caster)
+    else
+        EmitSoundOnLocationWithCaster(blinkPos, "ability.logarithmus.step.cast", caster)
+    end
 
     pfx = ParticleManager:CreateParticle("particles/logarithmus_step.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, blinkPos)
@@ -67,7 +80,7 @@ function logarithmus_step:OnVectorCastStart(vStartLocation, vDirection)
 
     if #enemies > 0 then
         self.sequentialUses = self.sequentialUses + 1
-        if self.sequentialUses < self:GetSpecialValueFor("max_sequential_uses") then
+        if self.sequentialUses < maxSequentialUses then
             caster:AddNewModifier(caster, self, "modifier_logarithmus_step_recastable", {
                 duration = self:GetSpecialValueFor("recast_decay")
             })
@@ -89,6 +102,8 @@ function modifier_logarithmus_step_recastable:OnCreated()
     if not IsServer() then return end
     self:GetAbility():EndCooldown()
 end
+
+modifier_logarithmus_step_recastable.OnRefresh = modifier_logarithmus_step_recastable.OnCreated
 
 function modifier_logarithmus_step_recastable:OnDestroy()
     if not IsServer() then return end

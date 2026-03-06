@@ -1,0 +1,138 @@
+"DOTAAbilities"
+{
+    "goden_tentacles"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/goden_tentacles.lua"
+        "AbilityTextureName"            "kunkka_torrent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_RATTLETRAP_HOOKSHOT_START"
+        "AbilityChannelAnimation"       "ACT_DOTA_TELEPORT"
+		"AbilityChannelTime"			"10.0"
+        "AbilityCastPoint"              "1.73"
+        "AbilityCooldown"               "40" 
+        "AbilityCastRange"        		"9000"
+
+        "AbilityValues"
+        {
+            "damage"                "200"
+            "radius"                "1000"
+            "tentacle_radius"       "250"
+            "stun_duration"         "2"
+            "interval"              "0.8"
+            "tentacle_delay"        "0.8"
+            "fly_height"            "300"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/econ/items/kunkka/kunkka_weapon_whaleblade/kunkka_spell_torrent_splash_whaleblade.vpcf"
+            "particle"      "particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_skills/kunkka_spell_torrent_bubbles_fxset.vpcf"
+            "particle"      "particles/econ/items/naga/naga_ti10_immortal_head/naga_ti10_immortal_song_waves.vpcf"
+        }
+    }
+    "goden_spin"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/goden_spin.lua"
+        "AbilityTextureName"            "kunkka_torrent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_5"
+        "AbilityCastPoint"              "1.4"
+
+        "AbilityCooldown"               "3" 
+        "AbilityCastRange"        		"700"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+        "AbilityValues"
+        {
+            "damage"                "200"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_blade_fury_favoriteblade.vpcf"
+        }
+    }
+    "goden_slam"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/goden_slam.lua"
+        "AbilityTextureName"            "kunkka_torrent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_AREA_DENY"
+        "AbilityCastPoint"              "1.8"
+
+        "AbilityCooldown"               "7" 
+        "AbilityCastRange"        		"530"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+        "AbilityValues"
+        {
+            "damage"                "200"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/goden_slam.vpcf"
+        }
+    }
+    "goden_summon"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/goden_summon.lua"
+        "AbilityTextureName"            "kunkka_torrent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_NIAN_GAME_END"
+        "AbilityCastPoint"              "1.80"
+
+        "AbilityCooldown"               "20" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+        "AbilityValues"
+        {
+        }
+
+        "precache"
+        {
+            "particle"		"particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_skills/kunkka_spell_torrent_splash_fxset.vpcf"
+        }
+    }
+    "goden_skewer"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/goden_skewer.lua"
+        "AbilityTextureName"            "kunkka_torrent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_MAGNUS_SKEWER_START"
+        "AbilityCastPoint"              "1.93"
+
+        "AbilityCooldown"               "7" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+        "AbilityValues"
+        {
+            "damage"        "200"
+            "damage_radius" "300"
+            "max_range"     "1300"
+            "speed"         "1000"
+            "stun_duration" "2"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/goden_skewer.vpcf"
+        }
+    }
+}

@@ -5,6 +5,7 @@
 #base "units/boss/npc_killer.txt"
 #base "units/boss/npc_island_guard.txt"
 #base "units/boss/npc_island_duo.txt"
+#base "units/boss/npc_goden.txt"
 
 #base "units/trap/npc_trap_arrow.txt"
 #base "units/trap/npc_trap_fire.txt"

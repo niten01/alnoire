@@ -217,6 +217,32 @@
 								root_bone_name = ""
 								motion_type = "Uniform"
 							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 1
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 10
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
 						]
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_RUN"
@@ -261,6 +287,32 @@
 								_class = "ActivityModifier"
 								activity_name = "aggressive"
 								activity_weight = 1
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 8
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 18
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
 							},
 						]
 						is_default_idle_anim = false
@@ -406,7 +458,7 @@
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 30.0
 						reverse = false
 						additional_anim_files = [  ]
 					},
@@ -439,7 +491,7 @@
 						_class = "AnimFile"
 						name = "attack_fist_3"
 						is_default_idle_anim = false
-						activity_name = ""
+						activity_name = "ACT_DOTA_OVERRIDE_ABILITY_4"
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
@@ -453,6 +505,252 @@
 						animgraph_additive = false
 						delete_from_compiled_model = false
 						source_filename = "models/sanya/animations/attack_fist_3.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "dash"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_CAST_ABILITY_6"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.1
+						fade_out_time = 0.3
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/dash.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "channel_spin"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_CHANNEL_ABILITY_2"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.3
+						fade_out_time = 0.5
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/channel_spin.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 40.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "attack_front"
+						is_default_idle_anim = false
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/attack_front.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 30.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "attack_clone_chop"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_ATTACK_EVENT"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/attack_chop.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 30.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "death"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_DIE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/death.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 25.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "disabled"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_DISABLED"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/disabled.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "flail"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_FLAIL"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/flail.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "run_haste"
+						children = 
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = false
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								extract_initial_offset = false
+								root_bone_name = ""
+								motion_type = "Uniform"
+							},
+							{
+								_class = "ActivityModifier"
+								activity_name = "haste"
+								activity_weight = 1
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 11
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 0
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"Hero_Logarithmus.Footsteps"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/run_haste.fbx"
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1

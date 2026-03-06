@@ -66,6 +66,7 @@ function GiveCastOrder(unit, target, ability)
   assert(behavior)
 
   local cast = function()
+    unit:Stop()
     if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
       unit:CastAbilityOnTarget(target, ability, -1)
     elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
@@ -107,6 +108,26 @@ end
 
 function CastRandomAbility(unit, target, abilityNames)
   local chosenName = abilityNames[RandomInt(1, #abilityNames)]
+  return CastIterWrapper(unit, target, function(ability)
+    if ability:GetName() == chosenName then
+      GiveCastOrder(unit, target, ability)
+      return true
+    end
+    return false
+  end)
+end
+
+function CastRandomAvailableAbility(unit, target, abilityNames)
+  local availNames = {}
+  for _, abilityName in pairs(abilityNames) do
+    local ability = unit:FindAbilityByName(abilityName)
+    assert(ability)
+    if CanCastAbility(unit, target, ability) then
+      table.insert(availNames, abilityName)
+    end
+  end
+
+  local chosenName = availNames[RandomInt(1, #availNames)]
   return CastIterWrapper(unit, target, function(ability)
     if ability:GetName() == chosenName then
       GiveCastOrder(unit, target, ability)
@@ -218,6 +239,37 @@ function FindEnemiesForSanyaInLine(p1, p2, width)
     DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
     DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
   )
+end
+
+-- find enemies fo curTeam in segment starting at center, with direction of vector, radius is #vector and total width of cone in degrees is angle
+function FindEnemiesInSegment(curTeam, center, vector, angle)
+  local units = FindUnitsInRadius(
+    curTeam,
+    center,
+    nil,
+    #vector,
+    DOTA_UNIT_TARGET_TEAM_ENEMY,
+    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+    DOTA_UNIT_TARGET_FLAG_NONE,
+    FIND_ANY_ORDER,
+    false
+  )
+
+  local unitsInSector = {}
+
+  local cosHalfAngle = math.cos(math.rad(angle / 2))
+
+  local dirNormalized = vector:Normalized()
+  for _, unit in pairs(units) do
+    local vToUnit = (unit:GetOrigin() - center):Normalized()
+    local dotProduct = dirNormalized:Dot(vToUnit)
+
+    if dotProduct >= cosHalfAngle then
+      table.insert(unitsInSector, unit)
+    end
+  end
+
+  return unitsInSector
 end
 
 function FindEnemiesForAIInRadius(center, radius)
@@ -426,7 +478,7 @@ function ShowGenericArcWarning(arcInfo, width, duration)
   end)
 end
 
--- startAngle is optional (default 0)
+-- startAngle (IN RADIANS) is optional (default 0)
 function PointsAlongRing(center, radius, numPoints, startAngle)
   local points = {}
   local angleStep = (2 * math.pi) / numPoints

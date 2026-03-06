@@ -1,0 +1,210 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  ability.goden.tentacles.roar_start = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/primal_beast/onslaught_channel01.vsnd",
+        "sounds/weapons/hero/primal_beast/onslaught_channel02.vsnd",
+        "sounds/weapons/hero/primal_beast/onslaught_channel03.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+  ability.goden.tentacles.roar = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/misc/mh_event/gore_magala_roar_1.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+  ability.goden.tentacles.pre = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/kunkka/ability_pre_geyser.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+  ability.goden.tentacles.geyser = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/kunkka/ability_geyser.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+
+  ability.goden.skewer.roar = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/creep/roshan/grunt01.vsnd",
+        "sounds/weapons/creep/roshan/grunt02.vsnd",
+        "sounds/weapons/creep/roshan/grunt03.vsnd",
+        "sounds/weapons/creep/roshan/grunt04.vsnd",
+        "sounds/weapons/creep/roshan/grunt05.vsnd",
+        "sounds/weapons/creep/roshan/grunt06.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+  ability.goden.skewer.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/primal_beast/onslaught_cast.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+  ability.goden.skewer.loop = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/primal_beast/onslaught_motion.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+
+  ability.goden.summon.cast.water = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/naga_siren/mirror_image.vsnd",
+    ]
+    volume = "0.80000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+  ability.goden.summon.cast.roar = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/misc/mh_event/barioth_roar_1.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+  ability.goden.summon.spawn = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/naga_siren/naga_anger_01.vsnd",
+        "sounds/vo/naga_siren/naga_anger_02.vsnd",
+        "sounds/vo/naga_siren/naga_anger_03.vsnd",
+        "sounds/vo/naga_siren/naga_anger_04.vsnd",
+        "sounds/vo/naga_siren/naga_anger_05.vsnd",
+        "sounds/vo/naga_siren/naga_anger_06.vsnd",
+        "sounds/vo/naga_siren/naga_anger_07.vsnd",
+        "sounds/vo/naga_siren/naga_anger_08.vsnd",
+        "sounds/vo/naga_siren/naga_anger_09.vsnd",
+        "sounds/vo/naga_siren/naga_anger_10.vsnd",
+        "sounds/vo/naga_siren/naga_anger_11.vsnd",
+        "sounds/vo/naga_siren/naga_anger_12.vsnd",
+        "sounds/vo/naga_siren/naga_anger_13.vsnd",
+        "sounds/vo/naga_siren/naga_anger_14.vsnd",
+    ]
+    volume = "2.50000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+
+  ability.goden.spin.cast.roar = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/creep/neutral/thunderlizard_roar.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+  ability.goden.spin.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/juggernaut/sword_swing_special.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+
+  ability.goden.slam.cast.roar = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/misc/crownfall/zaug_roar.vsnd",
+    ]
+    volume = "1.80000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+  ability.goden.slam.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/creep/roshan/slam.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "1000.000000"
+  }
+}

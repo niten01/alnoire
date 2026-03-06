@@ -32,6 +32,7 @@ end
 function rapper_strife:OnUpgrade()
     if not IsServer() then return end
     local caster = self:GetCaster()
+    if self:GetLevel() == 1 then return end
     local flowAbility = caster:FindAbilityByName("rapper_flow")
     assert(flowAbility)
     flowAbility:UpgradeAbility(true)
@@ -88,6 +89,7 @@ end
 
 function modifier_rapper_strife:OnAbilityStart(kv)
     if not IsServer() then return end
+    if kv.unit ~= self:GetParent() then return end
     if kv.ability == self:GetAbility() then return end
     self:Destroy()
 end
@@ -103,6 +105,7 @@ end
 function modifier_rapper_strife:OnTakeDamage(params)
     if not IsServer() then return end
     if params.unit ~= self:GetParent() then return end
+    if params.damage == 0 then return end
     self:Destroy()
 end
 

@@ -21,6 +21,7 @@ LinkLuaModifier('modifier_ski_cold', 'modifiers/modifier_ski_cold', LUA_MODIFIER
 LinkLuaModifier('modifier_blink_evade', 'modifiers/abilities/modifier_blink_evade', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_summon_distance_check", "modifiers/abilities/modifier_summon_distance_check",
     LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_logarithmus_casting", "modifiers/abilities/modifier_logarithmus_casting", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_gorilla_umm", "modifiers/abilities/modifier_gorilla_umm", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_gorilla_capture", "modifiers/abilities/modifier_gorilla_capture", LUA_MODIFIER_MOTION_NONE)
 
@@ -36,6 +37,7 @@ LinkLuaModifier("modifier_mk_ai", "modifiers/ai/modifier_mk_ai", LUA_MODIFIER_MO
 LinkLuaModifier("modifier_techies_ai", "modifiers/ai/modifier_techies_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_ogre_bruiser_ai", "modifiers/ai/modifier_ogre_bruiser_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_island_guard_ai", "modifiers/ai/modifier_island_guard_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_goden_ai", "modifiers/ai/modifier_goden_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_red_ai", "modifiers/ai/modifier_red_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_genius_ai", "modifiers/ai/modifier_genius_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_gorilla_ai", "modifiers/ai/modifier_gorilla_ai", LUA_MODIFIER_MOTION_NONE)
