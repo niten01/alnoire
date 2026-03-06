@@ -15,6 +15,11 @@
 			"lifesteal_pct_per_stack"	"5"
 			"max_stacks"				"20"
 		}
+
+		"precache"
+		{
+			"particle"		"particles/logarithmus_lifesteal.vpcf"
+		}
 	}
 	"logarithmus_step"
 	{
@@ -106,9 +111,9 @@
 		"AbilityValues"
 		{
             "width"                 "50"
-            "animation_duration"    "1.35"
-            "end_inactive_animation_point"  "0.9"
-            "second_slash_animation_point"  "0.8"   
+            "animation_duration"    "0.9"
+            "end_inactive_animation_point"  "0.6"
+            "second_slash_animation_point"  "0.55"   
 		}
 
         "precache"
@@ -139,8 +144,7 @@
 		"AbilityValues"
 		{
             "width"                 "50"
-            "animation_duration"    "1.35"
-            "tp_animation_point"    "0.8"
+            "tp_animation_point"    "0.55"
 		}
 
         "precache"
