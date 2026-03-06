@@ -13,6 +13,7 @@
 		{
 			"magical_damage_per_stack"	"50"
 			"lifesteal_pct_per_stack"	"5"
+			"max_stacks"				"10"
 		}
 	}
 	"logarithmus_step"
@@ -374,6 +375,8 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
+        "AbilityDamage"                 "100 200 300 400"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityCastRange"			"300"
 		"AbilityValues"
 		{

@@ -27,6 +27,7 @@ end
 
 function modifier_logarithmus_concentration:OnAbilityFullyCast(params)
     if params.unit ~= self:GetParent() then return end
+    if self:GetStackCount() >= self:GetAbility():GetSpecialValueFor("max_stacks") then return end
     self:IncrementStackCount()
 end
 

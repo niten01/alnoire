@@ -14,10 +14,6 @@ function logarithmus_alt_clone:OnSpellStart()
     local cloneDuration = self:GetSpecialValueFor("clone_duration")
     local cloneAttackPoint = self:GetSpecialValueFor("clone_attack_point")
 
-    local concentrationMod = caster:FindModifierByName("modifier_logarithmus_concentration")
-    if not concentrationMod then return end
-    local damage = concentrationMod:CalcMagicalDamage()
-
     local points = PointsAlongRing(targetPos, target:GetHullRadius() + 100, 4)
     for _, point in ipairs(points) do point.z = targetPos.z end
     local realPointIdx = RandomInt(1, #points)
@@ -49,16 +45,17 @@ function logarithmus_alt_clone:OnSpellStart()
             caster:EmitSound("ability.logarithmus.alt_clone.swing")
 
             PlayLogarithmusImpaleEffect(target, point)
-            ApplyDamage({
-                victim = target,
-                attacker = caster,
-                damage = damage,
-                damage_type = DAMAGE_TYPE_MAGICAL,
-                ability = self,
-            })
         end)
         ::continue::
     end
+
+    ApplyDamage({
+        victim = target,
+        attacker = caster,
+        damage = self:GetAbilityDamage(),
+        damage_type = self:GetAbilityDamageType(),
+        ability = self,
+    })
 
     local pfx = ParticleManager:CreateParticle("particles/logarithmus_step_simplified.vpcf", PATTACH_ABSORIGIN, caster)
     ParticleManager:SetParticleControl(pfx, 0, casterPos)
@@ -74,7 +71,7 @@ function logarithmus_alt_clone:OnSpellStart()
     caster:StartGesture(ACT_DOTA_ATTACK_EVENT)
     Timers:CreateTimer(cloneAttackPoint, function()
         PlayLogarithmusImpaleEffect(target, realPoint)
-        caster:PerformAttack(target, true, true, true, false, false, false,
-            false)
+        -- caster:PerformAttack(target, true, true, true, false, false, false,
+        --     false)
     end)
 end

@@ -107,7 +107,7 @@ return {
         "npc_cat_barrel",
         "npc_island_guard",
         "npc_island_fiend",
-        "npc_island_shadow_demon",
+        "npc_island_demon",
         "npc_bomb_place",
         "npc_bomb",
 
