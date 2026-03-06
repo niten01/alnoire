@@ -27,3 +27,5 @@
 "npc_training_dummy" "Тренировочный манекен"
 "npc_goden" "Годень"
 "npc_goden_summon" "Солдат Годеня"
+"npc_island_fiend" "Дьявол острова"
+"npc_island_demon" "Демон острова"

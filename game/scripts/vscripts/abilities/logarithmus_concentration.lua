@@ -20,15 +20,8 @@ function modifier_logarithmus_concentration:IsPurgable() return false end
 
 function modifier_logarithmus_concentration:DeclareFunctions()
     return {
-        MODIFIER_EVENT_ON_ABILITY_FULLY_CAST,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
     }
-end
-
-function modifier_logarithmus_concentration:OnAbilityFullyCast(params)
-    if params.unit ~= self:GetParent() then return end
-    if self:GetStackCount() >= self:GetAbility():GetSpecialValueFor("max_stacks") then return end
-    self:IncrementStackCount()
 end
 
 function modifier_logarithmus_concentration:CalcMagicalDamage()

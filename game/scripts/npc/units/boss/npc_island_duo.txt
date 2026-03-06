@@ -14,7 +14,7 @@
 		"Ability1"					"shadow_fiend_shadowraze_a_lua"			// Ability 1
 		"Ability2"					"shadow_fiend_shadowraze_b_lua"			// Ability 2
 		"Ability3"					"shadow_fiend_shadowraze_c_lua"			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					"island_fiend_blink"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -67,6 +67,12 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"HasInventory" 				"1"
+
+		"precache"
+		{
+        	"soundfile"			"soundevents/bosses/island_duo.vsndevts"
+		}
+
 		"Creature"
 		{
 			"AttachWearables"

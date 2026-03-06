@@ -40,22 +40,26 @@ function logarithmus_alt_clone:OnSpellStart()
             EmitSoundOnLocationWithCaster(point, "ability.logarithmus.clone.dissolve", caster)
         end)
 
-        -- attack
-        Timers:CreateTimer(cloneAttackPoint, function()
-            caster:EmitSound("ability.logarithmus.alt_clone.swing")
-
-            PlayLogarithmusImpaleEffect(target, point)
-        end)
         ::continue::
     end
 
-    ApplyDamage({
-        victim = target,
-        attacker = caster,
-        damage = self:GetAbilityDamage(),
-        damage_type = self:GetAbilityDamageType(),
-        ability = self,
-    })
+    -- attack
+    Timers:CreateTimer(cloneAttackPoint, function()
+        caster:EmitSound("ability.logarithmus.alt_clone.swing")
+        for _, point in ipairs(points) do
+            PlayLogarithmusImpaleEffect(target, point)
+        end
+
+        ApplyDamage({
+            victim = target,
+            attacker = caster,
+            damage = self:GetAbilityDamage(),
+            damage_type = self:GetAbilityDamageType(),
+            ability = self,
+        })
+        IncrementLogarithmusStacks(caster)
+    end)
+
 
     local pfx = ParticleManager:CreateParticle("particles/logarithmus_step_simplified.vpcf", PATTACH_ABSORIGIN, caster)
     ParticleManager:SetParticleControl(pfx, 0, casterPos)

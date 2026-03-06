@@ -58,6 +58,8 @@ function logarithmus_alt_throw:Slice(from, to)
             ability = self,
         })
     end
+
+    return #enemies > 0
 end
 
 function logarithmus_alt_throw:OnSpellStart()
@@ -73,7 +75,7 @@ function logarithmus_alt_throw:OnSpellStart()
     targetPos.z = casterPos.z
     local dir = (targetPos - casterPos):Normalized()
     local endPos = casterPos + dir * self:GetCastRange(casterPos, nil)
-    self:Slice(casterPos, endPos)
+    local hit = self:Slice(casterPos, endPos)
     caster:EmitSound("ability.logarithmus.throw.first")
 
     endPos = GetSafeBlinkDestination(casterPos, endPos)
@@ -81,12 +83,16 @@ function logarithmus_alt_throw:OnSpellStart()
 
     Timers:CreateTimer(inactiveDuration, function()
         if not caster:IsAlive() then return end
-        self:Slice(casterPos, endPos)
+        hit = hit or self:Slice(casterPos, endPos)
         caster:EmitSound("ability.logarithmus.alt_throw.second")
 
         caster:Stop()
         caster:SetAbsOrigin(endPos)
         caster:SetForwardVector(dir)
         caster:FaceTowards(endPos + dir)
+
+        if hit then
+            IncrementLogarithmusStacks(caster)
+        end
     end)
 end

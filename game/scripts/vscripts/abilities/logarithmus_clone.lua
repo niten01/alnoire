@@ -73,6 +73,10 @@ function logarithmus_clone:OnSpellStart()
           ability = self,
         })
       end
+
+      if #enemies > 0 then
+        IncrementLogarithmusStacks(caster)
+      end
     end)
   end)
 end

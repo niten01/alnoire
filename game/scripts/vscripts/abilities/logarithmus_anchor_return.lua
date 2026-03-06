@@ -47,6 +47,10 @@ function logarithmus_anchor_return:OnSpellStart()
     })
   end
 
+  if #enemies > 0 then
+    IncrementLogarithmusStacks(caster)
+  end
+
   caster:Stop()
   FindClearSpaceForUnit(caster, anchorPos, true)
   local dir = (anchorPos - casterPos):Normalized()

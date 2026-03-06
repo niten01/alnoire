@@ -101,4 +101,5 @@ function logarithmus_projectile:OnProjectileHit(target, direction)
     damage_type = self:GetAbilityDamageType(),
     ability = self,
   })
+  IncrementLogarithmusStacks(caster)
 end
