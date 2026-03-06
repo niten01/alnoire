@@ -11,8 +11,8 @@
 
 		"AbilityValues"
 		{
-			"magical_damage_per_stack"	"25"
-			"lifesteal_pct_per_stack"	"5"
+			"magical_damage_per_stack"	"10"
+			"lifesteal_pct_per_stack"	"1"
 		}
 	}
 	"logarithmus_step"
