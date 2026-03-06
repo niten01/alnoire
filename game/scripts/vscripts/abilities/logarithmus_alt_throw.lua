@@ -74,6 +74,7 @@ function logarithmus_alt_throw:OnSpellStart()
     local dir = (targetPos - casterPos):Normalized()
     local endPos = casterPos + dir * self:GetCastRange(casterPos, nil)
     self:Slice(casterPos, endPos)
+    caster:EmitSound("ability.logarithmus.throw.first")
 
     endPos = GetSafeBlinkDestination(casterPos, endPos)
     endPos = GetClearSpaceForUnit(caster, endPos)
@@ -81,6 +82,9 @@ function logarithmus_alt_throw:OnSpellStart()
     Timers:CreateTimer(inactiveDuration, function()
         if not caster:IsAlive() then return end
         self:Slice(casterPos, endPos)
+        caster:EmitSound("ability.logarithmus.alt_throw.second")
+
+        caster:Stop()
         caster:SetAbsOrigin(endPos)
         caster:SetForwardVector(dir)
         caster:FaceTowards(endPos + dir)

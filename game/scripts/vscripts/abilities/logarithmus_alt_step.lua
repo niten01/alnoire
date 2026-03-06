@@ -18,7 +18,7 @@ function logarithmus_alt_step:OnAbilityPhaseStart()
     local caster = self:GetCaster()
     local casterPos = caster:GetAbsOrigin()
 
-     self.endPos = self:GetCursorPosition()
+    self.endPos = self:GetCursorPosition()
     self.endPos.z = casterPos.z
     self.endPos = GetSafeBlinkDestination(casterPos, self.endPos, self:GetSpecialValueFor("dash_range"))
 
@@ -62,14 +62,17 @@ modifier_logarithmus_alt_step = class {}
 
 function modifier_logarithmus_alt_step:OnCreated(kv)
     if not IsServer() then return end
+    local parent = self:GetParent()
 
     local interval = 0.1
     self.damagePerInterval = kv.dps * interval
     self.radius = kv.radius
 
     self.pfx = ParticleManager:CreateParticle("particles/logarithmus_spin.vpcf", PATTACH_ABSORIGIN_FOLLOW,
-    self:GetParent())
+        parent)
     ParticleManager:SetParticleControl(self.pfx, 5, Vector(self.radius, 1, 1))
+
+    parent:EmitSound("ability.logarithmus.alt_step.cast")
 
     self:StartIntervalThink(interval)
 end

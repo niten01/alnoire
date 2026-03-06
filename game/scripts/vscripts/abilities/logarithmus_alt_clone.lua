@@ -23,23 +23,31 @@ function logarithmus_alt_clone:OnSpellStart()
     local realPointIdx = RandomInt(1, #points)
     local realPoint = points[realPointIdx]
 
+    caster:EmitSound("ability.logarithmus.alt_clone.cast")
+
     for i, point in ipairs(points) do
         if i == realPointIdx then goto continue end
 
         local dir = (targetPos - point):Normalized()
-        local clonePfx = ParticleManager:CreateParticle("particles/logarithmus_alt_remnant.vpcf", PATTACH_WORLDORIGIN, nil)
+        local clonePfx = ParticleManager:CreateParticle("particles/logarithmus_alt_remnant.vpcf", PATTACH_WORLDORIGIN,
+            nil)
         ParticleManager:SetParticleControl(clonePfx, 0, point)
         ParticleManager:SetParticleControl(clonePfx, 1, point - dir * 10)
         ParticleManager:SetParticleControl(clonePfx, 2, Vector(17, 0, 0)) -- attack_clone_chop
+
 
         -- destroy clone
         Timers:CreateTimer(cloneDuration, function()
             ParticleManager:DestroyParticle(clonePfx, false)
             ParticleManager:ReleaseParticleIndex(clonePfx)
+
+            EmitSoundOnLocationWithCaster(point, "ability.logarithmus.clone.dissolve", caster)
         end)
 
         -- attack
         Timers:CreateTimer(cloneAttackPoint, function()
+            caster:EmitSound("ability.logarithmus.alt_clone.swing")
+
             PlayLogarithmusImpaleEffect(target, point)
             ApplyDamage({
                 victim = target,

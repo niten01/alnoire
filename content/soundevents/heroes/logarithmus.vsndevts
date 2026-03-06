@@ -1,0 +1,328 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  Hero_Logarithmus.Attack = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_hit_1.vsnd",
+        "sounds/logarithmus/logarithmus_hit_2.vsnd",
+        "sounds/logarithmus/logarithmus_hit_3.vsnd",
+    ]
+    volume = "1.00000"
+    pitch_rand_min = "-0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  Hero_Logarithmus.Footsteps = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/physics/footsteps/hero/chen/footstep01.vsnd",
+        "sounds/physics/footsteps/hero/chen/footstep02.vsnd",
+        "sounds/physics/footsteps/hero/chen/footstep03.vsnd",
+        "sounds/physics/footsteps/hero/chen/footstep04.vsnd",
+        "sounds/physics/footsteps/hero/chen/footstep05.vsnd",
+        "sounds/physics/footsteps/hero/chen/footstep06.vsnd",
+    ]
+    volume = "0.10000"
+    // pitch_rand_min = "0.050000"
+    // pitch_rand_max = "0.050000"
+    pitch = "1.800000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.clone.dissolve = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_clone_dissolve.vsnd",
+    ]
+    volume = "1.00000"
+    pitch_rand_min = "-0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.alt_clone.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_alt_clone_cast.vsnd",
+    ]
+    volume = "1.50000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.alt_clone.swing = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_alt_clone_swing.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.clone.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_clone_cast.vsnd",
+    ]
+    volume = "1.50000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.clone.swing = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_clone_swing.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.step.start = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_dash_start.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.step.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_dash_1.vsnd",
+        "sounds/logarithmus/logarithmus_dash_2.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.step.cast_max = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_dash_3.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.alt_step.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_alt_dash.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.anchor.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_mayak_set.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.070000"
+    pitch_rand_max = "0.070000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.anchor_return.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_mayak_hit.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.alt_anchor.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_alt_mayak_set.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.alt_anchor.prehit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_alt_mayak_prehit.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.alt_anchor.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_alt_mayak_hit.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.projectile.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_proj_cast.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.projectile.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_proj_hit.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.alt_projectile.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_alt_proj_cast.vsnd",
+    ]
+    volume = "0.50000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.alt_projectile.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_alt_proj_hit_1.vsnd",
+        "sounds/logarithmus/logarithmus_alt_proj_hit_2.vsnd",
+    ]
+    volume = "0.70000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.080000"
+    pitch_rand_max = "0.080000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.throw.first = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_throw_first.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.080000"
+    pitch_rand_max = "0.080000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.throw.second = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_throw_second.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.080000"
+    pitch_rand_max = "0.080000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.alt_throw.second = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_alt_throw_second.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.080000"
+    pitch_rand_max = "0.080000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+}

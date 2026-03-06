@@ -41,6 +41,8 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
     ParticleManager:ReleaseParticleIndex(pfx)
   end
 
+  caster:EmitSound("ability.logarithmus.projectile.cast")
+
   local travelTime = parabolaInfo:Length() / speed
   local interval = 0.01
   local lastTime = GameRules:GetGameTime()
@@ -53,6 +55,8 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
     local curPoint = parabolaIter(dt / travelTime)
     if not curPoint then
       destroyPfx()
+
+      EmitSoundOnLocationWithCaster(prevPoint or startPos, "ability.logarithmus.projectile.hit", caster)
       return nil
     end
     curPoint.z = startPos.z
@@ -62,6 +66,9 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
     local enemies = FindEnemiesForSanyaInRadius(curPoint, radius)
     for _, ent in ipairs(enemies) do
       destroyPfx()
+
+      EmitSoundOnLocationWithCaster(curPoint, "ability.logarithmus.projectile.hit", caster)
+
       self:OnProjectileHit(ent, (prevPoint and curPoint - prevPoint) or Vector(0, 0, 0))
       return nil
     end

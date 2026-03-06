@@ -33,6 +33,8 @@ function logarithmus_anchor_return:OnSpellStart()
   ParticleManager:SetParticleControl(pfx, 1, anchorPos)
   ParticleManager:ReleaseParticleIndex(pfx)
 
+  caster:EmitSound("ability.logarithmus.anchor_return.cast")
+
   local enemies = FindEnemiesForSanyaInLine(casterPos, anchorPos, self:GetSpecialValueFor("width"))
   for _, ent in pairs(enemies) do
     PlayLogarithmusImpaleEffect(ent, casterPos)
