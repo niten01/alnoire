@@ -79,4 +79,5 @@ function logarithmus_alt_projectile:OnProjectileHit(target, pos)
         damage_type = self:GetAbilityDamageType(),
         ability = self,
     })
+    IncrementLogarithmusStacks(caster)
 end

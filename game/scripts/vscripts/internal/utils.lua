@@ -318,20 +318,27 @@ function GetSafeBlinkDestination(start, targetRaw, distance)
 end
 
 function PlayLogarithmusBladeEffect(caster, duration)
-    local pfx = ParticleManager:CreateParticle("particles/logarithmus_blade_effect.vpcf", PATTACH_CUSTOMORIGIN,
-        caster)
-    ParticleManager:SetParticleControlEnt(pfx, 1, caster, PATTACH_POINT_FOLLOW, "attach_blade_start",
-        Vector(0, 0, 0), false)
-    ParticleManager:SetParticleControlEnt(pfx, 2, caster, PATTACH_POINT_FOLLOW, "attach_blade_end",
-        Vector(0, 0, 0), false)
-    ParticleManager:SetParticleControl(pfx, 3, Vector(duration, 0, 0))
-    ParticleManager:ReleaseParticleIndex(pfx)
+  local pfx = ParticleManager:CreateParticle("particles/logarithmus_blade_effect.vpcf", PATTACH_CUSTOMORIGIN,
+    caster)
+  ParticleManager:SetParticleControlEnt(pfx, 1, caster, PATTACH_POINT_FOLLOW, "attach_blade_start",
+    Vector(0, 0, 0), false)
+  ParticleManager:SetParticleControlEnt(pfx, 2, caster, PATTACH_POINT_FOLLOW, "attach_blade_end",
+    Vector(0, 0, 0), false)
+  ParticleManager:SetParticleControl(pfx, 3, Vector(duration, 0, 0))
+  ParticleManager:ReleaseParticleIndex(pfx)
 end
 
 function PlayLogarithmusImpaleEffect(target, hitFromPos)
-        local pfx = ParticleManager:CreateParticle("particles/logarithmus_step_impale.vpcf", PATTACH_CUSTOMORIGIN, ent)
-        ParticleManager:SetParticleControlEnt(pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", Vector(0, 0, 0), false)
-        ParticleManager:SetParticleControlTransformForward(pfx, 1, target:GetAbsOrigin(),
-            (target:GetAbsOrigin() - hitFromPos):Normalized())
-        ParticleManager:ReleaseParticleIndex(pfx)
+  local pfx = ParticleManager:CreateParticle("particles/logarithmus_step_impale.vpcf", PATTACH_CUSTOMORIGIN, ent)
+  ParticleManager:SetParticleControlEnt(pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", Vector(0, 0, 0), false)
+  ParticleManager:SetParticleControlTransformForward(pfx, 1, target:GetAbsOrigin(),
+    (target:GetAbsOrigin() - hitFromPos):Normalized())
+  ParticleManager:ReleaseParticleIndex(pfx)
+end
+
+function IncrementLogarithmusStacks(caster)
+  local mod = caster:FindModifierByName("modifier_logarithmus_concentration")
+  assert(mod)
+  if mod:GetStackCount() >= mod:GetAbility():GetSpecialValueFor("max_stacks") then return end
+  mod:IncrementStackCount()
 end

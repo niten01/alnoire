@@ -67,6 +67,7 @@ function modifier_logarithmus_alt_step:OnCreated(kv)
     local interval = 0.1
     self.damagePerInterval = kv.dps * interval
     self.radius = kv.radius
+    self.hitSomeone = false
 
     self.pfx = ParticleManager:CreateParticle("particles/logarithmus_spin.vpcf", PATTACH_ABSORIGIN_FOLLOW,
         parent)
@@ -97,5 +98,12 @@ function modifier_logarithmus_alt_step:OnIntervalThink()
             damage_type = self:GetAbility():GetAbilityDamageType(),
             ability = self,
         })
+    end
+
+    if #enemies > 0 then
+        if not self.hitSomeone then
+            IncrementLogarithmusStacks(parent)
+        end
+        self.hitSomeone = true
     end
 end

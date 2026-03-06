@@ -43,7 +43,7 @@ function logarithmus_step:OnVectorCastStart(vStartLocation, vDirection)
     ParticleManager:SetParticleControl(pfx, 1, blinkPos)
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    EmitSoundOnLocationWithCaster(casterPos, "ability.logarithmus.alt_projectile.start", caster)
+    EmitSoundOnLocationWithCaster(casterPos, "ability.logarithmus.step.start", caster)
 
     local hitPos = blinkPos + vDirection * self:GetVectorTargetRange()
     hitPos.z = casterPos.z
@@ -79,6 +79,7 @@ function logarithmus_step:OnVectorCastStart(vStartLocation, vDirection)
     end
 
     if #enemies > 0 then
+        IncrementLogarithmusStacks(caster)
         self.sequentialUses = self.sequentialUses + 1
         if self.sequentialUses < maxSequentialUses then
             caster:AddNewModifier(caster, self, "modifier_logarithmus_step_recastable", {

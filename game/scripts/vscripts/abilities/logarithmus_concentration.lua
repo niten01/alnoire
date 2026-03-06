@@ -20,22 +20,8 @@ function modifier_logarithmus_concentration:IsPurgable() return false end
 
 function modifier_logarithmus_concentration:DeclareFunctions()
     return {
-        MODIFIER_EVENT_ON_ABILITY_FULLY_CAST,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
     }
-end
-
-function modifier_logarithmus_concentration:OnAbilityFullyCast(params)
-    if params.unit ~= self:GetParent() then return end
-    if self:GetStackCount() >= self:GetAbility():GetSpecialValueFor("max_stacks") then return end
-    self:IncrementStackCount()
-end
-
-function modifier_logarithmus_concentration:CalcMagicalDamage()
-    local stackCount = self:GetStackCount()
-    local ability = self:GetAbility()
-    local damage = stackCount * ability:GetSpecialValueFor("magical_damage_per_stack")
-    return damage
 end
 
 function modifier_logarithmus_concentration:OnAttackLanded(params)
@@ -48,7 +34,7 @@ function modifier_logarithmus_concentration:OnAttackLanded(params)
 
     local parent = self:GetParent()
     local ability = self:GetAbility()
-    local damage = self:CalcMagicalDamage()
+    local damage = stackCount * ability:GetSpecialValueFor("magical_damage_per_stack")
     local lifestealFraction = stackCount * ability:GetSpecialValueFor("lifesteal_pct_per_stack") / 100
     lifestealFraction = math.max(1, lifestealFraction)
     ApplyDamage({
@@ -59,4 +45,7 @@ function modifier_logarithmus_concentration:OnAttackLanded(params)
         ability = self,
     })
     parent:HealWithParams(damage * lifestealFraction, ability, false, true, parent, true)
+
+    local pfx = ParticleManager:CreateParticle("particles/logarithmus_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+    ParticleManager:ReleaseParticleIndex(pfx)
 end

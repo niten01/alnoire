@@ -590,13 +590,13 @@ return {
             npc = "npc_island_fiend",
             modifiers = { "modifier_story_npc" },
             packID = "pack_island_duo",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_island_fiend_ai",
         },
         spawner_island_demon = {
             npc = "npc_island_demon",
             modifiers = { "modifier_story_npc" },
             packID = "pack_island_duo",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_island_demon_ai",
         },
         spawner_bomb_place          = {
             npc = "npc_bomb_place",

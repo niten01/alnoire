@@ -64,6 +64,8 @@ function logarithmus_throw:Slice(from, to)
             ability = self,
         })
     end
+
+    return #enemies > 0
 end
 
 function logarithmus_throw:OnSpellStart()
@@ -84,11 +86,16 @@ function logarithmus_throw:OnSpellStart()
     local endPos = casterPos + dir * self:GetCastRange(casterPos, nil)
     local secondSlashDelay = self:GetSpecialValueFor("second_slash_animation_point") - self:GetCastPoint()
 
-    self:Slice(casterPos, endPos)
+    local hit = self:Slice(casterPos, endPos)
     caster:EmitSound("ability.logarithmus.throw.first")
 
     Timers:CreateTimer(secondSlashDelay, function()
-        self:Slice(endPos, casterPos)
+        local hit2 = self:Slice(endPos, casterPos)
+        hit = hit or hit2
         caster:EmitSound("ability.logarithmus.throw.second")
+
+        if hit then
+            IncrementLogarithmusStacks(caster)
+        end
     end)
 end

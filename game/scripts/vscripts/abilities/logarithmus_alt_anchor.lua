@@ -40,5 +40,9 @@ function logarithmus_alt_anchor:OnSpellStart()
                 ability = self,
             })
         end
+
+        if #enemies > 0 then
+            IncrementLogarithmusStacks(caster)
+        end
     end)
 end
