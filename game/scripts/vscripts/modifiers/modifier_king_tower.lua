@@ -21,3 +21,9 @@ function modifier_king_tower:OnDeath(event)
         teamNum
     )
 end
+
+function modifier_king_tower:CheckState()
+    return {
+        [MODIFIER_STATE_FROZEN] = true,
+    }
+end

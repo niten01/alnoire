@@ -16,6 +16,9 @@ function ClashGame:Init()
 
     self.king_tower_good = nil
     self.king_tower_bad = nil
+    self.lastSpellCastTime = 0
+    self.firstSpellDelay = 3
+    self.spellCooldown = 5
 
     self.tower_config = {
         { point = "bad_tower_left",   npc = "npc_dota_custom_tower_bad",       team = DOTA_TEAM_BADGUYS },
@@ -45,6 +48,21 @@ function ClashGame:Init()
             self:SpawnMegaCreep()
             return 30.0
         end, 20.0)
+
+        GameRules:GetGameModeEntity():SetContextThink("ClashSpellThinker", function()
+            if not self.isActive then return nil end
+
+            local currentTime = GameRules:GetGameTime()
+            if not self.startTime then self.startTime = currentTime end
+            if (currentTime - self.startTime) >= self.firstSpellDelay then
+                if (currentTime - self.lastSpellCastTime) >= self.spellCooldown then
+                    if self:TryCastKingSpell() then
+                        self.lastSpellCastTime = currentTime
+                    end
+                end
+            end
+            return 1.0
+        end, 1.0)
     end)
 end
 
@@ -74,6 +92,12 @@ function ClashGame:SpawnTowers()
             if string.find(unitName, 'king') then
                 unit:AddNewModifier(unit, nil, 'modifier_invulnerable', {})
                 unit:AddNewModifier(unit, nil, 'modifier_king_tower', {})
+                for i = 0, unit:GetAbilityCount() - 1 do
+                    local abil = unit:GetAbilityByIndex(i)
+                    if abil then
+                        abil:SetLevel(1)
+                    end
+                end
                 if string.find(unitName, 'good') then
                     self.king_tower_good = unit
                 else
@@ -201,7 +225,7 @@ function ClashGame:KillAll()
     table.insert(names_to_kill, self.bad_creep_name)
     table.insert(names_to_kill, self.good_creep_name)
     local units = FindUnitsInRadius(
-        DOTA_TEAM_NEUTRALS,
+        DOTA_TEAM_BADGUYS,
         Vector(0, 0, 0),
         nil,
         FIND_UNITS_EVERYWHERE,
@@ -217,6 +241,77 @@ function ClashGame:KillAll()
             unit:ForceKill(false)
         end
     end
+end
+
+function ClashGame:TryCastKingSpell()
+    if not self.king_tower_bad or self.king_tower_bad:IsNull() or not self.king_tower_bad:IsAlive() then
+        return false
+    end
+
+    local targetPointNames = { "target_dire_spell_left", "target_dire_spell_right" }
+    local possibleEnemyPositions = {}
+
+    for _, name in pairs(targetPointNames) do
+        local pointEnt = Entities:FindByName(nil, name)
+        if pointEnt then
+            local enemies = FindUnitsInRadius(
+                DOTA_TEAM_BADGUYS,
+                pointEnt:GetAbsOrigin(),
+                nil,
+                700,
+                DOTA_UNIT_TARGET_TEAM_ENEMY,
+                DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
+                DOTA_UNIT_TARGET_FLAG_NONE,
+                FIND_ANY_ORDER,
+                false
+            )
+
+            for _, enemy in pairs(enemies) do
+                table.insert(possibleEnemyPositions, enemy:GetAbsOrigin())
+            end
+        end
+    end
+
+    if #possibleEnemyPositions > 0 then
+        local castPosition = possibleEnemyPositions[math.random(#possibleEnemyPositions)]
+
+        local abilIndex = math.random(0, 2)
+        local ability = self.king_tower_bad:GetAbilityByIndex(abilIndex)
+
+        if ability and ability:IsFullyCastable() then
+            local abilityName = ability:GetAbilityName()
+            print("[CLASH] King Tower casting spell " .. abilityName)
+
+            if abilityName == "zuus_lightning_bolt" then
+                local castsDone = 0
+                local maxCasts = 3
+                local delay = 0.5
+
+                self.king_tower_bad:SetContextThink(DoUniqueString("zeus_burst"), function()
+                    if castsDone < maxCasts then
+                        if self.king_tower_bad and not self.king_tower_bad:IsNull() then
+                            EmitSoundOnLocationForPlayer("Hero_Zuus.LightningBolt.Cast", castPosition, 0)
+
+                            self.king_tower_bad:CastAbilityOnPosition(castPosition, ability, -1)
+
+                            ability:EndCooldown()
+
+                            castsDone = castsDone + 1
+                            return delay
+                        end
+                    end
+                    return nil
+                end, 0)
+            else
+                EmitSoundOnLocationForPlayer("Hero_Invoker.SunStrike.Cast", castPosition, 0)
+                self.king_tower_bad:CastAbilityOnPosition(castPosition, ability, -1)
+            end
+
+            return true
+        end
+    end
+
+    return false
 end
 
 return ClashGame

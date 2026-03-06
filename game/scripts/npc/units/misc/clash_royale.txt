@@ -93,12 +93,14 @@
 	{
 		// General
 		//
-		"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/props_structures/rock_golem/tower_dire_rock_golem.vmdl"// Model.
 		"SoundSet"					"Tower.Water"					// Name of sound set.
 		"MinimapIcon"				""
 		"MinimapIconSize"			"0"
 		"Level"						"1"
+		"IsTower"                   "1"
+		"IsBuilding"                "1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -125,8 +127,8 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"800"		// Range within a target can be attacked.
+		"AttackAcquisitionRange"	"900"		// Range within a target can be acquired.
+		"AttackRange"				"900"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Particle system model for projectile.
 		"ProjectileSpeed"			"1250"		// Speed of projectile.
 
@@ -184,22 +186,23 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-		"Model"						"models/heroes/undying/undying_tower.vmdl"// Model.
-		"SoundSet"					"Tower.Water"					// Name of sound set.
+		"Model"						"models/props_structures/bad_ancient002.vmdl"// Model.
+		"SoundSet"					"Tower.Fire"					// Name of sound set.
 		"MinimapIcon"				""
+		"ModelScale"				"0.7"
 		"MinimapIconSize"			"0"
 		"Level"						"1"
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
+		"Ability1"					"invoker_chaos_meteor"			// Ability 1.
+		"Ability2"					"custom_freeze"			// Ability 2.
+		"Ability3"					"zuus_lightning_bolt"					// Ability 3.
+		"Ability4"					"skeleton_king_bone_guard"			// Ability 4.
+		//"Ability5"					"zuus_lightning_bolt"			// Ability 5.
+		//"Ability6"					"custom_freeze"			// Ability 6 - Extra.
+		//"Ability7"					"invoker_chaos_meteor"			// Ability 7 - Extra.
+		//"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -239,21 +242,21 @@
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
 		"ProjectileCollisionSize"	"50"
-		"RingRadius"				"10"
-		"HealthBarOffset"			"500"
+		"RingRadius"				"120"
+		"HealthBarOffset"			"370"
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
 		"MovementSpeed"				"0"			// Speed
-		"MovementTurnRate"			"1.0"			// Turning rate.
+		"MovementTurnRate"			"0.0"			// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"10"			// Mana regeneration rate.
 
 		// Team
 		//----------------------------------------------------------------

@@ -159,6 +159,10 @@ return {
         "npc_dota_hero_tiny",
         "npc_dota_hero_lion",
         "npc_dota_hero_tusk",
+        "npc_dota_hero_invoker",
+        "npc_dota_hero_zuus",
+        "npc_dota_hero_crystal_maiden",
+
 
 
         "npc_jungle_venomancer",
@@ -327,6 +331,10 @@ return {
         "particles/neutral_fx/ogre_magi_frost_armor.vpcf",
         "particles/generic_gameplay/generic_lifesteal.vpcf",
         "particles/units/heroes/hero_pudge/pudge_rot.vpcf",
+
+        -- clash
+        "particles/clash_custom_freeze.vpcf",
+        "particles/econ/items/drow/drow_arcana/drow_arcana_status_effect_frost_arrow.vpcf",
 
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",
