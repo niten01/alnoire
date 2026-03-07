@@ -7,7 +7,7 @@
         "AbilityTextureName"            "ember_spirit_flame_guard"
         
         "AbilityChannelAnimation"       "ACT_DOTA_CHANNEL_ABILITY_1"
-		"AbilityChannelTime"			"3.0"
+		"AbilityChannelTime"			"2.0"
         "AbilityCooldown"               "20.0" 
         "AbilityCastRange"        		"9999"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -17,7 +17,7 @@
             "duration"                "3"
             "radius"                "200"
             "damage_per_sec"          "300"
-            "bonus_ms"              "100"
+            "bonus_ms"              "150"
         }
 
         "precache"
@@ -72,7 +72,7 @@
             "projectile_radius"    "100"
             "num_shots"            "6"
             "spread_angle"         "30"
-            "delay_per_shot"       "0.1"
+            "delay_per_shot"       "0.05"
         }
 
         "precache"
