@@ -14,10 +14,9 @@ function modifier_red_ai:OnCreated()
     self.tired = false
 end
 
-function modifier_red_ai:MakeTired(unit)
+function modifier_red_ai:MakeTired(unit, duration)
     self.tired = true
     Timers:CreateTimer(0.2, function()
-        local duration = 5
         unit:AddNewModifier(nil, nil, "modifier_red_tired", { duration = duration })
         Timers:CreateTimer(duration, function() self.tired = false end)
     end)
@@ -60,7 +59,7 @@ function modifier_red_ai:OnIntervalThink()
                         if unit:FindAbilityByName("red_machine_gun"):GetCooldownTimeRemaining() > 0 then
                             self.blinkUsed = false
                             if RandomFloat(0, 1) < 0.7 then
-                                self:MakeTired(unit)
+                                self:MakeTired(unit, 6)
                             end
                             return nil
                         end
@@ -75,6 +74,11 @@ function modifier_red_ai:OnIntervalThink()
                 "red_radiance",
                 "red_fireball"
             }) then
+            if unit.lastCastAbilityName == "red_fireball" then
+                if RandomFloat(0, 1) < 0.5 then
+                    self:MakeTired(unit, 4)
+                end
+            end
             return
         end
 
