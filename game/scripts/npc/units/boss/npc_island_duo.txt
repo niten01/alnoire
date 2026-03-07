@@ -6,7 +6,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Nevermore"
 		"Level"						"1"
-		"ModelScale" 				"1"
+		"ModelScale" 				"1.1"
 		"ConsideredHero" 			"1"
 
 		// Abilities
@@ -160,10 +160,14 @@
 			{
 				// "Wearable1" { "ItemDef" "397" } // armor
 				// "Wearable2" { "ItemDef" "9234" } // back
-				"Wearable1" { "ItemDef" "13152" } // tail
-				"Wearable2" { "ItemDef" "13153" } // back
-				"Wearable3" { "ItemDef" "13154" } // armor
-				"Wearable4" { "ItemDef" "13155" } // belt
+				// "Wearable1" { "ItemDef" "13152" } // tail
+				// "Wearable2" { "ItemDef" "13153" } // back
+				// "Wearable3" { "ItemDef" "13154" } // armor
+				// "Wearable4" { "ItemDef" "13155" } // belt
+				"Wearable1" { "ItemDef" "17899" } // tail
+				"Wearable2" { "ItemDef" "17901" } // back
+				"Wearable3" { "ItemDef" "17902" } // armor
+				"Wearable4" { "ItemDef" "17903" } // belt
 			}
 		}
 	}
@@ -201,10 +205,13 @@
 			{
 				// "Wearable1" { "ItemDef" "397" } // armor
 				// "Wearable2" { "ItemDef" "9234" } // back
-				"Wearable1" { "ItemDef" "13152" } // tail
-				"Wearable2" { "ItemDef" "13153" } // back
-				"Wearable3" { "ItemDef" "13154" } // armor
-				"Wearable4" { "ItemDef" "13155" } // belt
+				// "Wearable1" { "ItemDef" "13152" } // tail
+				// "Wearable3" { "ItemDef" "13154" } // armor
+				// "Wearable4" { "ItemDef" "13155" } // belt
+				"Wearable1" { "ItemDef" "17899" } // tail
+				"Wearable2" { "ItemDef" "17901" } // back
+				"Wearable3" { "ItemDef" "17902" } // armor
+				"Wearable4" { "ItemDef" "17903" } // belt
 			}
 		}
 	}

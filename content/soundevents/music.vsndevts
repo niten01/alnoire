@@ -183,7 +183,7 @@
       "sounds/music/eps_guards2.vsnd"
     ]
     volume = "2.500000"
-    fade_in = "3.0"
+    fade_in = "0.0"
     fade_out = "2.0"
   }
   music.island_duo.phase3 = {
