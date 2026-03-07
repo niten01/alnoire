@@ -7,14 +7,14 @@
         "AbilityTextureName"            "ember_spirit_flame_guard"
         
         "AbilityChannelAnimation"       "ACT_DOTA_CHANNEL_ABILITY_1"
-		"AbilityChannelTime"			"4.0"
+		"AbilityChannelTime"			"3.0"
         "AbilityCooldown"               "20.0" 
         "AbilityCastRange"        		"9999"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
         
         "AbilityValues"
         {
-            "duration"                "5"
+            "duration"                "3"
             "radius"                "200"
             "damage_per_sec"          "300"
             "bonus_ms"              "100"

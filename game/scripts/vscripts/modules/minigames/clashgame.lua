@@ -16,6 +16,19 @@ function ClashGame:Init()
 
     self.king_tower_good = nil
     self.king_tower_bad = nil
+    self.lastSpellCastTime = 0
+
+    -- ВОВАН ЭТО ТЕБЕ
+    self.waveInterval = 30.0
+    self.firstSpellDelay = 3
+    self.spellCooldown = 5
+    self.spellTargetFindRadius = 400
+    self.totalSpellTargets = 2
+    self.targetPointNames = { "target_dire_spell_left", "target_dire_spell_right" }
+
+    -- дальше не тебе
+
+    self.circleDrawn = 0
 
     self.tower_config = {
         { point = "bad_tower_left",   npc = "npc_dota_custom_tower_bad",       team = DOTA_TEAM_BADGUYS },
@@ -30,7 +43,10 @@ function ClashGame:Init()
     self.good_creep_name = "npc_clash_creep_radiant"
     self.bad_creep_name = "npc_clash_creep_dire"
     self.bad_creep_ranged_name = "npc_clash_creep_dire_ranged"
-    self.mega_creep_name = "npc_clash_creep_mega_sanya_1"
+    self.good_creep_ranged_name = "npc_clash_creep_radiant_ranged"
+    self.mega_creep_name_1 = "npc_clash_creep_mega_sanya_1"
+    self.mega_creep_name_2 = "npc_clash_creep_mega_sanya_2"
+    self.lastMegaCreep = 2
     GameEvents:OnQuestTrigger(function(event)
         if event.triggerName ~= "trigger_clash_arena" then return end
 
@@ -43,8 +59,23 @@ function ClashGame:Init()
             if not self.isActive then return nil end
             self:SpawnAllWaves()
             self:SpawnMegaCreep()
-            return 30.0
-        end, 20.0)
+            return self.waveInterval
+        end, self.waveInterval)
+
+        GameRules:GetGameModeEntity():SetContextThink("ClashSpellThinker", function()
+            if not self.isActive then return nil end
+
+            local currentTime = GameRules:GetGameTime()
+            if not self.startTime then self.startTime = currentTime end
+            if (currentTime - self.startTime) >= self.firstSpellDelay then
+                if (currentTime - self.lastSpellCastTime) >= self.spellCooldown then
+                    if self:TryCastKingSpell() then
+                        self.lastSpellCastTime = currentTime
+                    end
+                end
+            end
+            return 1.0
+        end, 1.0)
     end)
 end
 
@@ -69,11 +100,16 @@ function ClashGame:SpawnTowers()
             fwd.z = 0
             unit:FaceTowards(unit:GetAbsOrigin() + fwd * 100)
             unit:SetForwardVector(fwd)
-
-            unit:RemoveAllModifiers(0, true, true, true)
+            DrawDebugCircle(unit, unit:GetBaseAttackRange(), 200)
             if string.find(unitName, 'king') then
                 unit:AddNewModifier(unit, nil, 'modifier_invulnerable', {})
                 unit:AddNewModifier(unit, nil, 'modifier_king_tower', {})
+                for i = 0, unit:GetAbilityCount() - 1 do
+                    local abil = unit:GetAbilityByIndex(i)
+                    if abil then
+                        abil:SetLevel(1)
+                    end
+                end
                 if string.find(unitName, 'good') then
                     self.king_tower_good = unit
                 else
@@ -115,7 +151,7 @@ function ClashGame:CreateCreepGroup(spawner, team, targetName)
         if i == 4 and team == DOTA_TEAM_BADGUYS then
             cur_unit = self.bad_creep_ranged_name
         elseif i == 4 and team == DOTA_TEAM_GOODGUYS then
-            break
+            cur_unit = self.good_creep_ranged_name
         end
         local unit = CreateUnitByName(cur_unit, spawnPos + RandomVector(100), true, nil, nil, team)
         unit:AddNewModifier(unit, nil, 'modifier_clash_unit', {})
@@ -155,7 +191,14 @@ function ClashGame:SpawnMegaCreep()
         target = Entities:FindByName(nil, "agro_for_dire_right")
     end
     if not spawnPos then return end
-    local unit = CreateUnitByName(self.mega_creep_name, spawnPos:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
+    local curUnit = self.mega_creep_name_1
+    if self.lastMegaCreep == 1 then
+        curUnit = self.mega_creep_name_2
+        self.lastMegaCreep = 2
+    else
+        self.lastMegaCreep = 1
+    end
+    local unit = CreateUnitByName(curUnit, spawnPos:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
     unit:AddNewModifier(unit, nil, 'modifier_clash_unit', {})
     if unit then
         if target then
@@ -201,7 +244,7 @@ function ClashGame:KillAll()
     table.insert(names_to_kill, self.bad_creep_name)
     table.insert(names_to_kill, self.good_creep_name)
     local units = FindUnitsInRadius(
-        DOTA_TEAM_NEUTRALS,
+        DOTA_TEAM_BADGUYS,
         Vector(0, 0, 0),
         nil,
         FIND_UNITS_EVERYWHERE,
@@ -217,6 +260,103 @@ function ClashGame:KillAll()
             unit:ForceKill(false)
         end
     end
+end
+
+function ClashGame:TryCastKingSpell()
+    if not self.king_tower_bad or self.king_tower_bad:IsNull() or not self.king_tower_bad:IsAlive() then
+        return false
+    end
+
+    local possibleEnemyPositions = {}
+
+    for _, name in pairs(self.targetPointNames) do
+        local pointEnt = Entities:FindByName(nil, name)
+        if pointEnt then
+            if self.circleDrawn < self.totalSpellTargets then
+                DrawDebugCircle(pointEnt:GetAbsOrigin(), self.spellTargetFindRadius, 100)
+                self.circleDrawn = self.circleDrawn + 1
+            end
+            local enemies = FindUnitsInRadius(
+                DOTA_TEAM_BADGUYS,
+                pointEnt:GetAbsOrigin(),
+                nil,
+                self.spellTargetFindRadius,
+                DOTA_UNIT_TARGET_TEAM_ENEMY,
+                DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
+                DOTA_UNIT_TARGET_FLAG_NONE,
+                FIND_ANY_ORDER,
+                false
+            )
+
+            for _, enemy in pairs(enemies) do
+                table.insert(possibleEnemyPositions, enemy:GetAbsOrigin())
+            end
+        end
+    end
+
+    if #possibleEnemyPositions > 0 then
+        local castPosition = possibleEnemyPositions[math.random(#possibleEnemyPositions)]
+        local abilIndex = math.random(0, 2)
+        local ability = self.king_tower_bad:GetAbilityByIndex(abilIndex)
+
+        if ability and ability:IsFullyCastable() then
+            local abilityName = ability:GetAbilityName()
+            print("[CLASH] King Tower casting spell " .. abilityName)
+
+            if abilityName == "zuus_lightning_bolt" then
+                local castsDone = 0
+                local maxCasts = 3
+                local delay = 0.5
+                local basePosition = castPosition
+                local lastTargetIndex = -1
+
+                self.king_tower_bad:SetContextThink(DoUniqueString("zeus_burst"), function()
+                    if not self.king_tower_bad or self.king_tower_bad:IsNull() or not self.king_tower_bad:IsAlive() then
+                        return nil
+                    end
+
+                    if castsDone < maxCasts then
+                        local nearbyEnemies = FindUnitsInRadius(
+                            DOTA_TEAM_BADGUYS,
+                            basePosition,
+                            nil,
+                            400,
+                            DOTA_UNIT_TARGET_TEAM_ENEMY,
+                            DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
+                            DOTA_UNIT_TARGET_FLAG_NONE,
+                            FIND_ANY_ORDER,
+                            false
+                        )
+
+                        local currentStrikePos = basePosition
+                        if #nearbyEnemies > 0 then
+                            local randomIndex = math.random(#nearbyEnemies)
+
+                            if #nearbyEnemies > 1 and randomIndex == lastTargetIndex then
+                                randomIndex = (randomIndex % #nearbyEnemies) + 1
+                            end
+
+                            lastTargetIndex = randomIndex
+                            currentStrikePos = nearbyEnemies[randomIndex]:GetAbsOrigin()
+                        end
+
+                        ability:EndCooldown()
+                        self.king_tower_bad:CastAbilityOnPosition(currentStrikePos, ability, -1)
+
+                        castsDone = castsDone + 1
+                        return delay
+                    end
+                    return nil
+                end, 0)
+            else
+                self.king_tower_bad:CastAbilityOnPosition(castPosition, ability, -1)
+            end
+
+            return true
+        end
+    end
+
+    return false
 end
 
 return ClashGame

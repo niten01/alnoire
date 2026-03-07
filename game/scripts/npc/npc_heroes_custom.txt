@@ -180,7 +180,7 @@
     "Ability8"                                               "sanya_towel_aura_2"
     "Ability9"                                               "sanya_towel_aura_3"
     "Ability10"                                              "sanya_towel_summon_return"
-    //"Ability11"                                              "tusk_ice_shards"
+    "Ability11"                                              "custom_freeze"
     // "Ability7"                                            "sohei_innate_oaa"
     // "Ability8"                                            "generic_hidden"
     // "Ability9"                                            "generic_hidden"
@@ -396,7 +396,7 @@
     "ArmorPhysical"                                       "3"
     "MagicalResistance"                                   "30"
 
-    "StatusHealthRegen"                                   "3.25"
+    "StatusHealthRegen"                                   "0.0"
     "StatusHealth"                                        "200"
     "StatusManaRegen"                                     "0.0"
     "StatusMana"                                          "75"
@@ -404,10 +404,10 @@
     "AttributePrimary"                                    "DOTA_ATTRIBUTE_ALL"
     "AttributeBaseStrength"                               "20"
     "AttributeStrengthGain"                               "1.7"
-    "AttributeBaseAgility"                                "15"
+    "AttributeBaseAgility"                                "10"
     "AttributeAgilityGain"                                "1.5"
-    "AttributeBaseIntelligence"                           "17"
-    "AttributeIntelligenceGain"                           "1.5"
+    "AttributeBaseIntelligence"                           "0"
+    "AttributeIntelligenceGain"                           "1.0"
 
     "AbilityLayout"				                                "6"
 
