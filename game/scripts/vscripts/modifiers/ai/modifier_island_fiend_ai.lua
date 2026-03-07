@@ -5,7 +5,7 @@ function modifier_island_fiend_ai:IsHidden() return true end
 function modifier_island_fiend_ai:IsPurgable() return false end
 
 function modifier_island_fiend_ai:ResetState()
-    self.phase = 3
+    self.phase = 1
     self.blinkSeq = -1
     self.blinkSeqInProgress = false
     Timers:CreateTimer(0, function()
@@ -104,7 +104,11 @@ function modifier_island_fiend_ai:Phase2(unit, target)
         partnerAI.phase = 3
         unit:RemoveModifierByName("modifier_generic_unkillable")
         self.partner:RemoveModifierByName("modifier_generic_unkillable")
+
         Music:StartCustomMusic(target:GetPlayerOwnerID(), "music.island_duo.phase3")
+
+        unit:SetHealth(unit:GetMaxHealth())
+        self.partner:SetHealth(unit:GetMaxHealth())
     end
 end
 

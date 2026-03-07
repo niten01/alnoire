@@ -85,8 +85,10 @@ function modifier_red_ai:OnIntervalThink()
             blinkTarget = self.blinkRightTarget:GetAbsOrigin()
         end
         if CastAbility(unit, blinkTarget, "red_blink") then
-            self.blinkUsed = true
-            return
+            if unit.lastCastAbilityName == "red_blink" then
+                self.blinkUsed = true
+                return
+            end
         end
     end
 end

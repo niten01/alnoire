@@ -341,6 +341,8 @@ function PlayLogarithmusImpaleEffect(target, hitFromPos)
   ParticleManager:SetParticleControlTransformForward(pfx, 1, target:GetAbsOrigin(),
     (target:GetAbsOrigin() - hitFromPos):Normalized())
   ParticleManager:ReleaseParticleIndex(pfx)
+
+  target:EmitSound("ability.logarithmus.impale")
 end
 
 function IncrementLogarithmusStacks(caster)

@@ -30,6 +30,7 @@ function Music:Init()
 end
 
 function Music:StartCustomMusic(playerID, soundName)
+    DebugPrint("[ALNOIRE] Set custom music: " .. soundName)
     local state = self.musicState[playerID]
     state.customMusic = soundName
     state.current = nil
@@ -46,6 +47,7 @@ function Music:HeroMusicThink(hero)
     local state = self.musicState[playerID]
     if not state then return end
 
+    DebugPrint(state.customMusic)
     if state.customMusic then return MUSIC_THINK_INTERVAL end
     if not state.musicSet then return MUSIC_THINK_INTERVAL end
 

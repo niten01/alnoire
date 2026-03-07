@@ -5,7 +5,7 @@ function modifier_island_demon_ai:IsHidden() return true end
 function modifier_island_demon_ai:IsPurgable() return false end
 
 function modifier_island_demon_ai:ResetState()
-    self.phase = 3
+    self.phase = 1
     self.hideSeqInProgress = false
     Timers:CreateTimer(0, function()
         self.partner = Entities:FindByName(nil, "npc_island_fiend")
@@ -91,7 +91,11 @@ function modifier_island_demon_ai:Phase2(unit, target)
         partnerAI.phase = 3
         unit:RemoveModifierByName("modifier_generic_unkillable")
         self.partner:RemoveModifierByName("modifier_generic_unkillable")
+
         Music:StartCustomMusic(target:GetPlayerOwnerID(), "music.island_duo.phase3")
+        
+        unit:SetHealth(unit:GetMaxHealth())
+        self.partner:SetHealth(unit:GetMaxHealth())
     end
 end
 
