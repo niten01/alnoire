@@ -80,8 +80,8 @@
 		{
 			"AttachWearables"
 			{
-				"Wearable1" { "ItemDef" "34185" } // shoulders
-				"Wearable2" { "ItemDef" "34186" } // arms
+				"Wearable1" { "ItemDef" "33210" } // shoulders
+				"Wearable2" { "ItemDef" "33211" } // arms
 				"Wearable3" { "ItemDef" "33212" } // head
 			}
 		}
@@ -158,7 +158,12 @@
 		{
 			"AttachWearables"
 			{
-				"Wearable1" { "ItemDef" "397" } // armor
+				// "Wearable1" { "ItemDef" "397" } // armor
+				// "Wearable2" { "ItemDef" "9234" } // back
+				"Wearable1" { "ItemDef" "13152" } // tail
+				"Wearable2" { "ItemDef" "13153" } // back
+				"Wearable3" { "ItemDef" "13154" } // armor
+				"Wearable4" { "ItemDef" "13155" } // belt
 			}
 		}
 	}
@@ -194,7 +199,12 @@
 		{
 			"AttachWearables"
 			{
-				"Wearable1" { "ItemDef" "397" } // armor
+				// "Wearable1" { "ItemDef" "397" } // armor
+				// "Wearable2" { "ItemDef" "9234" } // back
+				"Wearable1" { "ItemDef" "13152" } // tail
+				"Wearable2" { "ItemDef" "13153" } // back
+				"Wearable3" { "ItemDef" "13154" } // armor
+				"Wearable4" { "ItemDef" "13155" } // belt
 			}
 		}
 	}

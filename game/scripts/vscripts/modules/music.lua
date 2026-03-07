@@ -47,7 +47,6 @@ function Music:HeroMusicThink(hero)
     local state = self.musicState[playerID]
     if not state then return end
 
-    DebugPrint(state.customMusic)
     if state.customMusic then return MUSIC_THINK_INTERVAL end
     if not state.musicSet then return MUSIC_THINK_INTERVAL end
 
