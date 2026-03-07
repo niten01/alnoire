@@ -7,9 +7,11 @@ function modifier_island_demon_ai:IsPurgable() return false end
 function modifier_island_demon_ai:ResetState()
     self.phase = 1
     self.hideSeqInProgress = false
+    self.partner = nil
     Timers:CreateTimer(0, function()
         self.partner = Entities:FindByName(nil, "npc_island_fiend")
         if not self.partner then return 0.5 end
+        self.partnerAI = self.partner:FindModifierByName("modifier_island_fiend_ai")
         return nil
     end)
 end
@@ -57,11 +59,14 @@ function modifier_island_demon_ai:Phase1(unit, target)
         unit:EmitSound("island_demon.laugh")
         Timers:CreateTimer(2.7, function()
             self.phase = 2
+            self.partnerAI.phase = 2
         end)
+
         self.partner:AddNewModifier(unit, nil, "modifier_island_duo_hidden", {
             duration = -1
         })
         Music:StartCustomMusic(target:GetPlayerOwnerID(), "music.island_duo.phase2")
+        unit:SetHealth(unit:GetMaxHealth())
     end
 end
 
@@ -87,13 +92,12 @@ function modifier_island_demon_ai:Phase2(unit, target)
         self.partner:RemoveModifierByName("modifier_island_duo_hidden")
         self.partner:EmitSound("island_fiend.phase3")
         self.phase = 3
-        local partnerAI = self.partner:FindModifierByName("modifier_island_fiend_ai")
-        partnerAI.phase = 3
+        self.partnerAI.phase = 3
         unit:RemoveModifierByName("modifier_generic_unkillable")
         self.partner:RemoveModifierByName("modifier_generic_unkillable")
 
         Music:StartCustomMusic(target:GetPlayerOwnerID(), "music.island_duo.phase3")
-        
+
         unit:SetHealth(unit:GetMaxHealth())
         self.partner:SetHealth(unit:GetMaxHealth())
     end
@@ -117,13 +121,19 @@ function modifier_island_demon_ai:Phase3(unit, target)
         if CastAbility(unit, target, "island_demon_swap") then return end
     end
 
+    if not self.partner or self.partner:IsNull() then
+        if CastAbility(unit, target, "island_demon_poison") then return end
+    end
+
     local requiem = self.partner:FindAbilityByName("island_fiend_requiem")
-    local partnerAI = self.partner:FindModifierByName("modifier_island_fiend_ai")
-    if requiem:GetCooldownTimeRemaining() <= 0 and not partnerAI.blinkSeqInProgress then
+    if requiem:GetCooldownTimeRemaining() <= 0 and not self.partnerAI.blinkSeqInProgress then
         if CastAbility(unit, target, "island_demon_blink") then
             if unit.lastCastAbilityName == "island_demon_blink" then
                 self.hideSeqInProgress = true
                 Timers:CreateTimer(1, function()
+                    if self.partnerAI and not self.partnerAI:IsNull() then
+                        self.partnerAI:StopSeq()
+                    end
                     GiveCastOrder(unit, target, unit:FindAbilityByName("island_demon_hide"))
                     Timers:CreateTimer(1, function()
                         self.hideSeqInProgress = false

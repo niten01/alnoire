@@ -27,6 +27,7 @@ function Music:Init()
     end)
     GameEvents:OnDialogueStart(bind(self.OnDialogueStart, self))
     GameEvents:OnEntityKilled(bind(self.OnEntityKilled, self))
+    GameEvents:OnPackWiped(bind(self.OnPackWiped, self))
 end
 
 function Music:StartCustomMusic(playerID, soundName)
@@ -90,6 +91,12 @@ function Music:OnEntityKilled(event)
             StopGlobalSound(self.musicState[playerID].current)
             EmitGlobalSound(self.musicState[playerID].current)
         end)
+    end
+end
+
+function Music:OnPackWiped(event)
+    for playerID, state in pairs(self.musicState) do
+        self:StopCustomMusic(playerID)
     end
 end
 

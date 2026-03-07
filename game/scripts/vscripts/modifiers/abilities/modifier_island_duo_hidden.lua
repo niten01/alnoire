@@ -8,6 +8,7 @@ function modifier_island_duo_hidden:OnCreated()
     if not IsServer() then return end
     local parent = self:GetParent()
     parent:AddNoDraw()
+    parent:SetHealth(parent:GetMaxHealth())
 
     self.pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_shadow_demon/shadow_demon_disruption.vpcf",
         PATTACH_WORLDORIGIN, nil)

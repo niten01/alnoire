@@ -16,7 +16,6 @@ function island_fiend_requiem:OnSpellStart()
 
     for _, point in ipairs(points) do
         point.z = casterPos.z
-        DrawDebugCircle(point, radius, 2)
         local v = point - casterPos
         local dist = #v
         local speed = dist / time
