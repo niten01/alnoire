@@ -1,6 +1,59 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 
 {
+  island_fiend.laugh = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/nevermore/nev_arc_laugh_03.vsnd",
+    ]
+    volume = "3.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "2000.000000"
+  }
+  island_demon.laugh = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/shadow_demon/shadow_demon_laugh_04.vsnd",
+    ]
+    volume = "3.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "2000.000000"
+  }
+  island_fiend.phase3 = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/nevermore/nev_arc_ability_requiem_05.vsnd",
+    ]
+    volume = "3.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "2000.000000"
+  }
+  island_demon.phase3 = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/shadow_demon/shadow_demon_kill_09.vsnd",
+    ]
+    volume = "3.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "2000.000000"
+  }
+  
   ability.island_fiend.blink = {
     type = "dota_update_default"
     vsnd_files =
@@ -8,6 +61,98 @@
         "sounds/weapons/hero/antimage/blink_out.vsnd",
     ]
     volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.island_fiend.requiem.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/nevermore/requiem_cast.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.island_fiend.requiem.explode = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/nevermore/requiem_of_souls.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.island_demon.poison.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/shadow_demon/shadow_poison.vsnd",
+    ]
+    volume = "0.80000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.island_demon.poison.impact = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/shadow_demon/shadow_poison_impact.vsnd",
+    ]
+    volume = "0.80000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.island_demon.poison.damage = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/shadow_demon/shadow_poison_damage01.vsnd",
+        "sounds/weapons/hero/shadow_demon/shadow_poison_damage02.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.island_demon.illusions.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/shadow_demon/disruption.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.island_demon.illusions.spawn = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/shadow_demon/soul_catcher_target.vsnd",
+    ]
+    volume = "0.50000"
     pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "Weapons"

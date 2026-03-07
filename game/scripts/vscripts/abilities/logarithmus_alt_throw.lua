@@ -88,7 +88,7 @@ function logarithmus_alt_throw:OnSpellStart()
         caster:EmitSound("ability.logarithmus.alt_throw.second")
 
         caster:Stop()
-        caster:SetAbsOrigin(endPos)
+        FindClearSpaceForUnit(caster, endPos, true)
         caster:SetForwardVector(dir)
         caster:FaceTowards(endPos + dir)
 

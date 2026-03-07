@@ -304,35 +304,35 @@ return {
             ai_modifier = "modifier_goden_ai",
             team = DOTA_TEAM_BADGUYS,
         },
-        spawner_goden_summon_1          = {
+        spawner_goden_summon_1        = {
             npc = "npc_goden_summon",
             packID = "pack_goden",
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
         },
-        spawner_goden_summon_2          = {
+        spawner_goden_summon_2        = {
             npc = "npc_goden_summon",
             packID = "pack_goden",
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
         },
-        spawner_goden_summon_3          = {
+        spawner_goden_summon_3        = {
             npc = "npc_goden_summon",
             packID = "pack_goden",
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
         },
-        spawner_goden_summon_4          = {
+        spawner_goden_summon_4        = {
             npc = "npc_goden_summon",
             packID = "pack_goden",
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
         },
-        spawner_goden_summon_5          = {
+        spawner_goden_summon_5        = {
             npc = "npc_goden_summon",
             packID = "pack_goden",
             ai_modifier = "modifier_default_creep_ai",
@@ -530,12 +530,12 @@ return {
         },
 
 
-        spawner_dream_concert       = {
+        spawner_dream_concert         = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_genius              = {
+        spawner_genius                = {
             npc = "npc_genius",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -543,14 +543,14 @@ return {
             ai_modifier = "modifier_genius_ai",
         },
 
-        spawner_concert_fan_ranged  = {
+        spawner_concert_fan_ranged    = {
             npc = "npc_ghetto_ranged",
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_concert_crowd",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_concert_fan_melee   = {
+        spawner_concert_fan_melee     = {
             npc = "npc_ghetto_melee",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -558,51 +558,60 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
-        spawner_gangster            = {
+        spawner_gangster              = {
             npc = "npc_gangster",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_ghetto_ranged       = {
+        spawner_ghetto_ranged         = {
             npc = "npc_ghetto_ranged",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_ghetto_melee        = {
+        spawner_ghetto_melee          = {
             npc = "npc_ghetto_melee",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_blue                = {
+        spawner_blue                  = {
             npc = "npc_blue",
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_cat_barrel_city     = {
+        spawner_cat_barrel_city       = {
             npc = "npc_cat_barrel",
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_island_fiend        = {
+        spawner_island_fiend          = {
             npc = "npc_island_fiend",
-            modifiers = { "modifier_story_npc" },
+            modifiers = { "modifier_story_npc", "modifier_generic_unkillable" },
             packID = "pack_island_duo",
             ai_modifier = "modifier_island_fiend_ai",
         },
-        spawner_island_demon = {
+        spawner_island_demon          = {
             npc = "npc_island_demon",
-            modifiers = { "modifier_story_npc" },
+            modifiers = { "modifier_story_npc", "modifier_generic_unkillable" },
             packID = "pack_island_duo",
             ai_modifier = "modifier_island_demon_ai",
         },
-        spawner_bomb_place          = {
+        spawner_island_demon_illusion = {
+            npc = "npc_island_demon_illusion",
+            modifiers = { "modifier_island_demon_rand_cdr" },
+            -- is linked manually
+            -- packID = "pack_island_duo", 
+            ai_modifier = "modifier_island_demon_illusion_ai",
+            team = DOTA_TEAM_BADGUYS,
+            deferred = true,
+        },
+        spawner_bomb_place            = {
             npc = "npc_bomb_place",
             modifiers = { "modifier_story_npc" },
         },
-        spawner_bomb                = {
+        spawner_bomb                  = {
             npc = "npc_bomb",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -750,7 +759,7 @@ return {
         },
         pack_island_duo = {
             activateAfterUnitsSpawned = false,
-            stayActivatedOnPlayerDeath = true,
+            stayActivatedOnPlayerDeath = false,
         },
         pack_goden = {
             activateAfterUnitsSpawned = true,

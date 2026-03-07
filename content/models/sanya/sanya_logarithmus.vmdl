@@ -129,7 +129,7 @@
 						_class = "AnimFile"
 						name = "attack_chop"
 						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_ATTACK"
+						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
