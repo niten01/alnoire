@@ -47,6 +47,7 @@ end
 function SpawnManager:SpawnNPC(spawnerName)
     DebugPrint("[ALNOIRE] Trying to spawn NPC using spawner: ", spawnerName)
     assert(spawnerName)
+    local npcs = {}
     local spawnerData = EntityData:ByName(spawnerName)
     for _, spawnerEnt in ipairs(Entities:FindAllByName(spawnerName)) do
         local origin = spawnerEnt:GetAbsOrigin()
@@ -60,7 +61,9 @@ function SpawnManager:SpawnNPC(spawnerName)
             spawnerData.team
         )
         self:InitNPC(spawnerData, spawnerEnt, npc)
+        table.insert(npcs, npc)
     end
+    return npcs
 end
 
 function SpawnManager:InitNPC(spawnerData, spawnerEnt, npc)
@@ -104,13 +107,13 @@ function SpawnManager:InitNPC(spawnerData, spawnerEnt, npc)
     npc.spawnPos = npc:GetAbsOrigin()
     npc.spawnForward = npc:GetForwardVector()
     if spawnerData.packID then
-        self:LinkUnitToPack(npc, spawnerData)
+        self:LinkUnitToPack(npc, spawnerData.packID)
     end
 end
 
-function SpawnManager:LinkUnitToPack(npc, spawnerData)
+function SpawnManager:LinkUnitToPack(npc, packID)
     DebugPrint("[ALNOIRE] Trying to link unit to pack: ", npc:GetUnitName())
-    PackManager:AddUnit(spawnerData.packID, npc)
+    PackManager:AddUnit(packID, npc)
 end
 
 function SpawnManager:SpawnItem(itemSpawnerName)

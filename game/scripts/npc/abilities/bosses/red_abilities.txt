@@ -60,7 +60,7 @@
         "AbilityCastAnimation"       "ACT_DOTA_CHANNEL_ABILITY_3"
         "AbilityCastPoint"              "0.25"
 		// "AbilityChannelTime"			"1.29"
-        "AbilityCooldown"               "0.0" 
+        "AbilityCooldown"               "2.0" 
         "AbilityCastRange"        		"99999"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
         

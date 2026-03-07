@@ -1,6 +1,6 @@
-island_fiend_blink = class {}
+island_demon_blink = class {}
 
-function island_fiend_blink:OnSpellStart()
+function island_demon_blink:OnSpellStart()
     if not IsServer() then return end
     local caster = self:GetCaster()
     local casterPos = caster:GetAbsOrigin()

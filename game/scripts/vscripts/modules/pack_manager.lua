@@ -163,7 +163,7 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
         })
         return nil
     end
-    local rangeFastTickRate = pack.rangeFastTickRate
+    local rangeFastTickRate = math.max(pack.rangeFastTickRate, pack.rangeRetreat)
     local rangeAggro = pack.rangeAggro
     local rangeRetreat = pack.rangeRetreat
     local pos = packEnt:GetAbsOrigin()

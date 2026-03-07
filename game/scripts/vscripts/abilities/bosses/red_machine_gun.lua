@@ -8,7 +8,6 @@ function red_machine_gun:GetStartPos()
 end
 
 function red_machine_gun:ShowWarning(targetPos)
-    local warningDelay = 0.1
     local delayPerShot = self:GetSpecialValueFor("delay_per_shot")
     local numShots = self:GetSpecialValueFor("num_shots")
     local alpha = self:GetSpecialValueFor("spread_angle")
@@ -27,7 +26,7 @@ function red_machine_gun:ShowWarning(targetPos)
         end)
         cumDelay = cumDelay + delayPerShot
     end
-    return cumDelay + warningDelay
+    return cumDelay
 end
 
 function red_machine_gun:OnSpellStart()
