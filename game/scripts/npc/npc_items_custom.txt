@@ -12,16 +12,16 @@
         "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
         
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-        "AbilityCooldown"               "3.0"
+        "AbilityCooldown"               "0.0"
 
-        "ItemInitialCharges" "3" 
+        "ItemInitialCharges" "5" 
         "ItemDisplayCharges" "1" 
         "ItemRequiresCharges" "1" 
 
         "AbilityValues" 
         {
-            "hp_regen"                  "200.0"
-            "duration"                  "2.0"
+            "hp_regen"                  "100.0"
+            "duration"                  "8.0"
         }
     }
     "item_sanya_flask_upgrade_recipe"
