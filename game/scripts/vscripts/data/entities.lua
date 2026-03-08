@@ -645,6 +645,8 @@ return {
             state = "off",
 
             target = nil,
+            music = nil,
+            doors = {},
         },
 
         pack_forest_act1_lizards = {
@@ -760,6 +762,7 @@ return {
         pack_island_duo = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
+            music = "music.island_duo.phase1",
         },
         pack_goden = {
             activateAfterUnitsSpawned = true,
