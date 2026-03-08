@@ -774,6 +774,9 @@ return {
         },
         pack_gorilla = {
             activateAfterUnitsSpawned = false,
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1850,
+            rangeAggro = 1000,
         },
         pack_red = {
             rangeRetreat = 6000,
