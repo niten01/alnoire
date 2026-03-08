@@ -4,6 +4,7 @@
     <include src="file://{resources}/scripts/custom_game/custom_indicator.js" />
     <include src="file://{resources}/scripts/custom_game/vector_targeting.js" />
     <include src="file://{resources}/scripts/custom_game/init.js" />
+    <include src="file://{resources}/scripts/custom_game/keybinds.js" />
   </scripts>
   <Panel>
     <CustomUIElement type="Hud"

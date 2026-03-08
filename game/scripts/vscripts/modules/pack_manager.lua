@@ -239,7 +239,6 @@ function PackManager:HasActiveFights()
 end
 
 function PackManager:OnAggro(pack, target)
-    DebugPrint("OnAggro")
     if pack.music then
         Music:StartCustomMusic(target:GetPlayerOwnerID(), pack.music)
     end
@@ -256,7 +255,6 @@ function PackManager:OnRetreat(pack, target)
             table.insert(pids, playerID)
         end
     end
-    DebugPrint("OnRetreat")
     if pack.music then
         for _, pid in ipairs(pids) do
             Music:StopCustomMusic(pid)

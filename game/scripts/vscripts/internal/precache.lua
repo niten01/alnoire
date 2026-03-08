@@ -5,6 +5,7 @@ return {
         "npc_dota_hero_earthshaker",
         "npc_dota_hero_oracle",
         "npc_dota_hero_abyssal_underlord",
+        "npc_dota_hero_grimstroke",
 
         "npc_dota_hero_sanya_towel_master",
         "npc_dota_hero_sanya_rapper",
@@ -110,6 +111,7 @@ return {
         "npc_island_demon",
         "npc_bomb_place",
         "npc_bomb",
+        "npc_killer",
 
         "npc_storyteller",
         "npc_leader",
@@ -277,6 +279,7 @@ return {
         "particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_ice_b_ti5.vpcf",
         "particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_ice_c_ti5.vpcf",
         "particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_explode_ti5.vpcf",
+        "particles/ui_mouseactions/custom_range_finder_cone.vpcf",
         "particles/ui_mouseactions/range_finder_cone.vpcf",
         "particles/ui_mouseactions/range_finder_cone_long.vpcf",
         "particles/warning_circle.vpcf",

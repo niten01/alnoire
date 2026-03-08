@@ -11,15 +11,11 @@ function modifier_red_ai:OnCreated()
     assert(self.blinkLeftTarget and self.blinkRightTarget, "No npc_red blink targets, add them, or use a proper map")
 
     self.blinkUsed = false
-    self.tired = false
+    self.tiredLen = nil
 end
 
 function modifier_red_ai:MakeTired(unit, duration)
-    self.tired = true
-    Timers:CreateTimer(0.2, function()
-        unit:AddNewModifier(nil, nil, "modifier_red_tired", { duration = duration })
-        Timers:CreateTimer(duration, function() self.tired = false end)
-    end)
+    self.tiredLen = duration
 end
 
 function modifier_red_ai:OnIntervalThink()
@@ -49,7 +45,15 @@ function modifier_red_ai:OnIntervalThink()
             return
         end
 
-        if self.tired then return end
+        if self.tiredLen then
+            if IsCasting(unit) then return end
+            if not unit:HasModifier("modifier_red_tired") then
+                unit:AddNewModifier(unit, nil, "modifier_red_tired", {
+                    duration = self.tiredLen
+                })
+            end
+            return
+        end
 
         if self.blinkUsed then
             if CastAbility(unit, target, "red_machine_gun") then
@@ -57,10 +61,12 @@ function modifier_red_ai:OnIntervalThink()
                     Timers:CreateTimer(0.1, function()
                         if not unit or unit:IsNull() then return nil end
                         if unit:FindAbilityByName("red_machine_gun"):GetCooldownTimeRemaining() > 0 then
-                            self.blinkUsed = false
-                            if RandomFloat(0, 1) < 0.7 then
-                                self:MakeTired(unit, 6)
-                            end
+                            Timers:CreateTimer(0.2, function()
+                                self.blinkUsed = false
+                                if RandomFloat(0, 1) < 0.7 then
+                                    self:MakeTired(unit, 6)
+                                end
+                            end)
                             return nil
                         end
                         return 0.1
@@ -70,16 +76,20 @@ function modifier_red_ai:OnIntervalThink()
             return
         end
 
-        if CastRandomAvailableAbility(unit, target, {
-                "red_radiance",
-                "red_fireball"
-            }) then
-            if unit.lastCastAbilityName == "red_fireball" then
-                if RandomFloat(0, 1) < 0.5 then
-                    self:MakeTired(unit, 4)
+        local randAbility = GetRandomAvailableAbilityName(unit, target, {
+            "red_radiance",
+            "red_fireball"
+        })
+        if randAbility then
+            if CastAbility(unit, target, randAbility) then
+                if randAbility == "red_fireball" then
+                    local rnd = RandomFloat(0, 1)
+                    if rnd < 0.5 then
+                        self:MakeTired(unit, 4)
+                    end
                 end
+                return
             end
-            return
         end
 
         -- everything on CD, do the trick
@@ -104,6 +114,11 @@ modifier_red_tired = class {}
 function modifier_red_tired:OnCreated()
     if not IsServer() then return end
     self:GetParent():EmitSound("ability.red.tired")
+end
+
+function modifier_red_tired:OnDestroy()
+    if not IsServer() then return end
+    self:GetParent():FindModifierByName("modifier_red_ai").tiredLen = nil
 end
 
 function modifier_red_tired:CheckState()

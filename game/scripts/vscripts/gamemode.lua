@@ -251,6 +251,7 @@ function barebones:InitModules()
     require('modules.minigames.clashgame'),
     require('modules.minigames.eps_traps'),
     require('modules.flaskmanager'),
+    require('modules.keybinds'),
   }
 
   for _, sys in ipairs(self.modules) do sys:Init() end

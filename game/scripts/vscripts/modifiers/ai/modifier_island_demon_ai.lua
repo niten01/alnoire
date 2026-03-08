@@ -134,7 +134,7 @@ function modifier_island_demon_ai:Phase3(unit, target)
                     if self.partnerAI and not self.partnerAI:IsNull() then
                         self.partnerAI:StopSeq()
                     end
-                    GiveCastOrder(unit, target, unit:FindAbilityByName("island_demon_hide"))
+                    GiveCastOrderAI(unit, target, unit:FindAbilityByName("island_demon_hide"))
                     Timers:CreateTimer(1, function()
                         self.hideSeqInProgress = false
                     end)

@@ -2,16 +2,17 @@
 {
 	"npc_killer" 
 	{
-		"Model"						"models/ogre_bruiser/ogre_bruiser.vmdl"
+		"Model"						"models/heroes/grimstroke/grimstroke.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"ModelScale" 				"1.0"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"ConsideredHero" 			"1"
+		"AutoAttacksByDefault" "0"
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			
-		"Ability2"					""			
+		"Ability1"					"killer_bind"			
+		"Ability2"					"grimstroke_dark_artistry"			
 		"Ability3"					""			
 		"Ability4"					""			
 		"Ability5"					""			
@@ -80,7 +81,18 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"precache"
 		{
-        	"soundfile"			"soundevents/bosses/ogre_bruiser.vsndevts"
+        	"soundfile"			"soundevents/bosses/killer.vsndevts"
+		}
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "27487" } // armor
+				"Wearable2" { "ItemDef" "27488" } // belt
+				"Wearable3" { "ItemDef" "27489" } // head
+				"Wearable4" { "ItemDef" "27490" } // weapon
+			}
 		}
 	}
 }

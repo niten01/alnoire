@@ -602,7 +602,7 @@ return {
             npc = "npc_island_demon_illusion",
             modifiers = { "modifier_island_demon_rand_cdr" },
             -- is linked manually
-            -- packID = "pack_island_duo", 
+            -- packID = "pack_island_duo",
             ai_modifier = "modifier_island_demon_illusion_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
@@ -615,6 +615,12 @@ return {
             npc = "npc_bomb",
             modifiers = { "modifier_story_npc" },
             deferred = true,
+        },
+        spawner_killer                = {
+            npc = "npc_killer",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_killer",
+            ai_modifier = "modifier_killer_ai",
         },
     },
 
@@ -763,6 +769,10 @@ return {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
             music = "music.island_duo.phase1",
+        },
+        pack_killer = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = false,
         },
         pack_goden = {
             activateAfterUnitsSpawned = true,

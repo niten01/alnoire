@@ -137,12 +137,12 @@ function modifier_island_fiend_ai:BlinkSequence(unit, target)
         if unit.lastCastAbilityName == "island_fiend_blink" then
             self.blinkSeqInProgress = true
             self:SeqTimer(1, function()
-                GiveCastOrder(unit, target, unit:FindAbilityByName("shadow_fiend_shadowraze_a_lua"))
+                GiveCastOrderAI(unit, target, unit:FindAbilityByName("shadow_fiend_shadowraze_a_lua"))
                 local blinkSeqTarget = target:GetAbsOrigin()
                 self:SeqTimer(razeDelay, function()
-                    GiveCastOrder(unit, blinkSeqTarget, unit:FindAbilityByName("shadow_fiend_shadowraze_b_lua"))
+                    GiveCastOrderAI(unit, blinkSeqTarget, unit:FindAbilityByName("shadow_fiend_shadowraze_b_lua"))
                     self:SeqTimer(razeDelay, function()
-                        GiveCastOrder(unit, blinkSeqTarget, unit:FindAbilityByName("shadow_fiend_shadowraze_c_lua"))
+                        GiveCastOrderAI(unit, blinkSeqTarget, unit:FindAbilityByName("shadow_fiend_shadowraze_c_lua"))
                         self.blinkSeq = -1
                         self.blinkSeqInProgress = false
                     end)
@@ -162,12 +162,12 @@ function modifier_island_fiend_ai:BlinkTurnSequence(unit, target)
         if unit.lastCastAbilityName == "island_fiend_blink" then
             self.blinkSeqInProgress = true
             self:SeqTimer(1, function()
-                GiveCastOrder(unit, target, unit:FindAbilityByName("shadow_fiend_shadowraze_a_lua"))
+                GiveCastOrderAI(unit, target, unit:FindAbilityByName("shadow_fiend_shadowraze_a_lua"))
                 self.blinkSeqTarget = target:GetAbsOrigin()
                 self:SeqTimer(razeDelay, function()
-                    GiveCastOrder(unit, target, unit:FindAbilityByName("shadow_fiend_shadowraze_b_lua"))
+                    GiveCastOrderAI(unit, target, unit:FindAbilityByName("shadow_fiend_shadowraze_b_lua"))
                     self:SeqTimer(razeDelay, function()
-                        GiveCastOrder(unit, target, unit:FindAbilityByName("shadow_fiend_shadowraze_c_lua"))
+                        GiveCastOrderAI(unit, target, unit:FindAbilityByName("shadow_fiend_shadowraze_c_lua"))
                         self.blinkSeq = -1
                         self.blinkSeqInProgress = false
                     end)
@@ -185,7 +185,7 @@ function modifier_island_fiend_ai:BlinkCrossraze(unit, target)
         if unit.lastCastAbilityName == "island_fiend_blink" then
             self.blinkSeqInProgress = true
             self:SeqTimer(1, function()
-                GiveCastOrder(unit, target, unit:FindAbilityByName("island_fiend_crossraze"))
+                GiveCastOrderAI(unit, target, unit:FindAbilityByName("island_fiend_crossraze"))
                 self.blinkSeq = -1
                 self.blinkSeqInProgress = false
             end)
@@ -205,10 +205,10 @@ function modifier_island_fiend_ai:RequiemSeq(unit, target)
     self.blinkSeq = 3
     blink:EndCooldown()
     unit:Stop()
-    GiveCastOrder(unit, target, blink)
+    GiveCastOrderAI(unit, target, blink)
     Timers:CreateTimer(0.8, function()
         local requiem = unit:FindAbilityByName("island_fiend_requiem")
-        GiveCastOrder(unit, target, requiem)
+        GiveCastOrderAI(unit, target, requiem)
         Timers:CreateTimer(requiem:GetCastPoint() + 0.3, function()
             self.blinkSeqInProgress = false
             self.blinkSeq = -1

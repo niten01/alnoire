@@ -60,24 +60,30 @@ local function CastIterWrapper(unit, target, fn)
   return nil
 end
 
--- give appropriate cast order given ability is castable
-function GiveCastOrder(unit, target, ability)
+function GiveCastOrderSimple(unit, target, ability)
   local behavior = ability:GetBehaviorInt()
   assert(behavior)
+  if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
+    unit:CastAbilityOnTarget(target, ability, -1)
+  elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
+    unit:CastAbilityNoTarget(ability, -1)
+  elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then
+    unit:CastAbilityOnPosition(GetTargetPos(target), ability, -1)
+  elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_TOGGLE) ~= 0 then
+    unit:CastAbilityToggle(ability, -1)
+  else
+    error("Could not cast ability: " .. ability:GetName())
+  end
+end
 
+-- give appropriate cast order given ability is castable
+function GiveCastOrderAI(unit, target, ability)
   local cast = function()
     if not unit or unit:IsNull() then return end
     unit:Stop()
-    if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
-      unit:CastAbilityOnTarget(target, ability, -1)
-    elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
-      unit:CastAbilityNoTarget(ability, -1)
-    elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then
-      unit:CastAbilityOnPosition(GetTargetPos(target), ability, -1)
-    else
-      error("Could not cast ability: " .. ability:GetName())
-    end
-    unit.lastCastAbilityName = ability:GetName()
+    GiveCastOrderSimple(unit, target, ability)
+    unit.lastCastAbilityName = ability:GetAbilityName()
+    DebugPrint("c: " .. unit.lastCastAbilityName)
   end
 
   unit.isCasting = true
@@ -103,7 +109,7 @@ function CastAbility(unit, target, abilityName)
   local ability = unit:FindAbilityByName(abilityName)
   assert(ability)
   if not CanCastAbility(unit, target, ability) then return false end
-  GiveCastOrder(unit, target, ability)
+  GiveCastOrderAI(unit, target, ability)
   return true
 end
 
@@ -111,11 +117,27 @@ function CastRandomAbility(unit, target, abilityNames)
   local chosenName = abilityNames[RandomInt(1, #abilityNames)]
   return CastIterWrapper(unit, target, function(ability)
     if ability:GetName() == chosenName then
-      GiveCastOrder(unit, target, ability)
+      GiveCastOrderAI(unit, target, ability)
       return true
     end
     return false
   end)
+end
+
+function GetRandomAvailableAbilityName(unit, target, abilityNames)
+  local availNames = {}
+  for _, abilityName in pairs(abilityNames) do
+    local ability = unit:FindAbilityByName(abilityName)
+    assert(ability)
+    if CanCastAbility(unit, target, ability) then
+      table.insert(availNames, abilityName)
+    end
+  end
+
+  if #availNames == 0 then return nil end
+
+  local chosenName = availNames[RandomInt(1, #availNames)]
+  return chosenName
 end
 
 function CastRandomAvailableAbility(unit, target, abilityNames)
@@ -131,9 +153,10 @@ function CastRandomAvailableAbility(unit, target, abilityNames)
   if #availNames == 0 then return false end
 
   local chosenName = availNames[RandomInt(1, #availNames)]
+  DebugPrint("ch:" .. chosenName)
   return CastIterWrapper(unit, target, function(ability)
     if ability:GetName() == chosenName then
-      GiveCastOrder(unit, target, ability)
+      GiveCastOrderAI(unit, target, ability)
       return true
     end
     return false
@@ -142,7 +165,7 @@ end
 
 function CastAllAbilities(unit, target)
   return CastIterWrapper(unit, target, function(ability)
-    GiveCastOrder(unit, target, ability)
+    GiveCastOrderAI(unit, target, ability)
     return true
   end)
 end
@@ -283,7 +306,7 @@ function FindEnemiesForAIInRadius(center, radius)
     radius,
     DOTA_UNIT_TARGET_TEAM_ENEMY,
     DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-    DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
+    DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
     FIND_CLOSEST,
     false
   )
@@ -297,7 +320,7 @@ function FindEnemiesForAIInLine(p1, p2, width)
     width,
     DOTA_UNIT_TARGET_TEAM_ENEMY,
     DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-    DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+    DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
   )
 end
 
@@ -420,11 +443,7 @@ function AdjustTickRate(unit)
 end
 
 function ShowGenericLineWarning(p1, p2, width, duration)
-  local dist = #(p1 - p2)
-  local particleName = "particles/ui_mouseactions/range_finder_cone.vpcf"
-  if dist > 1440 then
-    particleName = "particles/ui_mouseactions/range_finder_cone_long.vpcf"
-  end
+  local particleName = "particles/ui_mouseactions/custom_range_finder_cone.vpcf"
   local pfx = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 1, p1)
   ParticleManager:SetParticleControl(pfx, 2, p1)
@@ -432,6 +451,7 @@ function ShowGenericLineWarning(p1, p2, width, duration)
   ParticleManager:SetParticleControl(pfx, 4, Vector(255, 0, 0))
   local remainingDuration = duration
   local interval = 0.01
+  local dist = #(p1 - p2)
   local step = dist / (duration / interval)
   local dir = (p2 - p1):Normalized()
   local curEnd = p1
