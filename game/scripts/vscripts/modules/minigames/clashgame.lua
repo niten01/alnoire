@@ -19,12 +19,12 @@ function ClashGame:Init()
     self.lastSpellCastTime = 0
 
     -- ВОВАН ЭТО ТЕБЕ
-    self.waveInterval = 30.0
-    self.firstSpellDelay = 3
-    self.spellCooldown = 5
-    self.spellTargetFindRadius = 400
-    self.totalSpellTargets = 2
-    self.targetPointNames = { "target_dire_spell_left", "target_dire_spell_right" }
+    self.waveInterval = 25.0
+    self.firstSpellDelay = 5
+    self.spellCooldown = 8
+    self.spellTargetFindRadius = 500
+    self.totalSpellTargets = 3
+    self.targetPointNames = { "target_dire_spell_left", "target_dire_spell_right", "target_dire_spell_ancient" }
 
     -- дальше не тебе
 

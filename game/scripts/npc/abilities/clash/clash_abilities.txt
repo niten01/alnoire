@@ -66,13 +66,13 @@
 			"end_vision_duration"		"3.0"
 			"main_damage"
 			{
-				"value"					"55 80 105 130 155 180 205 220 235 250"
+				"value"					"80 80 105 130 155 180 205 220 235 250"
 				"levelkey"				"exortlevel"
 			}
 			"burn_duration"				"3.0"
 			"burn_dps"
 			{
-				"value"					"10 15 20 25 30 35 40 45 50 55"
+				"value"					"20 15 20 25 30 35 40 45 50 55"
 				"levelkey"				"exortlevel"
 				"CalculateSpellDamageTooltip"	"1"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
@@ -131,7 +131,7 @@
 				"damage"
 				{
 									
-					"value"				"140 220 300 380"	
+					"value"				"125 220 300 380"	
 					
 
 				}
