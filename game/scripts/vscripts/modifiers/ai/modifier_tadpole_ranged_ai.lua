@@ -1,16 +1,16 @@
-modifier_default_creep_ai = class({})
+modifier_tadpole_ranged_ai = class({})
 
-function modifier_default_creep_ai:IsHidden() return true end
+function modifier_tadpole_ranged_ai:IsHidden() return true end
 
-function modifier_default_creep_ai:IsPurgable() return false end
+function modifier_tadpole_ranged_ai:IsPurgable() return false end
 
-function modifier_default_creep_ai:DeclareFunctions()
+function modifier_tadpole_ranged_ai:DeclareFunctions()
     return {
         MODIFIER_EVENT_ON_DEATH
     }
 end
 
-function modifier_default_creep_ai:OnDeath(params)
+function modifier_tadpole_ranged_ai:OnDeath(params)
     if not self.customDeathSound then return end
     local parent = self:GetParent()
     if params.unit == parent then
@@ -18,7 +18,7 @@ function modifier_default_creep_ai:OnDeath(params)
     end
 end
 
-function modifier_default_creep_ai:OnCreated()
+function modifier_tadpole_ranged_ai:OnCreated()
     if not IsServer() then return end
     local unit = self:GetParent()
     unit:SetIdleAcquire(false)
@@ -32,7 +32,7 @@ function modifier_default_creep_ai:OnCreated()
     end
 end
 
-function modifier_default_creep_ai:OnIntervalThink()
+function modifier_tadpole_ranged_ai:OnIntervalThink()
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
     local beaconData = unit.packTargetData
@@ -50,6 +50,9 @@ function modifier_default_creep_ai:OnIntervalThink()
     if beaconState == 'aggro' and target and target:IsAlive() then
         local currentTime = GameRules:GetGameTime()
 
+        local casterPos = unit:GetAbsOrigin()
+        local targetPos = target:GetAbsOrigin()
+        local distance = (targetPos - casterPos):Length2D()
         local timeInAggro = currentTime - (unit.aggroStartTime or 0)
         unit.lastCastTime = unit.lastCastTime or 0
 
@@ -66,14 +69,16 @@ function modifier_default_creep_ai:OnIntervalThink()
                 return
             end
         end
+        if not IsCasting(unit) then
+            local desiredDistance = 700
+            local tolerance = 100
 
-        if not unit:GetAggroTarget() then
-            ExecuteOrderFromTable({
-                UnitIndex = unit:entindex(),
-                OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-                Position = target:GetAbsOrigin(),
-                Queue = false,
-            })
+            if math.abs(distance - desiredDistance) > tolerance then
+                local direction = (targetPos - casterPos):Normalized()
+                local movePoint = targetPos - (direction * desiredDistance)
+
+                unit:MoveToPosition(movePoint)
+            end
         end
     else
     end

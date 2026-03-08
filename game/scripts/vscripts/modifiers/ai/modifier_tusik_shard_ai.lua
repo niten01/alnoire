@@ -99,7 +99,7 @@ function modifier_tusik_shard_ai:OnIntervalThink()
         end
 
         if not IsCasting(unit) then
-            local desiredDistance = 400
+            local desiredDistance = 1100
             local tolerance = 100
 
             if math.abs(distance - desiredDistance) > tolerance then

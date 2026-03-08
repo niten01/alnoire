@@ -132,7 +132,9 @@ return {
         "npc_clash_creep_radiant",
         "npc_clash_creep_dire",
         "npc_clash_creep_dire_ranged",
+        "npc_clash_creep_radiant_ranged",
         "npc_clash_creep_mega_sanya_1",
+        "npc_clash_creep_mega_sanya_2",
         "npc_dota_custom_tower_bad",
         "npc_dota_custom_tower_good",
         "npc_dota_custom_king_tower_bad",
@@ -166,6 +168,7 @@ return {
         "npc_dota_hero_crystal_maiden",
         "npc_dota_necronomicon_archer_1",
         "npc_dota_hero_rattletrap",
+        "npc_dota_neutral_warpine_raider",
 
 
 
@@ -205,6 +208,10 @@ return {
         "npc_ocean_tusik_mini_b_1",
         "npc_ocean_tusik_mini_b_2",
         "npc_ocean_tusik_papa",
+        "npc_ocean_tadpole_ranged_1",
+        "npc_ocean_tadpole_ranged_2",
+        "npc_ocean_tadpole_melee",
+
 
 
         -- traps
@@ -335,6 +342,10 @@ return {
         "particles/neutral_fx/ogre_magi_frost_armor.vpcf",
         "particles/generic_gameplay/generic_lifesteal.vpcf",
         "particles/units/heroes/hero_pudge/pudge_rot.vpcf",
+
+        -- ocean
+        "particles/status_fx/status_effect_poison_venomancer.vpcf",
+        "particles/units/heroes/hero_viper/viper_poison_attack_.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",

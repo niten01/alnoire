@@ -304,35 +304,35 @@ return {
             ai_modifier = "modifier_goden_ai",
             team = DOTA_TEAM_BADGUYS,
         },
-        spawner_goden_summon_1          = {
+        spawner_goden_summon_1        = {
             npc = "npc_goden_summon",
             packID = "pack_goden",
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
         },
-        spawner_goden_summon_2          = {
+        spawner_goden_summon_2        = {
             npc = "npc_goden_summon",
             packID = "pack_goden",
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
         },
-        spawner_goden_summon_3          = {
+        spawner_goden_summon_3        = {
             npc = "npc_goden_summon",
             packID = "pack_goden",
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
         },
-        spawner_goden_summon_4          = {
+        spawner_goden_summon_4        = {
             npc = "npc_goden_summon",
             packID = "pack_goden",
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
         },
-        spawner_goden_summon_5          = {
+        spawner_goden_summon_5        = {
             npc = "npc_goden_summon",
             packID = "pack_goden",
             ai_modifier = "modifier_default_creep_ai",
@@ -422,106 +422,106 @@ return {
         },
 
 
-        spawner_techies_1      = {
+        spawner_techies_1        = {
             npc = "npc_jungle_techies_1",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_1",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_techies_2      = {
+        spawner_techies_2        = {
             npc = "npc_jungle_techies_2",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_2",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_techies_3      = {
+        spawner_techies_3        = {
             npc = "npc_jungle_techies_3",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_techies_3",
             ai_modifier = "modifier_techies_ai"
         },
-        spawner_shroom_melee   = {
+        spawner_shroom_melee     = {
             npc = "npc_jungle_shroom_melee",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_shrooms",
             ai_modifier = "modifier_shrooms_ai"
         },
-        spawner_shroom_ranged  = {
+        spawner_shroom_ranged    = {
             npc = "npc_jungle_shroom_ranged",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_shrooms",
             ai_modifier = "modifier_shrooms_ai"
         },
-        spawner_shroom_furion  = {
+        spawner_shroom_furion    = {
             npc = "npc_jungle_shroom_furion",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_shrooms",
             ai_modifier = "modifier_shrooms_furion_ai"
         },
 
-        spawner_gnoll          = {
+        spawner_gnoll            = {
             npc = "npc_jungle_gnoll",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_dragnolls",
             ai_modifier = "modifier_default_creep_ai"
         },
 
-        spawner_ancdragon      = {
+        spawner_ancdragon        = {
             npc = "npc_jungle_ancdragon",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_dragnolls",
             ai_modifier = "modifier_default_creep_ai"
         },
 
-        spawner_perdun         = {
+        spawner_perdun           = {
             npc = "npc_jungle_perdun",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_perdun",
             ai_modifier = "modifier_default_creep_ai"
         },
 
-        spawner_perdun_flower  = {
+        spawner_perdun_flower    = {
             npc = "npc_jungle_perdun_flower",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_forest_act1_perdun",
             ai_modifier = "modifier_default_creep_ai"
         },
 
-        spawner_ocean_creep    = {
+        spawner_ocean_creep      = {
             npc = "npc_ocean_creep_range",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_catapa",
             ai_modifier = "modifier_default_creep_ai"
         },
-        spawner_ocean_siege    = {
+        spawner_ocean_siege      = {
             npc = "npc_ocean_siege",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_catapa",
             ai_modifier = "modifier_default_creep_ai"
         },
 
-        spawner_tusik_mini_a   = {
+        spawner_tusik_mini_a     = {
             npc = "npc_ocean_tusik_mini_a",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tusiki",
             ai_modifier = "modifier_tusik_uppercut_ai"
         },
 
-        spawner_tusik_mini_b_1 = {
+        spawner_tusik_mini_b_1   = {
             npc = "npc_ocean_tusik_mini_b_1",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tusiki",
             ai_modifier = "modifier_tusik_shard_ai"
         },
 
-        spawner_tusik_mini_b_2 = {
+        spawner_tusik_mini_b_2   = {
             npc = "npc_ocean_tusik_mini_b_2",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tusiki",
             ai_modifier = "modifier_tusik_shard_ai"
         },
 
-        spawner_tusik_papa     = {
+        spawner_tusik_papa       = {
             npc = "npc_ocean_tusik_papa",
             modifiers = { "modifier_tusik_papa_hide" },
             team = DOTA_TEAM_BADGUYS,
@@ -529,13 +529,27 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
+        spawner_tadpole_ranged_1 = {
+            npc = "npc_ocean_tadpole_ranged_1",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_tadpoles_ranged",
+            ai_modifier = "modifier_tadpole_ranged_ai",
+        },
 
-        spawner_dream_concert       = {
+        spawner_tadpole_ranged_2 = {
+            npc = "npc_ocean_tadpole_ranged_2",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_tadpoles_ranged",
+            ai_modifier = "modifier_tadpole_ranged_ai",
+        },
+
+
+        spawner_dream_concert      = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_genius              = {
+        spawner_genius             = {
             npc = "npc_genius",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -543,14 +557,14 @@ return {
             ai_modifier = "modifier_genius_ai",
         },
 
-        spawner_concert_fan_ranged  = {
+        spawner_concert_fan_ranged = {
             npc = "npc_ghetto_ranged",
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_concert_crowd",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_concert_fan_melee   = {
+        spawner_concert_fan_melee  = {
             npc = "npc_ghetto_melee",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -558,51 +572,51 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
-        spawner_gangster            = {
+        spawner_gangster           = {
             npc = "npc_gangster",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_ghetto_ranged       = {
+        spawner_ghetto_ranged      = {
             npc = "npc_ghetto_ranged",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_ghetto_melee        = {
+        spawner_ghetto_melee       = {
             npc = "npc_ghetto_melee",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_blue                = {
+        spawner_blue               = {
             npc = "npc_blue",
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_cat_barrel_city     = {
+        spawner_cat_barrel_city    = {
             npc = "npc_cat_barrel",
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_island_fiend        = {
+        spawner_island_fiend       = {
             npc = "npc_island_fiend",
             modifiers = { "modifier_story_npc" },
             packID = "pack_island_duo",
             ai_modifier = "modifier_island_fiend_ai",
         },
-        spawner_island_demon = {
+        spawner_island_demon       = {
             npc = "npc_island_demon",
             modifiers = { "modifier_story_npc" },
             packID = "pack_island_duo",
             ai_modifier = "modifier_island_demon_ai",
         },
-        spawner_bomb_place          = {
+        spawner_bomb_place         = {
             npc = "npc_bomb_place",
             modifiers = { "modifier_story_npc" },
         },
-        spawner_bomb                = {
+        spawner_bomb               = {
             npc = "npc_bomb",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -722,6 +736,13 @@ return {
         },
 
         pack_ocean_act2_tusiki = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_ocean_act2_tadpoles_ranged = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,
