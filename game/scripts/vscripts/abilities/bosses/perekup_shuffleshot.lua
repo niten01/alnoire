@@ -118,7 +118,7 @@ function perekup_shuffleshot:ArcWarning(targetPos)
     if math.abs(rnd) <= 10 then rnd = 100 end
     local endPos = casterPos + dir * dist * 2 + right * rnd
     self.arcInfo = PointsArc(casterPos, targetPos, endPos)
-    ShowGenericArcWarning(self.arcInfo, self:GetSpecialValueFor("projectile_radius"),
+    ShowGenericCurveWarning(self.arcInfo, self:GetSpecialValueFor("projectile_radius"),
         self:GetSpecialValueFor("warning_delay"))
 end
 
@@ -131,7 +131,7 @@ function perekup_shuffleshot:CircleWarning(targetPos)
     if math.abs(rnd) <= 10 then rnd = 50 end
     local endPos = casterPos + right * rnd
     self.arcInfo = PointsArc(casterPos, targetPos, endPos)
-    ShowGenericArcWarning(self.arcInfo, self:GetSpecialValueFor("projectile_radius"),
+    ShowGenericCurveWarning(self.arcInfo, self:GetSpecialValueFor("projectile_radius"),
         self:GetSpecialValueFor("warning_delay"))
 end
 

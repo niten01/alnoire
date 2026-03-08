@@ -65,6 +65,11 @@ function PackManager:ActivatePack(packName)
     PackManager:ForAllAliveUnits(pack, function(unit)
         self:SetUnitAIActive(unit, true)
     end)
+
+    local enemies = FindEnemiesForAIInRadius(pack.pos, pack.rangeRetreat)
+    if #enemies > 0 then
+        self:OnAggro(pack, enemies[1])
+    end
 end
 
 function PackManager:SetUnitAIActive(unit, bActive)
@@ -114,6 +119,8 @@ function PackManager:DeactivatePack(packName)
         self:SetUnitAIActive(unit, false)
     end)
     pack.state = 'off'
+
+    self:OnRetreat(pack, nil)
 end
 
 function PackManager:AddUnit(packName, npc)
@@ -163,7 +170,7 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
         })
         return nil
     end
-    local rangeFastTickRate = pack.rangeFastTickRate
+    local rangeFastTickRate = math.max(pack.rangeFastTickRate, pack.rangeRetreat)
     local rangeAggro = pack.rangeAggro
     local rangeRetreat = pack.rangeRetreat
     local pos = packEnt:GetAbsOrigin()
@@ -208,10 +215,12 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
     if (pack.state == 'idle' or pack.state == 'retreat' or pack.state == 'prepare') and dist <= rangeAggro then
         pack.state = 'aggro'
         pack.target = target
+        self:OnAggro(pack, target)
     elseif pack.state == 'aggro' then
         if dist > rangeRetreat or not target:IsAlive() then
             pack.state = 'retreat'
             pack.target = nil
+            self:OnRetreat(pack, target)
         else
             pack.target = target
         end
@@ -227,6 +236,36 @@ function PackManager:HasActiveFights()
         if pack.state == 'aggro' then return true end
     end
     return false
+end
+
+function PackManager:OnAggro(pack, target)
+    DebugPrint("OnAggro")
+    if pack.music then
+        Music:StartCustomMusic(target:GetPlayerOwnerID(), pack.music)
+    end
+
+    for _, door in ipairs(pack.doors) do
+        DoorManager:Close(door)
+    end
+end
+
+function PackManager:OnRetreat(pack, target)
+    local pids = target and { target:GetPlayerOwnerID() } or {}
+    if not target then
+        for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+            table.insert(pids, playerID)
+        end
+    end
+    DebugPrint("OnRetreat")
+    if pack.music then
+        for _, pid in ipairs(pids) do
+            Music:StopCustomMusic(pid)
+        end
+    end
+
+    for _, door in ipairs(pack.doors) do
+        DoorManager:Open(door)
+    end
 end
 
 return PackManager

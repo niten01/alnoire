@@ -18,6 +18,21 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
+  Hero_Logarithmus.PreAttack = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_hit_swing.vsnd",
+    ]
+    volume = "0.70000"
+    pitch_rand_min = "-0.050000"
+    pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
   Hero_Logarithmus.Footsteps = {
     type = "dota_update_default"
     vsnd_files =
@@ -33,6 +48,21 @@
     // pitch_rand_min = "0.050000"
     // pitch_rand_max = "0.050000"
     pitch = "1.800000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.logarithmus.impale = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/logarithmus/logarithmus_impale.vsnd",
+    ]
+    volume = "1.20000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.080000"
+    pitch_rand_max = "0.080000"
     soundlevel = "81.000000"
     mixgroup = "Weapons"
     volume_fade_out = "0.600000"
@@ -74,6 +104,8 @@
     ]
     volume = "1.00000"
     pitch = "1.000000"
+    pitch_rand_min = "-0.100000"
+    pitch_rand_max = "0.100000"
     soundlevel = "81.000000"
     mixgroup = "Weapons"
     volume_fade_out = "0.600000"

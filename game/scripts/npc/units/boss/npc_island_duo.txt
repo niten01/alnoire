@@ -6,7 +6,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Nevermore"
 		"Level"						"1"
-		"ModelScale" 				"1"
+		"ModelScale" 				"1.1"
 		"ConsideredHero" 			"1"
 
 		// Abilities
@@ -14,7 +14,10 @@
 		"Ability1"					"shadow_fiend_shadowraze_a_lua"			// Ability 1
 		"Ability2"					"shadow_fiend_shadowraze_b_lua"			// Ability 2
 		"Ability3"					"shadow_fiend_shadowraze_c_lua"			// Ability 3
-		"Ability4"					"island_fiend_blink"			// Ability 4
+		"Ability4"					"island_fiend_blink"		
+		"Ability5"					"island_fiend_eye"				
+		"Ability6"					"island_fiend_crossraze"
+		"Ability7"					"island_fiend_requiem"			
 
 		// Armor
 		//----------------------------------------------------------------
@@ -50,7 +53,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3000"		// Base health.
+		"StatusHealth"				"300"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -77,8 +80,8 @@
 		{
 			"AttachWearables"
 			{
-				"Wearable1" { "ItemDef" "34185" } // shoulders
-				"Wearable2" { "ItemDef" "34186" } // arms
+				"Wearable1" { "ItemDef" "33210" } // shoulders
+				"Wearable2" { "ItemDef" "33211" } // arms
 				"Wearable3" { "ItemDef" "33212" } // head
 			}
 		}
@@ -94,10 +97,11 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"shadow_demon_shadow_poison"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability1"					"island_demon_poison"			// Ability 1
+		"Ability2"					"island_demon_illusions"			// Ability 2
+		"Ability3"					"island_demon_swap"			// Ability 3
+		"Ability4"					"island_demon_hide"			
+		"Ability5"					"island_demon_blink"			
 
 		// Armor
 		//----------------------------------------------------------------
@@ -133,7 +137,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3000"		// Base health.
+		"StatusHealth"				"300"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -154,7 +158,60 @@
 		{
 			"AttachWearables"
 			{
-				"Wearable1" { "ItemDef" "397" } // armor
+				// "Wearable1" { "ItemDef" "397" } // armor
+				// "Wearable2" { "ItemDef" "9234" } // back
+				// "Wearable1" { "ItemDef" "13152" } // tail
+				// "Wearable2" { "ItemDef" "13153" } // back
+				// "Wearable3" { "ItemDef" "13154" } // armor
+				// "Wearable4" { "ItemDef" "13155" } // belt
+				"Wearable1" { "ItemDef" "17899" } // tail
+				"Wearable2" { "ItemDef" "17901" } // back
+				"Wearable3" { "ItemDef" "17902" } // armor
+				"Wearable4" { "ItemDef" "17903" } // belt
+			}
+		}
+	}
+	
+	"npc_island_demon_illusion" 
+	{
+		"Model"						"models/heroes/shadow_demon/shadow_demon.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_ShadowDemon"
+		"ModelScale" 				"1"
+		"ConsideredHero"			"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"island_demon_poison"			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"RingRadius"				"40"
+		"HealthBarOffset"			"200"
+
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"StatusHealth"				"1"		// Base health.
+		"StatusMana"				"1000"			// Base mana.
+		"VisionDaytimeRange"		"400"		
+		"VisionNighttimeRange"		"400"	
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				// "Wearable1" { "ItemDef" "397" } // armor
+				// "Wearable2" { "ItemDef" "9234" } // back
+				// "Wearable1" { "ItemDef" "13152" } // tail
+				// "Wearable3" { "ItemDef" "13154" } // armor
+				// "Wearable4" { "ItemDef" "13155" } // belt
+				"Wearable1" { "ItemDef" "17899" } // tail
+				"Wearable2" { "ItemDef" "17901" } // back
+				"Wearable3" { "ItemDef" "17902" } // armor
+				"Wearable4" { "ItemDef" "17903" } // belt
 			}
 		}
 	}

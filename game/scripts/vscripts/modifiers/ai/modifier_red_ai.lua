@@ -14,10 +14,9 @@ function modifier_red_ai:OnCreated()
     self.tired = false
 end
 
-function modifier_red_ai:MakeTired(unit)
+function modifier_red_ai:MakeTired(unit, duration)
     self.tired = true
-    Timers:CreateTimer(1.3, function()
-        local duration = 5
+    Timers:CreateTimer(0.2, function()
         unit:AddNewModifier(nil, nil, "modifier_red_tired", { duration = duration })
         Timers:CreateTimer(duration, function() self.tired = false end)
     end)
@@ -52,20 +51,36 @@ function modifier_red_ai:OnIntervalThink()
 
         if self.tired then return end
 
-        if self.blinkUsed and CastAbility(unit, target, "red_machine_gun") then
-            if unit.lastCastAbilityName == "red_machine_gun" then
-                self.blinkUsed = false
-                if RandomFloat(0, 1) < 0.7 then
-                    self:MakeTired(unit)
+        if self.blinkUsed then
+            if CastAbility(unit, target, "red_machine_gun") then
+                if unit.lastCastAbilityName == "red_machine_gun" then
+                    Timers:CreateTimer(0.1, function()
+                        if not unit or unit:IsNull() then return nil end
+                        if unit:FindAbilityByName("red_machine_gun"):GetCooldownTimeRemaining() > 0 then
+                            self.blinkUsed = false
+                            if RandomFloat(0, 1) < 0.7 then
+                                self:MakeTired(unit, 6)
+                            end
+                            return nil
+                        end
+                        return 0.1
+                    end)
                 end
             end
             return
         end
 
-        if CastAbility(unit, target, "red_radiance") then
+        if CastRandomAvailableAbility(unit, target, {
+                "red_radiance",
+                "red_fireball"
+            }) then
+            if unit.lastCastAbilityName == "red_fireball" then
+                if RandomFloat(0, 1) < 0.5 then
+                    self:MakeTired(unit, 4)
+                end
+            end
             return
         end
-        if CastAbility(unit, target, "red_fireball") then return end
 
         -- everything on CD, do the trick
         local unitPos = unit:GetAbsOrigin()
@@ -74,8 +89,10 @@ function modifier_red_ai:OnIntervalThink()
             blinkTarget = self.blinkRightTarget:GetAbsOrigin()
         end
         if CastAbility(unit, blinkTarget, "red_blink") then
-            self.blinkUsed = true
-            return
+            if unit.lastCastAbilityName == "red_blink" then
+                self.blinkUsed = true
+                return
+            end
         end
     end
 end

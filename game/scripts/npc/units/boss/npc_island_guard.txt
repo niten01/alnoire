@@ -4,7 +4,7 @@
 	{
 		"Model"						"models/heroes/abyssal_underlord/abyssal_underlord_v2.vmdl"
 		"BaseClass"					"npc_dota_creature"
-		"ModelScale" 				"2.0"
+		"ModelScale" 				"1.5"
 		"Level"						  "1"
 		"ConsideredHero" 		"1"
 
@@ -19,6 +19,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"         "-40"
 
 		// Attack
 		//----------------------------------------------------------------

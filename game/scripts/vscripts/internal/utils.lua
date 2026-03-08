@@ -227,6 +227,13 @@ function extend(old, extra)
   return t
 end
 
+function concatArrays(t1,t2)
+   for i=1,#t2 do
+      t1[#t1+1] = t2[i]
+   end
+   return t1
+end
+
 function bind(fn, arg1, ...)
   if select("#", ...) == 0 then
     return function(...)
@@ -334,6 +341,8 @@ function PlayLogarithmusImpaleEffect(target, hitFromPos)
   ParticleManager:SetParticleControlTransformForward(pfx, 1, target:GetAbsOrigin(),
     (target:GetAbsOrigin() - hitFromPos):Normalized())
   ParticleManager:ReleaseParticleIndex(pfx)
+
+  target:EmitSound("ability.logarithmus.impale")
 end
 
 function IncrementLogarithmusStacks(caster)

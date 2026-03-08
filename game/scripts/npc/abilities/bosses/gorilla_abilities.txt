@@ -15,10 +15,10 @@
         "AbilityValues"
         {
             "distance"             "1000"
-            "damage"               "10"
+            "damage"               "75"
             "umm_duration"         "4"
-            "speed"                "2100"
-            "capture_radius"       "200"
+            "speed"                "1900"
+            "capture_radius"       "150"
             "warning_delay"        "0.1"
         }
 
@@ -38,17 +38,17 @@
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
         "AbilityCastPoint"              "0.3"
-        "AbilityCooldown"               "5.0" 
+        "AbilityCooldown"               "4.0" 
         "AbilityCastRange"        		"9999"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
         
         "AbilityValues"
         {
             "distance"             "300"
-            "damage"               "10"
+            "damage"               "75"
             "umm_duration"         "4"
             "travel_time"          "2"
-            "capture_radius"       "200"
+            "capture_radius"       "150"
             "warning_delay"        "0.1"
         }
 
@@ -64,8 +64,8 @@
         "AbilityTextureName"            "primal_beast_onslaught"
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
-        "AbilityCastPoint"              "0.3"
-        "AbilityCooldown"               "5.0" 
+        "AbilityCastPoint"              "0.5"
+        "AbilityCooldown"               "6.0" 
         "AbilityCastRange"        		"9999"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
         
@@ -73,13 +73,13 @@
         {
             "distance"             "1500"
             "clone_speed"          "1000"
-            "damage"               "10"
+            "damage"               "75"
             "umm_duration"         "4"
             "travel_time"          "2"
             "capture_radius"       "150"
             "warning_delay"         "0.2"
             "num_shots"             "4"
-            "spread"                "45"
+            "spread"                "55"
         }
 
         "precache"
@@ -98,14 +98,14 @@
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
         "AbilityCastPoint"              "0.5"
-        "AbilityCooldown"               "5.0" 
+        "AbilityCooldown"               "3.0" 
         "AbilityCastRange"        		  "350"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         
         "AbilityValues"
         {
-            "radius"               "350"
-            "damage"               "10"
+            "radius"               "300"
+            "damage"               "75"
             "umm_duration"         "4"
             "warning_delay"         "0.1"
         }

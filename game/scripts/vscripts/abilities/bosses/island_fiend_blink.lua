@@ -7,7 +7,7 @@ function island_fiend_blink:OnSpellStart()
     local targetPos = self:GetCursorPosition()
     local dist = (casterPos - targetPos):Length()
     local dir = (targetPos - casterPos):Normalized()
-    targetPos = GetSafeBlinkDestination(casterPos, casterPos + dir * (dist - 100))
+    targetPos = GetSafeBlinkDestination(casterPos, casterPos + dir * (dist - caster:GetHullRadius()))
     targetPos.z = GetGroundHeight(targetPos, caster)
 
     local pfx = ParticleManager:CreateParticle(
@@ -22,5 +22,5 @@ function island_fiend_blink:OnSpellStart()
 
     EmitSoundOnLocationWithCaster(targetPos, "ability.island_fiend.blink", caster)
 
-    caster:SetAbsOrigin(targetPos)
+    FindClearSpaceForUnit(caster, targetPos, true)
 end

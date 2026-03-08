@@ -13,7 +13,7 @@ function MoveHome(unit)
     local dist = (unit:GetAbsOrigin() - unit.spawnPos):Length2D()
     if dist < 5 then
       local turnPos = unit.spawnPos + unit.spawnForward * 2
-      unit:MoveToPosition(turnPos)
+      unit:FaceTowards(turnPos)
     else
       return 0.1
     end
@@ -66,6 +66,7 @@ function GiveCastOrder(unit, target, ability)
   assert(behavior)
 
   local cast = function()
+    if not unit or unit:IsNull() then return end
     unit:Stop()
     if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) ~= 0 then
       unit:CastAbilityOnTarget(target, ability, -1)
@@ -126,6 +127,8 @@ function CastRandomAvailableAbility(unit, target, abilityNames)
       table.insert(availNames, abilityName)
     end
   end
+
+  if #availNames == 0 then return false end
 
   local chosenName = availNames[RandomInt(1, #availNames)]
   return CastIterWrapper(unit, target, function(ability)
@@ -458,16 +461,22 @@ function ShowGenericCircleWarning(center, radius, duration)
   end)
 end
 
-function ShowGenericArcWarning(arcInfo, width, duration)
+function ShowGenericCurveWarning(curveInfo, width, duration)
   local interval = 0.01
-  local nSteps = duration / interval
-  local iter = arcInfo:StableIterator(nSteps)
+  local iter = curveInfo:UnstableIterator()
   local point = iter()
   local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 1, Vector(width, 0, 0))
+
+  local prevTime = GameRules:GetGameTime()
   Timers:CreateTimer(0, function()
     ParticleManager:SetParticleControl(pfx, 0, point)
-    point = iter()
+
+    local curTime = GameRules:GetGameTime()
+    local dt = curTime - prevTime
+    prevTime = curTime
+
+    point = iter(dt / duration)
     if point then
       return interval
     else
@@ -530,7 +539,7 @@ function PointsFan(startPos, endPos, numPoints, alpha)
   end
 
   for i = 0, numPoints - 1 do
-    local fraction = i / (numPoints - 1)
+    local fraction = i / (numPoints)
 
     local relativeAngle = -alphaRad + (fraction * (alphaRad * 2))
     local finalAngle = baseAngle + relativeAngle

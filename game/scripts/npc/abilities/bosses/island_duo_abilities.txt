@@ -41,10 +41,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-            "shadowraze_damage"	"90 160 230 300"	
+            "shadowraze_damage"	"90"	
             "shadowraze_radius"	"200"		
             "range"             "200"
-            "shadowraze_cooldown"	"3"
             "stack_bonus_damage" "80"
             "duration"	"8"
 		}
@@ -92,11 +91,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-            "shadowraze_damage"	"90 160 230 300"	
-            "shadowraze_radius"	"200"		
-            "shadowraze_cooldown"	"3"
+            "shadowraze_damage"	"90"	
             "stack_bonus_damage" "80"
-            "duration"	"8"
             "range"     "450"
 		}
 	} 
@@ -142,11 +138,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-            "shadowraze_damage"	"90 160 230 300"	
-            "shadowraze_radius"	"200"		
-            "shadowraze_cooldown"	"3"
+            "shadowraze_damage"	"90"	
             "stack_bonus_damage" "80"
-            "duration"	"8"
             "range"     "700"
 		}
 	}
@@ -158,7 +151,31 @@
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityTextureName"		"queenofpain_blink"
 		"AbilityCastAnimation"	    "ACT_DOTA_FORCESTAFF_STATUE"
-		"AbilityCastPoint"			"0.73"
+		"AbilityCastPoint"			"0.6"
+        "AbilityCooldown"               "5.0" 
+		"AbilityCastRange"				"9999"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+
+		"AbilityValues"
+		{
+		}
+
+		"precache"
+		{
+			"particle" 		"particles/econ/events/ti6/blink_dagger_start_ti6.vpcf"
+			"particle" 		"particles/econ/events/ti6/blink_dagger_end_ti6.vpcf"
+		}
+	}
+	"island_demon_blink"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/bosses/island_demon_blink.lua"
+		"AbilityType"				"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityTextureName"		"queenofpain_blink"
+		"AbilityCastAnimation"	    "ACT_DOTA_CAST2_STATUE"
+		"AbilityCastPoint"			"0.43"
         "AbilityCooldown"               "7.0" 
 		"AbilityCastRange"				"9999"
 		"MaxLevel"						"1"
@@ -173,5 +190,180 @@
 			"particle" 		"particles/econ/events/ti6/blink_dagger_start_ti6.vpcf"
 			"particle" 		"particles/econ/events/ti6/blink_dagger_end_ti6.vpcf"
 		}
+	}
+    "island_fiend_eye"
+    {
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/bosses/island_fiend_eye.lua"
+		"AbilityType"				"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"		"queenofpain_blink"
+		"AbilityCastAnimation"	    "ACT_DOTA_ATTACK"
+		"AbilityCastPoint"			"0.33"
+        "AbilityCooldown"               "7.0" 
+		"AbilityCastRange"				"9999"
+
+        "AbilityDamage"         "300"
+		"AbilityValues"
+		{
+            "mid_spread_minmax"    "100 800"
+            "warning_delay"        "0.8"
+            "proj_radius"          "50"
+            "proj_speed"                "2500"
+            "raze_stacks_per_hit"   "3"
+		}
+
+		"precache"
+		{
+			"particle" 		"particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation.vpcf"
+		}
+    }
+    "island_fiend_crossraze"
+    {
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/bosses/island_fiend_crossraze.lua"
+		"AbilityType"				"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"		"nevermore_shadowraze1"
+		"AbilityCastAnimation"	    "ACT_DOTA_RAZE_3"
+		"AbilityCastPoint"			"0.55"
+        "AbilityCooldown"               "1.0" 
+		"AbilityCastRange"				"9999"
+
+        "AbilityDamage"         "300"
+		"AbilityValues"
+		{
+            "shadowraze_damage"	"90"	
+            "stack_bonus_damage" "80"
+            "num_points"        "3"
+		}
+
+		"precache"
+		{
+			"particle" 		"particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation.vpcf"
+		}
+    }
+    "island_fiend_requiem"
+    {
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/bosses/island_fiend_requiem.lua"
+		"AbilityType"				"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"		"nevermore_requiem"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_REQUIEM_STATUE"
+		"AbilityCastPoint"				"1.67"
+        "AbilityCooldown"               "30.0" 
+		"AbilityCastRange"				"9999"
+		"AbilitySound"					"Hero_Nevermore.RequiemOfSouls"
+
+		"AbilityValues"
+		{
+            "damage_per_proj"	"90"	
+            "stack_bonus_damage" "80"
+            "num_projectiles"    "20"
+			"max_range"			 "1000"
+			"proj_radius"		 "50"
+			"fly_time" 			 "1.4"
+		}
+
+		"precache"
+		{
+			"particle" 		"particles/sf_requiem.vpcf"
+		}
+    }
+    "island_demon_poison"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/island_demon_poison.lua"
+        "AbilityTextureName"            "shadow_demon_shadow_poison"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCastPoint"              "0.33"
+        "AbilityCooldown"               "3.0" 
+        "AbilityCastRange"        		"9999"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+        
+        "AbilityValues"
+        {
+            "range"                "2000"
+            "damage"               "50"
+            "damage_per_stack"     "100"
+            "projectile_radius"    "160"
+            "warning_delay"        "0.3"
+            "projectile_speed"     "1000"
+            "poison_decay"         "10"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/econ/items/shadow_demon/sd_ti7_shadow_poison/sd_ti7_shadow_poison_proj.vpcf"
+        }
+    }   
+    "island_demon_illusions"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/island_demon_illusions.lua"
+        "AbilityTextureName"            "shadow_demon_shadow_poison"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+        "AbilityChannelAnimation"          "ACT_DOTA_GENERIC_CHANNEL_1"
+        "AbilityCastPoint"              "0.56"
+		"AbilityChannelTime"			"3.0"
+        "AbilityCooldown"               "30.0" 
+        "AbilityCastRange"        		"9999"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+        
+        "AbilityValues"
+        {
+        }
+
+        "precache"
+        {
+            "particle"      "particles/units/heroes/hero_shadow_demon/shadow_demon_disruption.vpcf"
+			"particle"		"particles/units/heroes/hero_shadow_demon/shadow_demon_loadout.vpcf"
+        }
+    }   
+	"island_demon_swap"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/island_demon_swap.lua"
+        "AbilityTextureName"            "shadow_demon_shadow_poison"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+        "AbilityCastPoint"              "0.47"
+        "AbilityCooldown"               "10.0" 
+        "AbilityCastRange"        		"9999"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        
+        "AbilityValues"
+        {
+        }
+
+        "precache"
+        {
+            "particle"      "particles/econ/items/vengeful/vengeful_arcana/vengeful_arcana_nether_swap_v3.vpcf"
+        }
+	}
+	"island_demon_hide"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/island_demon_hide.lua"
+        "AbilityTextureName"            "shadow_demon_shadow_poison"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_5"
+        "AbilityCastPoint"              "0.53"
+        "AbilityCooldown"               "1.0" 
+        "AbilityCastRange"        		"400"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        
+        "AbilityValues"
+        {
+			"duration" 		"2.1"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/units/heroes/hero_shadow_demon/shadow_demon_disruption.vpcf"
+        }
 	}
 }

@@ -129,7 +129,7 @@
 						_class = "AnimFile"
 						name = "attack_chop"
 						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_ATTACK"
+						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
@@ -798,6 +798,24 @@
 						parent_bone = "finger_middle_0_L"
 						relative_origin = [ 0.0, -1.865173, 0.000027 ]
 						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_eyeR"
+						parent_bone = "head"
+						relative_origin = [ 1.488297, 9.737099, -4.485648 ]
+						relative_angles = [ 30.513079, 4.819746, 164.886185 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_eyeL"
+						parent_bone = "head"
+						relative_origin = [ 1.381516, 10.006832, 4.290788 ]
+						relative_angles = [ -37.07188, -12.738563, 28.284437 ]
 						weight = 1.0
 						ignore_rotation = false
 					},

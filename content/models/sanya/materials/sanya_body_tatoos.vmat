@@ -70,4 +70,54 @@ Layer0
 	g_flSpecularExponent "32.000"
 	g_flSpecularScale "1.000"
 	g_vSpecularColor "[1.000000 1.000000 1.000000 0.000000]"
+
+	UnusedVariables
+	{
+		"g_flDetailBlendToFull" "0"
+		"g_flDetailBlendFactor" "1"
+		"g_vDetail1ColorTint" "[1.000000 1.000000 1.000000 0.000000]"
+		"TextureDetail" "materials/default/default_detail.tga"
+		"g_vDetail2TexCoordOffset" "[0.000 0.000]"
+		"g_vDetail2TexCoordScale" "[1.000 1.000]"
+	}
+
+
+	VariableState
+	{
+		"Blend To Full"
+		{
+		}
+		"Cloak"
+		{
+		}
+		"Color"
+		{
+		}
+		"Detail 1"
+		{
+		}
+		"Fresnel"
+		{
+		}
+		"Lighting"
+		{
+			"Ambient" 0
+			"Bloom" 0
+		}
+		"Mask 1"
+		{
+		}
+		"Mask 2"
+		{
+		}
+		"Normal Map"
+		{
+		}
+		"Rim"
+		{
+		}
+		"Specular"
+		{
+		}
+	}
 }

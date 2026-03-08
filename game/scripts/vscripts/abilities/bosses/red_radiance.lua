@@ -28,7 +28,7 @@ function red_radiance:OnChannelFinish(bInterrupted)
     if bInterrupted then return end
 
     local sanya = FindSanyaInRadius(caster:GetAbsOrigin(), 65536)
-    assert(sanya)
+    if not sanya or not sanya:IsAlive() then return end
 
     local ms = sanya:GetMoveSpeedModifier(sanya:GetBaseMoveSpeed(), true)
     local sprintAbility = sanya:FindAbilityByName("sanya_sprint")

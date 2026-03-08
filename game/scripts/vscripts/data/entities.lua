@@ -602,13 +602,13 @@ return {
         },
         spawner_island_fiend       = {
             npc = "npc_island_fiend",
-            modifiers = { "modifier_story_npc" },
+            modifiers = { "modifier_story_npc", "modifier_generic_unkillable" },
             packID = "pack_island_duo",
             ai_modifier = "modifier_island_fiend_ai",
         },
         spawner_island_demon       = {
             npc = "npc_island_demon",
-            modifiers = { "modifier_story_npc" },
+            modifiers = { "modifier_story_npc", "modifier_generic_unkillable" },
             packID = "pack_island_duo",
             ai_modifier = "modifier_island_demon_ai",
         },
@@ -650,6 +650,8 @@ return {
             state = "off",
 
             target = nil,
+            music = nil,
+            doors = {},
         },
 
         pack_forest_act1_lizards = {
@@ -771,7 +773,8 @@ return {
         },
         pack_island_duo = {
             activateAfterUnitsSpawned = false,
-            stayActivatedOnPlayerDeath = true,
+            stayActivatedOnPlayerDeath = false,
+            music = "music.island_duo.phase1",
         },
         pack_goden = {
             activateAfterUnitsSpawned = true,
@@ -783,6 +786,9 @@ return {
         },
         pack_gorilla = {
             activateAfterUnitsSpawned = false,
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1850,
+            rangeAggro = 1000,
         },
         pack_red = {
             rangeRetreat = 6000,

@@ -416,7 +416,6 @@ function StoryDriver:OnGameInProgress()
 
   if GetMapName() == "fight_test" then
     Timers:CreateTimer(2, function()
-      StoryDriver:StartFight("pack_island_duo")
       for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
         if PlayerResource:IsRealPlayer(playerID) and PlayerResource:IsValidPlayerID(playerID) then
           local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
@@ -433,7 +432,8 @@ function StoryDriver:OnGameInProgress()
           newHero:HeroLevelUp(true)
         end
       end
-      -- SpawnManager:SpawnNPC("spawner_gorilla")
+      -- SpawnManager:SpawnNPC("spawner_red")
+      -- StoryDriver:StartFight("pack_red")
     end)
   end
 end
