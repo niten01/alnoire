@@ -28,6 +28,7 @@ function modifier_default_creep_ai:OnCreated()
     local kv = GetUnitKeyValuesByName(unitName)
     if kv then
         self.customDeathSound = kv["CustomDeathSound"]
+        self.requiredTimeInAggroOffset = kv["RequiredTimeInAggroOffset"]
     end
 end
 
@@ -54,10 +55,15 @@ function modifier_default_creep_ai:OnIntervalThink()
 
         if IsCasting(unit) then return end
 
-        if timeInAggro >= 2.5 and (currentTime - unit.lastCastTime) >= 2 then
+        local requiredTimeInAggro = 2.5
+        if self.requiredTimeInAggroOffset then
+            requiredTimeInAggro = requiredTimeInAggro + self.requiredTimeInAggroOffset
+        end
+        local requiredDelay = 2
+        if timeInAggro >= requiredTimeInAggro and (currentTime - unit.lastCastTime) >= requiredDelay then
             if CastAllAbilities(unit, target) then
                 unit.lastCastTime = currentTime
-                return 
+                return
             end
         end
 
