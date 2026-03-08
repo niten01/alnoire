@@ -369,6 +369,10 @@ function StoryDriver:OnCancelLethalDamage(event)
     if unit.packTargetData and unit.packTargetData.name == packName then
       PackManager:ResetPackPosition(packName)
       self:StopFight(i)
+      local hero = PlayerResource:GetBarebonesAssignedHero(event.attackerPlayerID)
+      assert(hero)
+      hero:SetAbsOrigin(unit:GetAbsOrigin() + unit:GetForwardVector() * 100)
+      hero:FaceTowards(unit:GetAbsOrigin())
       break
     end
   end
@@ -432,8 +436,8 @@ function StoryDriver:OnGameInProgress()
           newHero:HeroLevelUp(false)
         end
       end
-      SpawnManager:SpawnNPC("spawner_red")
-      StoryDriver:StartFight("pack_red")
+      SpawnManager:SpawnNPC("spawner_killer")
+      StoryDriver:StartFight("pack_killer")
     end)
   end
 end
