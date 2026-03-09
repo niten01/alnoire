@@ -448,17 +448,21 @@ function ShowGenericLineWarning(p1, p2, width, duration)
   ParticleManager:SetParticleControl(pfx, 2, p1)
   ParticleManager:SetParticleControl(pfx, 3, Vector(width, width, 0))
   ParticleManager:SetParticleControl(pfx, 4, Vector(255, 0, 0))
-  local remainingDuration = duration
+  local elapsed  = 0
   local interval = 0.01
-  local dist = #(p1 - p2)
-  local step = dist / (duration / interval)
-  local dir = (p2 - p1):Normalized()
-  local curEnd = p1
+  local dist     = #(p1 - p2)
+  local dir      = (p2 - p1):Normalized()
+  local curEnd   = p1
+  local lastTime = GameRules:GetGameTime()
   Timers:CreateTimer(interval, function()
-    curEnd = curEnd + dir * step
+    local now = GameRules:GetGameTime()
+    local dt = now - lastTime
+    lastTime = now
+
+    curEnd = p1 + dir * dist * (elapsed / duration)
     ParticleManager:SetParticleControl(pfx, 2, curEnd)
-    remainingDuration = remainingDuration - interval
-    if remainingDuration <= 0 then
+    elapsed = elapsed + dt
+    if elapsed >= duration then
       ParticleManager:DestroyParticle(pfx, false)
       ParticleManager:ReleaseParticleIndex(pfx)
       return nil

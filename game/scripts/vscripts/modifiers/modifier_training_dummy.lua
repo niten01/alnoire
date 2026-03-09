@@ -19,4 +19,6 @@ function modifier_training_dummy:OnTakeDamage(params)
     if params.unit:GetHealth() <= 1 then
         parent:SetHealth(parent:GetMaxHealth())
     end
+
+    parent:StartGesture(ACT_DOTA_FLINCH)
 end

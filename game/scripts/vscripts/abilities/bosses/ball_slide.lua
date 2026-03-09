@@ -30,6 +30,10 @@ function modifier_ball_slide:OnCreated(kv)
     self.velocity = Vector(0, 0, 0)
     self.lastTime = GameRules:GetGameTime()
 
+    self.radius = ability:GetSpecialValueFor("damage_radius")
+    self.dps = ability:GetSpecialValueFor("dps")
+    self.minDamageVelocity = ability:GetSpecialValueFor("min_damage_vel")
+
     -- if self:ApplyHorizontalMotionController() == false then
     --     self:Destroy()
     -- end
@@ -67,35 +71,52 @@ end
 function modifier_ball_slide:UpdateHorizontalMotion(me, dt)
     local pos = me:GetAbsOrigin()
     local nextPos = pos + self.velocity * dt
+    local safeNextPos = GetSafeBlinkDestination(pos, nextPos)
 
-    if not GridNav:IsTraversable(nextPos) or GridNav:IsBlocked(nextPos) then
-        self:HandleBounce(pos)
-        return
+    if #self.velocity < 1 then return end
+
+    if math.abs((safeNextPos - pos):Length2D() - (nextPos - pos):Length2D()) > 1 then
+        self:HandleBounce(safeNextPos)
+        nextPos = safeNextPos
     end
 
-    -- me:FaceTowards(nextPos)
+    me:SetForwardVector(self.velocity:Normalized())
+    me:FaceTowards(nextPos)
     me:SetAbsOrigin(nextPos)
     -- FindClearSpaceForUnit(me, nextPos, true)
 
     self.velocity = self.velocity * self.friction
+
+    if #self.velocity < self.minDamageVelocity then return end
+
+    local enemies = FindEnemiesForAIInRadius(pos, self.radius)
+    for _, ent in ipairs(enemies) do
+        ApplyDamage({
+            victim = ent,
+            attacker = me,
+            damage = self.dps * dt,
+            damage_type = DAMAGE_TYPE_PHYSICAL,
+            ability = self:GetAbility()
+        })
+    end
 end
 
 function modifier_ball_slide:HandleBounce(current_pos)
-    local test_dist = 30
+    local test_dist = 10
     local x_blocked = not GridNav:IsTraversable(current_pos +
         Vector(self.velocity.x > 0 and test_dist or -test_dist, 0, 0))
     local y_blocked = not GridNav:IsTraversable(current_pos +
         Vector(0, self.velocity.y > 0 and test_dist or -test_dist, 0))
 
+    local parent = self:GetParent()
     if x_blocked then
         self.velocity.x = -self.velocity.x * self.bounceFactor
+        parent:EmitSound("ball.hit")
     end
     if y_blocked then
         self.velocity.y = -self.velocity.y * self.bounceFactor
+        parent:EmitSound("ball.hit")
     end
-
-    local parent = self:GetParent()
-    parent:EmitSound("ball.hit")
 end
 
 function modifier_ball_slide:OnDestroy()

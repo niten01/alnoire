@@ -13,7 +13,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"ball_slide"			
 		"Ability2"					"ball_jump"			
-		"Ability3"					""			
+		"Ability3"					"ball_dash"			
 		"Ability4"					""			
 		"Ability5"					""			
 
