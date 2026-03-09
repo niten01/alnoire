@@ -27,7 +27,7 @@ function modifier_killer_ai:OnIntervalThink()
         if not target:HasModifier("modifier_killer_bind") then
             if CastAbility(unit, target, "killer_bind") then return end
         end
-        if CastAbility(unit, target, "grimstroke_dark_artistry") then return end
+        if CastAbility(unit, target, "killer_stroke") then return end
 
         if not unit:GetAggroTarget() then
             ExecuteOrderFromTable({

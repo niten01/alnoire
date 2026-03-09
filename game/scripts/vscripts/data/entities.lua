@@ -260,6 +260,11 @@ return {
             modifiers = { "modifier_story_npc" },
             injectedAttributes = { "trap_delay", "trap_speed" }
         },
+        spawner_trap_skeleton         = {
+            npc = "npc_trap_skeleton",
+            team = DOTA_TEAM_BADGUYS,
+            modifiers = { "modifier_story_npc" },
+        },
         spawner_storyteller           = {
             npc = "npc_storyteller",
             modifiers = { "modifier_story_npc" },
@@ -861,6 +866,15 @@ return {
         zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_ghetto" },
         zone_concert_muted = { musicSet = "concert_muted", respawnPoint = "respawn_concert" },
         zone_concert = { musicSet = "concert", respawnPoint = "respawn_concert" },
+
+        zone_island = { musicSet = "silence", respawnPoint = "respawn_island" },
+        zone_island_check_1 = { musicSet = "island", respawnPoint = "respawn_island_check_1" },
+        zone_island_check_2 = { respawnPoint = "respawn_island_check_2" },
+        zone_island_check_3 = { respawnPoint = "respawn_island_check_3" },
+        zone_island_check_4 = { respawnPoint = "respawn_island_check_4" },
+        zone_island_check_5 = { respawnPoint = "respawn_island_check_5" },
+        zone_island_check_6 = { respawnPoint = "respawn_island_check_6" },
+        zone_island_check_7 = { respawnPoint = "respawn_island_check_7" },
     },
 
     ------------------------------------------------------------

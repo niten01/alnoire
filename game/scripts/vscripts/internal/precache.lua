@@ -222,7 +222,7 @@ return {
         "npc_trap_fire",
         "npc_trap_spikes",
         "npc_trap_pendulum",
-
+        "npc_trap_skeleton",
     },
     models = {
         --mk banana

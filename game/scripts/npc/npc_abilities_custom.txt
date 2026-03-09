@@ -76,4 +76,16 @@
 		"ScriptFile"            "abilities/trap_pendulum.lua"
 		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
+	"trap_skeleton"
+	{
+		"BaseClass"             "ability_lua"
+		"ScriptFile"            "abilities/trap_skeleton.lua"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+			"range"		"600"
+			"fire_interval"	"1"
+		}
+	}
 }

@@ -1,0 +1,25 @@
+"DOTAUnits"
+{
+    "npc_trap_skeleton"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/clinkz/clinkz_archer.vmdl"
+		"ModelScale" 			"1.7"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+        "Ability1"              "trap_skeleton"
+        "Level"                 "1"
+        "HealthBarOffset"       "-1"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"25"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackRate"				"1.8"		// Speed of attack.
+		"AttackAnimationPoint"		"0.42"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/econ/items/clinkz/clinkz_maraxiform/clinkz_ti9_summon_projectile_arrow.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1000"		// Speed of projectile.		     
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+    }
+}

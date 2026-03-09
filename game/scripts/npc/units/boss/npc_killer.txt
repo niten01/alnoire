@@ -12,7 +12,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"killer_bind"			
-		"Ability2"					"grimstroke_dark_artistry"			
+		"Ability2"					"killer_stroke"			
 		"Ability3"					""			
 		"Ability4"					""			
 		"Ability5"					""			
