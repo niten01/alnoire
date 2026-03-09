@@ -1,0 +1,60 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  ball.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/misc/consumable_balloon_impact.vsnd",
+        "sounds/misc/ny_balloon_bounce.vsnd",
+        "sounds/misc/ti9_balloon_impact.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ball.death = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/ball_death.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ball.jump.swing = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/earthshaker/fist_swing1.vsnd",
+        "sounds/weapons/hero/earthshaker/fist_swing2.vsnd",
+        "sounds/weapons/hero/earthshaker/fist_swing3.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ball.jump.impact = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/physics/deaths/common/body_impact_giant.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+}

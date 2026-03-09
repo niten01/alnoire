@@ -8,7 +8,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"Level"						"1"
 		"StatusHealth"				"5000"		
-		"StatusHealthRegen"			"100.0"		
+		"StatusHealthRegen"			"0.0"		
 		"HealthBarOffset"			"400"
 	}
 }

@@ -1,0 +1,4 @@
+"DOTA_Tooltip_ability_logarithmus_throw"		            "Двухсторонний идеал"
+"DOTA_Tooltip_Ability_logarithmus_throw_SummaryDescription" ""
+"DOTA_Tooltip_ability_logarithmus_throw_Description"		"Герой бросает свой меч вперед и притягивает его обратно, дважды нанося урон.<br><br><font color='#ffffff'><h1>АЛЬТ ВЕРСИЯ:</h1></font> После броска герой перемещается к мечу, нанося вторую часть урона."
+"DOTA_Tooltip_ability_logarithmus_throw_Lore"		    "Действие этой способности основано на теореме Кэли (об изоморфности подгруппы симметрической группы Sₙ)."

@@ -83,7 +83,6 @@ function GiveCastOrderAI(unit, target, ability)
     unit:Stop()
     GiveCastOrderSimple(unit, target, ability)
     unit.lastCastAbilityName = ability:GetAbilityName()
-    DebugPrint("c: " .. unit.lastCastAbilityName)
   end
 
   unit.isCasting = true
@@ -414,7 +413,7 @@ function DefaultAiTick(unit)
 
   if intercept then return true end
 
-  if beaconState == 'aggro' and target and target:IsAlive() then
+  if beaconState == 'aggro' and target and not target:IsNull() and target:IsAlive() then
     return false
   end
 
@@ -483,7 +482,7 @@ end
 
 function ShowGenericCurveWarning(curveInfo, width, duration)
   local interval = 0.01
-  local iter = curveInfo:UnstableIterator()
+  local iter = curveInfo:StableIterator(duration / interval)
   local point = iter()
   local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 1, Vector(width, 0, 0))
@@ -496,7 +495,7 @@ function ShowGenericCurveWarning(curveInfo, width, duration)
     local dt = curTime - prevTime
     prevTime = curTime
 
-    point = iter(dt / duration)
+    point = iter()
     if point then
       return interval
     else

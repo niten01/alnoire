@@ -105,6 +105,7 @@ return {
         "npc_gorilla",
         "npc_goden",
         "npc_goden_summon",
+        "npc_ball",
         "npc_cat_barrel",
         "npc_island_guard",
         "npc_island_fiend",
@@ -263,8 +264,7 @@ return {
         "soundevents/jungle/junglefurion.vsndevts",
         "soundevents/jungle/junglebears.vsndevts",
         "soundevents/jungle/jungleperdun.vsndevts",
-
-
+        "soundevents/bosses/ball.vsndevts",
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",

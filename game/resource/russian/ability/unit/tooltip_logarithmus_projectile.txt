@@ -1,0 +1,5 @@
+"DOTA_Tooltip_ability_logarithmus_projectile"		            "Образ"
+"DOTA_Tooltip_Ability_logarithmus_projectile_SummaryDescription" ""
+"DOTA_Tooltip_ability_logarithmus_projectile_Description"		"Задает кривую второго порядка в пространстве битвы. Если созданное отображение пересекется с врагом - Интегралус перемещается в место пересечения.<br><br><font color='#ffffff'><h1>АЛЬТ ВЕРСИЯ:</h1></font>Задает вокруг себя сразу несколько одинаковых кривых, упрощая их до окружностей. При попадании герой не перемещается к врагу."
+"DOTA_Tooltip_ability_logarithmus_projectile_Lore"		    "Интегралус - первый, кто освоил создание кривых второго порядка на ходу, до этого задание чего-то сложнее прямой считалось невозможным."
+"DOTA_Tooltip_ability_logarithmus_projectile_vector_range"   "ДАЛЬНОСТЬ ПОСЛЕ ЭКСТРЕМУМА:"

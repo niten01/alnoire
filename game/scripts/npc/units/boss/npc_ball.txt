@@ -1,21 +1,21 @@
 "DOTAUnits"
 {
-	"npc_goden" 
+	"npc_ball" 
 	{
-		"Model"						"models/creeps/nian/nian_creep.vmdl"
+		"Model"						"models/ball/ball.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Ursa"
-		"ModelScale" 				"1.1"
-		"Level"						  "11"
+		"ModelScale" 				"4.0"
+		"Level"						  "17"
 		"ConsideredHero" 		"1"
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"goden_tentacles"			
-		"Ability2"					"goden_spin"			
-		"Ability3"					"goden_slam"			
-		"Ability4"					"goden_summon"			
-		"Ability5"					"goden_skewer"			
+		"Ability1"					"ball_slide"			
+		"Ability2"					"ball_jump"			
+		"Ability3"					""			
+		"Ability4"					""			
+		"Ability5"					""			
 
 		// Armor
 		//----------------------------------------------------------------
@@ -23,7 +23,7 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		"AttackDamageMin"			"25"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
 		"AttackRate"				"1.8"		// Speed of attack.
@@ -140,7 +140,7 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 		"MovementTurnRate"			"1.0"
 		"MovementSpeed"				"200"		// Speed.			
 
@@ -163,7 +163,7 @@
 
 		"precache"
 		{
-        	"soundfile"			"soundevents/bosses/goden.vsndevts"
+        	"soundfile"			"soundevents/bosses/ball.vsndevts"
 		}
 	}
 }

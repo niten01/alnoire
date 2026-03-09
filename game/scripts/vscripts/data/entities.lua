@@ -99,7 +99,7 @@ return {
         },
         spawner_gorilla               = {
             npc = "npc_gorilla",
-            modifiers = { "modifier_story_npc", "modifier_invulnerable" },
+            modifiers = { "modifier_story_npc", "modifier_gorilla_invulnerable" },
             deferred = true,
             packID = "pack_gorilla",
             ai_modifier = "modifier_gorilla_ai",
@@ -338,6 +338,13 @@ return {
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
+        },
+        spawner_ball                  = {
+            npc = "npc_ball",
+            packID = "pack_ball",
+            ai_modifier = "modifier_ball_ai",
+            -- modifiers = { "modifier_ball_slide" },
+            team = DOTA_TEAM_BADGUYS,
         },
 
         -- jungle
@@ -796,6 +803,10 @@ return {
             stayActivatedOnPlayerDeath = false,
         },
         pack_goden = {
+            activateAfterUnitsSpawned = true,
+            stayActivatedOnPlayerDeath = true,
+        },
+        pack_ball = {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
         },

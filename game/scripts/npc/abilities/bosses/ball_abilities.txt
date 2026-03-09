@@ -1,0 +1,51 @@
+"DOTAAbilities"
+{
+    "ball_slide"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/ball_slide.lua"
+        "AbilityTextureName"            "consumables/seasonal_ti11_balloon_dire"
+        
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        
+        "AbilityValues"
+        {
+            "friction"      "0.98"
+            "bounce_factor" "1.0"
+            "hit_speed"     "1300"
+        }
+
+        "precache"
+        {
+        }
+    }   
+    "ball_jump"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/ball_jump.lua"
+        "AbilityTextureName"            "kunkka_torrent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+        
+        "AbilityCastPoint"              "0"
+
+        "AbilityCooldown"               "7" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+        "AbilityValues"
+        {
+            "jump_duration" "2"
+            "jump_height"   "500"
+            "warning_duration"  "1"
+            "radius"        "500"
+            "damage"        "300"
+            "landing_slide_speed"   "1500"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/neutral_fx/roshan_slam.vpcf"
+        }
+    }
+}

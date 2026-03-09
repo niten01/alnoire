@@ -9,7 +9,8 @@ LinkLuaModifier('modifier_story_weak_hit_tracking', 'modifiers/modifier_story_we
 LinkLuaModifier('modifier_dialogue_player', 'modifiers/modifier_dialogue_player', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_training_dummy', 'modifiers/modifier_training_dummy', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_move', 'modifiers/modifier_move', LUA_MODIFIER_MOTION_HORIZONTAL)
-LinkLuaModifier('modifier_invulnerable', 'modifiers/modifier_invulnerable', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_vertical_jump', 'modifiers/modifier_vertical_jump', LUA_MODIFIER_MOTION_VERTICAL)
+LinkLuaModifier('modifier_gorilla_invulnerable', 'modifiers/modifier_gorilla_invulnerable', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_generic_vector_target', 'modifiers/modifier_generic_vector_target', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_generic_unkillable", "modifiers/modifier_generic_unkillable", LUA_MODIFIER_MOTION_NONE)
 
@@ -47,6 +48,7 @@ LinkLuaModifier("modifier_island_demon_ai", "modifiers/ai/modifier_island_demon_
 LinkLuaModifier("modifier_island_demon_illusion_ai", "modifiers/ai/modifier_island_demon_illusion_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_killer_ai", "modifiers/ai/modifier_killer_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_goden_ai", "modifiers/ai/modifier_goden_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_ball_ai", "modifiers/ai/modifier_ball_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_red_ai", "modifiers/ai/modifier_red_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_genius_ai", "modifiers/ai/modifier_genius_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_gorilla_ai", "modifiers/ai/modifier_gorilla_ai", LUA_MODIFIER_MOTION_NONE)
