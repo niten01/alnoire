@@ -10,6 +10,10 @@ function modifier_red_ai:OnCreated()
     self.blinkRightTarget = Entities:FindByName(nil, "red_blink_right")
     assert(self.blinkLeftTarget and self.blinkRightTarget, "No npc_red blink targets, add them, or use a proper map")
 
+    self:ResetState()
+end
+
+function modifier_red_ai:ResetState()
     self.blinkUsed = false
     self.tiredLen = nil
 end
@@ -27,6 +31,9 @@ function modifier_red_ai:OnIntervalThink()
     local target = beaconData.target
 
     if DefaultAiTick(unit) then
+        if beaconData.state == "retreat" then
+            self:ResetState()
+        end
         AdjustTickRate(unit)
         self:StartIntervalThink(beaconData.currentCreepInterval)
         return

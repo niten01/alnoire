@@ -1,0 +1,8 @@
+"DOTA_Tooltip_ability_logarithmus_step"		            ""
+"DOTA_Tooltip_Ability_logarithmus_step_SummaryDescription" ""
+"DOTA_Tooltip_ability_logarithmus_step_Description"		"Использует мощный выброс лимфатической энергии, искажая пространство вокруг себя, чтобы мгновенно переместиться в указанном направлении. В течение %buff_duration% сек. после перемещения замедляется, но получает увеличенную дальность атаки."
+"DOTA_Tooltip_ability_logarithmus_step_Note0"		    "Не может быть использован через уровни ландшафта."
+"DOTA_Tooltip_ability_logarithmus_step_Lore"		    "ШКУААА"
+"DOTA_Tooltip_ability_logarithmus_step_buff_duration"   "ДЛИТЕЛЬНОСТЬ ПОСТЭФФЕКТА:"
+"DOTA_Tooltip_ability_logarithmus_step_ms_reduction"    "ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+"DOTA_Tooltip_ability_logarithmus_step_attack_range_bonus"    "ДОП. ДАЛЬНОСТЬ АТАКИ:"
