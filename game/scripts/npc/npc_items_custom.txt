@@ -20,7 +20,7 @@
 
         "AbilityValues" 
         {
-            "hp_regen"                  "100.0"
+            "hp_regen_percent"          "10.0"
             "duration"                  "8.0"
         }
     }
@@ -55,7 +55,7 @@
 
         "AbilityValues" 
         {
-            "hp_regen"                  "300.0"
+            "hp_regen_percent"          "30.0"
             "duration"                  "2.0"
         }
     }
