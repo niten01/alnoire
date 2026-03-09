@@ -341,6 +341,8 @@ return {
         "particles/shrooms_dig.vpcf",
         "particles/econ/items/axe/axe_cinder/axe_cinder_battle_hunger.vpcf",
         "particles/neutral_fx/ursa_thunderclap.vpcf",
+        "particles/roshan_custom_slap_mini.vpcf",
+        "particles/roshan_custom_slap.vpcf",
         "particles/units/heroes/hero_lich/lich_ice_age.vpcf",
         "particles/neutral_fx/ogre_magi_frost_armor.vpcf",
         "particles/generic_gameplay/generic_lifesteal.vpcf",
