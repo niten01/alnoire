@@ -36,4 +36,114 @@
             "end_target_offset"   "50 200"
 		}
 	}
+    "derek_rebound"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_rebound.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+        "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.43"
+    "AbilityCooldown"		        "8.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"		"275"	
+			"spread"		"180"			
+			"warning_delay"		"0.1"			
+			"damage"    "135"
+
+      "jump_time"   "0.1"
+      "jump_distance"   "1000"
+		}
+	}
+    "derek_strafe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_strafe.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+        "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.43"
+    "AbilityCooldown"		        "8.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"distance"	"1000"	
+			"time"	    "0.1"	
+			"shot_dist_step"		"100"			
+      "proj_distance"		"2000"
+      "proj_radius"		"50"
+      "proj_speed"		"2500"
+			"warning_delay"		"0.1"			
+			"damage"    "135"
+		}
+	}
+    "derek_axe_fury"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_axe_fury.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+        "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_1"
+		"AbilityChannelTime"			"8.0"
+		"AbilityCastPoint"				"1.0"
+    "AbilityCooldown"		        "10.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"distance"	"1000"	
+			"radius"	    "300"	
+			"speed"		"1000"			
+      "interval"  "0.5"
+			"damage"    "135"
+		}
+	}
 }
