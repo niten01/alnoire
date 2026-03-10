@@ -352,6 +352,13 @@ return {
             team = DOTA_TEAM_BADGUYS,
         },
 
+        spawner_derek                  = {
+            npc = "npc_derek",
+            packID = "pack_derek",
+            ai_modifier = "modifier_derek_ai",
+            modifiers = { "modifier_story_npc" },
+        },
+
         -- jungle
         spawner_lizards_venomancer    = {
             npc = "npc_jungle_venomancer",
@@ -815,6 +822,10 @@ return {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
         },
+        pack_derek = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = false,
+        },
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
@@ -869,12 +880,12 @@ return {
 
         zone_island = { musicSet = "silence", respawnPoint = "respawn_island" },
         zone_island_check_1 = { musicSet = "island", respawnPoint = "respawn_island_check_1" },
-        zone_island_check_2 = { respawnPoint = "respawn_island_check_2" },
-        zone_island_check_3 = { respawnPoint = "respawn_island_check_3" },
-        zone_island_check_4 = { respawnPoint = "respawn_island_check_4" },
-        zone_island_check_5 = { respawnPoint = "respawn_island_check_5" },
-        zone_island_check_6 = { respawnPoint = "respawn_island_check_6" },
-        zone_island_check_7 = { respawnPoint = "respawn_island_check_7" },
+        zone_island_check_2 = { musicSet = "island", respawnPoint = "respawn_island_check_2" },
+        zone_island_check_3 = { musicSet = "island", respawnPoint = "respawn_island_check_3" },
+        zone_island_check_4 = { musicSet = "island", respawnPoint = "respawn_island_check_4" },
+        zone_island_check_5 = { musicSet = "island", respawnPoint = "respawn_island_check_5" },
+        zone_island_check_6 = { musicSet = "island", respawnPoint = "respawn_island_check_6" },
+        zone_island_check_7 = { musicSet = "island", respawnPoint = "respawn_island_check_7" },
     },
 
     ------------------------------------------------------------

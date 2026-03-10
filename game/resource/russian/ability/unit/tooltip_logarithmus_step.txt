@@ -1,5 +1,5 @@
-"DOTA_Tooltip_ability_logarithmus_step"		            "Рекуррентная последовательность"
+"DOTA_Tooltip_ability_logarithmus_step"		            "Шаг индукции"
 "DOTA_Tooltip_Ability_logarithmus_step_SummaryDescription" ""
 "DOTA_Tooltip_ability_logarithmus_step_Description"		"Совершает последовательность направленных рывков, пронзая врагов. При попадании может быть применен повторно до %max_sequential_uses% раз в течение %recast_decay% сек.<br><br><font color='#ffffff'><h1>АЛЬТ ВЕРСИЯ:</h1></font>Интегралус кружится в вихре ударов, перемещаясь к указанной точке и нанося урон врагам вокруг себя."
 "DOTA_Tooltip_ability_logarithmus_step_Note0"		    "Не может быть использован через уровни ландшафта."
-"DOTA_Tooltip_ability_logarithmus_step_Lore"		    "Говорят, освоивший эту технику в совершенстве может превратить последовательность в ряд."
+"DOTA_Tooltip_ability_logarithmus_step_Lore"		    "Говорят, освоивший эту технику в совершенстве может превратить конечную последовательность в ряд."

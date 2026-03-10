@@ -106,7 +106,7 @@ function CastAbility(unit, target, abilityName)
   if IsCasting(unit) then return true end
   if unit:IsSilenced() then return false end
   local ability = unit:FindAbilityByName(abilityName)
-  assert(ability)
+  assert(ability, "No such ability: " .. abilityName)
   if not CanCastAbility(unit, target, ability) then return false end
   GiveCastOrderAI(unit, target, ability)
   return true
@@ -127,7 +127,7 @@ function GetRandomAvailableAbilityName(unit, target, abilityNames)
   local availNames = {}
   for _, abilityName in pairs(abilityNames) do
     local ability = unit:FindAbilityByName(abilityName)
-    assert(ability)
+    assert(ability, "No such ability: " .. abilityName)
     if CanCastAbility(unit, target, ability) then
       table.insert(availNames, abilityName)
     end
@@ -143,7 +143,7 @@ function CastRandomAvailableAbility(unit, target, abilityNames)
   local availNames = {}
   for _, abilityName in pairs(abilityNames) do
     local ability = unit:FindAbilityByName(abilityName)
-    assert(ability)
+    assert(ability, "No such ability: " .. abilityName)
     if CanCastAbility(unit, target, ability) then
       table.insert(availNames, abilityName)
     end
@@ -152,7 +152,6 @@ function CastRandomAvailableAbility(unit, target, abilityNames)
   if #availNames == 0 then return false end
 
   local chosenName = availNames[RandomInt(1, #availNames)]
-  DebugPrint("ch:" .. chosenName)
   return CastIterWrapper(unit, target, function(ability)
     if ability:GetName() == chosenName then
       GiveCastOrderAI(unit, target, ability)
@@ -486,7 +485,8 @@ end
 
 function ShowGenericCurveWarning(curveInfo, width, duration)
   local interval = 0.01
-  local iter = curveInfo:StableIterator(duration / interval)
+  -- local iter = curveInfo:StableIterator(duration / interval)
+  local iter = curveInfo:UnstableIterator()
   local point = iter()
   local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 1, Vector(width, 0, 0))
@@ -499,7 +499,7 @@ function ShowGenericCurveWarning(curveInfo, width, duration)
     local dt = curTime - prevTime
     prevTime = curTime
 
-    point = iter()
+    point = iter(dt/duration)
     if point then
       return interval
     else

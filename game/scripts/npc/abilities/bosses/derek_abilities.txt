@@ -1,0 +1,39 @@
+"DOTAAbilities"
+{
+    "derek_axes"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_axes.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
+		"AbilitySound"					"Hero_Beastmaster.Wild_Axes"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.43"
+        "AbilityCooldown"		        "8.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"		"175"	
+			"spread"		"450"			
+			"axe_damage"    "135"
+
+            // min max
+            "end_target_offset"   "50 200"
+		}
+	}
+}

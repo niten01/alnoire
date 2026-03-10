@@ -23,7 +23,7 @@
         "sounds/weapons/hero/underlord/firestorm01.vsnd",
         "sounds/weapons/hero/underlord/firestorm02.vsnd",
     ]
-    volume = "0.40000"
+    volume = "0.10000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
@@ -38,7 +38,7 @@
     [
         "sounds/weapons/hero/underlord/pit_of_malice_start.vsnd",
     ]
-    volume = "0.80000"
+    volume = "0.10000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
@@ -53,7 +53,7 @@
     [
         "sounds/weapons/hero/underlord/pit_of_malice.vsnd",
     ]
-    volume = "0.10000"
+    volume = "0.07000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
     pitch = "1.000000"
@@ -83,7 +83,7 @@
     [
         "sounds/weapons/hero/arc_warden/spark_wraith_cast.vsnd",
     ]
-    volume = "5.00000"
+    volume = "3.00000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
     pitch = "1.000000"

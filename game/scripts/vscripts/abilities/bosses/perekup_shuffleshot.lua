@@ -6,7 +6,7 @@ local function RandomDamageType()
 end
 
 function perekup_shuffleshot:GetRandAbilityValue(name)
-    return RandomFloat(self:GetLevelSpecialValueFor(name, 1), self:GetLevelSpecialValueFor(name, 2))
+    return RandomFloat(self:GetLevelSpecialValueFor(name, 0), self:GetLevelSpecialValueFor(name, 1))
 end
 
 function perekup_shuffleshot:Spawn()

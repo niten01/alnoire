@@ -30,3 +30,4 @@
 "npc_island_fiend" "Дьявол острова"
 "npc_island_demon" "Демон острова"
 "npc_ball" "Мяч"
+"npc_derek" "Зверь Пустошей"

@@ -166,6 +166,27 @@
     fade_out = "2.0"
   }
   // ---------------------------------------------------------
+  music.island.explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/island_explore.vsnd"
+    ]
+    volume = "3.500000"
+    fade_in = "3.0"
+    fade_out = "2.0"
+  }
+  music.island.combat = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/island_combat.vsnd"
+    ]
+    volume = "5.400000"
+    fade_in = "3.0"
+    fade_out = "2.0"
+  }
+  // ---------------------------------------------------------
   music.island_duo.phase1 = {
     type = "dota_update_battle_music"
     vsnd_files =

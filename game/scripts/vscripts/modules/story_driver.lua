@@ -437,7 +437,7 @@ function StoryDriver:OnGameInProgress()
         end
       end
       -- SpawnManager:SpawnNPC("spawner_gorilla")
-      -- StoryDriver:StartFight("pack_gorilla")
+      StoryDriver:StartFight("pack_derek")
     end)
   end
 end

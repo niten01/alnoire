@@ -11,6 +11,7 @@
 #base "abilities/bosses/ball_abilities.txt"
 #base "abilities/bosses/island_duo_abilities.txt"
 #base "abilities/bosses/killer_abilities.txt"
+#base "abilities/bosses/derek_abilities.txt"
 #base "abilities/jungle/techies_abilities.txt"
 #base "abilities/jungle/gnoll_abilities.txt"
 #base "abilities/jungle/ancdragon_abilities.txt"
