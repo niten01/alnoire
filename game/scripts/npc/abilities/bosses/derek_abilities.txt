@@ -7,7 +7,7 @@
         "BaseClass"                     "ability_lua"
         "ScriptFile"                    "abilities/bosses/derek_axes.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
         "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
 		"AbilitySound"					"Hero_Beastmaster.Wild_Axes"
 
@@ -146,4 +146,148 @@
 			"damage"    "135"
 		}
 	}
+    "derek_epicenter"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_epicenter.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.43"
+        "AbilityCooldown"		        "18.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"area_radius"		"275"	
+			"spawn_radius"  "1500"	
+      "num_areas"     "3"
+			"interval"	"1"			
+			"damage"    "135"
+			"num_pulses"  "5"
+      "warning_delay" "0.3"
+		}
+	}
+    "derek_slice"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_slice.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+        "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.43"
+        "AbilityCooldown"		        "18.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"		"175"	
+			"spread"  "180"	
+			"damage"    "135"
+      "jump_time"   "0.2"
+      "hit_delay"   "0.1"
+		}
+	}
+    "derek_lift"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_lift.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.43"
+        "AbilityCooldown"		        "18.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"		"1000"	
+			"damage"    "135"
+
+      "lift_height"   "200"
+
+      // bound to particle
+      "lift_duration" "2"
+      "warning_delay" "0.3"
+		}
+	}
+  "derek_wolf_leap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_wolf_leap.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+        "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.43"
+        "AbilityCooldown"		        "18.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"proj_radius"		   "175"	
+			"proj_speed"       "1800"	
+			"proj_distance"    "2000"
+      "proj_damage"      "200"
+      "jump_time"        "0.2"
+      "jump_height"      "100"
+      "jump_distance"    "800"
+		}
+	}
+
 }

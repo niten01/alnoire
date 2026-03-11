@@ -510,6 +510,28 @@ function ShowGenericCurveWarning(curveInfo, width, duration)
   end)
 end
 
+local function GetBisect(casterPos, targetPos, side)
+  local vTarget = targetPos - casterPos
+  local sidePos = casterPos + side * vTarget:Length()
+  local midPoint = (sidePos + targetPos) / 2
+  return (midPoint - casterPos):Normalized()
+end
+
+-- aimed towards, 45 degrees to the side, returns direction with more space
+function GetOptimalStrafeDestination(caster, targetPos, distance)
+  local casterPos = caster:GetAbsOrigin()
+  local side = caster:GetRightVector()
+  local strafeDir = GetBisect(casterPos, targetPos, side)
+  local dest = GetSafeBlinkDestination(casterPos, casterPos + strafeDir * distance)
+  local otherDir = GetBisect(casterPos, targetPos, -side)
+  local otherDest = GetSafeBlinkDestination(casterPos, casterPos + otherDir * distance)
+  if #(otherDest - casterPos) > #(dest - casterPos) then
+    strafeDir = otherDir
+    dest = otherDest
+  end
+  return dest
+end
+
 -- startAngle (IN RADIANS) is optional (default 0)
 function PointsAlongRing(center, radius, numPoints, startAngle)
   local points = {}

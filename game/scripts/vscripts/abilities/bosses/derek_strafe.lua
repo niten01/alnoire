@@ -1,11 +1,5 @@
 derek_strafe = class {}
 
-local function GetBisect(casterPos, targetPos, side)
-  local vTarget = targetPos - casterPos
-  local sidePos = casterPos + side * vTarget:Length()
-  local midPoint = (sidePos + targetPos) / 2
-  return (midPoint - casterPos):Normalized()
-end
 
 function derek_strafe:ShowWarning(targetPos)
   local caster = self:GetCaster()
@@ -13,15 +7,9 @@ function derek_strafe:ShowWarning(targetPos)
   local distance = self:GetSpecialValueFor("distance")
   local delay = self:GetSpecialValueFor("warning_delay")
 
-  local side = caster:GetRightVector()
-  local strafeDir = GetBisect(casterPos, targetPos, side)
-  local dest = GetSafeBlinkDestination(casterPos, casterPos + strafeDir * distance)
-  local otherDir = GetBisect(casterPos, targetPos, -side)
-  local otherDest = GetSafeBlinkDestination(casterPos, casterPos + otherDir * distance)
-  if #(otherDest - casterPos) > #(dest - casterPos) then
-    strafeDir = otherDir
-    dest = otherDest
-  end
+
+  local dest = GetOptimalStrafeDestination(caster, targetPos, distance)
+  local strafeDir = (dest - casterPos):Normalized()
 
   local shotDir = strafeDir:Cross(Vector(0, 0, 1)):Normalized()
   if #(targetPos - (casterPos + shotDir * 50)) > (targetPos - (casterPos - shotDir * 50)) then
@@ -71,7 +59,7 @@ function derek_strafe:OnSpellStart()
     ProjectileManager:CreateLinearProjectile({
       Ability = self,
       EffectName = "particles/gorilla_clone_trail.vpcf",
-      vSpawnOrigin = self.startPoint,
+      vSpawnOrigin = shotStartPos,
       vVelocity = self.shotDir * shotSpeed,
       fDistance = shotDistance,
       fStartRadius = shotRadius,
