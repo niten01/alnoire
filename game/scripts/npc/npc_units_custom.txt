@@ -6,11 +6,14 @@
 #base "units/boss/npc_island_guard.txt"
 #base "units/boss/npc_island_duo.txt"
 #base "units/boss/npc_goden.txt"
+#base "units/boss/npc_ball.txt"
+#base "units/boss/npc_derek.txt"
 
 #base "units/trap/npc_trap_arrow.txt"
 #base "units/trap/npc_trap_fire.txt"
 #base "units/trap/npc_trap_spikes.txt"
 #base "units/trap/npc_trap_pendulum.txt"
+#base "units/trap/npc_trap_skeleton.txt"
 
 #base "units/misc/clash_royale.txt"
 #base "units/misc/couriers.txt"

@@ -16,6 +16,7 @@ function Music:Init()
     end
 
     GameEvents:OnZoneEnter(function(event)
+        if not event.musicSet then return end -- zone has no music change
         DebugPrint("[ALNOIRE] Switching music set: " .. event.musicSet)
         self.musicState[event.playerID].musicSet = event.musicSet
     end)

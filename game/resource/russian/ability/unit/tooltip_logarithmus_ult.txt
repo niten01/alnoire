@@ -1,0 +1,4 @@
+"DOTA_Tooltip_ability_logarithmus_ult"		            "Биекция"
+"DOTA_Tooltip_Ability_logarithmus_ult_SummaryDescription" ""
+"DOTA_Tooltip_ability_logarithmus_ult_Description"		"Интегралус может создать альтернативную версию последней примененной способности, заменяя <b>Биекцию</b>.<br><br>Способность заменяется обратно после применения.<br><br>Альтернативные способности имеют собственное время отката."
+"DOTA_Tooltip_ability_logarithmus_ult_Lore"		    "Быстрые пальцы нужны Интегралусу не только для решения задач."

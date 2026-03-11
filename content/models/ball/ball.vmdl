@@ -1,0 +1,274 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc41:version{12fc9d44-453a-4ae4-b4d9-7e2ac0bbd4e0} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "rendermeshshape0.vmat"
+								to = "materials/models/props_consumables/balloons/donkey_dire_2022/donkey_dire_2022.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "attach_hitloc"
+						parent_bone = "root"
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								name = "neck"
+								parent_bone = "neck"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -27.556946, -23.434492, -19.165598 ]
+								hitbox_maxs = [ 57.414452, 27.072088, 22.009687 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "head"
+								parent_bone = "head"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -24.217512, -48.380272, -19.875084 ]
+								hitbox_maxs = [ 51.866089, 19.675594, 20.718401 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "muzzle_01"
+								parent_bone = "muzzle_01"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -16.630699, -24.592209, -16.766659 ]
+								hitbox_maxs = [ 29.942665, 21.130882, 17.222473 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "ear_L_01"
+								parent_bone = "ear_L_01"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -12.217548, -39.168491, -20.997911 ]
+								hitbox_maxs = [ 12.439781, 15.47298, 11.970766 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "ear_R_01"
+								parent_bone = "ear_R_01"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -11.858791, -15.868176, -22.903061 ]
+								hitbox_maxs = [ 14.510574, 40.833256, 26.11808 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "tailB_01"
+								parent_bone = "tailB_01"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -32.000435, -5.217361, -38.152267 ]
+								hitbox_maxs = [ 18.736889, 52.477402, 37.566574 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "tailB_02"
+								parent_bone = "tailB_02"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -25.320526, -3.64167, -36.895874 ]
+								hitbox_maxs = [ 20.702438, 47.458004, 32.695511 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "tailB_03"
+								parent_bone = "tailB_03"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.015587, -1.987587, -7.58052 ]
+								hitbox_maxs = [ 12.649786, 1.044487, 7.580487 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "wing_L_01"
+								parent_bone = "wing_L_01"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.564316, -8.38533, -17.359547 ]
+								hitbox_maxs = [ 38.26429, 8.307549, 15.790333 ]
+							},
+							{
+								_class = "Hitbox"
+								name = "wing_R_01"
+								parent_bone = "wing_R_01"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.564293, -11.8377, -15.700655 ]
+								hitbox_maxs = [ 38.264309, 12.476288, 12.371832 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/ball/ball.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "idle"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/ball/animations/idle.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "idle_alt"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/ball/animations/idle_alt.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "death"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND_POSITION"
+								event_frame = 0
+								event_end_frame = -1
+								event_keys = 
+								{
+									name = soundevent:"ball.death"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = null
+								}
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_DIE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/ball/animations/death.fbx"
+						import_bone_scales = true
+						start_frame = -1
+						end_frame = -1
+						framerate = 20.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+				]
+				default_root_bone_name = ""
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		document_sub_type = "ModelDocSubType_None"
+	}
+}

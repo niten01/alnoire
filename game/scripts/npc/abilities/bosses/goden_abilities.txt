@@ -55,6 +55,7 @@
         "precache"
         {
             "particle"      "particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_blade_fury_favoriteblade.vpcf"
+            "particle"		"particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_blade_fury.vpcf"
         }
     }
     "goden_slam"

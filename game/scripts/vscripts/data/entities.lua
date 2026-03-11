@@ -99,7 +99,7 @@ return {
         },
         spawner_gorilla               = {
             npc = "npc_gorilla",
-            modifiers = { "modifier_story_npc", "modifier_invulnerable" },
+            modifiers = { "modifier_story_npc", "modifier_gorilla_invulnerable" },
             deferred = true,
             packID = "pack_gorilla",
             ai_modifier = "modifier_gorilla_ai",
@@ -260,6 +260,11 @@ return {
             modifiers = { "modifier_story_npc" },
             injectedAttributes = { "trap_delay", "trap_speed" }
         },
+        spawner_trap_skeleton         = {
+            npc = "npc_trap_skeleton",
+            team = DOTA_TEAM_BADGUYS,
+            modifiers = { "modifier_story_npc" },
+        },
         spawner_storyteller           = {
             npc = "npc_storyteller",
             modifiers = { "modifier_story_npc" },
@@ -338,6 +343,20 @@ return {
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
             deferred = true,
+        },
+        spawner_ball                  = {
+            npc = "npc_ball",
+            packID = "pack_ball",
+            ai_modifier = "modifier_ball_ai",
+            -- modifiers = { "modifier_ball_slide" },
+            team = DOTA_TEAM_BADGUYS,
+        },
+
+        spawner_derek                  = {
+            npc = "npc_derek",
+            packID = "pack_derek",
+            ai_modifier = "modifier_derek_ai",
+            modifiers = { "modifier_story_npc" },
         },
 
         -- jungle
@@ -855,6 +874,14 @@ return {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
         },
+        pack_ball = {
+            activateAfterUnitsSpawned = true,
+            stayActivatedOnPlayerDeath = true,
+        },
+        pack_derek = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = false,
+        },
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
@@ -906,6 +933,15 @@ return {
         zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_ghetto" },
         zone_concert_muted = { musicSet = "concert_muted", respawnPoint = "respawn_concert" },
         zone_concert = { musicSet = "concert", respawnPoint = "respawn_concert" },
+
+        zone_island = { musicSet = "silence", respawnPoint = "respawn_island" },
+        zone_island_check_1 = { musicSet = "island", respawnPoint = "respawn_island_check_1" },
+        zone_island_check_2 = { musicSet = "island", respawnPoint = "respawn_island_check_2" },
+        zone_island_check_3 = { musicSet = "island", respawnPoint = "respawn_island_check_3" },
+        zone_island_check_4 = { musicSet = "island", respawnPoint = "respawn_island_check_4" },
+        zone_island_check_5 = { musicSet = "island", respawnPoint = "respawn_island_check_5" },
+        zone_island_check_6 = { musicSet = "island", respawnPoint = "respawn_island_check_6" },
+        zone_island_check_7 = { musicSet = "island", respawnPoint = "respawn_island_check_7" },
     },
 
     ------------------------------------------------------------

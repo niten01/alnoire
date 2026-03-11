@@ -25,6 +25,9 @@ function goden_spin:OnSpellStart()
     ParticleManager:SetParticleControl(self.pfx, 0, casterPos)
     ParticleManager:SetParticleControl(self.pfx, 5, Vector(radius, 0, 0))
 
+    self.pfx2 = ParticleManager:CreateParticle(
+        "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_blade_fury.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+
     caster:EmitSound("ability.goden.spin.cast")
 
     local enemies = FindEnemiesForAIInRadius(casterPos, radius)
@@ -41,5 +44,9 @@ function goden_spin:OnSpellStart()
         ParticleManager:DestroyParticle(self.pfx, true)
         ParticleManager:ReleaseParticleIndex(self.pfx)
         self.pfx = nil
+
+        ParticleManager:DestroyParticle(self.pfx2, true)
+        ParticleManager:ReleaseParticleIndex(self.pfx2)
+        self.pfx2 = nil
     end)
 end

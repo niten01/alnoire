@@ -1,0 +1,169 @@
+"DOTAUnits"
+{
+	"npc_ball" 
+	{
+		"Model"						"models/ball/ball.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_Ursa"
+		"ModelScale" 				"4.0"
+		"Level"						  "17"
+		"ConsideredHero" 		"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"ball_slide"			
+		"Ability2"					"ball_jump"			
+		"Ability3"					"ball_dash"			
+		"Ability4"					""			
+		"Ability5"					""			
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"25"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackRate"				"1.8"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
+		"AttackRange"				"250"		// Range within a target can be attacked.
+
+		"AttackRangeActivityModifiers"
+		{
+			"attack_normal_range"	"0"
+			"attack_long_range"		"200"
+		}
+
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"390"
+			"run_fast"	"440"
+		}
+		"HasAggressiveStance"	"0"
+		"particle_folder"		"particles/units/heroes/hero_monkey_king"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"200"
+		"HealthBarOffset"			"350"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementTurnRate"			"1.0"
+		"MovementSpeed"				"200"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1250"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		"StatusMana"				"5000"		// Base mana.
+		"StatusManaRegen"			"100.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+
+		"precache"
+		{
+        	"soundfile"			"soundevents/bosses/island_guard.vsndevts"
+		}
+	}
+
+	"npc_goden_summon" 
+	{
+		"Model"						"models/heroes/siren/siren.vmdl"
+		"SoundSet"					"Hero_NagaSiren"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"0.7"
+		"Level"						  "12"
+
+		// Abilities
+		//----------------------------------------------------------------
+		// "Ability1"					"goden_tentacles"			
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"100"		// Damage range min.
+		"AttackDamageMax"			"200"		// Damage range max.
+		"AttackRate"				"1.8"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.
+
+		"AttackRangeActivityModifiers"
+		{
+			"attack_normal_range"	"0"
+			"attack_long_range"		"200"
+		}
+
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"390"
+			"run_fast"	"440"
+		}
+		"HasAggressiveStance"	"0"
+		"particle_folder"		"particles/units/heroes/hero_monkey_king"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"50"
+		"HealthBarOffset"			"350"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementTurnRate"			"1.0"
+		"MovementSpeed"				"200"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"100"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		"StatusMana"				"5000"		// Base mana.
+		"StatusManaRegen"			"100.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+
+		"precache"
+		{
+        	"soundfile"			"soundevents/bosses/ball.vsndevts"
+		}
+	}
+}

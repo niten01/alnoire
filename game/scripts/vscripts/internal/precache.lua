@@ -6,6 +6,7 @@ return {
         "npc_dota_hero_oracle",
         "npc_dota_hero_abyssal_underlord",
         "npc_dota_hero_grimstroke",
+        "npc_dota_hero_beastmaster",
 
         "npc_dota_hero_sanya_towel_master",
         "npc_dota_hero_sanya_rapper",
@@ -105,6 +106,7 @@ return {
         "npc_gorilla",
         "npc_goden",
         "npc_goden_summon",
+        "npc_ball",
         "npc_cat_barrel",
         "npc_island_guard",
         "npc_island_fiend",
@@ -127,6 +129,7 @@ return {
         "npc_gangster",
         "npc_blue",
 
+        "npc_derek",
 
         "towel_summon",
 
@@ -226,7 +229,7 @@ return {
         "npc_trap_fire",
         "npc_trap_spikes",
         "npc_trap_pendulum",
-
+        "npc_trap_skeleton",
     },
     models = {
         --mk banana
@@ -268,8 +271,7 @@ return {
         "soundevents/jungle/junglefurion.vsndevts",
         "soundevents/jungle/junglebears.vsndevts",
         "soundevents/jungle/jungleperdun.vsndevts",
-
-
+        "soundevents/bosses/ball.vsndevts",
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",

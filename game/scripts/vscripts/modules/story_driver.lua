@@ -436,8 +436,8 @@ function StoryDriver:OnGameInProgress()
           newHero:HeroLevelUp(false)
         end
       end
-      -- SpawnManager:SpawnNPC("spawner_killer")
-      StoryDriver:StartFight("pack_killer")
+      -- SpawnManager:SpawnNPC("spawner_gorilla")
+      StoryDriver:StartFight("pack_derek")
     end)
   end
 end

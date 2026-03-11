@@ -1,0 +1,4 @@
+"DOTA_Tooltip_ability_logarithmus_anchor"		            "Якорь Коши"
+"DOTA_Tooltip_Ability_logarithmus_anchor_SummaryDescription" ""
+"DOTA_Tooltip_ability_logarithmus_anchor_Description"		"Интегалус обозначает свои текущие координаты <b>Интегральным якорем</b>, в течение %duration% секунд герой может вернуться на якорь, рассекая всех врагов на своем пути.<br><br><font color='#ffffff'><h1>АЛЬТ ВЕРСИЯ:</h1></font>Ставит нестабильный якорь, не выражающийся в элементарных функциях. Через некоторое время якорь взрывается, нанося урон врагам вокруг."
+"DOTA_Tooltip_ability_logarithmus_anchor_Lore"		    "Многие спрашивают Интегралуса: \"Причем тут <b>нахуй</b> контурный интеграл?\". Немногие получают ответ..."

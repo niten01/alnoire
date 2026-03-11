@@ -83,7 +83,6 @@ function GiveCastOrderAI(unit, target, ability)
     unit:Stop()
     GiveCastOrderSimple(unit, target, ability)
     unit.lastCastAbilityName = ability:GetAbilityName()
-    DebugPrint("c: " .. unit.lastCastAbilityName)
   end
 
   unit.isCasting = true
@@ -107,7 +106,7 @@ function CastAbility(unit, target, abilityName)
   if IsCasting(unit) then return true end
   if unit:IsSilenced() then return false end
   local ability = unit:FindAbilityByName(abilityName)
-  assert(ability)
+  assert(ability, "No such ability: " .. abilityName)
   if not CanCastAbility(unit, target, ability) then return false end
   GiveCastOrderAI(unit, target, ability)
   return true
@@ -128,7 +127,7 @@ function GetRandomAvailableAbilityName(unit, target, abilityNames)
   local availNames = {}
   for _, abilityName in pairs(abilityNames) do
     local ability = unit:FindAbilityByName(abilityName)
-    assert(ability)
+    assert(ability, "No such ability: " .. abilityName)
     if CanCastAbility(unit, target, ability) then
       table.insert(availNames, abilityName)
     end
@@ -144,7 +143,7 @@ function CastRandomAvailableAbility(unit, target, abilityNames)
   local availNames = {}
   for _, abilityName in pairs(abilityNames) do
     local ability = unit:FindAbilityByName(abilityName)
-    assert(ability)
+    assert(ability, "No such ability: " .. abilityName)
     if CanCastAbility(unit, target, ability) then
       table.insert(availNames, abilityName)
     end
@@ -153,7 +152,6 @@ function CastRandomAvailableAbility(unit, target, abilityNames)
   if #availNames == 0 then return false end
 
   local chosenName = availNames[RandomInt(1, #availNames)]
-  DebugPrint("ch:" .. chosenName)
   return CastIterWrapper(unit, target, function(ability)
     if ability:GetName() == chosenName then
       GiveCastOrderAI(unit, target, ability)
@@ -414,7 +412,7 @@ function DefaultAiTick(unit)
 
   if intercept then return true end
 
-  if beaconState == 'aggro' and target and target:IsAlive() then
+  if beaconState == 'aggro' and target and not target:IsNull() and target:IsAlive() then
     return false
   end
 
@@ -449,17 +447,21 @@ function ShowGenericLineWarning(p1, p2, width, duration)
   ParticleManager:SetParticleControl(pfx, 2, p1)
   ParticleManager:SetParticleControl(pfx, 3, Vector(width, width, 0))
   ParticleManager:SetParticleControl(pfx, 4, Vector(255, 0, 0))
-  local remainingDuration = duration
+  local elapsed  = 0
   local interval = 0.01
-  local dist = #(p1 - p2)
-  local step = dist / (duration / interval)
-  local dir = (p2 - p1):Normalized()
-  local curEnd = p1
+  local dist     = #(p1 - p2)
+  local dir      = (p2 - p1):Normalized()
+  local curEnd   = p1
+  local lastTime = GameRules:GetGameTime()
   Timers:CreateTimer(interval, function()
-    curEnd = curEnd + dir * step
+    local now = GameRules:GetGameTime()
+    local dt = now - lastTime
+    lastTime = now
+
+    curEnd = p1 + dir * dist * (elapsed / duration)
     ParticleManager:SetParticleControl(pfx, 2, curEnd)
-    remainingDuration = remainingDuration - interval
-    if remainingDuration <= 0 then
+    elapsed = elapsed + dt
+    if elapsed >= duration then
       ParticleManager:DestroyParticle(pfx, false)
       ParticleManager:ReleaseParticleIndex(pfx)
       return nil
@@ -483,6 +485,7 @@ end
 
 function ShowGenericCurveWarning(curveInfo, width, duration)
   local interval = 0.01
+  -- local iter = curveInfo:StableIterator(duration / interval)
   local iter = curveInfo:UnstableIterator()
   local point = iter()
   local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
@@ -496,7 +499,7 @@ function ShowGenericCurveWarning(curveInfo, width, duration)
     local dt = curTime - prevTime
     prevTime = curTime
 
-    point = iter(dt / duration)
+    point = iter(dt/duration)
     if point then
       return interval
     else
@@ -505,6 +508,28 @@ function ShowGenericCurveWarning(curveInfo, width, duration)
       return nil
     end
   end)
+end
+
+local function GetBisect(casterPos, targetPos, side)
+  local vTarget = targetPos - casterPos
+  local sidePos = casterPos + side * vTarget:Length()
+  local midPoint = (sidePos + targetPos) / 2
+  return (midPoint - casterPos):Normalized()
+end
+
+-- aimed towards, 45 degrees to the side, returns direction with more space
+function GetOptimalStrafeDestination(caster, targetPos, distance)
+  local casterPos = caster:GetAbsOrigin()
+  local side = caster:GetRightVector()
+  local strafeDir = GetBisect(casterPos, targetPos, side)
+  local dest = GetSafeBlinkDestination(casterPos, casterPos + strafeDir * distance)
+  local otherDir = GetBisect(casterPos, targetPos, -side)
+  local otherDest = GetSafeBlinkDestination(casterPos, casterPos + otherDir * distance)
+  if #(otherDest - casterPos) > #(dest - casterPos) then
+    strafeDir = otherDir
+    dest = otherDest
+  end
+  return dest
 end
 
 -- startAngle (IN RADIANS) is optional (default 0)

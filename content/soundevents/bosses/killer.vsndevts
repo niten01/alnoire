@@ -53,4 +53,72 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
+  ability.killer.stroke.precast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/grimstroke/dark_artistry_precast.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.killer.stroke.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/grimstroke/dark_artistry_cast.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.killer.stroke.layer = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/grimstroke/dark_artistry_layer01.vsnd",
+        "sounds/weapons/hero/grimstroke/dark_artistry_layer02.vsnd",
+        "sounds/weapons/hero/grimstroke/dark_artistry_layer03.vsnd",
+        "sounds/weapons/hero/grimstroke/dark_artistry_layer04.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.killer.stroke.projectile = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/grimstroke/dark_artistry_projectile.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.killer.stroke.damage = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/grimstroke/dark_artistry_damage.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
 }
