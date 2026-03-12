@@ -1,0 +1,118 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  derek.vo.grunt = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/beastmaster/beas_ability_axes_06.vsnd",
+        "sounds/vo/beastmaster/beas_exert_01.vsnd",
+        "sounds/vo/beastmaster/beas_exert_02.vsnd",
+        "sounds/vo/beastmaster/beas_exert_03.vsnd",
+        "sounds/vo/beastmaster/beas_exert_04.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "0.900000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  derek.vo.epicenter.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/beastmaster/beas_attack_09.vsnd",
+    ]
+    volume = "1.50000"
+    pitch = "0.900000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.epicenter.pulse = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/sand_king/epicenter_pulse.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.axes.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/beastmaster/wild_axes.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.lift.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_lift.vsnd",
+    ]
+    volume = "3.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.dash = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "",
+    ]
+    volume = "1.50000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.strafe.throw = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_throw_1.vsnd",
+        "sounds/npc_abilities/derek_throw_2.vsnd",
+    ]
+    volume = "1.50000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.strafe.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_dagger_hit.vsnd",
+    ]
+    volume = "1.50000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.050000"
+    pitch_rand_max = "0.050000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+}
+
+// sounds/vo/beastmaster/beas_death_02.vsnd
+// sounds/vo/beastmaster/beas_kill_01.vsnd

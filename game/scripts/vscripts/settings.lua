@@ -9,7 +9,7 @@ MUSIC_THINK_INTERVAL = 0.5
 IDLE_THINK_INTERVAL = 1.5
 BATTLE_THINK_INTERVAL = 0.05
 
-SAFE_BLINK_PRECISION = 5 -- Smaller means more precise
+SAFE_BLINK_PRECISION = 1 -- Smaller means more precise
 
 ---------------------------------------------------------------------------
 

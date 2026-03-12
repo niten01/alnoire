@@ -108,7 +108,9 @@ modifier_logarithmus_step_recastable.OnRefresh = modifier_logarithmus_step_recas
 
 function modifier_logarithmus_step_recastable:OnDestroy()
     if not IsServer() then return end
+    local parent = self:GetParent()
     local ability = self:GetAbility()
+    if ability == parent:GetCurrentActiveAbility() then return end
     ability:StartCooldown(ability:GetEffectiveCooldown(ability:GetLevel()))
     ability.sequentialUses = 0
 end
