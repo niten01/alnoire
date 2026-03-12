@@ -511,7 +511,73 @@
 		}
 	}
 
-	"npc_ocean_tadpole_melee"	
+	"npc_ocean_tadpole_ranged_3"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/neutral_creeps/n_creep_tadpole/n_creep_tadpole_ranged_v2.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"0.75"
+
+		"RequiredTimeInAggroOffset" "-1.5"
+		
+		"Ability1"					"tadpole_shot"			// Ability 1
+		//"Ability2"					""			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"1"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"0.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"200"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"900"		// Speed of projectile.	     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"130"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"200"					
+
+		"StatusHealth"				"50"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+		}
+	}
+
+	"npc_ocean_tadpole_big_melee"	
 	{
 		// General
 		//----------------------------------------------------------------
@@ -573,4 +639,261 @@
 		}
 	}
 
+	"npc_ocean_tadpole_big_range_1"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/neutral_creeps/n_creep_froglet/n_creep_froglet_mage.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"0.75"
+
+		
+		//"Ability1"						"skeleton_king_hellfire_blast"			// Ability 1
+		//"Ability2"					"centaur_hoof_stomp"			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"1"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"0.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"200"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"900"		// Speed of projectile.	     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"130"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"200"					
+
+		"StatusHealth"				"50"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+		}
+	}
+
+	"npc_ocean_tadpole_big_range_2"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/neutral_creeps/n_creep_ancient_frog/n_creep_ancient_frog_mage.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"0.75"
+
+		
+		//"Ability1"						"skeleton_king_hellfire_blast"			// Ability 1
+		//"Ability2"					"centaur_hoof_stomp"			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"1"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"0.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"200"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"900"		// Speed of projectile.	     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"130"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"200"					
+
+		"StatusHealth"				"50"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+		}
+	}
+
+	"npc_ocean_spider_fire"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/items/broodmother/spiderling/the_glacial_creeper_creepling/the_glacial_creeper_creepling_dpc.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_Jakiro"
+		"Level"						"1"
+		"ModelScale" 				"0.75"
+
+		
+		"Ability1"					"jakiro_macropyre"			// Ability 1
+		"Ability2"					"custom_liquid_fire"			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"1"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"2.0"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_jakiro/jakiro_base_attack_dual.vpcf"
+		"ProjectileSpeed"			"1100"		// Speed of projectile.	     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"130"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"200"					
+
+		"StatusHealth"				"50"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+		}
+	}
+
+	"npc_ocean_spider_ice"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/items/broodmother/spiderling/the_glacial_creeper_creepling/the_glacial_creeper_creepling.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_Jakiro"
+		"Level"						"1"
+		"ModelScale" 				"0.75"
+
+		
+		"Ability1"					"jakiro_ice_path"			// Ability 1
+		"Ability2"					"custom_liquid_frost"			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"1"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"2.0"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_jakiro/jakiro_base_attack.vpcf"
+		"ProjectileSpeed"			"1100"		// Speed of projectile.	    
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"130"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"200"					
+
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+		}
+	}
 }

@@ -1,12 +1,15 @@
 modifier_sanya_towel_aura_buff_3 = class({})
 
 function modifier_sanya_towel_aura_buff_3:IsHidden() return false end
+
 function modifier_sanya_towel_aura_buff_3:IsPurgable() return false end
+
 function modifier_sanya_towel_aura_buff_3:IsDebuff() return false end
 
 function modifier_sanya_towel_aura_buff_3:OnCreated()
     if not IsServer() then return end
-    self.pfx = ParticleManager:CreateParticle("particles/sanya_towel_aura_blue_summon.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+    self.pfx = ParticleManager:CreateParticle("particles/sanya_towel_aura_blue_summon.vpcf", PATTACH_ABSORIGIN_FOLLOW,
+        self:GetParent())
 end
 
 function modifier_sanya_towel_aura_buff_3:OnDestroy()
@@ -24,16 +27,25 @@ end
 function modifier_sanya_towel_aura_buff_3:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_AVOID_DAMAGE
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
     }
 end
 
-function modifier_sanya_towel_aura_buff_3:GetModifierAvoidDamage(params)
+function modifier_sanya_towel_aura_buff_3:GetModifierIncomingDamage_Percentage(params)
     if not IsServer() then return end
+    local parent = self:GetParent()
     local ability = self:GetAbility()
     local percent = ability:GetSpecialValueFor("miss_chance")
     if RollPercentage(percent) then
-        return 1
-    else return 0
+        SendOverheadEventMessage(
+            nil,
+            OVERHEAD_ALERT_EVADE,
+            parent,
+            0,
+            nil
+        )
+        return -100
+    else
+        return 0
     end
 end

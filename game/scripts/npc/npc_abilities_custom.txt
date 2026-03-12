@@ -23,6 +23,7 @@
 #base "abilities/ocean/siege_abilities.txt"
 #base "abilities/ocean/tusik_abilities.txt"
 #base "abilities/ocean/tadpole_abilities.txt"
+#base "abilities/ocean/spiders_abilities.txt"
 
 #base "abilities/heroes/towel_master_abilities.txt"
 #base "abilities/heroes/rapper_abilities.txt"

@@ -1,0 +1,228 @@
+"DOTAAbilities"
+{
+    "jakiro_macropyre"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Jakiro.Macropyre.Cast"
+
+		"HasScepterUpgrade"   			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15 80 70"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1 400 500"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"
+			{
+				"value"								"100 150 200"
+				"special_bonus_unique_jakiro_7"		"+20"
+			}
+			"path_width"				
+			{
+				"value"	"150"
+				"affected_by_aoe_increase"	"1"
+			}
+			"duration"
+			{
+				"value"							"10.0"
+				"special_bonus_scepter"			"+5.0"
+			}
+			"AbilityCastRange"				
+			{
+				"value"						"900"
+				
+			}
+			"burn_interval"				"0.5 0.5 0.5"
+			"linger_duration"			"1"
+			"pure_damage_type"
+			{
+				"value"					"0"
+				"special_bonus_scepter"		"+1"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"					"0"
+				"special_bonus_scepter"		"+1"
+			}
+			"ice_edge_path_radius"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"+50"
+			}
+			"ice_edge_path_offset"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"+20"
+			}
+			"ice_edge_linger_duration"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"+0.4"
+			}
+			"ice_edge_movement_slow"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"60"
+			}
+			
+		}	
+	}
+
+    "jakiro_ice_path"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Jakiro.IcePath"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"path_delay"				"0.2"
+			"stun_duration"
+			{
+				"value"					"1.5 1.50 1.75 2.0"
+				"special_bonus_unique_jakiro"		"+0.4"
+			}
+			"path_duration"
+			{
+				"value"													"2.6 3.1 3.6 4.1"
+				"special_bonus_facet_jakiro_ice_breaker"				"=5 =5 =5 =5"
+				"special_bonus_unique_jakiro"		"+0.4"
+
+				
+			}			
+			"path_radius"				
+			{
+				"value"	"150"
+				"affected_by_aoe_increase"	"1"
+			}
+			"damage"		
+			{
+				"value"			"50"
+				"CalculateSpellDamageTooltip" "1"
+				"special_bonus_unique_jakiro_6"		"+60"
+			}
+			"AbilityCooldown"				
+			{
+				"value"								"20 17 14 11"
+			}	
+			"detonate_damage"
+			{
+				"value"													"=0 =0 =0 =0"
+				"special_bonus_facet_jakiro_ice_breaker"				"=50 =100 =150 =200"
+			}
+			"detonate_stun_duration"
+			{
+				"value"													"=0"
+				"special_bonus_facet_jakiro_ice_breaker"				"=0.5"
+			}
+			"detonate_projectile_speed"
+			{
+				"value"													"=0"
+				"special_bonus_facet_jakiro_ice_breaker"				"=2400"
+			}
+		}		
+		"AbilityCastAnimation"		"ACT_DOTA_ATTACK"
+	}
+
+	"custom_liquid_frost"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/ocean/custom_liquid_frost" // Путь к твоему файлу
+		"AbilityTextureName"            "jakiro_liquid_ice"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING"
+		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+		
+		// Параметры каста
+		"AbilityCastRange"              "600"
+		"AbilityCastPoint"              "0.1" 
+		"AbilityCooldown"               "4.0 3.0 2.0 1.0"
+		"AbilityManaCost"               "0"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
+		"AbilityValues"
+		{
+			"proj_speed" 		"1100"
+			"aoe_radius"		"200"
+			"damage_on_touch"	"100"		
+			"debuff_duration"	"5.0"
+			"slow_amount"		"30"	
+			"attack_slow"		"35"
+		}
+	}
+
+	"custom_liquid_fire"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/ocean/custom_liquid_fire" // Путь к твоему файлу
+		"AbilityTextureName"            "jakiro_liquid_fire"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING"
+		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+		
+		// Параметры каста
+		"AbilityCastRange"              "600"
+		"AbilityCastPoint"              "0.1" 
+		"AbilityCooldown"               "4.0 3.0 2.0 1.0"
+		"AbilityManaCost"               "0"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
+		"AbilityValues"
+		{
+			"proj_speed" 		"1100"
+			"aoe_radius"		"200"
+			"damage_on_touch"	"100"		
+			"debuff_duration"	"5.0"
+			"dmg_per_sec"		"20"	
+		}
+	}
+}

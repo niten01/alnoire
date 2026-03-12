@@ -174,6 +174,8 @@ return {
         "npc_dota_necronomicon_archer_1",
         "npc_dota_hero_rattletrap",
         "npc_dota_neutral_warpine_raider",
+        "npc_dota_hero_jakiro",
+        "npc_dota_hero_ancient_apparition",
 
 
 
@@ -215,9 +217,12 @@ return {
         "npc_ocean_tusik_papa",
         "npc_ocean_tadpole_ranged_1",
         "npc_ocean_tadpole_ranged_2",
-        "npc_ocean_tadpole_melee",
-
-
+        "npc_ocean_tadpole_ranged_3",
+        "npc_ocean_tadpole_big_melee",
+        "npc_ocean_tadpole_big_range_1",
+        "npc_ocean_tadpole_big_range_2",
+        "npc_ocean_spider_fire",
+        "npc_ocean_spider_ice",
 
         -- traps
         "npc_trap_arrow",
@@ -353,6 +358,12 @@ return {
         -- ocean
         "particles/status_fx/status_effect_poison_venomancer.vpcf",
         "particles/units/heroes/hero_viper/viper_poison_attack_.vpcf",
+        "particles/units/heroes/hero_jakiro/jakiro_liquid_ice_projectile.vpcf",
+        "particles/units/heroes/hero_jakiro/jakiro_liquid_ice.vpcf",
+        "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf",
+        "particles/units/heroes/hero_jakiro/jakiro_liquid_fire_debuff.vpcf",
+        "particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf",
+        "particles/units/heroes/hero_lina/lina_base_attack.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",
