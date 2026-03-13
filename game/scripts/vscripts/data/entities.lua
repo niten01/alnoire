@@ -352,7 +352,7 @@ return {
             team = DOTA_TEAM_BADGUYS,
         },
 
-        spawner_derek                  = {
+        spawner_derek                 = {
             npc = "npc_derek",
             packID = "pack_derek",
             ai_modifier = "modifier_derek_ai",
@@ -604,6 +604,14 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
+        spawner_arbuz               = {
+            npc = "npc_ocean_tidehunter",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_arbuz",
+            ai_modifier = "modifier_default_creep_ai",
+            modifiers = { "modifier_item_aghanims_shard" }
+        },
+
 
         spawner_dream_concert         = {
             npc = "npc_dream",
@@ -835,6 +843,13 @@ return {
         },
 
         pack_ocean_act2_spiders = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_ocean_act2_arbuz = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,

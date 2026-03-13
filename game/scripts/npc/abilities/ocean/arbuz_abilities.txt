@@ -1,0 +1,128 @@
+"DOTAAbilities"
+{
+    "huge_arbuz_passive"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/ocean/huge_arbuz_passive"
+		"AbilityTextureName"            "tidehunter_kraken_shell"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+            "damageReductionMaxPercent"    "97.0"
+            "modelScaleMaxPercent"         "100"
+            "power"                        "1.25"
+			"maxAoeIncrease"				"400"
+		}
+	}
+
+
+    "tidehunter_anchor_smash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Tidehunter.AnchorSmash"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7.0 6.0 5.0 4.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1 45 50 55"
+		"AbilityCastRange"				"400"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"attack_damage"			
+			{
+				"value"										"50 100 150 200"
+				//"special_bonus_unique_tidehunter_9"			"+40"
+				"CalculateSpellDamageTooltip"				"0"
+			}
+			"damage_reduction"		
+			{
+				"value"										"-25 -30 -35 -40"
+				"special_bonus_unique_tidehunter_3"			"-10"
+				"CalculateSpellDamageTooltip"				"0"
+				"DamageTypeTooltip"							"DAMAGE_TYPE_NONE"
+			}
+			"reduction_duration"							"6.0 6.0 6.0 6.0"
+			"radius"										
+			{
+				"value" "400"
+				"affected_by_aoe_increase"	"1"
+			}
+			"targets_buildings"
+			{
+				"value"										"0"
+				"special_bonus_unique_tidehunter_10"			"+1"
+			}
+			"smash_on_attack"
+			{
+				"special_bonus_unique_tidehunter_8"			"1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+
+	"tidehunter_dead_in_the_water"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"IsGrantedByShard"				"1"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"550"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35"
+
+		// Damage.
+		"AbilityDamage"					"0"
+
+		//-------------------------------------------------------------------------------------------------------------
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"attacks_to_destroy"			"7"
+			"max_movement_speed"			"100"
+			"chain_length"					"350"
+			"duration"						"10"
+			"projectile_speed"				"1000"
+		}
+	}
+}

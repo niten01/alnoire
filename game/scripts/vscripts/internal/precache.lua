@@ -176,6 +176,7 @@ return {
         "npc_dota_neutral_warpine_raider",
         "npc_dota_hero_jakiro",
         "npc_dota_hero_ancient_apparition",
+        "npc_dota_hero_tidehunter",
 
 
 
@@ -223,6 +224,7 @@ return {
         "npc_ocean_tadpole_big_range_2",
         "npc_ocean_spider_fire",
         "npc_ocean_spider_ice",
+        "npc_ocean_tidehunter",
 
         -- traps
         "npc_trap_arrow",
