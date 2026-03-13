@@ -6,14 +6,17 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Beastmaster"
 		"Level"						"20"
-		"ModelScale" 				"2.0"
+		"ModelScale" 				"1.5"
 		"ConsideredHero" 			"1"
 		"AutoAttacksByDefault" 		"0"
 
 		"Ability1"					"derek_axes"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability2"					"derek_rebound"			// Ability 2
+		"Ability3"					"derek_strafe"			// Ability 3
+		"Ability4"					"derek_axe_fury"			
+		"Ability5"					"derek_epicenter"			
+		"Ability6"					"derek_slice"			
+		"Ability7"					"derek_lift"			
 
 		"ArmorPhysical"				"1"			
 
@@ -33,7 +36,7 @@
 		"BountyGoldMax"				"0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"		// Speed.			
+		"MovementSpeed"				"570"		// Speed.			
 
 		"StatusHealth"				"10"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
@@ -50,6 +53,18 @@
 		"precache"
 		{
         	"soundfile"			"soundevents/bosses/derek.vsndevts"
+			"particle"			"particles/derek_move.vpcf"
+		}
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "4704" } // weapon
+				// "Wearable2" { "ItemDef" "17901" } // armor
+				// "Wearable3" { "ItemDef" "17902" } // back
+				// "Wearable4" { "ItemDef" "17903" } // belt
+			}
 		}
 	}
 

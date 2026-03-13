@@ -9,6 +9,7 @@ LinkLuaModifier('modifier_story_weak_hit_tracking', 'modifiers/modifier_story_we
 LinkLuaModifier('modifier_dialogue_player', 'modifiers/modifier_dialogue_player', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_training_dummy', 'modifiers/modifier_training_dummy', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_move', 'modifiers/modifier_move', LUA_MODIFIER_MOTION_HORIZONTAL)
+LinkLuaModifier('modifier_move_ease', 'modifiers/modifier_move_ease', LUA_MODIFIER_MOTION_HORIZONTAL)
 LinkLuaModifier('modifier_vertical_jump', 'modifiers/modifier_vertical_jump', LUA_MODIFIER_MOTION_VERTICAL)
 LinkLuaModifier('modifier_gorilla_invulnerable', 'modifiers/modifier_gorilla_invulnerable', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_generic_vector_target', 'modifiers/modifier_generic_vector_target', LUA_MODIFIER_MOTION_NONE)

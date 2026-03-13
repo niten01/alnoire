@@ -79,6 +79,15 @@ function GetRandomTableElement(t)
   return t[keyset[RandomInt(1, #keyset)]]
 end
 
+function GetRandomTableKV(t)
+  local keyset = {}
+  for k in pairs(t) do
+    table.insert(keyset, k)
+  end
+  local key = keyset[RandomInt(1, #keyset)]
+  return key, t[key]
+end
+
 -- Colors
 COLOR_NONE = '\x06'
 COLOR_GRAY = '\x06'
@@ -227,11 +236,11 @@ function extend(old, extra)
   return t
 end
 
-function concatArrays(t1,t2)
-   for i=1,#t2 do
-      t1[#t1+1] = t2[i]
-   end
-   return t1
+function concatArrays(t1, t2)
+  for i = 1, #t2 do
+    t1[#t1 + 1] = t2[i]
+  end
+  return t1
 end
 
 function bind(fn, arg1, ...)
@@ -350,4 +359,13 @@ function IncrementLogarithmusStacks(caster)
   assert(mod)
   if mod:GetStackCount() >= mod:GetAbility():GetSpecialValueFor("max_stacks") then return end
   mod:IncrementStackCount()
+end
+
+function PlayDerekBloodEffects(target, dir)
+  local targetPos = target:GetAbsOrigin()
+  EmitSoundOnLocationWithCaster(targetPos, "ability.derek.strafe.hit", caster)
+  local pfx = ParticleManager:CreateParticle(
+    "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+  ParticleManager:SetParticleControlTransformForward(pfx, 1, targetPos, dir)
+  ParticleManager:ReleaseParticleIndex(pfx)
 end

@@ -11,6 +11,7 @@ function modifier_island_fiend_ai:ResetState()
     self.blinkSeqTimers = {}
     self.partner = nil
     Timers:CreateTimer(0, function()
+        self:RemoveModifierByName("modifier_island_duo_frenzy")
         self.partner = Entities:FindByName(nil, "npc_island_demon")
         if not self.partner then return 0.5 end
 
@@ -66,6 +67,10 @@ function modifier_island_fiend_ai:Phase1(unit, target)
         self.partner:AddNewModifier(unit, nil, "modifier_island_duo_hidden", {
             duration = -1
         })
+        unit:AddNewModifier(unit, nil, "modifier_island_duo_frenzy", {
+            duration = -1,
+            cdr = -50
+        })
         Music:StartCustomMusic(target:GetPlayerOwnerID(), "music.island_duo.phase2")
 
         unit:SetHealth(unit:GetMaxHealth())
@@ -93,6 +98,7 @@ function modifier_island_fiend_ai:Phase2(unit, target)
     if CastAbility(unit, target, "island_fiend_eye") then return end
 
     if unit:GetHealth() == 1 then
+        unit:RemoveModifierByName("modifier_island_duo_frenzy")
         self.partner:RemoveModifierByName("modifier_island_duo_hidden")
         self.partner:EmitSound("island_demon.phase3")
         self.phase = 3

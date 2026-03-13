@@ -7,7 +7,7 @@ function derek_wolf_leap:OnSpellStart()
   local targetPos = self:GetCursorPosition()
   local jumpDistance = self:GetSpecialValueFor("jump_distance")
 
-  local dest = GetOptimalStrafeDestination(caster, targetPos, jumpDistance)
+  local dest = GetOptimalStrafeDestination(casterPos, targetPos, jumpDistance)
   local strafeV = (dest - casterPos)
   local realDist = #strafeV
 

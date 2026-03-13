@@ -35,7 +35,10 @@ local function TargetUnitOrNil(target)
   return (target.GetUnitName and target) or nil
 end
 
-function CanCastAbility(unit, target, ability)
+-- rangeTolerance - offset from cast range that is still acceptable, default 100
+function CanCastAbility(unit, target, ability, rangeTolerance)
+  rangeTolerance = rangeTolerance or 100
+
   if unit:IsSilenced() or unit:IsStunned() then return false end
   if IsCasting(unit) then return false end
   if not ability or not ability:IsActivated() or not ability:IsFullyCastable() or ability:IsPassive() then return false end
@@ -43,7 +46,7 @@ function CanCastAbility(unit, target, ability)
   local dist = #(unit:GetAbsOrigin() - GetTargetPos(target))
   local behavior = ability:GetBehaviorInt()
   if bit.band(behavior, DOTA_ABILITY_BEHAVIOR_HIDDEN) ~= 0 or ability:IsHidden() then return false end
-  return dist <= (range + 100)
+  return dist <= (range + rangeTolerance)
 end
 
 local function CastIterWrapper(unit, target, fn)
@@ -123,12 +126,13 @@ function GiveCastOrderAI(unit, target, ability)
   end
 end
 
-function CastAbility(unit, target, abilityName)
+-- rangeTolerance - optional
+function CastAbility(unit, target, abilityName, rangeTolerance)
   if IsCasting(unit) then return true end
   if unit:IsSilenced() then return false end
   local ability = unit:FindAbilityByName(abilityName)
   assert(ability, "No such ability: " .. abilityName)
-  if not CanCastAbility(unit, target, ability) then return false end
+  if not CanCastAbility(unit, target, ability, rangeTolerance) then return false end
   GiveCastOrderAI(unit, target, ability)
   return true
 end
@@ -506,7 +510,6 @@ end
 
 function ShowGenericCurveWarning(curveInfo, width, duration)
   local interval = 0.01
-  -- local iter = curveInfo:StableIterator(duration / interval)
   local iter = curveInfo:UnstableIterator()
   local point = iter()
   local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
@@ -539,9 +542,8 @@ local function GetBisect(casterPos, targetPos, side)
 end
 
 -- aimed towards, 45 degrees to the side, returns direction with more space
-function GetOptimalStrafeDestination(caster, targetPos, distance)
-  local casterPos = caster:GetAbsOrigin()
-  local side = caster:GetRightVector()
+function GetOptimalStrafeDestination(casterPos, targetPos, distance)
+  local side = (targetPos - casterPos):Normalized():Cross(Vector(0, 0, 1)):Normalized()
   local strafeDir = GetBisect(casterPos, targetPos, side)
   local dest = GetSafeBlinkDestination(casterPos, casterPos + strafeDir * distance)
   local otherDir = GetBisect(casterPos, targetPos, -side)
@@ -673,6 +675,27 @@ function ArcInfo:UnstableIterator()
   end
 end
 
+-- same as UnstableIterator but iter function takes normalized elapsed time instead of dt (length fraction essentially)
+function ArcInfo:UnstableIteratorElapsed()
+  local reachedEnd = false
+
+  return function(elapsed)
+    if reachedEnd then return nil end
+    elapsed = elapsed and math.min(1, elapsed) or 0
+
+    local currentAngle = self.startAngle + (self.sweep * elapsed)
+
+    local px = self.center.x + self.radius * math.cos(currentAngle)
+    local py = self.center.y + self.radius * math.sin(currentAngle)
+
+    if elapsed >= 1 then
+      reachedEnd = true
+    end
+
+    return Vector(px, py, 0)
+  end
+end
+
 function ArcInfo:Length()
   return math.abs(self.radius * self.sweep)
 end
@@ -749,6 +772,23 @@ function ParabolaInfo:UnstableIterator()
     end
 
     t = math.min(t + dt, 1)
+
+    return point
+  end
+end
+
+function ParabolaInfo:UnstableIteratorElapsed()
+  local reachedEnd = false
+
+  return function(elapsed)
+    if reachedEnd then return nil end
+
+    elapsed = elapsed and math.min(1, elapsed) or 0
+    local point = self:GetPoint(elapsed)
+
+    if elapsed >= 1 then
+      reachedEnd = true
+    end
 
     return point
   end

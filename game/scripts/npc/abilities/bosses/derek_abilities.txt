@@ -18,22 +18,23 @@
 		"AbilityCastPoint"				"0.43"
         "AbilityCooldown"		        "8.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"		"175"	
+			"radius"		"150"	
 			"spread"		"450"			
 			"axe_damage"    "135"
+			"fly_time_oneway"	    "0.5"
 
             // min max
             "end_target_offset"   "50 200"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/econ/items/beastmaster/mh_beastmaster/mh_beastmaster_wildaxe.vpcf"
+			"particle"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
 		}
 	}
     "derek_rebound"
@@ -48,28 +49,27 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"300"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastPoint"				"0.43"
-    "AbilityCooldown"		        "8.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"		        "5.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"		"275"	
+			"radius"		"370"	
 			"spread"		"180"			
-			"warning_delay"		"0.1"			
+			"warning_delay"		"0.25"			
 			"damage"    "135"
 
-      "jump_time"   "0.1"
-      "jump_distance"   "1000"
+			"jump_time"   "0.5"
+			"jump_distance"   "600"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/derek_cross_swipe.vpcf"
 		}
 	}
     "derek_strafe"
@@ -85,28 +85,28 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"9999"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastPoint"				"0.43"
-    "AbilityCooldown"		        "8.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"		        "8.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"distance"	"1000"	
-			"time"	    "0.1"	
-			"shot_dist_step"		"100"			
-      "proj_distance"		"2000"
-      "proj_radius"		"50"
-      "proj_speed"		"2500"
-			"warning_delay"		"0.1"			
+			"time"	    "0.5"	
+			"shot_dist_step"		"250"			
+			"proj_distance"		"2000"
+			"proj_radius"		"50"
+			"proj_speed"		"2500"
+			"warning_delay"		"0.2"			
 			"damage"    "135"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/derek_linear_proj.vpcf"
+			"particle"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
 		}
 	}
     "derek_axe_fury"
@@ -123,27 +123,27 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"9999"
+		"AbilityCastRange"				"1500"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_1"
-		"AbilityChannelTime"			"8.0"
-		"AbilityCastPoint"				"1.0"
-    "AbilityCooldown"		        "10.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"5.0"
+		"AbilityCooldown"		        "25.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"distance"	"1000"	
-			"radius"	    "300"	
-			"speed"		"1000"			
-      "interval"  "0.5"
+			"distance"	"1500"	
+			"radius"	"120"	
+			"speed"		"900"			
+			"interval"  "0.5"
 			"damage"    "135"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/derek_slice_proj.vpcf"
+			"particle"		"particles/derek_axe_fury_channel.vpcf"
+			"particle"		"particles/units/heroes/hero_beastmaster/beastmaster_wildaxes_hit.vpcf"
 		}
 	}
     "derek_epicenter"
@@ -159,15 +159,9 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"9999"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastPoint"				"0.43"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.47"
         "AbilityCooldown"		        "18.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -175,11 +169,16 @@
 		{
 			"area_radius"		"275"	
 			"spawn_radius"  "1500"	
-      "num_areas"     "3"
+			"num_areas"     "5"
 			"interval"	"1"			
 			"damage"    "135"
-			"num_pulses"  "5"
-      "warning_delay" "0.3"
+			"num_pulses"  "7"
+			"warning_delay" "0.3"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
 		}
 	}
     "derek_slice"
@@ -195,25 +194,26 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"9999"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
 		"AbilityCastPoint"				"0.43"
-        "AbilityCooldown"		        "18.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"		        "5.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"		"175"	
+			"radius"		"350"	
 			"spread"  "180"	
 			"damage"    "135"
-      "jump_time"   "0.2"
-      "hit_delay"   "0.1"
+			"jump_time"   "0.5"
+			"hit_after_jump_delay"   "-0.2"
+			"anim_attack_point"	"0.2"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/derek_swipe_right.vpcf"
+			"particle"		"particles/derek_swipe_left.vpcf"
 		}
 	}
     "derek_lift"
@@ -229,28 +229,27 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastPoint"				"0.43"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastPoint"				"1.45"
         "AbilityCooldown"		        "18.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"		"1000"	
+			"radius"		"800"	
 			"damage"    "135"
 
-      "lift_height"   "200"
+			"lift_height"   "200"
 
-      // bound to particle
-      "lift_duration" "2"
-      "warning_delay" "0.3"
+			// bound to particle
+			"lift_duration" "2"
+			"warning_delay" "0.0"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/derek_lift.vpcf"
 		}
 	}
   "derek_wolf_leap"
@@ -270,12 +269,6 @@
 		"AbilityCastPoint"				"0.43"
         "AbilityCooldown"		        "18.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
@@ -283,10 +276,10 @@
 			"proj_radius"		   "175"	
 			"proj_speed"       "1800"	
 			"proj_distance"    "2000"
-      "proj_damage"      "200"
-      "jump_time"        "0.2"
-      "jump_height"      "100"
-      "jump_distance"    "800"
+			"proj_damage"      "200"
+			"jump_time"        "0.2"
+			"jump_height"      "100"
+			"jump_distance"    "800"
 		}
 	}
 

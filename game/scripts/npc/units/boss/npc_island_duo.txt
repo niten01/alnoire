@@ -165,8 +165,8 @@
 				// "Wearable3" { "ItemDef" "13154" } // armor
 				// "Wearable4" { "ItemDef" "13155" } // belt
 				"Wearable1" { "ItemDef" "17899" } // tail
-				"Wearable2" { "ItemDef" "17901" } // back
-				"Wearable3" { "ItemDef" "17902" } // armor
+				"Wearable2" { "ItemDef" "17901" } // armor
+				// "Wearable3" { "ItemDef" "17902" } // back
 				"Wearable4" { "ItemDef" "17903" } // belt
 			}
 		}
@@ -209,8 +209,8 @@
 				// "Wearable3" { "ItemDef" "13154" } // armor
 				// "Wearable4" { "ItemDef" "13155" } // belt
 				"Wearable1" { "ItemDef" "17899" } // tail
-				"Wearable2" { "ItemDef" "17901" } // back
-				"Wearable3" { "ItemDef" "17902" } // armor
+				"Wearable2" { "ItemDef" "17901" } // armor
+				// "Wearable3" { "ItemDef" "17902" } // back
 				"Wearable4" { "ItemDef" "17903" } // belt
 			}
 		}

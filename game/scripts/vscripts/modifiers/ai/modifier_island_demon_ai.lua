@@ -123,6 +123,7 @@ function modifier_island_demon_ai:Phase3(unit, target)
 
     if not self.partner or self.partner:IsNull() then
         if CastAbility(unit, target, "island_demon_poison") then return end
+        return
     end
 
     local requiem = self.partner:FindAbilityByName("island_fiend_requiem")
