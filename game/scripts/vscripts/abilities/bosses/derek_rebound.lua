@@ -30,7 +30,7 @@ function derek_rebound:OnSpellStart()
       damage_type = self:GetAbilityDamageType(),
       ability = self,
     })
-    PlayDerekBloodEffects(ent, caster:GetForwardVector())
+    PlayDerekBloodEffects(ent, -caster:GetForwardVector())
   end
 
   local pfx = ParticleManager:CreateParticle("particles/derek_cross_swipe.vpcf", PATTACH_ABSORIGIN, caster)

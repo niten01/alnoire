@@ -257,6 +257,9 @@ return {
 
         -- ocean
         "models/creeps/ice_biome/tuskfolk/tuskfolk001b_f.vmdl",
+
+        -- derek wolf
+        "models/derek/derek_wolf.vmdl",
     },
     sounds = {
         "soundevents/sfx.vsndevts",

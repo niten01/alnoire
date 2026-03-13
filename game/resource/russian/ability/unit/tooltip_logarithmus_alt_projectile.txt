@@ -1,0 +1,5 @@
+"DOTA_Tooltip_ability_logarithmus_alt_projectile"		            "Альт Образ"
+"DOTA_Tooltip_Ability_logarithmus_alt_projectile_SummaryDescription" ""
+"DOTA_Tooltip_ability_logarithmus_alt_projectile_Description"		"Задает вокруг себя сразу несколько одинаковых кривых, упрощая их до окружностей. При попадании герой не перемещается к врагу."
+"DOTA_Tooltip_ability_logarithmus_alt_projectile_num_projectiles"		"КОЛИЧЕСТВО СНАРЯДОВ:"
+"DOTA_Tooltip_ability_logarithmus_alt_projectile_max_duration"		"ДЛИТЕЛЬНОСТЬ:"

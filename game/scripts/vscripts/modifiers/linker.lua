@@ -14,6 +14,7 @@ LinkLuaModifier('modifier_vertical_jump', 'modifiers/modifier_vertical_jump', LU
 LinkLuaModifier('modifier_gorilla_invulnerable', 'modifiers/modifier_gorilla_invulnerable', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_generic_vector_target', 'modifiers/modifier_generic_vector_target', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_generic_unkillable", "modifiers/modifier_generic_unkillable", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_model", "modifiers/modifier_model", LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_tower', 'modifiers/modifier_tower', LUA_MODIFIER_MOTION_NONE)

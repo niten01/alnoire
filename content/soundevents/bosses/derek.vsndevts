@@ -31,13 +31,52 @@
     volume_fade_out = "0.000000"
     spread_radius = "3000.000000"
   }
+  derek.vo.transform = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/beastmaster/beas_kill_08.vsnd",
+    ]
+    volume = "3.00000"
+    pitch = "0.900000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  derek.transform.howl = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/lycan/howl.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "0.900000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  derek.transform.roar = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/beastmaster/call_of_the_wild_boar.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "0.900000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
   ability.derek.epicenter.pulse = {
     type = "dota_update_default"
     vsnd_files =
     [
         "sounds/weapons/hero/sand_king/epicenter_pulse.vsnd",
     ]
-    volume = "2.00000"
+    volume = "1.00000"
     pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "weapons"
@@ -63,7 +102,7 @@
     [
         "sounds/npc_abilities/derek_lift.vsnd",
     ]
-    volume = "3.00000"
+    volume = "2.00000"
     pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "weapons"
@@ -107,6 +146,91 @@
     pitch = "1.000000"
     pitch_rand_min = "-0.050000"
     pitch_rand_max = "0.050000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.wolf_leap.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/mirana/leap1.vsnd",
+        "sounds/weapons/hero/mirana/leap2.vsnd",
+        "sounds/weapons/hero/mirana/leap4.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.050000"
+    pitch_rand_max = "0.050000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.wolf_stun_howl.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/crystal_maiden/persona_howl.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.050000"
+    pitch_rand_max = "0.050000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.wolf_explode_howl.explode = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/elder_titan/earth_split_cast.vsnd",
+    ]
+    volume = "1.50000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.wolf_explode_howl.explode_layer = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/elder_titan/earth_split_destroy02.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.wolf_explode_howl.explode_layer2 = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/primal_beast/uproar_cast.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.wolf_explode_howl.pull = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/items/linkens_target.vsnd",
+
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "weapons"
     volume_fade_out = "0.000000"

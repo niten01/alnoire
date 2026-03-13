@@ -64,7 +64,7 @@ function derek_slice:OnSpellStart()
           ability = self,
         })
 
-        PlayDerekBloodEffects(ent, caster:GetForwardVector())
+        PlayDerekBloodEffects(ent, -caster:GetForwardVector())
       end
 
       caster.derekCasting = false

@@ -17,12 +17,8 @@ function modifier_story_lethal_damage_tracking:OnTakeDamage(params)
     if params.unit ~= parent then return end
 
     if params.unit:GetHealth() <= 1 then
-        local attackerPlayerID = params.attacker:GetPlayerOwnerID()
-            or params.attacker:GetPlayerOwner():GetPlayerID()
         params.unit:SetHealth(1)
-        OnCancelLethalDamageEvent(extend(params, {
-            attackerPlayerID = attackerPlayerID
-        }))
+        DamageTracker:LogLethalDamage(params)
         if not parent:HasModifier("modifier_story_npc") then
             parent:AddNewModifier(parent, nil, "modifier_story_npc", { duration = -1 })
             parent:SetTeam(DOTA_TEAM_GOODGUYS)

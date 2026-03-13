@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 16
 	m_flConstantRadius = 80.0
-	m_flConstantLifespan = 0.4
+	m_flConstantLifespan = 0.6
 	m_ConstantColor = [ 126, 2, 2, 255 ]
 	m_nBehaviorVersion = 12
 	m_nFirstMultipleOverride_BackwardCompat = 1
@@ -352,6 +352,14 @@
 			_class = "C_OP_ColorInterpolate"
 			m_flFadeStartTime = 0.25
 			m_ColorFade = [ 101, 1, 1, 255 ]
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 1.0
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 1.0
 		},
 	]
 	m_Renderers = 

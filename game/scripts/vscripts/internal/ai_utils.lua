@@ -49,14 +49,14 @@ function CanCastAbility(unit, target, ability, rangeTolerance)
   return dist <= (range + rangeTolerance)
 end
 
-local function CastIterWrapper(unit, target, fn)
+local function CastIterWrapper(unit, target, fn, rangeTolerance)
   -- always intercept when casting another ability
   if IsCasting(unit) then return true end
   if unit:IsSilenced() then return nil end
   local abilityCount = unit:GetAbilityCount()
   for i = 0, abilityCount - 1 do
     local ability = unit:GetAbilityByIndex(i)
-    if not CanCastAbility(unit, target, ability) then goto continue end
+    if not CanCastAbility(unit, target, ability, rangeTolerance) then goto continue end
     if fn(ability) then return ability end
     ::continue::
   end
@@ -116,7 +116,8 @@ function CastAbility(unit, target, abilityName, rangeTolerance)
   return true
 end
 
-function CastRandomAbility(unit, target, abilityNames)
+-- rangeTolerance - optional
+function CastRandomAbility(unit, target, abilityNames, rangeTolerance)
   local chosenName = abilityNames[RandomInt(1, #abilityNames)]
   return CastIterWrapper(unit, target, function(ability)
     if ability:GetName() == chosenName then
@@ -124,7 +125,7 @@ function CastRandomAbility(unit, target, abilityNames)
       return true
     end
     return false
-  end)
+  end, rangeTolerance)
 end
 
 function GetRandomAvailableAbilityName(unit, target, abilityNames)

@@ -619,4 +619,62 @@
       }
     }
   }
+  "models/derek/derek_wolf.vmdl"
+  {
+    "PortraitLightPosition"                               "187.33 84.33 170.74"
+    "PortraitLightAngles"                                 "46.58 220.52 0.00"
+    "PortraitLightFOV"                                    "33"
+    "PortraitLightDistance"                               "230"
+    "PortraitLightColor"                                  "254 244 233"
+    "PortraitShadowColor"                                 "74 74 74"
+    "PortraitShadowScale"                                 "5.000000"
+    "PortraitAmbientColor"                                "111 146 203"
+    "PortraitAmbientScale"                                "5.000000"
+    "PortraitSpecularColor"                               "251 74 84"
+    "PortraitBackgroundTexture"                           "materials/vgui/hud/heroportraits/portraitbackground_darkclouds.vmat"
+    "PortraitBackgroundColor1"                            ".6 .5 .55"
+    "PortraitBackgroundColor2"                            ".3 .3 .5"
+    "PortraitBackgroundColor3"                            "0 .1 .1"
+    "PortraitBackgroundColor4"                            "0 .61 .60"
+    "PortraitLightScale"                                  "1.100000"
+    "PortraitGroundShadowScale"                           "1.500000"
+    "PortraitAmbientDirection"                            "-102.280 92.600 199.470"
+    "PortraitAnimationActivity"                           "ACT_DOTA_IDLE"
+    "cameras"
+    {
+      "default"
+      {
+        "PortraitPosition"                                "308.08 -84.24 2.12"
+        "PortraitAngles"                                  "348.02 157.34 0.00"
+        "PortraitFOV"                                     "18"
+      }
+    }
+  }
+  "models/derek/derek.vmdl"
+  {
+    "PortraitLightPosition"                               "67.95 -88.18 284.68"
+    "PortraitLightAngles"                                 "44.40 132.52 0.00"
+    "PortraitLightFOV"                                    "67"
+    "PortraitLightDistance"                               "242"
+    "PortraitLightColor"                                  "254 234 216"
+    "PortraitShadowColor"                                 "56 38 38"
+    "PortraitShadowScale"                                 "3.775000"
+    "PortraitAmbientColor"                                "167 126 0"
+    "PortraitAmbientScale"                                "5.000000"
+    "PortraitSpecularColor"                               "251 74 84"
+    "PortraitBackgroundTexture"                           "materials/vgui/hud/heroportraits/portraitbackground_forest_two.vmat"
+    "PortraitLightScale"                                  "1.450000"
+    "PortraitGroundShadowScale"                           "1.500000"
+    "PortraitAmbientDirection"                            "-17.540 30.580 5.010"
+    "PortraitAnimationActivity"                           "ACT_DOTA_IDLE"
+    "cameras"
+    {
+      "default"
+      {
+        "PortraitPosition"                                "194.99 -160.44 170.70"
+        "PortraitAngles"                                  "356.99 137.74 355.00"
+        "PortraitFOV"                                     "14"
+      }
+    }
+  }
 }
