@@ -24,8 +24,24 @@ end
 function modifier_huge_arbuz_passive:GetModifierModelScale()
 	local parent = self:GetParent()
 	local abil = self:GetAbility()
+	if not abil or abil:IsNull() then return 0 end
 	local modelScaleMax = abil:GetSpecialValueFor('modelScaleMaxPercent') or 100
+	local healthPctRaw = parent:GetHealthPercent()
 	local healthPct = parent:GetHealthPercent() / 100
+
+	if IsServer() and self.thresholds and self.phrases then
+		for threshold, canPlay in pairs(self.thresholds) do
+			if healthPctRaw <= threshold and canPlay then
+				local currentPhrase = self.phrases[threshold]
+				EmitSoundOn(currentPhrase, parent)
+				self.thresholds[threshold] = false
+			end
+
+			if healthPctRaw > threshold + 5 then
+				self.thresholds[threshold] = true
+			end
+		end
+	end
 
 	local power = abil:GetSpecialValueFor('power')
 	local intensity = math.pow(1 - healthPct, power)
@@ -64,7 +80,16 @@ end
 
 function modifier_huge_arbuz_passive:OnCreated()
 	if not IsServer() then return end
-
+	self.thresholds = {
+		[50] = true,
+		[30] = true,
+		[10] = true
+	}
+	self.phrases = {
+		[50] = "Arbuz.HalfHp",
+		[30] = "Arbuz.ThirdHp",
+		[10] = "Arbuz.TenPercentHp"
+	}
 	local parent = self:GetParent()
 	local abil = self:GetAbility()
 	local baseHp = parent:GetMaxHealth()

@@ -177,6 +177,7 @@ return {
         "npc_dota_hero_jakiro",
         "npc_dota_hero_ancient_apparition",
         "npc_dota_hero_tidehunter",
+        "npc_dota_hero_slardar",
 
 
 
@@ -225,6 +226,7 @@ return {
         "npc_ocean_spider_fire",
         "npc_ocean_spider_ice",
         "npc_ocean_tidehunter",
+        "npc_ocean_seledka",
 
         -- traps
         "npc_trap_arrow",
@@ -366,6 +368,7 @@ return {
         "particles/units/heroes/hero_jakiro/jakiro_liquid_fire_debuff.vpcf",
         "particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf",
         "particles/units/heroes/hero_lina/lina_base_attack.vpcf",
+        "particles/seledka_puddle_1.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",
