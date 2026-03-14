@@ -52,7 +52,6 @@ function derek_wolf_leap:OnSpellStart()
     local sanyaPos = target:GetAbsOrigin()
     local casterPos = caster:GetAbsOrigin()
     local dir = (sanyaPos - casterPos):Normalized()
-    DrawDebugCircle(sanyaPos, 50, 2)
     ProjectileManager:CreateLinearProjectile({
       Ability = self,
       EffectName = "particles/derek_linear_proj_v2.vpcf",

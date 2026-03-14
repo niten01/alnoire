@@ -2,7 +2,7 @@
 {
 	"npc_george" 
 	{
-		"Model"						"models/derek/derek.vmdl"
+		"Model"						"models/doom/derek.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Beastmaster"
 		"Level"						"20"
@@ -10,19 +10,19 @@
 		"ConsideredHero" 			"1"
 		"AutoAttacksByDefault" 		"0"
 
-		"Ability1"					"derek_axes"			// Ability 1
-		"Ability2"					"derek_rebound"			// Ability 2
-		"Ability3"					"derek_strafe"			// Ability 3
-		"Ability4"					"derek_axe_fury"			
-		"Ability5"					"derek_epicenter"			
-		"Ability6"					"derek_slice"			
-		"Ability7"					"derek_lift"			
-		"Ability8"					"derek_wolf_leap"			
-		"Ability9"					"derek_wolf_stun_howl"			
-		"Ability10"					"derek_wolf_explode_howl"			
-		"Ability11"					"derek_wolf_daggers"			
-		"Ability12"					"derek_wolf_bite"			
-		"Ability13"					"derek_wolf_melee"			
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			
+		"Ability5"					""			
+		"Ability6"					""			
+		"Ability7"					""			
+		"Ability8"					""			
+		"Ability9"					""			
+		"Ability10"					""			
+		"Ability11"					""			
+		"Ability12"					""			
+		"Ability13"					""			
 
 		"ArmorPhysical"				"1"			
 
