@@ -64,12 +64,12 @@ function modifier_derek_ai:OnTakeDamage(params)
 end
 
 function modifier_derek_ai:Phase1(unit, target)
+    if unit.derekCasting then return end
+
     if unit:GetHealth() == 1 then
         self:Transition()
         return
     end
-
-    if unit.derekCasting then return end
 
     local distToTarget = #(unit:GetAbsOrigin() - target:GetAbsOrigin())
     local isClose = distToTarget <= 600
@@ -118,6 +118,7 @@ function modifier_derek_ai:Transition()
     self.phase = -1
     local unit = self:GetParent()
     unit:EmitSound("derek.vo.transform")
+    unit:EmitSound("derek.vo.transform.rise")
     unit:StartGesture(ACT_DOTA_TRANSITION)
     Music:StartCustomMusicForAll("music.derek.phase2")
 

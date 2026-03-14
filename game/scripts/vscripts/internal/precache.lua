@@ -130,6 +130,8 @@ return {
         "npc_blue",
 
         "npc_derek",
+        "npc_george",
+        "npc_george_summon",
 
         "towel_summon",
 
@@ -260,6 +262,9 @@ return {
 
         -- derek wolf
         "models/derek/derek_wolf.vmdl",
+
+        -- george phase 1
+        "models/creeps/ice_biome/undeadtusk/undead_tuskskeleton_armor01.vmdl",
     },
     sounds = {
         "soundevents/sfx.vsndevts",

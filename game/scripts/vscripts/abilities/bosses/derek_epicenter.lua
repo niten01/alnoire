@@ -28,6 +28,7 @@ function derek_epicenter:OnSpellStart()
           PATTACH_WORLDORIGIN, nil)
         ParticleManager:SetParticleControl(pfx, 0, point)
         ParticleManager:SetParticleControl(pfx, 1, Vector(areaRadius + 200, 1, 1))
+        ParticleManager:ReleaseParticleIndex(pfx)
 
         EmitSoundOnLocationWithCaster(point, "ability.derek.epicenter.pulse", caster)
 

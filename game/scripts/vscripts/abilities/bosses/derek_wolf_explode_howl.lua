@@ -35,6 +35,8 @@ function derek_wolf_explode_howl:OnSpellStart()
     local mouthIdx = caster:ScriptLookupAttachment("attach_mouth")
     local mouthPos = caster:GetAttachmentOrigin(mouthIdx)
 
+    caster:EmitSound("ability.derek.wolf_explode_howl.loop")
+
     self.pfx = ParticleManager:CreateParticle("particles/derek_wolf_pull_channel.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(self.pfx, 0, mouthPos + Vector(0, 0, 20))
     ParticleManager:SetParticleControl(self.pfx, 3, Vector(radius, 0, 0))
@@ -55,11 +57,13 @@ function derek_wolf_explode_howl:OnChannelFinish(bInterrupted)
         ParticleManager:ReleaseParticleIndex(self.pfx)
     end
 
+    local caster = self:GetCaster()
+    caster:StopSound("ability.derek.wolf_explode_howl.loop")
+
     if bInterrupted then return end
     local damage = self:GetSpecialValueFor("damage")
     local radius = self:GetSpecialValueFor("radius")
 
-    local caster = self:GetCaster()
     local casterPos = caster:GetAbsOrigin()
 
     local pfx = ParticleManager:CreateParticle("particles/econ/items/axe/axe_ti9_immortal/axe_ti9_call.vpcf",

@@ -677,4 +677,32 @@
       }
     }
   }
+  "models/creeps/ice_biome/undeadtusk/undead_tuskskeleton_armor01.vmdl"
+  {
+    "PortraitLightPosition"                               "14.32 -110.15 229.92"
+    "PortraitLightAngles"                                 "45.26 97.73 0.00"
+    "PortraitLightFOV"                                    "53"
+    "PortraitLightDistance"                               "184"
+    "PortraitLightColor"                                  "254 254 254"
+    "PortraitShadowColor"                                 "69 84 100"
+    "PortraitShadowScale"                                 "5.000000"
+    "PortraitAmbientColor"                                "74 117 155"
+    "PortraitAmbientScale"                                "5.000000"
+    "PortraitSpecularColor"                               "251 74 84"
+    "PortraitBackgroundTexture"                           "materials/portraits_card/portrait_backgrounds/templar_assassin.vmat"
+    "PortraitBackgroundColor3"                            ".9 .1 .1"
+    "PortraitLightScale"                                  "1.600000"
+    "PortraitGroundShadowScale"                           "1.500000"
+    "PortraitAmbientDirection"                            "37.540 83.950 -47.510"
+    "PortraitAnimationActivity"                           "ACT_DOTA_IDLE"
+    "cameras"
+    {
+      "default"
+      {
+        "PortraitPosition"                                "115.34 -77.17 164.73"
+        "PortraitAngles"                                  "14.01 147.33 350.00"
+        "PortraitFOV"                                     "26"
+      }
+    }
+  }
 }

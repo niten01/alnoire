@@ -22,7 +22,7 @@ function derek_wolf_stun_howl:OnSpellStart()
   local pfx       = ParticleManager:CreateParticle("particles/derek_wolf_stun_howl.vpcf", PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 0,  Vector(casterPos.x, casterPos.y, mouthPos.z + 50))
   ParticleManager:SetParticleControl(pfx, 1, Vector(80, 0, 0))
-  ParticleManager:SetParticleControl(pfx, 5, Vector(radius - 200, 0, 0))
+  ParticleManager:SetParticleControl(pfx, 5, Vector(radius - 300, 0, 0))
   ParticleManager:ReleaseParticleIndex(pfx)
 
   caster:EmitSound("ability.derek.wolf_stun_howl.cast")

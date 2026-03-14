@@ -44,6 +44,19 @@
     volume_fade_out = "0.000000"
     spread_radius = "3000.000000"
   }
+  derek.transform.rise = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_wolf_transformation.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "0.900000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
   derek.transform.howl = {
     type = "dota_update_default"
     vsnd_files =
@@ -234,7 +247,7 @@
     type = "dota_update_default"
     vsnd_files =
     [
-        "sounds/weapons/hero/elder_titan/earth_split_cast.vsnd",
+        "sounds/npc_abilities/derek_wolf_explosion.vsnd",
     ]
     volume = "1.50000"
     pitch = "1.000000"
@@ -249,7 +262,7 @@
     [
         "sounds/weapons/hero/elder_titan/earth_split_destroy02.vsnd",
     ]
-    volume = "1.00000"
+    volume = "0.50000"
     pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "weapons"
@@ -262,7 +275,7 @@
     [
         "sounds/weapons/hero/primal_beast/uproar_cast.vsnd",
     ]
-    volume = "1.00000"
+    volume = "0.50000"
     pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "weapons"
@@ -281,6 +294,48 @@
     soundlevel = "81.000000"
     mixgroup = "weapons"
     volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.wolf_explode_howl.loop = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_wolf_vortex.vsnd",
+
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.400000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.wolf_bite.bite = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_wolf_bite.vsnd",
+
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.400000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.wolf_bite.blink = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_wolf_blink.vsnd",
+
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.400000"
     spread_radius = "3000.000000"
   }
 }

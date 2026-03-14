@@ -358,6 +358,12 @@ return {
             ai_modifier = "modifier_derek_ai",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_george                  = {
+            npc = "npc_george",
+            packID = "pack_george",
+            ai_modifier = "modifier_george_ai",
+            modifiers = { "modifier_story_npc" },
+        },
 
         -- jungle
         spawner_lizards_venomancer    = {
@@ -882,6 +888,10 @@ return {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
             music = "music.derek.phase1",
+        },
+        pack_george = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = false,
         },
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,

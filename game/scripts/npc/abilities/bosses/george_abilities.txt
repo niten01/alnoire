@@ -1,9 +1,139 @@
 "DOTAAbilities"
 {
-    // stalactites
-    // skeletons
-    // kick
-    // shield
+    "george1_summon"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george1_summon.lua"
+        "AbilityTextureName"            "skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+        "AbilityCastPoint"              "0.5"
+
+        "AbilityCooldown"               "20" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+        "AbilityValues"
+        {
+            "num_skeletons"     "8"
+            "radius"            "1000"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/neutral_fx/skeleton_spawn.vpcf"
+        }
+    }
+    "george1_kick"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george1_kick.lua"
+        "AbilityTextureName"            "skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_5"
+        "AbilityCastPoint"              "0.37"
+
+        "AbilityCooldown"               "5" 
+        "AbilityCastRange"        		"300"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+        "AbilityValues"
+        {
+            "distance"            "1000"
+            "damage"              "200"
+            "travel_time"            "0.8"
+            "warning_delay"          "0.3"
+            "width"             "150"
+        }
+
+        "precache"
+        {
+        }
+    }
+    "george1_shield"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george1_shield.lua"
+        "AbilityTextureName"            "skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        
+        "AbilityValues"
+        {
+            "stun_duration"            "5"
+            "reload_duration"          "20"
+        }
+
+        "precache"
+        {
+            "particle"      "particles/george_shield.vpcf"
+        }
+    }
+    "george1_stalactites"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george1_stalactites.lua"
+        "AbilityTextureName"            "skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+        "AbilityCastAnimation"          "ACT_DOTA_SPAWN"
+        "AbilityCastPoint"              "0.56"
+
+        "AbilityCooldown"               "8.0" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+        
+        "AbilityValues"
+        {
+            "num_points"    "30"
+            "spawn_radius"  "2000"
+            "radius"        "150"
+            "damage"        "200"
+
+            // rand min max
+            "delay"         "1 2"
+            
+        }
+
+        "precache"
+        {
+            "particle"		"particles/george1_stalactite.vpcf"
+        }
+    }
+    "george1_parry"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george1_parry.lua"
+        "AbilityTextureName"            "skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+        "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
+        "AbilityCastPoint"              "0.2"
+
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        
+        "AbilityValues"
+        {
+            "duration"         "1.0"
+            "stun_duration"    "2"
+            "damage"           "200"
+            "damage_threshold" "40"
+
+            // rand min max
+            "cooldown"         "1 7"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/george_parry.vpcf"
+        }
+    }
     // parry
     // melee
 
