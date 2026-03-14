@@ -8,6 +8,7 @@
 #base "units/boss/npc_goden.txt"
 #base "units/boss/npc_ball.txt"
 #base "units/boss/npc_derek.txt"
+#base "units/boss/npc_george.txt"
 
 #base "units/trap/npc_trap_arrow.txt"
 #base "units/trap/npc_trap_fire.txt"

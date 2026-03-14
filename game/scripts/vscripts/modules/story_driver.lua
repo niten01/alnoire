@@ -362,6 +362,7 @@ function StoryDriver:OnEntityKilled(event)
   end
 end
 
+-- { unit: <unitHScript>, attackerPlayerID: 2 }
 function StoryDriver:OnCancelLethalDamage(event)
   local unit = event.unit
   for i = #self.activeStoryFights, 1, -1 do
@@ -437,7 +438,7 @@ function StoryDriver:OnGameInProgress()
         end
       end
       -- SpawnManager:SpawnNPC("spawner_gorilla")
-      StoryDriver:StartFight("pack_derek")
+      StoryDriver:StartFight("pack_george")
     end)
   end
 end

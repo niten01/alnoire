@@ -17,6 +17,12 @@
 		"Ability5"					"derek_epicenter"			
 		"Ability6"					"derek_slice"			
 		"Ability7"					"derek_lift"			
+		"Ability8"					"derek_wolf_leap"			
+		"Ability9"					"derek_wolf_stun_howl"			
+		"Ability10"					"derek_wolf_explode_howl"			
+		"Ability11"					"derek_wolf_daggers"			
+		"Ability12"					"derek_wolf_bite"			
+		"Ability13"					"derek_wolf_melee"			
 
 		"ArmorPhysical"				"1"			
 
@@ -38,7 +44,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"570"		// Speed.			
 
-		"StatusHealth"				"10"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -54,6 +60,9 @@
 		{
         	"soundfile"			"soundevents/bosses/derek.vsndevts"
 			"particle"			"particles/derek_move.vpcf"
+			"particle"		"particles/econ/items/lifestealer/ls_ti10_immortal/ls_ti10_immortal_infest.vpcf"
+			"particle"		"particles/units/heroes/hero_lycan/lycan_shapeshift_cast.vpcf"
+			"particle"		"particles/derek_transform_charge.vpcf"
 		}
 
 		"Creature"
@@ -61,9 +70,8 @@
 			"AttachWearables"
 			{
 				"Wearable1" { "ItemDef" "4704" } // weapon
-				// "Wearable2" { "ItemDef" "17901" } // armor
-				// "Wearable3" { "ItemDef" "17902" } // back
-				// "Wearable4" { "ItemDef" "17903" } // belt
+				"Wearable2" { "ItemDef" "13374" } // belt
+				"Wearable3" { "ItemDef" "6250" } // arms
 			}
 		}
 	}

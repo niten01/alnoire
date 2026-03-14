@@ -252,35 +252,214 @@
 			"particle"		"particles/derek_lift.vpcf"
 		}
 	}
-  "derek_wolf_leap"
+	"derek_wolf_leap"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_lua"
         "ScriptFile"                    "abilities/bosses/derek_wolf_leap.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-        "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
+        "AbilityTextureName"            "lycan_wolf_bite"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"9999"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastPoint"				"0.43"
-        "AbilityCooldown"		        "18.0"
+		// "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastPoint"				"0.0"
+        "AbilityCooldown"		        "15.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"proj_radius"		   "175"	
-			"proj_speed"       "1800"	
-			"proj_distance"    "2000"
+			"proj_radius"	   "50"	
+			"proj_speed"       "1300"	
+			"proj_distance"    "3000"
 			"proj_damage"      "200"
-			"jump_time"        "0.2"
+			"jump_time"        "0.6"
 			"jump_height"      "100"
-			"jump_distance"    "800"
+			"jump_distance"    "1300"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/econ/items/phoenix/phoenix_ti10_immortal/phoenix_ti10_fire_spirit_ground.vpcf"
+			"particle"		"particles/derek_linear_proj_v2.vpcf"
 		}
 	}
+	"derek_wolf_stun_howl"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_wolf_stun_howl.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "AbilityTextureName"            "lycan_wolf_bite"
 
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"1.0"
+        "AbilityCooldown"		        "8.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"	       "100"	
+			"radius"		   "500"
+			"stun_duration"	   "2"
+			"warning_delay"	   "0"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/derek_wolf_stun_howl.vpcf"
+		}
+	}
+	"derek_wolf_explode_howl"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_wolf_explode_howl.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "AbilityTextureName"            "lycan_wolf_bite"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityChannelAnimation"		    "ACT_DOTA_CHANNEL_ABILITY_1"
+		"AbilityCastAnimation"		    "ACT_DOTA_CHANNEL_ABILITY_1"
+		"AbilityChannelTime"			"5.0"
+		"AbilityCastPoint"				"0.3"
+        "AbilityCooldown"		        "20.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"	       "300"	
+			"radius"		   "700"
+			"pull_radius"	   "1500"
+			"pull_duration"	   "0.4"
+			"second_pull_delay" "3.5"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/derek_wolf_pull.vpcf"
+			"particle"		"particles/derek_wolf_pull_channel.vpcf"
+			"particle"		"particles/econ/items/axe/axe_ti9_immortal/axe_ti9_call.vpcf"
+		}
+	}
+	"derek_wolf_daggers"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_wolf_daggers.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+        "AbilityTextureName"            "lycan_wolf_bite"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		"AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.6"
+        "AbilityCooldown"		        "8.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"	       "100"	
+			"distance"		   "2500"
+			"num_shots"		   "8"
+			"proj_width"	   "50"
+			"proj_speed"	   "1500"
+			"warning_delay"	   "0"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/derek_linear_proj_v2.vpcf"
+		}
+	}
+	"derek_wolf_bite"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_wolf_bite.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+        "AbilityTextureName"            "lycan_wolf_bite"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		// "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_1"
+		// "AbilityCastPoint"				"0.0"
+        "AbilityCooldown"		        "8.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"	       "100"	
+			"radius"		   "350"
+			"spread"		   "120"
+			"jump_time"	       "0.40" // animation bound (and acts as warning)
+			"anim_attack_point" "0.7"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/derek_wolf_bite.vpcf"
+			"particle"		"particles/econ/items/phantom_assassin/pa_crimson_witness_2021/pa_crimson_witness_blur_start.vpcf"
+		}
+	}
+	"derek_wolf_melee"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/derek_wolf_melee.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+        "AbilityTextureName"            "lycan_wolf_bite"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		// "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
+		"AbilityCastPoint"				"0.2"
+        "AbilityCooldown"		        "5.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"		"370"	
+			"spread"        "60"	
+			"damage"        "135"
+			"anim_attack_point"	"0.6"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/derek_wolf_attack1.vpcf"
+			"particle"		"particles/derek_wolf_attack2.vpcf"
+		}
+	}
 }

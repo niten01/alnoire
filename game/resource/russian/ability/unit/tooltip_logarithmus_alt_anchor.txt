@@ -1,0 +1,5 @@
+"DOTA_Tooltip_ability_logarithmus_alt_anchor"		            "Альт Якорь"
+"DOTA_Tooltip_Ability_logarithmus_alt_anchor_SummaryDescription" ""
+"DOTA_Tooltip_ability_logarithmus_alt_anchor_Description"		"Ставит нестабильный якорь, не выражающийся в элементарных функциях. Через некоторое время якорь взрывается, нанося урон врагам вокруг."
+"DOTA_Tooltip_ability_logarithmus_alt_anchor_delay"		    "ЗАДЕРЖКА:"
+"DOTA_Tooltip_ability_logarithmus_alt_anchor_radius"		"РАДИУС:"

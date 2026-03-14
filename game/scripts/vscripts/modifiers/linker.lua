@@ -14,6 +14,7 @@ LinkLuaModifier('modifier_vertical_jump', 'modifiers/modifier_vertical_jump', LU
 LinkLuaModifier('modifier_gorilla_invulnerable', 'modifiers/modifier_gorilla_invulnerable', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_generic_vector_target', 'modifiers/modifier_generic_vector_target', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_generic_unkillable", "modifiers/modifier_generic_unkillable", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_model", "modifiers/modifier_model", LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_tower', 'modifiers/modifier_tower', LUA_MODIFIER_MOTION_NONE)
@@ -57,6 +58,7 @@ LinkLuaModifier("modifier_genius_ai", "modifiers/ai/modifier_genius_ai", LUA_MOD
 LinkLuaModifier("modifier_gorilla_ai", "modifiers/ai/modifier_gorilla_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_perekup_ai", "modifiers/ai/modifier_perekup_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_derek_ai", "modifiers/ai/modifier_derek_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_george_ai", "modifiers/ai/modifier_george_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shrooms_ai", "modifiers/ai/modifier_shrooms_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shrooms_furion_ai", "modifiers/ai/modifier_shrooms_furion_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_bufferbear_ai", "modifiers/ai/modifier_bufferbear_ai", LUA_MODIFIER_MOTION_NONE)

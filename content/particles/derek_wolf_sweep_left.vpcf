@@ -1,0 +1,71 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf65:version{48e806a9-c210-4cd8-811a-38b5ef63b195} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 0
+	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "absorigin"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_ABSORIGIN"
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/ursa/ursa.vmdl"
+				m_sequenceName = "overpower_attack1_anim"
+				m_nFireParticleOnSequenceFrame = 11
+				m_bAnimationNonLooping = true
+			}
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetRandomControlPointPosition"
+			m_nCP1 = 7
+			m_nHeadLocation = 9
+		},
+		{
+			_class = "C_OP_SetControlPointOrientation"
+			m_vecRotation = [ 0.0, 0.0, 20.0 ]
+			m_nCP = 7
+			m_nHeadLocation = 9
+		},
+		{
+			_class = "C_OP_SetControlPointPositions"
+			m_bOrient = true
+			m_nHeadLocation = 7
+			m_vecCP1Pos = [ 2.0, 0.0, 120.0 ]
+			m_vecCP2Pos = [ 5.0, 0.0, 103.0 ]
+			m_vecCP3Pos = [ 4.0, 0.0, 90.0 ]
+			m_vecCP4Pos = [ 1.0, 0.0, 80.0 ]
+		},
+		{
+			_class = "C_OP_SetParentControlPointsToChildCP"
+			m_nNumControlPoints = 4
+			m_nFirstSourcePoint = 1
+			m_bSetOrientation = true
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/derek_wolf_sweep_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/derek_wolf_sweep_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/derek_wolf_sweep_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/derek_wolf_sweep_b.vpcf"
+		},
+	]
+}

@@ -18,6 +18,9 @@ function modifier_island_fiend_ai:ResetState()
         self.partnerAI = self.partner:FindModifierByName("modifier_island_demon_ai")
         return nil
     end)
+
+    local parent = self:GetParent()
+    parent:AddNewModifier(parent, nil, "modifier_generic_unkillable", { duration = -1 })
 end
 
 modifier_island_fiend_ai.OnCreated = modifier_island_fiend_ai.ResetState

@@ -1,0 +1,130 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  ability.george.summon.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/creep/neutral/skeleton_spawn_01.vsnd",
+        "sounds/weapons/creep/neutral/skeleton_spawn_02.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george1.kick.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/tusk/punch_damage.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george1.kick.swing = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/earthshaker/fist_swing1.vsnd",
+        "sounds/weapons/hero/earthshaker/fist_swing2.vsnd",
+        "sounds/weapons/hero/earthshaker/fist_swing3.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george1.kick.swing2 = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_axes_swing.vsnd",
+    ]
+    volume = "1.50000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george1.shield.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/ui/inventory/stone_drop_01.vsnd",
+        "sounds/ui/inventory/stone_drop_02.vsnd",
+        "sounds/ui/inventory/stone_equip_01.vsnd",
+        "sounds/ui/inventory/stone_equip_02.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george1.shield.break = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/earth_spirit/stone_remnant_destroy.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george1.stalactites.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/visage/stone_form02.vsnd",
+    ]
+    volume = "0.30000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.100000"
+    pitch_rand_max = "0.100000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george1.stalactites.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/earthshaker/gravelmaw_end.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george1.parry.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/dark_willow/ley_counter.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    fade_out = "0.5"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+}

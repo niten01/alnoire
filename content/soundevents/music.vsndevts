@@ -218,4 +218,24 @@
     fade_out = "2.0"
   }
   // ---------------------------------------------------------
+  music.derek.phase1 = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/derek1.vsnd"
+    ]
+    volume = "3.500000"
+    fade_in = "0.0"
+    fade_out = "0.5"
+  }
+  music.derek.phase2 = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/derek2.vsnd"
+    ]
+    volume = "3.500000"
+    fade_in = "0.5"
+    fade_out = "5.0"
+  }
 }

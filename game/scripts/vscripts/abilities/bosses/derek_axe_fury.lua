@@ -13,11 +13,14 @@ function derek_axe_fury:OnSpellStart()
   })
 
   self.pfx = ParticleManager:CreateParticle("particles/derek_axe_fury_channel.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+
+  caster:EmitSound("ability.derek.axe_fury.loop")
 end
 
 function derek_axe_fury:OnChannelFinish(bInterrupted)
   if not IsServer() then return end
   local caster = self:GetCaster()
+  caster:StopSound("ability.derek.axe_fury.loop")
 
   ParticleManager:DestroyParticle(self.pfx, false)
   ParticleManager:ReleaseParticleIndex(self.pfx)
@@ -34,6 +37,7 @@ function derek_axe_fury:Fire(targetPos)
   local shotDist = self:GetSpecialValueFor("distance")
   local dir = (targetPos - casterPos):Normalized()
 
+  caster:EmitSound("ability.derek.swing")
   ScreenShake(casterPos, 7, 3, 1.5, 9999, 0, true)
 
   ProjectileManager:CreateLinearProjectile({

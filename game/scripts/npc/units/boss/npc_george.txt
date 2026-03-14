@@ -1,0 +1,136 @@
+"DOTAUnits"
+{
+	"npc_george" 
+	{
+		"Model"						"models/heroes/doom/doom.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_Doom"
+		"Level"						"20"
+		"ModelScale" 				"1.5"
+		"ConsideredHero" 			"1"
+		"AutoAttacksByDefault" 		"0"
+
+		"Ability1"					"george1_summon"			// Ability 1
+		"Ability2"					"george1_kick"			// Ability 2
+		"Ability3"					"george1_shield"			// Ability 3
+		"Ability4"					"george1_stalactites"			
+		"Ability5"					"george1_parry"			
+		"Ability6"					""			
+		"Ability7"					""			
+		"Ability8"					""			
+		"Ability9"					""			
+		"Ability10"					""			
+		"Ability11"					""			
+		"Ability12"					""			
+		"Ability13"					""			
+
+		"ArmorPhysical"				"1"			
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"36"		// Damage range max.
+		"AttackRate"				"1.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.
+
+		"RingRadius"				"50"
+		"HealthBarOffset"			"350"
+
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"570"		// Speed.			
+
+		"StatusHealth"				"1500"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"precache"
+		{
+        	"soundfile"		"soundevents/bosses/george.vsndevts"
+		}
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "28264" } // arms
+				// "Wearable2" { "ItemDef" "28265" } // back
+				"Wearable3" { "ItemDef" "28266" } // belt
+				"Wearable4" { "ItemDef" "28267" } // shoulder
+				// "Wearable5" { "ItemDef" "28268" } // tail
+				"Wearable6" { "ItemDef" "28269" } // weapon
+				"Wearable7" { "ItemDef" "31093" } // head
+			}
+		}
+	}
+	"npc_george_summon" 
+	{
+		"Model"						"models/events/crownfall/survivors/skeleton_melee/skeleton_melee.vmdl"
+		"SoundSet"					"n_creep_Melee"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"Level"						  "12"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"10"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"1.8"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"99999"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.
+
+		"HasAggressiveStance"	"0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"50"
+		"HealthBarOffset"			"250"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementTurnRate"			"1.0"
+		"MovementSpeed"				"200"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"100"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		"StatusMana"				"5000"		// Base mana.
+		"StatusManaRegen"			"100.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"99999"		// Range of vision during day light.
+		"VisionNighttimeRange"		"99999"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	}
+}

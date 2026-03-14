@@ -1,0 +1,3 @@
+"DOTA_Tooltip_ability_logarithmus_alt_throw"		            "Альт Идеал"
+"DOTA_Tooltip_Ability_logarithmus_alt_throw_SummaryDescription" ""
+"DOTA_Tooltip_ability_logarithmus_alt_throw_Description"		"Герой бросает свой меч вперед и перемещается к нему, дважды нанося урон."

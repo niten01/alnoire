@@ -358,7 +358,6 @@
 	[
 		{
 			m_ChildRef = resource:"particles/derek_lift_rocks_timeremap.vpcf"
-			m_bDisableChild = true
 		},
 	]
 }
