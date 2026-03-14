@@ -11,12 +11,15 @@ function modifier_derek_ai:DeclareFunctions()
 end
 
 function modifier_derek_ai:ResetState()
+    if self.phase == 2 then
+        self:TransitionBack()
+    end
+
     self.phase = 1
     self.remainingLeaps = 0
 
     local parent = self:GetParent()
     parent:AddNewModifier(parent, nil, "modifier_generic_unkillable", { duration = -1 })
-    self:TransitionBack()
 end
 
 modifier_derek_ai.OnCreated = modifier_derek_ai.ResetState
@@ -116,7 +119,18 @@ function modifier_derek_ai:Transition()
     local unit = self:GetParent()
     unit:EmitSound("derek.vo.transform")
     unit:StartGesture(ACT_DOTA_TRANSITION)
-    Timers:CreateTimer(3.4, function()
+    Music:StartCustomMusicForAll("music.derek.phase2")
+
+    local pfx = ParticleManager:CreateParticle("particles/derek_transform_charge.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+    ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", Vector(0, 0, 0), false)
+    ParticleManager:SetParticleControlEnt(pfx, 2, unit, PATTACH_ABSORIGIN_FOLLOW, "", Vector(0, 0, 0), false)
+    ParticleManager:SetParticleControlEnt(pfx, 3, unit, PATTACH_ABSORIGIN_FOLLOW, "", Vector(0, 0, 0), false)
+    ParticleManager:SetParticleControlEnt(pfx, 9, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", Vector(0, 0, 0), true)
+
+    Timers:CreateTimer(8.3, function()
+        ParticleManager:DestroyParticle(pfx, false)
+        ParticleManager:ReleaseParticleIndex(pfx)
+
         local pfx = ParticleManager:CreateParticle(
             "particles/econ/items/lifestealer/ls_ti10_immortal/ls_ti10_immortal_infest.vpcf",
             PATTACH_ABSORIGIN_FOLLOW,

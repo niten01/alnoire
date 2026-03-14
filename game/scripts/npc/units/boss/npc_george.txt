@@ -1,6 +1,6 @@
 "DOTAUnits"
 {
-	"npc_derek" 
+	"npc_george" 
 	{
 		"Model"						"models/derek/derek.vmdl"
 		"BaseClass"					"npc_dota_creature"

@@ -462,7 +462,4 @@
 			"particle"		"particles/derek_wolf_attack2.vpcf"
 		}
 	}
-
-	// melee
-	// nonstop dashes
 }

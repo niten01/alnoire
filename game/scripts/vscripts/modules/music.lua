@@ -32,11 +32,19 @@ function Music:Init()
 end
 
 function Music:StartCustomMusic(playerID, soundName)
-    DebugPrint("[ALNOIRE] Set custom music: " .. soundName)
     local state = self.musicState[playerID]
     state.customMusic = soundName
     state.current = nil
-    EmitGlobalSound(soundName)
+    local player = PlayerResource:GetPlayer(playerID)
+    if not player then return end
+    EmitSoundOnClient(soundName, player)
+    DebugPrint("[ALNOIRE] Set custom music: " .. soundName .. ", for player: " .. player:GetName())
+end
+
+function Music:StartCustomMusicForAll(soundName)
+    for playerID, _ in pairs(self.musicState) do
+        self:StartCustomMusic(playerID, soundName)
+    end
 end
 
 function Music:StopCustomMusic(playerID)
@@ -66,8 +74,11 @@ function Music:HeroMusicThink(hero)
 
     local newSound = newSoundZone .. "." .. newSoundState
     if state.current ~= newSound then
+        local player = PlayerResource:GetPlayer(playerID)
+        if not player then return end
+
         DebugPrint("[ALNOIRE] Change music state: " .. newSound)
-        EmitGlobalSound(newSound)
+        EmitSoundOnClient(newSound, player)
         state.current = newSound
     end
 
@@ -88,9 +99,11 @@ function Music:OnEntityKilled(event)
         local playerID = victim:GetPlayerOwnerID()
         self:StopCustomMusic(playerID)
         self.musicState[playerID].musicSet = "silence"
-        Timers:CreateTimer(CUSTOM_RESPAWN_TIME+5, function()
-            StopGlobalSound(self.musicState[playerID].current)
-            EmitGlobalSound(self.musicState[playerID].current)
+        Timers:CreateTimer(CUSTOM_RESPAWN_TIME + 5, function()
+            local player = victim:GetPlayerOwner()
+            StopSoundOn(self.musicState[playerID].current, player)
+            EmitSoundOnClient(self.musicState[playerID].current, player)
+            -- EmitGlobalSound(self.musicState[playerID].current)
         end)
     end
 end

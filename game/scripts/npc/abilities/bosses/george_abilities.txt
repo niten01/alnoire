@@ -1,0 +1,19 @@
+"DOTAAbilities"
+{
+    // stalactites
+    // skeletons
+    // kick
+    // shield
+    // parry
+    // melee
+
+    // razor fire ring
+    // epicenters but snap ult puddles
+    // attack2_pyre_anim - elder titan crack 
+    // sunrays 360
+    // lina stun
+    // bullet hell from sides
+    // combo (idle_alt_crowns_hell)
+    // impale dash
+    // finger fire cage radial
+}

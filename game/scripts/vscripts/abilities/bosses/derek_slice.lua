@@ -51,6 +51,7 @@ function derek_slice:OnSpellStart()
     Timers:CreateTimer(animAttackPoint, function()
       local pfx = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN, caster)
       ParticleManager:ReleaseParticleIndex(pfx)
+      caster:EmitSound("ability.derek.swing")
 
       local casterPos = caster:GetAbsOrigin()
       local v = casterPos + caster:GetForwardVector() * radius

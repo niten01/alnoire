@@ -35,9 +35,9 @@
     type = "dota_update_default"
     vsnd_files =
     [
-        "sounds/vo/beastmaster/beas_kill_08.vsnd",
+        "sounds/vo/beastmaster/beas_respawn_05.vsnd",
     ]
-    volume = "3.00000"
+    volume = "3.50000"
     pitch = "0.900000"
     soundlevel = "81.000000"
     mixgroup = "weapons"
@@ -65,6 +65,62 @@
     ]
     volume = "2.00000"
     pitch = "0.900000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.swing = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_axes_swing.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.050000"
+    pitch_rand_max = "0.050000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.dash = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_dash.vsnd",
+    ]
+    volume = "1.50000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.050000"
+    pitch_rand_max = "0.050000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.axe_fury.loop = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_shield.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "3000.000000"
+  }
+  ability.derek.rebound.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_bounce_back.vsnd",
+    ]
+    volume = "1.40000"
+    pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "weapons"
     volume_fade_out = "0.000000"
@@ -109,25 +165,13 @@
     volume_fade_out = "0.000000"
     spread_radius = "3000.000000"
   }
-  ability.derek.dash = {
-    type = "dota_update_default"
-    vsnd_files =
-    [
-        "",
-    ]
-    volume = "1.50000"
-    pitch = "1.000000"
-    soundlevel = "81.000000"
-    mixgroup = "weapons"
-    volume_fade_out = "0.000000"
-    spread_radius = "3000.000000"
-  }
   ability.derek.strafe.throw = {
     type = "dota_update_default"
     vsnd_files =
     [
         "sounds/npc_abilities/derek_throw_1.vsnd",
         "sounds/npc_abilities/derek_throw_2.vsnd",
+        "sounds/npc_abilities/derek_throw_knives.vsnd"
     ]
     volume = "1.50000"
     pitch = "1.000000"
@@ -141,6 +185,9 @@
     vsnd_files =
     [
         "sounds/npc_abilities/derek_dagger_hit.vsnd",
+        "sounds/npc_abilities/derek_hit_1.vsnd",
+        "sounds/npc_abilities/derek_hit_2.vsnd",
+        "sounds/npc_abilities/derek_hit_3.vsnd",
     ]
     volume = "1.50000"
     pitch = "1.000000"
@@ -229,7 +276,7 @@
         "sounds/items/linkens_target.vsnd",
 
     ]
-    volume = "1.00000"
+    volume = "1.50000"
     pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "weapons"

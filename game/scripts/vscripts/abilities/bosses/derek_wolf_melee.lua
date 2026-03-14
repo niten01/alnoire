@@ -34,6 +34,8 @@ function derek_wolf_melee:OnSpellStart()
         local pfx = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN, caster)
         ParticleManager:ReleaseParticleIndex(pfx)
 
+        caster:EmitSound("ability.derek.swing")
+
         local casterPos = caster:GetAbsOrigin()
         local enemies = FindEnemiesInSegment(DOTA_TEAM_BADGUYS, casterPos, caster:GetForwardVector() * radius, spread)
         for _, ent in ipairs(enemies) do

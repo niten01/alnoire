@@ -881,6 +881,7 @@ return {
         pack_derek = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
+            music = "music.derek.phase1",
         },
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,
