@@ -2,7 +2,7 @@
 {
 	"npc_george" 
 	{
-		"Model"						"models/heroes/doom/doom.vmdl"
+		"Model"						"models/george/george.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Doom"
 		"Level"						"20"
@@ -15,7 +15,7 @@
 		"Ability3"					"george1_shield"			// Ability 3
 		"Ability4"					"george1_stalactites"			
 		"Ability5"					"george1_parry"			
-		"Ability6"					""			
+		"Ability6"					"george_crack"			
 		"Ability7"					""			
 		"Ability8"					""			
 		"Ability9"					""			
@@ -59,6 +59,10 @@
 		"precache"
 		{
         	"soundfile"		"soundevents/bosses/george.vsndevts"
+			"particle"		"particles/econ/items/wraith_king/wraith_king_arcana/wk_arc_reincarn.vpcf"
+			"particle"		"particles/econ/items/wraith_king/wraith_king_arcana/wk_arc_reincarn_style2.vpcf"
+			"particle"	    "particles/george_reincarn_tombstone.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
 		}
 
 		"Creature"

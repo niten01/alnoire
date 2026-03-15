@@ -73,44 +73,107 @@ end
 function modifier_george_ai:Phase1(unit, target)
     if unit.georgeCasting then return end
 
-    if unit:GetHealth() == 1 then
+    if 1 or unit:GetHealth() == 1 then
         self:Transition()
         return
     end
 
     local shield = unit:FindModifierByName("modifier_george_shield")
     if not shield or shield.charges <= 0 then
+        if CastAbility(unit, target, "george1_shield") then return end
         if CastAbility(unit, target, "george1_parry") then return end
     end
 
-    -- if CastAbility(unit, target, "george1_summon") then return end
-    -- if CastAbility(unit, target, "george1_kick") then return end
-    -- if CastAbility(unit, target, "george1_stalactites") then return end
+    if CastAbility(unit, target, "george1_kick") then return end
+    if CastAbility(unit, target, "george1_summon") then return end
+    if CastAbility(unit, target, "george1_stalactites") then return end
 end
 
 function modifier_george_ai:Phase2(unit, target)
     if unit.georgeCasting then return end
+    if CastAbility(unit, target, "george_crack") then return end
+end
+
+function modifier_george_ai:Sink()
+    local unit = self:GetParent()
+    local sinkDuration = 2
+    local sinkDepth = 150
+    local sinkProgress = 0
+    local interval = 0.1
+    local step = sinkDepth / (sinkDuration / interval)
+    Timers:CreateTimer(0, function()
+        local pos = unit:GetAbsOrigin()
+        pos.z = pos.z - step
+        unit:SetAbsOrigin(pos)
+        sinkProgress = sinkProgress + step
+        if sinkProgress >= sinkDepth then
+            unit:AddNoDraw()
+            return nil
+        else
+            return interval
+        end
+    end)
+end
+
+function modifier_george_ai:Unsink()
+    local unit = self:GetParent()
+    local pos = unit:GetAbsOrigin()
+    pos.z = GetGroundHeight(pos, unit)
+    FindClearSpaceForUnit(unit, pos, true)
+    unit:RemoveNoDraw()
 end
 
 function modifier_george_ai:Transition()
+    local duration = 4.5
     self.phase = -1
+
     local unit = self:GetParent()
+    local unitPos = unit:GetAbsOrigin()
     -- unit:EmitSound("george.vo.transform")
-    -- unit:StartGesture(ACT_DOTA_TRANSITION)
-    -- Music:StartCustomMusicForAll("music.george.phase2")
+    unit:StartGesture(ACT_DOTA_DIE)
+    Music:StartCustomMusicForAll("music.george.phase2")
 
-    Timers:CreateTimer(8.3, function()
-        -- unit:AddNewModifier(unit, nil, "modifier_model", {
-        --     duration = -1,
-        --     model = "models/george/george_wolf.vmdl",
-        --     scale = 1.8,
-        -- })
+    self:Sink()
 
-        -- unit:SetHealth(unit:GetMaxHealth())
+    local pfxs = {}
+    local pfx = ParticleManager:CreateParticle(
+        "particles/econ/items/wraith_king/wraith_king_arcana/wk_arc_reincarn_style2.vpcf", PATTACH_WORLDORIGIN, nil)
+    ParticleManager:SetParticleControl(pfx, 0, unitPos)
+    ParticleManager:SetParticleControl(pfx, 1, Vector(duration, 0, 0))
+    table.insert(pfxs, pfx)
 
-        -- Timers:CreateTimer(0.5, function()
-        --     self.phase = 2
-        -- end)
+    local pfx = ParticleManager:CreateParticle(
+        "particles/econ/items/wraith_king/wraith_king_arcana/wk_arc_reincarn.vpcf", PATTACH_WORLDORIGIN, nil)
+    ParticleManager:SetParticleControl(pfx, 0, unitPos)
+    ParticleManager:SetParticleControl(pfx, 1, Vector(duration, 0, 0))
+    table.insert(pfxs, pfx)
+
+    local pfx = ParticleManager:CreateParticle(
+        "particles/george_reincarn_tombstone.vpcf", PATTACH_WORLDORIGIN,
+        nil)
+    ParticleManager:SetParticleControl(pfx, 0, unitPos)
+    table.insert(pfxs, pfx)
+
+    Timers:CreateTimer(duration, function()
+        for _, pfx in ipairs(pfxs) do
+            ParticleManager:DestroyParticle(pfx, false)
+            ParticleManager:ReleaseParticleIndex(pfx)
+        end
+
+        local pfx = ParticleManager:CreateParticle(
+            "particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_ABSORIGIN, unit)
+        ParticleManager:ReleaseParticleIndex(pfx)
+
+        unit:SetHealth(unit:GetMaxHealth())
+        unit:RemoveModifierByName("modifier_stunned")
+        unit:RemoveModifierByName("modifier_george_shield")
+        unit:RemoveModifierByName("modifier_model")
+        self:Unsink()
+        unit:StartGesture(ACT_DOTA_SPAWN)
+
+        Timers:CreateTimer(0.5, function()
+            self.phase = 2
+        end)
     end)
 end
 

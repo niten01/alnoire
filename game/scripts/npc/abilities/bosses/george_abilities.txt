@@ -59,12 +59,14 @@
         "BaseClass"                     "ability_lua"
         "ScriptFile"                    "abilities/bosses/george1_shield.lua"
         "AbilityTextureName"            "skeleton_king_hellfire_blast"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityCooldown"               "20" 
+
+        "AbilityCastRange"        		"9999"
         
         "AbilityValues"
         {
             "stun_duration"            "5"
-            "reload_duration"          "20"
         }
 
         "precache"
@@ -134,12 +136,69 @@
             "particle"		"particles/george_parry.vpcf"
         }
     }
-    // parry
     // melee
 
+
+    "george_crack"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george_crack.lua"
+        "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+        "AbilityCastPoint"              "0.52"
+
+        "AbilityCooldown"               "8" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+        "AbilityValues"
+        {
+            "distance"            "3000"
+            "damage"              "200"
+            "travel_time"         "1.5"
+            "width"               "150"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/george_crack.vpcf"
+        }
+    }
+    "george_ring"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george_ring.lua"
+        "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCastPoint"              "0.58"
+
+        "AbilityCooldown"               "8" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+        "AbilityValues"
+        {
+            "min_radius"          "100"
+            "max_radius"          "1000"
+            "damage"              "200"
+            "travel_time"         "1.5"
+            "width"               "50"
+            "warning_delay"       "0.5"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/george_crack.vpcf"
+        }
+    }
     // razor fire ring
     // epicenters but snap ult puddles
-    // attack2_pyre_anim - elder titan crack 
     // sunrays 360
     // lina stun
     // bullet hell from sides

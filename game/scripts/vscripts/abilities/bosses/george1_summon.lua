@@ -19,7 +19,7 @@ function george1_summon:OnSpellStart()
         CreateUnitByNameAsync(
             "npc_george_summon",
             point,
-            false,
+            true,
             nil,
             nil,
             DOTA_TEAM_BADGUYS,

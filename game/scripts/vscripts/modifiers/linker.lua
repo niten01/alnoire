@@ -15,6 +15,7 @@ LinkLuaModifier('modifier_gorilla_invulnerable', 'modifiers/modifier_gorilla_inv
 LinkLuaModifier('modifier_generic_vector_target', 'modifiers/modifier_generic_vector_target', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_generic_unkillable", "modifiers/modifier_generic_unkillable", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_model", "modifiers/modifier_model", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_generic_ring", "modifiers/modifier_generic_ring", LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_tower', 'modifiers/modifier_tower', LUA_MODIFIER_MOTION_NONE)
@@ -31,7 +32,8 @@ LinkLuaModifier("modifier_gorilla_umm", "modifiers/abilities/modifier_gorilla_um
 LinkLuaModifier("modifier_gorilla_capture", "modifiers/abilities/modifier_gorilla_capture", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_island_duo_frenzy", "modifiers/abilities/modifier_island_duo_frenzy", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_island_duo_hidden", "modifiers/abilities/modifier_island_duo_hidden", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_island_duo_hidden_vis", "modifiers/abilities/modifier_island_duo_hidden_vis", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_island_duo_hidden_vis", "modifiers/abilities/modifier_island_duo_hidden_vis",
+    LUA_MODIFIER_MOTION_NONE)
 
 -- jungle
 LinkLuaModifier("modifier_cust_rosh", "modifiers/jungle/modifier_cust_rosh", LUA_MODIFIER_MOTION_NONE)
@@ -47,7 +49,8 @@ LinkLuaModifier("modifier_ogre_bruiser_ai", "modifiers/ai/modifier_ogre_bruiser_
 LinkLuaModifier("modifier_island_guard_ai", "modifiers/ai/modifier_island_guard_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_island_fiend_ai", "modifiers/ai/modifier_island_fiend_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_island_demon_ai", "modifiers/ai/modifier_island_demon_ai", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_island_demon_illusion_ai", "modifiers/ai/modifier_island_demon_illusion_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_island_demon_illusion_ai", "modifiers/ai/modifier_island_demon_illusion_ai",
+    LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_killer_ai", "modifiers/ai/modifier_killer_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_goden_ai", "modifiers/ai/modifier_goden_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_ball_ai", "modifiers/ai/modifier_ball_ai", LUA_MODIFIER_MOTION_NONE)
