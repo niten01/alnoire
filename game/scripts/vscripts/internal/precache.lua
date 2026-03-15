@@ -283,6 +283,8 @@ return {
         "soundevents/jungle/junglefurion.vsndevts",
         "soundevents/jungle/junglebears.vsndevts",
         "soundevents/jungle/jungleperdun.vsndevts",
+        "soundevents/ocean/seledka.vsndevts",
+        "soundevents/ocean/arbuz.vsndevts",
         "soundevents/bosses/ball.vsndevts",
     },
     particles = {
