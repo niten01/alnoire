@@ -91,7 +91,9 @@ end
 
 function modifier_george_ai:Phase2(unit, target)
     if unit.georgeCasting then return end
-    if CastAbility(unit, target, "george_crack") then return end
+    -- if CastAbility(unit, target, "george_crack") then return end
+    -- if CastAbility(unit, target, "george_ring") then return end
+    if CastAbility(unit, target, "george_puddles") then return end
 end
 
 function modifier_george_ai:Sink()
@@ -168,10 +170,10 @@ function modifier_george_ai:Transition()
         unit:RemoveModifierByName("modifier_stunned")
         unit:RemoveModifierByName("modifier_george_shield")
         unit:RemoveModifierByName("modifier_model")
-        self:Unsink()
         unit:StartGesture(ACT_DOTA_SPAWN)
+        self:Unsink()
 
-        Timers:CreateTimer(0.5, function()
+        Timers:CreateTimer(2.0, function()
             self.phase = 2
         end)
     end)

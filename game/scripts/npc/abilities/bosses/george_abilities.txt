@@ -174,8 +174,8 @@
         "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         
-        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
-        "AbilityCastPoint"              "0.58"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_6"
+        "AbilityCastPoint"              "0.54"
 
         "AbilityCooldown"               "8" 
         "AbilityCastRange"        		"9999"
@@ -184,7 +184,7 @@
 
         "AbilityValues"
         {
-            "min_radius"          "100"
+            "min_radius"          "0"
             "max_radius"          "1000"
             "damage"              "200"
             "travel_time"         "1.5"
@@ -197,8 +197,43 @@
             "particle"		"particles/george_crack.vpcf"
         }
     }
-    // razor fire ring
-    // epicenters but snap ult puddles
+    "george_puddles"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george_puddles.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastPoint"				"0.4"
+        "AbilityCooldown"		        "10.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"area_radius"		"275"	
+			"spawn_radius"  "1500"	
+			"num_areas"     "8"
+            "duration"      "5"
+			"dps"    "135"
+            "warning_delay" "1.0"
+
+            // rand min max
+            "start_delay"  "2 4"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/george_puddle.vpcf"
+		}
+	}
     // sunrays 360
     // lina stun
     // bullet hell from sides

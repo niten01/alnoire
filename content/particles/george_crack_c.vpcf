@@ -165,15 +165,15 @@
 	[
 		{
 			m_bEndCap = true
-			m_ChildRef = resource:"particles/units/heroes/hero_elder_titan/elder_titan_earth_splitter_c_glow.vpcf"
+			m_ChildRef = resource:"particles/george_crack_c_glow.vpcf"
 		},
 		{
 			m_bEndCap = true
-			m_ChildRef = resource:"particles/units/heroes/hero_elder_titan/elder_titan_earth_splitter_c_glow_b.vpcf"
+			m_ChildRef = resource:"particles/george_crack_c_glow_b.vpcf"
 		},
 		{
 			m_bEndCap = true
-			m_ChildRef = resource:"particles/units/heroes/hero_elder_titan/elder_titan_earth_splitter_c_glow_c.vpcf"
+			m_ChildRef = resource:"particles/george_crack_c_glow_c.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_elder_titan/elder_titan_earth_splitter_smoke_b.vpcf"
