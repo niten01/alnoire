@@ -1,0 +1,37 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  Seledka.Ponds.Phrases = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/slardar/slar_attack_09.vsnd",
+          "sounds/vo/slardar/slar_attack_07.vsnd",
+          "sounds/vo/slardar/slar_attack_11.vsnd",
+          "sounds/vo/slardar/slar_cast_03.vsnd",
+          "sounds/vo/slardar/slar_kill_04.vsnd",
+      ]
+      
+      volume = 7.0
+      pitch = 1.0
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+
+  Seledka.Death = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/slardar/slar_death_06.vsnd",
+      ]
+      
+      volume = 7.0
+      pitch = 1.0
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+}

@@ -75,6 +75,23 @@ function GiveCastOrderSimple(unit, target, ability)
   elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_TOGGLE) ~= 0 then
     unit:CastAbilityToggle(ability, -1)
   else
+    DebugPrint("[Error] Unknown behavior for: " .. ability:GetName() .. " Value: " .. tostring(behavior))
+    error("Could not cast ability: " .. ability:GetName())
+  end
+end
+
+function GiveCastOrderForcedBehavior(unit, ability, behavior, target)
+  assert(behavior)
+  if behavior == DOTA_ABILITY_BEHAVIOR_UNIT_TARGET then
+    unit:CastAbilityOnTarget(target, ability, -1)
+  elseif behavior == DOTA_ABILITY_BEHAVIOR_NO_TARGET then
+    unit:CastAbilityNoTarget(ability, -1)
+  elseif behavior == DOTA_ABILITY_BEHAVIOR_POINT then
+    unit:CastAbilityOnPosition(GetTargetPos(target), ability, -1)
+  elseif behavior == DOTA_ABILITY_BEHAVIOR_TOGGLE then
+    unit:CastAbilityToggle(ability, -1)
+  else
+    DebugPrint("[Error] Unknown behavior for: " .. ability:GetName() .. " Value: " .. tostring(behavior))
     error("Could not cast ability: " .. ability:GetName())
   end
 end
@@ -84,7 +101,11 @@ function GiveCastOrderAI(unit, target, ability)
   local cast = function()
     if not unit or unit:IsNull() then return end
     unit:Stop()
-    GiveCastOrderSimple(unit, target, ability)
+    if ability.forcedBehavior then
+      GiveCastOrderForcedBehavior(unit, ability, ability.forcedBehavior, target)
+    else
+      GiveCastOrderSimple(unit, target, ability)
+    end
     unit.lastCastAbilityName = ability:GetAbilityName()
   end
 
