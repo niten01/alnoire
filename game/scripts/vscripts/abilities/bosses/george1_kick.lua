@@ -48,7 +48,7 @@ function george1_kick:OnSpellStart()
         })
 
         local entPos = ent:GetAbsOrigin()
-        local v = entPos - casterPos
+        local v = self.endPos - casterPos
         local dest = GetSafeBlinkDestination(entPos, entPos + v:Normalized() * maxDist, maxDist)
 
         ent:AddNewModifier(caster, self, "modifier_move_ease", {

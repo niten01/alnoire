@@ -1,8 +1,14 @@
 george1_shield = class {}
 LinkLuaModifier("modifier_george_shield", "abilities/bosses/george1_shield.lua", LUA_MODIFIER_MOTION_NONE)
 
-function george1_shield:GetIntrinsicModifierName()
-    return "modifier_george_shield"
+function george1_shield:OnSpellStart()
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    if not caster:HasModifier("modifier_george_shield") then
+        caster:AddNewModifier(caster, self, "modifier_george_shield", {
+            duration = -1
+        })
+    end
 end
 
 ------------------------------------------------------------
@@ -10,6 +16,7 @@ end
 modifier_george_shield = class {}
 
 function modifier_george_shield:IsHidden() return false end
+
 function modifier_george_shield:IsPurgable() return false end
 
 function modifier_george_shield:OnCreated()
@@ -50,22 +57,25 @@ function modifier_george_shield:Refresh()
     self:SendBuffRefreshToClients()
 end
 
+function modifier_george_shield:OnDestroy()
+end
+
 function modifier_george_shield:Break()
-    ParticleManager:DestroyParticle(self.pfx, false)
-    ParticleManager:ReleaseParticleIndex(self.pfx)
+    if self.pfx then
+        ParticleManager:DestroyParticle(self.pfx, false)
+        ParticleManager:ReleaseParticleIndex(self.pfx)
+    end
 
     local parent = self:GetParent()
+    if not parent or parent:IsNull() then return end
+
     parent:EmitSound("ability.george1.shield.break")
 
     parent:Stop()
     local stunDuration = self:GetAbility():GetSpecialValueFor("stun_duration")
-    local reloadDuration = self:GetAbility():GetSpecialValueFor("reload_duration")
     parent:AddNewModifier(parent, self:GetAbility(), "modifier_stunned", {
         duration = stunDuration
     })
-    Timers:CreateTimer(reloadDuration, function()
-        self:Refresh()
-    end)
 end
 
 function modifier_george_shield:GetModifierIncomingDamageConstant(params)
@@ -85,6 +95,7 @@ function modifier_george_shield:GetModifierIncomingDamageConstant(params)
     if IsServer() then
         if self.charges == 1 then
             self:Break()
+            self:Destroy()
         else
             ParticleManager:SetParticleControl(self.pfx, self.charges + 1, Vector(0, 0, 0))
         end

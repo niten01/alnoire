@@ -940,10 +940,14 @@ return {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
             music = "music.derek.phase1",
+            rangeFastTickRate = 2000,
+            rangeRetreat = 2000,
+            rangeAggro = 2000,
         },
         pack_george = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
+            music = "music.george.phase1",
         },
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,
