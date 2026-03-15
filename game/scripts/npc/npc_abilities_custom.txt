@@ -27,6 +27,7 @@
 #base "abilities/ocean/spiders_abilities.txt"
 #base "abilities/ocean/arbuz_abilities.txt"
 #base "abilities/ocean/seledka_abilities.txt"
+#base "abilities/ocean/morph_abilities.txt"
 
 #base "abilities/heroes/towel_master_abilities.txt"
 #base "abilities/heroes/rapper_abilities.txt"

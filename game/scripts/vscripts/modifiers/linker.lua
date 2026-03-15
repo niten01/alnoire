@@ -36,7 +36,12 @@ LinkLuaModifier("modifier_island_duo_hidden_vis", "modifiers/abilities/modifier_
 
 -- jungle
 LinkLuaModifier("modifier_cust_rosh", "modifiers/jungle/modifier_cust_rosh", LUA_MODIFIER_MOTION_NONE)
+
+-- ocean
 LinkLuaModifier("modifier_tusik_papa_hide", "modifiers/ocean/modifier_tusik_papa_hide", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_morph_big", "modifiers/ocean/modifier_morph_big", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_morph_small", "modifiers/ocean/modifier_morph_big", LUA_MODIFIER_MOTION_NONE)
+
 
 
 -- ai

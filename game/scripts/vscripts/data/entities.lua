@@ -358,7 +358,7 @@ return {
             ai_modifier = "modifier_derek_ai",
             modifiers = { "modifier_story_npc" },
         },
-        spawner_george                  = {
+        spawner_george                = {
             npc = "npc_george",
             packID = "pack_george",
             ai_modifier = "modifier_george_ai",
@@ -625,6 +625,22 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
+        spawner_morph_big           = {
+            npc = "npc_ocean_morph_big",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_morphs",
+            ai_modifier = "modifier_default_creep_ai",
+            modifiers = { "modifier_morph_big" }
+        },
+
+        spawner_morph_small         = {
+            npc = "npc_ocean_morph_small",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_morphs",
+            ai_modifier = "modifier_default_creep_ai",
+            modifiers = { "modifier_morph_small" }
+        },
+
 
         spawner_dream_concert         = {
             npc = "npc_dream",
@@ -870,6 +886,13 @@ return {
         },
 
         pack_ocean_act2_seledka = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_ocean_act2_morphs = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,
