@@ -364,6 +364,13 @@ return {
             ai_modifier = "modifier_george_ai",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_george_summon         = {
+            npc = "npc_george_summon",
+            packID = "pack_george",
+            ai_modifier = "modifier_default_creep_ai",
+            deferred = true,
+            team = DOTA_TEAM_BADGUYS,
+        },
 
         -- jungle
         spawner_lizards_venomancer    = {
@@ -948,6 +955,9 @@ return {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
             music = "music.george.phase1",
+            rangeFastTickRate = 3000,
+            rangeRetreat = 2000,
+            rangeAggro = 2000,
         },
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,

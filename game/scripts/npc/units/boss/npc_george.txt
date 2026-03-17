@@ -16,12 +16,12 @@
 		"Ability4"					"george1_stalactites"			
 		"Ability5"					"george1_parry"			
 		"Ability6"					"george_crack"			
-		"Ability7"					""			
-		"Ability8"					""			
-		"Ability9"					""			
-		"Ability10"					""			
-		"Ability11"					""			
-		"Ability12"					""			
+		"Ability7"					"george_ring"			
+		"Ability8"					"george_puddles"			
+		"Ability9"					"george_sunrays"			
+		"Ability10"					"george_bullets"			
+		"Ability11"					"george_impale"			
+		"Ability12"					"george_stun"			
 		"Ability13"					""			
 
 		"ArmorPhysical"				"1"			
@@ -63,6 +63,8 @@
 			"particle"		"particles/econ/items/wraith_king/wraith_king_arcana/wk_arc_reincarn_style2.vpcf"
 			"particle"	    "particles/george_reincarn_tombstone.vpcf"
 			"particle"		"particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
+			"particle"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+			"particle"		"particles/units/heroes/hero_doom_bringer/doom_scorched_earth.vpcf"
 		}
 
 		"Creature"
@@ -98,7 +100,7 @@
 		"AttackDamageMax"			"20"		// Damage range max.
 		"AttackRate"				"1.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"99999"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 
 		"HasAggressiveStance"	"0"
@@ -129,8 +131,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"99999"		// Range of vision during day light.
-		"VisionNighttimeRange"		"99999"		// Range of vision at night time.
+		"VisionDaytimeRange"		"5000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"5000"		// Range of vision at night time.
 
 		// Team
 		//----------------------------------------------------------------

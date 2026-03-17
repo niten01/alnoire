@@ -3,9 +3,9 @@ george_ring = class {}
 function george_ring:ShowWarning()
     local caster = self:GetCaster()
     local casterPos = caster:GetAbsOrigin()
-    local minRadius = self:GetSpecialValueFor("min_radius")
+    local maxRadius = self:GetSpecialValueFor("max_radius")
     local warningDelay = self:GetSpecialValueFor("warning_delay")
-    ShowGenericCircleWarning(casterPos, minRadius, warningDelay + self:GetCastPoint())
+    ShowGenericCircleWarning(casterPos, maxRadius, warningDelay + self:GetCastPoint())
     return warningDelay
 end
 
@@ -13,17 +13,21 @@ function george_ring:OnSpellStart()
     if not IsServer() then return end
     local caster = self:GetCaster()
     local casterPos = caster:GetAbsOrigin()
-    local minRadius = self:GetSpecialValueFor("min_radius")
     local maxRadius = self:GetSpecialValueFor("max_radius")
     local width = self:GetSpecialValueFor("width")
     local damage = self:GetSpecialValueFor("damage")
     local travelTime = self:GetSpecialValueFor("travel_time")
+    local speed = (maxRadius) / travelTime
+
+    local pfx = ParticleManager:CreateParticle("particles/george_ring.vpcf", PATTACH_ABSORIGIN, caster)
+    ParticleManager:SetParticleControl(pfx, 1, Vector(speed, maxRadius, 1))
+
+    caster:EmitSound("ability.george.ring.cast")
 
     local pulse = caster:AddNewModifier(caster, self, "modifier_generic_ring", {
-        start_radius = minRadius,
         end_radius = maxRadius,
         width = width,
-        speed = (maxRadius - minRadius) / travelTime,
+        speed = speed,
         target_team = DOTA_UNIT_TARGET_TEAM_ENEMY,
         target_type = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
     })
@@ -36,5 +40,11 @@ function george_ring:OnSpellStart()
             damage_type = self:GetAbilityDamageType(),
             ability = self,
         })
+        ApplyGeorgeBurn(enemy, self)
+    end)
+
+    pulse:SetEndCallback(function()
+        ParticleManager:DestroyParticle(pfx, false)
+        ParticleManager:ReleaseParticleIndex(pfx)
     end)
 end

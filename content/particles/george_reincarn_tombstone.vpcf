@@ -33,7 +33,7 @@
 			{
 				m_nType = "PF_TYPE_LITERAL"
 				m_nMapType = "PF_MAP_TYPE_DIRECT"
-				m_flLiteralValue = 5.0
+				m_flLiteralValue = 7.0
 				m_NamedValue = ""
 				m_nControlPoint = 0
 				m_nScalarAttribute = 3
@@ -133,6 +133,7 @@
 			_class = "C_OP_BasicMovement"
 			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
 			m_Gravity = [ 0.0, 0.0, -1000.0 ]
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_LerpEndCapScalar"
@@ -186,6 +187,11 @@
 			m_modelInput = 
 			{
 			}
+			VisibilityInputs = 
+			{
+				m_flCameraBias = -10.0
+			}
+			m_bDisableDepthPrepass = true
 		},
 	]
 	m_Children = 

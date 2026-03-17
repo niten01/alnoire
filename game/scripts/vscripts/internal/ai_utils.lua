@@ -268,7 +268,7 @@ function FindSanyaInRadius(centerPoint, radius)
     false
   )
 
-  for _, unit in pairs(units) do
+  for _, unit in ipairs(units) do
     if unit:IsRealHero() and unit:GetPlayerOwnerID() ~= -1 and not unit:IsSpiritBearCustom() then
       return unit
     end

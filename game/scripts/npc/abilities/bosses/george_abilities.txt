@@ -147,9 +147,9 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
-        "AbilityCastPoint"              "0.52"
+        "AbilityCastPoint"              "0.7"
 
-        "AbilityCooldown"               "8" 
+        "AbilityCooldown"               "5" 
         "AbilityCastRange"        		"9999"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -174,8 +174,8 @@
         "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         
-        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
-        "AbilityCastPoint"              "0.58"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_6"
+        "AbilityCastPoint"              "0.54"
 
         "AbilityCooldown"               "8" 
         "AbilityCastRange"        		"9999"
@@ -184,7 +184,7 @@
 
         "AbilityValues"
         {
-            "min_radius"          "100"
+            "min_radius"          "0"
             "max_radius"          "1000"
             "damage"              "200"
             "travel_time"         "1.5"
@@ -194,15 +194,212 @@
 
         "precache"
         {
-            "particle"		"particles/george_crack.vpcf"
+            "particle"		"particles/george_ring.vpcf"
         }
     }
-    // razor fire ring
-    // epicenters but snap ult puddles
-    // sunrays 360
-    // lina stun
-    // bullet hell from sides
+    "george_puddles"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george_puddles.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastPoint"				"0.4"
+        "AbilityCooldown"		        "10.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"area_radius"		"275"	
+			"spawn_radius"  "1500"	
+			"num_areas"     "8"
+            "duration"      "5"
+			"dps"    "135"
+            "warning_delay" "1.0"
+
+            // rand min max
+            "start_delay"  "2 4"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/george_puddle.vpcf"
+		}
+	}
+    "george_sunrays"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george_sunrays.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		"AbilityChannelAnimation"		    "ACT_DOTA_CHANNEL_ABILITY_1"
+		"AbilityCastAnimation"		    "ACT_DOTA_CHANNEL_ABILITY_1"
+		"AbilityChannelTime"			"7.0"
+		"AbilityCastPoint"			    "1.0"
+        "AbilityCooldown"		        "30.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"length"		"1500"	
+            "num_rays"      "10"
+            "angular_velocity" "0.5"
+			"dps"           "135"
+			"width"           "70"
+            // cast point is warning delay
+		}
+
+		"precache"
+		{
+			"particle"		"particles/george_ray.vpcf"
+		}
+	}
+    "george_bullets"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george_bullets.lua"
+        "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCastPoint"              "0.94"
+
+        "AbilityCooldown"               "35" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+        "AbilityValues"
+        {
+            "proj_distance"            "5000"
+            "proj_speed"                "250"
+            "proj_radius"               "30"
+            "shot_interval"             "0.07"
+            "duration"                  "10"
+            "spread"                    "180"
+            "num_directions"            "18"
+            "num_simultaneous_spawners" "2"
+            "damage"                    "200"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/george_bullet.vpcf"
+        }
+    }
+    "george_impale"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george_impale.lua"
+        "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+        "AbilityCastPoint"              "0.67"
+
+        "AbilityCooldown"               "5" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+        "AbilityValues"
+        {
+            "damage"              "200"
+            "travel_time"         "0.5"
+            "width"               "150"
+            "length"              "400"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/george_move.vpcf"
+            "particle"		"particles/george_impale_spear.vpcf"
+        }
+    }
+    "george_stun"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george_stun.lua"
+        "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1_END"
+        "AbilityCastPoint"              "0.7"
+
+        "AbilityCooldown"               "8" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+        "AbilityValues"
+        {
+            "damage"              "100"
+            "stun_duration"       "0.5"
+            "radius"              "200"
+            "interval"            "0.4"
+            "delay"               "1.0"
+
+            // rand min max
+            "num_strikes"         "3 6"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7_gold.vpcf"
+        }
+    }
+    "george_cage"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/george_cage.lua"
+        "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1_END"
+        "AbilityCastPoint"              "0.7"
+
+        "AbilityCooldown"               "8" 
+        "AbilityCastRange"        		"9999"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+        "AbilityValues"
+        {
+            "damage"              "100"
+            "stun_duration"       "0.5"
+            "radius"              "200"
+            "interval"            "0.4"
+            "delay"               "1.0"
+
+            // rand min max
+            "num_strikes"         "3 6"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7_gold.vpcf"
+        }
+    }
     // combo (idle_alt_crowns_hell)
-    // impale dash
     // finger fire cage radial
 }

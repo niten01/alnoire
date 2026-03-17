@@ -27,6 +27,8 @@ function modifier_george_ai:ResetState()
             scale = 1.5,
         })
     end)
+
+    self:DestroyEnvParticles()
 end
 
 modifier_george_ai.OnCreated = modifier_george_ai.ResetState
@@ -73,7 +75,7 @@ end
 function modifier_george_ai:Phase1(unit, target)
     if unit.georgeCasting then return end
 
-    if 1 or unit:GetHealth() == 1 then
+    if unit:GetHealth() == 1 then
         self:Transition()
         return
     end
@@ -91,7 +93,13 @@ end
 
 function modifier_george_ai:Phase2(unit, target)
     if unit.georgeCasting then return end
+    if CastAbility(unit, target, "george_impale") then return end
     if CastAbility(unit, target, "george_crack") then return end
+    if CastAbility(unit, target, "george_stun") then return end
+    if CastAbility(unit, target, "george_ring") then return end
+    if CastAbility(unit, target, "george_puddles") then return end
+    if CastAbility(unit, target, "george_sunrays") then return end
+    if CastAbility(unit, target, "george_bullets") then return end
 end
 
 function modifier_george_ai:Sink()
@@ -127,9 +135,10 @@ function modifier_george_ai:Transition()
     local duration = 4.5
     self.phase = -1
 
+    self:KillSkeletons()
+
     local unit = self:GetParent()
     local unitPos = unit:GetAbsOrigin()
-    -- unit:EmitSound("george.vo.transform")
     unit:StartGesture(ACT_DOTA_DIE)
     Music:StartCustomMusicForAll("music.george.phase2")
 
@@ -154,35 +163,76 @@ function modifier_george_ai:Transition()
     ParticleManager:SetParticleControl(pfx, 0, unitPos)
     table.insert(pfxs, pfx)
 
+    unit:EmitSound("george.vo.transform")
+
     Timers:CreateTimer(duration, function()
         for _, pfx in ipairs(pfxs) do
             ParticleManager:DestroyParticle(pfx, false)
             ParticleManager:ReleaseParticleIndex(pfx)
         end
 
+        self:CreateEnvParticles()
+
         local pfx = ParticleManager:CreateParticle(
             "particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_ABSORIGIN, unit)
         ParticleManager:ReleaseParticleIndex(pfx)
+
+        ScreenShake(unit:GetAbsOrigin(), 50, 5, 1.5, 3000, 0, true)
 
         unit:SetHealth(unit:GetMaxHealth())
         unit:RemoveModifierByName("modifier_stunned")
         unit:RemoveModifierByName("modifier_george_shield")
         unit:RemoveModifierByName("modifier_model")
-        self:Unsink()
         unit:StartGesture(ACT_DOTA_SPAWN)
+        self:Unsink()
 
-        Timers:CreateTimer(0.5, function()
+        Timers:CreateTimer(2.0, function()
             self.phase = 2
         end)
     end)
 end
 
+function modifier_george_ai:KillSkeletons()
+    for _, ent in ipairs(Entities:FindAllByName("npc_george_summon")) do
+        ent:ForceKill(false)
+    end
+end
+
 function modifier_george_ai:TransitionBack()
-    -- local unit = self:GetParent()
+    local unit = self:GetParent()
+    unit:StopSound("ability.george.sunrays.loop")
     -- unit:RemoveModifierByName("modifier_model")
     -- local pfx = ParticleManager:CreateParticle(
     --     "particles/econ/items/lifestealer/ls_ti10_immortal/ls_ti10_immortal_infest.vpcf",
     --     PATTACH_ABSORIGIN_FOLLOW,
     --     unit)
     -- ParticleManager:ReleaseParticleIndex(pfx)
+end
+
+function modifier_george_ai:DestroyEnvParticles()
+    for _, pfx in ipairs(self.envPfxs or {}) do
+        ParticleManager:DestroyParticle(pfx, false)
+        ParticleManager:ReleaseParticleIndex(pfx)
+    end
+    self.envPfxs = {}
+
+    for _, ent in ipairs(Entities:FindAllByName("george_arena_fire")) do
+        DoEntFireByInstanceHandle(ent, "Stop", "", 0, nil, nil)
+    end
+end
+
+function modifier_george_ai:CreateEnvParticles()
+    self.envPfxs = {}
+    -- local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_doom_bringer/doom_scorched_earth.vpcf",
+    --     PATTACH_WORLDORIGIN, nil)
+    -- ParticleManager:SetParticleControl(pfx, 0, Entities:FindByName(nil, "pack_george"):GetAbsOrigin())
+    -- ParticleManager:SetParticleControl(pfx, 1, Vector(2000, 0, 0))
+    -- table.insert(self.envPfxs, pfx)
+
+    -- for _, point in ipairs(Entities:FindAllByName("george_bullets_point")) do
+
+    -- end
+    for _, ent in ipairs(Entities:FindAllByName("george_arena_fire")) do
+        DoEntFireByInstanceHandle(ent, "Start", "", 0, nil, nil)
+    end
 end

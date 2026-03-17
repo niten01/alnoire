@@ -36,6 +36,15 @@
 						weight = 1.0
 						ignore_rotation = false
 					},
+					{
+						_class = "Attachment"
+						name = "attach_spear"
+						parent_bone = "sword_1"
+						relative_origin = [ 1.04332, -0.000275, 225.771423 ]
+						relative_angles = [ -88.85041, -0.001204, 0.001187 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
 				]
 			},
 			{
@@ -407,7 +416,7 @@
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
-						framerate = 24.0
+						framerate = 16.0
 						reverse = false
 						additional_anim_files = [  ]
 					},
@@ -457,7 +466,7 @@
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
-						framerate = 24.0
+						framerate = 15.0
 						reverse = false
 						additional_anim_files = [  ]
 					},
@@ -482,7 +491,7 @@
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
-						framerate = 4.0
+						framerate = 15.0
 						reverse = false
 						additional_anim_files = [  ]
 					},
@@ -588,6 +597,31 @@
 					},
 					{
 						_class = "AnimFile"
+						name = "cast9"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_CAST_ABILITY_1_END"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/george/animations/cast9.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 20.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
 						name = "death"
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_DIE"
@@ -666,6 +700,31 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = 12.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "channel1"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_CHANNEL_ABILITY_1"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.5
+						fade_out_time = 0.4
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/george/animations/channel1.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 16.0
 						reverse = false
 						additional_anim_files = [  ]
 					},

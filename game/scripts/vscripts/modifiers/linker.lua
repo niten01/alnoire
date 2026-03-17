@@ -34,6 +34,7 @@ LinkLuaModifier("modifier_island_duo_frenzy", "modifiers/abilities/modifier_isla
 LinkLuaModifier("modifier_island_duo_hidden", "modifiers/abilities/modifier_island_duo_hidden", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_island_duo_hidden_vis", "modifiers/abilities/modifier_island_duo_hidden_vis",
     LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_george_burn", "modifiers/abilities/modifier_george_burn", LUA_MODIFIER_MOTION_NONE)
 
 -- jungle
 LinkLuaModifier("modifier_cust_rosh", "modifiers/jungle/modifier_cust_rosh", LUA_MODIFIER_MOTION_NONE)
@@ -76,5 +77,4 @@ LinkLuaModifier("modifier_tadpole_ranged_ai", "modifiers/ai/modifier_tadpole_ran
 
 -- bosses
 LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)
-
 LinkLuaModifier('modifier_demon_power', 'modifiers/modifier_demon_power', LUA_MODIFIER_MOTION_NONE)

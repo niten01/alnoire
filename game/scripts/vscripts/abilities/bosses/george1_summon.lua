@@ -9,21 +9,24 @@ function george1_summon:OnSpellStart()
 
     caster:EmitSound("ability.george.summon.cast")
 
-    local points = RandomPointsInCircle(casterPos, radius, numSkeletons, 200)
-    for _, point in ipairs(points) do
+    for _, spawnerEnt in ipairs(Entities:FindAllByName("spawner_george_summon")) do
+        local point = spawnerEnt:GetAbsOrigin()
         point.z = GetGroundHeight(point, nil)
         local pfx = ParticleManager:CreateParticle("particles/neutral_fx/skeleton_spawn.vpcf", PATTACH_WORLDORIGIN, nil)
         ParticleManager:SetParticleControl(pfx, 0, point)
         ParticleManager:ReleaseParticleIndex(pfx)
-
-        CreateUnitByNameAsync(
-            "npc_george_summon",
-            point,
-            true,
-            nil,
-            nil,
-            DOTA_TEAM_BADGUYS,
-            function(npc) end
-        )
     end
+
+    SpawnManager:SpawnNPC("spawner_george_summon")
+    -- CreateUnitByNameAsync(
+    --     "npc_george_summon",
+    --     point,
+    --     true,
+    --     nil,
+    --     nil,
+    --     DOTA_TEAM_BADGUYS,
+    --     function(npc)
+    --         npc:SetEntityName("npc_george_summon")
+    --     end
+    -- )
 end
