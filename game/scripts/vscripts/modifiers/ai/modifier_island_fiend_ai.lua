@@ -5,13 +5,14 @@ function modifier_island_fiend_ai:IsHidden() return true end
 function modifier_island_fiend_ai:IsPurgable() return false end
 
 function modifier_island_fiend_ai:ResetState()
+    local parent = self:GetParent()
     self.phase = 1
     self.blinkSeq = -1
     self.blinkSeqInProgress = false
     self.blinkSeqTimers = {}
     self.partner = nil
     Timers:CreateTimer(0, function()
-        self:RemoveModifierByName("modifier_island_duo_frenzy")
+        parent:RemoveModifierByName("modifier_island_duo_frenzy")
         self.partner = Entities:FindByName(nil, "npc_island_demon")
         if not self.partner then return 0.5 end
 
@@ -19,7 +20,6 @@ function modifier_island_fiend_ai:ResetState()
         return nil
     end)
 
-    local parent = self:GetParent()
     parent:AddNewModifier(parent, nil, "modifier_generic_unkillable", { duration = -1 })
 end
 

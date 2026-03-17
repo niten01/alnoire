@@ -1,6 +1,19 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 
 {
+  george.vo.transform = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/doom_bringer/doom_respawn_11.vsnd",
+    ]
+    volume = "2.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
   ability.george.summon.cast = {
     type = "dota_update_default"
     vsnd_files =
@@ -124,6 +137,153 @@
     soundlevel = "81.000000"
     mixgroup = "weapons"
     fade_out = "0.5"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george.sunrays.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/phoenix/sunray_cast.vsnd",
+    ]
+    volume = "1.50000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george.sunrays.loop = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/phoenix/sunray_beam_loop.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    fade_out = "0.5"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george.bullets.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/lina/attack.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george.puddles.spawn = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/snapfire/magma01.vsnd",
+        "sounds/weapons/hero/snapfire/magma02.vsnd",
+        "sounds/weapons/hero/snapfire/magma03.vsnd",
+        "sounds/weapons/hero/snapfire/magma04.vsnd",
+    ]
+    volume = "0.30000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "300.000000"
+  }
+  ability.george.crack.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/elder_titan/earth_split_cast.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george.crack.explode = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/leshrac/split_earth_tormented.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george.impale.dash = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/npc_abilities/derek_dash.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george.impale.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/mars/spear_cast.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george.impale.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/mars/spear_target.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george.ring.cast = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/ogre_magi/fireblast_target.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.george.stun.hit = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/lina/lightstrikearray.vsnd",
+    ]
+    volume = "0.40000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
     volume_fade_out = "0.000000"
     spread_radius = "1000.000000"
   }

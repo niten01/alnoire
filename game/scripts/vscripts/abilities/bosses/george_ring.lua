@@ -22,6 +22,8 @@ function george_ring:OnSpellStart()
     local pfx = ParticleManager:CreateParticle("particles/george_ring.vpcf", PATTACH_ABSORIGIN, caster)
     ParticleManager:SetParticleControl(pfx, 1, Vector(speed, maxRadius, 1))
 
+    caster:EmitSound("ability.george.ring.cast")
+
     local pulse = caster:AddNewModifier(caster, self, "modifier_generic_ring", {
         end_radius = maxRadius,
         width = width,
@@ -38,6 +40,7 @@ function george_ring:OnSpellStart()
             damage_type = self:GetAbilityDamageType(),
             ability = self,
         })
+        ApplyGeorgeBurn(enemy, self)
     end)
 
     pulse:SetEndCallback(function()

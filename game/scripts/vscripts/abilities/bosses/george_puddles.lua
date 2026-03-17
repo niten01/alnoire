@@ -32,6 +32,8 @@ function george_puddles:OnSpellStart()
                 pfx = ParticleManager:CreateParticle("particles/george_puddle.vpcf", PATTACH_WORLDORIGIN, nil)
                 ParticleManager:SetParticleControl(pfx, 0, point)
                 ParticleManager:SetParticleControl(pfx, 10, Vector(areaRadius, 0, 0))
+
+                EmitSoundOnLocationWithCaster(point, "ability.george.puddles.spawn", caster)
             end
 
             local enemies = FindEnemiesForAIInRadius(point, areaRadius)
@@ -43,6 +45,7 @@ function george_puddles:OnSpellStart()
                     damage_type = self:GetAbilityDamageType(),
                     ability = self,
                 })
+                ApplyGeorgeBurn(ent, self)
             end
 
             local elapsed = GameRules:GetGameTime() - start

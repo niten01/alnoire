@@ -28,9 +28,13 @@ function george_crack:OnSpellStart()
     ParticleManager:SetParticleControl(pfx, 1, endPos)
     ParticleManager:SetParticleControl(pfx, 3, Vector(0, travelTime, 0))
 
+    caster:EmitSound("ability.george.crack.cast")
+
     Timers:CreateTimer(travelTime, function()
         ParticleManager:DestroyParticle(pfx, false)
         ParticleManager:ReleaseParticleIndex(pfx)
+
+        caster:EmitSound("ability.george.crack.explode")
 
         local enemies = FindEnemiesForAIInLine(casterPos, endPos, width)
         for _, ent in ipairs(enemies) do
@@ -41,6 +45,7 @@ function george_crack:OnSpellStart()
                 damage_type = self:GetAbilityDamageType(),
                 ability = self,
             })
+            ApplyGeorgeBurn(ent, self)
         end
     end)
 end

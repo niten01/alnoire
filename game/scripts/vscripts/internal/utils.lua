@@ -369,3 +369,9 @@ function PlayDerekBloodEffects(target, dir)
   ParticleManager:SetParticleControlTransformForward(pfx, 1, targetPos, dir)
   ParticleManager:ReleaseParticleIndex(pfx)
 end
+
+function ApplyGeorgeBurn(target, ability)
+  target:AddNewModifier(ability:GetCaster(), ability, "modifier_george_burn", {
+    duration = 3
+  })
+end
