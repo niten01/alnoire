@@ -181,6 +181,8 @@ return {
         "npc_dota_hero_tidehunter",
         "npc_dota_hero_slardar",
         "npc_dota_hero_morphling",
+        "npc_dota_hero_slark",
+        "npc_dota_hero_abaddon",
 
 
 
@@ -232,6 +234,7 @@ return {
         "npc_ocean_seledka",
         "npc_ocean_morph_big",
         "npc_ocean_morph_small",
+        "npc_ocean_SLARK",
 
         -- traps
         "npc_trap_arrow",
@@ -386,6 +389,9 @@ return {
         "particles/units/heroes/hero_morphling/morphling_morph_agi.vpcf",
         "particles/units/heroes/hero_morphling/morphling_adaptive_strike_agi_proj.vpcf",
         "particles/units/heroes/hero_morphling/morphling_adaptive_strike.vpcf",
+        "status_effect_abaddon_borrowed_time",
+        "particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf",
+        "particles/econ/items/sand_king/sandking_ti7_arms/sandking_ti7_caustic_finale_crimson_explode.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",

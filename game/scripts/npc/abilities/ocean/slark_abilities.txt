@@ -1,0 +1,42 @@
+"DOTAAbilities"
+{
+    "slark_hit_toggle"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/ocean/slark_hit_toggle"
+        "AbilityTextureName"            "slark_fall20_shadow_dance" 
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_TOGGLE + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilityCastPoint"              "0.0"    
+        "AbilityManaCost"               "0"
+        
+        "AbilityValues"
+        {
+            "healMult"                      "2.0"
+            "minDuration"                   "1.5"
+            "maxDuration"                   "5.0"
+            "durationPerAttackLanded"       "2.0"
+            "minWait"                       "1.0"
+            "maxWait"                       "3.0"
+        }
+    }
+
+    "slark_attr_passive"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/ocean/slark_attr_passive"
+		"AbilityTextureName"            "slark_saltwater_shiv"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+            "strPerStack"           "3"
+            "agilPerStack"          "5"
+            "stacksForDeath"        "5"
+            "stackDuration"         "16.0"
+		}
+	}
+
+}
