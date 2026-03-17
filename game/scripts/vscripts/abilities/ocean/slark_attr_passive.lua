@@ -80,10 +80,12 @@ function modifier_slark_attr_debuff:CheckDeath()
 	if not abil then return end
 	if self:GetStackCount() >= self.stacksForDeath then
 		local pfx = ParticleManager:CreateParticle(
-			"particles/econ/items/sand_king/sandking_ti7_arms/sandking_ti7_caustic_finale_crimson_explode.vpcf",
+			"particles/slark_attr_passive_death_explosion.vpcf",
 			PATTACH_ABSORIGIN_FOLLOW,
 			parent)
 		ParticleManager:ReleaseParticleIndex(pfx)
+		EmitSoundOn('Hero_LifeStealer.Infest', parent)
+		EmitSoundOn("Slark.Infested", caster)
 		parent:Kill(abil, caster)
 		self:Destroy()
 	end

@@ -183,6 +183,7 @@ return {
         "npc_dota_hero_morphling",
         "npc_dota_hero_slark",
         "npc_dota_hero_abaddon",
+        "npc_dota_hero_life_stealer",
 
 
 
@@ -291,6 +292,7 @@ return {
         "soundevents/jungle/jungleperdun.vsndevts",
         "soundevents/ocean/seledka.vsndevts",
         "soundevents/ocean/arbuz.vsndevts",
+        "soundevents/ocean/slark_infester.vsndevts",
         "soundevents/bosses/ball.vsndevts",
     },
     particles = {
@@ -391,7 +393,7 @@ return {
         "particles/units/heroes/hero_morphling/morphling_adaptive_strike.vpcf",
         "status_effect_abaddon_borrowed_time",
         "particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf",
-        "particles/econ/items/sand_king/sandking_ti7_arms/sandking_ti7_caustic_finale_crimson_explode.vpcf",
+        "particles/slark_attr_passive_death_explosion.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",

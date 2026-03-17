@@ -13,8 +13,14 @@ end
 
 function modifier_slark_ai:OnTakeDamage(params)
     if not IsServer() then return end
+    local unit = self:GetParent()
     local maxExtend = 10.0
     if self.isToggleActive and params.unit == self:GetParent() then
+        local currentTime = GameRules:GetGameTime()
+        if unit.lastPhraseTime == nil or currentTime - unit.lastPhraseTime >= 1.5 then
+            EmitSoundOn('Slark.Hit.Phrases', unit)
+            unit.lastPhraseTime = currentTime
+        end
         local oldTime = self.nextToggleTime
         self.nextToggleTime = math.min(self.nextToggleTime + self.durationPerAttackLanded,
             GameRules:GetGameTime() + maxExtend)
