@@ -24,7 +24,7 @@ function modifier_george_ai:ResetState()
         parent:AddNewModifier(parent, nil, "modifier_model", {
             duration = -1,
             model = "models/creeps/ice_biome/undeadtusk/undead_tuskskeleton_armor01.vmdl",
-            scale = 1.5,
+            scale = 2.3,
         })
     end)
 

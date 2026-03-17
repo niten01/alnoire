@@ -3,9 +3,9 @@ Music = Music or {}
 local PlayerMusicState = class {}
 function PlayerMusicState:constructor()
     self.musicSet = "silence"
+    self.noCombat = nil
     self.current = nil
     self.lastInCombat = -1000
-    self.isBoss = false
     self.customMusic = nil
 end
 
@@ -18,7 +18,9 @@ function Music:Init()
     GameEvents:OnZoneEnter(function(event)
         if not event.musicSet then return end -- zone has no music change
         DebugPrint("[ALNOIRE] Switching music set: " .. event.musicSet)
-        self.musicState[event.playerID].musicSet = event.musicSet
+        local state = self.musicState[event.playerID]
+        state.musicSet = event.musicSet
+        state.noCombat = event.noCombatMusic
     end)
     GameEvents:OnHeroInGame(function(hero)
         DebugPrint("[ALNOIRE] Starting music thinker for hero: " .. hero:GetName())
@@ -64,7 +66,7 @@ function Music:HeroMusicThink(hero)
     local newSoundState = "explore"
     local t0 = GameRules:GetGameTime()
 
-    if PackManager:HasActiveFights() then
+    if not state.noCombat and PackManager:HasActiveFights() then
         state.lastInCombat = t0
     end
 

@@ -967,10 +967,12 @@ return {
         pack_george = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
-            music = "music.george.phase1",
+            doors = {
+                "door_george",
+            },
             rangeFastTickRate = 3000,
             rangeRetreat = 2000,
-            rangeAggro = 2000,
+            rangeAggro = 1700,
         },
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,
@@ -1017,12 +1019,13 @@ return {
         zone_classroom_1 = { musicSet = "classroom_1", respawnPoint = "respawn_prologue" },
         zone_prologue = { musicSet = "silence", respawnPoint = "respawn_prologue" },
         zone_forest_1 = { musicSet = "forest", respawnPoint = "respawn_forest_1" },
-        zone_city = { musicSet = "city", respawnPoint = "respawn_city", },
-        zone_ski = { musicSet = "ski", respawnPoint = "respawn_city", },
+        zone_city = { musicSet = "city", respawnPoint = "respawn_city", noCombatMusic = true },
+        zone_ski = { musicSet = "ski", respawnPoint = "respawn_city", noCombatMusic = true },
         zone_wastelands = { musicSet = "wastelands", respawnPoint = "respawn_wastelands" },
         zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_ghetto" },
         zone_concert_muted = { musicSet = "concert_muted", respawnPoint = "respawn_concert" },
         zone_concert = { musicSet = "concert", respawnPoint = "respawn_concert" },
+        zone_cave = { musicSet = "cave", respawnPoint = "respawn_cave", noCombatMusic = true },
 
         zone_island = { musicSet = "silence", respawnPoint = "respawn_island" },
         zone_island_check_1 = { musicSet = "island", respawnPoint = "respawn_island_check_1" },
@@ -1125,6 +1128,9 @@ return {
         },
         door_ghetto = {
             clipEntity = "clip_door_ghetto"
+        },
+        door_george = {
+            clipEntity = "clip_door_george"
         },
     },
 
