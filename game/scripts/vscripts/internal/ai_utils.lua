@@ -71,7 +71,11 @@ function GiveCastOrderSimple(unit, target, ability)
   elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) ~= 0 then
     unit:CastAbilityNoTarget(ability, -1)
   elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then
-    unit:CastAbilityOnPosition(GetTargetPos(target), ability, -1)
+    if ability.offset then
+      CastAbilityOnPositionWithOffset(unit, ability, target, ability.offset)
+    else
+      unit:CastAbilityOnPosition(GetTargetPos(target), ability, -1)
+    end
   elseif bit.band(behavior, DOTA_ABILITY_BEHAVIOR_TOGGLE) ~= 0 then
     unit:CastAbilityToggle(ability, -1)
   else
@@ -94,6 +98,14 @@ function GiveCastOrderForcedBehavior(unit, ability, behavior, target)
     DebugPrint("[Error] Unknown behavior for: " .. ability:GetName() .. " Value: " .. tostring(behavior))
     error("Could not cast ability: " .. ability:GetName())
   end
+end
+
+function CastAbilityOnPositionWithOffset(unit, ability, target, offset)
+  local casterPos = unit:GetAbsOrigin()
+  local targetPos = GetTargetPos(target)
+  local direction = (targetPos - casterPos):Normalized()
+  local finalPoint = targetPos + (direction * offset)
+  unit:CastAbilityOnPosition(finalPoint, ability, -1)
 end
 
 -- give appropriate cast order given ability is castable

@@ -384,6 +384,8 @@ return {
         "particles/seledka_puddle_1.vpcf",
         "particles/units/heroes/hero_morphling/morphling_morph_str.vpcf",
         "particles/units/heroes/hero_morphling/morphling_morph_agi.vpcf",
+        "particles/units/heroes/hero_morphling/morphling_adaptive_strike_agi_proj.vpcf",
+        "particles/units/heroes/hero_morphling/morphling_adaptive_strike.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",

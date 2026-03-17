@@ -38,6 +38,16 @@ function modifier_morph_small:IsPurgable()
     return false
 end
 
+function modifier_morph_small:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_EVASION_CONSTANT
+    }
+end
+
+function modifier_morph_small:GetModifierEvasion_Constant()
+    return 33.0
+end
+
 function modifier_morph_small:OnCreated()
     if not IsServer() then return end
     local parent = self:GetParent()
