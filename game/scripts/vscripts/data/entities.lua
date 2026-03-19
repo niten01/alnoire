@@ -676,6 +676,13 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
+        spawner_dark_drow           = {
+            npc = "npc_dark_drow",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_drow",
+            ai_modifier = "modifier_dark_drow_ai",
+        },
+
 
         spawner_dream_concert         = {
             npc = "npc_dream",
@@ -942,6 +949,13 @@ return {
         },
 
         pack_ocean_act2_bombers = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_darkforest_act3_drow = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,

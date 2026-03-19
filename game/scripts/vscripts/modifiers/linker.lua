@@ -73,6 +73,7 @@ LinkLuaModifier("modifier_tusik_shard_ai", "modifiers/ai/modifier_tusik_shard_ai
 LinkLuaModifier("modifier_tusik_uppercut_ai", "modifiers/ai/modifier_tusik_uppercut_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_tadpole_ranged_ai", "modifiers/ai/modifier_tadpole_ranged_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_slark_ai", "modifiers/ai/modifier_slark_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_dark_drow_ai", "modifiers/ai/modifier_dark_drow_ai", LUA_MODIFIER_MOTION_NONE)
 
 
 

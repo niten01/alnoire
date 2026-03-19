@@ -43,6 +43,7 @@ function PackManager:ActivatePack(packName)
 
     pack.pos = packEntity:GetAbsOrigin()
     pack.vId = AddFOWViewer(DOTA_TEAM_BADGUYS, packEntity:GetAbsOrigin(), pack.rangeAggro, 36000, false)
+    pack.vIdRetreat = AddFOWViewer(DOTA_TEAM_BADGUYS, packEntity:GetAbsOrigin(), pack.rangeFastTickRate, 36000, true)
     DebugPrint("[ALNOIRE] Added fow viewer for pack: " .. packName)
     local thinkerFn = nil
     if pack.thinker == "default" then
@@ -107,8 +108,9 @@ function PackManager:DeactivatePack(packName)
     local pack = self:GetPack(packName)
     if pack.state == 'off' then return end
 
-    if self.vId then
+    if self.vId or self.vIdRetreat then
         RemoveFOWViewer(DOTA_TEAM_BADGUYS, self.vId)
+        RemoveFOWViewer(DOTA_TEAM_BADGUYS, self.vIdRetreat)
     else
         DebugPrint("[ALNOIRE] Deactivating fow viewer for pack: " .. packName)
     end
