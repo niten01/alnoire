@@ -184,6 +184,7 @@ return {
         "npc_dota_hero_slark",
         "npc_dota_hero_abaddon",
         "npc_dota_hero_life_stealer",
+        "npc_dota_hero_sand_king",
 
 
 
@@ -236,6 +237,9 @@ return {
         "npc_ocean_morph_big",
         "npc_ocean_morph_small",
         "npc_ocean_SLARK",
+        "npc_ocean_bombardier_melee_1",
+        "npc_ocean_bombardier_melee_2",
+        "npc_ocean_bombardier_ranged",
 
         -- traps
         "npc_trap_arrow",
@@ -394,6 +398,7 @@ return {
         "status_effect_abaddon_borrowed_time",
         "particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf",
         "particles/slark_attr_passive_death_explosion.vpcf",
+        "particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",

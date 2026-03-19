@@ -36,6 +36,7 @@
             "agilPerStack"          "5"
             "stacksForDeath"        "5"
             "stackDuration"         "16.0"
+            "modelScalePerStack"         "10.0"
 		}
 	}
 

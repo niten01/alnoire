@@ -68,6 +68,7 @@ function modifier_slark_attr_debuff:OnCreated()
 	self.strPerStack = abil:GetSpecialValueFor('strPerStack') or 2
 	self.agilPerStack = abil:GetSpecialValueFor('agilPerStack') or 3
 	self.stacksForDeath = abil:GetSpecialValueFor('stacksForDeath') or 50
+	self.modelScalePerStack = abil:GetSpecialValueFor('modelScalePerStack') or 10.0
 	self:SetStackCount(1)
 	self:CheckDeath()
 end
@@ -95,7 +96,14 @@ function modifier_slark_attr_debuff:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_MODEL_SCALE,
 	}
+end
+
+function modifier_slark_attr_debuff:GetModifierModelScale()
+	if self.modelScalePerStack then
+		return self:GetStackCount() * self.modelScalePerStack
+	end
 end
 
 function modifier_slark_attr_debuff:GetModifierBonusStats_Agility()
