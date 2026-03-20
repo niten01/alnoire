@@ -1,0 +1,197 @@
+"DOTAAbilities"
+{
+    "pudge_dismember"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"170"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 130 170"
+		
+		"AbilityValues"
+		{
+			"dismember_damage"		
+			{
+				"value"					"30 100 120"
+				"special_bonus_unique_pudge_3"	"x1.5"	
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"strength_damage"		
+			{
+				"value"				"0.0 0.6 0.9"
+				"special_bonus_unique_pudge_3"	"x1.8"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"ticks"		
+			{
+				"value"						"6"
+				"special_bonus_unique_pudge_6"	"+2"
+			}
+			"pull_units_per_second"		"15"
+			"pull_distance_limit"		"115"
+			"animation_rate"		"1.5"
+			"AbilityChannelTime"			
+			{
+				"value"				"10.0 2.75 2.75"
+				"special_bonus_unique_pudge_6"	"+0.75"
+			}
+			
+			"AbilityCooldown"				
+			{
+				"value"							"12.5 25 20"
+			}
+			"shard_regen_pct"			
+			{
+				"special_bonus_shard"			"5"
+			}
+			"order_lock_duration"		
+			{
+				"special_bonus_shard"			"2.75"
+			}
+			"shard_cast_range"		
+			{
+				"special_bonus_shard"			"300"
+			}
+			"gluttony_strength_bonus"
+			{
+				"special_bonus_facet_pudge_fresh_meat"			"2 3 4"				
+			}
+			"glutton_strength_stack_duration"
+			{
+				"special_bonus_facet_pudge_fresh_meat"			"12"				
+			}
+		}
+	}
+
+    "dark_pudge_passive"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/darkforest/dark_pudge_passive"
+		"AbilityTextureName"            "drow_ranger_marksmanship_arcana"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+            "bonusDamage"    "100"
+		}
+	}
+
+    "pugna_life_drain"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS" 
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"1"
+		"HasShardUpgrade"			"1"
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1600"
+		"AbilityCastPoint"				"0.2 0.2 0.2"
+		"AbilityChannelTime"			"10.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 160 205"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"health_drain"
+			{
+				"value"					"30 250 350"
+				"CalculateSpellDamageTooltip"	"1"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+			}
+
+			"health_drain_death_boost"
+			{
+				"value"					"0"
+				"special_bonus_facet_pugna_drain_souls"	"+20"
+			}
+
+			"ally_healing"
+			{
+				"value"					"150 250 350"
+			}
+			"health_to_mana_rate"		"0"
+			"tick_rate"					"0.25 0.25 0.25"
+			"drain_buffer"				"200"
+			"shard_damage_pct_from_ward"
+			{
+				"special_bonus_shard"			"75"
+			}
+			"bonus_heal_pct"
+			{
+				"special_bonus_unique_pugna_1"			"+15"
+			}
+			"spell_amp_drain_rate"
+			{
+				"special_bonus_scepter"		"+8"
+			}
+			"spell_amp_drain_max"
+			{
+				"special_bonus_scepter"		"+75"
+			}
+			"spell_amp_drain_rate_ward"
+			{
+				"special_bonus_scepter"		"+4"
+			}
+			"spell_amp_drain_duration"
+			{
+				"special_bonus_scepter"		"+8"
+			}			
+			"max_spell_amp_drain_pct"
+			{
+				"special_bonus_scepter"		"+100"
+			}	
+			"AbilityCooldown"				
+			{
+				"value"						"1.5"
+				"special_bonus_scepter"		"-50%"
+			}
+		}
+	}
+}

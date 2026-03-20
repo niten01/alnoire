@@ -308,4 +308,142 @@
 			}
 		}
 	}
+
+
+	"npc_dark_pudge"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/pudge/pudge.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_Pudge"
+		"Level"						"1"
+		"ModelScale" 				"0.85"
+		"RequiredTimeInAggroOffset"	"-1.0"
+		
+		"Ability1"						"pudge_dismember"			// Ability 1 
+		"Ability2"						"dark_pudge_passive"			// Ability 2
+		//"Ability3"						"ursa_enrage"			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"120"		// Range within a target can be attacked.		     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"210"					
+
+		"StatusHealth"				"950"		// Base health.
+		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "8319" } // arms
+				"Wearable2" { "ItemDef" "8332" } // back 
+				"Wearable3" { "ItemDef" "8334" } // belt
+				"Wearable4" { "ItemDef" "8343" } // head
+				"Wearable5" { "ItemDef" "8377" } // hook
+				"Wearable6" { "ItemDef" "8379" } // shoulder
+				"Wearable7" { "ItemDef" "8380" } // semi-weapon
+			}
+		}
+	}
+
+	"npc_dark_pugna"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/pugna/pugna.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_Pugna"
+		"Level"						"1"
+		"ModelScale" 				"1.0"
+
+		
+		"Ability1"						"pugna_life_drain"			// Ability 1
+		//"Ability2"					    "dark_drow_hg_passive"			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"1"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"1.1"		// Speed of attack.
+		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"1300"		// Range within a target can be attacked.
+        "ProjectileModel"		"particles/units/heroes/hero_pugna/pugna_base_attack.vpcf"
+		"ProjectileSpeed"		"1250"
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"255"					
+
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+		}
+	}
 }

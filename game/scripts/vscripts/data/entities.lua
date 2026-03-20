@@ -704,6 +704,20 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
+        spawner_dark_pudge            = {
+            npc = "npc_dark_pudge",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_pupu",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+
+        spawner_dark_pugna            = {
+            npc = "npc_dark_pugna",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_pupu",
+            ai_modifier = "modifier_dark_pugna_ai",
+        },
+
         spawner_dream_concert         = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
@@ -990,6 +1004,13 @@ return {
         },
 
         pack_darkforest_act3_titans = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_darkforest_act3_pupu = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,

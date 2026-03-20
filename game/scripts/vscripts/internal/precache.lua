@@ -188,7 +188,8 @@ return {
         "npc_dota_hero_drow_ranger",
         "npc_dota_hero_ursa",
         "npc_dota_hero_elder_titan",
-        "npc_dota_hero_juggernaut",
+        "npc_dota_hero_pudge",
+        "npc_dota_hero_pugna",
 
 
 
@@ -251,6 +252,8 @@ return {
         "npc_dark_ursa",
         "npc_dark_titan_1",
         "npc_dark_titan_2",
+        "npc_dark_pudge",
+        "npc_dark_pugna",
 
         -- traps
         "npc_trap_arrow",
@@ -416,6 +419,9 @@ return {
 
         -- dark forest
         "particles/econ/items/drow/drow_arcana/drow_arcana_crit_or_marksmanship_proc.vpcf",
+        "particles/status_fx/status_effect_ghost.vpcf",
+        "particles/units/heroes/hero_pugna/pugna_decrepify.vpcf",
+        "particles/dark_pugna_tp.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",

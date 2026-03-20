@@ -33,6 +33,7 @@
 #base "abilities/darkforest/dark_drow_abilities.txt"
 #base "abilities/darkforest/dark_ursa_abilities.txt"
 #base "abilities/darkforest/dark_titans_abilities.txt"
+#base "abilities/darkforest/dark_pupu_abilities.txt"
 
 
 #base "abilities/heroes/towel_master_abilities.txt"
