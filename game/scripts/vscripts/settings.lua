@@ -3,7 +3,7 @@ USE_DEBUG = true -- Should we print statements on almost every function/event ca
 INTERACTION_RADIUS = 500
 DOOR_PASSWORD_RADIUS = 500
 
-MUSIC_COMBAT_DECAY = 5
+MUSIC_COMBAT_DECAY = 3.5
 MUSIC_THINK_INTERVAL = 0.5
 
 IDLE_THINK_INTERVAL = 1.5

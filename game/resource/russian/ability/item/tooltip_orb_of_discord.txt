@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_orb_of_discord"	        "Orb of Discord"
+"DOTA_Tooltip_ability_item_orb_of_discord_Description" "<h1>Пассивное: Дестабилизирующее Касание</h1>Атаки снижают сопротивление магии цели на %mag_res_reduction%. Действует %duration% сек."

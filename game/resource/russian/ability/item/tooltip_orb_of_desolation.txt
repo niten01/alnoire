@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_orb_of_desolation"	        "Orb of Desolation"
+"DOTA_Tooltip_ability_item_orb_of_desolation_Description" "<h1>Пассивное: Пронзающее Касание</h1>Атаки снижают броню цели на %armor_reduction%. Действует %duration% сек."

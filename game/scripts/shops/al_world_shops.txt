@@ -1,0 +1,48 @@
+"dota_shops"
+{
+//   "consumables" // 17/17 max if sorted by columns
+//   {
+//   }
+
+//   "attributes" // 17/17
+//   {
+//   }
+
+  "weapons_armor" // 17/17
+  {
+    "item"              "item_mark_of_ebuchi"
+    "item"              "item_mark_of_vonuchi"
+    "item"              "item_orb_of_poison"
+    "item"              "item_orb_of_desolation"
+    "item"              "item_orb_of_discord"
+  }
+
+  "misc" // 17/17
+  {
+    "item"              "item_fan"
+  }
+
+  "basics" // 16/16
+  {
+  }
+
+  "support" // 16/16
+  {
+  }
+
+  "magics" // 19/20
+  {
+  }
+
+  "defense" // 19/20
+  {
+  }
+
+  "weapons" // 20/20
+  {
+  }
+
+  "artifacts" // 18/20
+  {
+  }
+}
