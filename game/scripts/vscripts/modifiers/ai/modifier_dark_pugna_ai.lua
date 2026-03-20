@@ -16,6 +16,9 @@ local SPOTS = { "darkforest_pugna_tp_1", "darkforest_pugna_tp_2", "darkforest_pu
 function modifier_dark_pugna_ai:TpToRandomSpot(unit, spotNames)
     if not IsServer() then return end
     if not unit or unit:IsNull() or not unit:IsAlive() then return end
+    if unit:IsChanneling() then
+        unit:Stop()
+    end
     local availableSpots = {}
     for _, name in pairs(spotNames) do
         if name ~= self.lastSpot then
@@ -48,7 +51,10 @@ function modifier_dark_pugna_ai:TpToRandomSpot(unit, spotNames)
         FindClearSpaceForUnit(unit, targetPos, true)
         EmitSoundOn("Hero_MonkeyKing.Transform.On", unit)
     end)
-    unit.timeToTp = false
+    Timers:CreateTimer(0.3, function()
+        if not unit or unit:IsNull() or not unit:IsAlive() then return end
+        unit.timeToTp = false
+    end)
 end
 
 function modifier_dark_pugna_ai:OnTakeDamage(params)
