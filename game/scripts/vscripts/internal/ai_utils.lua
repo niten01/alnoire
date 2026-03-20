@@ -474,7 +474,7 @@ function AdjustTickRate(unit)
   end
   if beaconData.currentCreepInterval ~= target_interval then
     beaconData.currentCreepInterval = target_interval
-    print("AI Switch to interval: " .. target_interval)
+    DebugPrint("AI Switch to interval: " .. target_interval)
   end
 end
 

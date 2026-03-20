@@ -186,6 +186,7 @@ return {
         "npc_dota_hero_life_stealer",
         "npc_dota_hero_sand_king",
         "npc_dota_hero_drow_ranger",
+        "npc_dota_hero_ursa",
 
 
 
@@ -245,6 +246,7 @@ return {
 
         -- darkforest
         "npc_dark_drow",
+        "npc_dark_ursa",
 
         -- traps
         "npc_trap_arrow",
@@ -301,8 +303,9 @@ return {
         "soundevents/jungle/jungleperdun.vsndevts",
         "soundevents/ocean/seledka.vsndevts",
         "soundevents/ocean/arbuz.vsndevts",
-        "soundevents/darkforest/dark_drow.vsndevts",
         "soundevents/ocean/slark_infester.vsndevts",
+        "soundevents/darkforest/dark_drow.vsndevts",
+        "soundevents/darkforest/dark_ursa.vsndevts",
         "soundevents/bosses/ball.vsndevts",
     },
     particles = {

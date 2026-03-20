@@ -683,6 +683,13 @@ return {
             ai_modifier = "modifier_dark_drow_ai",
         },
 
+        spawner_dark_ursa           = {
+            npc = "npc_dark_ursa",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_ursa",
+            ai_modifier = "modifier_dark_ursa_ai",
+        },
+
 
         spawner_dream_concert         = {
             npc = "npc_dream",
@@ -956,6 +963,13 @@ return {
         },
 
         pack_darkforest_act3_drow = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_darkforest_act3_ursa = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,
