@@ -1,0 +1,19 @@
+"DOTAAbilities"
+{
+    "dark_titan_passive"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/darkforest/dark_titan_passive"
+		"AbilityTextureName"            "elder_titan_return_spirit"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+            "critChance"    "35"
+            "critMult"      "200"       
+		}
+	}
+
+}

@@ -187,6 +187,8 @@ return {
         "npc_dota_hero_sand_king",
         "npc_dota_hero_drow_ranger",
         "npc_dota_hero_ursa",
+        "npc_dota_hero_elder_titan",
+        "npc_dota_hero_juggernaut",
 
 
 
@@ -247,6 +249,8 @@ return {
         -- darkforest
         "npc_dark_drow",
         "npc_dark_ursa",
+        "npc_dark_titan_1",
+        "npc_dark_titan_2",
 
         -- traps
         "npc_trap_arrow",

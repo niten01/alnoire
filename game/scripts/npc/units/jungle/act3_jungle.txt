@@ -167,4 +167,145 @@
 			}
 		}
 	}
+
+	"npc_dark_titan_1"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/elder_titan/elder_titan.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_ElderTitan"
+		"Level"						"1"
+		"ModelScale" 				"0.85"
+		
+		"Ability1"						"dark_titan_passive"			// Ability 1 
+		//"Ability2"						"ursa_fury_swipes"			// Ability 2
+		//"Ability3"						"ursa_enrage"			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.		     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"210"					
+
+		"StatusHealth"				"950"		// Base health.
+		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "18401" } // arms
+				"Wearable2" { "ItemDef" "18402" } // back
+				"Wearable3" { "ItemDef" "18405" } // shoulder
+				"Wearable4" { "ItemDef" "18403" } // head
+				"Wearable5" { "ItemDef" "18436" } // weapon
+			}
+		}
+	}
+
+
+	"npc_dark_titan_2"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/elder_titan/elder_titan.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_ElderTitan"
+		"Level"						"1"
+		"ModelScale" 				"0.85"
+		
+		"Ability1"						"dark_titan_passive"			// Ability 1 
+		//"Ability2"						"ursa_fury_swipes"			// Ability 2
+		//"Ability3"						"ursa_enrage"			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.		     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"210"					
+
+		"StatusHealth"				"950"		// Base health.
+		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "13169" } // arms
+				"Wearable2" { "ItemDef" "6386" } // back
+				"Wearable3" { "ItemDef" "13170" } // shoulder
+				"Wearable4" { "ItemDef" "8764" } // head
+				"Wearable5" { "ItemDef" "6381" } // weapon
+			}
+		}
+	}
 }
