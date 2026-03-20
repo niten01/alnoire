@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_orb_of_deceleration"	        "Orb of Deceleration"
+"DOTA_Tooltip_ability_item_orb_of_deceleration_Description" "<h1>Пассивное: Замедляющее Касание</h1>Атаки снижают скорость передвижения цели на %ms_reduction%. Действует %duration% сек."

@@ -12,13 +12,20 @@
         "ItemPermanent"                 "0"
         "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "ItemCost"                      "500"
 
         "AbilityCastRange"              "400" 
         "AbilityCooldown"               "10.0" 
 
-        "AbilityValues {
+        "AbilityValues" 
+        {
             "distance"  "200"
-            "travel_time" "0.3"
+            "travel_time" "0.4"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/item_fan.vpcf"
         }
     }
     "item_mark_of_ebuchi"
@@ -30,6 +37,12 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
+        "ItemCost"                      "200"
+
+        "AbilityValues" 
+        {
+            "armor"  "3"
+        }
 
         "Modifiers"
         {
@@ -42,7 +55,7 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"3"
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor"
                 }
             }
         }
@@ -56,6 +69,12 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
+        "ItemCost"                      "200"
+
+        "AbilityValues" 
+        {
+            "mag_res"  "8"
+        }
 
         "Modifiers"
         {
@@ -68,7 +87,7 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"8"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%mag_res"
                 }
             }
         }
@@ -82,6 +101,7 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
+        "ItemCost"                      "2000"
 
         "Modifiers"
         {
@@ -99,21 +119,99 @@
             }
         }
     }
-    "item_orb_of_venom"
+    "item_orb_of_decay"
     {
         "ID"                    "4005"
         "BaseClass"                     "item_lua"          
-        "ScriptFile"                    "items/item_orb_of_venom.lua"
-        "AbilityTextureName"    "orb_of_venom"
+        "ScriptFile"                    "items/item_orb_of_decay.lua"
+        "AbilityTextureName"    "orb_of_decay"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
         "ItemCost"                      "300"
 
-        "AbilityValues {
+        "AbilityValues" 
+        {
             "damage"  "10"
             "interval" "1"
+            "duration" "3"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/items2_fx/orb_of_venom.vpcf"
+        }
+    }
+    "item_orb_of_desolation"
+    {
+        "ID"                    "4006"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_orb_of_desolation.lua"
+        "AbilityTextureName"    "orb_of_desolation"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemCost"                      "300"
+
+        "AbilityValues" 
+        {
+            "armor_reduction"  "10"
+            "duration" "3"
+        }
+    }
+    "item_orb_of_discord"
+    {
+        "ID"                    "4007"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_orb_of_discord.lua"
+        "AbilityTextureName"    "orb_of_discord"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemCost"                      "300"
+
+        "AbilityValues" 
+        {
+            "mag_res_reduction"  "10"
+            "duration" "3"
+        }
+    }
+    "item_orb_of_deceleration"
+    {
+        "ID"                    "4008"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_orb_of_deceleration.lua"
+        "AbilityTextureName"    "orb_of_deceleration"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemCost"                      "300"
+
+        "AbilityValues" 
+        {
+            "ms_reduction"  "100"
+            "duration" "3"
+        }
+    }
+    "item_orb_of_decrepitude"
+    {
+        "ID"                    "4009"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_orb_of_decrepitude.lua"
+        "AbilityTextureName"    "orb_of_decrepitude"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemCost"                      "300"
+
+        "AbilityValues" 
+        {
+            "attack_speed_reduction"  "50"
             "duration" "3"
         }
     }

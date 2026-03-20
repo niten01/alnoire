@@ -18,6 +18,7 @@ function modifier_george_ai:ResetState()
     self.phase = 1
 
     local parent = self:GetParent()
+    parent:StopSound("ability.george.sunrays.loop")
     parent:AddNewModifier(parent, nil, "modifier_generic_unkillable", { duration = -1 })
 
     Timers:CreateTimer(1, function()

@@ -3,6 +3,7 @@ timelapses
 content/models/sanya/debut
 intro
 
+*.blend
 *.blend1
 
 # Logs
