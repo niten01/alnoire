@@ -12,9 +12,11 @@
   {
     "item"              "item_mark_of_ebuchi"
     "item"              "item_mark_of_vonuchi"
-    "item"              "item_orb_of_poison"
+    "item"              "item_orb_of_decay"
     "item"              "item_orb_of_desolation"
     "item"              "item_orb_of_discord"
+    "item"              "item_orb_of_deceleration"
+    "item"              "item_orb_of_decrepitude"
   }
 
   "misc" // 17/17

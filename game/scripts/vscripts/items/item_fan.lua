@@ -7,6 +7,11 @@ function item_fan:OnSpellStart()
   local travelTime = self:GetSpecialValueFor("travel_time")
   local distance = self:GetSpecialValueFor("distance")
 
+  local pfx = ParticleManager:CreateParticle("particles/item_fan.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+  ParticleManager:ReleaseParticleIndex(pfx)
+
+  caster:EmitSound("items.fan.cast")
+
   local enemies = FindEnemiesForSanyaInRadius(casterPos, self:GetCastRange(casterPos, nil))
   for _, enemy in ipairs(enemies) do
     local enemyPos = enemy:GetAbsOrigin()
