@@ -1,0 +1,54 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  Slark.Hit.Phrases = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/slark/slark_attack_08.vsnd",
+          "sounds/vo/slark/slark_deny_06.vsnd",
+          "sounds/vo/slark/slark_deny_12.vsnd",
+          "sounds/vo/slark/slark_deny_14.vsnd",
+          "sounds/vo/slark/slark_failure_04.vsnd",
+          "sounds/vo/slark/slark_kill_12.vsnd",
+          "sounds/vo/slark/slark_levelup_05.vsnd",
+      ]
+      
+      volume = 7.0
+      pitch = 1.0
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+
+  Slark.Death = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/slark/slark_death_09.vsnd",
+      ]
+      
+      volume = 7.0
+      pitch = 1.0
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+
+  Slark.Infested = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/vo/slark/slark_ally_08.vsnd",
+      ]
+      
+      volume = 7.0
+      pitch = 1.0
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+}

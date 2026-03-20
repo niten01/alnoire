@@ -180,7 +180,7 @@
     "Ability8"                                               "sanya_towel_aura_2"
     "Ability9"                                               "sanya_towel_aura_3"
     "Ability10"                                              "sanya_towel_summon_return"
-    "Ability11"                                              "custom_freeze"
+    "Ability11"                                              "slark_hit_toggle"
     // "Ability7"                                            "sohei_innate_oaa"
     // "Ability8"                                            "generic_hidden"
     // "Ability9"                                            "generic_hidden"

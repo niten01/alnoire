@@ -28,6 +28,11 @@
 #base "abilities/ocean/arbuz_abilities.txt"
 #base "abilities/ocean/seledka_abilities.txt"
 #base "abilities/ocean/morph_abilities.txt"
+#base "abilities/ocean/slark_abilities.txt"
+#base "abilities/ocean/bombers_abilities.txt"
+
+#base "abilities/darkforest/dark_drow_abilities.txt"
+
 
 #base "abilities/heroes/towel_master_abilities.txt"
 #base "abilities/heroes/rapper_abilities.txt"

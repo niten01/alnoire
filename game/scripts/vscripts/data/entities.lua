@@ -648,6 +648,41 @@ return {
             modifiers = { "modifier_morph_small" }
         },
 
+        spawner_slark               = {
+            npc = "npc_ocean_SLARK",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_slark",
+            ai_modifier = "modifier_slark_ai",
+        },
+
+        spawner_bomber_melee_1      = {
+            npc = "npc_ocean_bombardier_melee_1",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_bombers",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+
+        spawner_bomber_melee_2      = {
+            npc = "npc_ocean_bombardier_melee_2",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_bombers",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+
+        spawner_bomber_ranged       = {
+            npc = "npc_ocean_bombardier_ranged",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_ocean_act2_bombers",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+
+        spawner_dark_drow           = {
+            npc = "npc_dark_drow",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_drow",
+            ai_modifier = "modifier_dark_drow_ai",
+        },
+
 
         spawner_dream_concert         = {
             npc = "npc_dream",
@@ -900,6 +935,27 @@ return {
         },
 
         pack_ocean_act2_morphs = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_ocean_act2_slark = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_ocean_act2_bombers = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_darkforest_act3_drow = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,

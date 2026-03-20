@@ -181,6 +181,11 @@ return {
         "npc_dota_hero_tidehunter",
         "npc_dota_hero_slardar",
         "npc_dota_hero_morphling",
+        "npc_dota_hero_slark",
+        "npc_dota_hero_abaddon",
+        "npc_dota_hero_life_stealer",
+        "npc_dota_hero_sand_king",
+        "npc_dota_hero_drow_ranger",
 
 
 
@@ -232,6 +237,14 @@ return {
         "npc_ocean_seledka",
         "npc_ocean_morph_big",
         "npc_ocean_morph_small",
+        "npc_ocean_SLARK",
+        "npc_ocean_bombardier_melee_1",
+        "npc_ocean_bombardier_melee_2",
+        "npc_ocean_bombardier_ranged",
+
+
+        -- darkforest
+        "npc_dark_drow",
 
         -- traps
         "npc_trap_arrow",
@@ -288,6 +301,8 @@ return {
         "soundevents/jungle/jungleperdun.vsndevts",
         "soundevents/ocean/seledka.vsndevts",
         "soundevents/ocean/arbuz.vsndevts",
+        "soundevents/darkforest/dark_drow.vsndevts",
+        "soundevents/ocean/slark_infester.vsndevts",
         "soundevents/bosses/ball.vsndevts",
     },
     particles = {
@@ -386,6 +401,14 @@ return {
         "particles/units/heroes/hero_morphling/morphling_morph_agi.vpcf",
         "particles/units/heroes/hero_morphling/morphling_adaptive_strike_agi_proj.vpcf",
         "particles/units/heroes/hero_morphling/morphling_adaptive_strike.vpcf",
+        "status_effect_abaddon_borrowed_time",
+        "particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf",
+        "particles/slark_attr_passive_death_explosion.vpcf",
+        "particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf",
+
+
+        -- dark forest
+        "particles/econ/items/drow/drow_arcana/drow_arcana_crit_or_marksmanship_proc.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",

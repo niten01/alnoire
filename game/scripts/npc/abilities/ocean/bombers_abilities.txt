@@ -1,0 +1,21 @@
+"DOTAAbilities"
+{
+
+    "bomb_passive"
+    {
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/ocean/bomb_passive"
+		"AbilityTextureName"            "slark_saltwater_shiv"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+            "rangeAoe"              "200"
+            "delayBeforeExplosion"  "0"
+            "explosionDamage"       "95"
+		}
+	}
+
+}
