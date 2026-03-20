@@ -1,29 +1,29 @@
-item_orb_of_poison = class {}
-LinkLuaModifier("modifier_item_orb_of_poison", "items/item_orb_of_poison", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_orb_of_poison_poison", "items/item_orb_of_poison", LUA_MODIFIER_MOTION_NONE)
+item_orb_of_decay = class {}
+LinkLuaModifier("modifier_item_orb_of_decay", "items/item_orb_of_decay", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_orb_of_decay_tgt", "items/item_orb_of_decay", LUA_MODIFIER_MOTION_NONE)
 
 
-function item_orb_of_poison:GetIntrinsicModifierName()
-  return "modifier_item_orb_of_poison"
+function item_orb_of_decay:GetIntrinsicModifierName()
+  return "modifier_item_orb_of_decay"
 end
 
 ---------------------------------------------------
 
-function modifier_item_orb_of_poison:IsHidden() return true end
-function modifier_item_orb_of_poison:IsPurgable() return false end
+function modifier_item_orb_of_decay:IsHidden() return true end
+function modifier_item_orb_of_decay:IsPurgable() return false end
 
-modifier_item_orb_of_poison = class {}
+modifier_item_orb_of_decay = class {}
 
-function modifier_item_orb_of_poison:DeclareFunctions()
+function modifier_item_orb_of_decay:DeclareFunctions()
   return {
     MODIFIER_EVENT_ON_ATTACK_LANDED
   }
 end
 
-function modifier_item_orb_of_poison:OnAttackLanded(keys)
+function modifier_item_orb_of_decay:OnAttackLanded(keys)
   if keys.attacker ~= self:GetParent() then return end
   local ability = self:GetAbility()
-  keys.target:AddNewModifier(self:GetParent(), ability, "modifier_item_orb_of_poison_poison", {
+  keys.target:AddNewModifier(self:GetParent(), ability, "modifier_item_orb_of_decay_tgt", {
     duration = ability:GetSpecialValueFor("duration"),
     damage = ability:GetSpecialValueFor("damage"),
     interval = ability:GetSpecialValueFor("interval"),
@@ -32,13 +32,13 @@ end
 
 -----------------------------------------------------
 
-modifier_item_orb_of_poison_poison = class {}
+modifier_item_orb_of_decay_tgt = class {}
 
-function modifier_item_orb_of_poison_poison:IsHidden() return false end
+function modifier_item_orb_of_decay_tgt:IsHidden() return false end
 
-function modifier_item_orb_of_poison_poison:IsDebuff() return true end
+function modifier_item_orb_of_decay_tgt:IsDebuff() return true end
 
-function modifier_item_orb_of_poison_poison:OnCreated(kv)
+function modifier_item_orb_of_decay_tgt:OnCreated(kv)
   if not IsServer() then return end
   self.damage = kv.damage
   self:StartIntervalThink(kv.interval)
@@ -46,13 +46,13 @@ function modifier_item_orb_of_poison_poison:OnCreated(kv)
     self:GetParent())
 end
 
-function modifier_item_orb_of_poison_poison:OnDestroy()
+function modifier_item_orb_of_decay_tgt:OnDestroy()
   if not IsServer() then return end
   ParticleManager:DestroyParticle(self.pfx, false)
   ParticleManager:ReleaseParticleIndex(self.pfx)
 end
 
-function modifier_item_orb_of_poison_poison:OnIntervalThink()
+function modifier_item_orb_of_decay_tgt:OnIntervalThink()
   if not IsServer() then return end
   local parent = self:GetParent()
   local ability = self:GetAbility()

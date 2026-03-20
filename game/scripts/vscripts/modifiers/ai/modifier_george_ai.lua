@@ -18,6 +18,7 @@ function modifier_george_ai:ResetState()
     self.phase = 1
 
     local parent = self:GetParent()
+    parent:StopSound("ability.george.sunrays.loop")
     parent:AddNewModifier(parent, nil, "modifier_generic_unkillable", { duration = -1 })
 
     Timers:CreateTimer(1, function()
@@ -81,16 +82,14 @@ function modifier_george_ai:Phase1(unit, target)
     end
 
     local shield = unit:FindModifierByName("modifier_george_shield")
-    -- if not shield or shield.charges <= 0 then
-    --     if CastAbility(unit, target, "george1_shield") then return end
-    --     if CastAbility(unit, target, "george1_parry") then return end
-    -- end
+    if not shield or shield.charges <= 0 then
+        if CastAbility(unit, target, "george1_shield") then return end
+        if CastAbility(unit, target, "george1_parry") then return end
+    end
 
-    -- if CastAbility(unit, target, "george1_kick") then return end
-    -- if CastAbility(unit, target, "george1_summon") then return end
-    -- if CastAbility(unit, target, "george1_stalactites") then return end
-
-    if CastAbility(unit, target, "george1_parry") then return end
+    if CastAbility(unit, target, "george1_kick") then return end
+    if CastAbility(unit, target, "george1_summon") then return end
+    if CastAbility(unit, target, "george1_stalactites") then return end
 end
 
 function modifier_george_ai:Phase2(unit, target)

@@ -20,7 +20,12 @@
         "AbilityValues" 
         {
             "distance"  "200"
-            "travel_time" "0.3"
+            "travel_time" "0.4"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/item_fan.vpcf"
         }
     }
     "item_mark_of_ebuchi"
@@ -114,12 +119,12 @@
             }
         }
     }
-    "item_orb_of_poison"
+    "item_orb_of_decay"
     {
         "ID"                    "4005"
         "BaseClass"                     "item_lua"          
-        "ScriptFile"                    "items/item_orb_of_poison.lua"
-        "AbilityTextureName"    "orb_of_poison"
+        "ScriptFile"                    "items/item_orb_of_decay.lua"
+        "AbilityTextureName"    "orb_of_decay"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
@@ -171,6 +176,42 @@
         "AbilityValues" 
         {
             "mag_res_reduction"  "10"
+            "duration" "3"
+        }
+    }
+    "item_orb_of_deceleration"
+    {
+        "ID"                    "4008"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_orb_of_deceleration.lua"
+        "AbilityTextureName"    "orb_of_deceleration"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemCost"                      "300"
+
+        "AbilityValues" 
+        {
+            "ms_reduction"  "100"
+            "duration" "3"
+        }
+    }
+    "item_orb_of_decrepitude"
+    {
+        "ID"                    "4009"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_orb_of_decrepitude.lua"
+        "AbilityTextureName"    "orb_of_decrepitude"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemCost"                      "300"
+
+        "AbilityValues" 
+        {
+            "attack_speed_reduction"  "50"
             "duration" "3"
         }
     }
