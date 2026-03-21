@@ -52,3 +52,7 @@ end
 function modifier_item_orb_of_decrepitude_tgt:GetModifierAttackSpeedBonus_Constant()
     return -self.attackspeedReduction
 end
+
+function modifier_item_orb_of_decrepitude_tgt:GetTexture()
+    return "item_orb_of_decrepitude" 
+end

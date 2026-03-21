@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_schism"	        "Schism"
+"DOTA_Tooltip_ability_item_schism_Description" "<h1>Пассивное: Split</h1> С шансом %chance_pct%%% при атаке владелец может совершить до %additional_targets% дополнительных атак по целям в радиусе %search_radius% от основной.<br>Дополнительные атаки нанесут на %damage_reduction_pct%%% меньше урона.<br><br>Работает только на героев дальнего боя."

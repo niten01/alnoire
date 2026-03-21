@@ -104,7 +104,7 @@ CUSTOM_RESPAWN_TIME                          = 3
 FOUNTAIN_CONSTANT_MANA_REGEN                 = -1    -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_MANA_REGEN               = -1    -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_HEALTH_REGEN             = -1    -- What should we use for the percentage fountain health regen?  Use -1 to keep the default dota behavior.
-MAXIMUM_ATTACK_SPEED                         = 1000  -- What should we use for the maximum attack speed?
+MAXIMUM_ATTACK_SPEED                         = 2000  -- What should we use for the maximum attack speed?
 MINIMUM_ATTACK_SPEED                         = 10    -- What should we use for the minimum attack speed?
 
 DISABLE_DAY_NIGHT_CYCLE                      = false -- Should we disable the day night cycle from naturally occurring? (Manual adjustment still possible)

@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_ossified_gaff"	        "Ossified Gaff"
+"DOTA_Tooltip_ability_item_ossified_gaff_Description" "<h1>Пассивное: Замедляющее Касание</h1>Атаки снижают скорость передвижения цели на %ms_reduction%. Действует %duration% сек.\n\n<h1>Пассивное: Ядовитое Касание</h1>Атаки отравляют цель, нанося %poison_dps% урона в секунду. Яд действует %duration% сек."

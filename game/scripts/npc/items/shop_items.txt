@@ -22,11 +22,6 @@
             "distance"  "200"
             "travel_time" "0.4"
         }
-
-        "precache"
-        {
-            "particle"		"particles/item_fan.vpcf"
-        }
     }
     "item_mark_of_ebuchi"
     {
@@ -114,7 +109,7 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"		"-20"
+                    "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"		"20"
                 }
             }
         }
@@ -213,6 +208,354 @@
         {
             "attack_speed_reduction"  "50"
             "duration" "3"
+        }
+    }
+    "item_recipe_caustic_sopor"
+    {
+        "ID"                    "4010"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "item_recipe"
+        "Model"                 "models/props_gameplay/recipe.vmdl"
+        "ItemRecipe"          "1" 
+
+        "ItemCost"            "400" 
+
+        "ItemResult"          "item_caustic_sopor" 
+        "ItemRequirements"
+        {
+            "01" "item_orb_of_decay;item_orb_of_decrepitude"
+        }
+    }
+    "item_caustic_sopor"
+    {
+        "ID"                    "4011"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_caustic_sopor.lua"
+        "AbilityTextureName"            "caustic_sopor"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+
+        "AbilityValues" 
+        {
+            "attack_speed_reduction"  "70"
+            "poison_dps"  "50"
+            "duration" "3"
+        }
+    }
+    "item_recipe_ossified_gaff"
+    {
+        "ID"                    "4012"
+        "BaseClass"             "item_datadriven"
+        "ItemRecipe"          "1" 
+        "AbilityTextureName"    "item_recipe"
+        "Model"                 "models/props_gameplay/recipe.vmdl"
+
+        "ItemCost"            "400" 
+
+        "ItemResult"          "item_ossified_gaff" 
+        "ItemRequirements"
+        {
+            "01" "item_orb_of_decay;item_orb_of_deceleration"
+        }
+    }
+    "item_ossified_gaff"
+    {
+        "ID"                    "4013"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_ossified_gaff.lua"
+        "AbilityTextureName"            "ossified_gaff"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+
+        "AbilityValues" 
+        {
+            "ms_reduction"  "150"
+            "poison_dps"  "50"
+            "duration" "3"
+        }
+    }
+    "item_recipe_blight_vesper"
+    {
+        "ID"                    "4014"
+        "BaseClass"             "item_datadriven"
+        "ItemRecipe"          "1" 
+        "AbilityTextureName"    "item_recipe"
+        "Model"                 "models/props_gameplay/recipe.vmdl"
+
+        "ItemCost"            "400" 
+        
+        "ItemResult"          "item_blight_vesper" 
+        "ItemRequirements"
+        {
+            "01" "item_caustic_sopor;item_orb_of_discord"
+        }
+    }
+    "item_blight_vesper"
+    {
+        "ID"                    "4015"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_blight_vesper.lua"
+        "AbilityTextureName"            "blight_vesper"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+
+        "AbilityValues" 
+        {
+            "mag_res_reduction"  "20"
+            "attack_speed_reduction"  "100"
+            "poison_dps"  "80"
+            "duration" "3"
+        }
+    }
+    "item_recipe_marrow_eater"
+    {
+        "ID"                    "4016"
+        "BaseClass"             "item_datadriven"
+        "ItemRecipe"          "1" 
+        "AbilityTextureName"    "item_recipe"
+        "Model"                 "models/props_gameplay/recipe.vmdl"
+
+        "ItemCost"            "400" 
+        
+        "ItemResult"          "item_marrow_eater" 
+        "ItemRequirements"
+        {
+            "01" "item_ossified_gaff;item_orb_of_desolation"
+        }
+    }
+    "item_marrow_eater"
+    {
+        "ID"                    "4017"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_marrow_eater.lua"
+        "AbilityTextureName"            "marrow_eater"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+
+        "AbilityValues" 
+        {
+            "ms_reduction"  "20"
+            "armor_reduction"  "100"
+            "poison_dps"  "80"
+            "duration" "3"
+        }
+    }
+    "item_recipe_entrophia"
+    {
+        "ID"                    "4018"
+        "BaseClass"             "item_datadriven"
+        "ItemRecipe"          "1" 
+        "AbilityTextureName"    "item_recipe"
+        "Model"                 "models/props_gameplay/recipe.vmdl"
+
+        "ItemCost"            "400" 
+        
+        "ItemResult"          "item_entrophia" 
+        "ItemRequirements"
+        {
+            "01" "item_blight_vesper;item_marrow_eater"
+        }
+    }
+    "item_entrophia"
+    {
+        "ID"                    "4019"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_entrophia.lua"
+        "AbilityTextureName"            "entrophia"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+
+        "AbilityValues" 
+        {
+            "ms_reduction"  "50"
+            "armor_reduction"  "200"
+            "mag_res_reduction"  "50"
+            "attack_speed_reduction"  "200"
+            "poison_dps"  "800"
+            "duration" "3"
+        }
+    }
+    "item_leadlined_grip"
+    {
+        "ID"                    "4020"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_leadlined_grip.lua"
+        "AbilityTextureName"            "leadlined_grip"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemPermanent"                 "0"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "ItemCost"                      "1000"
+
+        "AbilityCooldown"               "10.0" 
+
+        "AbilityValues" 
+        {
+            "attack_speed_reduction"  "100"
+            "bonus_damage"  "100"
+            "duration"      "5"
+        }
+    }
+    "item_echo_dagger"
+    {
+        "ID"                    "4019"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_echo_dagger.lua"
+        "AbilityTextureName"            "echo_dagger"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+
+        "AbilityCooldown"               "5"
+        "ItemCost"                      "1000"
+
+        "AbilityValues" 
+        {
+            "damage_reduction_pct"    "30"
+        }
+    }
+    "item_schism"
+    {
+        "ID"                    "4020"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_schism.lua"
+        "AbilityTextureName"            "schism"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+
+        "ItemCost"                      "1000"
+
+        "AbilityValues" 
+        {
+            "chance_pct"     "50"        
+            "additional_targets"    "3"
+            "search_radius"  "300"
+            "damage_reduction_pct"  "50" 
+        }
+    }
+    "item_cinder_brand"
+    {
+        "ID"                    "4021"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_cinder_brand.lua"
+        "AbilityTextureName"            "cinder_brand"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+
+        "ItemCost"                      "1000"
+
+        "AbilityValues" 
+        {
+            "chance_pct"     "50"        
+            "radius"  "300"
+            "damage"  "50" 
+        }
+    }
+    "item_malignance"
+    {
+        "ID"                    "4022"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_malignance.lua"
+        "AbilityTextureName"            "malignance"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemPermanent"                 "0"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "ItemCost"                      "500"
+
+        "AbilityCooldown"               "10.0" 
+
+        "AbilityValues" 
+        {
+            "crit_pct" "300"
+            "chance_pct" "50"
+            "duration"   "7"
+        }
+    }
+    "item_keen_killer"
+    {
+        "ID"                    "4022"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_keen_killer.lua"
+        "AbilityTextureName"            "keen_killer"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemPermanent"                 "0"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "ItemCost"                      "500"
+
+        "AbilityCooldown"               "10.0" 
+
+        "AbilityValues" 
+        {
+            "crit_pct" "300"
+            "chance_pct" "50"
+            "duration"   "7"
+        }
+    }
+    "item_nullity"
+    {
+        "ID"                    "4023"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_nullity.lua"
+        "AbilityTextureName"    "nullity"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemCost"                      "2000"
+
+        "AbilityValues" 
+        {
+            "evasion_chance_pct"  "7"
+        }
+    }
+    "item_tough_egg"
+    {
+        "ID"                    "4024"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_tough_egg.lua"
+        "AbilityTextureName"            "tough_egg"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemPermanent"                 "0"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "ItemCost"                      "500"
+
+        "AbilityCooldown"               "10.0" 
+
+        "AbilityValues" 
+        {
+            "duration"  "0.4"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/items2_fx/manta_phase.vpcf"
         }
     }
 }

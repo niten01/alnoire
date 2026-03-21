@@ -7,7 +7,7 @@ function item_fan:OnSpellStart()
   local travelTime = self:GetSpecialValueFor("travel_time")
   local distance = self:GetSpecialValueFor("distance")
 
-  local pfx = ParticleManager:CreateParticle("particles/item_fan.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+  local pfx = ParticleManager:CreateParticle("particles/custom_items/item_fan.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
   ParticleManager:ReleaseParticleIndex(pfx)
 
   caster:EmitSound("items.fan.cast")

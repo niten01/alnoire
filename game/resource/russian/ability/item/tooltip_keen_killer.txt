@@ -1,0 +1,5 @@
+"DOTA_Tooltip_ability_item_keen_killer"	        "Keen Killer"
+"DOTA_Tooltip_ability_item_keen_killer_Description" "<h1>Активное: Discerning Strike</h1> На %duration% сек. владелец получает %chance_pct%%% шанс нанести атакой критический урон в размере %crit_pct%%% от исходного."
+
+"DOTA_Tooltip_modifier_keen_killer_buff" "Discerning Strike"
+"DOTA_Tooltip_modifier_keen_killer_buff_Description" "Шанс нанести критический урон атакой."

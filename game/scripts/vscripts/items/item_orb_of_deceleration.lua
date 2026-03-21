@@ -52,3 +52,7 @@ end
 function modifier_item_orb_of_deceleration_tgt:GetModifierMoveSpeedBonus_Constant()
     return -self.msReduction
 end
+
+function modifier_item_orb_of_deceleration_tgt:GetTexture()
+    return "item_orb_of_deceleration" 
+end

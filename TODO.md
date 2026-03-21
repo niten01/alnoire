@@ -85,7 +85,6 @@ particles:
 * ульта берет последний скил и делает его альт версию на время  (по нажатию)
 
 * particles/units/heroes/hero_void_spirit/astral_step/astral_step_portal_selected.vpcf
-* particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_debut_ground_rocks_vertical.vpcf
 
 ## items
 

@@ -28,4 +28,102 @@
     ]
     vsnd_duration = 1.0
   }
+  items.leadlined_grip.cast = {
+    type = "dota_update_default"
+    volume = 0.800000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/ui/inventory/leather_pickup_01.vsnd",
+      "sounds/ui/inventory/leather_pickup_02.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  items.leadlined_grip.hit = {
+    type = "dota_update_default"
+    volume = 1.000000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    fade_out = 0.4
+    volume_fade_out = 0.100000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/items/havoc_hammer.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  items.echo_dagger.layer = {
+    type = "dota_update_default"
+    volume = 0.500000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/physics/footsteps/hero/elder_titan/echo01.vsnd",
+      "sounds/physics/footsteps/hero/elder_titan/echo02.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  items.cinder_brand.hit = {
+    type = "dota_update_default"
+    volume = 0.500000
+    soundlevel = 81.000000
+    pitch = "0.700000"
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/weapons/hero/shredder/armor_explode.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  items.malignance.crit = {
+    type = "dota_update_default"
+    volume = 0.500000
+    soundlevel = 81.000000
+    pitch = "0.500000"
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/items/lotus_grant.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  items.keen_killer.crit = {
+    type = "dota_update_default"
+    volume = 0.500000
+    soundlevel = 81.000000
+    pitch = "0.700000"
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/items/daedelus.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  items.tough_egg.cast = {
+    type = "dota_update_default"
+    volume = 0.500000
+    soundlevel = 81.000000
+    pitch = "0.700000"
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/items/manta.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
 }

@@ -422,5 +422,8 @@ return {
         "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_smokepoof.vpcf",
         "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_stack.vpcf",
         "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_debuff.vpcf"
-    }
+    },
+    particleFolders = {
+        "particles/custom_items"
+    },
 }

@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_caustic_sopor"	        "Caustic Sopor"
+"DOTA_Tooltip_ability_item_caustic_sopor_Description" "<h1>Пассивное: Изматывающее Касание</h1>Атаки снижают скорость атаки цели на %attack_speed_reduction%. Действует %duration% сек.\n\n<h1>Пассивное: Ядовитое Касание</h1>Атаки отравляют цель, нанося %poison_dps% урона в секунду. Яд действует %duration% сек."
