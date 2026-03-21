@@ -52,3 +52,7 @@ end
 function modifier_item_orb_of_desolation_tgt:GetModifierPhysicalArmorBonus()
     return -self.armorReduction
 end
+
+function modifier_item_orb_of_desolation_tgt:GetTexture()
+    return "item_orb_of_desolation" 
+end

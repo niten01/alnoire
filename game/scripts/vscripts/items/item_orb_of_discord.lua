@@ -52,3 +52,7 @@ end
 function modifier_item_orb_of_discord_tgt:GetModifierMagicalResistanceBonus()
     return -self.magresReduction
 end
+
+function modifier_item_orb_of_discord_tgt:GetTexture()
+    return "item_orb_of_discord" 
+end

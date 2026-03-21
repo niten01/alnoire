@@ -9,10 +9,11 @@ end
 
 ---------------------------------------------------
 
-function modifier_item_orb_of_decay:IsHidden() return true end
-function modifier_item_orb_of_decay:IsPurgable() return false end
-
 modifier_item_orb_of_decay = class {}
+
+function modifier_item_orb_of_decay:IsHidden() return true end
+
+function modifier_item_orb_of_decay:IsPurgable() return false end
 
 function modifier_item_orb_of_decay:DeclareFunctions()
   return {
@@ -63,4 +64,10 @@ function modifier_item_orb_of_decay_tgt:OnIntervalThink()
     damage_type = DAMAGE_TYPE_MAGICAL,
     ability = ability,
   })
+  SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, parent,
+    self.damage, nil)
+end
+
+function modifier_item_orb_of_decay_tgt:GetTexture()
+  return "item_orb_of_decay"
 end

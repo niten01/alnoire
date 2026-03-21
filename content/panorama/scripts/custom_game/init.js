@@ -1,4 +1,4 @@
-function HidePickScreen() {
+function SetupHUD() {
 	if (Game.GameStateIs(DOTA_GameState.DOTA_GAMERULES_STATE_GAME_IN_PROGRESS)) {
 		const hud = $.GetContextPanel().FindAncestor("DotaHud");
 		const hideAllChildren = (node) => {
@@ -8,15 +8,25 @@ function HidePickScreen() {
 				hideAllChildren(child);
 			}
 		}
-		hideAllChildren(hud.FindChildTraverse("StatBranch"))
-		hideAllChildren(hud.FindChildTraverse("StatBranchDrawer"))
-		hideAllChildren(hud.FindChildTraverse("level_stats_frame"))
+
+		$.DispatchEvent("Activated", hud.FindChildTraverse("GridUpgradesTab"), "mouse")
+		const hideDefaultElements = () => {
+			hideAllChildren(hud.FindChildTraverse("StatBranch"))
+			hideAllChildren(hud.FindChildTraverse("StatBranchDrawer"))
+			hideAllChildren(hud.FindChildTraverse("level_stats_frame"))
+			hideAllChildren(hud.FindChildTraverse("GridBasicsTab"))
+			hideAllChildren(hud.FindChildTraverse("GridNeutralsTab"))
+			$.Schedule(5, () => {
+				hideDefaultElements()
+			})
+		}
+		hideDefaultElements()
 	}
 }
 
 (function () {
 	GameEvents.Subscribe("game_rules_state_change", () => {
-		$.Schedule(1, HidePickScreen)
+		$.Schedule(1, SetupHUD)
 	});
 })();
 

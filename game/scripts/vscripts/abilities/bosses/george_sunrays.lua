@@ -32,6 +32,9 @@ function george_sunrays:OnSpellStart()
 
     caster:EmitSound("ability.george.sunrays.cast")
     caster:EmitSound("ability.george.sunrays.loop")
+    Timers:CreateTimer(self:GetChannelTime(), function()
+        caster:StopSound("ability.george.sunrays.loop")
+    end)
 
     self.timers = {}
 

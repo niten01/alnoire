@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_marrow_eater"	        "Marrow Eater"
+"DOTA_Tooltip_ability_item_marrow_eater_Description" "<h1>Пассивное: Пронзающее Касание</h1>Атаки снижают броню цели на %armor_reduction%. Действует %duration% сек.\n\n<h1>Пассивное: Замедляющее Касание</h1>Атаки снижают скорость передвижения цели на %ms_reduction%. Действует %duration% сек.\n\n<h1>Пассивное: Ядовитое Касание</h1>Атаки отравляют цель, нанося %poison_dps% урона в секунду. Яд действует %duration% сек."

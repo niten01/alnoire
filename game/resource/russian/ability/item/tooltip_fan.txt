@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_fan"	        "Веер"
+"DOTA_Tooltip_ability_item_fan_Description" "<h1>Активное: Взмах</h1>Магические свойства веера усиливают создаваемые воздушные потоки, отталкивая врагов вокруг."

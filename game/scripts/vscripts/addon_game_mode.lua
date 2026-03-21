@@ -2,7 +2,7 @@ if barebones == nil then
 	_G.barebones = class({})
 else
 	DebugPrint(
-	"[BAREBONES] barebones class name is already in use, change the name if this is the first time you launch the game!")
+		"[BAREBONES] barebones class name is already in use, change the name if this is the first time you launch the game!")
 	DebugPrint("[BAREBONES] If this is not your first time, you probably used script_reload in console.")
 end
 
@@ -31,13 +31,10 @@ function Precache(context)
 	for _, particle in ipairs(precache.particles) do
 		PrecacheResource("particle", particle, context)
 	end
-	--[[
-		Precache things we know we'll use.  Possible file types include (but not limited to):
-			PrecacheResource( "model", "*.vmdl", context )
-			PrecacheResource( "soundfile", "*.vsndevts", context )
-			PrecacheResource( "particle", "*.vpcf", context )
-			PrecacheResource( "particle_folder", "particles/folder", context )
-	]]
+
+	for _, pf in ipairs(precache.particleFolders) do
+		PrecacheResource("particle_folder", pf, context)
+	end
 end
 
 -- Create the game mode when we activate
