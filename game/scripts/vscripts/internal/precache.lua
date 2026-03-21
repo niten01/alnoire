@@ -190,6 +190,7 @@ return {
         "npc_dota_hero_elder_titan",
         "npc_dota_hero_pudge",
         "npc_dota_hero_pugna",
+        "npc_dota_greevil",
 
 
 
@@ -254,6 +255,7 @@ return {
         "npc_dark_titan_2",
         "npc_dark_pudge",
         "npc_dark_pugna",
+        "npc_dark_greevil",
 
         -- traps
         "npc_trap_arrow",

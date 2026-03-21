@@ -88,15 +88,10 @@
     {
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"                    "abilities/darkforest/dark_pudge_passive"
-		"AbilityTextureName"            "drow_ranger_marksmanship_arcana"
+		"AbilityTextureName"            "pugna_nether_ward_alt"
 
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilityValues"
-		{
-            "bonusDamage"    "100"
-		}
 	}
 
     "pugna_life_drain"
