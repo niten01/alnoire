@@ -9,12 +9,13 @@ function modifier_sanya_towel_aura_buff_1:IsDebuff() return false end
 function modifier_sanya_towel_aura_buff_1:OnCreated()
     if not IsServer() then return end
     local ability = self:GetAbility()
-    self.hp_regen = ability:GetSpecialValueFor('hp_regen') or 10
+    self.healPrc = ability:GetSpecialValueFor('healPrc') or 0.1
     self.decreaseMult = ability:GetSpecialValueFor('decreaseMult') or 0.7
     self.delayBeforeReset = ability:GetSpecialValueFor('delayBeforeReset') or 1.0
     self:StartIntervalThink(1.0)
 
-    self.pfx = ParticleManager:CreateParticle("particles/sanya_towel_aura_green_summon.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+    self.pfx = ParticleManager:CreateParticle("particles/sanya_towel_aura_green_summon.vpcf", PATTACH_ABSORIGIN_FOLLOW,
+        self:GetParent())
 end
 
 function modifier_sanya_towel_aura_buff_1:OnDestroy()
@@ -27,7 +28,8 @@ function modifier_sanya_towel_aura_buff_1:OnIntervalThink()
     if not IsServer() then return end
     local parent = self:GetParent()
     local abil = self:GetAbility()
-    local healAmount = self.hp_regen
+    local maxHp = parent:GetMaxHealth()
+    local healAmount = maxHp * self.healPrc
     if self.lastHitTime and (GameRules:GetGameTime() - self.lastHitTime) <= self.delayBeforeReset then
         healAmount = healAmount * self.decreaseMult
     end
