@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_shivas_seal"	        "Shiva's Seal"
+"DOTA_Tooltip_ability_item_shivas_seal_Description" "<h1>Активное: Arctic Blast</h1> Выпускает морозную волну, которая наносит противникам %damage% магического урона и на %duration% сек. снижает их скорость передвижения на %ms_reduction%."

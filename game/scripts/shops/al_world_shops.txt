@@ -32,11 +32,14 @@
     "item"              "item_fan"
     "item"              "item_tough_egg"
     "item"              "item_nullity"
+    "item"              "item_staff_of_madness"
   }
 
   "magics" // 19/20
   {
     "item"              "item_malignance"
+    "item"              "item_octarine_essence"
+    "item"              "item_shivas_seal"
   }
 
   "defense" // 19/20

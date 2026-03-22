@@ -1,0 +1,3 @@
+"DOTA_Tooltip_ability_item_octarine_essence"	        "Octarine Essence"
+"DOTA_Tooltip_ability_item_octarine_essence_Lore"	    "Этот предмет был лабораторно создан в Академии. Это лучший результат, которого смогли достичь исследователи в попытках воссоздать легендарный артефакт."
+"DOTA_Tooltip_ability_item_octarine_essence_cdr_pct" "%+$cooldown_reduction"

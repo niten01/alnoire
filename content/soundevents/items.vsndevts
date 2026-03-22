@@ -86,9 +86,11 @@
   }
   items.malignance.crit = {
     type = "dota_update_default"
-    volume = 0.500000
+    volume = 0.700000
     soundlevel = 81.000000
-    pitch = "0.500000"
+    pitch = "0.700000"
+    pitch_rand_min = "-0.100000"
+    pitch_rand_max = "0.100000"
     mixgroup = "Weapons"
     volume_fade_out = 0.600000
     spread_radius = 500.000000
@@ -102,7 +104,9 @@
     type = "dota_update_default"
     volume = 0.500000
     soundlevel = 81.000000
-    pitch = "0.700000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.100000"
+    pitch_rand_max = "0.100000"
     mixgroup = "Weapons"
     volume_fade_out = 0.600000
     spread_radius = 500.000000
@@ -116,13 +120,43 @@
     type = "dota_update_default"
     volume = 0.500000
     soundlevel = 81.000000
-    pitch = "0.700000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.100000"
+    pitch_rand_max = "0.100000"
     mixgroup = "Weapons"
     volume_fade_out = 0.600000
     spread_radius = 500.000000
     vsnd_files = 
     [
       "sounds/items/manta.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  items.shivas_seal.cast = {
+    type = "dota_update_default"
+    volume = 0.500000
+    soundlevel = 81.000000
+    pitch = "1.100000"
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/items/shivas_guard.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  items.staff_of_madness.cast = {
+    type = "dota_update_default"
+    volume = 0.500000
+    soundlevel = 81.000000
+    pitch = "1.100000"
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/items/mask_of_madness.vsnd",
     ]
     vsnd_duration = 1.0
   }
