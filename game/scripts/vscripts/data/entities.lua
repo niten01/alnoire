@@ -718,6 +718,68 @@ return {
             ai_modifier = "modifier_dark_pugna_ai",
         },
 
+        spawner_dark_greevil_first_1  = {
+            npc = "npc_dark_greevil",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_greevils",
+            ai_modifier = "modifier_dark_greevil_ai",
+        },
+        spawner_dark_greevil_first_2  = {
+            npc = "npc_dark_greevil",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_greevils",
+            ai_modifier = "modifier_dark_greevil_ai",
+        },
+        spawner_dark_greevil_first_3  = {
+            npc = "npc_dark_greevil",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_greevils",
+            ai_modifier = "modifier_dark_greevil_ai",
+        },
+        spawner_dark_greevil_first_4  = {
+            npc = "npc_dark_greevil",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_greevils",
+            ai_modifier = "modifier_dark_greevil_ai",
+        },
+        spawner_dark_greevil_first_5  = {
+            npc = "npc_dark_greevil",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_greevils",
+            ai_modifier = "modifier_dark_greevil_ai",
+        },
+        spawner_dark_greevil_second_1 = {
+            npc = "npc_dark_greevil",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_greevils",
+            ai_modifier = "modifier_dark_greevil_ai",
+        },
+        spawner_dark_greevil_second_2 = {
+            npc = "npc_dark_greevil",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_greevils",
+            ai_modifier = "modifier_dark_greevil_ai",
+        },
+        spawner_dark_greevil_second_3 = {
+            npc = "npc_dark_greevil",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_greevils",
+            ai_modifier = "modifier_dark_greevil_ai",
+        },
+        spawner_dark_greevil_second_4 = {
+            npc = "npc_dark_greevil",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_greevils",
+            ai_modifier = "modifier_dark_greevil_ai",
+        },
+        spawner_dark_greevil_second_5 = {
+            npc = "npc_dark_greevil",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_greevils",
+            ai_modifier = "modifier_dark_greevil_ai",
+        },
+
+
         spawner_dream_concert         = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
@@ -1011,6 +1073,13 @@ return {
         },
 
         pack_darkforest_act3_pupu = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_darkforest_act3_greevils = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,
