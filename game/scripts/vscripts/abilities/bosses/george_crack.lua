@@ -21,31 +21,35 @@ function george_crack:OnSpellStart()
     local width = self:GetSpecialValueFor("width")
     local damage = self:GetSpecialValueFor("damage")
     local travelTime = self:GetSpecialValueFor("travel_time")
-    local dir = (targetPos - casterPos):Normalized()
-
-    local pfx = ParticleManager:CreateParticle("particles/george_crack.vpcf", PATTACH_ABSORIGIN, caster)
-    local endPos = casterPos + dir * distance
-    ParticleManager:SetParticleControl(pfx, 1, endPos)
-    ParticleManager:SetParticleControl(pfx, 3, Vector(0, travelTime, 0))
+    local dir = targetPos - casterPos
 
     caster:EmitSound("ability.george.crack.cast")
 
-    Timers:CreateTimer(travelTime, function()
-        ParticleManager:DestroyParticle(pfx, false)
-        ParticleManager:ReleaseParticleIndex(pfx)
+    local endPoints = PointsAlongRing(casterPos, distance, self:GetSpecialValueFor("num_cracks"),
+        math.atan2(dir.y, dir.x))
 
-        caster:EmitSound("ability.george.crack.explode")
+    for _, endPos in ipairs(endPoints) do
+        local pfx = ParticleManager:CreateParticle("particles/george_crack.vpcf", PATTACH_ABSORIGIN, caster)
+        ParticleManager:SetParticleControl(pfx, 1, endPos)
+        ParticleManager:SetParticleControl(pfx, 3, Vector(0, travelTime, 0))
 
-        local enemies = FindEnemiesForAIInLine(casterPos, endPos, width)
-        for _, ent in ipairs(enemies) do
-            ApplyDamage({
-                victim = ent,
-                attacker = caster,
-                damage = damage,
-                damage_type = self:GetAbilityDamageType(),
-                ability = self,
-            })
-            ApplyGeorgeBurn(ent, self)
-        end
-    end)
+        Timers:CreateTimer(travelTime, function()
+            ParticleManager:DestroyParticle(pfx, false)
+            ParticleManager:ReleaseParticleIndex(pfx)
+
+            caster:EmitSound("ability.george.crack.explode")
+
+            local enemies = FindEnemiesForAIInLine(casterPos, endPos, width)
+            for _, ent in ipairs(enemies) do
+                ApplyDamage({
+                    victim = ent,
+                    attacker = caster,
+                    damage = damage,
+                    damage_type = self:GetAbilityDamageType(),
+                    ability = self,
+                })
+                ApplyGeorgeBurn(ent, self)
+            end
+        end)
+    end
 end

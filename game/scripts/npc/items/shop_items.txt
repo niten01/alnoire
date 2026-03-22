@@ -98,6 +98,11 @@
         "ItemPurchasable"               "1"
         "ItemCost"                      "2000"
 
+        "AbilityValues" 
+        {
+            "cdr_pct"  "20"
+        }
+
         "Modifiers"
         {
             "item_mark_of_ebuchi_modifier"
@@ -109,7 +114,7 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"		"20"
+                    "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"		"%cdr_pct"
                 }
             }
         }
@@ -556,6 +561,72 @@
         "precache"
         {
             "particle"		"particles/items2_fx/manta_phase.vpcf"
+        }
+    }
+    "item_shivas_seal"
+    {
+        "ID"                    "4025"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_shivas_seal.lua"
+        "AbilityTextureName"            "shivas_seal"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemPermanent"                 "0"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "ItemCost"                      "500"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "AbilityCastRange"              "500"
+        "AbilityCooldown"               "10.0" 
+
+        "AbilityValues" 
+        {
+            "duration"      "1.5" // debuff
+            "ms_reduction"  "100"
+            "damage"        "100"
+
+            "expand_time"   "2.4" // particle bound
+        }
+
+        "precache"
+        {
+            "particle"		"particles/items2_fx/shivas_guard_impact.vpcf"
+            "particle"		"particles/items2_fx/shivas_guard_active.vpcf"
+        }
+    }
+    "item_staff_of_madness"
+    {
+        "ID"                    "4026"
+        "BaseClass"                     "item_lua"          
+        "ScriptFile"                    "items/item_staff_of_madness.lua"
+        "AbilityTextureName"            "staff_of_madness"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemPurchasable"               "1"
+        "ItemPermanent"                 "0"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "ItemCost"                      "1500"
+
+        "AbilityCastRange"              "700"
+        "AbilityCooldown"               "10.0" 
+
+        "AbilityValues" 
+        {
+            "aoe_radius"    "250"
+            "duration"      "10.0"
+            "armor_reduction" "8"
+            "lifesteal_pct"   "24"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/items2_fx/mask_of_madness.vpcf"
+            "particle"		"particles/generic_gameplay/generic_lifesteal.vpcf"
         }
     }
 }

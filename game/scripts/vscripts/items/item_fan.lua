@@ -19,12 +19,14 @@ function item_fan:OnSpellStart()
     local dest = GetSafeBlinkDestination(enemyPos, enemyPos + dir * distance)
     local realDist = #(dest - enemyPos)
 
-    enemy:AddNewModifier(caster, self, "modifier_move_ease", {
-      directionX = dir.x,
-      directionY = dir.y,
-      duration = travelTime,
-      distance = realDist,
-      activity = ACT_DOTA_FLAIL,
-    })
+    if not enemy:HasModifier("modifier_immobile") then
+      enemy:AddNewModifier(caster, self, "modifier_move_ease", {
+        directionX = dir.x,
+        directionY = dir.y,
+        duration = travelTime,
+        distance = realDist,
+        activity = ACT_DOTA_FLAIL,
+      })
+    end
   end
 end

@@ -218,7 +218,7 @@ return {
         },
         spawner_training_dummy        = {
             npc = "npc_training_dummy",
-            modifiers = { "modifier_training_dummy" },
+            modifiers = { "modifier_training_dummy", "modifier_immobile" },
             team = DOTA_TEAM_BADGUYS,
         },
         spawner_red                   = {
@@ -276,7 +276,7 @@ return {
         },
         spawner_perekup               = {
             npc = "npc_perekup",
-            modifiers = { "modifier_story_npc" },
+            modifiers = { "modifier_story_npc", "modifier_immobile" },
             packID = "pack_perekup",
             ai_modifier = "modifier_perekup_ai",
         },
@@ -299,7 +299,7 @@ return {
 
         spawner_island_guard          = {
             npc = "npc_island_guard",
-            modifiers = { "modifier_story_npc" },
+            modifiers = { "modifier_story_npc", "modifier_immobile" },
             packID = "pack_island_guard",
             ai_modifier = "modifier_island_guard_ai",
         },

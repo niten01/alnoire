@@ -2,6 +2,10 @@ modifier_move_ease = class({})
 
 function modifier_move_ease:OnCreated(kv)
     if not IsServer() then return end
+    if self:GetParent():HasModifier("modifier_immobile") then
+        self:Destory()
+        return
+    end
 
     self.direction = Vector(kv.directionX, kv.directionY, 0):Normalized()
     self.distance = kv.distance or 500

@@ -15,10 +15,10 @@ function sanya_towel_root:OnSpellStart()
     local radius = self:GetSpecialValueFor("aoe_radius")
     local duration = self:GetSpecialValueFor("duration")
     local pfx = ParticleManager:CreateParticle(
-    "particles/econ/items/treant_protector/treant_ti10_immortal_head/treant_ti10_immortal_overgrowth_cast.vpcf",
+    "particles/sanya_towel_root.vpcf",
         PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, point)
-    ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 0, 0))
+    ParticleManager:SetParticleControl(pfx, 3, Vector(radius, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx)
     EmitSoundOnLocationWithCaster(point, "ability.towel_master.towel_root", caster)
 

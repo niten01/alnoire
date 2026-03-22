@@ -158,8 +158,9 @@
         {
             "distance"            "3000"
             "damage"              "200"
-            "travel_time"         "1.5"
+            "travel_time"         "2.5"
             "width"               "150"
+            "num_cracks"          "5"
         }
 
         "precache"

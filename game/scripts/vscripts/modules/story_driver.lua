@@ -426,7 +426,7 @@ function StoryDriver:OnGameInProgress()
           local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
           if not hero then error("No hero") end
           local fwd = hero:GetForwardVector()
-          local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_sanya_logarithmus", 0, 0)
+          local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_sanya_towel_master", 0, 0)
           newHero:SetForwardVector(fwd)
           hero:RemoveSelf()
           newHero:HeroLevelUp(false)

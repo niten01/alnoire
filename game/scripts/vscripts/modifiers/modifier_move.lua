@@ -2,6 +2,10 @@ modifier_move = class {}
 
 function modifier_move:OnCreated(kv)
     if not IsServer() then return end
+    if self:GetParent():HasModifier("modifier_immobile") then
+        self:Destory()
+        return
+    end
 
     self.direction = Vector(kv.directionX, kv.directionY, 0):Normalized()
     self.speed = kv.speed

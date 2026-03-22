@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_staff_of_madness"	        "Staff of Madness"
+"DOTA_Tooltip_ability_item_staff_of_madness_Description" "<h1>Активное: Berserk Zone</h1>Создает в указанной точке область радиусом %aoe_radius% на %duration% сек. Существа внутри лишаются %armor_reduction% брони и возможности колдовать, но получают %lifesteal_pct%%% вампиризма при атаках."

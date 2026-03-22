@@ -31,20 +31,22 @@ function modifier_tough_egg_buff:OnDestroy()
     ParticleManager:ReleaseParticleIndex(self.pfx)
 end
 
+function modifier_tough_egg_buff:CheckState()
+    return {
+        [MODIFIER_STATE_DEBUFF_IMMUNE] = true,
+        [MODIFIER_STATE_MAGIC_IMMUNE] = true,
+    }
+end
+
 function modifier_tough_egg_buff:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
-        MODIFIER_PROPERTY_STATUS_RESISTANCE,
     }
 end
 
 function modifier_tough_egg_buff:GetModifierIncomingDamage_Percentage()
     SendOverheadEventMessage(nil, OVERHEAD_ALERT_EVADE, self:GetParent(), 0, nil)
     return -100
-end
-
-function modifier_tough_egg_buff:GetModifierStatusResistance()
-    return 100
 end
 
 function modifier_tough_egg_buff:GetTexture()
