@@ -7,8 +7,9 @@ function towel_summon_dash:OnSpellStart()
     local caster = self:GetCaster()
     caster:EmitSound("ability.towel_master.towel_summon_dash")
 
+    caster:Stop()
+
     if not caster:HasModifier("modifier_towel_summon_dash") then
         caster:AddNewModifier(caster, self, "modifier_towel_summon_dash", {})
     end
-    
 end

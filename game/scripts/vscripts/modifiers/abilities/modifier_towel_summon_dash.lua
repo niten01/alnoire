@@ -18,7 +18,7 @@ function modifier_towel_summon_dash:CheckState()
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
         [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
         [MODIFIER_STATE_ATTACK_IMMUNE] = true,
-
+        [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
     }
 end
 
@@ -100,12 +100,14 @@ function modifier_towel_summon_dash:UpdateHorizontalMotion(me, dt)
             end
             local final_push_dir = (side_dir * 2.0 + dash_dir * 0.1):Normalized()
 
-            enemy:AddNewModifier(self.parent, self:GetAbility(), "modifier_towel_summon_dash_knockback", {
-                duration = 0.3,
-                x = final_push_dir.x,
-                y = final_push_dir.y,
-                speed = 300
-            })
+            if not enemy:HasModifier("modifier_immobile") then
+                enemy:AddNewModifier(self.parent, self:GetAbility(), "modifier_towel_summon_dash_knockback", {
+                    duration = 0.3,
+                    x = final_push_dir.x,
+                    y = final_push_dir.y,
+                    speed = 300
+                })
+            end
 
             ApplyDamage({
                 victim = enemy,

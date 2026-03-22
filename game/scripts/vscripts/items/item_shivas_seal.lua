@@ -13,8 +13,13 @@ function item_shivas_seal:OnSpellStart()
 
     local pfx = ParticleManager:CreateParticle("particles/items2_fx/shivas_guard_active.vpcf", PATTACH_ABSORIGIN_FOLLOW,
         caster)
-    ParticleManager:SetParticleControl(pfx, 1, Vector(1, 1, speed))
-    ParticleManager:ReleaseParticleIndex(pfx)
+    ParticleManager:SetParticleControl(pfx, 1, Vector(speed, 1, speed))
+    ParticleManager:SetParticleControlEnt(pfx, 2, caster, PATTACH_ABSORIGIN_FOLLOW, "", Vector(0, 0, 0), false)
+
+    Timers:CreateTimer(time, function()
+        ParticleManager:DestroyParticle(pfx, false)
+        ParticleManager:ReleaseParticleIndex(pfx)
+    end)
 
     local pulse = caster:AddNewModifier(caster, self, "modifier_generic_ring", {
         end_radius = radius,
