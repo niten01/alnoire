@@ -778,6 +778,28 @@ return {
             packID = "pack_darkforest_act3_greevils",
             ai_modifier = "modifier_dark_greevil_ai",
         },
+        spawner_dark_shaker_1         = {
+            npc = "npc_dark_shaker_1",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_shakers",
+            ai_modifier = "modifier_dark_shaker_ai",
+            modifiers = { 'modifier_item_ultimate_scepter' }
+        },
+        spawner_dark_shaker_2         = {
+            npc = "npc_dark_shaker_2",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_shakers",
+            ai_modifier = "modifier_dark_shaker_ai",
+            modifiers = { 'modifier_item_ultimate_scepter' }
+        },
+
+        spawner_dark_shaker_3         = {
+            npc = "npc_dark_shaker_3",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_shakers",
+            ai_modifier = "modifier_dark_shaker_ai",
+            modifiers = { 'modifier_item_ultimate_scepter' }
+        },
 
 
         spawner_dream_concert         = {
@@ -1080,6 +1102,13 @@ return {
         },
 
         pack_darkforest_act3_greevils = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_darkforest_act3_shakers = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,
