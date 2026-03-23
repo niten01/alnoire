@@ -5,7 +5,7 @@ function modifier_sanya_towel_root:IsPurgable() return true end
 
 function modifier_sanya_towel_root:OnCreated()
     if not IsServer() then return end
-    local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_treant/treant_overgrowth_vines_mid.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+    local pfx = ParticleManager:CreateParticle("particles/sanya_towel_root_wines.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
     self:AddParticle(pfx, false, false, -1, false, false)
 end
 

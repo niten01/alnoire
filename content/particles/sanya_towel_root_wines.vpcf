@@ -2,9 +2,14 @@
 {
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
-	m_nMaxParticles = 100
+	m_nMaxParticles = 32
+	m_hFallback = resource:"particles/units/heroes/hero_treant/treant_overgrowth_vines_mid.vpcf"
+	m_nFallbackMaxCount = 4
+	m_flConstantRadius = 1.0
+	m_flAggregateRadius = 900.0
+	m_nAggregationMinAvailableParticles = 60
 	m_nBehaviorVersion = 12
-	m_nFirstMultipleOverride_BackwardCompat = 6
+	m_nFirstMultipleOverride_BackwardCompat = 5
 	m_controlPointConfigurations = 
 	[
 		{
@@ -18,192 +23,50 @@
 				{
 					m_iControlPoint = 60
 					m_iAttachType = "PATTACH_WORLDORIGIN"
-					m_vecOffset = [ 201.0, 44.0, 44.0 ]
+					m_vecOffset = [ 50.0, 255.0, 50.0 ]
 					m_entityName = "self"
 				},
 				{
 					m_iControlPoint = 61
 					m_iAttachType = "PATTACH_WORLDORIGIN"
-					m_vecOffset = [ 1.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 5
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 62
+					m_iAttachType = "PATTACH_WORLDORIGIN"
 					m_entityName = "self"
 				},
 			]
 		},
 	]
-	m_Emitters = 
+	m_PreEmissionOperators = 
 	[
 		{
-			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 
-			{
-				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
-				m_nMapType = "PF_MAP_TYPE_REMAP"
-				m_flLiteralValue = 100.0
-				m_NamedValue = ""
-				m_nControlPoint = 3
-				m_nScalarAttribute = 3
-				m_nVectorAttribute = 6
-				m_nVectorComponent = 0
-				m_bReverseOrder = false
-				m_flRandomMin = 0.0
-				m_flRandomMax = 1.0
-				m_bHasRandomSignFlip = false
-				m_nRandomSeed = -1
-				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
-				m_strSnapshotSubset = ""
-				m_flLOD0 = 0.0
-				m_flLOD1 = 0.0
-				m_flLOD2 = 0.0
-				m_flLOD3 = 0.0
-				m_nNoiseInputVectorAttribute = 0
-				m_flNoiseOutputMin = 0.0
-				m_flNoiseOutputMax = 1.0
-				m_flNoiseScale = 0.1
-				m_vecNoiseOffsetRate = [ 0.0, 0.0, 0.0 ]
-				m_flNoiseOffset = 0.0
-				m_nNoiseOctaves = 1
-				m_nNoiseTurbulence = "PF_NOISE_TURB_NONE"
-				m_nNoiseType = "PF_NOISE_TYPE_PERLIN"
-				m_nNoiseModifier = "PF_NOISE_MODIFIER_NONE"
-				m_flNoiseTurbulenceScale = 1.0
-				m_flNoiseTurbulenceMix = 0.5
-				m_flNoiseImgPreviewScale = 1.0
-				m_bNoiseImgPreviewLive = true
-				m_flNoCameraFallback = 0.0
-				m_bUseBoundsCenter = false
-				m_nInputMode = "PF_INPUT_MODE_CLAMPED"
-				m_flMultFactor = 1.0
-				m_flInput0 = 0.0
-				m_flInput1 = 1000.0
-				m_flOutput0 = 0.0
-				m_flOutput1 = 100.0
-				m_flNotchedRangeMin = 0.0
-				m_flNotchedRangeMax = 1.0
-				m_flNotchedOutputOutside = 0.0
-				m_flNotchedOutputInside = 1.0
-				m_nRoundType = "PF_ROUND_TYPE_NEAREST"
-				m_nBiasType = "PF_BIAS_TYPE_STANDARD"
-				m_flBiasParameter = 0.0
-				m_Curve = 
-				{
-					m_spline = [  ]
-					m_tangents = [  ]
-					m_vDomainMins = [ 0.0, 0.0 ]
-					m_vDomainMaxs = [ 0.0, 0.0 ]
-				}
-			}
-		},
-	]
-	m_Initializers = 
-	[
-		{
-			_class = "C_INIT_RandomNamedModelSequence"
-			m_bModelFromRenderer = true
-			m_names = 
-			[
-				"treant_ground_root_anim",
-			]
+			_class = "C_OP_HSVShiftToCP"
+			m_DefaultHSVColor = [ 75, 64, 190, null ]
 		},
 		{
-			_class = "C_INIT_RandomSecondSequence"
-			m_nSequenceMin = 2
-		},
-		{
-			_class = "C_INIT_InitFloat"
-			m_InputValue = 
-			{
-				m_nType = "PF_TYPE_RANDOM_UNIFORM"
-				m_flRandomMin = 2.0
-				m_flRandomMax = 3.0
-				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
-			}
-			m_nOutputField = 1
-		},
-		{
-			m_bDisableOperator = true
-			_class = "C_INIT_InitFloat"
-			m_InputValue = 
-			{
-				m_nType = "PF_TYPE_RANDOM_UNIFORM"
-				m_flRandomMin = 30.0
-				m_flRandomMax = -30.0
-				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
-			}
-			m_nOutputField = 4
-		},
-		{
-			_class = "C_INIT_CreateInEpitrochoid"
-			m_flRadius1 = 62.0
-			m_flRadius2 = 55.0
-			m_flOffset = 203.0
-			m_flParticleDensity = 11.0
-			m_bUseCount = true
-			m_bDisableOperator = true
-		},
-		{
-			_class = "C_INIT_CreateWithinSphereTransform"
-			m_fRadiusMax = 
-			{
-				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
-				m_nMapType = "PF_MAP_TYPE_DIRECT"
-				m_flLiteralValue = 500.0
-				m_NamedValue = ""
-				m_nControlPoint = 3
-				m_nScalarAttribute = 3
-				m_nVectorAttribute = 6
-				m_nVectorComponent = 0
-				m_bReverseOrder = false
-				m_flRandomMin = 0.0
-				m_flRandomMax = 1.0
-				m_bHasRandomSignFlip = false
-				m_nRandomSeed = -1
-				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
-				m_strSnapshotSubset = ""
-				m_flLOD0 = 0.0
-				m_flLOD1 = 0.0
-				m_flLOD2 = 0.0
-				m_flLOD3 = 0.0
-				m_nNoiseInputVectorAttribute = 0
-				m_flNoiseOutputMin = 0.0
-				m_flNoiseOutputMax = 1.0
-				m_flNoiseScale = 0.1
-				m_vecNoiseOffsetRate = [ 0.0, 0.0, 0.0 ]
-				m_flNoiseOffset = 0.0
-				m_nNoiseOctaves = 1
-				m_nNoiseTurbulence = "PF_NOISE_TURB_NONE"
-				m_nNoiseType = "PF_NOISE_TYPE_PERLIN"
-				m_nNoiseModifier = "PF_NOISE_MODIFIER_NONE"
-				m_flNoiseTurbulenceScale = 1.0
-				m_flNoiseTurbulenceMix = 0.5
-				m_flNoiseImgPreviewScale = 1.0
-				m_bNoiseImgPreviewLive = true
-				m_flNoCameraFallback = 0.0
-				m_bUseBoundsCenter = false
-				m_nInputMode = "PF_INPUT_MODE_CLAMPED"
-				m_flMultFactor = 1.0
-				m_flInput0 = 0.0
-				m_flInput1 = 1.0
-				m_flOutput0 = 0.0
-				m_flOutput1 = 1.0
-				m_flNotchedRangeMin = 0.0
-				m_flNotchedRangeMax = 1.0
-				m_flNotchedOutputOutside = 0.0
-				m_flNotchedOutputInside = 1.0
-				m_nRoundType = "PF_ROUND_TYPE_NEAREST"
-				m_nBiasType = "PF_BIAS_TYPE_STANDARD"
-				m_flBiasParameter = 0.0
-				m_Curve = 
-				{
-					m_spline = [  ]
-					m_tangents = [  ]
-					m_vDomainMins = [ 0.0, 0.0 ]
-					m_vDomainMaxs = [ 0.0, 0.0 ]
-				}
-			}
-			m_vecDistanceBias = 
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_nCP1 = 3
+			m_vecCP1Pos = 
 			{
 				m_nType = "PVEC_TYPE_LITERAL"
-				m_vLiteralValue = [ 1.0, 1.0, 0.0 ]
+				m_vLiteralValue = [ 100.0, 0.0, 0.0 ]
 				m_LiteralColor = [ 0, 0, 0 ]
 				m_NamedValue = ""
 				m_bFollowNamedValue = false
@@ -457,155 +320,121 @@
 				m_vRandomMin = [ 0.0, 0.0, 0.0 ]
 				m_vRandomMax = [ 0.0, 0.0, 0.0 ]
 			}
+			m_transformInput = 
+			{
+				m_nControlPoint = 55
+			}
 		},
+	]
+	m_Emitters = 
+	[
 		{
-			_class = "C_INIT_InitFloat"
-			m_InputValue = 
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
 			{
 				m_nType = "PF_TYPE_LITERAL"
-				m_flLiteralValue = 1.0
+				m_flLiteralValue = 5.0
 			}
 		},
+	]
+	m_Initializers = 
+	[
 		{
-			_class = "C_INIT_PositionOffset"
-			m_bDisableOperator = true
-			m_OffsetMax = [ 15.0, 15.0, 128.0 ]
-			m_OffsetMin = [ -15.0, -15.0, 0.0 ]
-		},
-		{
-			_class = "C_INIT_PositionPlaceOnGround"
-			m_flOffset = -5.0
-			m_flMaxTraceLength = 256.0
+			_class = "C_INIT_RingWave"
+			m_flParticlesPerOrbit = 8.0
+			m_bEvenDistribution = true
+			m_flInitialRadius = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 70.0
+			}
+			m_flThickness = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 15.0
+			}
 		},
 		{
 			_class = "C_INIT_InitFloat"
 			m_InputValue = 
 			{
-				m_flInput0 = 1.0
-				m_flInput1 = 3.0
-				m_flOutput0 = 2.0
-				m_flOutput1 = 1.0
-				m_nMapType = "PF_MAP_TYPE_REMAP"
-				m_nType = "PF_TYPE_PARTICLE_FLOAT"
-				m_nScalarAttribute = 3
+				m_nType = "PF_TYPE_RANDOM_BIASED"
+				m_flRandomMin = 0.3
+				m_flRandomMax = 0.5
+				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+				m_nBiasType = "PF_BIAS_TYPE_EXPONENTIAL"
+				m_flBiasParameter = 0.5
 			}
-			m_nOutputField = 10
 		},
 		{
-			_class = "C_INIT_DistanceToCPInit"
-			m_flOutputMin = 3.0
-			m_flInputMax = 500.0
-			m_flInputMin = 60.0
-			m_flOutputMax = 0.25
-			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 2
+			m_bShuffle = true
+		},
+		{
+			_class = "C_INIT_RandomNamedModelSequence"
+			m_bModelFromRenderer = true
+			m_names = 
+			[
+				"treant_growing_vines_anim",
+				"treant_growing_vines_anim_dupe1",
+			]
+			m_nFieldOutput = 13
 		},
 		{
 			_class = "C_INIT_InitFloat"
 			m_InputValue = 
 			{
 				m_nType = "PF_TYPE_RANDOM_UNIFORM"
-				m_nMapType = "PF_MAP_TYPE_DIRECT"
-				m_flLiteralValue = 0.0
-				m_NamedValue = ""
-				m_nControlPoint = 0
-				m_nScalarAttribute = 3
-				m_nVectorAttribute = 6
-				m_nVectorComponent = 0
-				m_bReverseOrder = false
-				m_flRandomMin = 0.0
-				m_flRandomMax = 360.0
-				m_bHasRandomSignFlip = true
-				m_nRandomSeed = -1
+				m_flRandomMin = 0.5
+				m_flRandomMax = 0.6
 				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
-				m_strSnapshotSubset = ""
-				m_flLOD0 = 0.0
-				m_flLOD1 = 0.0
-				m_flLOD2 = 0.0
-				m_flLOD3 = 0.0
-				m_nNoiseInputVectorAttribute = 0
-				m_flNoiseOutputMin = 0.0
-				m_flNoiseOutputMax = 1.0
-				m_flNoiseScale = 0.1
-				m_vecNoiseOffsetRate = [ 0.0, 0.0, 0.0 ]
-				m_flNoiseOffset = 0.0
-				m_nNoiseOctaves = 1
-				m_nNoiseTurbulence = "PF_NOISE_TURB_NONE"
-				m_nNoiseType = "PF_NOISE_TYPE_PERLIN"
-				m_nNoiseModifier = "PF_NOISE_MODIFIER_NONE"
-				m_flNoiseTurbulenceScale = 1.0
-				m_flNoiseTurbulenceMix = 0.5
-				m_flNoiseImgPreviewScale = 1.0
-				m_bNoiseImgPreviewLive = true
-				m_flNoCameraFallback = 0.0
-				m_bUseBoundsCenter = false
-				m_nInputMode = "PF_INPUT_MODE_CLAMPED"
-				m_flMultFactor = 1.0
-				m_flInput0 = 0.0
-				m_flInput1 = 1.0
-				m_flOutput0 = 0.0
-				m_flOutput1 = 1.0
-				m_flNotchedRangeMin = 0.0
-				m_flNotchedRangeMax = 1.0
-				m_flNotchedOutputOutside = 0.0
-				m_flNotchedOutputInside = 1.0
-				m_nRoundType = "PF_ROUND_TYPE_NEAREST"
-				m_nBiasType = "PF_BIAS_TYPE_STANDARD"
-				m_flBiasParameter = 0.0
-				m_Curve = 
-				{
-					m_spline = [  ]
-					m_tangents = [  ]
-					m_vDomainMins = [ 0.0, 0.0 ]
-					m_vDomainMaxs = [ 0.0, 0.0 ]
-				}
 			}
-			m_nOutputField = 12
+			m_nOutputField = 10
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, -15.0 ]
+			m_OffsetMax = [ 0.0, 0.0, -15.0 ]
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_flInput0 = 0.5
+				m_flInput1 = 1.0
+				m_flOutput0 = 1.5
+				m_flOutput1 = 0.5
+				m_nMapType = "PF_MAP_TYPE_REMAP"
+				m_nType = "PF_TYPE_PARTICLE_FLOAT"
+				m_nScalarAttribute = 10
+			}
+			m_nOutputField = 1
 		},
 	]
 	m_Operators = 
 	[
 		{
-			_class = "C_OP_Orient2DRelToCP"
-			m_nFieldOutput = 12
+			_class = "C_OP_BasicMovement"
 			m_bDisableOperator = true
-		},
-		{
-			_class = "C_OP_RemapNamedModelSequenceOnceTimed"
-			m_flRemapTime = 0.48
-			m_bModelFromRenderer = true
-			m_inNames = 
-			[
-				"treant_ground_root_anim",
-			]
-			m_outNames = 
-			[
-				"treant_ground_root_anim_dupe1",
-			]
-			m_nFieldOutput = 9
 		},
 		{
 			_class = "C_OP_Decay"
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndTime = 0.35
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
+			m_flEndTime = 0.1
+			m_flStartScale = 0.0
+			m_flEndScale = 3.0
 		},
 		{
-			_class = "C_OP_InterpolateRadius"
-			m_bDisableOperator = true
-			m_flStartTime = 0.8
-			m_flEndScale = 0.1
-			m_flBias = 0.9
+			_class = "C_OP_Orient2DRelToCP"
+			m_flRotOffset = 180.0
+			m_nFieldOutput = 12
 		},
 		{
-			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 185, 185, 185, 255 ]
-		},
-		{
-			_class = "C_OP_BasicMovement"
-			m_Gravity = [ 0.0, 0.0, -100.0 ]
-			m_flOpStartFadeOutTime = 1.2
-			m_flOpStartFadeInTime = 1.0
+			_class = "C_OP_PositionLock"
 		},
 		{
 			_class = "C_OP_RemapCPtoVector"
@@ -625,45 +454,80 @@
 				m_flOutput1 = 1.0
 			}
 		},
+		{
+			_class = "C_OP_RemapNamedModelSequenceOnceTimed"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+			m_inNames = 
+			[
+				"treant_growing_vines_anim",
+				"treant_growing_vines_anim_dupe1",
+			]
+			m_outNames = 
+			[
+				"end",
+			]
+			m_bModelFromRenderer = true
+			m_nFieldInput = 13
+			m_nFieldOutput = 13
+			m_flRemapTime = 0.0
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 1.0
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+			m_Rate = -4.0
+			m_flEndTime = 99.0
+		},
 	]
 	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderModels"
-			m_nSubModelField = 13
-			m_nBodyGroupField = 18
-			m_nAnimationField = 9
-			m_bScaleAnimationRate = true
 			m_bOrientZ = true
+			m_nBodyGroupField = 18
+			m_nSubModelField = 9
+			m_bScaleAnimationRate = true
 			m_ModelList = 
 			[
 				{
-					m_model = resource:"models/heroes/treant_protector/treant_ground_root.vmdl"
+					m_model = resource:"models/heroes/treant_protector/treant_growing_vines.vmdl"
 				},
 			]
 			m_bAnimated = true
 			m_nLOD = 1
-			m_bForceLoopingAnimation = true
-			m_hOverrideMaterial = resource:"materials/particle/ogre_magi/blob_white.vmat"
+			m_bResetAnimOnStop = true
 			m_modelInput = 
 			{
 			}
-			m_nColorBlendType = "PARTICLE_COLOR_BLEND_REPLACE"
-		},
-		{
-			_class = "C_OP_RenderSprites"
-			m_vecTexturesInput = 
-			[
-				{
-				},
-			]
+			m_hOverrideMaterial = resource:"models/sanya/materials/sanya_armor_towel_master.vmat"
 		},
 	]
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_treant/treant_overgrowth_vinesmoke.vpcf"
+			m_ChildRef = resource:"particles/units/heroes/hero_treant/treant_overgrowth_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_treant/treant_overgrowth_vines_base.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/sanya_towel_root_wines_child.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/sanya_towel_root_wines_bushes.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_treant/treant_overgrowth_vine_glows.vpcf"
 			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/sanya_towel_root_beam.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_treant/treant_overgrowth_vine_glows_corerope.vpcf"
 		},
 	]
 }

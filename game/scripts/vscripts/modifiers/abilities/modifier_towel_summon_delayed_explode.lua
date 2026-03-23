@@ -80,7 +80,7 @@ function modifier_towel_summon_delayed_explode:OnDestroy()
             victim = enemy,
             attacker = caster,
             damage = damage,
-            damage_type = DAMAGE_TYPE_MAGICAL,
+            damage_type = self:GetAbility():GetAbilityDamageType(),
             ability = ability,
         })
         print('explosion damage applied')
