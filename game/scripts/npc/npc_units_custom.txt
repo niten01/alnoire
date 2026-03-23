@@ -7,6 +7,7 @@
 #base "units/boss/npc_island_duo.txt"
 #base "units/boss/npc_goden.txt"
 #base "units/boss/npc_ball.txt"
+#base "units/boss/npc_chaser.txt"
 #base "units/boss/npc_derek.txt"
 #base "units/boss/npc_george.txt"
 

@@ -625,6 +625,11 @@
 				m_flOutput1 = 1.0
 			}
 		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndTime = 0.2
+			m_flStartScale = 0.0
+		},
 	]
 	m_Renderers = 
 	[

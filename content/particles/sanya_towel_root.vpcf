@@ -208,5 +208,8 @@
 			m_ChildRef = resource:"particles/units/heroes/hero_treant/treant_overgrowth_cast_tree.vpcf"
 			m_bDisableChild = true
 		},
+		{
+			m_ChildRef = resource:"particles/sanya_towel_root_ring.vpcf"
+		},
 	]
 }

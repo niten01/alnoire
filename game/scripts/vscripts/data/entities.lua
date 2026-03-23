@@ -351,6 +351,12 @@ return {
             -- modifiers = { "modifier_ball_slide" },
             team = DOTA_TEAM_BADGUYS,
         },
+        spawner_chaser                  = {
+            npc = "npc_chaser",
+            -- packID = "pack_ball",
+            -- ai_modifier = "modifier_default_creep_ai",
+            team = DOTA_TEAM_BADGUYS,
+        },
 
         spawner_derek                 = {
             npc = "npc_derek",
