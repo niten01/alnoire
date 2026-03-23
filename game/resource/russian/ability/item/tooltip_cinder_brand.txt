@@ -1,2 +1,2 @@
 "DOTA_Tooltip_ability_item_cinder_brand"	        "Cinder Brand"
-"DOTA_Tooltip_ability_item_cinder_brand_Description" "<h1>Пассивное: Erupt</h1> С шансом %chance_pct%%% при атаке нестабильная печать на наручах спровоцирует направленный взрыв, который нанесет %damage% магического урона в радиусе %radius% от цели.<br><br>Работает только на героев ближнего боя."
+"DOTA_Tooltip_ability_item_cinder_brand_Description" "<h1>Пассивное: Erupt</h1> При атаке нестабильная печать на наручах провоцирует направленный взрыв, который нанесёт %damage% магического урона в радиусе %radius% от цели.<br><br>Работает только на героев ближнего боя."

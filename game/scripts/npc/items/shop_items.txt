@@ -465,11 +465,12 @@
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
 
+        "AbilityCooldown"               "5.0" 
         "ItemCost"                      "1000"
 
         "AbilityValues" 
         {
-            "chance_pct"     "50"        
+            // "chance_pct"     "50"        
             "radius"  "300"
             "damage"  "50" 
         }
