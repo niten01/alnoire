@@ -147,7 +147,7 @@ return {
         "npc_dota_custom_king_tower_bad",
         "npc_dota_custom_king_tower_good",
 
-        -- jungle creeps
+        -- dota units
         "npc_dota_hero_venomancer",
         "npc_dota_hero_axe",
         "npc_dota_hero_razor",
@@ -191,9 +191,10 @@ return {
         "npc_dota_hero_pudge",
         "npc_dota_hero_pugna",
         "npc_dota_greevil",
+        "npc_dota_hero_earthshaker",
 
 
-
+        -- jungle
         "npc_jungle_venomancer",
         "npc_dota_venomancer_plague_ward_1",
         "npc_dota_venomancer_plague_ward_2",
@@ -221,9 +222,7 @@ return {
         "npc_jungle_perdun",
         "npc_jungle_perdun_flower",
 
-        -- ocean creeps
-        "npc_dota_goodguys_siege_upgraded",
-        "npc_dota_creep_goodguys_ranged",
+        -- ocean
         "npc_ocean_creep_range",
         "npc_ocean_siege",
         "npc_ocean_tusik_mini_a",
@@ -256,6 +255,10 @@ return {
         "npc_dark_pudge",
         "npc_dark_pugna",
         "npc_dark_greevil",
+        "npc_dark_shaker_1",
+        "npc_dark_shaker_2",
+        "npc_dark_shaker_3",
+
 
         -- traps
         "npc_trap_arrow",
@@ -315,6 +318,7 @@ return {
         "soundevents/ocean/slark_infester.vsndevts",
         "soundevents/darkforest/dark_drow.vsndevts",
         "soundevents/darkforest/dark_ursa.vsndevts",
+        "soundevents/darkforest/dark_shaker.vsndevts",
         "soundevents/bosses/ball.vsndevts",
     },
     particles = {
