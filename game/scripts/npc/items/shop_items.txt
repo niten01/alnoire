@@ -15,11 +15,11 @@
         "ItemCost"                      "500"
 
         "AbilityCastRange"              "400" 
-        "AbilityCooldown"               "10.0" 
+        "AbilityCooldown"               "14.0" 
 
         "AbilityValues" 
         {
-            "distance"  "200"
+            "distance"  "300"
             "travel_time" "0.4"
         }
     }
@@ -32,7 +32,7 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
-        "ItemCost"                      "200"
+        "ItemCost"                      "301"
 
         "AbilityValues" 
         {
@@ -64,11 +64,11 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
-        "ItemCost"                      "200"
+        "ItemCost"                      "301"
 
         "AbilityValues" 
         {
-            "mag_res"  "8"
+            "mag_res"  "10"
         }
 
         "Modifiers"
@@ -96,7 +96,7 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
-        "ItemCost"                      "2000"
+        "ItemCost"                      "1600"
 
         "AbilityValues" 
         {
@@ -129,11 +129,11 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
-        "ItemCost"                      "300"
+        "ItemCost"                      "400"
 
         "AbilityValues" 
         {
-            "damage"  "10"
+            "damage"  "20"
             "interval" "1"
             "duration" "3"
         }
@@ -153,11 +153,11 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
-        "ItemCost"                      "300"
+        "ItemCost"                      "400"
 
         "AbilityValues" 
         {
-            "armor_reduction"  "10"
+            "armor_reduction"  "2"
             "duration" "3"
         }
     }
@@ -171,11 +171,11 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
-        "ItemCost"                      "300"
+        "ItemCost"                      "400"
 
         "AbilityValues" 
         {
-            "mag_res_reduction"  "10"
+            "mag_res_reduction"  "15"
             "duration" "3"
         }
     }
@@ -189,11 +189,11 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
-        "ItemCost"                      "300"
+        "ItemCost"                      "400"
 
         "AbilityValues" 
         {
-            "ms_reduction"  "100"
+            "ms_reduction"  "30"
             "duration" "3"
         }
     }
@@ -207,11 +207,11 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
-        "ItemCost"                      "300"
+        "ItemCost"                      "400"
 
         "AbilityValues" 
         {
-            "attack_speed_reduction"  "50"
+            "attack_speed_reduction"  "20"
             "duration" "3"
         }
     }
@@ -223,7 +223,7 @@
         "Model"                 "models/props_gameplay/recipe.vmdl"
         "ItemRecipe"          "1" 
 
-        "ItemCost"            "400" 
+        "ItemCost"            "200" 
 
         "ItemResult"          "item_caustic_sopor" 
         "ItemRequirements"
@@ -244,9 +244,9 @@
 
         "AbilityValues" 
         {
-            "attack_speed_reduction"  "70"
-            "poison_dps"  "50"
-            "duration" "3"
+            "attack_speed_reduction"  "30"
+            "poison_dps"  "25"
+            "duration" "4"
         }
     }
     "item_recipe_ossified_gaff"
@@ -257,7 +257,7 @@
         "AbilityTextureName"    "item_recipe"
         "Model"                 "models/props_gameplay/recipe.vmdl"
 
-        "ItemCost"            "400" 
+        "ItemCost"            "200" 
 
         "ItemResult"          "item_ossified_gaff" 
         "ItemRequirements"
@@ -278,9 +278,9 @@
 
         "AbilityValues" 
         {
-            "ms_reduction"  "150"
-            "poison_dps"  "50"
-            "duration" "3"
+            "ms_reduction"  "40"
+            "poison_dps"  "25"
+            "duration" "4"
         }
     }
     "item_recipe_blight_vesper"
@@ -291,7 +291,7 @@
         "AbilityTextureName"    "item_recipe"
         "Model"                 "models/props_gameplay/recipe.vmdl"
 
-        "ItemCost"            "400" 
+        "ItemCost"            "1000" 
         
         "ItemResult"          "item_blight_vesper" 
         "ItemRequirements"
@@ -326,7 +326,7 @@
         "AbilityTextureName"    "item_recipe"
         "Model"                 "models/props_gameplay/recipe.vmdl"
 
-        "ItemCost"            "400" 
+        "ItemCost"            "1000" 
         
         "ItemResult"          "item_marrow_eater" 
         "ItemRequirements"
@@ -361,7 +361,7 @@
         "AbilityTextureName"    "item_recipe"
         "Model"                 "models/props_gameplay/recipe.vmdl"
 
-        "ItemCost"            "400" 
+        "ItemCost"            "200" 
         
         "ItemResult"          "item_entrophia" 
         "ItemRequirements"
@@ -402,14 +402,14 @@
         "ItemPermanent"                 "0"
         "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "ItemCost"                      "1000"
+        "ItemCost"                      "700"
 
         "AbilityCooldown"               "10.0" 
 
         "AbilityValues" 
         {
             "attack_speed_reduction"  "100"
-            "bonus_damage"  "100"
+            "bonus_damage"  "150"
             "duration"      "5"
         }
     }
@@ -443,7 +443,7 @@
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
 
-        "ItemCost"                      "1000"
+        "ItemCost"                      "1300"
 
         "AbilityValues" 
         {
@@ -466,7 +466,7 @@
         "ItemPurchasable"               "1"
 
         "AbilityCooldown"               "5.0" 
-        "ItemCost"                      "1000"
+        "ItemCost"                      "1300"
 
         "AbilityValues" 
         {
@@ -487,7 +487,7 @@
         "ItemPermanent"                 "0"
         "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "ItemCost"                      "500"
+        "ItemCost"                      "2200"
 
         "AbilityCooldown"               "10.0" 
 
@@ -510,7 +510,7 @@
         "ItemPermanent"                 "0"
         "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "ItemCost"                      "500"
+        "ItemCost"                      "2200"
 
         "AbilityCooldown"               "10.0" 
 
@@ -531,7 +531,7 @@
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
-        "ItemCost"                      "2000"
+        "ItemCost"                      "1800"
 
         "AbilityValues" 
         {
@@ -556,7 +556,7 @@
 
         "AbilityValues" 
         {
-            "duration"  "0.4"
+            "duration"  "0.5"
         }
 
         "precache"
@@ -576,7 +576,7 @@
         "ItemPermanent"                 "0"
         "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "ItemCost"                      "500"
+        "ItemCost"                      "1200"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
         "AbilityCastRange"              "500"
@@ -611,7 +611,7 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-        "ItemCost"                      "1500"
+        "ItemCost"                      "1100"
 
         "AbilityCastRange"              "700"
         "AbilityCooldown"               "10.0" 
