@@ -471,8 +471,8 @@ return {
         d_subwayfake = {
             priority = 0,
             conditions = {
-                { interact = "npc_subway_fake_return", type = "interact" },
-                { questID = "q_island_escape",       status = QuestStatus.INACTIVE, type = "quest" },
+                { questID = "q_island_escape", status = QuestStatus.INACTIVE, type = "quest" },
+                { interact = "npc_subway_fake", type = "interact" },
             },
         },
         d_subwayfakereturn = {
@@ -1515,7 +1515,7 @@ return {
         d_novye_ludi = {
             text =
             [[Да, такие как ты. Их не заинтересовала жизнь с нами, потому они обосновались отдельно. В Королевстве сейчас живут только последователи Короля.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -1736,8 +1736,8 @@ return {
         },
         d_podojti_k_kripu = {
             text = [[Ты здесь недавно, да? Знаешь, что там?
-*Каышом он указал в сторону леса.*]],
-            speaker = [[Крип-камыш]],
+*Камышом он указал в сторону леса.*]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -2104,7 +2104,7 @@ return {
         },
         d_untitled_passage_13 = {
             text = [[*Перед тобой девушка необычайной красоты. Она помахивает тебе рукой.*]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -2119,7 +2119,7 @@ return {
         },
         d_untitled_passage_14 = {
             text = [[Крип-предвестник проживает в Заброшенном лесу. Найди его ради Королевства!]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -2300,7 +2300,7 @@ return {
         d_untitled_passage_33 = {
             text = [[Пс... Эй, ты. Подойди.
 *Подзывает тебя, поддёргивая рукой.*]],
-            speaker = [[Крип-камыш]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -2311,7 +2311,7 @@ return {
         },
         d_untitled_passage_34 = {
             text = [[Вали уже.]],
-            speaker = [[Крип-камыш]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -2765,7 +2765,7 @@ return {
         d_untitled_passage_86 = {
             text = [[*Гид восторженно подбегает к тебе.*
 Алекс! Ты наш спаситель, всё Королевство благодарит тебя за этот великий подвиг!]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -2926,7 +2926,7 @@ return {
         },
         d_h = {
             text = [[Я - гид этого Королевства. Все прибывшие в первую очередь встречаются со мной.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -2937,7 +2937,7 @@ return {
         },
         d_h10 = {
             text = [[Прекрасное имя.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -2948,7 +2948,7 @@ return {
         },
         d_h2 = {
             text = [[Нет, наши души где-то в промежутке.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -2959,7 +2959,7 @@ return {
         },
         d_h3 = {
             text = [[Я удивлена, что ты дошёл до сюда. Обычно на всех новоприбывших нападают крипы у ворот.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -2970,7 +2970,7 @@ return {
         },
         d_h4 = {
             text = [[На востоке - Пустошь. Ступившего в них ожидает только смерть...]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -2982,7 +2982,7 @@ return {
         d_h5 = {
             text =
             [[На севере - Система подземных путей М.Е.Т.Р.О. (Межрассовая Единая Тоннельно-Рельсовая Объединённая система), ведущих на территории, где поселились "новые" люди.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -2993,7 +2993,7 @@ return {
         },
         d_h6 = {
             text = [[Чтож... пора рассказать о нашем Королевстве, я же всё-таки гид. Что тебе интересно?]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -3016,7 +3016,7 @@ return {
         },
         d_h7 = {
             text = [[Жду не дождусь результатов. Слава Королю!]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -3027,7 +3027,7 @@ return {
         },
         d_h8 = {
             text = [[На юго-западе - Владения двух Каменных Принцов. Они никак не могут поделить свои земли.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -4353,7 +4353,7 @@ return {
         d_p12 = {
             text =
             [[Вот возьми. Это, конечно, не сравнится с величиной твоего подвига, но я обязана тебя отблагодарить.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -4368,7 +4368,7 @@ return {
         d_p13 = {
             text =
             [[И ещё. Приходил один странный крип, загадочный. Он просил передать, чтобы ты встретился с ним. Он ожидает тебя где-то здесь, в Королевстве. Удачи!]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -4382,7 +4382,7 @@ return {
         },
         d_p14 = {
             text = [[*Ты очень устал, однако придётся двигаться дальше.*]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -4574,7 +4574,7 @@ return {
         d_subwayfake = {
             text = [[Вместо кассира тебя встречает дощечка, на которой нацарапан единственный пункт назначения...]],
             speaker = [[Подозрительный терминал]],
-            npc = "npc_subway_fake_return",
+            npc = "npc_subway_fake",
             choices = {
                 {
                     text = [[ГОЛАЯ ЦМКА!!!]],
@@ -4690,7 +4690,7 @@ return {
         },
         d_a_gde_on = {
             text = [[Он покинул нас.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -4765,7 +4765,7 @@ return {
         d_a_kak_zhe = {
             text =
             [[В Заброшенном лесу проживает крип-предвестник, и каждые 3 года он рассказывает о приближающейся опасности чудовищных масштабов...]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -4788,7 +4788,7 @@ return {
         d_a_kripy_eto_kto = {
             text =
             [[Мы не знаем, но они населяли эти земли ещё до появления людей. Кстати, некоторые крипы хорошие, они даже проживают с нами.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -4942,7 +4942,7 @@ return {
         },
         d_bolshe_voprosov_netu = {
             text = [[Хорошо. Кстати, я так и не спросила твоего имени...]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -4982,7 +4982,7 @@ return {
         d_byvaj = {
             text = [[Тогда, как вернёшься, я сниму их с тебя и убегу, слышишь?!
 *Его яростные взмахи камышом преследовали тебя, пока ты отдалялся. Тебя это улыбнуло.*]],
-            speaker = [[Крип-камыш]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -4993,7 +4993,7 @@ return {
         },
         d_v_kakom_smysle = {
             text = [[*Она не отвечает.*]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -5225,7 +5225,7 @@ return {
         d_golaya_tsmka = {
             text = [[]],
             speaker = [[Подозрительный терминал]],
-            npc = "npc_subway_fake_return",
+            npc = "npc_subway_fake",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -5306,7 +5306,7 @@ return {
         },
         d_da__1 = {
             text = [[Алекс, а такой красивый юноша мог бы выполнить скромную просьбу одинокой девушки.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -5352,7 +5352,7 @@ return {
         d_derevya_i_dikie_kripy = {
             text = [[*Он ударил ладонью в свой лоб и немного заворчал.*
 Дубина, там сокровища, слышишь??]],
-            speaker = [[Крип-камыш]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -5478,7 +5478,7 @@ return {
         d_i_vpravdu_uzhas = {
             text =
             [[Ты показал свою силу, добравшись до сюда живым. Можешь ли ты узнать, какой будет следующая катастрофа, дабы мы были готовы?]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -5620,7 +5620,7 @@ return {
         },
         d_kak_pojdet = {
             text = [[Подожди подожди, а кто тебе рассказал об их существовании? Это я!]],
-            speaker = [[Крип-камыш]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -5712,7 +5712,7 @@ return {
         d_ladno_togda_chast_otsyplu_mozhet_byt = {
             text = [[Всмысле может быть?!
 *Его яростные взмахи камышом преследовали тебя, пока ты отдалялся. Тебя это улыбнуло.*]],
-            speaker = [[Крип-камыш]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -5790,7 +5790,7 @@ return {
         },
         d_menya_zovut = {
             text = [[*Девушка в предвкушении.*]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -5862,7 +5862,7 @@ return {
         },
         d_mnogo_chego = {
             text = [[Много хорошего... И... Много великого, да.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -5986,7 +5986,7 @@ return {
         },
         d_ne_pomnu_takogo = {
             text = [[Э?]],
-            speaker = [[Крип-камыш]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -6161,7 +6161,7 @@ return {
         },
         d_nu_zabroshennyj_les = {
             text = [[Неее, я имею ввиду, что там ВНУТРИ.]],
-            speaker = [[Крип-камыш]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -6207,7 +6207,7 @@ return {
         d_ogo = {
             text =
             [[Время пророчества близко, но неизвестно чего ожидать. Мы бы спросили его, но в лесу полно опасных крипов, а мы люди - сейчас слабы.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -6332,7 +6332,7 @@ return {
         d_pprivet = {
             text = [[Приветствую, рада видеть новые лица в нашем Королевстве.
 *Она мило улыбнулась.*]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -6343,7 +6343,7 @@ return {
         },
         d_plata_za_informatsiu = {
             text = [[Верно подмечено!]],
-            speaker = [[Крип-камыш]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -6526,7 +6526,7 @@ return {
             text = [[Хорошо... но мне придётся сказать прямо, не серчай, правда зачастую горька.
 *Её глаза с сочуствием смотрят в твои.*
 Ты умер будучи человеком.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -6570,7 +6570,7 @@ return {
             text =
             [[Приветствую, не переживай, вход в город бесплатный, можешь находиться здесь столько, сколько тебе нужно.
 *Она мило улыбнулась.*]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -6639,7 +6639,7 @@ return {
         d_spasibo_tipa = {
             text = [[*Легонько встряхнувшись и успокоившись, она решается поделиться важной информацией.*
 Если что, со сменой времени суток, в Королевстве можно встретить новые лица. Возможно, тебе захочется пообщаться с горожанами, они могут предложить интересные вещи или рассказать что-нибудь.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -6830,7 +6830,7 @@ return {
         },
         d_to_est_ya_ne_smogu_vernutsya = {
             text = [[Отсюда нет выхода, так что можешь считать это своей новой жизнью.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -6921,7 +6921,7 @@ return {
         },
         d_ty_skazala_chto_ludej_malo_pochemu = {
             text = [[*Лицо девушки застыло. Опомнившись, она отвела взгляд.*]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -7128,7 +7128,7 @@ return {
         },
         d_chto_velikogo_on_sovershil = {
             text = [[Он... эм... *Она задумалась.* Много всего...]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -7140,7 +7140,7 @@ return {
         d_chto_za_korol = {
             text = [[*Девушка покраснела*
 Король... Его зовут Джордж. Джордж Богоподобный. Он лучший человек... Идеальный во всём.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -7162,7 +7162,7 @@ return {
         },
         d_chto_za_portal_szadi = {
             text = [[Никто не знает. Он не работает.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -7173,7 +7173,7 @@ return {
         },
         d_chto_za_predelami_korolevstva = {
             text = [[На западе - Заброшенный лес. Там проживают дикие крипы.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -7332,7 +7332,7 @@ return {
         },
         d_em_my_v_limbe = {
             text = [[Да, наши души где-то промежутке.]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -7412,7 +7412,7 @@ return {
         },
         d_eto_horosho_po_puti_prihvachu = {
             text = [[Только ты поделишься с мной, ммм...]],
-            speaker = [[Крип-камыш]],
+            speaker = [[Камыш]],
             npc = "npc_rape_victim",
             choices = {
                 {
@@ -7567,7 +7567,7 @@ return {
         d_ya_ubil_ih = {
             text = [[*Она пожала твою руку.*
 Это отличная новость! Мы не могли обеспечить защиту этих врат, так как нас, людей, осталось единицы... Но ты смог одолеть врага в одиночку!]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {

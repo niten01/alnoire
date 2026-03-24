@@ -20,8 +20,7 @@ function SetupHUD() {
 			hideAllChildren(hud.FindChildTraverse("RoshanTimerContainer"))
 			hideAllChildren(hud.FindChildTraverse("GlyphScanContainer"))
 
-			$.DispatchEvent("Activated", hud.FindChildTraverse("GridUpgradesTab"), "mouse")
-
+			// $.DispatchEvent("Activated", hud.FindChildTraverse("GridUpgradesTab"), "mouse")
 			$.Schedule(5, () => {
 				hideDefaultElements()
 			})
