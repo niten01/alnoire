@@ -244,9 +244,9 @@
 
         "AbilityValues" 
         {
-            "attack_speed_reduction"  "70"
-            "poison_dps"  "50"
-            "duration" "3"
+            "attack_speed_reduction"  "30"
+            "poison_dps"  "25"
+            "duration" "4"
         }
     }
     "item_recipe_ossified_gaff"
@@ -278,9 +278,9 @@
 
         "AbilityValues" 
         {
-            "ms_reduction"  "150"
-            "poison_dps"  "50"
-            "duration" "3"
+            "ms_reduction"  "40"
+            "poison_dps"  "25"
+            "duration" "4"
         }
     }
     "item_recipe_blight_vesper"
@@ -409,7 +409,7 @@
         "AbilityValues" 
         {
             "attack_speed_reduction"  "100"
-            "bonus_damage"  "100"
+            "bonus_damage"  "150"
             "duration"      "5"
         }
     }
