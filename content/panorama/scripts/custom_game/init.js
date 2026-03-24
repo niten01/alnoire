@@ -9,13 +9,19 @@ function SetupHUD() {
 			}
 		}
 
-		$.DispatchEvent("Activated", hud.FindChildTraverse("GridUpgradesTab"), "mouse")
 		const hideDefaultElements = () => {
 			hideAllChildren(hud.FindChildTraverse("StatBranch"))
 			hideAllChildren(hud.FindChildTraverse("StatBranchDrawer"))
 			hideAllChildren(hud.FindChildTraverse("level_stats_frame"))
 			hideAllChildren(hud.FindChildTraverse("GridBasicsTab"))
 			hideAllChildren(hud.FindChildTraverse("GridNeutralsTab"))
+			hideAllChildren(hud.FindChildTraverse("TormentorTimerContainer"))
+			hideAllChildren(hud.FindChildTraverse("inventory_neutral_craft_holder"))
+			hideAllChildren(hud.FindChildTraverse("RoshanTimerContainer"))
+			hideAllChildren(hud.FindChildTraverse("GlyphScanContainer"))
+
+			$.DispatchEvent("Activated", hud.FindChildTraverse("GridUpgradesTab"), "mouse")
+
 			$.Schedule(5, () => {
 				hideDefaultElements()
 			})

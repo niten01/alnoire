@@ -90,4 +90,29 @@
       "sounds/sfx/crypt_door_roll.vsnd",
     ]
   }
+  sfx.quest_complete.fire = {
+    type = "dota_update_default"
+    volume = 0.200000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    fade_out = 0.3
+    volume_fade_out = 0.200000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/misc/firework_cast.vsnd",
+    ]
+  }
+  sfx.quest_complete.explode = {
+    type = "dota_update_default"
+    volume = 0.600000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.200000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/misc/firework_explode.vsnd",
+    ]
+  }
 }

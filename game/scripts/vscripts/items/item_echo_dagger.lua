@@ -31,7 +31,16 @@ function modifier_echo_dagger_owner:OnAttackLanded(params)
         if ability:IsCooldownReady() and target:IsAlive() then
             ability:StartCooldown(ability:GetCooldown(ability:GetLevel()))
 
-            parent:AddNewModifier(parent, ability, "modifier_echo_dagger_second_hit", { duration = -1 })
+            if parent:IsRangedAttacker() then
+                Timers:CreateTimer(0.03, function()
+                    if not parent or parent:IsNull() or not parent:IsAlive() then return end
+                    parent:RemoveGesture(ACT_DOTA_ATTACK)
+                    parent:StartGestureWithPlaybackRate(ACT_DOTA_ATTACK, 5.0)
+                    parent:PerformAttack(target, true, true, true, false, true, false, false)
+                end)
+            else
+                parent:AddNewModifier(parent, ability, "modifier_echo_dagger_second_hit", { duration = -1 })
+            end
         end
     end
 end
@@ -65,7 +74,7 @@ function modifier_echo_dagger_second_hit:GetModifierAttackSpeedAbsoluteMax()
 end
 
 function modifier_echo_dagger_second_hit:GetModifierAttackSpeedBonus_Constant()
-    return 1000
+    return MAXIMUM_ATTACK_SPEED
 end
 
 function modifier_echo_dagger_second_hit:GetModifierBaseAttackTimePercentage()

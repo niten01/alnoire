@@ -11487,7 +11487,7 @@
   "models/creeps/greevil_shopkeeper/greevil_shopkeeper.vmdl"
   {
     "PortraitLightPosition"                               "202.70 -23.15 308.17"
-    "PortraitLightAngles"                                 "54.79 171.70 0.00"
+    "PortraitLightAngles"                                 "34.79 171.70 0.00"
     "PortraitLightFOV"                                    "69"
     "PortraitLightDistance"                               "377"
     "PortraitLightColor"                                  "254 248 242"

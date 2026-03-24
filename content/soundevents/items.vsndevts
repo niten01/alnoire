@@ -15,6 +15,34 @@
     ]
     vsnd_duration = 1.0
   }
+  items.sling.cast = {
+    type = "dota_update_default"
+    volume = 1.500000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/sfx/item_sling_cast.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  items.sling.hit = {
+    type = "dota_update_default"
+    volume = 2.500000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/sfx/item_sling_hit_1.vsnd",
+      "sounds/sfx/item_sling_hit_2.vsnd",
+      "sounds/sfx/item_sling_hit_3.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
   items.fan.cast = {
     type = "dota_update_default"
     volume = 0.800000

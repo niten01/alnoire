@@ -736,4 +736,104 @@
       }
     }
   }
+  "models/flask_barrel/flask_barrel.vmdl"
+  {
+    "PortraitLightPosition"                               "168.01 27.26 101.52"
+    "PortraitLightAngles"                                 "11.61 197.18 0.00"
+    "PortraitLightFOV"                                    "90"
+    "PortraitLightDistance"                               "178"
+    "PortraitLightColor"                                  "254 254 254"
+    "PortraitShadowColor"                                 "74 69 48"
+    "PortraitShadowScale"                                 "5.000000"
+    "PortraitAmbientColor"                                "141 100 100"
+    "PortraitAmbientScale"                                "5.000000"
+    "PortraitSpecularColor"                               "251 74 84"
+    "PortraitBackgroundTexture"                           "materials/vgui/hud/heroportraits/portraitbackground_forest.vmat"
+    "PortraitBackgroundColor1"                            ".9 .7 .1"
+    "PortraitBackgroundColor2"                            ".9 .7 .1"
+    "PortraitBackgroundColor3"                            ".9 .7 .1"
+    "PortraitBackgroundColor4"                            ".9 .7 .1"
+    "PortraitLightScale"                                  "1.450000"
+    "PortraitGroundShadowScale"                           "1.500000"
+    "PortraitAmbientDirection"                            "-20.110 -19.620 20.930"
+    "PortraitAnimationActivity"                           "ACT_DOTA_IDLE"
+    "cameras"
+    {
+      "default"
+      {
+        "PortraitPosition"                                "385.47 -125.48 -34.42"
+        "PortraitAngles"                                  "341.75 158.19 0.00"
+        "PortraitFOV"                                     "18"
+      }
+    }
+  }
+  "models/props_gameplay/shopkeeper_fountain/shopkeeper_fountain.vmdl"
+  {
+    "PortraitLightPosition"                               "202.70 -23.15 308.17"
+    "PortraitLightAngles"                                 "54.79 171.70 0.00"
+    "PortraitLightFOV"                                    "69"
+    "PortraitLightDistance"                               "377"
+    "PortraitLightColor"                                  "254 248 242"
+    "PortraitShadowColor"                                 "74 74 74"
+    "PortraitShadowScale"                                 "5.000000"
+    "PortraitAmbientColor"                                "79 108 108"
+    "PortraitAmbientScale"                                "4.000000"
+    "PortraitSpecularColor"                               "251 74 84"
+    "PortraitBackgroundColor1"                            "0 0 0"
+    "PortraitBackgroundColor2"                            "1 1 1"
+    "PortraitBackgroundColor3"                            "1 1 1"
+    "PortraitBackgroundColor4"                            "0 0 0"
+    "PortraitBackgroundTexture"                           "materials/vgui/hud/heroportraits/portraitbackground_brokenlight.vmat"
+    "PortraitLightScale"                                  "4.500000"
+    "PortraitGroundShadowScale"                           "1.500000"
+    "PortraitAmbientDirection"                            "-79.070 -84.150 -25.320"
+    "PortraitAnimationActivity"                           "ACT_DOTA_IDLE"
+    "cameras"
+    {
+      "default"
+      {
+        "PortraitPosition"                                "640.91 -143.06 330.63"
+        "PortraitAngles"                                  "13.01 167.09 0.00"
+        "PortraitFOV"                                     "8"
+      }
+    }
+  }
+  "models/items/courier/wabbit_the_mighty_courier_of_heroes/wabbit_the_mighty_courier_of_heroes.vmdl"
+	{
+		"PortraitLightPosition"		"276.429993 -18.010000 333.350006"
+		"PortraitLightAngles"		"33.889999 183.929993 0.000000"
+		"PortraitLightFOV"		"63.000000"
+		"PortraitLightDistance"		"471.000000"
+		"PortraitLightColor"		"195 181 254"
+		"PortraitShadowColor"		"131 131 131"
+		"PortraitShadowScale"		"1.025000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientColor"		"0 161 155"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitBackgroundColor1"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundColor2"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundColor3"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundColor4"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundTexture"		"materials/portraits_card/portrait_backgrounds/full_view_background.vmat"
+		"PortraitBackgroundModel"		"models/heroes/pedestal/pedestal_1_small.vmdl"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitLightScale"		"3.650000"
+		"PortraitAmbientDirection"		"-76.520 7.960 38.340"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"600.000000 -48.000000 98.000000"
+				"PortraitAngles"		"357.600006 175.899994 0.000000"
+				"PortraitFOV"		"29.000000"
+				"PortraitFar"		"1000.000000"
+			}
+		}
+	}
 }

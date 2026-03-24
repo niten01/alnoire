@@ -17,6 +17,13 @@
         "ItemInitialCharges" "5" 
         "ItemDisplayCharges" "1" 
         "ItemRequiresCharges" "1" 
+        "ItemDroppable"         "0"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+
+        "ItemIsNeutralItem"         "1"
+        "ItemPurchasable"               "0"
+        "ItemDeclarativeSlot"        "neutral" 
 
         "AbilityValues" 
         {
@@ -108,7 +115,6 @@
         "ID"                    "3002"
         "BaseClass"             "item_datadriven"
         "AbilityTextureName"    "broken_crystal_ball"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
         "ItemPurchasable"               "1"

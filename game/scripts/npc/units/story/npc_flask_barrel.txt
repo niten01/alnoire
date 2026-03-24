@@ -1,0 +1,10 @@
+"DOTAUnits"
+{
+	"npc_flask_barrel" 
+	{
+		"Model"						"models/flask_barrel/flask_barrel.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"3.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}

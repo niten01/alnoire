@@ -176,6 +176,11 @@ function Quest:EmitQuestCompleteParticles()
       PATTACH_ABSORIGIN_FOLLOW, hero)
     ParticleManager:SetParticleControl(pfx, 0, hero:GetAbsOrigin())
 
+    hero:EmitSound("sfx.quest_complete.fire")
+    Timers:CreateTimer(0.5, function()
+      hero:EmitSound("sfx.quest_complete.explode")
+    end)
+
     Timers:CreateTimer(10, function()
       ParticleManager:ReleaseParticleIndex(pfx)
     end)

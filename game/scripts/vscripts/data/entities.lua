@@ -28,6 +28,11 @@ return {
             modifiers = { "modifier_story_npc" },
         },
 
+        spawner_flask_barrel    = {
+            npc = "npc_flask_barrel",
+            modifiers = { "modifier_story_npc" },
+        },
+
         spawner_courier_knight        = { npc = "npc_courier_knight", modifiers = { "modifier_story_npc" } },
         spawner_courier_bug           = { npc = "npc_courier_bug", modifiers = { "modifier_story_npc" } },
         spawner_courier_alkash        = { npc = "npc_courier_alkash", modifiers = { "modifier_story_npc" } },

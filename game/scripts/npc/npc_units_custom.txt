@@ -26,6 +26,7 @@
 #base "units/jungle/act3_jungle.txt"
 
 #base "units/story/npc_subway.txt"
+#base "units/story/npc_flask_barrel.txt"
 
 #base "units/story/npc_tormentor.txt"
 #base "units/story/npc_shamanka.txt"

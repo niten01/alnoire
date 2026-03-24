@@ -18,7 +18,7 @@ function gorilla_arc:ShowWarning(targetPos)
     end
 
     local arcInfo = PointsArc(casterPos, targetPos, endTarget)
-    ShowGenericCurveWarning(arcInfo, radius, delay)
+    ShowGenericCurveWarning(arcInfo, radius, delay + self:GetCastPoint())
     self.arcInfo = arcInfo
     return delay
 end
