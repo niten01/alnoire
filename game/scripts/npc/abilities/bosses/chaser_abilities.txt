@@ -1,0 +1,73 @@
+"DOTAAbilities"
+{
+    "chaser_passive"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/chaser_passive.lua"
+        "AbilityTextureName"            "consumables/seasonal_ti11_balloon_dire"
+        
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        
+        "AbilityValues"
+        {
+          "ms_bonus"      "400"
+          "attack_speed_bonus"  "200"
+          "hp_threshold_pct"    "70"
+        }
+    }   
+    "chaser_rite"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/chaser_rite.lua"
+        "AbilityTextureName"            "skeleton_king_hellfire_blast"
+		    "AbilityBehavior"				        "DOTA_ABILITY_BEHAVIOR_POINT"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_5"
+        "AbilityCastPoint"              "0.37"
+
+        "AbilityCooldown"               "5" 
+        "AbilityCastRange"        		"700"
+
+		    "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+
+        "AbilityValues"
+        {
+            "radius"              "400"
+            "damage"              "200"
+            "delay"               "2.0"   
+        }
+
+        "precache"
+        {
+        }
+    }
+    "chaser_stun"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/chaser_stun.lua"
+        "AbilityTextureName"            "skeleton_king_hellfire_blast"
+		    "AbilityBehavior"				        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_5"
+        "AbilityCastPoint"              "0.37"
+
+        "AbilityCooldown"               "15" 
+        "AbilityCastRange"        		"700"
+
+		    "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+
+        "AbilityValues"
+        {
+            "stun_duration"       "2"
+            "damage"              "200"
+            "speed"               "150"   
+            "timeout"             "6.5"   
+        }
+
+        "precache"
+        {
+        }
+    }
+}
