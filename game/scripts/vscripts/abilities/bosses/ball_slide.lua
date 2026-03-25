@@ -69,6 +69,7 @@ function modifier_ball_slide:OnIntervalThink()
 end
 
 function modifier_ball_slide:UpdateHorizontalMotion(me, dt)
+    self.velocity.z = 0
     local pos = me:GetAbsOrigin()
     local nextPos = pos + self.velocity * dt
     local safeNextPos = GetSafeBlinkDestination(pos, nextPos)
@@ -85,6 +86,11 @@ function modifier_ball_slide:UpdateHorizontalMotion(me, dt)
 
     me:SetForwardVector(self.velocity:Normalized())
     me:FaceTowards(nextPos)
+
+    if not me:HasModifier("modifier_vertical_jump") then
+        nextPos.z = GetGroundHeight(nextPos, me)
+    end
+
     me:SetAbsOrigin(nextPos)
     -- FindClearSpaceForUnit(me, nextPos, true)
 
