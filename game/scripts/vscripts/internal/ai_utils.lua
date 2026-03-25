@@ -478,7 +478,7 @@ function AdjustTickRate(unit)
   end
 end
 
-function ShowGenericLineWarning(p1, p2, width, duration)
+function ShowGenericLineWarning(p1, p2, width, duration, startEnt)
   local particleName = "particles/ui_mouseactions/custom_range_finder_cone.vpcf"
   local pfx = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 1, p1)
@@ -498,6 +498,9 @@ function ShowGenericLineWarning(p1, p2, width, duration)
 
     curEnd = p1 + dir * dist * (elapsed / duration)
     ParticleManager:SetParticleControl(pfx, 2, curEnd)
+    if startEnt then
+      ParticleManager:SetParticleControl(pfx, 1, startEnt:GetAbsOrigin())
+    end
     elapsed = elapsed + dt
     if elapsed >= duration then
       ParticleManager:DestroyParticle(pfx, false)

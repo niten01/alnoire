@@ -557,12 +557,6 @@ return {
                 { trigger = "trigger_epstein_killer", npc = "npc_killer", type = "trigger" },
             },
         },
-        d_epskillersagain = {
-            priority = 0,
-            conditions = {
-                { trigger = "trigger_epstein_killer", npc = "npc_killer", type = "trigger" },
-            },
-        },
         d_fairytale = {
             priority = 0,
             conditions = {
@@ -8211,20 +8205,6 @@ return {
                 },
             },
         },
-        d_epskillersagain = {
-            text = [[Эпштейн передаёт привет.]],
-            speaker = [[Убийца]],
-            npc = "npc_killer",
-            choices = {
-                {
-                    text = [[Бля.]],
-                    next = nil,
-                    actions = {
-                        { target = "kill", npc = "npc_killer", type = "fight_start" },
-                    },
-                },
-            },
-        },
         d_f = {
             text =
             [[В первом ты преуспел, теперь пришло время показать силу. Если одним ударом ты сможешь заставить меня шелохнуться, так уж и быть - исполню твоё желание. Вложи всю силу в удар.]],
@@ -10846,7 +10826,7 @@ But luckily it's here you feel me?]],
                     text = [[Бля.]],
                     next = nil,
                     actions = {
-                        { target = "kill", npc = "npc_killer", type = "fight_start" },
+                        { pack = "pack_killer", type = "fight_start" },
                     },
                 },
             },

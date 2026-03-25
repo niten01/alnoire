@@ -16,10 +16,9 @@ function chaser_stun:OnSpellStart()
     iMoveSpeed = speed,
     bDodgeable = false,
     bIgnoreObstructions = true,
-    bSuppressTargetCheck = false,
     Ability = self,
     Source = caster,
-    EffectName = "particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf",
+    EffectName = "particles/chaser_stun_projectile.vpcf",
     flExpireTime = GameRules:GetGameTime() + timeout,
   })
 end
@@ -40,6 +39,6 @@ function chaser_stun:OnProjectileHit(target, location)
   })
   target:AddNewModifier(caster, self, "modifier_stunned", { duration = stunDuration })
 
-  caster:EmitSound("ability.chaser.stun.cast")
+  caster:EmitSound("ability.chaser.stun.hit")
   return true
 end

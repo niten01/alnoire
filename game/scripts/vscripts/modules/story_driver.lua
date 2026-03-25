@@ -417,6 +417,9 @@ function StoryDriver:SetupAct3()
 
   if GlobalState:Get().freed_island_creeps then
     SpawnManager:SpawnNPC("spawner_cat_barrel_city")
+
+    SpawnManager:SpawnNPC("spawner_killer")
+    triggerSetEnabled("trigger_epstein_killer", true)
   end
 end
 

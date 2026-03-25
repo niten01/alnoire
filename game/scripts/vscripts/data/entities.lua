@@ -904,6 +904,7 @@ return {
             modifiers = { "modifier_story_npc" },
             packID = "pack_killer",
             ai_modifier = "modifier_killer_ai",
+            deferred = true,
         },
     },
 
@@ -1153,7 +1154,10 @@ return {
         },
         pack_killer = {
             activateAfterUnitsSpawned = false,
-            stayActivatedOnPlayerDeath = false,
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 6000,
+            rangeRetreat = 5000,
+            rangeAggro = 5000,
         },
         pack_goden = {
             activateAfterUnitsSpawned = true,
@@ -1162,6 +1166,12 @@ return {
         pack_ball = {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 3000,
+            rangeRetreat = 2000,
+            rangeAggro = 1400,
+            doors = {
+                "door_ball"
+            }
         },
         pack_chaser = {
             activateAfterUnitsSpawned = true,
@@ -1229,7 +1239,9 @@ return {
     zone = {
         zone_classroom_1 = { musicSet = "classroom_1", respawnPoint = "respawn_prologue" },
         zone_prologue = { musicSet = "silence", respawnPoint = "respawn_prologue" },
-        zone_forest_1 = { musicSet = "forest", respawnPoint = "respawn_forest_1" },
+        zone_forest_1 = { musicSet = "forest1", respawnPoint = "respawn_forest_1" },
+        zone_forest_2 = { musicSet = "forest2", respawnPoint = "respawn_forest_2" },
+        zone_forest_3 = { musicSet = "forest3", respawnPoint = "respawn_forest_3" },
         zone_city = { musicSet = "city", respawnPoint = "respawn_city", noCombatMusic = true },
         zone_ski = { musicSet = "ski", respawnPoint = "respawn_city", noCombatMusic = true },
         zone_wastelands = { musicSet = "wastelands", respawnPoint = "respawn_wastelands" },
@@ -1342,6 +1354,9 @@ return {
         },
         door_george = {
             clipEntity = "clip_door_george"
+        },
+        door_ball = {
+            clipEntity = "clip_door_ball"
         },
     },
 
