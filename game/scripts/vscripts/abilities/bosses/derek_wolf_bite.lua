@@ -17,7 +17,7 @@ function derek_wolf_bite:OnSpellStart()
     local dir = v:Normalized()
     local dist = #v - radius / 2
 
-    EmitSoundOnLocationWithCaster(casterPos, "ability.derek.wolf_bite.blink", caster)
+    EmitSoundOnLocationWithCasterSafe(casterPos, "ability.derek.wolf_bite.blink", caster)
     caster:SetAbsOrigin(randStartPoint)
     caster:SetForwardVector(dir)
     caster:FaceTowards(targetPos)
@@ -48,7 +48,7 @@ function derek_wolf_bite:OnSpellStart()
     Timers:CreateTimer(animAttackPoint, function()
         caster.derekCasting = false
 
-        EmitSoundOnLocationWithCaster(caster:GetAbsOrigin(), "ability.derek.wolf_bite.bite", caster)
+        EmitSoundOnLocationWithCasterSafe(caster:GetAbsOrigin(), "ability.derek.wolf_bite.bite", caster)
 
         local pfx = ParticleManager:CreateParticle("particles/derek_wolf_bite.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
         ParticleManager:ReleaseParticleIndex(pfx)

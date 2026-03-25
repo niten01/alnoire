@@ -58,7 +58,7 @@ function red_machine_gun:OnSpellStart()
                 iVisionRadius = 500,
                 iVisionTeamNumber = caster:GetTeamNumber()
             })
-            EmitSoundOnLocationWithCaster(startPos, "ability.red.machine_gun.shoot", caster)
+            EmitSoundOnLocationWithCasterSafe(startPos, "ability.red.machine_gun.shoot", caster)
         end)
         cumDelay = cumDelay + delayPerShot
     end

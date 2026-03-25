@@ -50,7 +50,7 @@ function logarithmus_clone:OnSpellStart()
     Timers:CreateTimer(swingSeqDuration, function()
       ParticleManager:DestroyParticle(clonePfx, false)
       ParticleManager:ReleaseParticleIndex(clonePfx)
-      EmitSoundOnLocationWithCaster(casterPos, "ability.logarithmus.clone.dissolve", caster)
+      EmitSoundOnLocationWithCasterSafe(casterPos, "ability.logarithmus.clone.dissolve", caster)
     end)
 
     -- actual swing mid-animation
@@ -58,7 +58,7 @@ function logarithmus_clone:OnSpellStart()
       local swingPfx = ParticleManager:CreateParticle("particles/logarithmus_clone_swing.vpcf", PATTACH_WORLDORIGIN, nil)
       ParticleManager:SetParticleControlTransformForward(swingPfx, 0, casterPos, fwd)
 
-      EmitSoundOnLocationWithCaster(casterPos, "ability.logarithmus.clone.swing", caster)
+      EmitSoundOnLocationWithCasterSafe(casterPos, "ability.logarithmus.clone.swing", caster)
 
       local radius = self:GetSpecialValueFor("swing_radius")
       local angleWidth = self:GetSpecialValueFor("swing_angle_width")

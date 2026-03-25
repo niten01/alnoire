@@ -73,7 +73,7 @@ function derek_axe_fury:OnProjectileHit(target, location)
   })
 
   local targetPos = target:GetAbsOrigin()
-  EmitSoundOnLocationWithCaster(targetPos, "ability.derek.strafe.hit", caster)
+  EmitSoundOnLocationWithCasterSafe(targetPos, "ability.derek.strafe.hit", caster)
 
   local pfx = ParticleManager:CreateParticle(
     "particles/units/heroes/hero_beastmaster/beastmaster_wildaxes_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)

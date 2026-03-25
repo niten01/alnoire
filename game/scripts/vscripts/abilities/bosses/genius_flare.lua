@@ -17,8 +17,8 @@ function genius_flare:OnSpellStart()
 
     assert(self.targetPos)
     self.pfx = {}
-    EmitSoundOnLocationWithCaster(self.targetPos, "ability.genius.flare.cast", caster)
-    EmitSoundOnLocationWithCaster(self.targetPos, "ability.genius.flare.loop", caster)
+    EmitSoundOnLocationWithCasterSafe(self.targetPos, "ability.genius.flare.cast", caster)
+    EmitSoundOnLocationWithCasterSafe(self.targetPos, "ability.genius.flare.loop", caster)
 
     local pfx = ParticleManager:CreateParticle(
         "particles/econ/items/skywrath_mage/skywrath_arcana/skywrath_arcana_mystic_flare_v2_ambient.vpcf",

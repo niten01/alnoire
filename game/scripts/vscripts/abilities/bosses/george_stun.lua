@@ -28,7 +28,7 @@ function george_stun:OnSpellStart()
             ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 0, 0))
             ParticleManager:ReleaseParticleIndex(pfx)
 
-            EmitSoundOnLocationWithCaster(pos, "ability.george.stun.hit", caster)
+            EmitSoundOnLocationWithCasterSafe(pos, "ability.george.stun.hit", caster)
 
             local enemies = FindEnemiesForAIInRadius(pos, radius)
             for _, ent in ipairs(enemies) do

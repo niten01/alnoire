@@ -85,7 +85,7 @@ function shadowraze.PlayEffects(this, position, radius)
     ParticleManager:ReleaseParticleIndex(effect_cast)
 
     -- create sound
-    EmitSoundOnLocationWithCaster(position, sound_cast, this:GetCaster())
+    EmitSoundOnLocationWithCasterSafe(position, sound_cast, this:GetCaster())
 end
 
 --------------------------------------------------------------------------------
