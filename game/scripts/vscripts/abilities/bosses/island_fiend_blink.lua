@@ -20,7 +20,7 @@ function island_fiend_blink:OnSpellStart()
     ParticleManager:SetParticleControl(pfx, 0, targetPos)
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    EmitSoundOnLocationWithCaster(targetPos, "ability.island_fiend.blink", caster)
+    EmitSoundOnLocationWithCasterSafe(targetPos, "ability.island_fiend.blink", caster)
 
     FindClearSpaceForUnit(caster, targetPos, true)
 end

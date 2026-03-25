@@ -32,7 +32,7 @@ function item_sling:OnProjectileHit(target, location)
     if not target then return end
     if not IsServer() then return end
 
-    EmitSoundOnLocationWithCaster(location, "items.sling.hit", self:GetCaster())
+    EmitSoundOnLocationWithCasterSafe(location, "items.sling.hit", self:GetCaster())
 
     ApplyDamage({
         victim = target,

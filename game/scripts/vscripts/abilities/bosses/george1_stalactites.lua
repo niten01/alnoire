@@ -29,7 +29,7 @@ function george1_stalactites:OnSpellStart()
 
             ScreenShake(point, 10, 5, 0.5, 1000, 0, true)
 
-            EmitSoundOnLocationWithCaster(point, "ability.george1.stalactites.hit", caster)
+            EmitSoundOnLocationWithCasterSafe(point, "ability.george1.stalactites.hit", caster)
 
             local enemies = FindEnemiesForAIInRadius(point, areaRadius)
             for _, ent in ipairs(enemies) do

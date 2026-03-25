@@ -37,6 +37,7 @@ function modifier_chaser_passive:GetModifierMoveSpeedBonus_Constant()
 end
 
 function modifier_chaser_passive:OnIntervalThink()
+  if not IsServer() then return end
   local sanya = FindSanyaInRadius(self:GetParent():GetAbsOrigin(), 99999)
   if not sanya or sanya:IsNull() or not sanya:IsAlive() then return end
   if not self.hpThreshold then return end

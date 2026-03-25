@@ -43,7 +43,7 @@ function logarithmus_step:OnVectorCastStart(vStartLocation, vDirection)
     ParticleManager:SetParticleControl(pfx, 1, blinkPos)
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    EmitSoundOnLocationWithCaster(casterPos, "ability.logarithmus.step.start", caster)
+    EmitSoundOnLocationWithCasterSafe(casterPos, "ability.logarithmus.step.start", caster)
 
     local hitPos = blinkPos + vDirection * self:GetVectorTargetRange()
     hitPos.z = casterPos.z
@@ -54,9 +54,9 @@ function logarithmus_step:OnVectorCastStart(vStartLocation, vDirection)
     caster:FaceTowards(hitPos)
 
     if self.sequentialUses == maxSequentialUses - 1 then
-        EmitSoundOnLocationWithCaster(blinkPos, "ability.logarithmus.step.cast_max", caster)
+        EmitSoundOnLocationWithCasterSafe(blinkPos, "ability.logarithmus.step.cast_max", caster)
     else
-        EmitSoundOnLocationWithCaster(blinkPos, "ability.logarithmus.step.cast", caster)
+        EmitSoundOnLocationWithCasterSafe(blinkPos, "ability.logarithmus.step.cast", caster)
     end
 
     pfx = ParticleManager:CreateParticle("particles/logarithmus_step.vpcf", PATTACH_WORLDORIGIN, nil)

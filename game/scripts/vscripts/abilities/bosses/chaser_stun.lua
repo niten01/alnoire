@@ -8,15 +8,18 @@ function chaser_stun:OnSpellStart()
   local speed = self:GetSpecialValueFor("speed")
   local timeout = self:GetSpecialValueFor("timeout")
 
+  caster:EmitSound("ability.chaser.stun.cast")
+
   ProjectileManager:CreateTrackingProjectile({
     vSourceLoc = caster:GetAbsOrigin() + Vector(0, 0, 300),
     Target = target,
     iMoveSpeed = speed,
     bDodgeable = false,
     bIgnoreObstructions = true,
+    bSuppressTargetCheck = false,
     Ability = self,
     Source = caster,
-    EffectName = "particles/base_attacks/ranged_siege_good.vpcf",
+    EffectName = "particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf",
     flExpireTime = GameRules:GetGameTime() + timeout,
   })
 end
@@ -36,4 +39,7 @@ function chaser_stun:OnProjectileHit(target, location)
     ability = self,
   })
   target:AddNewModifier(caster, self, "modifier_stunned", { duration = stunDuration })
+
+  caster:EmitSound("ability.chaser.stun.cast")
+  return true
 end

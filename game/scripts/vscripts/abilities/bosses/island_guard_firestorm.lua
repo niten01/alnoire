@@ -48,7 +48,7 @@ function island_guard_firestorm:OnSpellStart()
   for i, wave in ipairs(self.waves) do
     Timers:CreateTimer(self.wavesDelays[i], function()
       for _, point in ipairs(wave) do
-        EmitSoundOnLocationWithCaster(point, "ability.island_guard.firestorm.hit", caster)
+        EmitSoundOnLocationWithCasterSafe(point, "ability.island_guard.firestorm.hit", caster)
 
         local pfx = ParticleManager:CreateParticle(
           "particles/units/heroes/heroes_underlord/abyssal_underlord_firestorm_wave.vpcf", PATTACH_WORLDORIGIN, caster)

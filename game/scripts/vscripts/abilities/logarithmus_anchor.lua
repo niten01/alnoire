@@ -50,7 +50,7 @@ function modifier_logarithmus_anchor:OnCreated(kv)
     self.pfx = ParticleManager:CreateParticle("particles/logarithmus_anchor.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(self.pfx, 0, self.anchorLocation)
 
-    EmitSoundOnLocationWithCaster(self.anchorLocation, "ability.logarithmus.anchor.cast", parent)
+    EmitSoundOnLocationWithCasterSafe(self.anchorLocation, "ability.logarithmus.anchor.cast", parent)
 
     parent:SwapAbilities("logarithmus_anchor", "logarithmus_anchor_return", false, true)
 end

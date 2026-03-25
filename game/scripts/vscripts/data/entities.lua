@@ -358,8 +358,8 @@ return {
         },
         spawner_chaser                  = {
             npc = "npc_chaser",
-            -- packID = "pack_ball",
-            -- ai_modifier = "modifier_default_creep_ai",
+            packID = "pack_chaser",
+            ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
         },
 
@@ -1160,6 +1160,10 @@ return {
             stayActivatedOnPlayerDeath = true,
         },
         pack_ball = {
+            activateAfterUnitsSpawned = true,
+            stayActivatedOnPlayerDeath = true,
+        },
+        pack_chaser = {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
         },

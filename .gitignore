@@ -5,6 +5,7 @@ intro
 
 *.blend
 *.blend1
+*.sqlite3*
 
 # Logs
 logs

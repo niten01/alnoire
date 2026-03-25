@@ -20,7 +20,7 @@ function sanya_towel_root:OnSpellStart()
     ParticleManager:SetParticleControl(pfx, 0, point)
     ParticleManager:SetParticleControl(pfx, 3, Vector(radius, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx)
-    EmitSoundOnLocationWithCaster(point, "ability.towel_master.towel_root", caster)
+    EmitSoundOnLocationWithCasterSafe(point, "ability.towel_master.towel_root", caster)
 
     local enemies = FindUnitsInRadius(
         caster:GetTeamNumber(),

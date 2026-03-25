@@ -375,3 +375,7 @@ function ApplyGeorgeBurn(target, ability)
     duration = 3
   })
 end
+
+function EmitSoundOnLocationWithCasterSafe(location, soundName, caster)
+  caster:EmitSound(soundName)
+end

@@ -33,11 +33,11 @@ function goden_summon:OnSpellStart()
             ParticleManager:SetParticleControl(pfx, 0, pos)
             ParticleManager:ReleaseParticleIndex(pfx)
 
-            EmitSoundOnLocationWithCaster(pos, "ability.goden.summon.cast.water", caster)
+            EmitSoundOnLocationWithCasterSafe(pos, "ability.goden.summon.cast.water", caster)
 
             Timers:CreateTimer(spawnDelay, function()
                 SpawnManager:SpawnNPC(spawner)
-                EmitSoundOnLocationWithCaster(pos, "ability.goden.summon.spawn", caster)
+                EmitSoundOnLocationWithCasterSafe(pos, "ability.goden.summon.spawn", caster)
             end)
         end)
     end

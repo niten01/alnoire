@@ -16,6 +16,7 @@ return {
         "npc_subway_city",
         "npc_subway_to_city",
         "npc_subway_fake",
+        "npc_flask_barrel",
 
         "npc_training_dummy",
 
@@ -107,6 +108,7 @@ return {
         "npc_goden",
         "npc_goden_summon",
         "npc_ball",
+        "npc_chaser",
         "npc_cat_barrel",
         "npc_island_guard",
         "npc_island_fiend",

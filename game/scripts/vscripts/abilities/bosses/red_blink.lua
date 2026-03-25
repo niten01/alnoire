@@ -17,7 +17,7 @@ function red_blink:OnSpellStart()
     ParticleManager:SetParticleControl(pfx, 0, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 10, 1))
     ParticleManager:ReleaseParticleIndex(pfx)
-    EmitSoundOnLocationWithCaster(caster:GetAbsOrigin(), "ability.red.blink.cast", caster)
+    EmitSoundOnLocationWithCasterSafe(caster:GetAbsOrigin(), "ability.red.blink.cast", caster)
 
     local enemies = FindEnemiesForAIInRadius(caster:GetAbsOrigin(), radius)
     for _, ent in ipairs(enemies) do
@@ -36,5 +36,5 @@ function red_blink:OnSpellStart()
     ParticleManager:SetParticleControl(pfx, 0, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 10, 5))
     ParticleManager:ReleaseParticleIndex(pfx)
-    EmitSoundOnLocationWithCaster(caster:GetAbsOrigin(), "ability.red.blink.cast", caster)
+    EmitSoundOnLocationWithCasterSafe(caster:GetAbsOrigin(), "ability.red.blink.cast", caster)
 end

@@ -55,7 +55,7 @@ function george_impale:OnSpellStart()
                 ability = self,
             })
             ApplyGeorgeBurn(ent, self)
-            EmitSoundOnLocationWithCaster(ent:GetAbsOrigin(), "ability.george.impale.hit", caster)
+            EmitSoundOnLocationWithCasterSafe(ent:GetAbsOrigin(), "ability.george.impale.hit", caster)
         end
     end)
 end

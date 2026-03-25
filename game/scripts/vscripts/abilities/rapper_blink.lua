@@ -10,14 +10,14 @@ function rapper_blink:OnSpellStart()
     local maxDistance = self:GetSpecialValueFor("range")
     local destination = GetSafeBlinkDestination(casterPos, targetPos, maxDistance)
 
-    EmitSoundOnLocationWithCaster(casterPos, "ability.rapper.blink.from", caster)
+    EmitSoundOnLocationWithCasterSafe(casterPos, "ability.rapper.blink.from", caster)
     local pfx = ParticleManager:CreateParticle(
         "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_start.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, casterPos)
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    EmitSoundOnLocationWithCaster(destination, "ability.rapper.blink.to", caster)
-    EmitSoundOnLocationWithCaster(destination, "ability.rapper.blink.sfx", caster)
+    EmitSoundOnLocationWithCasterSafe(destination, "ability.rapper.blink.to", caster)
+    EmitSoundOnLocationWithCasterSafe(destination, "ability.rapper.blink.sfx", caster)
     pfx = ParticleManager:CreateParticle("particles/econ/events/fall_2022/blink/blink_dagger_end_fall2022.vpcf",
         PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, destination)

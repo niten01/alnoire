@@ -37,7 +37,7 @@ function logarithmus_alt_clone:OnSpellStart()
             ParticleManager:DestroyParticle(clonePfx, false)
             ParticleManager:ReleaseParticleIndex(clonePfx)
 
-            EmitSoundOnLocationWithCaster(point, "ability.logarithmus.clone.dissolve", caster)
+            EmitSoundOnLocationWithCasterSafe(point, "ability.logarithmus.clone.dissolve", caster)
         end)
 
         ::continue::

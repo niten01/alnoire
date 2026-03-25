@@ -30,7 +30,7 @@ function derek_epicenter:OnSpellStart()
         ParticleManager:SetParticleControl(pfx, 1, Vector(areaRadius + 200, 1, 1))
         ParticleManager:ReleaseParticleIndex(pfx)
 
-        EmitSoundOnLocationWithCaster(point, "ability.derek.epicenter.pulse", caster)
+        EmitSoundOnLocationWithCasterSafe(point, "ability.derek.epicenter.pulse", caster)
 
         local enemies = FindEnemiesForAIInRadius(point, areaRadius)
         for _, ent in ipairs(enemies) do
