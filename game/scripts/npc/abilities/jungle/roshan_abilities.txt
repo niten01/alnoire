@@ -33,7 +33,7 @@
 			"slow_duration"     "1 2"
 			"slow_amount"       "30 50"
 			"damage"            "50 150"
-            "cooldown"          "5.0 8.0"
+            "cooldown"          "4.0 8.0"
 		}
 		"precache"
 		{
