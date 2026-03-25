@@ -10,9 +10,9 @@
 		"ConsideredHero" 			"1"
 		"AutoAttacksByDefault" 		"0"
 
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability1"					"chaser_passive"			// Ability 1
+		"Ability2"					"chaser_rite"			// Ability 2
+		"Ability3"					"chaser_stun"			// Ability 3
 		"Ability4"					""			
 		"Ability5"					""			
 		"Ability6"					""			
@@ -58,6 +58,7 @@
 
 		"precache"
 		{
+        	"soundfile"			"soundevents/bosses/chaser.vsndevts"
 		}
 
 		"Creature"

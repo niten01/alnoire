@@ -22,23 +22,24 @@
         "AbilityTextureName"            "skeleton_king_hellfire_blast"
 		    "AbilityBehavior"				        "DOTA_ABILITY_BEHAVIOR_POINT"
         
-        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_5"
-        "AbilityCastPoint"              "0.37"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+        "AbilityCastPoint"              "0.4"
 
-        "AbilityCooldown"               "5" 
+        "AbilityCooldown"               "10" 
         "AbilityCastRange"        		"700"
 
 		    "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 
         "AbilityValues"
         {
-            "radius"              "400"
+            "radius"              "700"
             "damage"              "200"
-            "delay"               "2.0"   
+            "delay"               "2.5"   
         }
 
         "precache"
         {
+            "particle"		"particles/units/heroes/hero_bloodseeker/bloodseeker_bloodritual_ring.vpcf"
         }
     }
     "chaser_stun"
@@ -50,8 +51,8 @@
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         
-        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_5"
-        "AbilityCastPoint"              "0.37"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCastPoint"              "0.61"
 
         "AbilityCooldown"               "15" 
         "AbilityCastRange"        		"700"
@@ -68,6 +69,7 @@
 
         "precache"
         {
+            "particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
         }
     }
 }

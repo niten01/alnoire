@@ -82,6 +82,9 @@
         // "sounds/rapper/rapper_blink_sfx_3.vsnd",
         "sounds/rapper/rapper_blink_sfx_4.vsnd",
         "sounds/rapper/rapper_blink_sfx_5.vsnd",
+        "sounds/rapper/rapper_blink_sfx_6.vsnd",
+        "sounds/rapper/rapper_blink_sfx_7.vsnd",
+        "sounds/rapper/rapper_blink_sfx_8.vsnd",
     ]
     volume = "2.00000"
     pitch = "1.000000"
