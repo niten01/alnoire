@@ -26,7 +26,7 @@
 
 		"AbilityValues"
 		{
-            "initialDamage"           "70"
+            "initialDamage"           "60"
             "damagePerUnit"           "10"
 			"initialRadius"           "500"
             "radiusPerUnit"           "50"

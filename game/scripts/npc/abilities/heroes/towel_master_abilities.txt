@@ -201,8 +201,8 @@
 		"AbilityCooldown"				"22.0"
 		"AbilityValues"
 		{
-			"asb_per_attack"				"22 26"
-			"buff_duration"					"9.0 9.0"
+			"asb_per_attack"				"12 16"
+			"buff_duration"					"10.0 10.0"
 		}
 
 		"precache"
