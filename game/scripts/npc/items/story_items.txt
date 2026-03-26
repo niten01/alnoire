@@ -27,8 +27,8 @@
 
         "AbilityValues" 
         {
-            "hp_regen_percent"          "10.0"
-            "duration"                  "8.0"
+            "hp_regen_percent"          "20.0"
+            "duration"                  "3.0"
         }
     }
     "item_sanya_flask_upgrade_recipe"
