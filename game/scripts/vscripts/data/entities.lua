@@ -1024,7 +1024,7 @@ return {
 
         pack_ocean_act2_tusiki = {
             rangeFastTickRate = 1000,
-            rangeRetreat = 1500,
+            rangeRetreat = 2400,
             rangeAggro = 700,
             stayActivatedOnPlayerDeath = true,
         },
@@ -1066,7 +1066,7 @@ return {
 
         pack_ocean_act2_morphs = {
             rangeFastTickRate = 850,
-            rangeRetreat = 1400,
+            rangeRetreat = 2300,
             rangeAggro = 550,
             stayActivatedOnPlayerDeath = true,
         },
@@ -1081,7 +1081,7 @@ return {
         pack_ocean_act2_bombers = {
             rangeFastTickRate = 600,
             rangeRetreat = 9999999,
-            rangeAggro = 250,
+            rangeAggro = 350,
             stayActivatedOnPlayerDeath = true,
         },
 
