@@ -33,7 +33,7 @@ function george_puddles:OnSpellStart()
                 ParticleManager:SetParticleControl(pfx, 0, point)
                 ParticleManager:SetParticleControl(pfx, 10, Vector(areaRadius, 0, 0))
 
-                EmitSoundOnLocationWithCaster(point, "ability.george.puddles.spawn", caster)
+                EmitSoundOnLocationWithCasterSafe(point, "ability.george.puddles.spawn", caster)
             end
 
             local enemies = FindEnemiesForAIInRadius(point, areaRadius)

@@ -69,11 +69,15 @@ function modifier_ball_slide:OnIntervalThink()
 end
 
 function modifier_ball_slide:UpdateHorizontalMotion(me, dt)
+    self.velocity.z = 0
     local pos = me:GetAbsOrigin()
     local nextPos = pos + self.velocity * dt
     local safeNextPos = GetSafeBlinkDestination(pos, nextPos)
 
-    if #self.velocity < 1 then return end
+    if #self.velocity < 5 then
+        self.velocity = Vector(0, 0, 0)
+        return
+    end
 
     if math.abs((safeNextPos - pos):Length2D() - (nextPos - pos):Length2D()) > 1 then
         self:HandleBounce(safeNextPos)
@@ -82,31 +86,37 @@ function modifier_ball_slide:UpdateHorizontalMotion(me, dt)
 
     me:SetForwardVector(self.velocity:Normalized())
     me:FaceTowards(nextPos)
+
+    if not me:HasModifier("modifier_vertical_jump") then
+        nextPos.z = GetGroundHeight(nextPos, me)
+    end
+
     me:SetAbsOrigin(nextPos)
     -- FindClearSpaceForUnit(me, nextPos, true)
 
     self.velocity = self.velocity * self.friction
 
-    if #self.velocity < self.minDamageVelocity then return end
-
-    local enemies = FindEnemiesForAIInRadius(pos, self.radius)
-    for _, ent in ipairs(enemies) do
-        ApplyDamage({
-            victim = ent,
-            attacker = me,
-            damage = self.dps * dt,
-            damage_type = DAMAGE_TYPE_PHYSICAL,
-            ability = self:GetAbility()
-        })
+    if #self.velocity >= self.minDamageVelocity then
+        local enemies = FindEnemiesForAIInRadius(pos, self.radius)
+        for _, ent in ipairs(enemies) do
+            ApplyDamage({
+                victim = ent,
+                attacker = me,
+                damage = self.dps * dt,
+                damage_type = DAMAGE_TYPE_PHYSICAL,
+                ability = self:GetAbility()
+            })
+        end
     end
 end
 
 function modifier_ball_slide:HandleBounce(current_pos)
-    local test_dist = 10
-    local x_blocked = not GridNav:IsTraversable(current_pos +
-        Vector(self.velocity.x > 0 and test_dist or -test_dist, 0, 0))
+    local test_dist = 1
+    local xTest = Vector(self.velocity.x > 0 and test_dist or -test_dist, 0, 0)
+    local yTest = Vector(0, self.velocity.y > 0 and test_dist or -test_dist, 0)
+    local x_blocked = not GridNav:IsTraversable(current_pos + xTest) or GridNav:IsBlocked(current_pos + xTest)
     local y_blocked = not GridNav:IsTraversable(current_pos +
-        Vector(0, self.velocity.y > 0 and test_dist or -test_dist, 0))
+        yTest) or GridNav:IsBlocked(current_pos + yTest)
 
     local parent = self:GetParent()
     if x_blocked then

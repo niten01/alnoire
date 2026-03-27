@@ -1,0 +1,3 @@
+"DOTA_Tooltip_ability_item_crystal_ball"	        "Хрустальный Шар"
+"DOTA_Tooltip_ability_item_crystal_ball_Lore" "Внутри шара вновь переливается полупрозрачная энергия."
+"DOTA_Tooltip_ability_item_crystal_ball_bonus_int" "+$int"

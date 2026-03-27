@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_broken_crystal_ball"	        "Осколки Хрустального Шара"
+"DOTA_Tooltip_ability_item_broken_crystal_ball_Description" "Кажется он совсем потерял свои магические свойства, починить его будет непросто."

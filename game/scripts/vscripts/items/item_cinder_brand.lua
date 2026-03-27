@@ -22,7 +22,7 @@ end
 function modifier_cinder_brand_owner:OnCreated()
     local ability = self:GetAbility()
     if ability then
-        self.chancePct = ability:GetSpecialValueFor("chance_pct")
+        -- self.chancePct = ability:GetSpecialValueFor("chance_pct")
         self.radius = ability:GetSpecialValueFor("radius")
         self.damage = ability:GetSpecialValueFor("damage")
     end
@@ -37,8 +37,9 @@ function modifier_cinder_brand_owner:OnAttack(params)
     local ability = self:GetAbility()
     local target = params.target
 
-    if params.no_attack_cooldown or params.attacker ~= parent or parent:IsRangedAttacker() then return end
-    if not RollPercentage(self.chancePct) then return end
+    if not ability:IsCooldownReady() or params.no_attack_cooldown or params.attacker ~= parent or parent:IsRangedAttacker() then return end
+    -- if not RollPercentage(self.chancePct) then return end
+    ability:StartCooldown(ability:GetCooldown(ability:GetLevel()))
 
     local pfx = ParticleManager:CreateParticle("particles/custom_items/cinder_brand_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
     ParticleManager:SetParticleControl(pfx, 1, target:GetAbsOrigin() + parent:GetForwardVector() * 30)

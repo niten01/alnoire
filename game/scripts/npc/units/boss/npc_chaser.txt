@@ -1,0 +1,77 @@
+"DOTAUnits"
+{
+	"npc_chaser" 
+	{
+		"Model"						"models/heroes/chaos_knight/chaos_knight.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_ChaosKnight"
+		"Level"						"20"
+		"ModelScale" 				"1.1"
+		"ConsideredHero" 			"1"
+		"AutoAttacksByDefault" 		"0"
+
+		"Ability1"					"chaser_passive"			// Ability 1
+		"Ability2"					"chaser_rite"			// Ability 2
+		"Ability3"					"chaser_stun"			// Ability 3
+		"Ability4"					""			
+		"Ability5"					""			
+		"Ability6"					""			
+		"Ability7"					""			
+		"Ability8"					""			
+		"Ability9"					""			
+		"Ability10"					""			
+		"Ability11"					""			
+		"Ability12"					""			
+		"Ability13"					""			
+
+		"ArmorPhysical"				"1"			
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"36"		// Damage range max.
+		"AttackRate"				"1.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.
+
+		"RingRadius"				"50"
+		"HealthBarOffset"			"350"
+
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"570"		// Speed.			
+
+		"StatusHealth"				"1500"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"precache"
+		{
+        	"soundfile"			"soundevents/bosses/chaser.vsndevts"
+		}
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "6264" } // shield
+				"Wearable2" { "ItemDef" "6265" } // axe
+				"Wearable3" { "ItemDef" "6266" } // pauldrons
+				"Wearable4" { "ItemDef" "6267" } // mount
+				"Wearable5" { "ItemDef" "6268" } // helm
+			}
+		}
+	}
+
+}

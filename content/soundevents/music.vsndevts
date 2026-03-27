@@ -79,20 +79,59 @@
     fade_in = "2.0"
   }
   // ---------------------------------------------------------
-  music.forest.explore = {
+  music.forest1.explore = {
     type = "dota_update_battle_music"
     vsnd_files =
     [
-      "sounds/music/forest_explore.vsnd"
+      "sounds/music/forest1_explore.vsnd"
     ]
     volume = "2.500000"
     fade_out = "5.0"
+    fade_in = "2.0"
   }
-  music.forest.combat = {
+  music.forest1.combat = {
     type = "dota_update_battle_music"
     vsnd_files =
     [
-      "sounds/music/forest_combat.vsnd"
+      "sounds/music/forest1_combat.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "2.0"
+  }
+  music.forest2.explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/forest2_explore.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "5.0"
+    fade_in = "2.0"
+  }
+  music.forest2.combat = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/forest2_combat.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "2.0"
+  }
+  music.forest3.explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/forest3_explore.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "5.0"
+    fade_in = "2.0"
+  }
+  music.forest3.combat = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/forest3_combat.vsnd"
     ]
     volume = "2.500000"
     fade_out = "2.0"

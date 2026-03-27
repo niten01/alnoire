@@ -70,7 +70,7 @@ function derek_strafe:OnSpellStart()
   Timers:CreateTimer(0, function()
     local shotStartPos = self.shotStartPoints[i]
 
-    EmitSoundOnLocationWithCaster(shotStartPos, "ability.derek.strafe.throw", caster)
+    EmitSoundOnLocationWithCasterSafe(shotStartPos, "ability.derek.strafe.throw", caster)
 
     ProjectileManager:CreateLinearProjectile({
       Ability = self,

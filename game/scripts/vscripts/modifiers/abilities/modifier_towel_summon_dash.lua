@@ -42,6 +42,10 @@ function modifier_towel_summon_dash:OnCreated()
     self.damage       = ability:GetSpecialValueFor('damage') or 100
     self.hit_units    = {}
 
+    local pfx         = ParticleManager:CreateParticle(
+        "particles/items_fx/harpoon_pull.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+    self:AddParticle(pfx, false, false, -1, false, false)
+
     if self:ApplyHorizontalMotionController() == false then
         self:Destroy()
     end
@@ -113,7 +117,7 @@ function modifier_towel_summon_dash:UpdateHorizontalMotion(me, dt)
                 victim = enemy,
                 attacker = self.parent,
                 damage = self.damage,
-                damage_type = DAMAGE_TYPE_MAGICAL,
+                damage_type = self:GetAbility():GetAbilityDamageType(),
                 ability = self:GetAbility()
             })
         end

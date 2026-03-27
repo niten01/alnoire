@@ -32,8 +32,8 @@
 			"radius"            "200 350"
 			"slow_duration"     "1 2"
 			"slow_amount"       "30 50"
-			"damage"            "50 200"
-            "cooldown"          "5.0 8.0"
+			"damage"            "50 150"
+            "cooldown"          "4.0 8.0"
 		}
 		"precache"
 		{

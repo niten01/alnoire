@@ -28,6 +28,11 @@ return {
             modifiers = { "modifier_story_npc" },
         },
 
+        spawner_flask_barrel    = {
+            npc = "npc_flask_barrel",
+            modifiers = { "modifier_story_npc" },
+        },
+
         spawner_courier_knight        = { npc = "npc_courier_knight", modifiers = { "modifier_story_npc" } },
         spawner_courier_bug           = { npc = "npc_courier_bug", modifiers = { "modifier_story_npc" } },
         spawner_courier_alkash        = { npc = "npc_courier_alkash", modifiers = { "modifier_story_npc" } },
@@ -349,6 +354,12 @@ return {
             packID = "pack_ball",
             ai_modifier = "modifier_ball_ai",
             -- modifiers = { "modifier_ball_slide" },
+            team = DOTA_TEAM_BADGUYS,
+        },
+        spawner_chaser                  = {
+            npc = "npc_chaser",
+            packID = "pack_chaser",
+            ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
         },
 
@@ -900,6 +911,7 @@ return {
             modifiers = { "modifier_story_npc" },
             packID = "pack_killer",
             ai_modifier = "modifier_killer_ai",
+            deferred = true,
         },
     },
 
@@ -1011,114 +1023,114 @@ return {
         },
 
         pack_ocean_act2_catapa = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1100,
+            rangeRetreat = 1300,
+            rangeAggro = 500,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_tusiki = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1300,
+            rangeRetreat = 2400,
+            rangeAggro = 700,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_tadpoles_ranged = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1450,
+            rangeRetreat = 2000,
+            rangeAggro = 840,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_tadpoles_big = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1150,
+            rangeRetreat = 2800,
+            rangeAggro = 530,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_spiders = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1250,
+            rangeRetreat = 1300,
+            rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_arbuz = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1200,
+            rangeRetreat = 1900,
+            rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_seledka = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1200,
+            rangeRetreat = 2200,
+            rangeAggro = 500,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_morphs = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1150,
+            rangeRetreat = 2300,
+            rangeAggro = 550,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_slark = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 900,
+            rangeRetreat = 350,
+            rangeAggro = 300,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_bombers = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 950,
+            rangeRetreat = 9999999,
+            rangeAggro = 350,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_drow = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1250,
+            rangeRetreat = 1100,
+            rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_ursa = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1300,
+            rangeRetreat = 4000,
+            rangeAggro = 700,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_titans = {
-            rangeFastTickRate = 2000,
+            rangeFastTickRate = 1400,
             rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_pupu = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1600,
+            rangeRetreat = 1700,
+            rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_greevils = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
+            rangeFastTickRate = 1500,
+            rangeRetreat = 2200,
             rangeAggro = 900,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_shakers = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 1700,
+            rangeRetreat = 1400,
+            rangeAggro = 1100,
             stayActivatedOnPlayerDeath = true,
         },
 
@@ -1130,14 +1142,14 @@ return {
         },
 
         pack_concert_crowd = {
-            rangeFastTickRate = 1300,
-            rangeRetreat = 1300,
+            rangeFastTickRate = 1900,
+            rangeRetreat = 2000,
             rangeAggro = 1300,
             activateAfterUnitsSpawned = false,
         },
         pack_monkey_king = {
-            rangeRetreat = 600,
-            rangeAggro = 600,
+            rangeRetreat = 5000,
+            rangeAggro = 500,
             activateAfterUnitsSpawned = false,
         },
         pack_gate_trolls = {
@@ -1156,13 +1168,26 @@ return {
         },
         pack_killer = {
             activateAfterUnitsSpawned = false,
-            stayActivatedOnPlayerDeath = false,
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 6000,
+            rangeRetreat = 5000,
+            rangeAggro = 5000,
         },
         pack_goden = {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
         },
         pack_ball = {
+            activateAfterUnitsSpawned = true,
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 3000,
+            rangeRetreat = 2000,
+            rangeAggro = 1400,
+            doors = {
+                "door_ball"
+            }
+        },
+        pack_chaser = {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
         },
@@ -1208,7 +1233,7 @@ return {
         },
 
         pack_ghetto = {
-            rangeRetreat = 1300,
+            rangeRetreat = 6000,
             rangeAggro = 1300,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
@@ -1228,7 +1253,9 @@ return {
     zone = {
         zone_classroom_1 = { musicSet = "classroom_1", respawnPoint = "respawn_prologue" },
         zone_prologue = { musicSet = "silence", respawnPoint = "respawn_prologue" },
-        zone_forest_1 = { musicSet = "forest", respawnPoint = "respawn_forest_1" },
+        zone_forest_1 = { musicSet = "forest1", respawnPoint = "respawn_forest_1" },
+        zone_forest_2 = { musicSet = "forest2", respawnPoint = "respawn_forest_2" },
+        zone_forest_3 = { musicSet = "forest3", respawnPoint = "respawn_forest_3" },
         zone_city = { musicSet = "city", respawnPoint = "respawn_city", noCombatMusic = true },
         zone_ski = { musicSet = "ski", respawnPoint = "respawn_city", noCombatMusic = true },
         zone_wastelands = { musicSet = "wastelands", respawnPoint = "respawn_wastelands" },
@@ -1341,6 +1368,9 @@ return {
         },
         door_george = {
             clipEntity = "clip_door_george"
+        },
+        door_ball = {
+            clipEntity = "clip_door_ball"
         },
     },
 

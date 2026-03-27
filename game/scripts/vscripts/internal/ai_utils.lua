@@ -478,7 +478,7 @@ function AdjustTickRate(unit)
   end
 end
 
-function ShowGenericLineWarning(p1, p2, width, duration)
+function ShowGenericLineWarning(p1, p2, width, duration, startEnt)
   local particleName = "particles/ui_mouseactions/custom_range_finder_cone.vpcf"
   local pfx = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 1, p1)
@@ -498,6 +498,9 @@ function ShowGenericLineWarning(p1, p2, width, duration)
 
     curEnd = p1 + dir * dist * (elapsed / duration)
     ParticleManager:SetParticleControl(pfx, 2, curEnd)
+    if startEnt then
+      ParticleManager:SetParticleControl(pfx, 1, startEnt:GetAbsOrigin())
+    end
     elapsed = elapsed + dt
     if elapsed >= duration then
       ParticleManager:DestroyParticle(pfx, false)
@@ -523,20 +526,19 @@ end
 
 function ShowGenericCurveWarning(curveInfo, width, duration)
   local interval = 0.01
-  local iter = curveInfo:UnstableIterator()
+  local iter = curveInfo:UnstableIteratorElapsed()
   local point = iter()
   local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 1, Vector(width, 0, 0))
 
-  local prevTime = GameRules:GetGameTime()
+  local startTime = GameRules:GetGameTime()
   Timers:CreateTimer(0, function()
     ParticleManager:SetParticleControl(pfx, 0, point)
 
     local curTime = GameRules:GetGameTime()
-    local dt = curTime - prevTime
-    prevTime = curTime
 
-    point = iter(dt / duration)
+    DebugPrint((curTime - startTime) / duration)
+    point = iter((curTime - startTime) / duration)
     if point then
       return interval
     else

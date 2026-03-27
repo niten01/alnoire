@@ -32,3 +32,5 @@
 "npc_ball" "Мяч"
 "npc_derek" "Зверь Пустошей"
 "npc_george" "Джорж Богоподобный"
+"npc_flask_barrel" "Бочка"
+"npc_chaser"        "Преследователь"

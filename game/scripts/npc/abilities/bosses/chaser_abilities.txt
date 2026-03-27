@@ -1,0 +1,75 @@
+"DOTAAbilities"
+{
+    "chaser_passive"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/chaser_passive.lua"
+        "AbilityTextureName"            "chaos_knight_phantasm"
+        
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        
+        "AbilityValues"
+        {
+          "ms_bonus"      "400"
+          "attack_speed_bonus"  "200"
+          "hp_threshold_pct"    "70"
+        }
+    }   
+    "chaser_rite"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/chaser_rite.lua"
+        "AbilityTextureName"            "chaos_knight_phantasm"
+		    "AbilityBehavior"				        "DOTA_ABILITY_BEHAVIOR_POINT"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+        "AbilityCastPoint"              "0.4"
+
+        "AbilityCooldown"               "10" 
+        "AbilityCastRange"        		"700"
+
+		    "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+
+        "AbilityValues"
+        {
+            "radius"              "700"
+            "damage"              "200"
+            "delay"               "2.5"   
+        }
+
+        "precache"
+        {
+            "particle"		"particles/units/heroes/hero_bloodseeker/bloodseeker_bloodritual_ring.vpcf"
+        }
+    }
+    "chaser_stun"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/chaser_stun.lua"
+        "AbilityTextureName"            "chaos_knight_phantasm"
+		    "AbilityBehavior"				        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCastPoint"              "0.61"
+
+        "AbilityCooldown"               "15" 
+        "AbilityCastRange"        		"700"
+
+		    "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+
+        "AbilityValues"
+        {
+            "stun_duration"       "2"
+            "damage"              "200"
+            "speed"               "250"   
+            "timeout"             "6.5"   
+        }
+
+        "precache"
+        {
+            "particle"		"particles/chaser_stun_projectile.vpcf"
+        }
+    }
+}

@@ -11,6 +11,8 @@ BATTLE_THINK_INTERVAL = 0.05
 
 SAFE_BLINK_PRECISION = 0.5 -- Smaller means more precise
 
+NEUTRAL_SLOT_IDX = 16
+
 ---------------------------------------------------------------------------
 
 ENABLE_HERO_RESPAWN = true        -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
@@ -52,7 +54,7 @@ CUSTOM_SCAN_COOLDOWN = 210              -- Custom cooldown of Scan in seconds. D
 CUSTOM_GLYPH_COOLDOWN = 300             -- Custom cooldown of Glyph in seconds. Doesn't affect Glyph's starting cooldown!
 
 -- TODO: only for testing
-DISABLE_FOG_OF_WAR_ENTIRELY = false       -- Should we disable fog of war entirely for both teams?
+DISABLE_FOG_OF_WAR_ENTIRELY = false      -- Should we disable fog of war entirely for both teams?
 USE_UNSEEN_FOG_OF_WAR = true             -- Should we make unseen and fogged areas of the map completely black until uncovered by each team?
 -- NOTE: DISABLE_FOG_OF_WAR_ENTIRELY must be false for USE_UNSEEN_FOG_OF_WAR to work
 USE_STANDARD_DOTA_BOT_THINKING = false   -- Should we have bots act like they would in Dota? (This requires 3 lanes, vanilla items, vanilla heroes etc)
@@ -107,7 +109,7 @@ FOUNTAIN_PERCENTAGE_HEALTH_REGEN             = -1    -- What should we use for t
 MAXIMUM_ATTACK_SPEED                         = 2000  -- What should we use for the maximum attack speed?
 MINIMUM_ATTACK_SPEED                         = 10    -- What should we use for the minimum attack speed?
 
-DISABLE_DAY_NIGHT_CYCLE                      = false -- Should we disable the day night cycle from naturally occurring? (Manual adjustment still possible)
+DISABLE_DAY_NIGHT_CYCLE                      = true  -- Should we disable the day night cycle from naturally occurring? (Manual adjustment still possible)
 DISABLE_KILLING_SPREE_ANNOUNCER              = false -- Should we disable the killing spree announcer?
 DISABLE_STICKY_ITEM                          = false -- Should we disable the sticky item button in the quick buy area?
 ENABLE_PAUSING                               = true  -- Should we allow players to pause the game?

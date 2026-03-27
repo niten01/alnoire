@@ -1,0 +1,8 @@
+"DOTA_Tooltip_ability_sanya_towel_summon"		            "Раб Чистоты"
+"DOTA_Tooltip_ability_sanya_towel_summon_Lore"		    "Это короче типа Саня не любит мыться, но общество его заставляет и типа он раб чистоты сублимировал короче типа..."
+"DOTA_Tooltip_Ability_sanya_towel_summon_SummaryDescription" ""
+"DOTA_Tooltip_ability_sanya_towel_summon_Description"		"Герой проводит ритуал призыва, создавая верного спутника из молекул полотенца, летающих в воздухе.<br><br>Раб не может действовать, если расстояние до владельца превышает %radius%.<br><br>Раб может использовать предметы, а также имеет собственный набор способностей. Уровень способностей Раба зависит от уровня этой способности."
+"DOTA_Tooltip_ability_sanya_towel_summon_Note0"		""
+"DOTA_Tooltip_ability_sanya_towel_summon_overpower_level"		"УРОВЕНЬ БЕЗМОЛВНОЙ ЯРОСТИ:"
+"DOTA_Tooltip_ability_sanya_towel_summon_dash_level"		    "УРОВЕНЬ РЫВКА:"
+"DOTA_Tooltip_ability_sanya_towel_summon_explosion_level"		"УРОВЕНЬ ПОСЛЕДНЕЙ КАПЛИ:"

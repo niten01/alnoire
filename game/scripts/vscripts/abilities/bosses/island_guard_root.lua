@@ -38,7 +38,7 @@ function island_guard_root:OnSpellStart()
   assert(self.points)
   self.pfxs = {}
   for _, point in ipairs(self.points) do
-    EmitSoundOnLocationWithCaster(point, "ability.island_guard.root.hit", caster)
+    EmitSoundOnLocationWithCasterSafe(point, "ability.island_guard.root.hit", caster)
 
     local pfx = ParticleManager:CreateParticle(
       "particles/units/heroes/heroes_underlord/underlord_pitofmalice.vpcf", PATTACH_WORLDORIGIN, nil)

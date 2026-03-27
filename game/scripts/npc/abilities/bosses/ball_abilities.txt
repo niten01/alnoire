@@ -58,7 +58,7 @@
         "AbilityTextureName"            "kunkka_torrent"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
         
-        "AbilityCastPoint"              "0"
+        "AbilityCastPoint"              "1"
 
         "AbilityCooldown"               "7" 
         "AbilityCastRange"        		"9999"
@@ -68,7 +68,6 @@
         "AbilityValues"
         {
             "impulse"   "5000"
-            "warning_delay"  "1"
         }
 
         "precache"

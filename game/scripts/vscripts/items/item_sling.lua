@@ -13,6 +13,9 @@ function item_sling:OnSpellStart()
     local caster = self:GetCaster()
     local target = self:GetCursorTarget()
     if target:GetName() ~= "npc_gorilla" then return end
+
+    caster:EmitSound("items.sling.cast")
+
     ProjectileManager:CreateTrackingProjectile({
         vSourceLoc = caster:GetAbsOrigin() + Vector(0, 0, 300),
         Target = target,
@@ -28,8 +31,14 @@ end
 function item_sling:OnProjectileHit(target, location)
     if not target then return end
     if not IsServer() then return end
-    target:SetHealth(target:GetHealth() - 1)
-    if target:GetHealth() == 0 then
-        target:Kill(self, self:GetCaster())
-    end
+
+    EmitSoundOnLocationWithCasterSafe(location, "items.sling.hit", self:GetCaster())
+
+    ApplyDamage({
+        victim = target,
+        attacker = self:GetCaster(),
+        damage = 1,
+        damage_type = DAMAGE_TYPE_PURE,
+        ability = self,
+    })
 end

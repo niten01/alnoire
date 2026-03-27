@@ -15,6 +15,9 @@
     "Голова умнотуп": "ogre_left",
     "Голова подначка": "ogre_right",
     "Сиамский огр": "ogre_both",
+    "Бочка": "flask_barrel",
+    "Гид": "guide",
+    "Камыш": "tadpole",
   }
 
   const root = $.GetContextPanel();

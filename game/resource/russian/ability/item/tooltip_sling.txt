@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_sling"	        "Старая Праща"
+"DOTA_Tooltip_ability_item_sling_Description" "<h1>Активное: Выстрел</h1>Точный выстрел этой пращи способен свалить даже гиганта..."

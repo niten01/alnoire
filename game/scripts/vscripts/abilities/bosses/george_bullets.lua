@@ -79,7 +79,7 @@ function george_bullets:OnProjectileHit(target, location)
     })
     ApplyGeorgeBurn(target, self)
 
-    EmitSoundOnLocationWithCaster(location, "ability.george.bullets.hit", caster)
+    EmitSoundOnLocationWithCasterSafe(location, "ability.george.bullets.hit", caster)
 
     return true
 end

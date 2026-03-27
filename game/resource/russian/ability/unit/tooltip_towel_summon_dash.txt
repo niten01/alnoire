@@ -1,0 +1,5 @@
+"DOTA_Tooltip_ability_towel_summon_dash"		            "Рывок"
+"DOTA_Tooltip_ability_towel_summon_dash_Lore"		    "Стоять, ковбой..."
+"DOTA_Tooltip_Ability_towel_summon_dash_SummaryDescription" ""
+"DOTA_Tooltip_ability_towel_summon_dash_Description"		"Раб совершает стремительный рывок по направлению к хозяину, расталкивая врагов на своем пути и нанося им %damage% урона.<br><br>Может быть использованo во время применения Последней Капли."
+"DOTA_Tooltip_ability_towel_summon_dash_damage"		"УРОН:"

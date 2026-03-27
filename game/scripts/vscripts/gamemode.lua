@@ -253,6 +253,8 @@ function barebones:InitModules()
     require('modules.flaskmanager'),
     require('modules.keybinds'),
     require('modules.damage_tracker'),
+    require('modules.summon_inventory'),
+    require('modules.zones'),
   }
 
   for _, sys in ipairs(self.modules) do sys:Init() end

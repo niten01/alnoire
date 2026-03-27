@@ -47,7 +47,7 @@ function island_demon_illusions:OnChannelFinish(bInterrupted)
             PATTACH_ABSORIGIN, npc)
         ParticleManager:ReleaseParticleIndex(pfx)
 
-        EmitSoundOnLocationWithCaster(pos, "ability.island_demon.illusions.spawn", caster)
+        EmitSoundOnLocationWithCasterSafe(pos, "ability.island_demon.illusions.spawn", caster)
 
         if #(pos - realPos) < 10 then
             caster:SetAbsOrigin(realPos)

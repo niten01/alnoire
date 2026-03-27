@@ -106,6 +106,7 @@ end
   The hero parameter is the hero entity that just spawned.
 ]]
 local OnHeroInGameEvent = CreateGameEvent 'OnHeroInGame'
+local OnTowelSummonInGameEvent = CreateGameEvent 'OnTowelSummonInGame'
 function barebones:OnHeroInGame(hero)
 	-- -- Innate abilities like Earth Spirit Stone Remnant (abilities that a hero needs to have auto-leveled up at the start of the game)
 	-- -- Take a look at this guide: https://moddota.com/abilities/creating-innate-abilities
@@ -146,6 +147,7 @@ function barebones:OnHeroInGame(hero)
 				return
 			elseif hero:IsSpiritBearCustom() then
 				DebugPrint("[BAREBONES] OnHeroInGame - Spawned hero is a Spirit Bear")
+				OnTowelSummonInGameEvent(hero)
 				return
 			end
 			-- Set some hero stuff on first spawn or on every spawn (custom or not)
@@ -500,6 +502,7 @@ function barebones:OnPlayerChat(keys)
 end
 
 local OnItemObtainEvent = CreateGameEvent 'OnItemObtain'
+local OnInventoryThinkEvent = CreateGameEvent 'OnInventoryThink'
 function barebones:InventoryThink()
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
 		if PlayerResource:IsValidPlayerID(playerID) then
@@ -507,13 +510,22 @@ function barebones:InventoryThink()
 			if hero then
 				for slot = 0, 14 do
 					local item = hero:GetItemInSlot(slot)
-					if item and not item.is_tracked then
-						DebugPrint("[BAREBONES] On item obtain: " .. item:GetName())
-						OnItemObtainEvent({
+					if item then
+						if not item.is_tracked then
+							DebugPrint("[BAREBONES] On item obtain: " .. item:GetName())
+							OnItemObtainEvent({
+								playerID = playerID,
+								itemName = item:GetName(),
+								item = item
+							})
+							item.is_tracked = true
+						end
+						OnInventoryThinkEvent({
 							playerID = playerID,
-							itemName = item:GetName(),
+							hero = hero,
+							slot = slot,
+							item = item,
 						})
-						item.is_tracked = true
 					end
 				end
 			end

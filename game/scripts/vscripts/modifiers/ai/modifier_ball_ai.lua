@@ -19,7 +19,7 @@ function modifier_ball_ai:OnIntervalThink()
     end
 
     if beaconState == 'aggro' and target and target:IsAlive() then
-        -- if CastAbility(unit, target, "ball_jump") then return end
+        if CastAbility(unit, target, "ball_jump") then return end
         if CastAbility(unit, target, "ball_dash") then return end
     end
 end

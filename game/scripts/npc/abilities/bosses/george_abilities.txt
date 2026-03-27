@@ -367,40 +367,4 @@
             "particle"		"particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7_gold.vpcf"
         }
     }
-    "george_cage"
-    {
-        "BaseClass"                     "ability_lua"
-        "ScriptFile"                    "abilities/bosses/george_cage.lua"
-        "AbilityTextureName"            "skeleton_king/blistering_shade/skeleton_king_hellfire_blast"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-        
-        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1_END"
-        "AbilityCastPoint"              "0.7"
-
-        "AbilityCooldown"               "8" 
-        "AbilityCastRange"        		"9999"
-
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-
-        "AbilityValues"
-        {
-            "damage"              "100"
-            "stun_duration"       "0.5"
-            "radius"              "200"
-            "interval"            "0.4"
-            "delay"               "1.0"
-
-            // rand min max
-            "num_strikes"         "3 6"
-        }
-
-        "precache"
-        {
-            "particle"		"particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7_gold.vpcf"
-        }
-    }
-    // combo (idle_alt_crowns_hell)
-    // finger fire cage radial
 }

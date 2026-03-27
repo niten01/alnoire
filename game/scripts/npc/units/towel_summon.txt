@@ -63,16 +63,16 @@
 
 		"AttributePrimary"                                    "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength"                               "20"
-        "AttributeStrengthGain"                               "3.0"
+        "AttributeStrengthGain"                               "5.0"
         "AttributeBaseAgility"                                "15"
         "AttributeAgilityGain"                                "3.0"
         "AttributeBaseIntelligence"                           "17"
-        "AttributeIntelligenceGain"                           "3.0"	 
+        "AttributeIntelligenceGain"                           "4.0"	 
 		
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"400"		// Range of vision during day light.
 		"VisionNighttimeRange"		"400"		// Range of vision at night time.
-		"HasInventory"              "0"
+		"HasInventory"              "1"
 	}
 }

@@ -305,6 +305,10 @@ function Handlers.happy_cat_fireworks(playerID, action)
   end)
 end
 
+function Handlers.fill_flask(playerID, action)
+  FlaskManager:RefillFlask(playerID)
+end
+
 function StoryDriver:StartFight(packName, nonLethalNPC)
   local pack = PackManager:GetPack(packName)
   assert(pack, "No pack to start fight with: " .. packName)
@@ -413,6 +417,9 @@ function StoryDriver:SetupAct3()
 
   if GlobalState:Get().freed_island_creeps then
     SpawnManager:SpawnNPC("spawner_cat_barrel_city")
+
+    SpawnManager:SpawnNPC("spawner_killer")
+    triggerSetEnabled("trigger_epstein_killer", true)
   end
 end
 
@@ -438,7 +445,7 @@ function StoryDriver:OnGameInProgress()
         end
       end
       -- SpawnManager:SpawnNPC("spawner_gorilla")
-      StoryDriver:StartFight("pack_george")
+      -- StoryDriver:StartFight("pack_gorilla")
     end)
   end
 end

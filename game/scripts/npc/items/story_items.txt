@@ -17,11 +17,18 @@
         "ItemInitialCharges" "5" 
         "ItemDisplayCharges" "1" 
         "ItemRequiresCharges" "1" 
+        "ItemDroppable"         "0"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+
+        "ItemIsNeutralItem"         "1"
+        "ItemPurchasable"               "0"
+        "ItemDeclarativeSlot"        "neutral" 
 
         "AbilityValues" 
         {
-            "hp_regen_percent"          "10.0"
-            "duration"                  "8.0"
+            "hp_regen_percent"          "20.0"
+            "duration"                  "3.0"
         }
     }
     "item_sanya_flask_upgrade_recipe"
@@ -108,7 +115,6 @@
         "ID"                    "3002"
         "BaseClass"             "item_datadriven"
         "AbilityTextureName"    "broken_crystal_ball"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
         "ItemPurchasable"               "1"

@@ -2,7 +2,7 @@ FlaskManager = FlaskManager or {}
 
 function FlaskManager:Init()
     ChatCommand:LinkDevCommand("-giveeldenflask", function(event, args)
-        local playerID = event.playerid
+        local playerID = event.playerID
         local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
         if hero then
@@ -11,12 +11,24 @@ function FlaskManager:Init()
     end)
 
     ChatCommand:LinkDevCommand("-refillelden", function(event, args)
-        self:RefillFlask()
+        self:RefillFlask(event.playerID)
+    end)
+
+    GameEvents:OnInventoryThink(function(event)
+        if event.item:GetName() ~= "item_sanya_flask" and
+            event.item:GetName() ~= "item_sanya_flask_upgrade_1"
+        then
+            return
+        end
+        if event.slot == NEUTRAL_SLOT_IDX then return end
+
+        local item = event.item
+        event.hero:SwapItems(event.item:GetItemSlot(), NEUTRAL_SLOT_IDX)
     end)
 end
 
-function FlaskManager:RefillFlask()
-    local hero = PlayerResource:GetSelectedHeroEntity(0)
+function FlaskManager:RefillFlask(playerID)
+    local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
     assert(hero, "No hero was found for flask refill")
     local item = hero:FindItemInInventory('item_sanya_flask')
     local item1 = hero:FindItemInInventory('item_sanya_flask_upgrade_1')

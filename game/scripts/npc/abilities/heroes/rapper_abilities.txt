@@ -23,15 +23,15 @@
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityTextureName"		"rapper_spliff"
         "AbilityChannelAnimation"       "ACT_DOTA_CHANNEL_ABILITY_1"
-		"AbilityChannelTime"			"5.0"
-        "AbilityCooldown"               "8.0" 
+		"AbilityChannelTime"			"4.0"
+        "AbilityCooldown"               "6.0" 
 		"MaxLevel"						"4"
 		"RequiredLevel"					"1"
 
 		"AbilityValues"
 		{
-			"max_shield"				"300 450 600 750"
-			"shield_per_sec"			"60 90 120 150"
+			"max_shield"				"280 400 520 640"
+			"shield_per_sec"			"70 100 130 160"
 		}
 
 		"precache"
@@ -59,7 +59,7 @@
 			"flow_per_shot"				"2"
 			"perfect_buff_duration"		"5"
 			"perfect_num_pulses"		"11"
-			"perfect_incoming_damage_reduction_pct" "30 40 50"
+			"perfect_incoming_damage_reduction_pct" "60 65 70"
 			"perfect_pulse_radius"		"150 250 350"
 			"perfect_damage_per_pulse" "100 200 300"
 		}
@@ -123,7 +123,7 @@
 			"spread"					"30"
 			"shot_speed"				"3000"
 			"projectile_radius"			"30"
-			"damage_reduction_pct"		"80 85 90 95"
+			"damage_reduction_pct"		"75 81 85 86"
 		}
 
 		"precache"

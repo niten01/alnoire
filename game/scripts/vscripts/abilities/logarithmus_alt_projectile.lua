@@ -33,13 +33,13 @@ function logarithmus_alt_projectile:OnSpellStart()
         ParticleManager:SetParticleControl(pfx, 0, pos)
         ParticleManager:SetParticleControl(pfx, 2, Vector(speed - 100, 0, 0))
 
-        EmitSoundOnLocationWithCaster(pos, "ability.logarithmus.alt_projectile.cast", caster)
+        EmitSoundOnLocationWithCasterSafe(pos, "ability.logarithmus.alt_projectile.cast", caster)
 
         local function destroyPfx(pos)
             ParticleManager:DestroyParticle(pfx, false)
             ParticleManager:ReleaseParticleIndex(pfx)
 
-            EmitSoundOnLocationWithCaster(pos, "ability.logarithmus.alt_projectile.hit", caster)
+            EmitSoundOnLocationWithCasterSafe(pos, "ability.logarithmus.alt_projectile.hit", caster)
         end
 
         Timers:CreateTimer(0, function()

@@ -7,6 +7,7 @@
 #base "units/boss/npc_island_duo.txt"
 #base "units/boss/npc_goden.txt"
 #base "units/boss/npc_ball.txt"
+#base "units/boss/npc_chaser.txt"
 #base "units/boss/npc_derek.txt"
 #base "units/boss/npc_george.txt"
 
@@ -25,6 +26,7 @@
 #base "units/jungle/act3_jungle.txt"
 
 #base "units/story/npc_subway.txt"
+#base "units/story/npc_flask_barrel.txt"
 
 #base "units/story/npc_tormentor.txt"
 #base "units/story/npc_shamanka.txt"

@@ -72,7 +72,7 @@ function modifier_goden_tentacles:OnIntervalThink()
     ParticleManager:SetParticleControl(pfx, 0, pos)
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    EmitSoundOnLocationWithCaster(pos, "ability.goden.tentacles.pre", parent)
+    EmitSoundOnLocationWithCasterSafe(pos, "ability.goden.tentacles.pre", parent)
 
     Timers:CreateTimer(ability:GetSpecialValueFor("tentacle_delay"), function()
         pfx = ParticleManager:CreateParticle(
@@ -81,7 +81,7 @@ function modifier_goden_tentacles:OnIntervalThink()
         ParticleManager:SetParticleControl(pfx, 0, pos)
         ParticleManager:ReleaseParticleIndex(pfx)
 
-        EmitSoundOnLocationWithCaster(pos, "ability.goden.tentacles.geyser", parent)
+        EmitSoundOnLocationWithCasterSafe(pos, "ability.goden.tentacles.geyser", parent)
 
         local enemies = FindEnemiesForAIInRadius(pos, tentacleRadius)
         for _, ent in ipairs(enemies) do

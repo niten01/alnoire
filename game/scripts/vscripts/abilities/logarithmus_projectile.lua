@@ -56,7 +56,7 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
     if not curPoint then
       destroyPfx()
 
-      EmitSoundOnLocationWithCaster(prevPoint or startPos, "ability.logarithmus.projectile.hit", caster)
+      EmitSoundOnLocationWithCasterSafe(prevPoint or startPos, "ability.logarithmus.projectile.hit", caster)
       return nil
     end
     curPoint.z = startPos.z
@@ -67,7 +67,7 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
     for _, ent in ipairs(enemies) do
       destroyPfx()
 
-      EmitSoundOnLocationWithCaster(curPoint, "ability.logarithmus.projectile.hit", caster)
+      EmitSoundOnLocationWithCasterSafe(curPoint, "ability.logarithmus.projectile.hit", caster)
 
       self:OnProjectileHit(ent, (prevPoint and curPoint - prevPoint) or Vector(0, 0, 0))
       return nil
