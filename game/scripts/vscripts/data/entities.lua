@@ -604,21 +604,21 @@ return {
             npc = "npc_ocean_tadpole_big_melee",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tadpoles_big",
-            ai_modifier = "modifier_tadpole_ranged_ai",
+            ai_modifier = "modifier_default_creep_ai",
         },
 
         spawner_tadpole_big_range_1   = {
             npc = "npc_ocean_tadpole_big_range_1",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tadpoles_big",
-            ai_modifier = "modifier_tadpole_ranged_ai",
+            ai_modifier = "modifier_default_creep_ai",
         },
 
         spawner_tadpole_big_range_2   = {
             npc = "npc_ocean_tadpole_big_range_2",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tadpoles_big",
-            ai_modifier = "modifier_tadpole_ranged_ai",
+            ai_modifier = "modifier_default_creep_ai",
         },
 
         spawner_spider_fire           = {
@@ -817,6 +817,13 @@ return {
             packID = "pack_darkforest_act3_shakers",
             ai_modifier = "modifier_dark_shaker_ai",
             modifiers = { 'modifier_item_ultimate_scepter' }
+        },
+
+        spawner_dark_treant           = {
+            npc = "npc_dark_treant",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_treant",
+            ai_modifier = "modifier_dark_treant_ai",
         },
 
 
@@ -1023,119 +1030,126 @@ return {
         },
 
         pack_ocean_act2_catapa = {
-            rangeFastTickRate = 700,
+            rangeFastTickRate = 1100,
             rangeRetreat = 1300,
-            rangeAggro = 400,
+            rangeAggro = 500,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_tusiki = {
-            rangeFastTickRate = 1000,
-            rangeRetreat = 1500,
+            rangeFastTickRate = 1300,
+            rangeRetreat = 2400,
             rangeAggro = 700,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_tadpoles_ranged = {
-            rangeFastTickRate = 1200,
+            rangeFastTickRate = 1450,
             rangeRetreat = 2000,
             rangeAggro = 840,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_tadpoles_big = {
-            rangeFastTickRate = 800,
+            rangeFastTickRate = 1150,
             rangeRetreat = 2800,
             rangeAggro = 530,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_spiders = {
-            rangeFastTickRate = 950,
+            rangeFastTickRate = 1250,
             rangeRetreat = 1300,
             rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_arbuz = {
-            rangeFastTickRate = 800,
+            rangeFastTickRate = 1200,
             rangeRetreat = 1900,
             rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_seledka = {
-            rangeFastTickRate = 800,
-            rangeRetreat = 750,
+            rangeFastTickRate = 1200,
+            rangeRetreat = 2200,
             rangeAggro = 500,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_morphs = {
-            rangeFastTickRate = 850,
-            rangeRetreat = 1400,
+            rangeFastTickRate = 1150,
+            rangeRetreat = 2300,
             rangeAggro = 550,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_slark = {
-            rangeFastTickRate = 600,
+            rangeFastTickRate = 900,
             rangeRetreat = 350,
             rangeAggro = 300,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_bombers = {
-            rangeFastTickRate = 600,
+            rangeFastTickRate = 950,
             rangeRetreat = 9999999,
-            rangeAggro = 250,
+            rangeAggro = 350,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_drow = {
-            rangeFastTickRate = 950,
+            rangeFastTickRate = 1250,
             rangeRetreat = 1100,
             rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_ursa = {
-            rangeFastTickRate = 2000,
+            rangeFastTickRate = 1300,
             rangeRetreat = 4000,
-            rangeAggro = 600,
+            rangeAggro = 700,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_titans = {
-            rangeFastTickRate = 1200,
+            rangeFastTickRate = 1400,
             rangeRetreat = 1200,
             rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_pupu = {
-            rangeFastTickRate = 1400,
+            rangeFastTickRate = 1600,
             rangeRetreat = 1700,
             rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_greevils = {
-            rangeFastTickRate = 1300,
+            rangeFastTickRate = 1500,
             rangeRetreat = 2200,
             rangeAggro = 900,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_shakers = {
-            rangeFastTickRate = 1500,
+            rangeFastTickRate = 1700,
             rangeRetreat = 1400,
             rangeAggro = 1100,
             stayActivatedOnPlayerDeath = true,
         },
 
+        pack_darkforest_act3_treant = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
         pack_concert_crowd = {
-            rangeFastTickRate = 1300,
+            rangeFastTickRate = 1900,
             rangeRetreat = 2000,
             rangeAggro = 1300,
             activateAfterUnitsSpawned = false,

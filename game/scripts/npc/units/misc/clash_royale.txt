@@ -72,7 +72,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1200"		// Base health.
+		"StatusHealth"				"1100"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -118,7 +118,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"		// Physical protection.
-		"MagicalResistance"		    "50"			// Magical protection.
+		"MagicalResistance"		    "80"			// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -207,7 +207,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"		// Physical protection.
-		"MagicalResistance"			"50"			// Magical protection.
+		"MagicalResistance"			"80"			// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -342,7 +342,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1500"		// Base health.
+		"StatusHealth"				"1400"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -380,7 +380,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
-		"MagicalResistance"         "30"
+		"MagicalResistance"         "25"
 
 		// Attack
 		//----------------------------------------------------------------
@@ -464,7 +464,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
-		"MagicalResistance"         "30"
+		"MagicalResistance"         "25"
 
 		// Attack
 		//----------------------------------------------------------------
@@ -621,7 +621,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"1"			// Physical protection.
-		"MagicalResistance"         "30"
+		"MagicalResistance"         "25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"40"		// Damage range max.
@@ -688,7 +688,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"1"			// Physical protection.
-		"MagicalResistance"         "30"
+		"MagicalResistance"         "25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"20"		// Damage range min.
 		"AttackDamageMax"			"30"		// Damage range max.

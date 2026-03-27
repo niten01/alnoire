@@ -17,7 +17,7 @@
             "duration"                "3"
             "radius"                "200"
             "damage_per_sec"          "300"
-            "bonus_ms"              "210"
+            "bonus_ms"              "230"
         }
 
         "precache"
