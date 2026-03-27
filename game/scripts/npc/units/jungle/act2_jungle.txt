@@ -585,14 +585,15 @@
 		//----------------------------------------------------------------
 		"Model"						"models/creeps/neutral_creeps/n_creep_ancient_frog/n_creep_ancient_frog.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"Hero_Tusk"
+		"SoundSet"					"n_creep_Melee"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
 		"ModelScale" 				"1.0"
 
 		
-		"Ability1"						"tusk_walrus_punch"			// Ability 1
+		//"Ability1"						"tusk_walrus_punch"			// Ability 1
 		//"Ability"						"tusk_ice_shards"			// Ability 2
-		"Ability2"						"tusik_papa_passive"			// Ability 3
+		//"Ability2"						"tusik_papa_passive"			// Ability 3
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
