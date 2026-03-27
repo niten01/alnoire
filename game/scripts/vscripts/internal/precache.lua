@@ -192,6 +192,7 @@ return {
         "npc_dota_hero_pugna",
         "npc_dota_greevil",
         "npc_dota_hero_earthshaker",
+        "npc_dota_furion_treant",
 
 
         -- jungle
@@ -258,6 +259,8 @@ return {
         "npc_dark_shaker_1",
         "npc_dark_shaker_2",
         "npc_dark_shaker_3",
+        "npc_dark_treant",
+        "npc_dark_treant_summon",
 
 
         -- traps
@@ -421,6 +424,8 @@ return {
         "particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf",
         "particles/slark_attr_passive_death_explosion.vpcf",
         "particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf",
+        "particles/units/heroes/hero_jakiro/jakiro_ice_path.vpcf",
+        "particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf",
 
 
         -- dark forest
@@ -428,6 +433,9 @@ return {
         "particles/status_fx/status_effect_ghost.vpcf",
         "particles/units/heroes/hero_pugna/pugna_decrepify.vpcf",
         "particles/dark_pugna_tp.vpcf",
+        "particles/units/heroes/hero_treant/treant_overgrowth_cast.vpcf",
+        "particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf",
+        "particles/econ/items/natures_prophet/natures_prophet_weapon_sufferwood/furion_teleport_end_team_sufferwood_model.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",
