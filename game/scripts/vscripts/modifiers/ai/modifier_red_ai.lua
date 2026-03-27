@@ -6,6 +6,7 @@ function modifier_red_ai:IsHidden() return true end
 function modifier_red_ai:IsPurgable() return false end
 
 function modifier_red_ai:OnCreated()
+    if not IsServer() then return end
     self.blinkLeftTarget = Entities:FindByName(nil, "red_blink_left")
     self.blinkRightTarget = Entities:FindByName(nil, "red_blink_right")
     assert(self.blinkLeftTarget and self.blinkRightTarget, "No npc_red blink targets, add them, or use a proper map")

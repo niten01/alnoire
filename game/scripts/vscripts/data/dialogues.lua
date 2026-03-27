@@ -10068,7 +10068,7 @@ x * (x^2 + 1)^3]],
             npc = "npc_genius",
             choices = {
                 {
-                    text = [[63]],
+                    text = [[67]],
                     next = "d_q6",
                 },
                 {
@@ -11567,7 +11567,7 @@ But luckily it's here you feel me?]],
         d_untitled_passage_62 = {
             text =
             [[Смерть за смертью. Ты будешь верить, что шанс на победу существует, однако вскоре эта надежда утонет в отчаянии.]],
-            speaker = [[Демоны-Тени]],
+            speaker = [[Демоны Тени]],
             npc = "npc_island_demon",
             choices = {
                 {

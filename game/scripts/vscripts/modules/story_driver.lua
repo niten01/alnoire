@@ -388,6 +388,7 @@ function StoryDriver:OnCancelLethalDamage(event)
       assert(hero)
       hero:SetAbsOrigin(unit:GetAbsOrigin() + unit:GetForwardVector() * 100)
       hero:FaceTowards(unit:GetAbsOrigin())
+      CenterCameraOnUnit(event.playerID, unit)
       break
     end
   end
