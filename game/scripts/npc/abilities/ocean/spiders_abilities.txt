@@ -40,7 +40,7 @@
 			}
 			"path_width"				
 			{
-				"value"	"150"
+				"value"	"200"
 				"affected_by_aoe_increase"	"1"
 			}
 			"duration"
@@ -182,7 +182,7 @@
 		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
 		
 		// Параметры каста
-		"AbilityCastRange"              "350"
+		"AbilityCastRange"              "300"
 		"AbilityCastPoint"              "0.1" 
 		"AbilityCooldown"               "5.0 3.0 2.0 1.0"
 		"AbilityManaCost"               "0"
@@ -192,10 +192,10 @@
 		{
 			"proj_speed" 		"1100"
 			"aoe_radius"		"200"
-			"damage_on_touch"	"50"		
-			"debuff_duration"	"2.0"
+			"damage_on_touch"	"75"		
+			"debuff_duration"	"3.0"
 			"slow_amount"		"30"	
-			"attack_slow"		"35"
+			"attack_slow"		"40"
 		}
 	}
 
@@ -210,7 +210,7 @@
 		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
 		
 		// Параметры каста
-		"AbilityCastRange"              "350"
+		"AbilityCastRange"              "300"
 		"AbilityCastPoint"              "0.1" 
 		"AbilityCooldown"               "5.0 3.0 2.0 1.0"
 		"AbilityManaCost"               "0"
@@ -220,7 +220,7 @@
 		{
 			"proj_speed" 		"1100"
 			"aoe_radius"		"200"
-			"damage_on_touch"	"50"		
+			"damage_on_touch"	"60"		
 			"debuff_duration"	"4.0"
 			"dmg_per_sec"		"20"	
 		}

@@ -1030,9 +1030,9 @@ return {
         },
 
         pack_ocean_act2_catapa = {
-            rangeFastTickRate = 1100,
-            rangeRetreat = 1300,
-            rangeAggro = 500,
+            rangeFastTickRate = 2700,
+            rangeRetreat = 2500,
+            rangeAggro = 1800,
             stayActivatedOnPlayerDeath = true,
         },
 
@@ -1045,7 +1045,7 @@ return {
 
         pack_ocean_act2_tadpoles_ranged = {
             rangeFastTickRate = 1450,
-            rangeRetreat = 2000,
+            rangeRetreat = 3000,
             rangeAggro = 840,
             stayActivatedOnPlayerDeath = true,
         },

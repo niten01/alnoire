@@ -133,7 +133,7 @@
 
         "AbilityValues" 
         {
-            "damage"  "20"
+            "damage"  "15"
             "interval" "1"
             "duration" "3"
         }
@@ -244,9 +244,9 @@
 
         "AbilityValues" 
         {
-            "attack_speed_reduction"  "40"
-            "poison_dps"  "20"
-            "duration" "7"
+            "attack_speed_reduction"  "30"
+            "poison_dps"  "15"
+            "duration" "6"
         }
     }
     "item_recipe_ossified_gaff"
@@ -279,8 +279,8 @@
         "AbilityValues" 
         {
             "ms_reduction"  "30"
-            "poison_dps"  "25"
-            "duration" "4"
+            "poison_dps"  "20"
+            "duration" "3"
         }
     }
     "item_recipe_blight_vesper"
@@ -472,7 +472,7 @@
         {
             // "chance_pct"     "33"        
             "radius"  "400"
-            "damage"  "200" 
+            "damage"  "140" 
         }
     }
     "item_malignance"
@@ -586,7 +586,7 @@
         {
             "duration"      "3.0" // debuff
             "ms_reduction"  "100"
-            "damage"        "300"
+            "damage"        "175"
 
             "expand_time"   "2.4" // particle bound
         }

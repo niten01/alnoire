@@ -12,7 +12,7 @@
 		"AbilityValues"
 		{
 			"max_stacks"				"50 100 150"
-			"damage_pct_per_stack"		"0.5"
+			"damage_pct_per_stack"		"1"
 			"stacks_per_attack"			"1 2 2"
 		}
 	}
@@ -123,7 +123,7 @@
 			"spread"					"30"
 			"shot_speed"				"3000"
 			"projectile_radius"			"30"
-			"damage_reduction_pct"		"75 81 85 86"
+			"damage_reduction_pct"		"65 70 72 74"
 		}
 
 		"precache"
