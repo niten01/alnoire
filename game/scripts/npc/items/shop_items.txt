@@ -450,7 +450,7 @@
             "chance_pct"     "33"        
             "additional_targets"    "2"
             "search_radius"  "400"
-            "damage_reduction_pct"  "50" 
+            "damage_reduction_pct"  "70" 
         }
     }
     "item_cinder_brand"
@@ -471,8 +471,8 @@
         "AbilityValues" 
         {
             // "chance_pct"     "33"        
-            "radius"  "300"
-            "damage"  "100" 
+            "radius"  "400"
+            "damage"  "200" 
         }
     }
     "item_malignance"
@@ -586,7 +586,7 @@
         {
             "duration"      "3.0" // debuff
             "ms_reduction"  "100"
-            "damage"        "150"
+            "damage"        "300"
 
             "expand_time"   "2.4" // particle bound
         }
