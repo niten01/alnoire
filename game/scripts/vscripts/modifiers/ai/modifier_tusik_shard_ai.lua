@@ -19,18 +19,6 @@ function modifier_tusik_shard_ai:OnDeath(params)
     end
 end
 
-function modifier_tusik_shard_ai:OnTakeDamage(params)
-    local parent = self:GetParent()
-    if params.attacker == parent and params.inflictor then
-        if self.papa then
-            local mod = self.papa:FindModifierByName('modifier_tusik_papa_spellAmp')
-            if mod then
-                mod:IncrementStackCount()
-            end
-        end
-    end
-end
-
 function modifier_tusik_shard_ai:OnCreated()
     if not IsServer() then return end
     local unit = self:GetParent()

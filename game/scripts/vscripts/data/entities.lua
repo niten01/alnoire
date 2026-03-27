@@ -258,6 +258,13 @@ return {
             npc = "npc_trap_spikes",
             team = DOTA_TEAM_BADGUYS,
             -- modifiers = { "modifier_story_npc" },
+            deferred = true,
+        },
+        spawner_trap_fake_spikes           = {
+            npc = "npc_trap_fake_spikes",
+            team = DOTA_TEAM_BADGUYS,
+            -- modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
         spawner_trap_pendulum         = {
             npc = "npc_trap_pendulum",
@@ -597,21 +604,21 @@ return {
             npc = "npc_ocean_tadpole_big_melee",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tadpoles_big",
-            ai_modifier = "modifier_tadpole_ranged_ai",
+            ai_modifier = "modifier_default_creep_ai",
         },
 
         spawner_tadpole_big_range_1   = {
             npc = "npc_ocean_tadpole_big_range_1",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tadpoles_big",
-            ai_modifier = "modifier_tadpole_ranged_ai",
+            ai_modifier = "modifier_default_creep_ai",
         },
 
         spawner_tadpole_big_range_2   = {
             npc = "npc_ocean_tadpole_big_range_2",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_tadpoles_big",
-            ai_modifier = "modifier_tadpole_ranged_ai",
+            ai_modifier = "modifier_default_creep_ai",
         },
 
         spawner_spider_fire           = {
@@ -810,6 +817,13 @@ return {
             packID = "pack_darkforest_act3_shakers",
             ai_modifier = "modifier_dark_shaker_ai",
             modifiers = { 'modifier_item_ultimate_scepter' }
+        },
+
+        spawner_dark_treant           = {
+            npc = "npc_dark_treant",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_darkforest_act3_treant",
+            ai_modifier = "modifier_dark_treant_ai",
         },
 
 
@@ -1124,6 +1138,13 @@ return {
             rangeFastTickRate = 1700,
             rangeRetreat = 1400,
             rangeAggro = 1100,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_darkforest_act3_treant = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
             stayActivatedOnPlayerDeath = true,
         },
 

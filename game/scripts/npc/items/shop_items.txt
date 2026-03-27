@@ -621,6 +621,7 @@
             "aoe_radius"    "250"
             "duration"      "10.0"
             "armor_reduction" "8"
+            "magres_reduction" "8"
             "lifesteal_pct"   "24"
         }
 

@@ -529,15 +529,16 @@ function ShowGenericCurveWarning(curveInfo, width, duration)
   local iter = curveInfo:UnstableIteratorElapsed()
   local point = iter()
   local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
+  local z = GetGroundHeight(point, nil)
   ParticleManager:SetParticleControl(pfx, 1, Vector(width, 0, 0))
 
   local startTime = GameRules:GetGameTime()
   Timers:CreateTimer(0, function()
+    point.z = z
     ParticleManager:SetParticleControl(pfx, 0, point)
 
     local curTime = GameRules:GetGameTime()
 
-    DebugPrint((curTime - startTime) / duration)
     point = iter((curTime - startTime) / duration)
     if point then
       return interval

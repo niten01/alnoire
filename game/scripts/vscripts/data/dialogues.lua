@@ -2028,7 +2028,7 @@ return {
         },
         d_14 = {
             text = [[Как будто ты всё-таки старше.]],
-            speaker = [[???]],
+            speaker = [[Неизвестный]],
             npc = nil,
             choices = {
                 {
@@ -2039,7 +2039,7 @@ return {
         },
         d_20 = {
             text = [[Очень грустно... Чтож, раз уж ты бесполезен, порадуй меня хотя бы шоу.]],
-            speaker = [[???]],
+            speaker = [[Неизвестный]],
             npc = nil,
             choices = {
                 {
@@ -4018,7 +4018,7 @@ return {
         },
         d_n = {
             text = [[Чудненькое имя. А сколько тебе лет?]],
-            speaker = [[???]],
+            speaker = [[Неизвестный]],
             npc = nil,
             choices = {
                 {
@@ -5229,7 +5229,7 @@ return {
         },
         d_gde_tsmka = {
             text = [[Чуть дальше. Скажи, красавчик, сколько тебе лет?]],
-            speaker = [[???]],
+            speaker = [[Неизвестный]],
             npc = nil,
             choices = {
                 {
@@ -7034,7 +7034,7 @@ return {
         d_hmmm = {
             text = [[*Из ниоткуда разнёсся мягкий голос.*
 Добро пожаловать на мой остров! Как тебя зовут, мальчик?]],
-            speaker = [[???]],
+            speaker = [[Неизвестный]],
             npc = nil,
             choices = {
                 {
@@ -13277,7 +13277,7 @@ Wazup, ты кем будешь, dawg?]],
                     text = [[Щекотно.]],
                     next = "d_schekotno",
                     actions = {
-                        { modifier = "modifier_demon_power", type = "add_modifier" },
+                        { type = "add_demon_power" },
                     },
                 },
             },

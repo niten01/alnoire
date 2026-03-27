@@ -16,6 +16,7 @@ LinkLuaModifier('modifier_generic_vector_target', 'modifiers/modifier_generic_ve
 LinkLuaModifier("modifier_generic_unkillable", "modifiers/modifier_generic_unkillable", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_model", "modifiers/modifier_model", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_generic_ring", "modifiers/modifier_generic_ring", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_island_traps_participant", "modifiers/modifier_island_traps_participant", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_immobile", "modifiers/modifier_immobile", LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODIFIER_MOTION_NONE)
@@ -27,9 +28,9 @@ LinkLuaModifier('modifier_ski_cold', 'modifiers/modifier_ski_cold', LUA_MODIFIER
 LinkLuaModifier('modifier_blink_evade', 'modifiers/abilities/modifier_blink_evade', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_summon_distance_check", "modifiers/abilities/modifier_summon_distance_check",
     LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_gorilla_umm", "modifiers/abilities/modifier_gorilla_umm", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_logarithmus_casting", "modifiers/abilities/modifier_logarithmus_casting",
     LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_gorilla_umm", "modifiers/abilities/modifier_gorilla_umm", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_gorilla_capture", "modifiers/abilities/modifier_gorilla_capture", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_island_duo_frenzy", "modifiers/abilities/modifier_island_duo_frenzy", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_island_duo_hidden", "modifiers/abilities/modifier_island_duo_hidden", LUA_MODIFIER_MOTION_NONE)
@@ -79,10 +80,11 @@ LinkLuaModifier("modifier_dark_ursa_ai", "modifiers/ai/modifier_dark_ursa_ai", L
 LinkLuaModifier("modifier_dark_pugna_ai", "modifiers/ai/modifier_dark_pugna_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_dark_greevil_ai", "modifiers/ai/modifier_dark_greevil_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_dark_shaker_ai", "modifiers/ai/modifier_dark_shaker_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_dark_treant_ai", "modifiers/ai/modifier_dark_treant_ai", LUA_MODIFIER_MOTION_NONE)
 
 
 
 
 -- bosses
 LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier('modifier_demon_power', 'modifiers/modifier_demon_power', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_demon_power_rapper', 'modifiers/modifier_demon_power_rapper', LUA_MODIFIER_MOTION_NONE)

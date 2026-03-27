@@ -11,4 +11,14 @@
         "HullRadius"            "0"
         "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
     }
+    "npc_trap_fake_spikes"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/props/traps/spiketrap/spiketrap.vmdl"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+        "Level"                 "1"
+        "HealthBarOffset"       "-1"
+        "HullRadius"            "0"
+        "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    }
 }

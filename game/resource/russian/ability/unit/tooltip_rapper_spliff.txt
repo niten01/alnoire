@@ -5,3 +5,5 @@
 "DOTA_Tooltip_ability_rapper_spliff_Lore"		    "Говорят, что после вступления в силу 230.3 УК РФ, этот скилл качают в 2 раза реже"
 "DOTA_Tooltip_ability_rapper_spliff_max_shield"		"МАКС. ЩИТ:"
 "DOTA_Tooltip_ability_rapper_spliff_shield_per_sec"	"ЩИТ В СЕКУНДУ:"
+
+"DOTA_Tooltip_modifier_rapper_spliff_shield"		            "Щит от сплифа"

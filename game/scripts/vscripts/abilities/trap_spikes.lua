@@ -8,7 +8,6 @@ end
 function trap_spikes:TriggerSpikes()
     local caster = self:GetCaster()
     local radius = 170
-    local damage = 400
 
     caster:EmitSound('sfx.trap_spikes.shoot')
 
@@ -19,8 +18,8 @@ function trap_spikes:TriggerSpikes()
         ApplyDamage({
             victim = ent,
             attacker = caster,
-            damage = damage,
-            damage_type = DAMAGE_TYPE_PHYSICAL,
+            damage = EpsTraps:GetDamage(ent),
+            damage_type = DAMAGE_TYPE_PURE,
             ability = self
         })
 

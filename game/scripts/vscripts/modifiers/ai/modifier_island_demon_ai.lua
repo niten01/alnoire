@@ -5,6 +5,7 @@ function modifier_island_demon_ai:IsHidden() return true end
 function modifier_island_demon_ai:IsPurgable() return false end
 
 function modifier_island_demon_ai:ResetState()
+    if not IsServer() then return end
     self.phase = 1
     self.hideSeqInProgress = false
     self.partner = nil
