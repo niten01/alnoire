@@ -17,6 +17,7 @@ function logarithmus_clone:OnSpellStart()
   local fwd = caster:GetForwardVector()
   local back = -fwd
   local endPos = GetSafeBlinkDestination(casterPos, casterPos + back * distance, distance)
+  DrawDebugCircle(endPos, 30, 2)
   local realDistance = #(endPos - casterPos)
   local speed = realDistance / flyTime
   caster:Stop()

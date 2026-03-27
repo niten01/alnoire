@@ -258,6 +258,13 @@ return {
             npc = "npc_trap_spikes",
             team = DOTA_TEAM_BADGUYS,
             -- modifiers = { "modifier_story_npc" },
+            deferred = true,
+        },
+        spawner_trap_fake_spikes           = {
+            npc = "npc_trap_fake_spikes",
+            team = DOTA_TEAM_BADGUYS,
+            -- modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
         spawner_trap_pendulum         = {
             npc = "npc_trap_pendulum",
@@ -1053,7 +1060,7 @@ return {
         pack_ocean_act2_spiders = {
             rangeFastTickRate = 1250,
             rangeRetreat = 1300,
-            rangeAggro = 650,
+            rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
         },
 
@@ -1162,9 +1169,15 @@ return {
             stayActivatedOnPlayerDeath = true,
         },
         pack_island_duo = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1300,
+            rangeAggro = 1200,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
             music = "music.island_duo.phase1",
+            doors = {
+                "door_island_duo"
+            }
         },
         pack_killer = {
             activateAfterUnitsSpawned = false,
@@ -1371,6 +1384,9 @@ return {
         },
         door_ball = {
             clipEntity = "clip_door_ball"
+        },
+        door_island_duo = {
+            clipEntity = "clip_door_island_duo"
         },
     },
 

@@ -30,15 +30,16 @@ end
 
 function modifier_story_npc:CheckState()
 	return {
-		[MODIFIER_STATE_INVULNERABLE] = true,
-		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
-		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
-		[MODIFIER_STATE_NO_HEALTH_BAR_FOR_ENEMIES]   = true,
-		[MODIFIER_STATE_NO_HEALTH_BAR_FOR_OTHER_PLAYERS]   = true,
+		[MODIFIER_STATE_INVULNERABLE]                    = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR]                   = true,
+		[MODIFIER_STATE_NOT_ON_MINIMAP]                  = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR_FOR_ENEMIES]       = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR_FOR_OTHER_PLAYERS] = true,
 	}
 end
 
 function modifier_story_npc:OnCreated()
+	if not IsServer() then return end
 	local parent = self:GetParent()
 	parent:Stop()
 	parent.bAcquisitionRange = parent:GetAcquisitionRange()
@@ -49,6 +50,7 @@ function modifier_story_npc:OnCreated()
 end
 
 function modifier_story_npc:OnDestroy()
+	if not IsServer() then return end
 	local parent = self:GetParent()
 	parent:SetDayTimeVisionRange(parent.oldDayVisionRange or 700)
 	parent:SetNightTimeVisionRange(parent.oldNightVisionRange or 700)

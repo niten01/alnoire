@@ -324,13 +324,15 @@ function GetSafeBlinkDestination(start, targetRaw, distance)
   local accum = start
   local maxLength = #(target - start)
   while #(accum - start) < maxLength do
-    accum = accum + direction * SAFE_BLINK_PRECISION
-    if GridNav:IsBlocked(accum) or not GridNav:IsTraversable(accum) then
-      break
+    local next = accum + direction * SAFE_BLINK_PRECISION
+    if GridNav:IsBlocked(next) or not GridNav:IsTraversable(next) then
+      accum = accum - direction * SAFE_BLINK_HULL_RADIUS
+      return accum
     end
+    accum = next
   end
 
-  return accum
+  return target
 end
 
 function PlayLogarithmusBladeEffect(caster, duration)
@@ -378,4 +380,33 @@ end
 
 function EmitSoundOnLocationWithCasterSafe(location, soundName, caster)
   caster:EmitSound(soundName)
+end
+
+function CreateDemonPowerEffects(mod)
+  mod.particleL = ParticleManager:CreateParticle(
+    "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",
+    PATTACH_ABSORIGIN_FOLLOW,
+    mod:GetParent()
+  )
+  mod.particleR = ParticleManager:CreateParticle(
+    "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_r.vpcf",
+    PATTACH_ABSORIGIN_FOLLOW,
+    mod:GetParent()
+  )
+
+  ParticleManager:SetParticleControlEnt(mod.particleL, 8, mod:GetParent(), PATTACH_POINT_FOLLOW, "attach_eyeL",
+    Vector(0, 0, 0), true)
+  ParticleManager:SetParticleControlEnt(mod.particleL, 1, mod:GetParent(), PATTACH_POINT_FOLLOW, "attach_eyeL",
+    Vector(0, 0, 0), true)
+  ParticleManager:SetParticleControlEnt(mod.particleR, 9, mod:GetParent(), PATTACH_POINT_FOLLOW, "attach_eyeR",
+    Vector(0, 0, 0), true)
+  ParticleManager:SetParticleControlEnt(mod.particleR, 1, mod:GetParent(), PATTACH_POINT_FOLLOW, "attach_eyeR",
+    Vector(0, 0, 0), true)
+end
+
+function DestroyDemonPowerEffects(mod)
+  ParticleManager:DestroyParticle(mod.particleL, false)
+  ParticleManager:DestroyParticle(mod.particleR, false)
+  ParticleManager:ReleaseParticleIndex(mod.particleL)
+  ParticleManager:ReleaseParticleIndex(mod.particleR)
 end

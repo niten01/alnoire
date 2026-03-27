@@ -5,6 +5,7 @@ function modifier_island_fiend_ai:IsHidden() return true end
 function modifier_island_fiend_ai:IsPurgable() return false end
 
 function modifier_island_fiend_ai:ResetState()
+    if not IsServer() then return end
     local parent = self:GetParent()
     self.phase = 1
     self.blinkSeq = -1

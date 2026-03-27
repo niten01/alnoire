@@ -165,5 +165,17 @@
 		{
         	"soundfile"			"soundevents/bosses/goden.vsndevts"
 		}
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "7196" } // head
+				"Wearable2" { "ItemDef" "7197" } // armor
+				"Wearable3" { "ItemDef" "7198" } // legs
+				"Wearable4" { "ItemDef" "7194" } // weapon
+				"Wearable5" { "ItemDef" "7195" } // weapon 2
+			}
+		}
 	}
 }

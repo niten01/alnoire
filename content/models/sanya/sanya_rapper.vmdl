@@ -748,6 +748,31 @@
 						reverse = false
 						additional_anim_files = [  ]
 					},
+					{
+						_class = "AnimFile"
+						name = "attack_ranged_gun_2"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/attack_ranged_gun_2.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
 				]
 				default_root_bone_name = "pelvis"
 			},
@@ -867,7 +892,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -37.129921, -9.145472, -10.22448 ]
+								hitbox_mins = [ -37.12992, -9.145472, -10.22448 ]
 								hitbox_maxs = [ 5.289749, 9.173672, 6.964249 ]
 							},
 							{
@@ -1147,7 +1172,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -51.518391, -14.424664, -8.767042 ]
+								hitbox_mins = [ -51.51839, -14.424664, -8.767042 ]
 								hitbox_maxs = [ 9.845535, 5.24496, 8.695055 ]
 							},
 							{
@@ -1167,8 +1192,8 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -12.671692, -11.737499, -19.075741 ]
-								hitbox_maxs = [ 49.191231, 15.962875, 7.802131 ]
+								hitbox_mins = [ -12.671692, -11.737499, -19.07574 ]
+								hitbox_maxs = [ 49.19123, 15.962875, 7.802131 ]
 							},
 							{
 								_class = "Hitbox"
@@ -1211,7 +1236,7 @@
 						_class = "Attachment"
 						name = "attach_attack1"
 						parent_bone = "hand_R"
-						relative_origin = [ -33.509338, -8.120071, 11.352341 ]
+						relative_origin = [ -33.50934, -8.120071, 11.352341 ]
 						relative_angles = [ 0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
@@ -1229,7 +1254,7 @@
 						_class = "Attachment"
 						name = "attach_attack2"
 						parent_bone = "hand_L"
-						relative_origin = [ 32.597839, 9.051919, -11.45549 ]
+						relative_origin = [ 32.59784, 9.051919, -11.45549 ]
 						relative_angles = [ 0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
@@ -1239,7 +1264,7 @@
 						name = "attach_eyeR"
 						parent_bone = "head"
 						relative_origin = [ 1.488297, 9.737099, -4.485648 ]
-						relative_angles = [ 30.513079, 4.819746, 164.886185 ]
+						relative_angles = [ 30.513079, 4.819746, 164.88618 ]
 						weight = 1.0
 						ignore_rotation = false
 					},

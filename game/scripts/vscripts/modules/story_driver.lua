@@ -292,6 +292,16 @@ function Handlers.add_modifier(playerID, action)
   end
 end
 
+function Handlers.add_demon_power(playerID, action)
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  assert(hero)
+  if hero:GetUnitName() == "npc_dota_hero_sanya_rapper" then
+    hero:AddNewModifier(hero, nil, "modifier_demon_power_rapper", { duration = -1 })
+  else
+    DebugPrint("[???] demon power not implemented")
+  end
+end
+
 function Handlers.happy_cat_fireworks(playerID, action)
   local cats = Entities:FindByName(nil, "npc_cat_barrel")
   assert(cats)

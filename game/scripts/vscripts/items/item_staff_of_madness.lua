@@ -64,6 +64,7 @@ function modifier_staff_of_madness_buff:OnCreated()
     local ability = self:GetAbility()
     if ability then
         self.armorReduction = ability:GetSpecialValueFor("armor_reduction")
+        self.magresReduction = ability:GetSpecialValueFor("magres_reduction")
         self.lifestealFrac = ability:GetSpecialValueFor("lifesteal_pct") / 100
     end
 
@@ -82,6 +83,7 @@ end
 function modifier_staff_of_madness_buff:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
     }
 end
@@ -89,6 +91,11 @@ end
 function modifier_staff_of_madness_buff:GetModifierPhysicalArmorBonus()
     return -self.armorReduction
 end
+
+function modifier_staff_of_madness_buff:GetModifierMagicalResistanceBonus()
+    return -self.magresReduction
+end
+
 
 function modifier_staff_of_madness_buff:OnAttackLanded(params)
     if not IsServer() then return end

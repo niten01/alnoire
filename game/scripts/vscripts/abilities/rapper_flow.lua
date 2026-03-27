@@ -30,6 +30,8 @@ function modifier_rapper_flow:OnCreated()
 
     self.damagePctPerStack = self:GetAbility():GetSpecialValueFor("damage_pct_per_stack")
     self.maxStacks = self:GetAbility():GetSpecialValueFor("max_stacks")
+    local pid = self:GetParent():GetPlayerOwnerID()
+    PlayerTables:SetTableValue("flow_bar_" .. tostring(pid), "maxStacks", self.maxStacks)
     self.bonusDamage = 0
 end
 
@@ -65,8 +67,10 @@ function modifier_rapper_flow:OnTakeDamage(params)
     if not IsServer() then return end
     if params.unit ~= self:GetParent() then return end
 
+    local stackCount = self:GetStackCount()
     if params.damage > 0 then
-        self:DecrementStackCount()
+        local fraction = params.damage / self:GetParent():GetMaxHealth()
+        self:SetStackCount(stackCount - math.floor(stackCount * fraction))
     end
 end
 
@@ -74,6 +78,7 @@ function modifier_rapper_flow:OnStackCountChanged()
     if not IsServer() then return end
     local pid = self:GetParent():GetPlayerOwnerID()
     PlayerTables:SetTableValue("flow_bar_" .. tostring(pid), "stackCount", self:GetStackCount())
+    PlayerTables:SetTableValue("flow_bar_" .. tostring(pid), "maxStacks", self.maxStacks)
     self.bonusDamage = self.damagePctPerStack * self:GetStackCount()
     self:SendBuffRefreshToClients()
 end

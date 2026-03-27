@@ -241,7 +241,7 @@ function Quest:OnActChange(event)
           quest.exclamationPfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_has_quest.vpcf",
             PATTACH_CUSTOMORIGIN, giverEnt)
           local origin = giverEnt:GetAbsOrigin()
-          origin.z = origin.z + 330
+          origin.z = origin.z + 350
           local fwd = Vector(0, -1, 0)
           ParticleManager:SetParticleControlTransform(quest.exclamationPfx, 0, origin, VectorToAngles(fwd))
           break

@@ -6,5 +6,18 @@
 		"BaseClass"					"npc_dota_creature"
 		"ModelScale" 				"1.0"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "8170" } // arms
+				"Wearable2" { "ItemDef" "8171" } // back
+				"Wearable3" { "ItemDef" "8172" } // head
+				"Wearable4" { "ItemDef" "8173" } // shoulder
+				"Wearable5" { "ItemDef" "8174" } // hammer
+				"Wearable5" { "ItemDef" "45" } // head model
+			}
+		}
 	}
 }
