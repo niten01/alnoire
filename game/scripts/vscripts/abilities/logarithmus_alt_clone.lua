@@ -68,7 +68,7 @@ function logarithmus_alt_clone:OnSpellStart()
 
     local dir = (targetPos - realPoint):Normalized()
     caster:Stop()
-    caster:AddNewModifier(caster, self, "modifier_logarithmus_casting", { duration = cloneAttackPoint })
+    caster:AddNewModifier(caster, self, "modifier_logarithmus_casting", { duration = cloneAttackPoint, invulnerable = true })
     caster:SetAbsOrigin(realPoint)
     caster:SetForwardVector(dir)
     caster:FaceTowards(targetPos)

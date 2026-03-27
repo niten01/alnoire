@@ -20,7 +20,7 @@ function goden_spin:OnSpellStart()
     caster:AddNewModifier(caster, self, "modifier_logarithmus_casting", { duration = self:GetBackswingTime() })
 
     self.pfx = ParticleManager:CreateParticle(
-        "particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_blade_fury_favoriteblade.vpcf",
+        "particles/goden_spin.vpcf",
         PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(self.pfx, 0, casterPos)
     ParticleManager:SetParticleControl(self.pfx, 5, Vector(radius, 0, 0))

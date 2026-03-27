@@ -276,4 +276,16 @@
             "particle"		"particles/base_attacks/ranged_siege_good.vpcf"
         }
     }
+    "item_demon_power_rapper"
+    {
+        "BaseClass"             "item_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemQuality"                   "rare"
+        "AbilityValues"
+        {
+            "shield_per_sec"      "15"
+        }
+    }
 }

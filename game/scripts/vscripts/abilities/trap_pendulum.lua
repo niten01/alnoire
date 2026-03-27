@@ -10,8 +10,8 @@ function trap_pendulum:OnProjectileHit(target, location)
         ApplyDamage({
             victim = target,
             attacker = self:GetCaster(),
-            damage = 100,
-            damage_type = DAMAGE_TYPE_PHYSICAL,
+            damage = EpsTraps:GetDamage(target),
+            damage_type = DAMAGE_TYPE_PURE,
             ability = self
         })
         target:EmitSound("Hero_Axe.CounterHelix")

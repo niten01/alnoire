@@ -438,11 +438,16 @@ return {
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",
 
-        --bosses
+        -- bosses
         "particles/econ/items/monkey_king/arcana/monkey_arcana_cloud_start.vpcf",
         "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_smokepoof.vpcf",
         "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_stack.vpcf",
-        "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_debuff.vpcf"
+        "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_debuff.vpcf",
+
+        -- items
+        "particles/custom_items/item_fan.vpcf",
+        "particles/custom_items/leadlined_grip_impact.vpcf",
+        "particles/custom_items/cinder_brand_explosion.vpcf",
     },
     particleFolders = {
         "particles/custom_items"

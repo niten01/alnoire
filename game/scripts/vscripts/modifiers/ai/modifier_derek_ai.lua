@@ -11,6 +11,7 @@ function modifier_derek_ai:DeclareFunctions()
 end
 
 function modifier_derek_ai:ResetState()
+    if not IsServer() then return end
     if self.phase == 2 then
         self:TransitionBack()
     end

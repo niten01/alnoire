@@ -16,8 +16,6 @@ require('libraries/playertables')
 require('libraries/worldpanels')
 require('libraries/vector_targeting')
 
-require('modifiers/linker')
-
 require('triggers/zones')
 require('triggers/ski')
 require('triggers/quest_trigger')
@@ -32,6 +30,8 @@ require('triggers/startmk')
 -- It can be used to pre-initialize any values/tables that will be needed later
 function barebones:InitGameMode()
   DebugPrint("[BAREBONES] Starting to load Game Rules.")
+
+  require('modifiers/linker')
 
   -- Setup rules
   GameRules:SetSameHeroSelectionEnabled(ALLOW_SAME_HERO_SELECTION)

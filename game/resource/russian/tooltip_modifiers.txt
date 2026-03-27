@@ -1,2 +1,5 @@
 "DOTA_Tooltip_modifier_custom_sprint"		"Спринт"
 "DOTA_Tooltip_modifier_custom_sprint_Description"		"Бежит, не зная усталости"
+
+"DOTA_Tooltip_modifier_demon_power_rapper"		"Сила Демона"
+"DOTA_Tooltip_modifier_demon_power_rapper_Description"		"Получает %dMODIFIER_PROPERTY_TOOLTIP% щита в секунду."

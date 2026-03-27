@@ -258,6 +258,13 @@ return {
             npc = "npc_trap_spikes",
             team = DOTA_TEAM_BADGUYS,
             -- modifiers = { "modifier_story_npc" },
+            deferred = true,
+        },
+        spawner_trap_fake_spikes           = {
+            npc = "npc_trap_fake_spikes",
+            team = DOTA_TEAM_BADGUYS,
+            -- modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
         spawner_trap_pendulum         = {
             npc = "npc_trap_pendulum",

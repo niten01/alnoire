@@ -41,8 +41,8 @@ function trap_arrow:OnProjectileHit(target, location)
         ApplyDamage({
             victim = target,
             attacker = self:GetCaster(),
-            damage = 200,
-            damage_type = DAMAGE_TYPE_MAGICAL,
+            damage = EpsTraps:GetDamage(target),
+            damage_type = DAMAGE_TYPE_PURE,
             ability = self
         })
         return false

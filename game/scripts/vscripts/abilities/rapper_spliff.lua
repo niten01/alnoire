@@ -63,7 +63,10 @@ function modifier_rapper_spliff_shield:AddShield(amount)
     self.currentShield = self.currentShield + amount
     if self.currentShield > self.maxShield then
         self.currentShield = self.maxShield
-        self:GetParent():InterruptChannel()
+        local activeAbility = self:GetParent():GetCurrentActiveAbility()
+        if activeAbility and activeAbility:GetName() == "rapper_spliff" then
+            self:GetParent():InterruptChannel()
+        end
     end
     self:SendBuffRefreshToClients()
 end
