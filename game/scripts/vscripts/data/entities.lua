@@ -1060,7 +1060,7 @@ return {
         pack_ocean_act2_spiders = {
             rangeFastTickRate = 1250,
             rangeRetreat = 1300,
-            rangeAggro = 650,
+            rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
         },
 

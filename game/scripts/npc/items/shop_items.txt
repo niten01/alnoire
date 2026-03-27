@@ -176,7 +176,7 @@
         "AbilityValues" 
         {
             "mag_res_reduction"  "15"
-            "duration" "3"
+            "duration" "4"
         }
     }
     "item_orb_of_deceleration"
@@ -193,7 +193,7 @@
 
         "AbilityValues" 
         {
-            "ms_reduction"  "30"
+            "ms_reduction"  "20"
             "duration" "3"
         }
     }
@@ -244,9 +244,9 @@
 
         "AbilityValues" 
         {
-            "attack_speed_reduction"  "30"
-            "poison_dps"  "25"
-            "duration" "4"
+            "attack_speed_reduction"  "40"
+            "poison_dps"  "20"
+            "duration" "7"
         }
     }
     "item_recipe_ossified_gaff"
@@ -278,7 +278,7 @@
 
         "AbilityValues" 
         {
-            "ms_reduction"  "40"
+            "ms_reduction"  "30"
             "poison_dps"  "25"
             "duration" "4"
         }
@@ -450,7 +450,7 @@
             "chance_pct"     "33"        
             "additional_targets"    "2"
             "search_radius"  "400"
-            "damage_reduction_pct"  "70" 
+            "damage_reduction_pct"  "30" 
         }
     }
     "item_cinder_brand"

@@ -23,15 +23,15 @@
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityTextureName"		"rapper_spliff"
         "AbilityChannelAnimation"       "ACT_DOTA_CHANNEL_ABILITY_1"
-		"AbilityChannelTime"			"4.0"
+		"AbilityChannelTime"			"3.0"
         "AbilityCooldown"               "6.0" 
 		"MaxLevel"						"4"
 		"RequiredLevel"					"1"
 
 		"AbilityValues"
 		{
-			"max_shield"				"280 400 520 640"
-			"shield_per_sec"			"70 100 130 160"
+			"max_shield"				"240 420 600 780"
+			"shield_per_sec"			"80 140 200 260"
 		}
 
 		"precache"

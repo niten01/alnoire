@@ -183,7 +183,7 @@
 		"AbilityCooldown"				"30.0"
 		"AbilityValues"
 		{
-			"damage"					"700 1000"
+			"damage"					"500 700"
 			"radius"					"400 400"
 			"delay"						"5.0 5.0"
 		}
@@ -201,7 +201,7 @@
 		"AbilityCooldown"				"22.0"
 		"AbilityValues"
 		{
-			"asb_per_attack"				"12 16"
+			"asb_per_attack"				"12 14"
 			"buff_duration"					"10.0 10.0"
 		}
 
@@ -224,7 +224,7 @@
 		"AbilityCooldown"				"18.0"
 		"AbilityValues"
 		{
-			"damage"					"200 400"
+			"damage"					"200 300"
 			"radius"					"150 150"
 			"acceleration"				"200"
 		}

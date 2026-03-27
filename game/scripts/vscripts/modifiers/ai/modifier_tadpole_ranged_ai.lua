@@ -70,7 +70,7 @@ function modifier_tadpole_ranged_ai:OnIntervalThink()
             end
         end
         if not IsCasting(unit) then
-            local desiredDistance = 700
+            local desiredDistance = 900
             local tolerance = 100
 
             if math.abs(distance - desiredDistance) > tolerance then
