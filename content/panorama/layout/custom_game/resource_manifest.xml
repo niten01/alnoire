@@ -20,6 +20,7 @@
             <Image src="file://{images}/custom_game/portraits/flask_barrel.psd" />
             <Image src="file://{images}/custom_game/portraits/guide.psd" />
             <Image src="file://{images}/custom_game/portraits/kamish.psd" />
+            <Image src="file://{images}/custom_game/portraits/island_duo.psd" />
         </Panel>
     </Panel>
 </root>

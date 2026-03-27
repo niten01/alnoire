@@ -18,6 +18,7 @@
     "Бочка": "flask_barrel",
     "Гид": "guide",
     "Камыш": "tadpole",
+    "Демоны Тени": "island_duo",
   }
 
   const root = $.GetContextPanel();
