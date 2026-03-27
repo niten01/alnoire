@@ -21,7 +21,7 @@ function rapper_strife:OnSpellStart()
     if flow:GetStackCount() >= flow.maxStacks then
         caster:AddNewModifier(caster, self, "modifier_rapper_strife_max", {
             duration = -1,
-            pulseDamage = self:GetSpecialValueFor("perfect_pulse_damage"),
+            pulseDamage = self:GetSpecialValueFor("perfect_damage_per_pulse"),
             pulseRadius = self:GetSpecialValueFor("perfect_pulse_radius"),
             damageReduction = self:GetSpecialValueFor("perfect_incoming_damage_reduction_pct"),
             numPulses = self:GetSpecialValueFor("perfect_num_pulses"),
@@ -271,7 +271,7 @@ function modifier_rapper_strife_max:OnIntervalThink()
             victim = ent,
             attacker = parent,
             damage = self.pulseDamage,
-            damage_type = DAMAGE_TYPE_PHYSICAL,
+            damage_type = DAMAGE_TYPE_MAGICAL,
             ability = self,
         })
     end
