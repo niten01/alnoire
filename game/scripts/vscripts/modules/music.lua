@@ -90,7 +90,7 @@ end
 function Music:OnDialogueStart(event)
     local playerID = event.playerID
     local nodeID = event.startNodeID
-    if nodeID == "d_xavierfightstart" or nodeID == "d_xavierfightagain" then
+    if nodeID == "d_xavier_fight_start" or nodeID == "d_xavier_fight_again" then
         self:StartCustomMusic(playerID, "music.concert.precombat")
     end
 end

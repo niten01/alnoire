@@ -319,6 +319,22 @@ function Handlers.fill_flask(playerID, action)
   FlaskManager:RefillFlask(playerID)
 end
 
+function Handlers.derek_transition(playerID, action)
+  local npc = Entities:FindByName(nil, "npc_derek")
+  assert(npc)
+  local ai = npc:FindModifierByName("modifier_derek_ai")
+  assert(ai)
+  ai:Transition()
+end
+
+function Handlers.george_transition(playerID, action)
+  local npc = Entities:FindByName(nil, "npc_george")
+  assert(npc)
+  local ai = npc:FindModifierByName("modifier_george_ai")
+  assert(ai)
+  ai:Transition()
+end
+
 function StoryDriver:StartFight(packName, nonLethalNPC)
   local pack = PackManager:GetPack(packName)
   assert(pack, "No pack to start fight with: " .. packName)
@@ -386,9 +402,9 @@ function StoryDriver:OnCancelLethalDamage(event)
       self:StopFight(i)
       local hero = PlayerResource:GetBarebonesAssignedHero(event.attackerPlayerID)
       assert(hero)
-      hero:SetAbsOrigin(unit:GetAbsOrigin() + unit:GetForwardVector() * 100)
+      hero:SetAbsOrigin(unit:GetAbsOrigin() + unit:GetForwardVector() * 150)
       hero:FaceTowards(unit:GetAbsOrigin())
-      CenterCameraOnUnit(event.playerID, unit)
+      CenterCameraOnUnit(event.attackerPlayerID, unit)
       break
     end
   end

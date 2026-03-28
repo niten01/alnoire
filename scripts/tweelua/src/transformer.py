@@ -29,7 +29,7 @@ class StoryTransformer:
 
     def _gen_node_id(self, name):
         node_id: str = translit(name, language_code="ru", reversed=True)
-        node_id = re.sub(r"\s+", "_", re.sub(r"[^a-z\s\d]", "", node_id.lower()))
+        node_id = re.sub(r"\s+", "_", re.sub(r"[^a-z\s\d_]", "", node_id.lower()))
         node_id = node_id.strip("_")
         node_id = node_id.replace("ja", "ya").replace("ju", "u")
         if len(node_id) == 0:

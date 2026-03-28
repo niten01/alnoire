@@ -78,7 +78,11 @@ function modifier_george_ai:Phase1(unit, target)
     if unit.georgeCasting then return end
 
     if unit:GetHealth() == 1 then
-        self:Transition()
+        unit:Stop()
+        self.phase = -1
+        Music:StartCustomMusicForAll("music.silence.explore")
+        if not target or target:IsNull() or not target:IsAlive() then return end
+        Dialogue:ShowDialogueNode(target:GetPlayerOwnerID(), "d_george_phase_2_start")
         return
     end
 

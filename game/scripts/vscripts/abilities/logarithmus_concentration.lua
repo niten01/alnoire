@@ -23,7 +23,13 @@ function modifier_logarithmus_concentration:DeclareFunctions()
         MODIFIER_EVENT_ON_ATTACK_LANDED,
         MODIFIER_PROPERTY_TOOLTIP,
         MODIFIER_PROPERTY_TOOLTIP2,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
     }
+end
+
+function modifier_logarithmus_concentration:GetModifierSpellAmplify_Percentage()
+    local ability = self:GetAbility()
+    return ability:GetSpecialValueFor("spell_amp_pct")
 end
 
 function modifier_logarithmus_concentration:GetBonusDamage()

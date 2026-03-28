@@ -1211,6 +1211,9 @@ return {
             rangeFastTickRate = 2000,
             rangeRetreat = 2000,
             rangeAggro = 2000,
+            doors = {
+                "door_derek"
+            }
         },
         pack_george = {
             activateAfterUnitsSpawned = false,
@@ -1387,6 +1390,11 @@ return {
         },
         door_island_duo = {
             clipEntity = "clip_door_island_duo"
+        },
+        door_derek = {
+            clipEntity = "clip_door_derek",
+            openAnimation = "cf_palace_door_open",
+            closeAnimation = "cf_palace_door_close",
         },
     },
 
