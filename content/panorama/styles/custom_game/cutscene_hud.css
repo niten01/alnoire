@@ -37,7 +37,6 @@
 
 .Bar {
   width: 100%;
-  height: 100px;
   background-color: #000000;
   opacity: 0;
   transition-property: opacity;
@@ -46,7 +45,13 @@
   z-index: 1000;
 }
 
-.BarTop { vertical-align: top; }
-.BarBottom { vertical-align: bottom; }
+.BarTop { 
+  vertical-align: top;
+  height: 80px;
+ }
+.BarBottom { 
+  vertical-align: bottom; 
+  height: 140px;
+}
 
 .CutsceneRoot.IsOpen .Bar { opacity: 1; }

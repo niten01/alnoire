@@ -413,10 +413,10 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/astral_step/astral_step_portal_selected_sparks.vpcf"
+			m_ChildRef = resource:"particles/final_portal_sparks.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/astral_step/astral_step_portal_selected_smoke.vpcf"
+			m_ChildRef = resource:"particles/final_portal_smoke.vpcf"
 		},
 	]
 }

@@ -286,7 +286,7 @@
     ]
     volume = "3.500000"
     fade_in = "1.5"
-    fade_out = "0.5"
+    fade_out = "4.5"
   }
   music.george.phase1 = {
     type = "dota_update_battle_music"
