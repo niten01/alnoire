@@ -1,0 +1,18 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/cutscene_hud.css" />
+    </styles>
+
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/cutscene_hud.js" />
+    </scripts>
+
+    <Panel class="CutsceneRoot">
+        <Panel id="Fade" class="Fade" />
+
+        <Panel id="CineBars" class="CineBars" hittest="false">
+            <Panel class="Bar BarTop" />
+            <Panel class="Bar BarBottom" />
+        </Panel>
+    </Panel>
+</root>

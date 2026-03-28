@@ -93,6 +93,7 @@ function Dialogue:StartDialogueForPlayer(playerID, startNodeID)
     focusUnit = FindClosestToHero(hero, startNode.npc) or focusUnit
   end
   CenterCameraOnUnit(playerID, focusUnit)
+  hero:Stop()
   hero:AddNewModifier(nil, nil, "modifier_dialogue_player", { duration = -1 })
 
   self:ShowDialogueNode(playerID, startNodeID)
@@ -103,12 +104,7 @@ function Dialogue:StartDialogueForPlayer(playerID, startNodeID)
   })
 end
 
-function Dialogue:ShowDialogueBubble(startNodeID)
-  local startNode = self.dialogueGraph[startNodeID]
-  assert(startNode.npc, "Bubble node has no npc")
-  local npc = Entities:FindByName(nil, startNode.npc)
-  assert(npc, "No NPC to show dialogue bubble")
-  local duration = 8
+function Dialogue:ShowDialogueBubbleEx(npc, text, duration)
   if not self.bubbleStateActive[npc:GetName()] then
     self.bubbleStateActive[npc:GetName()] = true
     WorldPanels:CreateWorldPanelForAll({
@@ -116,13 +112,22 @@ function Dialogue:ShowDialogueBubble(startNodeID)
       entity = npc,
       entityHeight = 300,
       duration = duration,
-      data = { text = startNode.text }
+      data = { text = text }
     })
 
     Timers:CreateTimer(duration, function()
       self.bubbleStateActive[npc:GetName()] = nil
     end)
   end
+end
+
+function Dialogue:ShowDialogueBubble(startNodeID)
+  local startNode = self.dialogueGraph[startNodeID]
+  assert(startNode.npc, "Bubble node has no npc")
+  local npc = Entities:FindByName(nil, startNode.npc)
+  assert(npc, "No NPC to show dialogue bubble")
+  local duration = 8
+  self:ShowDialogueBubbleEx(npc, startNode.text, duration)
 end
 
 function Dialogue:TrySetFirstMet(startNodeID)

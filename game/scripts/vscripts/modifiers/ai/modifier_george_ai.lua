@@ -81,8 +81,9 @@ function modifier_george_ai:Phase1(unit, target)
         unit:Stop()
         self.phase = -1
         Music:StartCustomMusicForAll("music.silence.explore")
+        self:KillSkeletons()
         if not target or target:IsNull() or not target:IsAlive() then return end
-        Dialogue:ShowDialogueNode(target:GetPlayerOwnerID(), "d_george_phase_2_start")
+        Dialogue:StartDialogueForPlayer(target:GetPlayerOwnerID(), "d_george_phase_2_start")
         return
     end
 
@@ -140,8 +141,6 @@ end
 function modifier_george_ai:Transition()
     local duration = 4.5
     self.phase = -1
-
-    self:KillSkeletons()
 
     local unit = self:GetParent()
     local unitPos = unit:GetAbsOrigin()

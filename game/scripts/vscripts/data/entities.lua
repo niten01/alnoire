@@ -1396,6 +1396,12 @@ return {
             openAnimation = "cf_palace_door_open",
             closeAnimation = "cf_palace_door_close",
         },
+        door_cave = {
+            clipEntity = "clip_door_cave",
+            requiresPassword = "carcer immortalium",
+            openAnimation = "open",
+            particle = "particles/cave_door_open.vpcf",
+        },
     },
 
     ------------------------------------------------------------

@@ -44,6 +44,7 @@ function DoorManager:Init()
 
       DebugPrint("[ALNOIRE] Checking door pass attempt: " .. input .. ", against: " .. door.requiresPassword)
       if door.requiresPassword == input and minDist <= DOOR_PASSWORD_RADIUS then
+        door.requiresPassword = nil -- all passwords work once
         self:Open(doorName)
         break
       end
@@ -56,6 +57,7 @@ function DoorManager:Open(doorName)
   local data = EntityData:ByName(doorName)
   assert(data, "No data for door: " .. doorName)
   assert(data.clipEntity, "No clip entity for door: " .. doorName)
+  DebugPrint("[ALNOIRE] Opening door: " .. doorName)
 
   for _, clipEnt in ipairs(Entities:FindAllByName(data.clipEntity)) do
     DoEntFireByInstanceHandle(clipEnt, "Disable", "", 0, nil, nil)
@@ -66,13 +68,20 @@ function DoorManager:Open(doorName)
       DoEntFireByInstanceHandle(doorEnt, "SetAnimation", data.openAnimation, 0, nil, nil)
     end
   end
+
+  if data.particle then
+    local doorEnt = Entities:FindByName(nil, doorName)
+    local pfx = ParticleManager:CreateParticle(data.particle, PATTACH_ABSORIGIN,
+      doorEnt)
+    ParticleManager:ReleaseParticleIndex(pfx)
+  end
 end
 
 function DoorManager:Close(doorName)
   local data = EntityData:ByName(doorName)
   assert(data, "No data for door: " .. doorName)
   assert(data.clipEntity, "No clip entity for door: " .. doorName)
-  
+
   for _, clipEnt in ipairs(Entities:FindAllByName(data.clipEntity)) do
     DoEntFireByInstanceHandle(clipEnt, "Enable", "", 0, nil, nil)
   end

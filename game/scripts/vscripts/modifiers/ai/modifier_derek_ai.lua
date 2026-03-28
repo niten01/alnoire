@@ -73,7 +73,7 @@ function modifier_derek_ai:Phase1(unit, target)
         self.phase = -1
         Music:StartCustomMusicForAll("music.silence.explore")
         if not target or target:IsNull() or not target:IsAlive() then return end
-        Dialogue:ShowDialogueNode(target:GetPlayerOwnerID(), "d_derek_phase_2_start")
+        Dialogue:StartDialogueForPlayer(target:GetPlayerOwnerID(), "d_derek_phase_2_start")
         return
     end
 

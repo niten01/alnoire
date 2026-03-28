@@ -1051,6 +1051,7 @@ priority = 0,
 conditions = {
 { trigger="trigger_boss_fight_1",npc="npc_derek",type="trigger" },
 { ent_var="first_met_global",value={ false },npc="npc_derek",type="ent_var" },
+{ ent_var="beaten",value={ false },npc="npc_derek",type="ent_var" },
 },
 },
 d_untitled_passage_71_merged_act4 = {
@@ -1058,6 +1059,7 @@ priority = 0,
 conditions = {
 { trigger="trigger_boss_fight_1",npc="npc_derek",type="trigger" },
 { ent_var="first_met_global",value={ false },npc="npc_derek",type="ent_var" },
+{ ent_var="beaten",value={ false },npc="npc_derek",type="ent_var" },
 },
 },
 d_untitled_passage_73_merged_act4 = {
@@ -1072,6 +1074,7 @@ priority = 0,
 conditions = {
 { trigger="trigger_boss_fight_2",npc="npc_george",type="trigger" },
 { ent_var="first_met_global",value={ true },npc="npc_george",type="ent_var" },
+{ ent_var="beaten",value={ false },npc="npc_george",type="ent_var" },
 },
 },
 d_untitled_passage_76_merged_act4 = {
@@ -1091,6 +1094,7 @@ priority = 0,
 conditions = {
 { trigger="trigger_boss_fight_2",npc="npc_george",type="trigger" },
 { ent_var="first_met_global",value={ false },npc="npc_george",type="ent_var" },
+{ ent_var="beaten",value={ false },npc="npc_george",type="ent_var" },
 },
 },
 d_untitled_passage_79_merged_act4 = {
@@ -1110,8 +1114,8 @@ conditions = {
 d_untitled_passage_81_merged_act4 = {
 priority = 0,
 conditions = {
-{ trigger="trigger_near_portal",npc="npc_guide",type="trigger" },
 { questID="q_main_quest_act_4",status=QuestStatus.ACTIVE,step={ 5 },type="quest" },
+{ trigger="trigger_guide_finale",npc="npc_guide",type="trigger" },
 },
 },
 d_untitled_passage_82_merged_act4 = {
@@ -12088,7 +12092,7 @@ speaker = [[Подозрительный терминал]],
 npc = "npc_subway_fake",
 choices = {
 {
-text = [[В этот раз без цмки я не уйду... Вперед!]],
+text = [[Вперед!]],
 next = nil,
 actions = {
 { target="tp_target_island",type="teleport" },
@@ -12228,17 +12232,6 @@ next = "d_naschet_bratev_vozvraschajsya_k_nim",
 },
 },
 },
-d_v_etot_raz_bez_tsmki_ya_ne_ujdu_vpered = {
-text = [[]],
-speaker = [[Подозрительный терминал]],
-npc = "npc_subway_fake",
-choices = {
-{
-text = [[Закрыть.]],
-next = nil,
-},
-},
-},
 d_vzorvem_epshtejna = {
 text = [[*Тебе выдали зелёную бочку. Выглядит она не впечатляюще, однако взрывная сила у неё - колоссальная.*]],
 speaker = [[Кот-бочка]],
@@ -12274,6 +12267,17 @@ next = "d_ya_prishel_peredat_chto_tvoj_otets_skuchaet_po_tebe",
 {
 text = [[Я думал ты шторм спирит.]],
 next = "d_ya_dumal_ty_shtorm_spirit",
+},
+},
+},
+d_vpered = {
+text = [[]],
+speaker = [[Подозрительный терминал]],
+npc = "npc_subway_fake",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -13865,7 +13869,7 @@ next = nil,
 },
 d_u2__1 = {
 text = [[ОДНАЖДЫ, В ЛЕСУ, Я НАШЁЛ ЧЬИ-ТО ЗАПИСИ, В НИХ РАССКАЗЫВАЛОСЬ, ЧТО ЗДЕСЬ ЕСТЬ БОГ, ПРИКИНЬ?! ХА-ХА-ХА.]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -13876,7 +13880,7 @@ next = "d_v_kakom_smysle_bog",
 },
 d_u4 = {
 text = [[НЕВЕРОЯТНО УМНАЯ МЫСЛЬ ПРИШЛА КО МНЕ: ЗАСТАВИТЬ ВСЕХ ЛЮДЕЙ ДУМАТЬ, ЧТО Я ИХ КОРОЛЬ. БЫСТРО И ЭФФЕКТИВНО. ПРАВДА БЫЛА ЕЩЁ ОДНА ПРОБЛЕМА - КРИПЫ.]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -13887,7 +13891,7 @@ next = "d_u5__1",
 },
 d_u5__1 = {
 text = [[ОНИ БЕСПОЛЕЗНЫЕ НИЧТОЖЕСТВА, ТАК ЧТО ПАРИТЬСЯ НЕ СТАЛ И ПРОСТО ЗАСТАВИЛ ИХ ПОСТОЯННО ТЕРЯТЬ ПАМЯТЬ. ОТЛИЧНЫЕ РАБЫ ПОЛУЧИЛИСЬ.]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -13898,7 +13902,7 @@ next = "d_otkuda_ty_vzyal_dushi_dlya_etih_manipulyatsij",
 },
 d_u6__1 = {
 text = [[НО БЫЛА ВЕЩЬ, КОТОРУЮ Я НЕ УЧЁЛ: ЛЮДЕЙ БЫЛО НЕЧЁТНОЕ КОЛИЧЕСТВО, ПОЭТОМУ ОДИН УПЫРЬ ОСТАЛСЯ В СОЗНАНИИ. ТЕПЕРЬ ИЗ-ЗА НЕГО Я ГНИЮ В ЭТОЙ ПЕЩЕРЕ! ТВАРИНА!]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14000,7 +14004,7 @@ next = "d_tut_ktonibud_est",
 },
 d_untitled_passage_76_merged_act4 = {
 text = [[*Получив большие повреждения, он останавливается.*]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14011,7 +14015,7 @@ next = "d_prekraschaj_uzhe",
 },
 d_untitled_passage_77_merged_act4 = {
 text = [[БОГ НАХОДИТСЯ НА ЮГЕ, НЕ ПРОПУСТИШЬ! ЗОЛОТОЙ КУБ!]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14421,7 +14425,7 @@ next = "d_g34",
 },
 d_u = {
 text = [[У МЕНЯ ЕСТЬ СЕКРЕТЫ, КОТОРЫЕ Я НИКОМУ НЕ РАССКАЗЫВАЛ, НО РАЗ УЖ Я ВСЁ РАВНО В ЛОВУШКЕ, ТО ПОЧЕМУ БЫ НЕ ПОВЕДАТЬ. Я ОЧЕНЬ ЛЮБЛЮ РАССКАЗЫВАТЬ ИСТОРИИ...]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14432,7 +14436,7 @@ next = "d_u1",
 },
 d_u1 = {
 text = [[ПОПАВ В ЭТОТ МИР, Я УВИДЕЛ ПОТЕНЦИАЛ. Я ЗАХОТЕЛ ПРАВИТЬ ЭТИМ МЕСТОМ, ОДНАКО ПОДЧИНЯТЬСЯ НИКТО НЕ ХОТЕЛ, ХОЛОПЫ!]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14443,7 +14447,7 @@ next = "d_u2__1",
 },
 d_u3 = {
 text = [[И ВОТ. В ЭТИХ ЗАПИСЯХ БЫЛО НАПИСАНО, ЧТО БОГ ВЫПОЛНЯЕТ ЛЮБОЕ ОДНО ДЕЙСТВИЕ ВЗАМЕН НА ДУШУ. ПЛАН СРАЗУ СОЗРЕЛ В МОЕЙ ГОЛОВЕ!]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14532,7 +14536,7 @@ next = "d_t10",
 },
 d_bylo_by_neploho = {
 text = [[ВИДЕЛ ТОТ ПОРТАЛ В ЦЕНТРЕ КОРОЛЕВСТВА? ЕГО ОСТАВИЛ ПЕРВЫЙ, ПОЖЕРТВОВАВ СОБОЙ. ВОТ ЖЕ БОЛВАН, КОНЕЧНО, Я Б НА ЕГО МЕСТЕ...]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14543,7 +14547,7 @@ next = "d_kakoj_smysl_vozraschatsya_my_zhe_umerli_v_realnom_mire",
 },
 d_v_kakom_smysle_bog = {
 text = [[В ПРЯМОМ, ВИДЕЛ ТОТ ЗОЛОТОЙ КРИСТАЛЛ НА ЦЕПЯХ? ЭТО ОН И ЕСТЬ.]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14554,7 +14558,7 @@ next = "d_u3",
 },
 d_vasche_logichno_da = {
 text = [[ВАЛИ ТОГДА!]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14588,7 +14592,7 @@ next = "d_s10",
 },
 d_domoj_eto_kuda = {
 text = [[В РЕАЛЬНЫЙ МИР.]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14649,7 +14653,7 @@ next = "d_potushit_sigaru_i_pojmat_pulu_zubami",
 d_i_chto_mne_teper_delat = {
 text = [[*Джордж кое о чём задумался.*
 О, О, Я ЗНАЮ! ТЫ ЖЕ ВЕДЬ ХОЧЕШЬ ВЕРНУТЬСЯ ДОМОЙ, ДА?]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14683,7 +14687,7 @@ next = "d_s5",
 },
 d_kakoj_smysl_vozraschatsya_my_zhe_umerli_v_realnom_mire = {
 text = [[ПЕРВЫЙ ВСЁ ПРОДУМАЛ. ПОРТАЛ ВОЗВРАЩАЕТ ТЕБЯ ЗА НЕСКОЛЬКО МИНУТ ДО СМЕРТИ, ЧТОБ ТЫ МОГ ИЗМЕНИТЬ СВОЮ СУДЬБУ. ЕСЛИ ВЫЙДЕТ, КОНЕЧНО, ХА-ХА-ХА!]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14719,7 +14723,7 @@ actions = {
 },
 d_ladno_no_portal_zhe_ne_rabotaet = {
 text = [[ЕСТЬ СПОСОБ. СОВЕРШИ ОБМЕН С БОГОМ.]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14812,7 +14816,7 @@ choices = {
 text = [[Закрыть.]],
 next = nil,
 actions = {
-{ npc="npc_guide",type="remove" },
+{ type="start_city_finale_cutscene" },
 },
 },
 },
@@ -14830,7 +14834,7 @@ next = "d_h33",
 },
 d_otkuda_ty_vzyal_dushi_dlya_etih_manipulyatsij = {
 text = [[ТЫ ЧЁ, ТУПОЙ, ХА-ХА-ХА! Я ПРОСТО ПОЖЕРТВОВАЛ ПОЛОВИНОЙ ЛЮДЕЙ - ЧТОБЫ ЗАГИПНОТИЗИРОВАТЬ ДРУГУЮ. ТО ЖЕ САМОЕ С КРИПАМИ.]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14863,7 +14867,7 @@ next = "d_s4",
 },
 d_podozhdi_a_kto_napisal_ob_etom = {
 text = [[ПЕРВЫЙ.]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14894,7 +14898,7 @@ next = "d_u7__1",
 d_prekraschaj_uzhe = {
 text = [[*Энергия в его голосе никуда не пропала.*
 ОТЛИЧНО, ЭТО БЫЛО ОЧЕНЬ ПРИЯТНО! НАКОНЕЦ РАЗМЯЛ ТЕЛО, МОГУ ОТСЫПАТЬ ЧАШКУ ЗЕРНА, ТЫ ХОРОШИЙ ПЛЕБЕЙ.]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14971,7 +14975,7 @@ next = "d_obratno_v_zhizn",
 },
 d_tak_nazyvaemaya_tvarina_dolzhna_byla_ubit_tebya_pochemu_ty_zhiv = {
 text = [[КТО Ж ЗНАЕТ ТО?!]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -14998,7 +15002,7 @@ actions = {
 },
 d_takoe_chmo_ne_mozhet_pomogat_drugim = {
 text = [[ДА ТЫ Ж ВИДИШЬ. Я НЕ МОГУ УМЕРЕТЬ, НО БОЛЬ ТО Я ЧУВСВТУЮ ПОСТОЯННО, ЭТО НЕВЫНОСИМО. ТАК ЧТО СДЕЛАВ ТАК, КАК Я СКАЗАЛ, ТЫ ДАРУЕШЬ СПАСЕНИЕ СЕБЕ, ЛЮДЯМ И МНЕ.]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -15104,7 +15108,7 @@ next = "d_pprivet__1",
 },
 d_chej_zhiznu_pozhertvovat = {
 text = [[ПРЯМО ПЕРЕД ТОБОЙ. ХА-ХА-ХА. ТЫ ПОЖЕРТВУЕШЬ МНОЙ, ПОНЯЛ? ОТКРОЕШЬ ПОРТАЛ И СО ВСЕЙ СВОРОЙ ВЕРНЁШЬСЯ НА ПРЕКРАСНУЮ ЗЕМЛЮ!]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {
@@ -15145,7 +15149,7 @@ next = "d_ubit_ego",
 },
 d_ya_ne_gotov_zhertvovat_chuzhoj_zhiznu = {
 text = [[УТИ ПУТИ КАКОЙ! ХА-ХА-ХА. РАСЛАБЬСЯ, ТЫ ПОЖЕРТВУЕШЬ МНОЙ, ПОНЯЛ? ОТКРОЕШЬ ПОРТАЛ И СО ВСЕЙ СВОРОЙ ВЕРНЁШЬСЯ НА ПРЕКРАСНУЮ ЗЕМЛЮ!]],
-speaker = [[Пропавший Король]],
+speaker = [[Джордж Богоподобный]],
 npc = "npc_george",
 choices = {
 {

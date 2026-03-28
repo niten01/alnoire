@@ -55,7 +55,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -17.749229, -13.053347, -21.559021 ]
+								hitbox_mins = [ -17.74923, -13.053347, -21.559021 ]
 								hitbox_maxs = [ 30.507126, 13.053349, 6.927473 ]
 							},
 							{
@@ -116,7 +116,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -14.538849, -14.586803, -6.052364 ]
-								hitbox_maxs = [ 22.772079, 2.254864, 9.961517 ]
+								hitbox_maxs = [ 22.77208, 2.254864, 9.961517 ]
 							},
 							{
 								_class = "Hitbox"
@@ -176,7 +176,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -8.422443, -5.448586, -11.808685 ]
-								hitbox_maxs = [ 37.976318, 15.771545, 12.387352 ]
+								hitbox_maxs = [ 37.97632, 15.771545, 12.387352 ]
 							},
 							{
 								_class = "Hitbox"
@@ -195,7 +195,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -22.771919, -2.254871, -9.961712 ]
+								hitbox_mins = [ -22.77192, -2.254871, -9.961712 ]
 								hitbox_maxs = [ 14.538925, 14.586746, 6.052151 ]
 							},
 							{
@@ -349,7 +349,7 @@
 							{
 								_class = "ExtractMotion"
 								extract_tx = true
-								extract_ty = false
+								extract_ty = true
 								extract_tz = false
 								extract_rz = false
 								linear = false

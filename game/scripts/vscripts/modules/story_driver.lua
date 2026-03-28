@@ -18,6 +18,12 @@ function StoryDriver:Init()
       hero = "npc_dota_hero_sanya_" .. tostring(args[1])
     })
   end)
+
+  ChatCommand:LinkDevCommand("-finale", function(event, args)
+    self:HandleAction(event.playerID, {
+      type = "start_city_finale_cutscene",
+    })
+  end)
 end
 
 local function fastRemoveNPC(name)
@@ -335,6 +341,18 @@ function Handlers.george_transition(playerID, action)
   ai:Transition()
 end
 
+function Handlers.setup_guide_finale(playerID, action)
+  fastRemoveNPC("npc_guide")
+  SpawnManager:SpawnNPC("spawner_guide_finale")
+  triggerSetEnabled("trigger_guide_finale", true)
+end
+
+function Handlers.start_city_finale_cutscene(playerID, action)
+  prettyRemoveNPC("npc_guide")
+  SpawnManager:SpawnNPC("spawner_guide_forest_entrance")
+  CityCutscene:Start(playerID)
+end
+
 function StoryDriver:StartFight(packName, nonLethalNPC)
   local pack = PackManager:GetPack(packName)
   assert(pack, "No pack to start fight with: " .. packName)
@@ -450,6 +468,11 @@ function StoryDriver:SetupAct3()
   end
 end
 
+function StoryDriver:SetupAct4()
+  fastRemoveNPC("npc_shamanka")
+  fastRemoveNPC("npc_storyteller")
+end
+
 function StoryDriver:OnGameInProgress()
   if not IsServer() then return end
 
@@ -483,6 +506,8 @@ function StoryDriver:OnActChange(event)
     self:SetupAct2()
   elseif act == 3 then
     self:SetupAct3()
+  elseif act == 4 then
+    self:SetupAct4()
   end
 end
 
