@@ -397,17 +397,17 @@
     "MagicalResistance"                                   "25"
 
     "StatusHealthRegen"                                   "0.0"
-    "StatusHealth"                                        "250"
+    "StatusHealth"                                        "200"
     "StatusManaRegen"                                     "0.0"
     "StatusMana"                                          "75"
 
     "AttributePrimary"                                    "DOTA_ATTRIBUTE_ALL"
     "AttributeBaseStrength"                               "20"
-    "AttributeStrengthGain"                               "4.0"
+    "AttributeStrengthGain"                               "4.5"
     "AttributeBaseAgility"                                "10"
-    "AttributeAgilityGain"                                "3.5"
+    "AttributeAgilityGain"                                "4.0"
     "AttributeBaseIntelligence"                           "0"
-    "AttributeIntelligenceGain"                           "2.2"
+    "AttributeIntelligenceGain"                           "2.0"
 
     "AbilityLayout"				                                "6"
 

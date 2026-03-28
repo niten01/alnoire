@@ -11,10 +11,10 @@
 
 		"AbilityValues"
 		{
-			"magical_damage_per_stack"	"5 6 8 10"
+			"magical_damage_per_stack"	"5 8 12 15"
 			"lifesteal_pct_per_stack"	"15"
 			"max_stacks"				"20"
-			"spell_amp_pct"				"0 15 30 45"
+			"spell_amp_pct"				"0 20 40 60"
 		}
 
 		"precache"
@@ -38,7 +38,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"             "60 90"
+        "AbilityDamage"             "70 105"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
