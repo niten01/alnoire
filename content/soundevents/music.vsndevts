@@ -316,7 +316,7 @@
       "sounds/music/credits.vsnd"
     ]
     volume = "3.500000"
-    fade_in = "8.0"
+    fade_in = "10.0"
     fade_out = "5.0"
   }
 }

@@ -58,6 +58,7 @@ function modifier_derek_ai:OnTakeDamage(params)
     if self.phase ~= 2 then return end
 
     if params.unit:GetHealth() <= 1 then
+        Music:StopCustomMusic(params.attacker:GetPlayerOwnerID())
         DamageTracker:LogLethalDamage(params)
         self:TransitionBack()
         parent:SetTeam(DOTA_TEAM_GOODGUYS)

@@ -149,6 +149,11 @@ return {
             deferred = true,
             modifiers = { "modifier_story_npc" },
         },
+        spawner_guide_finale = {
+            npc = "npc_guide",
+            deferred = true,
+            modifiers = { "modifier_story_npc" },
+        },
         spawner_creep_rogach          = {
             npc = "npc_creep_rogach",
             modifiers = { "modifier_story_npc" },

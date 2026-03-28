@@ -3,6 +3,7 @@
   const SPEAKER_PORTRAIT = {
     "...": "default",
     "???": "tormentor",
+    "БОГ": "tormentor",
     "Неизвестный": "default",
     "Старушка": "shamanka",
     "Банда троллей": "gate_trolls",

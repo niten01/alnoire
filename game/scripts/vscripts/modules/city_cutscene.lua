@@ -134,6 +134,11 @@ function CityCutscene:Start(playerID)
 
                 CustomGameEventManager:Send_ServerToPlayer(player, "cutscene_show_fade", {})
                 Timers:CreateTimer(fadeTime, function()
+                    local tgt = Entities:FindByName(nil, "tp_target_mgtu")
+                    assert(tgt)
+                    hero:SetAbsOrigin(tgt:GetAbsOrigin())
+                    hero:SetForwardVector(tgt:GetForwardVector())
+
                     hero:RemoveModifierByName("modifier_cutscene_player")
                     CustomGameEventManager:Send_ServerToPlayer(player, "cutscene_hide", {})
                     PlayerResource:SetCameraTarget(playerID, nil)
