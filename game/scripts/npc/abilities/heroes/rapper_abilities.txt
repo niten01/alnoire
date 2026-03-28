@@ -11,9 +11,9 @@
 
 		"AbilityValues"
 		{
-			"max_stacks"				"50 100 150"
-			"damage_pct_per_stack"		"1"
-			"stacks_per_attack"			"1 2 2"
+			"max_stacks"				"50 50 100 150"
+			"damage_pct_per_stack"		"0.5 1"
+			"stacks_per_attack"			"1 1 2 2"
 		}
 	}
 	"rapper_spliff"

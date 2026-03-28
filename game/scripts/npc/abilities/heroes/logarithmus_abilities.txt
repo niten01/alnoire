@@ -6,15 +6,15 @@
 		"ScriptFile" 				"abilities/logarithmus_concentration.lua"
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
 		"AbilityTextureName"		"logarithmus_concentration"
-		"MaxLevel"					"3"
+		"MaxLevel"					"4"
 		"RequiredLevel"				"1"
 
 		"AbilityValues"
 		{
-			"magical_damage_per_stack"	"5"
+			"magical_damage_per_stack"	"5 8 12 15"
 			"lifesteal_pct_per_stack"	"15"
 			"max_stacks"				"20"
-			"spell_amp_pct"				"0 15 30"
+			"spell_amp_pct"				"0 20 40 60"
 		}
 
 		"precache"
@@ -38,7 +38,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"             "60 80 100"
+        "AbilityDamage"             "70 105"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -46,7 +46,7 @@
             "blink_range"           "800"
             "vector_range"          "300"
             "stab_width"            "50"
-            "max_sequential_uses"   "3 4 5"
+            "max_sequential_uses"   "3 4"
             "recast_decay"     "1"
 		}
 
@@ -80,7 +80,7 @@
             "dash_range"           "500"
             "spin_radius"          "300"
 			"dash_time"		       "0.4"
-			"dps" 				   "200 350 500"
+			"dps" 				   "200 400"
 		}
 
         "precache"
@@ -106,7 +106,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "70 140 210"
+        "AbilityDamage"                 "75 150"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -139,7 +139,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "70 140 210"
+        "AbilityDamage"                 "70 150"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -169,7 +169,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "200 350 500"
+        "AbilityDamage"                 "200 400"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -198,7 +198,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "200 350 500"
+        "AbilityDamage"                 "200 400"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -226,7 +226,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "160 250 340"
+        "AbilityDamage"                 "160 320"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -258,7 +258,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "140 230 320"
+        "AbilityDamage"                 "140 280"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -289,14 +289,14 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "40 55 70"
+        "AbilityDamage"                 "40 64"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
 		{
             "projectile_radius"  "50"
             "projectile_speed"   "1700"
-			"num_projectiles"	 "4 5 6"
+			"num_projectiles"	 "4 5"
 			"max_duration"		 "3"
 		}
 
@@ -342,7 +342,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "200 350 500"
+        "AbilityDamage"                 "200 400"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -380,7 +380,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "180 270 360"
+        "AbilityDamage"                 "180 360"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityCastRange"			"300"
 		"AbilityValues"

@@ -955,14 +955,14 @@ return {
 
         pack_forest_act1_lizards = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1500,
+            rangeFastTickRate = 1600,
+            rangeRetreat = 5400,
             rangeAggro = 1000,
         },
 
         pack_forest_act1_bears = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 2000,
+            rangeFastTickRate = 1600,
             rangeRetreat = 1150,
             rangeAggro = 700,
         },

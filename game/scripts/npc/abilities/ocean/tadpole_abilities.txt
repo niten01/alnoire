@@ -14,7 +14,7 @@
 
 		"AbilityValues"
 		{
-			"proj_speed"					"800"
+			"proj_speed"					"1000"
 			"proj_range"				    "1200"
             "proj_damage_on_hit"            "100"
             "proj_hitbox"                   "100"
