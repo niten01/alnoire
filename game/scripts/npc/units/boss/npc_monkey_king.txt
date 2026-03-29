@@ -84,9 +84,9 @@
 		{
 			"AttachWearables"
 			{
-				"Wearable3" { "ItemDef" "594" }
+				// "Wearable3" { "ItemDef" "594" }
 				"Wearable1" { "ItemDef" "609" }
-				"Wearable2" { "ItemDef" "608" }
+				// "Wearable2" { "ItemDef" "608" }
 			}
 		}
 	}
@@ -177,7 +177,7 @@
 		{
 			"AttachWearables"
 			{
-				"Wearable3" { "ItemDef" "594" }
+				// "Wearable3" { "ItemDef" "594" }
 				"Wearable1" { "ItemDef" "609" }
 			}
 		}

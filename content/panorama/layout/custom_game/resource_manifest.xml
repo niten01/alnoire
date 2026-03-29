@@ -21,6 +21,9 @@
             <Image src="file://{images}/custom_game/portraits/guide.psd" />
             <Image src="file://{images}/custom_game/portraits/kamish.psd" />
             <Image src="file://{images}/custom_game/portraits/island_duo.psd" />
+            <Image src="file://{images}/custom_game/portraits/george_1.psd" />
+            <Image src="file://{images}/custom_game/portraits/george_2.psd" />
+            <Image src="file://{images}/custom_game/portraits/derek.psd" />
         </Panel>
     </Panel>
 </root>

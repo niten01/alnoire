@@ -1,0 +1,57 @@
+
+/* ===== Root ===== */
+.CutsceneRoot {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: collapse;
+  transition-property: opacity, transform;
+  transition-duration: 0.18s;
+  transition-timing-function: ease-in-out;
+  transform: translateY(16px);
+}
+
+/* Toggle this class from JS */
+.CutsceneRoot.IsOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.Fade {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 2.0s;
+  transition-timing-function: ease-in-out;
+  z-index: 1000;
+}
+
+.Fade.IsOpen {
+  opacity: 1;
+}
+
+.CineBars { width: 100%; height: 100%; }
+
+.Bar {
+  width: 100%;
+  background-color: #000000;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.18s;
+  transition-timing-function: ease-in-out;
+  z-index: 1000;
+}
+
+.BarTop { 
+  vertical-align: top;
+  height: 80px;
+ }
+.BarBottom { 
+  vertical-align: bottom; 
+  height: 140px;
+}
+
+.CutsceneRoot.IsOpen .Bar { opacity: 1; }

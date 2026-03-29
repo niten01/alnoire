@@ -70,7 +70,7 @@ function modifier_rapper_flow:OnTakeDamage(params)
     local stackCount = self:GetStackCount()
     if params.damage > 0 then
         local fraction = params.damage / self:GetParent():GetMaxHealth()
-        self:SetStackCount(stackCount - math.floor(stackCount * fraction))
+        self:SetStackCount(stackCount - math.floor(self.maxStacks * fraction))
     end
 end
 

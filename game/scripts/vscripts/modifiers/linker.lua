@@ -19,6 +19,7 @@ LinkLuaModifier("modifier_generic_ring", "modifiers/modifier_generic_ring", LUA_
 LinkLuaModifier("modifier_island_traps_participant", "modifiers/modifier_island_traps_participant",
     LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_immobile", "modifiers/modifier_immobile", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_cutscene_player", "modifiers/modifier_cutscene_player", LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_tower', 'modifiers/modifier_tower', LUA_MODIFIER_MOTION_NONE)

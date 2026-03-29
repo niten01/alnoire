@@ -286,7 +286,7 @@
     ]
     volume = "3.500000"
     fade_in = "1.5"
-    fade_out = "0.5"
+    fade_out = "4.5"
   }
   music.george.phase1 = {
     type = "dota_update_battle_music"
@@ -306,6 +306,17 @@
     ]
     volume = "3.500000"
     fade_in = "0.0"
+    fade_out = "5.0"
+  }
+  // ---------------------------------------------------------
+  music.credits.city = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/credits.vsnd"
+    ]
+    volume = "3.500000"
+    fade_in = "10.0"
     fade_out = "5.0"
   }
 }

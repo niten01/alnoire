@@ -32,7 +32,7 @@ end
 function rapper_strife:OnUpgrade()
     if not IsServer() then return end
     local caster = self:GetCaster()
-    if self:GetLevel() == 1 then return end
+    -- if self:GetLevel() == 1 then return end
     local flowAbility = caster:FindAbilityByName("rapper_flow")
     assert(flowAbility)
     flowAbility:UpgradeAbility(true)

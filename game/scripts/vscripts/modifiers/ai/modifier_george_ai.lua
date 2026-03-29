@@ -68,6 +68,7 @@ function modifier_george_ai:OnTakeDamage(params)
     if self.phase ~= 2 then return end
 
     if params.unit:GetHealth() <= 1 then
+        Music:StopCustomMusic(params.attacker:GetPlayerOwnerID())
         DamageTracker:LogLethalDamage(params)
         self:TransitionBack()
         parent:SetTeam(DOTA_TEAM_GOODGUYS)
@@ -78,7 +79,12 @@ function modifier_george_ai:Phase1(unit, target)
     if unit.georgeCasting then return end
 
     if unit:GetHealth() == 1 then
-        self:Transition()
+        unit:Stop()
+        self.phase = -1
+        Music:StartCustomMusicForAll("music.silence.explore")
+        self:KillSkeletons()
+        if not target or target:IsNull() or not target:IsAlive() then return end
+        Dialogue:StartDialogueForPlayer(target:GetPlayerOwnerID(), "d_george_phase_2_start")
         return
     end
 
@@ -136,8 +142,6 @@ end
 function modifier_george_ai:Transition()
     local duration = 4.5
     self.phase = -1
-
-    self:KillSkeletons()
 
     local unit = self:GetParent()
     local unitPos = unit:GetAbsOrigin()

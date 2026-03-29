@@ -5,6 +5,7 @@
 "DOTA_Tooltip_ability_logarithmus_concentration_max_stacks"		    "МАКС. ЭФФЕКТОВ:"
 "DOTA_Tooltip_ability_logarithmus_concentration_magical_damage_per_stack"		    "ДОП. УРОН ЗА ЭФФЕКТ:"
 "DOTA_Tooltip_ability_logarithmus_concentration_lifesteal_pct_per_stack"		    "%ИСЦЕЛЕНИЕ ОТ НАНЕСЕННОГО УРОНА ЗА ЭФФЕКТ:"
+"DOTA_Tooltip_ability_logarithmus_concentration_spell_amp_pct"		    "%ДОП. УРОН ЗАКЛИНАНИЯМИ:"
 
 "DOTA_Tooltip_modifier_logarithmus_concentration"             "Концентрация"
 "DOTA_Tooltip_modifier_logarithmus_concentration_Description" "Следующая атака дополнительно нанесет %dMODIFIER_PROPERTY_TOOLTIP% магического урона и восстановит %dMODIFIER_PROPERTY_TOOLTIP2% здоровья"

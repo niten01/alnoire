@@ -149,6 +149,11 @@ return {
             deferred = true,
             modifiers = { "modifier_story_npc" },
         },
+        spawner_guide_finale = {
+            npc = "npc_guide",
+            deferred = true,
+            modifiers = { "modifier_story_npc" },
+        },
         spawner_creep_rogach          = {
             npc = "npc_creep_rogach",
             modifiers = { "modifier_story_npc" },
@@ -976,14 +981,14 @@ return {
 
         pack_forest_act1_lizards = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1500,
+            rangeFastTickRate = 1600,
+            rangeRetreat = 5400,
             rangeAggro = 1000,
         },
 
         pack_forest_act1_bears = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 2000,
+            rangeFastTickRate = 1600,
             rangeRetreat = 1150,
             rangeAggro = 700,
         },
@@ -1051,9 +1056,9 @@ return {
         },
 
         pack_ocean_act2_catapa = {
-            rangeFastTickRate = 1100,
-            rangeRetreat = 1300,
-            rangeAggro = 500,
+            rangeFastTickRate = 2700,
+            rangeRetreat = 2500,
+            rangeAggro = 1800,
             stayActivatedOnPlayerDeath = true,
         },
 
@@ -1066,7 +1071,7 @@ return {
 
         pack_ocean_act2_tadpoles_ranged = {
             rangeFastTickRate = 1450,
-            rangeRetreat = 2000,
+            rangeRetreat = 3000,
             rangeAggro = 840,
             stayActivatedOnPlayerDeath = true,
         },
@@ -1239,6 +1244,9 @@ return {
             rangeFastTickRate = 2000,
             rangeRetreat = 2000,
             rangeAggro = 2000,
+            doors = {
+                "door_derek"
+            }
         },
         pack_george = {
             activateAfterUnitsSpawned = false,
@@ -1415,6 +1423,17 @@ return {
         },
         door_island_duo = {
             clipEntity = "clip_door_island_duo"
+        },
+        door_derek = {
+            clipEntity = "clip_door_derek",
+            openAnimation = "cf_palace_door_open",
+            closeAnimation = "cf_palace_door_close",
+        },
+        door_cave = {
+            clipEntity = "clip_door_cave",
+            requiresPassword = "carcer immortalium",
+            openAnimation = "open",
+            particle = "particles/cave_door_open.vpcf",
         },
     },
 

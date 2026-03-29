@@ -18,6 +18,12 @@ function StoryDriver:Init()
       hero = "npc_dota_hero_sanya_" .. tostring(args[1])
     })
   end)
+
+  ChatCommand:LinkDevCommand("-finale", function(event, args)
+    self:HandleAction(event.playerID, {
+      type = "start_city_finale_cutscene",
+    })
+  end)
 end
 
 local function fastRemoveNPC(name)
@@ -319,6 +325,34 @@ function Handlers.fill_flask(playerID, action)
   FlaskManager:RefillFlask(playerID)
 end
 
+function Handlers.derek_transition(playerID, action)
+  local npc = Entities:FindByName(nil, "npc_derek")
+  assert(npc)
+  local ai = npc:FindModifierByName("modifier_derek_ai")
+  assert(ai)
+  ai:Transition()
+end
+
+function Handlers.george_transition(playerID, action)
+  local npc = Entities:FindByName(nil, "npc_george")
+  assert(npc)
+  local ai = npc:FindModifierByName("modifier_george_ai")
+  assert(ai)
+  ai:Transition()
+end
+
+function Handlers.setup_guide_finale(playerID, action)
+  fastRemoveNPC("npc_guide")
+  SpawnManager:SpawnNPC("spawner_guide_finale")
+  triggerSetEnabled("trigger_guide_finale", true)
+end
+
+function Handlers.start_city_finale_cutscene(playerID, action)
+  prettyRemoveNPC("npc_guide")
+  SpawnManager:SpawnNPC("spawner_guide_forest_entrance")
+  CityCutscene:Start(playerID)
+end
+
 function StoryDriver:StartFight(packName, nonLethalNPC)
   local pack = PackManager:GetPack(packName)
   assert(pack, "No pack to start fight with: " .. packName)
@@ -386,8 +420,9 @@ function StoryDriver:OnCancelLethalDamage(event)
       self:StopFight(i)
       local hero = PlayerResource:GetBarebonesAssignedHero(event.attackerPlayerID)
       assert(hero)
-      hero:SetAbsOrigin(unit:GetAbsOrigin() + unit:GetForwardVector() * 100)
+      hero:SetAbsOrigin(unit:GetAbsOrigin() + unit:GetForwardVector() * 150)
       hero:FaceTowards(unit:GetAbsOrigin())
+      CenterCameraOnUnit(event.attackerPlayerID, unit)
       break
     end
   end
@@ -433,6 +468,11 @@ function StoryDriver:SetupAct3()
   end
 end
 
+function StoryDriver:SetupAct4()
+  fastRemoveNPC("npc_shamanka")
+  fastRemoveNPC("npc_storyteller")
+end
+
 function StoryDriver:OnGameInProgress()
   if not IsServer() then return end
 
@@ -466,6 +506,8 @@ function StoryDriver:OnActChange(event)
     self:SetupAct2()
   elseif act == 3 then
     self:SetupAct3()
+  elseif act == 4 then
+    self:SetupAct4()
   end
 end
 

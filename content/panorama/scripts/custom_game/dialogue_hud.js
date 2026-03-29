@@ -3,6 +3,7 @@
   const SPEAKER_PORTRAIT = {
     "...": "default",
     "???": "tormentor",
+    "БОГ": "tormentor",
     "Неизвестный": "default",
     "Старушка": "shamanka",
     "Банда троллей": "gate_trolls",
@@ -19,6 +20,9 @@
     "Гид": "guide",
     "Камыш": "tadpole",
     "Демоны Тени": "island_duo",
+    "Пропавший Король": "george_1",
+    "Джордж Богоподобный": "george_2",
+    "Дерек": "derek",
   }
 
   const root = $.GetContextPanel();
