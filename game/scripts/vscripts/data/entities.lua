@@ -28,7 +28,7 @@ return {
             modifiers = { "modifier_story_npc" },
         },
 
-        spawner_flask_barrel    = {
+        spawner_flask_barrel          = {
             npc = "npc_flask_barrel",
             modifiers = { "modifier_story_npc" },
         },
@@ -260,7 +260,7 @@ return {
             -- modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_trap_fake_spikes           = {
+        spawner_trap_fake_spikes      = {
             npc = "npc_trap_fake_spikes",
             team = DOTA_TEAM_BADGUYS,
             -- modifiers = { "modifier_story_npc" },
@@ -363,7 +363,7 @@ return {
             -- modifiers = { "modifier_ball_slide" },
             team = DOTA_TEAM_BADGUYS,
         },
-        spawner_chaser                  = {
+        spawner_chaser                = {
             npc = "npc_chaser",
             packID = "pack_chaser",
             ai_modifier = "modifier_default_creep_ai",
@@ -826,6 +826,27 @@ return {
             ai_modifier = "modifier_dark_treant_ai",
         },
 
+        spawner_desert_nyx_1          = {
+            npc = "npc_desert_nyx_1",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_nyxs",
+            ai_modifier = "modifier_desert_nyx_ai",
+        },
+
+        spawner_desert_nyx_2          = {
+            npc = "npc_desert_nyx_2",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_nyxs",
+            ai_modifier = "modifier_desert_nyx_ai",
+        },
+
+        spawner_desert_nyx_3          = {
+            npc = "npc_desert_nyx_3",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_nyxs",
+            ai_modifier = "modifier_desert_nyx_ai",
+        },
+
 
         spawner_dream_concert         = {
             npc = "npc_dream",
@@ -1142,6 +1163,13 @@ return {
         },
 
         pack_darkforest_act3_treant = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_desert_act4_nyxs = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,

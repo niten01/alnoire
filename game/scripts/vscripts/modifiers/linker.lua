@@ -16,7 +16,8 @@ LinkLuaModifier('modifier_generic_vector_target', 'modifiers/modifier_generic_ve
 LinkLuaModifier("modifier_generic_unkillable", "modifiers/modifier_generic_unkillable", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_model", "modifiers/modifier_model", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_generic_ring", "modifiers/modifier_generic_ring", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_island_traps_participant", "modifiers/modifier_island_traps_participant", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_island_traps_participant", "modifiers/modifier_island_traps_participant",
+    LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_immobile", "modifiers/modifier_immobile", LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODIFIER_MOTION_NONE)
@@ -81,6 +82,8 @@ LinkLuaModifier("modifier_dark_pugna_ai", "modifiers/ai/modifier_dark_pugna_ai",
 LinkLuaModifier("modifier_dark_greevil_ai", "modifiers/ai/modifier_dark_greevil_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_dark_shaker_ai", "modifiers/ai/modifier_dark_shaker_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_dark_treant_ai", "modifiers/ai/modifier_dark_treant_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_desert_nyx_ai", "modifiers/ai/modifier_desert_nyx_ai", LUA_MODIFIER_MOTION_NONE)
+
 
 
 

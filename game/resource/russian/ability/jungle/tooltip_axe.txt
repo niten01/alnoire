@@ -5,7 +5,7 @@
 
 "DOTA_Tooltip_modifier_axe_sustain"		            "Братва"
 "DOTA_Tooltip_modifier_axe_sustain_SummaryDescription" ""
-"DOTA_Tooltip_modifier_axe_sustain_Description"		"Акс получает удовольствие от просмотра битвы своих подсосов, пока эффект активен, получаемый Аксом урон сильно снижается, но сам он не будет атаковать."
+"DOTA_Tooltip_modifier_axe_sustain_Description"		"В окружении братвы Акс становится очень доволен"
 
 "DOTA_Tooltip_ability_axe_berserkers_call"		            "К НОГЕ"
 "DOTA_Tooltip_ability_axe_berserkers_call_Lore"		            "Не трожь моих фанатов"
@@ -15,3 +15,8 @@
 "DOTA_Tooltip_modifier_axe_custom_hunger_debuff"		            "Горелка"
 "DOTA_Tooltip_modifier_axe_custom_hunger_debuff_SummaryDescription" ""
 "DOTA_Tooltip_modifier_axe_custom_hunger_debuff_Description"		"Аххххх... прогревааает."
+
+"DOTA_Tooltip_ability_axe_sustain"		            "Братва"
+"DOTA_Tooltip_ability_axe_sustain_Lore"		            "О дааа.. деритесь, мальчики мои!"
+"DOTA_Tooltip_Ability_axe_sustain_SummaryDescription" ""
+"DOTA_Tooltip_ability_axe_sustain_Description"		"Акс получает удовольствие от просмотра битвы своих братанов, пока эффект активен, получаемый Аксом урон сильно снижается, но сам он не будет атаковать."

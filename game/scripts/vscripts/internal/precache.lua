@@ -195,6 +195,7 @@ return {
         "npc_dota_greevil",
         "npc_dota_hero_earthshaker",
         "npc_dota_furion_treant",
+        "npc_dota_hero_nyx_assassin",
 
 
         -- jungle
@@ -263,6 +264,11 @@ return {
         "npc_dark_shaker_3",
         "npc_dark_treant",
         "npc_dark_treant_summon",
+
+        -- desert
+        "npc_desert_nyx_1",
+        "npc_desert_nyx_2",
+        "npc_desert_nyx_3",
 
 
         -- traps
@@ -438,6 +444,10 @@ return {
         "particles/units/heroes/hero_treant/treant_overgrowth_cast.vpcf",
         "particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf",
         "particles/econ/items/natures_prophet/natures_prophet_weapon_sufferwood/furion_teleport_end_team_sufferwood_model.vpcf",
+
+        -- desert
+        "particles/units/heroes/hero_nyx_assassin/nyx_assassin_burrow_exit.vpcf",
+        "particles/units/heroes/hero_nyx_assassin/nyx_assassin_burrow.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",

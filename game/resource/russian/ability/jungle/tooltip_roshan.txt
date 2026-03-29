@@ -1,0 +1,9 @@
+"DOTA_Tooltip_ability_roshan_custom_clap"		            "Шлепок"
+"DOTA_Tooltip_ability_roshan_custom_clap_Lore"		            "Шлепок выглядит до боли знакомым.. как же там было? армлет вкл выкл... баш... гг"
+"DOTA_Tooltip_Ability_roshan_custom_clap_SummaryDescription" ""
+"DOTA_Tooltip_ability_roshan_custom_clap_Description"		"Шлепок по земле - коронная фишка этого зверя, немало путников полегло не успев даже пукнуть! Кажется, он научил ему своих детенышей.."
+
+"DOTA_Tooltip_ability_roshan_custom_passive"		            "Глава семейства"
+"DOTA_Tooltip_ability_roshan_custom_passive_Lore"		            "Дети - цветы жизни"
+"DOTA_Tooltip_Ability_roshan_custom_passive_SummaryDescription" ""
+"DOTA_Tooltip_ability_roshan_custom_passive_Description"		"С потерей каждого сына Рошан хочет тебя шлепнуть все больше"

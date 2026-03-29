@@ -1,7 +1,7 @@
 modifier_axe_sustain = class({})
 
 function modifier_axe_sustain:IsHidden()
-    return false
+    return true
 end
 
 function modifier_axe_sustain:IsDebuff()
