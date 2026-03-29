@@ -92,6 +92,8 @@ function Music:OnDialogueStart(event)
     local nodeID = event.startNodeID
     if nodeID == "d_xavier_fight_start" or nodeID == "d_xavier_fight_again" then
         self:StartCustomMusic(playerID, "music.concert.precombat")
+    elseif nodeID == "d_xavier_ending" then
+        self:StartCustomMusic(playerID, "music.ending.dialogue")
     end
 end
 
@@ -111,6 +113,8 @@ function Music:OnEntityKilled(event)
 end
 
 function Music:OnPackWiped(event)
+    local pack = EntityData:ByName(event.packName)
+    if not pack.music then return end
     for playerID, state in pairs(self.musicState) do
         self:StopCustomMusic(playerID)
     end

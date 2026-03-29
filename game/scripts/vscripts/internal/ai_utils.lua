@@ -407,7 +407,7 @@ function SetAIModifierActive(modifier, bActive)
 end
 
 function DefaultAiTick(unit)
-  if not IsServer() then return end
+  if not IsServer() then return true end
   if not unit or not unit:IsAlive() then return end
 
   local beaconData = unit.packTargetData

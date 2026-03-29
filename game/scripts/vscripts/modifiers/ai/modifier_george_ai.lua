@@ -84,6 +84,7 @@ function modifier_george_ai:Phase1(unit, target)
         Music:StartCustomMusicForAll("music.silence.explore")
         self:KillSkeletons()
         if not target or target:IsNull() or not target:IsAlive() then return end
+        target:Stop()
         Dialogue:StartDialogueForPlayer(target:GetPlayerOwnerID(), "d_george_phase_2_start")
         return
     end

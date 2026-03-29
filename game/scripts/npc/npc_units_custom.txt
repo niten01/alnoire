@@ -1,5 +1,6 @@
 #base "units/boss/npc_gorilla.txt"
 #base "units/boss/npc_shooter.txt"
+#base "units/boss/npc_shooter_ending.txt"
 #base "units/boss/npc_monkey_king.txt"
 #base "units/boss/npc_ogre_bruiser.txt"
 #base "units/boss/npc_killer.txt"

@@ -105,6 +105,46 @@
 						reverse = false
 						additional_anim_files = [  ]
 					},
+					{
+						_class = "AnimFile"
+						name = "run"
+						children = 
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = false
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								extract_initial_offset = false
+								root_bone_name = ""
+								motion_type = "Uniform"
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/xavier/animations/run.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
 				]
 				default_root_bone_name = ""
 			},
@@ -145,7 +185,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -19.989502, -24.046082, -22.085136 ]
-								hitbox_maxs = [ 22.148773, 24.047729, 16.701859 ]
+								hitbox_maxs = [ 22.148773, 24.04773, 16.701859 ]
 							},
 							{
 								_class = "Hitbox"
@@ -275,7 +315,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -0.5, -8.226566, -18.832853 ]
-								hitbox_maxs = [ 62.227119, 6.892532, 8.438625 ]
+								hitbox_maxs = [ 62.22712, 6.892532, 8.438625 ]
 							},
 							{
 								_class = "Hitbox"
@@ -285,7 +325,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -14.817329, -8.212933, -17.749256 ]
-								hitbox_maxs = [ 45.193451, 6.896042, 7.604753 ]
+								hitbox_maxs = [ 45.19345, 6.896042, 7.604753 ]
 							},
 							{
 								_class = "Hitbox"
@@ -364,7 +404,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -79.233063, -10.157192, -15.722122 ]
+								hitbox_mins = [ -79.23306, -10.157192, -15.722122 ]
 								hitbox_maxs = [ 0.5, 17.558514, 15.009113 ]
 							},
 							{
@@ -384,7 +424,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -16.082279, -8.738465, -16.973415 ]
+								hitbox_mins = [ -16.08228, -8.738465, -16.973415 ]
 								hitbox_maxs = [ 9.483459, 10.998292, 8.981726 ]
 							},
 							{
@@ -454,8 +494,8 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -0.5, -17.558689, -15.009117 ]
-								hitbox_maxs = [ 79.233078, 10.157082, 15.722137 ]
+								hitbox_mins = [ -0.5, -17.55869, -15.009117 ]
+								hitbox_maxs = [ 79.23308, 10.157082, 15.722137 ]
 							},
 							{
 								_class = "Hitbox"
@@ -464,7 +504,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -33.322571, -17.558674, -13.677311 ]
+								hitbox_mins = [ -33.32257, -17.558674, -13.677311 ]
 								hitbox_maxs = [ 43.410736, 10.157091, 8.070087 ]
 							},
 							{

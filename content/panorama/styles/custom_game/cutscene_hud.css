@@ -9,6 +9,7 @@
   transition-duration: 0.18s;
   transition-timing-function: ease-in-out;
   transform: translateY(16px);
+  z-index: 1000;
 }
 
 /* Toggle this class from JS */

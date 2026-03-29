@@ -23,6 +23,7 @@
     "Пропавший Король": "george_1",
     "Джордж Богоподобный": "george_2",
     "Дерек": "derek",
+    "xaviersobased": "npc_xavier",
   }
 
   const root = $.GetContextPanel();

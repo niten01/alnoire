@@ -11,7 +11,7 @@ function chaser_rite:OnSpellStart()
   local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_bloodseeker/bloodseeker_bloodritual_ring.vpcf",
     PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(pfx, 0, targetPos)
-  ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 1, radius))
+  ParticleManager:SetParticleControl(pfx, 1, Vector(radius, radius, 150))
 
   caster:EmitSound("ability.chaser.rite.cast")
 
