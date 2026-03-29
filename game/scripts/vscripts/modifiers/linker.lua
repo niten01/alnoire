@@ -86,6 +86,8 @@ LinkLuaModifier("modifier_dark_pugna_ai", "modifiers/ai/modifier_dark_pugna_ai",
 LinkLuaModifier("modifier_dark_greevil_ai", "modifiers/ai/modifier_dark_greevil_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_dark_shaker_ai", "modifiers/ai/modifier_dark_shaker_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_dark_treant_ai", "modifiers/ai/modifier_dark_treant_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_desert_nyx_ai", "modifiers/ai/modifier_desert_nyx_ai", LUA_MODIFIER_MOTION_NONE)
+
 
 
 

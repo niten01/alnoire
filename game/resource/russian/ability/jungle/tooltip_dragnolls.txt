@@ -1,0 +1,9 @@
+"DOTA_Tooltip_ability_gnoll_slow_passive"		            "Секретная смазка"
+"DOTA_Tooltip_ability_gnoll_slow_passive_Lore"		            "Интересно, какая она на вкус?"
+"DOTA_Tooltip_Ability_gnoll_slow_passive_SummaryDescription" ""
+"DOTA_Tooltip_ability_gnoll_slow_passive_Description"		"Непонятно, чем этот крестьянин намазал кончик копья, но от его попадания у тебя отнимаются ноги и хочется спать."
+
+"DOTA_Tooltip_ability_black_dragon_fireball"		            "Огненный плевок"
+"DOTA_Tooltip_ability_black_dragon_fireball_Lore"		            "Наверное, у него очень тепленько в пузике)"
+"DOTA_Tooltip_Ability_black_dragon_fireball_SummaryDescription" ""
+"DOTA_Tooltip_ability_black_dragon_fireball_Description"		"Ничего экзотического, просто лужа лавы изо рта, тебе это должно быть знакомо.."

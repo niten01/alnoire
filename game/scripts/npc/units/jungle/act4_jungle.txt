@@ -1,0 +1,212 @@
+"DOTAUnits"
+{
+    "npc_desert_nyx_1"
+    {
+        // General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/nerubian_assassin/nerubian_assassin.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_NyxAssassin"
+		"Level"						"1"
+		"ModelScale" 				"1.0"
+		"RequiredTimeInAggroOffset"	"-1.5"
+		
+		"Ability1"						"nyx_bury"			// Ability 1 
+		"Ability2"						"nyx_assassin_impale"			// Ability 2
+		//"Ability3"						"ursa_enrage"			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.		     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"210"					
+
+		"StatusHealth"				"950"		// Base health.
+		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "8114" } // back
+				"Wearable2" { "ItemDef" "8116" } // weapon
+				"Wearable3" { "ItemDef" "8117" } // head
+				"Wearable4" { "ItemDef" "8115" } // misc
+			}
+		}
+    }
+
+	"npc_desert_nyx_2"
+    {
+        // General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/nerubian_assassin/nerubian_assassin.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_NyxAssassin"
+		"Level"						"1"
+		"ModelScale" 				"1.0"
+		"RequiredTimeInAggroOffset"	"-2.3"
+		
+		"Ability1"						"nyx_bury"			// Ability 1 
+		"Ability2"						"nyx_assassin_impale"			// Ability 2
+		//"Ability3"						"ursa_enrage"			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.		     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"210"					
+
+		"StatusHealth"				"950"		// Base health.
+		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "8114" } // back
+				"Wearable2" { "ItemDef" "8116" } // weapon
+				"Wearable3" { "ItemDef" "8117" } // head
+				"Wearable4" { "ItemDef" "8115" } // misc
+			}
+		}
+    }
+
+	"npc_desert_nyx_3"
+    {
+        // General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/nerubian_assassin/nerubian_assassin.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_NyxAssassin"
+		"Level"						"1"
+		"ModelScale" 				"1.0"
+		"RequiredTimeInAggroOffset"	"-2.0"
+		
+		"Ability1"						"nyx_bury"			// Ability 1 
+		"Ability2"						"nyx_assassin_impale"			// Ability 2
+		//"Ability3"						"ursa_enrage"			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.		     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"210"					
+
+		"StatusHealth"				"950"		// Base health.
+		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "8114" } // back
+				"Wearable2" { "ItemDef" "8116" } // weapon
+				"Wearable3" { "ItemDef" "8117" } // head
+				"Wearable4" { "ItemDef" "8115" } // misc
+			}
+		}
+    }
+}

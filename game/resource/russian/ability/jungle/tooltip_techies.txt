@@ -1,0 +1,4 @@
+"DOTA_Tooltip_ability_techies_suicide"		            "БИГ БУМ"
+"DOTA_Tooltip_ability_techies_suicide_Lore"		            "У него еще есть порох в пороховнице."
+"DOTA_Tooltip_Ability_techies_suicide_SummaryDescription" ""
+"DOTA_Tooltip_ability_techies_suicide_Description"		"Течис чует твой страх издалека, притаившись в кустиках, он не оставляет шансов на побег"

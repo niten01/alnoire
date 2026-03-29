@@ -21,12 +21,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"numPonds"		        	"4"	
-            "pondRadius"            	"300"
+			"numPonds"		        	"3"	
+            "pondRadius"            	"250"
 			"pondDuration"				"9.5"
-            "pondBuffHpRegen"        	"35.0"
+            "pondBuffHpRegen"        	"60.0"
             "pondBuffAttackSpeedAmp"    "80"
-            "pondDebuffFixedSpeed"      "160"
+            "pondDebuffFixedSpeed"      "200"
             "pondDebuffArmorReduse"     "10"
 		}
 	}

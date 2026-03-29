@@ -13,12 +13,12 @@ function seledka_ponds:OnSpellStart()
     local pondRadius = self:GetSpecialValueFor('pondRadius') or 400
     local castRange = self:GetCastRange(caster:GetAbsOrigin(), nil)
 
-    local spawnedPonds = {}
+    self:CreatePond(caster:GetAbsOrigin())
+    local spawnedPonds = { caster:GetAbsOrigin() }
     local maxAttempts = 50
     local attempts = 0
     local locationFound = 0
-
-    while locationFound < numPonds and attempts < maxAttempts do
+    while locationFound < numPonds - 1 and attempts < maxAttempts do
         attempts = attempts + 1
         local randomOffset = RandomVector(1):Normalized() * RandomFloat(0, castRange)
         local targetPos = caster:GetAbsOrigin() + randomOffset
