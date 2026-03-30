@@ -18,7 +18,7 @@ function modifier_cutscene_player:DeclareFunctions()
 end
 
 function modifier_cutscene_player:GetModifierMoveSpeed_Absolute()
-    return 150
+    return self.ms
 end
 
 function modifier_cutscene_player:GetAbsoluteNoDamageMagical()
@@ -42,7 +42,8 @@ function modifier_cutscene_player:CheckState()
     }
 end
 
-function modifier_cutscene_player:OnCreated()
+function modifier_cutscene_player:OnCreated(kv)
+    self.ms = kv.ms or 150
 end
 
 -- function modifier_cutscene_player:OnDestroy()

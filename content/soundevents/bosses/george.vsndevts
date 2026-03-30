@@ -5,7 +5,7 @@
     type = "dota_update_default"
     vsnd_files =
     [
-        "sounds/vo/doom_bringer/doom_respawn_11.vsnd",
+        "sounds/vo/doom_bringer/doom_respawn_10.vsnd",
     ]
     volume = "2.00000"
     pitch = "1.000000"

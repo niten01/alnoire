@@ -97,10 +97,46 @@ return {
             npc = "npc_xavier",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_xavier_ending                = {
+            npc = "npc_xavier",
+            modifiers = { "modifier_story_npc" },
+        },
         spawner_shooter_1             = {
             npc = "npc_shooter",
             deferred = true,
             modifiers = { "modifier_story_npc" },
+            ai_modifier = "modifier_shooter_ai",
+            packID = "pack_shooter_classroom",
+            team = DOTA_TEAM_BADGUYS,
+        },
+        spawner_shooter_ending        = {
+            npc = "npc_shooter_ending",
+            deferred = true,
+            modifiers = { "modifier_story_npc" },
+            ai_modifier = "modifier_shooter_ending_ai",
+            packID = "pack_shooter_classroom",
+            team = DOTA_TEAM_BADGUYS,
+        },
+        spawner_shooter_hall_1        = {
+            npc = "npc_shooter_ending_mini",
+            deferred = true,
+            ai_modifier = "modifier_default_creep_ai",
+            packID = "pack_shooter_hall_1",
+            team = DOTA_TEAM_BADGUYS,
+        },
+        spawner_shooter_hall_2        = {
+            npc = "npc_shooter_ending_mini",
+            deferred = true,
+            ai_modifier = "modifier_default_creep_ai",
+            packID = "pack_shooter_hall_2",
+            team = DOTA_TEAM_BADGUYS,
+        },
+        spawner_shooter_hall_3        = {
+            npc = "npc_shooter_ending_mini",
+            deferred = true,
+            ai_modifier = "modifier_default_creep_ai",
+            packID = "pack_shooter_hall_3",
+            team = DOTA_TEAM_BADGUYS,
         },
         spawner_gorilla               = {
             npc = "npc_gorilla",
@@ -993,6 +1029,35 @@ return {
             doors = {},
         },
 
+        pack_shooter_classroom = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 1600,
+            rangeRetreat = 5400,
+            rangeAggro = 1000,
+        },
+        pack_shooter_hall_1 = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 3000,
+            rangeRetreat = 3000,
+            rangeAggro = 1000,
+        },
+        pack_shooter_hall_2 = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 3000,
+            rangeRetreat = 3000,
+            rangeAggro = 1000,
+        },
+        pack_shooter_hall_3 = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 3000,
+            rangeRetreat = 3000,
+            rangeAggro = 1000,
+        },
+
         pack_forest_act1_lizards = {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 1600,
@@ -1455,6 +1520,9 @@ return {
             requiresPassword = "carcer immortalium",
             openAnimation = "open",
             particle = "particles/cave_door_open.vpcf",
+        },
+        door_classroom = {
+            clipEntity = "clip_door_classroom",
         },
     },
 

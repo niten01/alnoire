@@ -7,6 +7,7 @@ return {
         "npc_dota_hero_abyssal_underlord",
         "npc_dota_hero_grimstroke",
         "npc_dota_hero_beastmaster",
+        "npc_dota_hero_sniper",
 
         "npc_dota_hero_sanya_towel_master",
         "npc_dota_hero_sanya_rapper",

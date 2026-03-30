@@ -4,19 +4,18 @@
 	{
 		"Model"						"models/heroes/sniper/sniper.vmdl"
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"n_creep_Ranged"
+		"SoundSet"					"Hero_Sniper"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
-		"vscripts" 					"ai/ai_shooter.lua"
-		"Level"						"1"
+		"Level"						"30"
 		"ModelScale" 				"1"
 		"ConsideredHero" 			"1"
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"lich_frost_nova"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability1"					"sniper_concussive_grenade"			// Ability 1
+		"Ability2"					"sniper_shrapnel"			// Ability 2
+		"Ability3"					"sniper_assassinate"			// Ability 3
+		"Ability4"					"shooter_eul"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -52,7 +51,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"60"		// Base health.
+		"StatusHealth"				"6000"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -79,6 +78,11 @@
 			{
 				"Wearable3" { "ItemDef" "281" }
 			}
+		}
+
+		"precache"
+		{
+        	"soundfile"			"soundevents/bosses/shooter.vsndevts"
 		}
 	}
 }

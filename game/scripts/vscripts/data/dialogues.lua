@@ -1122,27 +1122,23 @@ d_untitled_passage_82_merged_act4 = {
 priority = 0,
 conditions = {
 { trigger="trigger_ending_1",type="trigger" },
-{ questID="q_main_quest_act_4",status=QuestStatus.COMPLETED,type="quest" },
 },
 },
 d_untitled_passage_83_merged_act4 = {
 priority = 0,
 conditions = {
-{ trigger="trigger_ending_2",npc="npc_sniper",type="trigger" },
-{ questID="q_main_quest_act_4",status=QuestStatus.COMPLETED,type="quest" },
+{ trigger="trigger_ending_2",type="trigger" },
 },
 },
 d_untitled_passage_84_merged_act4 = {
 priority = 0,
 conditions = {
-{ questID="q_main_quest_act_4",status=QuestStatus.COMPLETED,type="quest" },
-{ beat="npc_sniper",type="beat" },
+{ beat="npc_shooter_ending",type="beat" },
 },
 },
-d_untitled_passage_85_merged_act4 = {
+d_xavier_ending = {
 priority = 0,
 conditions = {
-{ questID="q_main_quest_act_4",status=QuestStatus.COMPLETED,type="quest" },
 { trigger="trigger_ending_3",npc="npc_xavier",type="trigger" },
 },
 },
@@ -4139,7 +4135,7 @@ choices = {
 text = [[Ч.. что?]],
 next = nil,
 actions = {
-{ pack="pack_shooter",type="fight_start" },
+{ pack="pack_shooter_classroom",type="fight_start" },
 },
 },
 },
@@ -13693,8 +13689,8 @@ next = nil,
 },
 d_oblokotitsya_na_stenku_i_zakurit_sigaru = {
 text = [[*Вооружённая фигура распахивает дверь и влетает в кабинет.*]],
-speaker = [[Скул Шутер]],
-npc = "npc_shooter",
+speaker = [[Скулшутер]],
+npc = "npc_shooter_ending",
 choices = {
 {
 text = [[*Поставить подножку.*]],
@@ -13757,8 +13753,8 @@ next = nil,
 d_postavit_podnozhku = {
 text = [[*Он с грохотом падает на пол.*
 ТЫ ОХУЕЛ СОВСЕМ ТАМ?!]],
-speaker = [[Скул Шутер]],
-npc = "npc_shooter",
+speaker = [[Скулшутер]],
+npc = "npc_shooter_ending",
 choices = {
 {
 text = [[*Потушить об него сигару.*]],
@@ -13769,8 +13765,8 @@ next = "d_potushit_ob_nego_sigaru",
 d_potushit_ob_nego_sigaru = {
 text = [[АЙ АЙ ЯЙ АЙ ЯЙ!! 
 *Он вскочил.*]],
-speaker = [[Скул Шутер]],
-npc = "npc_shooter",
+speaker = [[Скулшутер]],
+npc = "npc_shooter_ending",
 choices = {
 {
 text = [[*Поправить волосы.*]],
@@ -13780,8 +13776,8 @@ next = "d_x1",
 },
 d_potushit_sigaru_i_pojmat_pulu_zubami = {
 text = [[А? ЧЕГО?!]],
-speaker = [[Скул Шутер]],
-npc = "npc_shooter",
+speaker = [[Скулшутер]],
+npc = "npc_shooter_ending",
 choices = {
 {
 text = [[*Выплюнуть пулю прям в него.*]],
@@ -13836,8 +13832,8 @@ next = "d_prishlo_vremya_nakazyvat",
 },
 d_rasstegnut_shirinku = {
 text = [[]],
-speaker = [[Скул Шутер]],
-npc = "npc_shooter",
+speaker = [[Скулшутер]],
+npc = "npc_shooter_ending",
 choices = {
 {
 text = [[Закрыть.]],
@@ -14086,33 +14082,32 @@ next = "d_x",
 d_untitled_passage_83_merged_act4 = {
 text = [[*Подойдя к двери, ты слышишь приближающиеся шаги.*]],
 speaker = [[...]],
-npc = "npc_shooter",
+npc = "npc_shooter_ending",
 choices = {
 {
 text = [[*Облокотиться на стенку и закурить сигару.*]],
 next = "d_oblokotitsya_na_stenku_i_zakurit_sigaru",
+actions = {
+{ spawn="spawner_shooter_ending",type="spawn" },
+},
 },
 },
 },
 d_untitled_passage_84_merged_act4 = {
 text = [[*Этот готов. В коридрое всё ещё слышны выстрелы, похоже он пришёл не один. Пришло время выносить мусор.*]],
 speaker = [[...]],
-npc = "npc_shooter",
+npc = "npc_shooter_ending",
 choices = {
 {
 text = [[Закрыть.]],
 next = nil,
+actions = {
+{ npc="npc_shooter_ending",type="kill" },
+{ door="door_classroom",type="open_door" },
+{ pack="pack_shooter_hall_1",type="fight_start" },
+{ pack="pack_shooter_hall_2",type="fight_start" },
+{ pack="pack_shooter_hall_3",type="fight_start" },
 },
-},
-},
-d_untitled_passage_85_merged_act4 = {
-text = [[*Это же Xavier. Он улыбается.*]],
-speaker = [[Xaviersobased]],
-npc = "npc_xavier",
-choices = {
-{
-text = [[Ч-что?! Ксавьер, что ты тут делаешь?]],
-next = "d_chchto_ksaver_chto_ty_tut_delaesh",
 },
 },
 },
@@ -14145,6 +14140,17 @@ choices = {
 {
 text = [[...]],
 next = "d_t3",
+},
+},
+},
+d_ending_close = {
+text = [[]],
+speaker = [[xaviersobased]],
+npc = "npc_xavier",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -14279,6 +14285,17 @@ choices = {
 {
 text = [[Теперь понятно.]],
 next = "d_teper_ponyatno",
+},
+},
+},
+d_shooter_ending_beat_close = {
+text = [[]],
+speaker = [[...]],
+npc = "npc_shooter_ending",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -14480,12 +14497,23 @@ next = "d_rad_chto_srabotalo",
 },
 d_x1 = {
 text = [[СУЧАРА, ТЫ СЕЙЧАС БУДЕШЬ ПОРОХ С МОИХ ТАПОК СЛИЗЫВАТЬ!]],
-speaker = [[Скул Шутер]],
-npc = "npc_shooter",
+speaker = [[Скулшутер]],
+npc = "npc_shooter_ending",
 choices = {
 {
 text = [[Эй ты, носатый. Давай сразимся. Если драка будет скучной, то тебя пустит по кругу вся аудитория, понял? Погнали!]],
 next = "d_ej_ty_nosatyj_davaj_srazimsya_esli_draka_budet_skuchnoj_to_tebya_pustit_po_krugu_vsya_auditoriya_ponyal_pognali",
+},
+},
+},
+d_xavier_ending = {
+text = [[*Это же Xavier. Он улыбается.*]],
+speaker = [[xaviersobased]],
+npc = "npc_xavier",
+choices = {
+{
+text = [[Ч-что?! Ксавьер, что ты тут делаешь?]],
+next = "d_chchto_ksaver_chto_ty_tut_delaesh",
 },
 },
 },
@@ -14641,8 +14669,8 @@ next = "d_ty_ved_znaesh_pochemu_oni_napali_na_tebya",
 d_zdarova_pidrila = {
 text = [[ЧЁ СКАЗАЛ?!
 *Он наводит ствол на тебя и сразу же стреляет.*]],
-speaker = [[Скул Шутер]],
-npc = "npc_shooter",
+speaker = [[Скулшутер]],
+npc = "npc_shooter_ending",
 choices = {
 {
 text = [[*Потушить сигару и поймать пулю зубами.*]],
@@ -14664,12 +14692,15 @@ next = "d_domoj_eto_kuda",
 },
 d_kak_ohuenno = {
 text = [[*Конец.*]],
-speaker = [[Xaviersobased]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
-text = [[Закрыть.]],
+text = [[Закрыть]],
 next = nil,
+actions = {
+{ type="start_final_walk" },
+},
 },
 },
 },
@@ -14845,7 +14876,7 @@ next = "d_u6__1",
 },
 d_pprivet__1 = {
 text = [[Не провйодишь миня до метро?]],
-speaker = [[Xaviersobased]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
@@ -14942,7 +14973,7 @@ next = "d_t",
 },
 d_s_radostu = {
 text = [[*Вы вместе отправляетесь в метро. Дальше ходите по магазинам, а потом ты показываешь ему достопримечательности. После покупаете бабл-ти и гуляете по ночной Москве.*]],
-speaker = [[Xaviersobased]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
@@ -15097,7 +15128,7 @@ next = "d_s4",
 d_chchto_ksaver_chto_ty_tut_delaesh = {
 text = [[Привьет, Алекс.
 *Сказал он с сильным акцентом.*]],
-speaker = [[Xaviersobased]],
+speaker = [[xaviersobased]],
 npc = "npc_xavier",
 choices = {
 {
@@ -15119,14 +15150,15 @@ next = "d_takoe_chmo_ne_mozhet_pomogat_drugim",
 },
 d_ej_ty_nosatyj_davaj_srazimsya_esli_draka_budet_skuchnoj_to_tebya_pustit_po_krugu_vsya_auditoriya_ponyal_pognali = {
 text = [[ЧЕГО.]],
-speaker = [[Скул Шутер]],
-npc = "npc_shooter",
+speaker = [[Скулшутер]],
+npc = "npc_shooter_ending",
 choices = {
 {
 text = [[*Расстегнуть ширинку.*]],
 next = nil,
 actions = {
-{ target="talk",fight_start="npc_shooter",type="fight_start" },
+{ pack="pack_shooter_classroom",nonLethalNPC="npc_shooter_ending",type="fight_start" },
+{ music="music.ending.combat",type="music_start" },
 },
 },
 },

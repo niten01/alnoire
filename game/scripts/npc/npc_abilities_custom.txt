@@ -1,5 +1,6 @@
 // Dota Heroes File
 
+#base "abilities/bosses/shooter_abilities.txt"
 #base "abilities/bosses/mk_abilities.txt"
 #base "abilities/bosses/ogre_bruiser_abilities.txt"
 #base "abilities/bosses/island_guard_abilities.txt"

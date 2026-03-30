@@ -74,5 +74,10 @@
 		"VisionDaytimeRange"		"400"		// Range of vision during day light.
 		"VisionNighttimeRange"		"400"		// Range of vision at night time.
 		"HasInventory"              "1"
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_tidehunter/tidehunter_krakenshell_purge.vpcf"
+		}
 	}
 }

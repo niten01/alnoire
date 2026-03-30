@@ -303,6 +303,8 @@ function Handlers.add_demon_power(playerID, action)
   assert(hero)
   if hero:GetUnitName() == "npc_dota_hero_sanya_rapper" then
     hero:AddNewModifier(hero, nil, "modifier_demon_power_rapper", { duration = -1 })
+  elseif hero:GetUnitName() == "npc_dota_hero_sanya_towel_master" then
+    hero:AddNewModifier(hero, nil, "modifier_demon_power_towel_master", { duration = -1 })
   else
     DebugPrint("[???] demon power not implemented")
   end
@@ -351,6 +353,44 @@ function Handlers.start_city_finale_cutscene(playerID, action)
   prettyRemoveNPC("npc_guide")
   SpawnManager:SpawnNPC("spawner_guide_forest_entrance")
   CityCutscene:Start(playerID)
+
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  assert(hero)
+  hero:AddNewModifier(nil, nil, "modifier_ending_evade", { duration = -1 })
+
+  fastRemoveNPC("npc_xavier")
+  SpawnManager:SpawnNPC("spawner_xavier_ending")
+  triggerSetEnabled("trigger_ending_1", true)
+  triggerSetEnabled("trigger_ending_2", true)
+  triggerSetEnabled("trigger_ending_3", true)
+  SpawnManager:SpawnNPC("spawner_shooter_hall_1")
+  SpawnManager:SpawnNPC("spawner_shooter_hall_2")
+  SpawnManager:SpawnNPC("spawner_shooter_hall_3")
+end
+
+function Handlers.start_final_walk(playerID, action)
+  Music:StartCustomMusic(playerID, "music.ending.finale")
+  local player = PlayerResource:GetPlayer(playerID)
+  assert(player)
+  CustomGameEventManager:Send_ServerToPlayer(player, "cutscene_show_bars", {})
+
+  local wp = Entities:FindByName(nil, "ending_waypoint")
+  assert(wp)
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  assert(hero)
+  local xavier = Entities:FindByName(nil, "npc_xavier")
+  assert(xavier)
+  PlayerResource:SetCameraTarget(playerID, hero)
+  GameRules:GetGameModeEntity():SetCameraSmoothCountOverride(30)
+  hero:MoveToPosition(wp:GetAbsOrigin())
+  xavier:MoveToPosition(wp:GetAbsOrigin())
+
+  hero:AddNewModifier(nil, nil, "modifier_cutscene_player", { duration = -1, ms = 100 })
+  xavier:AddNewModifier(nil, nil, "modifier_cutscene_player", { duration = -1, ms = 100 })
+  Timers:CreateTimer(17, function()
+    CustomGameEventManager:Send_ServerToPlayer(player, "cutscene_show_fade", {})
+    GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+  end)
 end
 
 function StoryDriver:StartFight(packName, nonLethalNPC)

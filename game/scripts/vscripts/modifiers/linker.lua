@@ -20,6 +20,7 @@ LinkLuaModifier("modifier_island_traps_participant", "modifiers/modifier_island_
     LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_immobile", "modifiers/modifier_immobile", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_cutscene_player", "modifiers/modifier_cutscene_player", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_ending_evade", "modifiers/modifier_ending_evade", LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier('modifier_king_tower', 'modifiers/modifier_king_tower', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_tower', 'modifiers/modifier_tower', LUA_MODIFIER_MOTION_NONE)
@@ -52,6 +53,8 @@ LinkLuaModifier("modifier_morph_small", "modifiers/ocean/modifier_morph_big", LU
 
 -- ai
 LinkLuaModifier("modifier_default_creep_ai", "modifiers/ai/modifier_default_creep_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_shooter_ai", "modifiers/ai/modifier_shooter_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_shooter_ending_ai", "modifiers/ai/modifier_shooter_ending_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_axe_ai", "modifiers/ai/modifier_axe_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mk_ai", "modifiers/ai/modifier_mk_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_techies_ai", "modifiers/ai/modifier_techies_ai", LUA_MODIFIER_MOTION_NONE)
@@ -92,3 +95,5 @@ LinkLuaModifier("modifier_desert_nyx_ai", "modifiers/ai/modifier_desert_nyx_ai",
 -- bosses
 LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_demon_power_rapper', 'modifiers/modifier_demon_power_rapper', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_demon_power_towel_master', 'modifiers/modifier_demon_power_towel_master', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_demon_power_towel_summon', 'modifiers/modifier_demon_power_towel_summon', LUA_MODIFIER_MOTION_NONE)

@@ -54,6 +54,10 @@ function Dialogue:Init()
     self:HideDialogue(event.playerID)
   end)
 
+  ChatCommand:LinkDevCommand("-dialoguestart", function(event, args)
+    self:StartDialogueForPlayer(event.playerID, args[1])
+  end)
+
   DebugPrint("[ALNOIRE] Loaded " ..
     TableLength(self.dialogueGraph) .. " dialogue nodes with " .. TableLength(self.entryPoints) .. " entry points.")
 end
