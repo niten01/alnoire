@@ -196,6 +196,8 @@ return {
         "npc_dota_hero_earthshaker",
         "npc_dota_furion_treant",
         "npc_dota_hero_nyx_assassin",
+        "npc_dota_hero_viper",
+        "npc_dota_hero_life_stealer",
 
 
         -- jungle
@@ -269,6 +271,8 @@ return {
         "npc_desert_nyx_1",
         "npc_desert_nyx_2",
         "npc_desert_nyx_3",
+        "npc_desert_viper",
+        "npc_desert_lifestealer",
 
 
         -- traps

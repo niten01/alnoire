@@ -149,7 +149,7 @@ return {
             deferred = true,
             modifiers = { "modifier_story_npc" },
         },
-        spawner_guide_finale = {
+        spawner_guide_finale          = {
             npc = "npc_guide",
             deferred = true,
             modifiers = { "modifier_story_npc" },
@@ -852,6 +852,20 @@ return {
             ai_modifier = "modifier_desert_nyx_ai",
         },
 
+        spawner_desert_viper          = {
+            npc = "npc_desert_viper",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_viperstealer",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+
+        spawner_desert_lifestealer    = {
+            npc = "npc_desert_lifestealer",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_viperstealer",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+
 
         spawner_dream_concert         = {
             npc = "npc_dream",
@@ -1175,6 +1189,13 @@ return {
         },
 
         pack_desert_act4_nyxs = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_desert_act4_viperstealer = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,
