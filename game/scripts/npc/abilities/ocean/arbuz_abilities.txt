@@ -12,8 +12,8 @@
 		"AbilityValues"
 		{
             "damageReductionMaxPercent"    "97.0"
-            "modelScaleMaxPercent"         "100"
-            "power"                        "1.25"
+            "modelScaleMaxPercent"         "150"
+            "power"                        "1.15	"
 			"maxAoeIncrease"				"400"
 		}
 	}
@@ -37,7 +37,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0 6.0 5.0 4.0"
+		"AbilityCooldown"				"5.0 6.0 5.0 4.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -50,21 +50,21 @@
 		{
 			"attack_damage"			
 			{
-				"value"										"50 100 150 200"
+				"value"										"200 100 150 200"
 				//"special_bonus_unique_tidehunter_9"			"+40"
 				"CalculateSpellDamageTooltip"				"0"
 			}
 			"damage_reduction"		
 			{
-				"value"										"-25 -30 -35 -40"
+				"value"										"-30 -30 -35 -40"
 				"special_bonus_unique_tidehunter_3"			"-10"
 				"CalculateSpellDamageTooltip"				"0"
 				"DamageTypeTooltip"							"DAMAGE_TYPE_NONE"
 			}
-			"reduction_duration"							"6.0 6.0 6.0 6.0"
+			"reduction_duration"							"5.0 6.0 6.0 6.0"
 			"radius"										
 			{
-				"value" "400"
+				"value" "350"
 				"affected_by_aoe_increase"	"1"
 			}
 			"targets_buildings"
@@ -104,7 +104,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"15"
 
 		// Damage.
 		"AbilityDamage"					"0"
@@ -118,10 +118,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"attacks_to_destroy"			"7"
-			"max_movement_speed"			"100"
+			"attacks_to_destroy"			"2"
+			"max_movement_speed"			"130"
 			"chain_length"					"350"
-			"duration"						"10"
+			"duration"						"100"
 			"projectile_speed"				"1000"
 		}
 	}
