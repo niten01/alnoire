@@ -14,7 +14,7 @@
 			"magical_damage_per_stack"	"5 8 12 15"
 			"lifesteal_pct_per_stack"	"15"
 			"max_stacks"				"20"
-			"spell_amp_pct"				"0 20 40 60"
+			"spell_amp_pct"				"0 20 30 40"
 		}
 
 		"precache"

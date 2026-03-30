@@ -12,9 +12,9 @@
 
 		"AbilityValues"
 		{
-            "rangeAoe"              "200"
+            "rangeAoe"              "300"
             "delayBeforeExplosion"  "0"
-            "explosionDamage"       "95"
+            "explosionDamage"       "140"
 		}
 	}
 

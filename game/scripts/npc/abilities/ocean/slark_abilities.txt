@@ -12,10 +12,10 @@
         
         "AbilityValues"
         {
-            "healMult"                      "2.0"
+            "healMult"                      "1.0"
             "minDuration"                   "1.5"
             "maxDuration"                   "5.0"
-            "durationPerAttackLanded"       "2.0"
+            "durationPerAttackLanded"       "0.7"
             "minWait"                       "1.0"
             "maxWait"                       "3.0"
         }
@@ -33,10 +33,10 @@
 		"AbilityValues"
 		{
             "strPerStack"           "3"
-            "agilPerStack"          "5"
-            "stacksForDeath"        "5"
+            "agilPerStack"          "2"
+            "stacksForDeath"        "50"
             "stackDuration"         "16.0"
-            "modelScalePerStack"         "10.0"
+            "modelScalePerStack"         "2.0"
 		}
 	}
 

@@ -6,7 +6,7 @@
 		"ScriptFile" 				"abilities/rapper_flow.lua"
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
 		"AbilityTextureName"		"rapper_flow"
-		"MaxLevel"					"3"
+		"MaxLevel"					"4"
 		"RequiredLevel"				"1"
 
 		"AbilityValues"

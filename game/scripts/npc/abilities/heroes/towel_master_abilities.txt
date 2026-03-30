@@ -135,7 +135,7 @@
 		{
 			"radius"					"400 450 500 550"
 			"bonus_damage"				"40 50 60 70"
-			"hp_per_sec"				"1.5 2 2.5 3"
+			"hp_per_sec"				"2 4 6 8"
 		}
 
 		"precache"

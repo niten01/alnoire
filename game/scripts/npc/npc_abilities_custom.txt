@@ -39,6 +39,7 @@
 #base "abilities/darkforest/dark_shaker_abilities.txt"
 #base "abilities/darkforest/dark_treant_abilities.txt"
 #base "abilities/desert/desert_nyx_abilities.txt"
+#base "abilities/desert/desert_viper_abilities.txt"
 
 
 
