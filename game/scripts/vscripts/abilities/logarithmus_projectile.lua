@@ -78,8 +78,12 @@ function logarithmus_projectile:OnVectorCastStart(vStartLocation, vDirection)
 end
 
 function logarithmus_projectile:OnProjectileHit(target, direction)
-  if not IsServer() or not target then return end
+  if not IsServer() then return end
   local caster = self:GetCaster()
+  if not target then
+    BreakLogarithmusCombo(caster)
+    return
+  end
   local targetPos = target:GetAbsOrigin()
   direction = direction:Normalized()
   direction.z = 0

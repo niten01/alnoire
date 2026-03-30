@@ -49,6 +49,8 @@ function logarithmus_anchor_return:OnSpellStart()
 
   if #enemies > 0 then
     IncrementLogarithmusStacks(caster)
+  else
+    BreakLogarithmusCombo(caster)
   end
 
   caster:Stop()

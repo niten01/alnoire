@@ -129,6 +129,7 @@
 		"precache"
 		{
 			"particle"		"particles/rapper_souljah_projectile.vpcf"
+			"particle"		"particles/rapper_souljah_projectile_lean.vpcf"
 		}
 	}
 }

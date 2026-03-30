@@ -34,3 +34,4 @@
 "npc_george" "Джорж Богоподобный"
 "npc_flask_barrel" "Бочка"
 "npc_chaser"        "Преследователь"
+"npc_leader"        "Глава"

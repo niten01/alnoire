@@ -288,4 +288,90 @@
             "shield_per_sec"      "15"
         }
     }
+    "item_demon_power_logarithmus"
+    {
+        "BaseClass"             "item_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemQuality"                   "rare"
+        "AbilityValues"
+        {
+            "lifesteal_pct_per_stack"      "5"
+            "max_stacks"                   "20"
+            "decay_time"                   "10"
+        }
+    }
+    "item_lean_power_towel_master" 
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "percocet_xavier"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemPermanent"                 "0"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemDroppable"                 "0"
+        "ItemInitialCharges"            "1" 
+        "ItemQuality"                   "rare"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+        "OnSpellStart"
+        {
+            "SpendCharge"		{}
+            "ApplyModifier"
+            {
+                "ModifierName"	"modifier_lean_power_towel_master"
+                "Target"		"CASTER"
+                "Duration"		"-1"
+            }
+            "FireSound"
+            {
+                "EffectName"	"items.ski.consume"
+                "Target"		"CASTER"
+            }
+        }
+        
+        "AbilityValues"
+        {
+            "damage"      "100" // magical
+            "radius"      "200"
+            "chance_pct"  "10"
+        }
+    }
+    "item_lean_power_rapper" 
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "percocet_xavier"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemPermanent"                 "0"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemDroppable"                 "0"
+        "ItemInitialCharges"            "1" 
+        "ItemQuality"                   "rare"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+        "OnSpellStart"
+        {
+            "SpendCharge"		{}
+            "ApplyModifier"
+            {
+                "ModifierName"	"modifier_lean_power_rapper"
+                "Target"		"CASTER"
+                "Duration"		"-1"
+            }
+            "FireSound"
+            {
+                "EffectName"	"items.ski.consume"
+                "Target"		"CASTER"
+            }
+        }
+        
+        "AbilityValues"
+        {
+            "damage"      "100" // magical
+            "radius"      "200"
+            "chance_pct"  "10"
+        }
+    }
 }

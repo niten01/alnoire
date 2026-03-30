@@ -233,9 +233,7 @@
     "precache"
     {
       "soundfile"         "soundevents/heroes/towel_master.vsndevts"
-      // "model"          k                                   "models/heroes/sohei/bepis_sohei/bepis_sohei_base.vmdl"
-      // "particle"                                          "particles/hero/sohei/arcana/dbz/dbz_flare_core.vpcf"
-      // "particle"                                          "particles/hero/sohei/arcana/pepsi/pepsi_flare_core.vpcf"
+      "particle"		      "particles/lean_power_splash.vpcf"
     }
     // "particle_folder"                                     "particles/hero/sohei"
     // "GameSoundsFile"                                      "soundevents/units/game_sounds_sohei.vsndevts"
@@ -483,6 +481,7 @@
 		"precache"
 		{
         "particle"      "particles/logarithmus_blade_effect.vpcf"
+        "particle"		  "particles/logarithmus_demon_power_lifesteal.vpcf"
         "soundfile"			"soundevents/heroes/logarithmus.vsndevts"
 		}
     // "particle_folder"                                     "particles/hero/sohei"

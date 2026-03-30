@@ -55,9 +55,14 @@ function rapper_souljah:Fire()
     dir.z = 0
 
     caster:EmitSound("Hero_Rapper.Attack")
+
+    local leanMod = caster:FindModifierByName("modifier_lean_power_rapper")
+    local isLean = leanMod and RollPercentage(leanMod.chancePct)
+
     ProjectileManager:CreateLinearProjectile({
         Ability = self,
-        EffectName = "particles/rapper_souljah_projectile.vpcf",
+        EffectName = isLean and "particles/rapper_souljah_projectile_lean.vpcf" or
+            "particles/rapper_souljah_projectile.vpcf",
         vSpawnOrigin = startPos,
         vVelocity = dir * self.shotSpeed,
         fDistance = range,
@@ -69,15 +74,36 @@ function rapper_souljah:Fire()
         iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
         bProvidesVision = true,
         iVisionRadius = 500,
-        iVisionTeamNumber = caster:GetTeamNumber()
+        iVisionTeamNumber = caster:GetTeamNumber(),
+        ExtraData = {
+            isLean = isLean,
+            leanRadius = isLean and leanMod.radius,
+            leanDamage = isLean and leanMod.damage,
+        }
     })
 end
 
-function rapper_souljah:OnProjectileHit(target, location)
+function rapper_souljah:OnProjectileHit_ExtraData(target, location, data)
     if not target then return end
     local caster = self:GetCaster()
 
     caster:PerformAttack(target, true, true, true, false, false, false, false)
+
+    if IsServer() and data.isLean > 0 then
+        assert(data.leanRadius and data.leanDamage)
+        PlayLeanSplash(target, data.leanRadius)
+
+        local enemies = FindEnemiesForSanyaInRadius(target:GetAbsOrigin(), data.leanRadius)
+        for _, ent in ipairs(enemies) do
+            ApplyDamage({
+                victim = ent,
+                attacker = self:GetCaster(),
+                damage = data.leanDamage,
+                damage_type = DAMAGE_TYPE_MAGICAL,
+                ability = self,
+            })
+        end
+    end
 end
 
 function rapper_souljah:OnChannelThink(dt)

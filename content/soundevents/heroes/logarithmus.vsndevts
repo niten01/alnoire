@@ -357,4 +357,19 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
+  ability.logarithmus.combo_break = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/dawnbreaker/guardian_interrupt.vsnd",
+    ]
+    volume = "0.20000"
+    pitch = "0.700000"
+    pitch_rand_min = "-0.050000"
+    pitch_rand_max = "0.050000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
 }

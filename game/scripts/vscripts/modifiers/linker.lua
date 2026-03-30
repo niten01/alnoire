@@ -40,6 +40,7 @@ LinkLuaModifier("modifier_island_duo_hidden", "modifiers/abilities/modifier_isla
 LinkLuaModifier("modifier_island_duo_hidden_vis", "modifiers/abilities/modifier_island_duo_hidden_vis",
     LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_george_burn", "modifiers/abilities/modifier_george_burn", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)
 
 -- jungle
 LinkLuaModifier("modifier_cust_rosh", "modifiers/jungle/modifier_cust_rosh", LUA_MODIFIER_MOTION_NONE)
@@ -92,8 +93,12 @@ LinkLuaModifier("modifier_desert_nyx_ai", "modifiers/ai/modifier_desert_nyx_ai",
 
 
 
--- bosses
-LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)
+-- shards / talents
 LinkLuaModifier('modifier_demon_power_rapper', 'modifiers/modifier_demon_power_rapper', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_demon_power_towel_master', 'modifiers/modifier_demon_power_towel_master', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_demon_power_towel_summon', 'modifiers/modifier_demon_power_towel_summon', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_demon_power_logarithmus', 'modifiers/modifier_demon_power_logarithmus', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_demon_power_logarithmus_combo', 'modifiers/modifier_demon_power_logarithmus', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_lean_power_towel_master', 'modifiers/modifier_lean_power_towel_master', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_lean_power_towel_summon', 'modifiers/modifier_lean_power_towel_summon', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_lean_power_rapper', 'modifiers/modifier_lean_power_rapper', LUA_MODIFIER_MOTION_NONE)

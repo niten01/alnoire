@@ -88,6 +88,8 @@ function logarithmus_step:OnVectorCastStart(vStartLocation, vDirection)
         else
             self.sequentialUses = 0
         end
+    else
+        BreakLogarithmusCombo(caster)
     end
 end
 

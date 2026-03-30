@@ -94,6 +94,8 @@ function logarithmus_alt_throw:OnSpellStart()
 
         if hit then
             IncrementLogarithmusStacks(caster)
+        else
+            BreakLogarithmusCombo(caster)
         end
     end)
 end

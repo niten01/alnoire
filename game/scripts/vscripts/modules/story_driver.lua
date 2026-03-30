@@ -305,8 +305,10 @@ function Handlers.add_demon_power(playerID, action)
     hero:AddNewModifier(hero, nil, "modifier_demon_power_rapper", { duration = -1 })
   elseif hero:GetUnitName() == "npc_dota_hero_sanya_towel_master" then
     hero:AddNewModifier(hero, nil, "modifier_demon_power_towel_master", { duration = -1 })
+  elseif hero:GetUnitName() == "npc_dota_hero_sanya_logarithmus" then
+    hero:AddNewModifier(hero, nil, "modifier_demon_power_logarithmus", { duration = -1 })
   else
-    DebugPrint("[???] demon power not implemented")
+    assert(false, "[???] demon power not implemented")
   end
 end
 
