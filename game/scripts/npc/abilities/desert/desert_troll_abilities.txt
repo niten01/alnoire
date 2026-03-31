@@ -1,0 +1,18 @@
+"DOTAAbilities"
+{
+    "desert_troll_fevor"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/desert/desert_troll_fevor"
+		"AbilityTextureName"            "troll_warlord_fervor"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityValues"
+		{
+			"maxStacks"					"20"
+			"stacksDuration"			"5.0"
+			"attackSpeedPerAttack"		"15"
+		}
+	}
+}

@@ -200,6 +200,11 @@ return {
         "npc_dota_hero_nyx_assassin",
         "npc_dota_hero_viper",
         "npc_dota_hero_life_stealer",
+        "npc_dota_hero_huskar",
+        "npc_dota_hero_troll_warlord",
+        "npc_dota_hero_legion_commander",
+        "npc_dota_hero_mars",
+
 
 
         -- jungle
@@ -275,6 +280,11 @@ return {
         "npc_desert_nyx_3",
         "npc_desert_viper",
         "npc_desert_lifestealer",
+        "npc_desert_huskar",
+        "npc_desert_troll",
+        "npc_desert_dire_melee",
+        "npc_desert_dire_range",
+        "npc_desert_dire_siege",
 
 
         -- traps
@@ -336,6 +346,7 @@ return {
         "soundevents/darkforest/dark_drow.vsndevts",
         "soundevents/darkforest/dark_ursa.vsndevts",
         "soundevents/darkforest/dark_shaker.vsndevts",
+        "soundevents/desert/desert_dire.vsndevts",
         "soundevents/bosses/ball.vsndevts",
     },
     particles = {
@@ -456,6 +467,7 @@ return {
         -- desert
         "particles/units/heroes/hero_nyx_assassin/nyx_assassin_burrow_exit.vpcf",
         "particles/units/heroes/hero_nyx_assassin/nyx_assassin_burrow.vpcf",
+        "particles/units/heroes/hero_huskar/huskar_inner_fire.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",

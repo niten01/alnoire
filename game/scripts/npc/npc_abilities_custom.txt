@@ -40,6 +40,8 @@
 #base "abilities/darkforest/dark_treant_abilities.txt"
 #base "abilities/desert/desert_nyx_abilities.txt"
 #base "abilities/desert/desert_viper_abilities.txt"
+#base "abilities/desert/desert_huskar_abilities.txt"
+#base "abilities/desert/desert_troll_abilities.txt"
 
 
 
