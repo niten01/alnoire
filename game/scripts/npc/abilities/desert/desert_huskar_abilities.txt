@@ -1,0 +1,26 @@
+"DOTAAbilities"
+{
+    "desert_huskar_push"
+    {
+        "BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/desert/desert_huskar_push"
+		"AbilityTextureName"            "huskar_berserkers_blood"
+        "AbilityCooldown"               "12.0"
+        "AbilityCastRange"              "1500"
+        "AbilityCastPoint"              "0.3"
+
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+
+		"AbilityValues"
+		{
+            "jumpSpeed"         "1200"
+            "jumpImpactRadius"  "400"
+            "pushDistance"      "400"
+            "pushDuration"      "0.75"
+            "initialDamage"     "130"
+            "offset"            "180"
+		}
+    }
+}

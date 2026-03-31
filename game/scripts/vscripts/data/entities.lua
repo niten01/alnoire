@@ -97,7 +97,7 @@ return {
             npc = "npc_xavier",
             modifiers = { "modifier_story_npc" },
         },
-        spawner_xavier_ending                = {
+        spawner_xavier_ending         = {
             npc = "npc_xavier",
             modifiers = { "modifier_story_npc" },
         },
@@ -902,6 +902,20 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
+        spawner_desert_huskar         = {
+            npc = "npc_desert_huskar",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_trollhuskar",
+            ai_modifier = "modifier_desert_huskar_ai",
+        },
+
+        spawner_desert_troll          = {
+            npc = "npc_desert_troll",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_trollhuskar",
+            modifiers = { 'modifier_desert_troll' },
+            ai_modifier = "modifier_default_creep_ai",
+        },
 
         spawner_dream_concert         = {
             npc = "npc_dream",
@@ -1261,6 +1275,13 @@ return {
         },
 
         pack_desert_act4_viperstealer = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_desert_act4_trollhuskar = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,

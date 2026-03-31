@@ -49,6 +49,9 @@ LinkLuaModifier("modifier_tusik_papa_hide", "modifiers/ocean/modifier_tusik_papa
 LinkLuaModifier("modifier_morph_big", "modifiers/ocean/modifier_morph_big", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_morph_small", "modifiers/ocean/modifier_morph_big", LUA_MODIFIER_MOTION_NONE)
 
+-- desert
+LinkLuaModifier('modifier_desert_troll', 'modifiers/desert/modifier_desert_troll', LUA_MODIFIER_MOTION_NONE)
+
 
 
 -- ai
@@ -87,6 +90,7 @@ LinkLuaModifier("modifier_dark_greevil_ai", "modifiers/ai/modifier_dark_greevil_
 LinkLuaModifier("modifier_dark_shaker_ai", "modifiers/ai/modifier_dark_shaker_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_dark_treant_ai", "modifiers/ai/modifier_dark_treant_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_desert_nyx_ai", "modifiers/ai/modifier_desert_nyx_ai", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_desert_huskar_ai", "modifiers/ai/modifier_desert_huskar_ai", LUA_MODIFIER_MOTION_NONE)
 
 
 
@@ -95,5 +99,7 @@ LinkLuaModifier("modifier_desert_nyx_ai", "modifiers/ai/modifier_desert_nyx_ai",
 -- bosses
 LinkLuaModifier("modifier_mk_summon_idle", "modifiers/bosses/modifier_mk_summon_idle", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_demon_power_rapper', 'modifiers/modifier_demon_power_rapper', LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier('modifier_demon_power_towel_master', 'modifiers/modifier_demon_power_towel_master', LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier('modifier_demon_power_towel_summon', 'modifiers/modifier_demon_power_towel_summon', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_demon_power_towel_master', 'modifiers/modifier_demon_power_towel_master',
+    LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_demon_power_towel_summon', 'modifiers/modifier_demon_power_towel_summon',
+    LUA_MODIFIER_MOTION_NONE)

@@ -349,4 +349,165 @@
 			}
 		}
     }
+
+	"npc_desert_huskar"
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"		"models/heroes/huskar/huskar.vmdl"
+		"SoundSet"		"Hero_Huskar"
+		"BaseClass"					"npc_dota_creature"
+		"Level"						"1"
+		"ModelScale" 				"1.0"
+		"vscripts"					"ai/huskar.lua"
+		
+		"Ability1"						"desert_huskar_push"			// Ability 1
+		//"Ability2"					    "dark_drow_hg_passive"			// Ability 2
+		//"Ability3"					""			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"1"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"15"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackRate"				"1.1"		// Speed of attack.
+		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"1300"		// Range within a target can be attacked.
+		"ProjectileModel"		"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+		"ProjectileSpeed"		"1400"
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"255"					
+
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "23282" } // arms
+				"Wearable2" { "ItemDef" "22709" } // head
+				"Wearable3" { "ItemDef" "23281" } // semi-weapon
+				"Wearable4" { "ItemDef" "22710" } // body
+				"Wearable5" { "ItemDef" "268" } // weapon
+			}
+		}
+	}
+
+	"npc_desert_troll"
+	{
+        // General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/troll_warlord/troll_warlord.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_TrollWarlord"
+		"Level"						"1"
+		"ModelScale" 				"1.0"
+		
+		"Ability1"						"desert_troll_fevor"			// Ability 1 
+		//"Ability2"						"troll_warlord_switch_stance"			// Ability 3
+		//"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"ProjectileModel"			"particles/units/heroes/hero_troll_warlord/troll_warlord_base_attack.vpcf"
+		"ProjectileSpeed"			"1200"
+		"AttackRange"				"150"		// Range within a target can be attacked.	
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_troll_warlord"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_troll_warlord.vsndevts"	     
+
+		// Bounds
+		"RingRadius"				"40"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"410"					
+
+		"StatusHealth"				"950"		// Base health.
+		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"350"
+			"run_fast"	"400"
+		}
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"200"
+			"faster"	"320"
+			"fastest"	"430"
+		}
+
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "410" } // shoulder
+				"Wearable2" { "ItemDef" "373" } // weapon
+				"Wearable3" { "ItemDef" "411" } // head
+				"Wearable4" { "ItemDef" "412" } // armor
+			}
+		}
+    }
 }
