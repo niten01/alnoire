@@ -52,6 +52,10 @@ LinkLuaModifier("modifier_morph_small", "modifiers/ocean/modifier_morph_big", LU
 
 -- desert
 LinkLuaModifier('modifier_desert_troll', 'modifiers/desert/modifier_desert_troll', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_siege_dj', 'modifiers/desert/modifier_siege_dj', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_desert_dire_animation', 'modifiers/desert/modifier_desert_dire_animation',
+    LUA_MODIFIER_MOTION_NONE)
+
 
 
 

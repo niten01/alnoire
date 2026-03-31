@@ -201,6 +201,8 @@ return {
         "npc_dota_hero_life_stealer",
         "npc_dota_hero_huskar",
         "npc_dota_hero_troll_warlord",
+        "npc_dota_hero_legion_commander",
+        "npc_dota_hero_mars",
 
 
 
@@ -279,6 +281,9 @@ return {
         "npc_desert_lifestealer",
         "npc_desert_huskar",
         "npc_desert_troll",
+        "npc_desert_dire_melee",
+        "npc_desert_dire_range",
+        "npc_desert_dire_siege",
 
 
         -- traps
@@ -340,6 +345,7 @@ return {
         "soundevents/darkforest/dark_drow.vsndevts",
         "soundevents/darkforest/dark_ursa.vsndevts",
         "soundevents/darkforest/dark_shaker.vsndevts",
+        "soundevents/desert/desert_dire.vsndevts",
         "soundevents/bosses/ball.vsndevts",
     },
     particles = {

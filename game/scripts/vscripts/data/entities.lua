@@ -917,6 +917,38 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
 
+        spawner_desert_dire_melee     = {
+            npc = "npc_desert_dire_melee",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_dire_creeps",
+            modifiers = { "modifier_desert_dire_animation" },
+            ai_modifier = "modifier_default_creep_ai",
+        },
+
+        spawner_desert_dire_range     = {
+            npc = "npc_desert_dire_range",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_dire_creeps",
+            modifiers = { "modifier_desert_dire_animation" },
+            ai_modifier = "modifier_default_creep_ai",
+        },
+
+        spawner_desert_dire_siege     = {
+            npc = "npc_desert_dire_siege",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_dire_creeps",
+            modifiers = { "modifier_desert_dire_animation" },
+            ai_modifier = "modifier_default_creep_ai",
+        },
+
+        spawner_desert_dire_siege_dj  = {
+            npc = "npc_desert_dire_siege",
+            team = DOTA_TEAM_BADGUYS,
+            packID = "pack_desert_act4_dire_creeps",
+            modifiers = { "modifier_siege_dj", "modifier_desert_dire_animation" },
+            ai_modifier = "modifier_default_creep_ai",
+        },
+
         spawner_dream_concert         = {
             npc = "npc_dream",
             modifiers = { "modifier_story_npc" },
@@ -1282,6 +1314,13 @@ return {
         },
 
         pack_desert_act4_trollhuskar = {
+            rangeFastTickRate = 2000,
+            rangeRetreat = 1200,
+            rangeAggro = 900,
+            stayActivatedOnPlayerDeath = true,
+        },
+
+        pack_desert_act4_dire_creeps = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1200,
             rangeAggro = 900,
