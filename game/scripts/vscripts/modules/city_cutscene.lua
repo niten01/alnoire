@@ -152,6 +152,11 @@ function CityCutscene:Start(playerID)
                     hero:RemoveModifierByName("modifier_cutscene_player")
                     CustomGameEventManager:Send_ServerToPlayer(player, "cutscene_hide", {})
                     self:Stop(playerID)
+                    StoryDriver:HandleAction(playerID, { type = "change_hero", hero = "npc_dota_hero_sanya_ending" })
+
+                    local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+                    assert(hero)
+                    hero:AddNewModifier(nil, nil, "modifier_ending_evade", { duration = -1 })
                 end)
             end)
             return nil

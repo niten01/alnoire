@@ -39,6 +39,7 @@ function SetUIPosition(replaceMana) {
 }
 
 (function () {
+    GameEvents.Subscribe("flow_bar_force_update", UpdateStackBar);
     GameEvents.Subscribe("dota_player_update_selected_unit", UpdateStackBar);
     GameEvents.Subscribe("dota_player_update_query_unit", UpdateStackBar);
     GameEvents.Subscribe("game_rules_state_change", () => {

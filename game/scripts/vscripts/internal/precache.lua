@@ -13,6 +13,7 @@ return {
         "npc_dota_hero_sanya_rapper",
         "npc_dota_hero_sanya_logarithmus",
         "npc_dota_hero_sanya",
+        "npc_dota_hero_sanya_ending",
 
         "npc_subway_city",
         "npc_subway_to_city",

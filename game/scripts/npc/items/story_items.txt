@@ -374,4 +374,40 @@
             "chance_pct"  "10"
         }
     }
+    "item_lean_power_logarithmus" 
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "percocet_xavier"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemPermanent"                 "0"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemDroppable"                 "0"
+        "ItemInitialCharges"            "1" 
+        "ItemQuality"                   "rare"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+        "OnSpellStart"
+        {
+            "SpendCharge"		{}
+            "ApplyModifier"
+            {
+                "ModifierName"	"modifier_lean_power_logarithmus"
+                "Target"		"CASTER"
+                "Duration"		"-1"
+            }
+            "FireSound"
+            {
+                "EffectName"	"items.ski.consume"
+                "Target"		"CASTER"
+            }
+        }
+        
+        "AbilityValues"
+        {
+            "damage"      "100" // magical
+            "radius"      "200"
+            "stacks_threshold"  "15"
+        }
+    }
 }

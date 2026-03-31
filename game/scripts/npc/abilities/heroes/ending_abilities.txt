@@ -1,0 +1,60 @@
+"DOTAAbilities"
+{
+	"ending_attacks"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/ending_attacks"
+		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"		"marci_unleash"
+		"MaxLevel"					"1"
+		"RequiredLevel"				"1"
+
+		"AbilityValues"
+		{
+			"num_attacks"				"5"
+            "pulse_radius"              "400"
+            "pulse_damage"              "100"
+            "recovery_duration"         "3"
+		}
+
+        "precache"
+        {
+            "particle"		"particles/units/heroes/hero_marci/marci_unleash_attack.vpcf"
+            "particle"		"particles/units/heroes/hero_marci/marci_unleash_pulse.vpcf"
+        }
+	}
+	"ending_throw"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile" 				"abilities/ending_throw.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityTextureName"		"marci_companion_run"
+        "AbilityCastPoint"		    "0.4"
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCooldown"           "2.0" 
+		"MaxLevel"					"1"
+		"RequiredLevel"				"1"
+
+		"AbilityCastRange"			"500"
+        "AbilityValues"
+		{
+            "landing_radius"	"275"
+            "air_duration"		"0.5"
+            "air_height"		"150"
+            "pull_offset"		"75"
+            "throw_distance_behind"	"350"
+            "pull_angle"		"230"
+            "stun_duration"			"1.2 1.5 1.8 2.1"
+            "impact_damage"		"70 140 210 280"
+		}
+
+		"precache"
+		{
+		}
+	}
+}

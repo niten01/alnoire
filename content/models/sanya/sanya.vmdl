@@ -78,7 +78,7 @@
 							},
 						]
 						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_RUN"
+						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
@@ -176,31 +176,6 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "attack_chop"
-						is_default_idle_anim = false
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						animgraph_additive = false
-						delete_from_compiled_model = false
-						source_filename = "models/sanya/animations/attack_chop.fbx"
-						import_bone_scales = false
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-						additional_anim_files = [  ]
-					},
-					{
-						_class = "AnimFile"
 						name = "flail"
 						is_default_idle_anim = false
 						activity_name = "ACT_DOTA_FLAIL"
@@ -281,7 +256,7 @@
 							},
 						]
 						is_default_idle_anim = false
-						activity_name = "ACT_DOTA_RUN"
+						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
 						fade_in_time = 0.2
@@ -485,6 +460,137 @@
 						reverse = false
 						additional_anim_files = [  ]
 					},
+					{
+						_class = "AnimFile"
+						name = "run_alt"
+						children = 
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = false
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								extract_initial_offset = false
+								root_bone_name = ""
+								motion_type = "Uniform"
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/run_alt.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "attack_fist_1_fast"
+						children = 
+						[
+							{
+								_class = "ActivityModifier"
+								activity_name = "unleash"
+								activity_weight = 100
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.0
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/attack_fist_1_fast.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 5.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "attack_fist_2_fast"
+						children = 
+						[
+							{
+								_class = "ActivityModifier"
+								activity_name = "unleash"
+								activity_weight = 100
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.0
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/attack_fist_2_fast.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 5.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "cast_throw_ending"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_CAST_ABILITY_1"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/cast_throw_ending.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = true
+						additional_anim_files = [  ]
+					},
 				]
 				default_root_bone_name = "pelvis"
 			},
@@ -604,7 +710,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -37.129921, -9.145472, -10.22448 ]
+								hitbox_mins = [ -37.12992, -9.145472, -10.22448 ]
 								hitbox_maxs = [ 5.289749, 9.173672, 6.964249 ]
 							},
 							{
@@ -884,7 +990,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -51.518391, -14.424664, -8.767042 ]
+								hitbox_mins = [ -51.51839, -14.424664, -8.767042 ]
 								hitbox_maxs = [ 9.845535, 5.24496, 8.695055 ]
 							},
 							{
@@ -904,8 +1010,8 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -12.671692, -11.737499, -19.075741 ]
-								hitbox_maxs = [ 49.191231, 15.962875, 7.802131 ]
+								hitbox_mins = [ -12.671692, -11.737499, -19.07574 ]
+								hitbox_maxs = [ 49.19123, 15.962875, 7.802131 ]
 							},
 							{
 								_class = "Hitbox"
@@ -949,7 +1055,7 @@
 						name = "attach_eyeR"
 						parent_bone = "head"
 						relative_origin = [ 1.488297, 9.737099, -4.485648 ]
-						relative_angles = [ 30.513079, 4.819746, 164.886185 ]
+						relative_angles = [ 30.513079, 4.819746, 164.88618 ]
 						weight = 1.0
 						ignore_rotation = false
 					},
@@ -967,6 +1073,24 @@
 						name = "attach_hitloc"
 						parent_bone = "spine_3"
 						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_attack1"
+						parent_bone = "hand_L"
+						relative_origin = [ 9.261322, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_attack2"
+						parent_bone = "hand_R"
+						relative_origin = [ -10.912342, 0.0, 0.0 ]
 						relative_angles = [ 0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
