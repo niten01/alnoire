@@ -149,7 +149,7 @@ function perekup_shuffleshot:ShotgunWarning(targetPos)
 end
 
 function perekup_shuffleshot:DetectHit(point)
-    local radius = self:GetSpecialValueFor("+ self:GetCastPoint()projectile_radius")
+    local radius = self:GetSpecialValueFor("projectile_radius")
     local enemies = FindEnemiesForAIInRadius(point, radius)
     for _, ent in ipairs(enemies) do
         self:OnProjectileHit(ent)
