@@ -11,12 +11,12 @@
         "AbilityChannelAnimation"       "ACT_DOTA_TELEPORT"
 		"AbilityChannelTime"			"10.0"
         "AbilityCastPoint"              "1.73"
-        "AbilityCooldown"               "40" 
+        "AbilityCooldown"               "25" 
         "AbilityCastRange"        		"9000"
 
         "AbilityValues"
         {
-            "damage"                "200"
+            "damage"                "150"
             "radius"                "1000"
             "tentacle_radius"       "250"
             "stun_duration"         "2"
@@ -43,13 +43,13 @@
         "AbilityCastPoint"              "1.4"
 
         "AbilityCooldown"               "3" 
-        "AbilityCastRange"        		"700"
+        "AbilityCastRange"        		"550"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 
         "AbilityValues"
         {
-            "damage"                "200"
+            "damage"                "400"
         }
 
         "precache"
@@ -75,7 +75,7 @@
 
         "AbilityValues"
         {
-            "damage"                "200"
+            "damage"                "150"
         }
 
         "precache"
@@ -93,7 +93,7 @@
         "AbilityCastAnimation"          "ACT_DOTA_NIAN_GAME_END"
         "AbilityCastPoint"              "1.80"
 
-        "AbilityCooldown"               "20" 
+        "AbilityCooldown"               "23" 
         "AbilityCastRange"        		"9999"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
@@ -124,8 +124,8 @@
 
         "AbilityValues"
         {
-            "damage"        "200"
-            "damage_radius" "300"
+            "damage"        "250"
+            "damage_radius" "250"
             "max_range"     "1300"
             "speed"         "1000"
             "stun_duration" "2"
