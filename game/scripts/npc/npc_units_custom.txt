@@ -20,6 +20,7 @@
 
 #base "units/misc/clash_royale.txt"
 #base "units/misc/couriers.txt"
+#base "units/misc/barrel_click.txt"
 #base "units/misc/npc_training_dummy.txt"
 
 #base "units/jungle/act1_jungle.txt"

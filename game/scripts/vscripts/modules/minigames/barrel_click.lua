@@ -1,129 +1,140 @@
 BarrelClick = BarrelClick or class({})
 
-local MINIGAME_DURATION = 45.0 
-local INITIAL_SPAWN_INTERVAL = 1.2 
-local MIN_SPAWN_INTERVAL = 0.3 
-local BARREL_LIFETIME = 2.0 
+local MINIGAME_DURATION = 45.0
+local INITIAL_SPAWN_INTERVAL = 1.2
+local MIN_SPAWN_INTERVAL = 0.1
+local BARREL_LIFETIME = 2.0
 local MAX_MULTIPLIER = 3.0
 local AREA_RADIUS = 600
+local BET_AMOUNT = 200
 
-function BarrelClick:Init(playerID, hero, betAmount, centerVector)
-    self.nPlayerID = playerID
-    self.hHero = hero
-    self.nBetAmount = betAmount
-    self.vCenter = centerVector
-    
-    self.fStartTime = GameRules:GetGameTime()
-    self.fCurrentMultiplier = 0.0
-    self.fCurrentSpawnInterval = INITIAL_SPAWN_INTERVAL
-    self.bIsRunning = true
-    self.hActiveBarrels = {}
+function BarrelClick:Init()
+    self.betAmount = BET_AMOUNT
+end
 
-    CustomNetTables:SetTableValue("minigame_stats", "barrel_multiplier_" .. tostring(playerID), { 
-        multiplier = 0,
-        endTime = self.fStartTime + MINIGAME_DURATION 
-    })
+function BarrelClick:Start(playerID)
+    if self.isRunning then return end
+
+    local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+    assert(hero)
+
+    self.giverNPC = Entities:FindByName(nil, "npc_brewmaster")
+    assert(self.giverNPC)
+    if hero:GetGold() < BET_AMOUNT then
+        Dialogue:ShowDialogueBubbleEx(self.giverNPC, "Возвращайся когда накопишь " .. tostring(BET_AMOUNT) .. " золота!",
+            5)
+        return
+    else
+        Dialogue:ShowDialogueBubbleEx(self.giverNPC, "Ломай бочки!", 2)
+        hero:ModifyGold(-BET_AMOUNT, true, DOTA_ModifyGold_PurchaseItem)
+    end
+
+    hero:AddItemByName("item_barrel_hammer")
+
+    local ptName = "barrel_click_" .. tostring(playerID)
+    if not PlayerTables:TableExists(ptName) then
+        PlayerTables:CreateTable(ptName, {
+            multiplier = 0,
+        })
+    end
+
+    self.playerID = playerID
+    self.hero = hero
+    self.startTime = GameRules:GetGameTime()
+
+    self.currentMultiplier = 0.0
+    self.currentSpawnInterval = INITIAL_SPAWN_INTERVAL
+    self.isRunning = true
+    self.activeBarrels = {}
+
+    self.center = Entities:FindByName(nil, "barrel_click_center")
+    assert(self.center)
+    self.center = self.center:GetAbsOrigin()
 
     self:SpawnLoop()
     self:UpdateLoop()
 end
 
 function BarrelClick:SpawnLoop()
-    if not self.bIsRunning then return end
+    if not self.isRunning then return end
 
-    -- Calculate random position in circle
-    local spawnPos = self.vCenter + RandomVector(RandomFloat(0, AREA_RADIUS))
-    
-    -- Create the barrel unit
-    -- Note: Ensure you have "npc_dota_minigame_barrel" defined in your npc_units_custom.txt
-    local barrel = CreateUnitByName("npc_dota_minigame_barrel", spawnPos, true, nil, nil, DOTA_TEAM_NEUTRALS)
-    barrel:AddNewModifier(nil, nil, "modifier_phased", {duration = -1})
-    
+    local spawnPos = self.center + RandomVector(RandomFloat(0, AREA_RADIUS))
+
+    local barrel = CreateUnitByName("npc_minigame_barrel", spawnPos, true, nil, nil, DOTA_TEAM_NEUTRALS)
+    barrel:AddNewModifier(nil, nil, "modifier_gorilla_invulnerable", { duration = -1 })
+
     local barrelEntIndex = barrel:GetEntityIndex()
-    self.hActiveBarrels[barrelEntIndex] = true
+    self.activeBarrels[barrelEntIndex] = true
 
-    -- Set timer for barrel expiration (The Fail Condition)
     Timers:CreateTimer(BARREL_LIFETIME, function()
         if IsValidEntity(barrel) and barrel:IsAlive() then
-            self:EndGame(false) -- Player failed to click in time
+            self:EndGame(false)
         end
     end)
 
-    -- Schedule next spawn with increasing pace
-    local elapsed = GameRules:GetGameTime() - self.fStartTime
+    local elapsed = GameRules:GetGameTime() - self.startTime
     local progress = math.min(elapsed / MINIGAME_DURATION, 1.0)
-    self.fCurrentSpawnInterval = Lerp(progress, INITIAL_SPAWN_INTERVAL, MIN_SPAWN_INTERVAL)
+    self.currentSpawnInterval = INITIAL_SPAWN_INTERVAL - progress * (INITIAL_SPAWN_INTERVAL - MIN_SPAWN_INTERVAL)
 
-    Timers:CreateTimer(self.fCurrentSpawnInterval, function()
-        if elapsed < MINIGAME_DURATION and self.bIsRunning then
+    Timers:CreateTimer(self.currentSpawnInterval, function()
+        if elapsed < MINIGAME_DURATION and self.isRunning then
             self:SpawnLoop()
         elseif elapsed >= MINIGAME_DURATION then
-            self:EndGame(true) -- Success!
+            self:EndGame(true)
         end
     end)
 end
 
 function BarrelClick:UpdateLoop()
     Timers:CreateTimer(0.1, function()
-        if not self.bIsRunning then return nil end
+        if not self.isRunning then return nil end
 
-        local elapsed = GameRules:GetGameTime() - self.fStartTime
+        local elapsed = GameRules:GetGameTime() - self.startTime
         local progress = math.min(elapsed / MINIGAME_DURATION, 1.0)
-        
-        -- Multiplier scales from 0 to MAX_MULTIPLIER
-        self.fCurrentMultiplier = progress * MAX_MULTIPLIER
-        
-        -- Update NetTable for UI
-        CustomNetTables:SetTableValue("minigame_stats", "barrel_multiplier_" .. tostring(self.nPlayerID), { 
-            multiplier = self.fCurrentMultiplier 
+
+        self.currentMultiplier = progress * MAX_MULTIPLIER
+
+        PlayerTables:SetTableValue("barrel_click_" .. tostring(self.playerID), {
+            multiplier = self.currentMultiplier
         })
 
         return 0.1
     end)
 end
 
--- Call this function from your item's OnSpellStart logic
 function BarrelClick:OnBarrelClicked(barrelHandle)
-    if not self.bIsRunning then return end
+    if not self.isRunning then return end
 
     local entIndex = barrelHandle:GetEntityIndex()
-    if self.hActiveBarrels[entIndex] then
-        self.hActiveBarrels[entIndex] = nil
-        
-        -- Visual/Sound effect
+    if self.activeBarrels[entIndex] then
+        self.activeBarrels[entIndex] = nil
+
         EmitSoundOn("Hero_Ratchet.Spatula.Impact", barrelHandle)
-        local pfx = ParticleManager:CreateParticle("particles/dev/library/base_dust_hit.vpcf", PATTACH_ABSORIGIN, barrelHandle)
+        local pfx = ParticleManager:CreateParticle("particles/dev/library/base_dust_hit.vpcf", PATTACH_ABSORIGIN,
+            barrelHandle)
         ParticleManager:ReleaseParticleIndex(pfx)
 
-        barrelHandle:Kill(nil, self.hHero)
+        barrelHandle:Kill(nil, self.hero)
     end
 end
 
-function BarrelClick:EndGame(bSuccess)
-    if not self.bIsRunning then return end
-    self.bIsRunning = false
+function BarrelClick:EndGame(success)
+    if not self.isRunning then return end
+    self.isRunning = false
+
+    Dialogue:ShowDialogueBubbleEx(self.giverNPC, "Вот твой выигрыш!", 5)
 
     local finalPayout = 0
-    if bSuccess then
-        finalPayout = math.floor(self.nBetAmount * self.fCurrentMultiplier)
-        self.hHero:ModifyGold(finalPayout, true, DOTA_ModifyGold_Unspecified)
-        print("Minigame Complete! Multiplier: " .. self.fCurrentMultiplier .. " Payout: " .. finalPayout)
+    if success then
+        finalPayout = math.floor(self.betAmount * self.currentMultiplier)
+        self.hero:ModifyGold(finalPayout, true, DOTA_ModifyGold_BountyRune)
     else
-        print("Minigame Failed! Barrel expired.")
     end
 
-    -- Cleanup
-    for entIndex, _ in pairs(self.hActiveBarrels) do
+    for entIndex, _ in pairs(self.activeBarrels) do
         local unit = EntIndexToHScript(entIndex)
         if IsValidEntity(unit) then unit:ForceKill(false) end
     end
-    
-    -- Notify UI
-    CustomNetTables:SetTableValue("minigame_stats", "barrel_multiplier_" .. tostring(self.nPlayerID), { 
-        multiplier = self.fCurrentMultiplier,
-        isOver = true,
-        success = bSuccess
-    })
 end
 
 return BarrelClick

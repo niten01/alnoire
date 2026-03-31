@@ -24,6 +24,10 @@ function StoryDriver:Init()
       type = "start_city_finale_cutscene",
     })
   end)
+
+  ChatCommand:LinkDevCommand("-bc", function(event, args)
+    BarrelClick:Start(event.playerID)
+  end)
 end
 
 local function fastRemoveNPC(name)

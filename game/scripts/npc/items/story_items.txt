@@ -410,4 +410,26 @@
             "stacks_threshold"  "15"
         }
     }
+    "item_barrel_hammer"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_barrel_hammer"
+        "AbilityTextureName"            "sling"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "0.0"
+        "AbilityCastRange"              "1000"
+
+        "precache"
+        {
+        }
+    }
 }

@@ -1,0 +1,14 @@
+"DOTAUnits"
+{
+	"npc_minigame_barrel" 
+	{
+		"Model"						"models/flask_barrel/flask_barrel.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"Level"						"1"
+		"StatusHealth"				"1"		
+		"StatusHealthRegen"			"0.0"		
+		"HealthBarOffset"			"400"
+	}
+}

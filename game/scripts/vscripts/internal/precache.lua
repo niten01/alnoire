@@ -21,6 +21,7 @@ return {
         "npc_flask_barrel",
 
         "npc_training_dummy",
+        "npc_minigame_barrel",
 
         "npc_courier_knight",
         "npc_courier_bug",
