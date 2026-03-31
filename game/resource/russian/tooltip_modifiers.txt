@@ -3,3 +3,22 @@
 
 "DOTA_Tooltip_modifier_demon_power_rapper"		"Сила Демона"
 "DOTA_Tooltip_modifier_demon_power_rapper_Description"		"Получает %dMODIFIER_PROPERTY_TOOLTIP% щита в секунду."
+
+"DOTA_Tooltip_modifier_demon_power_logarithmus_combo"		"Комбо Демона"
+"DOTA_Tooltip_modifier_demon_power_logarithmus_combo_Description"		"Получает %dMODIFIER_PROPERTY_TOOLTIP%%% вампиризма заклинаниями."
+
+"DOTA_Tooltip_modifier_demon_power_towel_master"		"Сила Демона"
+"DOTA_Tooltip_modifier_demon_power_towel_master_Description"		"Раб получает дополнительную жизнь."
+
+"DOTA_Tooltip_modifier_demon_power_towel_summon"		"Сила Демона"
+"DOTA_Tooltip_modifier_demon_power_towel_summon_Description"		"Может возродиться."
+
+
+"DOTA_Tooltip_modifier_lean_power_towel_master"		"Любимый Перк"
+"DOTA_Tooltip_modifier_lean_power_towel_master_Description"		"Атака Раба может спровоцировать линовый всплеск."
+
+"DOTA_Tooltip_modifier_lean_power_towel_summon"		"Любимый Перк"
+"DOTA_Tooltip_modifier_lean_power_towel_summon_Description"		"Атака Раба может спровоцировать линовый всплеск."
+
+"DOTA_Tooltip_modifier_lean_power_rapper"		"Любимый Перк"
+"DOTA_Tooltip_modifier_lean_power_rapper_Description"		"Сняряд Swag Souljah может спровоцировать линовый всплеск на противнике."

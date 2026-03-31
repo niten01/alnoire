@@ -35,7 +35,14 @@ function logarithmus_alt_projectile:OnSpellStart()
 
         EmitSoundOnLocationWithCasterSafe(pos, "ability.logarithmus.alt_projectile.cast", caster)
 
+        local numDestroyed = 0
+        local numHit = 0
+
         local function destroyPfx(pos)
+            numDestroyed = numDestroyed + 1
+            if numDestroyed == numProjectiles and numHit == 0 then
+                BreakLogarithmusCombo(caster)
+            end
             ParticleManager:DestroyParticle(pfx, false)
             ParticleManager:ReleaseParticleIndex(pfx)
 
@@ -52,6 +59,7 @@ function logarithmus_alt_projectile:OnSpellStart()
 
             local enemies = FindEnemiesForSanyaInRadius(pos, projRadius)
             for _, ent in ipairs(enemies) do
+                numHit = numHit + 1
                 destroyPfx(pos)
                 self:OnProjectileHit(ent, pos)
                 return nil

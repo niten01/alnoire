@@ -361,11 +361,27 @@ function IncrementLogarithmusStacks(caster)
   assert(mod)
   if mod:GetStackCount() >= mod:GetAbility():GetSpecialValueFor("max_stacks") then return end
   mod:IncrementStackCount()
+
+  if not caster:HasModifier("modifier_demon_power_logarithmus") then return end
+  local av = GetAbilityKeyValuesByName("item_demon_power_logarithmus").AbilityValues
+  local comboMod = caster:AddNewModifier(caster, nil, "modifier_demon_power_logarithmus_combo", {
+    duration = tonumber(av.decay_time)
+  })
+  if not comboMod then return end
+
+  if comboMod:GetStackCount() < tonumber(av.max_stacks) then
+    comboMod:IncrementStackCount()
+  end
+end
+
+function BreakLogarithmusCombo(caster)
+  caster:RemoveModifierByName("modifier_demon_power_logarithmus_combo")
 end
 
 function PlayDerekBloodEffects(target, dir)
   local targetPos = target:GetAbsOrigin()
-  EmitSoundOnLocationWithCaster(targetPos, "ability.derek.strafe.hit", caster)
+  -- EmitSoundOnLocationWithCaster(targetPos, "ability.derek.strafe.hit", caster)
+  target:EmitSound("ability.derek.strafe.hit")
   local pfx = ParticleManager:CreateParticle(
     "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
   ParticleManager:SetParticleControlTransformForward(pfx, 1, targetPos, dir)
@@ -409,4 +425,12 @@ function DestroyDemonPowerEffects(mod)
   ParticleManager:DestroyParticle(mod.particleR, false)
   ParticleManager:ReleaseParticleIndex(mod.particleL)
   ParticleManager:ReleaseParticleIndex(mod.particleR)
+end
+
+function PlayLeanSplash(ent, radius)
+  local pfx = ParticleManager:CreateParticle("particles/lean_power_splash.vpcf", PATTACH_WORLDORIGIN, nil)
+  ParticleManager:SetParticleControl(pfx, 0, ent:GetAbsOrigin())
+  ParticleManager:SetParticleControl(pfx, 5, Vector(radius, 0, 0))
+  ParticleManager:ReleaseParticleIndex(pfx)
+  ent:EmitSound("items.lean_power.splash")
 end

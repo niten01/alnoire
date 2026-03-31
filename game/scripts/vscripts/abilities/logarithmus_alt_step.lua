@@ -82,6 +82,10 @@ function modifier_logarithmus_alt_step:OnDestroy()
     if not IsServer() then return end
     ParticleManager:DestroyParticle(self.pfx, false)
     ParticleManager:ReleaseParticleIndex(self.pfx)
+
+    if not self.hitSomeone then
+        BreakLogarithmusCombo(self:GetParent())
+    end
 end
 
 function modifier_logarithmus_alt_step:OnIntervalThink()

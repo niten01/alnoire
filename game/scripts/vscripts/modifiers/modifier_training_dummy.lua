@@ -1,5 +1,7 @@
 modifier_training_dummy = class({})
 
+function modifier_training_dummy:IsHidden() return true end
+
 function modifier_training_dummy:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_MIN_HEALTH,
