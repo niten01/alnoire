@@ -34,8 +34,8 @@
 		{
 			"cooldown"					"20.0 20.0 20.0 20.0"
 			"radius"					"1200 1200 1200 1200"
-			"overpower_level"			"0 1 2 2"
-			"dash_level"				"0 1 2 2"
+			"overpower_level"			"0 1 2 3"
+			"dash_level"				"0 1 2 3"
 			"explosion_level"			"0 0 1 2"
 		}
 		"precache"
@@ -201,8 +201,8 @@
 		"AbilityCooldown"				"22.0"
 		"AbilityValues"
 		{
-			"asb_per_attack"				"12 14"
-			"buff_duration"					"10.0 10.0"
+			"asb_per_attack"				"12 14 16"
+			"buff_duration"					"10.0"
 		}
 
 		"precache"
@@ -221,10 +221,10 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 
 		"AbilityManaCost"               "0"
-		"AbilityCooldown"				"18.0 15.0"
+		"AbilityCooldown"				"18.0 15.0 12.0"
 		"AbilityValues"
 		{
-			"damage"					"200 300"
+			"damage"					"200 300 400"
 			"radius"					"150 150"
 			"acceleration"				"200"
 		}

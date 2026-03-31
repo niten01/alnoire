@@ -36,7 +36,7 @@
 			}
 			"damage"
 			{
-				"value"					"0"
+				"value"					"50"
 			}
 			"bolt_speed"				"1200"
 			"minimum_purge_duration"
@@ -99,7 +99,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage"				"100"
+				"damage"				"200"
 				"heal_per_second"		"25"
 				"total_heal_tooltip"	"250"
 				"duration"				"10"
@@ -197,7 +197,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityCastAnimation"          "ACT_DOTA_FLAIL"
         "AbilityCastPoint"              "0.27"
-        "AbilityCooldown"               "5.0" 
+        "AbilityCooldown"               "3.0" 
         "AbilityCastRange"        		"9999"
         
         "AbilityValues"
@@ -225,9 +225,9 @@
         
         "AbilityValues"
         {
-            "radius"                "150"
+            "radius"                "200"
             "duration"              "2"
-			"damage_per_second"		"100"
+			"damage_per_second"		"200"
 			"tick_rate"				"0.1"
 			"warning_delay"			"0.1"
         }
@@ -246,13 +246,13 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
         "AbilityCastPoint"              "0.6"
-        "AbilityCooldown"               "30.0" 
+        "AbilityCooldown"               "7.0" 
         "AbilityCastRange"        		"9999"
         
         "AbilityValues"
         {
             "radius"                "2000"
-            "duration"              "30"
+            "duration"              "12"
 			"max_speed"				"300"
         }
 
