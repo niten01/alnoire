@@ -51,7 +51,7 @@ end
 function modifier_morph_small:OnCreated()
     if not IsServer() then return end
     local parent = self:GetParent()
-    self.pfx = ParticleManager:CreateParticle('particles/units/heroes/hero_morphling/morphling_morph_agi.vpcf',
+    self.pfx = ParticleManager:CreateParticle('particles/morph_agi_green.vpcf',
         PATTACH_ABSORIGIN_FOLLOW, parent)
     ParticleManager:SetParticleControlEnt(self.pfx, 0, parent, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc",
         parent:GetAbsOrigin(), true)
