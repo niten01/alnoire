@@ -445,7 +445,7 @@ return {
         "particles/units/heroes/hero_lina/lina_base_attack.vpcf",
         "particles/seledka_puddle_1.vpcf",
         "particles/units/heroes/hero_morphling/morphling_morph_str.vpcf",
-        "particles/units/heroes/hero_morphling/morphling_morph_agi.vpcf",
+        "particles/morph_agi_green.vpcf",
         "particles/units/heroes/hero_morphling/morphling_adaptive_strike_agi_proj.vpcf",
         "particles/units/heroes/hero_morphling/morphling_adaptive_strike.vpcf",
         "status_effect_abaddon_borrowed_time",

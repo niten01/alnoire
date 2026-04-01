@@ -180,12 +180,13 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"AbilityTextureName"            "towel_summon_explosion"
 		"AbilityManaCost"               "0"
-		"AbilityCooldown"				"30.0"
+		"AbilityCooldown"				"100.0"
 		"AbilityValues"
 		{
-			"damage"					"500 700"
-			"radius"					"400 400"
-			"delay"						"5.0 5.0"
+			"damage"						"500 700"
+			"radius"						"400 400"
+			"delay"							"5.0 5.0"
+			"cooldownReductionPerAttack"	"2.0 2.0"
 		}
 	}
 
