@@ -25,6 +25,14 @@ function FlaskManager:Init()
         local item = event.item
         event.hero:SwapItems(event.item:GetItemSlot(), NEUTRAL_SLOT_IDX)
     end)
+
+    GameEvents:OnEntityKilled(function(event)
+        local victim = event.killed_unit
+        if victim:IsRealHero() and not victim:IsSpiritBearCustom() then
+            local playerID = victim:GetPlayerOwnerID()
+            self:RefillFlask(playerID)
+        end
+    end)
 end
 
 function FlaskManager:RefillFlask(playerID)

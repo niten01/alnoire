@@ -35,3 +35,4 @@
 "npc_flask_barrel" "Бочка"
 "npc_chaser"        "Преследователь"
 "npc_leader"        "Глава"
+"npc_minigame_barrel"        "Бочка"

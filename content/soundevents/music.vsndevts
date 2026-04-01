@@ -96,6 +96,7 @@
       "sounds/music/forest1_combat.vsnd"
     ]
     volume = "2.500000"
+    fade_in = "1.3"
     fade_out = "2.0"
   }
   music.forest2.explore = {

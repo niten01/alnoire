@@ -410,26 +410,53 @@
             "stacks_threshold"  "15"
         }
     }
-    "item_barrel_hammer"
-    {
+    // "item_barrel_hammer"
+    // {
+    //     "BaseClass"                     "item_lua"
+    //     "ScriptFile"                    "items/item_barrel_hammer"
+    //     "AbilityTextureName"            "sling"
+    //     "ItemKillable"                  "0"
+    //     "ItemSellable"                  "0"
+    //     "ItemPurchasable"               "1"
+    //     "ItemQuality"                   "rare"
+        
+    //     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	// 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	// 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	// 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+    //     "AbilityCastPoint"              "0.0"
+    //     "AbilityCooldown"               "0.0"
+    //     "AbilityCastRange"              "9999"
+
+    //     "precache"
+    //     {
+    //     }
+    // }
+    "item_quelling_blade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_barrel_hammer"
-        "AbilityTextureName"            "sling"
-        "ItemKillable"                  "0"
-        "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
-        "ItemQuality"                   "rare"
-        
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-        "AbilityCastPoint"              "0.0"
-        "AbilityCooldown"               "0.0"
-        "AbilityCastRange"              "9999"
+        "AbilityTextureName"            "item_quelling_blade"
 
-        "precache"
-        {
-        }
-    }
+		"AbilityCastRange"				"9999"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
+		"Model"							"models/props_gameplay/quelling_blade.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"ItemCost"						"0"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "0"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"component"
+	}
 }

@@ -54,7 +54,7 @@ function modifier_killer_bind:OnCreated(kv)
 
     if self.pfxCP1 then
         parent:EmitSound("ability.killer.bind.loop")
-    end 
+    end
 end
 
 function modifier_killer_bind:OnDestroy()
@@ -62,6 +62,11 @@ function modifier_killer_bind:OnDestroy()
 
     ParticleManager:DestroyParticle(self.pfx, false)
     ParticleManager:ReleaseParticleIndex(self.pfx)
+
+    if self.pfxCP1 then
+        ParticleManager:DestroyParticle(self.pfxCP1, false)
+        ParticleManager:ReleaseParticleIndex(self.pfxCP1)
+    end
 
     if not self.partner or self.partner:IsNull() then return end
     self.partner:RemoveModifierByName("modifier_killer_bind")
