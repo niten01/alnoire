@@ -12,6 +12,7 @@ function modifier_tusik_papa_hide:CheckState()
         [MODIFIER_STATE_ROOTED] = true,
         [MODIFIER_STATE_DISARMED] = true,
         [MODIFIER_STATE_SILENCED] = true,
+        [MODIFIER_STATE_INVULNERABLE] = true,
     }
 end
 

@@ -141,6 +141,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
 		"ModelScale" 				"0.75"
+		"vscripts"					"ai/tusik_uppercut"
 
 		
 		"Ability1"						"tusk_walrus_punch"			// Ability 1
@@ -330,6 +331,7 @@
 		"SoundSet"					"Hero_Tusk"
 		"Level"						"1"
 		"ModelScale" 				"1.0"
+		"vscripts"					"ai/tusik_uppercut"
 
 		
 		"Ability1"						"tusk_walrus_punch"			// Ability 1

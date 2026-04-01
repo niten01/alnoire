@@ -122,7 +122,7 @@
     {
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"                    "abilities/ocean/tusik_papa_passive"
-		"AbilityTextureName"            "treant_living_armor"
+		"AbilityTextureName"            "tusk_frozen_sigil"
 
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
