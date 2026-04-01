@@ -11,9 +11,9 @@
 
 		"AbilityValues"
 		{
-            "damageReductionMaxPercent"    "98.0"
+            "damageReductionMaxPercent"    "97.0"
             "modelScaleMaxPercent"         "150"
-            "power"                        "1.12	"
+            "power"                        "1.13"
 			"maxAoeIncrease"				"400"
 		}
 	}
