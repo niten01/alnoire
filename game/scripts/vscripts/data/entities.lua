@@ -1248,7 +1248,7 @@ return {
         },
 
         pack_ocean_act2_bombers = {
-            rangeFastTickRate = 950,
+            rangeFastTickRate = 5000,
             rangeRetreat = 9999999,
             rangeAggro = 350,
             stayActivatedOnPlayerDeath = true,

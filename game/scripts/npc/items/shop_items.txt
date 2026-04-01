@@ -586,7 +586,7 @@
         {
             "duration"      "3.0" // debuff
             "ms_reduction"  "100"
-            "damage"        "130"
+            "damage"        "180"
 
             "expand_time"   "2.0" // particle bound
         }
