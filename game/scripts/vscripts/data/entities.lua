@@ -1110,35 +1110,35 @@ return {
 
         pack_forest_act1_lizards = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 1600,
+            rangeFastTickRate = 6500,
             rangeRetreat = 5400,
             rangeAggro = 1000,
         },
 
         pack_forest_act1_bears = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 1600,
+            rangeFastTickRate = 2000,
             rangeRetreat = 1150,
             rangeAggro = 700,
         },
 
         pack_forest_act1_apples = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 1600,
+            rangeFastTickRate = 2400,
             rangeRetreat = 1600,
             rangeAggro = 900,
         },
 
         pack_forest_act1_axe = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 1200,
+            rangeFastTickRate = 1500,
             rangeRetreat = 900,
             rangeAggro = 650,
         },
 
         pack_forest_act1_roshan = {
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 1300,
+            rangeFastTickRate = 1500,
             rangeRetreat = 900,
             rangeAggro = 650,
         },
@@ -1156,28 +1156,28 @@ return {
             stayActivatedOnPlayerDeath = true,
         },
         pack_forest_act1_techies_3 = {
-            rangeFastTickRate = 2000,
-            rangeAggro = 600,
-            rangeRetreat = 700,
+            rangeFastTickRate = 900,
+            rangeAggro = 300,
+            rangeRetreat = 500,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_forest_act1_shrooms = {
-            rangeFastTickRate = 1300,
+            rangeFastTickRate = 1400,
             rangeAggro = 500,
             rangeRetreat = 900,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_forest_act1_dragnolls = {
-            rangeFastTickRate = 1600,
+            rangeFastTickRate = 1900,
             rangeAggro = 830,
             rangeRetreat = 1300,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_forest_act1_perdun = {
-            rangeFastTickRate = 1200,
+            rangeFastTickRate = 1500,
             rangeRetreat = 1000,
             rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
@@ -1185,56 +1185,56 @@ return {
         },
 
         pack_ocean_act2_catapa = {
-            rangeFastTickRate = 2700,
+            rangeFastTickRate = 3500,
             rangeRetreat = 2500,
             rangeAggro = 1800,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_tusiki = {
-            rangeFastTickRate = 1300,
+            rangeFastTickRate = 3500,
             rangeRetreat = 2400,
             rangeAggro = 700,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_tadpoles_ranged = {
-            rangeFastTickRate = 1450,
+            rangeFastTickRate = 4500,
             rangeRetreat = 3000,
             rangeAggro = 840,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_tadpoles_big = {
-            rangeFastTickRate = 1150,
+            rangeFastTickRate = 4300,
             rangeRetreat = 2800,
             rangeAggro = 530,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_spiders = {
-            rangeFastTickRate = 1250,
+            rangeFastTickRate = 2000,
             rangeRetreat = 1300,
             rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_arbuz = {
-            rangeFastTickRate = 1200,
+            rangeFastTickRate = 3700,
             rangeRetreat = 1900,
             rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_seledka = {
-            rangeFastTickRate = 1200,
+            rangeFastTickRate = 4000,
             rangeRetreat = 2200,
             rangeAggro = 500,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_morphs = {
-            rangeFastTickRate = 1150,
+            rangeFastTickRate = 4000,
             rangeRetreat = 2300,
             rangeAggro = 550,
             stayActivatedOnPlayerDeath = true,
@@ -1255,56 +1255,56 @@ return {
         },
 
         pack_darkforest_act3_drow = {
-            rangeFastTickRate = 1250,
+            rangeFastTickRate = 2000,
             rangeRetreat = 1100,
             rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_ursa = {
-            rangeFastTickRate = 1300,
+            rangeFastTickRate = 6000,
             rangeRetreat = 4000,
             rangeAggro = 700,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_titans = {
-            rangeFastTickRate = 1400,
+            rangeFastTickRate = 2500,
             rangeRetreat = 1200,
             rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_pupu = {
-            rangeFastTickRate = 1600,
+            rangeFastTickRate = 3000,
             rangeRetreat = 1700,
             rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_greevils = {
-            rangeFastTickRate = 1500,
+            rangeFastTickRate = 3200,
             rangeRetreat = 2200,
             rangeAggro = 900,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_shakers = {
-            rangeFastTickRate = 1700,
+            rangeFastTickRate = 2600,
             rangeRetreat = 1400,
             rangeAggro = 1100,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_treant = {
-            rangeFastTickRate = 2000,
+            rangeFastTickRate = 2200,
             rangeRetreat = 1200,
             rangeAggro = 900,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_desert_act4_nyxs = {
-            rangeFastTickRate = 2000,
+            rangeFastTickRate = 2200,
             rangeRetreat = 1200,
             rangeAggro = 900,
             stayActivatedOnPlayerDeath = true,
