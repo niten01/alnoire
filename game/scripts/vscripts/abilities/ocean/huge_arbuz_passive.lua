@@ -18,7 +18,19 @@ function modifier_huge_arbuz_passive:DeclareFunctions()
 		MODIFIER_PROPERTY_MODEL_SCALE,
 		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
 		MODIFIER_PROPERTY_AOE_BONUS_CONSTANT,
+		MODIFIER_EVENT_ON_DEATH,
 	}
+end
+
+function modifier_huge_arbuz_passive:OnDeath(params)
+	if not IsServer() then return end
+	local parent = self:GetParent()
+	if params.unit == parent then
+		local anchor = Entities:FindByName(nil, "npc_dota_unit_tidehunter_anchor")
+		if anchor then
+			anchor:ForceKill(false)
+		end
+	end
 end
 
 function modifier_huge_arbuz_passive:GetModifierModelScale()

@@ -11,7 +11,7 @@
 
 		"AbilityValues"
 		{
-			"magical_damage_per_stack"	"5 8 12 15"
+			"magical_damage_per_stack"	"10 12 14 16"
 			"lifesteal_pct_per_stack"	"15"
 			"max_stacks"				"20"
 			"spell_amp_pct"				"0 20 30 40"
@@ -106,7 +106,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "80 160"
+        "AbilityDamage"                 "85 170"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -139,7 +139,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "80 160"
+        "AbilityDamage"                 "85 170"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -169,7 +169,7 @@
 		"MaxLevel"					"3"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "200 400"
+        "AbilityDamage"                 "190 380"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
