@@ -8,6 +8,44 @@ function modifier_shooter_ai:OnCreated()
     if not IsServer() then return end
     self.usedEulSeq = false
     self.eulSeqInProgress = false
+    self.evadeIdx = 1
+    self.evadeTargets = {
+        "shooter_evade_1",
+        "shooter_evade_2",
+        "shooter_evade_3",
+    }
+end
+
+function modifier_shooter_ai:DeclareFunctions()
+    return {
+        MODIFIER_EVENT_ON_ATTACK_LANDED
+    }
+end
+
+function modifier_shooter_ai:OnAttackLanded(params)
+    if not IsServer() then return end
+    if params.target ~= self:GetParent() then return end
+    if self.evadeIdx > #self.evadeTargets then return end
+    local parent = self:GetParent()
+    local tgt = Entities:FindByName(nil, self.evadeTargets[self.evadeIdx])
+    assert(tgt)
+
+    local pfx = ParticleManager:CreateParticle("particles/econ/events/ti5/blink_dagger_start_ti5.vpcf",
+        PATTACH_WORLDORIGIN, nil)
+    ParticleManager:SetParticleControl(pfx, 0, parent:GetAbsOrigin())
+    ParticleManager:ReleaseParticleIndex(pfx)
+
+    local pfx = ParticleManager:CreateParticle("particles/econ/events/ti5/blink_dagger_end_ti5.vpcf", PATTACH_WORLDORIGIN,
+        nil)
+    ParticleManager:SetParticleControl(pfx, 0, tgt:GetAbsOrigin())
+    ParticleManager:ReleaseParticleIndex(pfx)
+
+    parent:EmitSound("ability.shooter.evade")
+    parent:SetAbsOrigin(tgt:GetAbsOrigin())
+
+    parent:EmitSound("shooter.vo.evade" .. tostring(self.evadeIdx))
+
+    self.evadeIdx = self.evadeIdx + 1
 end
 
 function modifier_shooter_ai:OnIntervalThink()
@@ -35,7 +73,7 @@ function modifier_shooter_ai:OnIntervalThink()
                     end)
                 end
                 unit:EmitSound("shooter.vo.eul")
-                Timers:CreateTimer(2.1, function()
+                Timers:CreateTimer(2.3, function()
                     PauseGame(true)
                     self.eulSeqInProgress = false
                 end)
@@ -48,7 +86,7 @@ function modifier_shooter_ai:OnIntervalThink()
 
         if CastAbility(unit, target, "sniper_concussive_grenade") then return end
         if CastAbility(unit, target, "sniper_shrapnel") then return end
-        if not self.usedEulSeq then
+        if self.evadeIdx > #self.evadeTargets and not self.usedEulSeq then
             self.eulSeqInProgress = true
             GiveCastOrderSimple(unit, target, unit:FindAbilityByName("shooter_eul"))
             return

@@ -6,7 +6,7 @@
   "npc_dota_hero_sanya"
   {
     "BaseClass"                                           "npc_dota_hero_dragon_knight"
-    "HeroID"                                              "125"
+    "HeroID"                                              "229"
     "Model"                                               "models/sanya/sanya.vmdl"
     "ModelScale"                                          "0.85"
 
@@ -14,7 +14,7 @@
 
     "MovementCapabilities"                                "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementTurnRate"                                    "1.5"
-    "MovementSpeed"                                       "305"
+    "MovementSpeed"                                       "275"
 
     "AttackCapabilities"                                  "DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"                                     "50"
@@ -24,12 +24,6 @@
     "BaseAttackSpeed"                                     "100"
     "AttackAnimationPoint"                                "0.45"
     "HasAggressiveStance"                                 "0"
-    "AttackSpeedActivityModifiers"
-    {
-      "fast"                                              "170"
-      "faster"                                            "275"
-      "fastest"                                           "350"
-    }
 
     "ArmorPhysical"                                       "3"
     "MagicalResistance"                                   "25"
@@ -39,67 +33,66 @@
     "StatusManaRegen"                                     "0.0"
     "StatusMana"                                          "75"
 
-    "AttributePrimary"                                    "DOTA_ATTRIBUTE_STRENGTH"
-    "AttributeBaseStrength"                               "23"
-    "AttributeStrengthGain"                               "3.8"
-    "AttributeBaseAgility"                                "15"
-    "AttributeAgilityGain"                                "2.1"
-    "AttributeBaseIntelligence"                           "17"
-    "AttributeIntelligenceGain"                           "1.5"
+    "AttributePrimary"                                    "DOTA_ATTRIBUTE_INTELLECT"
+    "AttributeBaseStrength"                               "0"
+    "AttributeStrengthGain"                               "0"
+    "AttributeBaseAgility"                                "0"
+    "AttributeAgilityGain"                                "0"
+    "AttributeBaseIntelligence"                           "67"
+    "AttributeIntelligenceGain"                           "0"
 
-    "Ability1"                                               ""
-    "Ability2"                                               ""
-    // "Ability3"                                            "sohei_ki_attraction"
-    // "Ability4"                                            "sohei_momentum"
-    // "Ability5"                                            "sohei_wholeness_of_body"
-    // "Ability6"                                            "sohei_flurry_of_blows"
-    // "Ability7"                                            "sohei_innate_oaa"
-    // "Ability8"                                            "generic_hidden"
-    // "Ability9"                                            "generic_hidden"
+    "AbilityTalentStart"                                  "100"
 
-    // "Ability10"                                           "special_bonus_strength_10"
-    // "Ability11"                                           "special_bonus_unique_sohei_3_oaa"
+    "UnitRelationshipClass"                               "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+    "HasInventory"                                        "1"
 
-    // "Ability12"                                           "special_bonus_unique_sohei_7_oaa"
-    // "Ability13"                                           "special_bonus_unique_sohei_2_oaa"
+    "VisionDaytimeRange"                                  "1800"
+    "VisionNighttimeRange"                                "1800"
 
-    // "Ability14"                                           "special_bonus_unique_sohei_1_oaa"
-    // "Ability15"                                           "special_bonus_unique_sohei_9_oaa"
+    "BoundsHullName"                                      "DOTA_HULL_SIZE_HERO"
+  }
+  "npc_dota_hero_sanya_ending"
+  {
+    "BaseClass"                                           "npc_dota_hero_dragon_knight"
+    "HeroID"                                              "230"
+    "Model"                                               "models/sanya/sanya.vmdl"
+    "ModelScale"                                          "0.85"
+    "SoundSet"                                            "Hero_SanyaEnding"
+    "GameSoundsFile"                                      "soundevents/heroes/sanya_ending.vsndevts"
 
-    // "Ability16"                                           "special_bonus_unique_sohei_5_oaa"
-    // "Ability17"                                           "special_bonus_unique_sohei_8_oaa"
+    "Ability1"                                            "ending_throw"
+    "Ability2"                                            "ending_attacks"
 
-    // "Facets"
-    // {
-    //   "sohei_monk"
-    //   {
-    //     "Icon"                                            "healing"
-    //     "Color"                                           "Red"
-    //     "GradientID"                                      "2"
-    //   }
-    //   "sohei_warrior"
-    //   {
-    //     "Icon"                                            "damage"
-    //     "Color"                                           "Yellow"
-    //     "GradientID"                                      "0"
-    //   }
-    //   "sohei_lord"
-    //   {
-    //     "Icon"                                            "armor_broken"
-    //     "Color"                                           "Blue"
-    //     "GradientID"                                      "2"
-    //   }
-    // }
+    "BotImplemented"                                      "0"
 
-    // special_bonus_unique_sohei_1_oaa - Repulsive Palm bonus stun duration if the target collides with an obstacle
-    // special_bonus_unique_sohei_2_oaa - Dash bonus slow
-    // special_bonus_unique_sohei_3_oaa - Dash bonus max range
-    // special_bonus_unique_sohei_4_oaa - Flurry of Blows bonus AoE                           - unused
-    // special_bonus_unique_sohei_5_oaa - Momentum bonus crit damage
-    // special_bonus_unique_sohei_6_oaa - Wholeness of Body Knockback                         - unused
-    // special_bonus_unique_sohei_7_oaa - Dash bonus damage
-    // special_bonus_unique_sohei_8_oaa - Flurry of Blows bonus attacks and duration
-    // special_bonus_unique_sohei_9_oaa - Repulsive Palm bonus strength damage
+    "MovementCapabilities"                                "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementTurnRate"                                    "1.5"
+    "MovementSpeed"                                       "355"
+
+    "AttackCapabilities"                                  "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"                                     "50"
+    "AttackDamageMax"                                     "50"
+    "AttackRange"                                         "150"
+    "AttackRate"                                          "1.7"
+    "BaseAttackSpeed"                                     "100"
+    "AttackAnimationPoint"                                "0.45"
+    "HasAggressiveStance"                                 "0"
+
+    "ArmorPhysical"                                       "3"
+    "MagicalResistance"                                   "25"
+
+    "StatusHealthRegen"                                   "3.25"
+    "StatusHealth"                                        "200"
+    "StatusManaRegen"                                     "0.0"
+    "StatusMana"                                          "75"
+
+    "AttributePrimary"                                    "DOTA_ATTRIBUTE_INTELLECT"
+    "AttributeBaseStrength"                               "100"
+    "AttributeStrengthGain"                               "0"
+    "AttributeBaseAgility"                                "100"
+    "AttributeAgilityGain"                                "0"
+    "AttributeBaseIntelligence"                           "100"
+    "AttributeIntelligenceGain"                           "0"
 
     "AbilityTalentStart"                                  "100"
 
@@ -113,14 +106,8 @@
 
     "precache"
     {
-      // "model"                                             "models/heroes/sohei/bepis_sohei/bepis_sohei_base.vmdl"
-      // "particle"                                          "particles/hero/sohei/arcana/dbz/dbz_flare_core.vpcf"
-      // "particle"                                          "particles/hero/sohei/arcana/pepsi/pepsi_flare_core.vpcf"
+      "soundfile"         "soundevents/heroes/sanya_ending.vsndevts"
     }
-    // "particle_folder"                                     "particles/hero/sohei"
-    // "GameSoundsFile"                                      "soundevents/units/game_sounds_sohei.vsndevts"
-    // "SoundSet"                                            "Sohei"
-    //"VoiceFile"                 "soundevents/units/game_sounds_vo_sohei.vsndevts"
   }
 
   "npc_dota_hero_sanya_towel_master"

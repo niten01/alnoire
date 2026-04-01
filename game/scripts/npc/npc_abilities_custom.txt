@@ -48,6 +48,7 @@
 #base "abilities/heroes/towel_master_abilities.txt"
 #base "abilities/heroes/rapper_abilities.txt"
 #base "abilities/heroes/logarithmus_abilities.txt"
+#base "abilities/heroes/ending_abilities.txt"
 
 "DOTAAbilities"
 {

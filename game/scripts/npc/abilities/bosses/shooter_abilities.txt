@@ -35,12 +35,12 @@
 
 			"damage"
 			{
-				"value"					"200"
+				"value"					"10"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"AbilityCastRange"		
 			{
-				"value"							"2000"
+				"value"							"9999"
 			}
 			"radius"		
 			{
@@ -112,7 +112,7 @@
 			}
 			"shrapnel_damage"		
 			{
-				"value"			"30 45 60 75"
+				"value"			"1"
 				"special_bonus_facet_sniper_scattershot"	"=90 =160 =230 =300"
 				"special_bonus_unique_sniper_shrapnel_damage"		"+30%"
 
@@ -160,7 +160,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"3000"
+		"AbilityCastRange"				"9999"
 		"AbilityCastRangeBuffer"		"600"
 		"AbilityCastPoint"				"2"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"

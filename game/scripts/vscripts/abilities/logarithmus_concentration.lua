@@ -66,6 +66,22 @@ function modifier_logarithmus_concentration:OnAttackLanded(params)
         local pfx = ParticleManager:CreateParticle("particles/logarithmus_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW,
             parent)
         ParticleManager:ReleaseParticleIndex(pfx)
+
+        local leanMod = parent:FindModifierByName("modifier_lean_power_logarithmus")
+        if leanMod then
+            PlayLeanSplash(params.target, leanMod.radius)
+
+            local enemies = FindEnemiesForSanyaInRadius(params.target:GetAbsOrigin(), leanMod.radius)
+            for _, ent in ipairs(enemies) do
+                ApplyDamage({
+                    victim = ent,
+                    attacker = self:GetCaster(),
+                    damage = leanMod.damage,
+                    damage_type = DAMAGE_TYPE_MAGICAL,
+                    ability = self,
+                })
+            end
+        end
     end
 
     self:SetStackCount(0)

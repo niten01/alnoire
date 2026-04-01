@@ -89,7 +89,7 @@ function rapper_souljah:OnProjectileHit_ExtraData(target, location, data)
 
     caster:PerformAttack(target, true, true, true, false, false, false, false)
 
-    if IsServer() and data.isLean > 0 then
+    if IsServer() and data.isLean and data.isLean > 0 then
         assert(data.leanRadius and data.leanDamage)
         PlayLeanSplash(target, data.leanRadius)
 

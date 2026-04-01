@@ -14,6 +14,45 @@
     volume_fade_out = "0.000000"
     spread_radius = "1000.000000"
   }
+  shooter.vo.evade1 = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/sniper/snip_ability_shrapnel_07.vsnd",
+    ]
+    volume = "3.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  shooter.vo.evade2 = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/sniper/snip_ability_shrapnel_06.vsnd",
+    ]
+    volume = "3.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  shooter.vo.evade3 = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/vo/sniper/snip_ability_shrapnel_02.vsnd",
+    ]
+    volume = "3.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
   shooter.vo.nokak = {
     type = "dota_update_default"
     vsnd_files =
@@ -32,6 +71,19 @@
     vsnd_files =
     [
         "sounds/items/dota_item_cyclone.vsnd",
+    ]
+    volume = "1.00000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "weapons"
+    volume_fade_out = "0.000000"
+    spread_radius = "1000.000000"
+  }
+  ability.shooter.evade = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/weapons/hero/antimage/blink_out.vsnd",
     ]
     volume = "1.00000"
     pitch = "1.000000"

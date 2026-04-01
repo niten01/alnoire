@@ -15,7 +15,7 @@ function StoryDriver:Init()
   ChatCommand:LinkDevCommand("-class", function(event, args)
     self:HandleAction(event.playerID, {
       type = "change_hero",
-      hero = "npc_dota_hero_sanya_" .. tostring(args[1])
+      hero = args[1] and "npc_dota_hero_sanya_" .. tostring(args[1]) or "npc_dota_hero_sanya"
     })
   end)
 
@@ -23,6 +23,10 @@ function StoryDriver:Init()
     self:HandleAction(event.playerID, {
       type = "start_city_finale_cutscene",
     })
+  end)
+
+  ChatCommand:LinkDevCommand("-bc", function(event, args)
+    BarrelClick:Start(event.playerID)
   end)
 end
 
@@ -103,6 +107,11 @@ function Handlers.change_hero(playerID, action)
   local newHero = PlayerResource:ReplaceHeroWith(playerID, action.hero, 0, 0)
   newHero:SetForwardVector(fwd)
   hero:RemoveSelf()
+  Timers:CreateTimer(1.0, function()
+    local player = PlayerResource:GetPlayer(playerID)
+    assert(player)
+    CustomGameEventManager:Send_ServerToPlayer(player, "flow_bar_force_update", {})
+  end)
 end
 
 function Handlers.change_act(playerID, action)
@@ -355,10 +364,6 @@ function Handlers.start_city_finale_cutscene(playerID, action)
   prettyRemoveNPC("npc_guide")
   SpawnManager:SpawnNPC("spawner_guide_forest_entrance")
   CityCutscene:Start(playerID)
-
-  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
-  assert(hero)
-  hero:AddNewModifier(nil, nil, "modifier_ending_evade", { duration = -1 })
 
   fastRemoveNPC("npc_xavier")
   SpawnManager:SpawnNPC("spawner_xavier_ending")

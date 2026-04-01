@@ -119,7 +119,7 @@ function perekup_shuffleshot:ArcWarning(targetPos)
     local endPos = casterPos + dir * dist * 2 + right * rnd
     self.arcInfo = PointsArc(casterPos, targetPos, endPos)
     ShowGenericCurveWarning(self.arcInfo, self:GetSpecialValueFor("projectile_radius"),
-        self:GetSpecialValueFor("warning_delay"))
+        self:GetSpecialValueFor("warning_delay") + self:GetCastPoint())
 end
 
 function perekup_shuffleshot:CircleWarning(targetPos)
@@ -132,7 +132,7 @@ function perekup_shuffleshot:CircleWarning(targetPos)
     local endPos = casterPos + right * rnd
     self.arcInfo = PointsArc(casterPos, targetPos, endPos)
     ShowGenericCurveWarning(self.arcInfo, self:GetSpecialValueFor("projectile_radius"),
-        self:GetSpecialValueFor("warning_delay"))
+        self:GetSpecialValueFor("warning_delay") + self:GetCastPoint())
 end
 
 function perekup_shuffleshot:ShotgunWarning(targetPos)
@@ -144,7 +144,7 @@ function perekup_shuffleshot:ShotgunWarning(targetPos)
     self.endPoints = PointsFan(casterPos, endPos, RandomInt(1, 7), RandomFloat(5, 60))
     for _, point in ipairs(self.endPoints) do
         ShowGenericLineWarning(casterPos, point, self:GetSpecialValueFor("projectile_radius"),
-            self:GetSpecialValueFor("warning_delay"))
+            self:GetSpecialValueFor("warning_delay") + self:GetCastPoint())
     end
 end
 
@@ -172,7 +172,7 @@ function perekup_shuffleshot:ArcCast()
         ParticleManager:ReleaseParticleIndex(pfx)
     end
     Timers:CreateTimer(0, function()
-        curPoint.z = 200
+        curPoint.z = GetGroundHeight(curPoint, nil) + 200
         ParticleManager:SetParticleControl(pfx, 0, curPoint)
         ParticleManager:SetParticleControl(pfx, 3, curPoint)
         curPoint = arcIter()
@@ -212,7 +212,7 @@ function perekup_shuffleshot:ShotgunCast()
             ParticleManager:ReleaseParticleIndex(pfx)
         end
         Timers:CreateTimer(0, function()
-            point.z = 200
+            point.z = GetGroundHeight(point, nil) + 200
             ParticleManager:SetParticleControl(pfx, 0, point)
             ParticleManager:SetParticleControl(pfx, 3, point)
             point = point + dir * step

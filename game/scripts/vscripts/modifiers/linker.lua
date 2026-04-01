@@ -117,3 +117,4 @@ LinkLuaModifier('modifier_lean_power_towel_master', 'modifiers/modifier_lean_pow
 LinkLuaModifier('modifier_lean_power_towel_summon', 'modifiers/modifier_lean_power_towel_summon',
     LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_lean_power_rapper', 'modifiers/modifier_lean_power_rapper', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_lean_power_logarithmus', 'modifiers/modifier_lean_power_logarithmus', LUA_MODIFIER_MOTION_NONE)

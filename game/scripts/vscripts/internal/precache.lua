@@ -13,6 +13,7 @@ return {
         "npc_dota_hero_sanya_rapper",
         "npc_dota_hero_sanya_logarithmus",
         "npc_dota_hero_sanya",
+        "npc_dota_hero_sanya_ending",
 
         "npc_subway_city",
         "npc_subway_to_city",
@@ -20,6 +21,7 @@ return {
         "npc_flask_barrel",
 
         "npc_training_dummy",
+        "npc_minigame_barrel",
 
         "npc_courier_knight",
         "npc_courier_bug",
