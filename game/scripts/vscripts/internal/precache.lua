@@ -333,6 +333,7 @@ return {
         "soundevents/items.vsndevts",
         "soundevents/music.vsndevts",
         "soundevents/hlup.vsndevts",
+        "soundevents/barrel_click.vsndevts",
         "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts",
         "soundevents/voscripts/game_sounds_vo_monkey_king.vsndevts",
         "soundevents/bosses/bidlo.vsndevts",
@@ -473,6 +474,10 @@ return {
         -- clash
         "particles/clash_custom_freeze.vpcf",
         "particles/econ/items/drow/drow_arcana/drow_arcana_status_effect_frost_arrow.vpcf",
+
+        -- barrel click
+        "particles/units/heroes/hero_bounty_hunter/bounty_hunter_cutpurse.vpcf",
+        "particles/dev/library/base_dust_hit.vpcf",
 
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",

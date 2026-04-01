@@ -434,3 +434,17 @@ function PlayLeanSplash(ent, radius)
   ParticleManager:ReleaseParticleIndex(pfx)
   ent:EmitSound("items.lean_power.splash")
 end
+
+-- give or drop item by name
+function SafeGiveItem(playerID, itemName)
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  assert(hero, "No hero")
+  local item = hero:AddItemByName(itemName)
+  if not item then
+    local playerHndl = PlayerResource:GetPlayer(playerID)
+    item = CreateItem(itemName, playerHndl, hero)
+    CreateItemOnPositionSync(hero:GetAbsOrigin(), item)
+  end
+  assert(item, "Failed to create item: " .. itemName)
+  return item
+end

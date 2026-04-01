@@ -24,7 +24,7 @@
 			"numPonds"		        	"3"	
             "pondRadius"            	"200"
 			"pondDuration"				"9.5"
-            "pondBuffHpRegen"        	"60.0"
+            "pondBuffHpRegen"        	"80.0"
             "pondBuffAttackSpeedAmp"    "120"
             "pondDebuffFixedSpeed"      "200"
             "pondDebuffArmorReduse"     "10"

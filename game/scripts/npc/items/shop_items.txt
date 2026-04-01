@@ -133,7 +133,7 @@
 
         "AbilityValues" 
         {
-            "damage"  "15"
+            "damage"  "10"
             "interval" "1"
             "duration" "3"
         }
@@ -157,7 +157,7 @@
 
         "AbilityValues" 
         {
-            "armor_reduction"  "2"
+            "armor_reduction"  "1"
             "duration" "3"
         }
     }
@@ -175,7 +175,7 @@
 
         "AbilityValues" 
         {
-            "mag_res_reduction"  "15"
+            "mag_res_reduction"  "10"
             "duration" "4"
         }
     }
@@ -245,7 +245,7 @@
         "AbilityValues" 
         {
             "attack_speed_reduction"  "30"
-            "poison_dps"  "15"
+            "poison_dps"  "10"
             "duration" "6"
         }
     }
@@ -279,7 +279,7 @@
         "AbilityValues" 
         {
             "ms_reduction"  "30"
-            "poison_dps"  "20"
+            "poison_dps"  "15"
             "duration" "3"
         }
     }
@@ -312,10 +312,10 @@
 
         "AbilityValues" 
         {
-            "mag_res_reduction"  "20"
-            "attack_speed_reduction"  "100"
-            "poison_dps"  "80"
-            "duration" "3"
+            "mag_res_reduction"  "15"
+            "attack_speed_reduction"  "40"
+            "poison_dps"  "15"
+            "duration" "7"
         }
     }
     "item_recipe_marrow_eater"
@@ -347,10 +347,10 @@
 
         "AbilityValues" 
         {
-            "ms_reduction"  "20"
-            "armor_reduction"  "100"
-            "poison_dps"  "80"
-            "duration" "3"
+            "ms_reduction"  "40"
+            "armor_reduction"  "2"
+            "poison_dps"  "20"
+            "duration" "4"
         }
     }
     "item_recipe_entrophia"
@@ -383,11 +383,11 @@
         "AbilityValues" 
         {
             "ms_reduction"  "50"
-            "armor_reduction"  "200"
-            "mag_res_reduction"  "50"
-            "attack_speed_reduction"  "200"
-            "poison_dps"  "800"
-            "duration" "3"
+            "armor_reduction"  "4"
+            "mag_res_reduction"  "20"
+            "attack_speed_reduction"  "50"
+            "poison_dps"  "25"
+            "duration" "7"
         }
     }
     "item_leadlined_grip"
@@ -409,8 +409,8 @@
         "AbilityValues" 
         {
             "attack_speed_reduction"  "100"
-            "bonus_damage"  "150"
-            "duration"      "5"
+            "bonus_damage"  "125"
+            "duration"      "7"
         }
     }
     "item_echo_dagger"
@@ -429,7 +429,7 @@
 
         "AbilityValues" 
         {
-            "damage_reduction_pct"    "40"
+            "damage_reduction_pct"    "50"
         }
     }
     "item_schism"
@@ -450,7 +450,7 @@
             "chance_pct"     "33"        
             "additional_targets"    "2"
             "search_radius"  "400"
-            "damage_reduction_pct"  "30" 
+            "damage_reduction_pct"  "70" 
         }
     }
     "item_cinder_brand"
@@ -472,7 +472,7 @@
         {
             // "chance_pct"     "33"        
             "radius"  "400"
-            "damage"  "140" 
+            "damage"  "80" 
         }
     }
     "item_malignance"
@@ -489,13 +489,13 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "ItemCost"                      "2200"
 
-        "AbilityCooldown"               "10.0" 
+        "AbilityCooldown"               "26.0" 
 
         "AbilityValues" 
         {
-            "crit_pct" "300"
-            "chance_pct" "50"
-            "duration"   "7"
+            "crit_pct" "250"
+            "chance_pct" "75"
+            "duration"   "6"
         }
     }
     "item_keen_killer"
@@ -512,13 +512,13 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "ItemCost"                      "2200"
 
-        "AbilityCooldown"               "10.0" 
+        "AbilityCooldown"               "24.0" 
 
         "AbilityValues" 
         {
             "crit_pct" "300"
-            "chance_pct" "50"
-            "duration"   "7"
+            "chance_pct" "75"
+            "duration"   "4"
         }
     }
     "item_nullity"
@@ -580,15 +580,15 @@
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
         "AbilityCastRange"              "500"
-        "AbilityCooldown"               "12.0" 
+        "AbilityCooldown"               "16.0" 
 
         "AbilityValues" 
         {
             "duration"      "3.0" // debuff
             "ms_reduction"  "100"
-            "damage"        "175"
+            "damage"        "130"
 
-            "expand_time"   "2.4" // particle bound
+            "expand_time"   "2.0" // particle bound
         }
 
         "precache"
