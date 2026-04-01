@@ -707,7 +707,7 @@ return {
             npc = "npc_ocean_morph_small",
             team = DOTA_TEAM_BADGUYS,
             packID = "pack_ocean_act2_morphs",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_morph_small_ai",
             modifiers = { "modifier_morph_small" }
         },
 

@@ -91,7 +91,11 @@ function GiveCastOrderForcedBehavior(unit, ability, behavior, target)
   elseif behavior == DOTA_ABILITY_BEHAVIOR_NO_TARGET then
     unit:CastAbilityNoTarget(ability, -1)
   elseif behavior == DOTA_ABILITY_BEHAVIOR_POINT then
-    unit:CastAbilityOnPosition(GetTargetPos(target), ability, -1)
+    if ability.forcedPosition then
+      unit:CastAbilityOnPosition(ability.forcedPosition, ability, -1)
+    else
+      unit:CastAbilityOnPosition(GetTargetPos(target), ability, -1)
+    end
   elseif behavior == DOTA_ABILITY_BEHAVIOR_TOGGLE then
     unit:CastAbilityToggle(ability, -1)
   else
