@@ -1,0 +1,4 @@
+"DOTA_Tooltip_ability_tadpole_shot"		            "Сопля"
+"DOTA_Tooltip_ability_tadpole_shot_Lore"		            "Братьев-шалопаев всегда было четверо, куда же подевался один из них? Надеюсь, у него все хорошо."
+"DOTA_Tooltip_Ability_tadpole_shot_SummaryDescription" ""
+"DOTA_Tooltip_ability_tadpole_shot_Description"		"Шалопай собирает сопли что есть мочи и стреляет ими через свою трубочку, фу бля.."

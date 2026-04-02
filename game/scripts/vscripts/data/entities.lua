@@ -218,7 +218,7 @@ return {
             npc = "npc_brewmaster",
             modifiers = { "modifier_story_npc" },
         },
-        spawner_brewmaster_minigame            = {
+        spawner_brewmaster_minigame   = {
             npc = "npc_brewmaster",
             modifiers = { "modifier_story_npc" },
         },

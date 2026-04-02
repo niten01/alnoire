@@ -1,0 +1,9 @@
+"DOTA_Tooltip_ability_tusk_walrus_punch"		            "Коронный удар"
+"DOTA_Tooltip_ability_tusk_walrus_punch_Lore"		            "Валрус? Сори, не играю в лол"
+"DOTA_Tooltip_Ability_tusk_walrus_punch_SummaryDescription" ""
+"DOTA_Tooltip_ability_tusk_walrus_punch_Description"		"Неясно, что этот снежный морж забыл в океане, но силенок ему не занимать! Всего один удар отправит любого малька к праотцам, но не тебя. Тебя такой удар максимум подбросит, но жить будешь."
+
+"DOTA_Tooltip_ability_tusk_ice_shards"		            "Ледяная бухта"
+"DOTA_Tooltip_ability_tusk_ice_shards_Lore"		            "Остынь, братишка"
+"DOTA_Tooltip_Ability_tusk_ice_shards_SummaryDescription" ""
+"DOTA_Tooltip_ability_tusk_ice_shards_Description"		"Жаль, что не всем дано вырубать одной левой, и тем не менее даже самые ссыкливые тусики адаптировались и научились спасать свой ass с помощью ледяной бухты."

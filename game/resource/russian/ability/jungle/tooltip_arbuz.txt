@@ -1,0 +1,14 @@
+"DOTA_Tooltip_ability_huge_arbuz_passive"		            "Коварные чешуйки"
+"DOTA_Tooltip_ability_huge_arbuz_passive_Lore"		            "Щаща щаща.."
+"DOTA_Tooltip_Ability_huge_arbuz_passive_SummaryDescription" ""
+"DOTA_Tooltip_ability_huge_arbuz_passive_Description"		"Очень коварное существо, я даже не могу до конца понять, сколько его еще надо бить.."
+
+"DOTA_Tooltip_ability_tidehunter_anchor_smash"		            "Якорьный смэш"
+"DOTA_Tooltip_ability_tidehunter_anchor_smash_Lore"		            "От арбуза нет спасения.."
+"DOTA_Tooltip_Ability_tidehunter_anchor_smash_SummaryDescription" ""
+"DOTA_Tooltip_ability_tidehunter_anchor_smash_Description"		"Арбуз делает СМЭШ по области своим невообразимо огромным якорем."
+
+"DOTA_Tooltip_ability_tidehunter_dead_in_the_water"		            "Якорь мне в бухту!"
+"DOTA_Tooltip_ability_tidehunter_dead_in_the_water_Lore"		            "Откуда он его достал?!"
+"DOTA_Tooltip_Ability_tidehunter_dead_in_the_water_SummaryDescription" ""
+"DOTA_Tooltip_ability_tidehunter_dead_in_the_water_Description"		"Арбуз сажает тебя на цепь якоря и своей жопой прикрывает его, чтобы ты никуда не ушел."
