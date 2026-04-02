@@ -1132,15 +1132,15 @@ return {
         pack_forest_act1_axe = {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 1500,
-            rangeRetreat = 900,
-            rangeAggro = 650,
+            rangeRetreat = 1000,
+            rangeAggro = 800,
         },
 
         pack_forest_act1_roshan = {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 1500,
             rangeRetreat = 900,
-            rangeAggro = 650,
+            rangeAggro = 750,
         },
 
         pack_forest_act1_techies_1 = {
@@ -1164,14 +1164,14 @@ return {
 
         pack_forest_act1_shrooms = {
             rangeFastTickRate = 1400,
-            rangeAggro = 500,
+            rangeAggro = 600,
             rangeRetreat = 900,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_forest_act1_dragnolls = {
             rangeFastTickRate = 1900,
-            rangeAggro = 830,
+            rangeAggro = 950,
             rangeRetreat = 1300,
             stayActivatedOnPlayerDeath = true,
         },
@@ -1222,21 +1222,21 @@ return {
         pack_ocean_act2_arbuz = {
             rangeFastTickRate = 3700,
             rangeRetreat = 1900,
-            rangeAggro = 600,
+            rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_seledka = {
             rangeFastTickRate = 4000,
             rangeRetreat = 2200,
-            rangeAggro = 500,
+            rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_ocean_act2_morphs = {
             rangeFastTickRate = 4000,
             rangeRetreat = 2300,
-            rangeAggro = 550,
+            rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
         },
 
@@ -1256,7 +1256,7 @@ return {
 
         pack_darkforest_act3_drow = {
             rangeFastTickRate = 2000,
-            rangeRetreat = 1100,
+            rangeRetreat = 1400,
             rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
         },
@@ -1264,14 +1264,14 @@ return {
         pack_darkforest_act3_ursa = {
             rangeFastTickRate = 6000,
             rangeRetreat = 4000,
-            rangeAggro = 700,
+            rangeAggro = 750,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_darkforest_act3_titans = {
             rangeFastTickRate = 2500,
-            rangeRetreat = 1200,
-            rangeAggro = 800,
+            rangeRetreat = 1300,
+            rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 
@@ -1285,7 +1285,7 @@ return {
         pack_darkforest_act3_greevils = {
             rangeFastTickRate = 3200,
             rangeRetreat = 2200,
-            rangeAggro = 900,
+            rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 
@@ -1372,6 +1372,9 @@ return {
         pack_goden = {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 2400,
+            rangeRetreat = 1600,
+            rangeAggro = 1000
         },
         pack_ball = {
             activateAfterUnitsSpawned = true,
@@ -1429,6 +1432,9 @@ return {
         },
         pack_genius = {
             activateAfterUnitsSpawned = false,
+            rangeRetreat = 4800,
+            rangeFastTickRate = 6000,
+            rangeAggro = 1500,
         },
 
         pack_ghetto = {
