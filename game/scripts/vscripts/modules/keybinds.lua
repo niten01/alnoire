@@ -16,7 +16,6 @@ end
 
 function Keybinds:OnHeroInGame(hero)
     if not IsServer() then return end
-    DebugPrint("salkdfjalsdfjsad")
     Timers:CreateTimer(1, function()
         if hero:GetUnitName() == "npc_dota_hero_sanya_logarithmus" then
             self:RegisterBind(hero:GetPlayerOwnerID(), "sanya_sprint", "G")

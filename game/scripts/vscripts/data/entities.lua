@@ -1077,6 +1077,8 @@ return {
             target = nil,
             music = nil,
             doors = {},
+            xpBounty = 0,
+            goldBounty = 0,
         },
 
         pack_shooter_classroom = {
@@ -1113,6 +1115,8 @@ return {
             rangeFastTickRate = 6500,
             rangeRetreat = 5400,
             rangeAggro = 1000,
+            xpBounty = 200,
+            goldBounty = 200,
         },
 
         pack_forest_act1_bears = {

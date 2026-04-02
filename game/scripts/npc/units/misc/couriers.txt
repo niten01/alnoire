@@ -282,7 +282,7 @@
 	}
 	"npc_courier_plant" 
 	{
-		"Model"						"models/items/undying/flesh_golem/ti9_cache_undying_carnivorous_parasitism_golem/ti9_cache_undying_carnivorous_parasitism_golem.vmdl"
+		"Model"						"models/courier/tegu/tegu.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"ModelScale" 				"1.0"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"

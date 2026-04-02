@@ -26,6 +26,7 @@ function StoryDriver:Init()
   end)
 
   ChatCommand:LinkDevCommand("-bc", function(event, args)
+    BarrelClick:Enable()
     BarrelClick:Start(event.playerID)
   end)
 end
