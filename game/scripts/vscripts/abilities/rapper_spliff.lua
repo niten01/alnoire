@@ -27,6 +27,13 @@ function rapper_spliff:OnUpgrade()
     local shield = caster:FindModifierByName("modifier_rapper_spliff_shield")
     if shield then
         shield:ForceRefresh()
+        ApplyDamage({
+            victim = caster,
+            attacker = caster,
+            damage = 1,
+            damage_type = DAMAGE_TYPE_PHYSICAL,
+            ability = self,
+        })
     end
 end
 

@@ -1,4 +1,4 @@
 "DOTA_Tooltip_ability_sanya_towel_summon_return"		            "Возврат"
 "DOTA_Tooltip_ability_sanya_towel_summon_return_Lore"		    ""
 "DOTA_Tooltip_Ability_sanya_towel_summon_return_SummaryDescription" ""
-"DOTA_Tooltip_ability_sanya_towel_summon_return_Description"		"Упрощенная версия ритуала призыва, позволяет переместить Раба к себе из любой точки мира."
+"DOTA_Tooltip_ability_sanya_towel_summon_return_Description"		"Упрощенная версия ритуала призыва, позволяет переместить Раба к себе из любой точки мира.<br><br>Раб может использовать предметы."

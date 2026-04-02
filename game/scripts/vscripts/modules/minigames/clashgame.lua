@@ -21,7 +21,7 @@ function ClashGame:Init()
     -- ВОВАН ЭТО ТЕБЕ
     self.waveInterval = 25.0
     self.firstSpellDelay = 5
-    self.spellCooldown = 8
+    self.spellCooldown = 14
     self.spellTargetFindRadius = 500
     self.totalSpellTargets = 3
     self.targetPointNames = { "target_dire_spell_left", "target_dire_spell_right", "target_dire_spell_ancient" }

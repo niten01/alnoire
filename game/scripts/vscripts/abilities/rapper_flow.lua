@@ -95,7 +95,8 @@ function modifier_rapper_flow:OnAttackLanded(params)
     if self:GetStackCount() >= self.maxStacks then return end
     if self:GetParent():HasModifier("modifier_rapper_strife") then return end
 
-    self:SetStackCount(self:GetStackCount() + self:GetAbility():GetSpecialValueFor("stacks_per_attack"))
+    self:SetStackCount(math.min(self.maxStacks,
+    self:GetStackCount() + self:GetAbility():GetSpecialValueFor("stacks_per_attack")))
 end
 
 function modifier_rapper_flow:GetModifierDamageOutgoing_Percentage()

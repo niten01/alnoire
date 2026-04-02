@@ -37,7 +37,7 @@ function modifier_schism_owner:OnAttack(params)
     local ability = self:GetAbility()
     local target = params.target
 
-    if params.no_attack_cooldown or params.attacker ~= parent or not parent:IsRangedAttacker() then return end
+    if params.attacker ~= parent or not parent:IsRangedAttacker() then return end
     if not RollPercentage(self.chancePct) then return end
 
     local enemies = FindEnemiesForSanyaInRadius(target:GetAbsOrigin(), ability:GetSpecialValueFor("search_radius"))

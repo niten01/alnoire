@@ -429,7 +429,7 @@
 
         "AbilityValues" 
         {
-            "damage_reduction_pct"    "50"
+            "damage_reduction_pct"    "0"
         }
     }
     "item_schism"
@@ -450,7 +450,7 @@
             "chance_pct"     "33"        
             "additional_targets"    "2"
             "search_radius"  "400"
-            "damage_reduction_pct"  "70" 
+            "damage_reduction_pct"  "20" 
         }
     }
     "item_cinder_brand"
@@ -586,7 +586,7 @@
         {
             "duration"      "3.0" // debuff
             "ms_reduction"  "100"
-            "damage"        "130"
+            "damage"        "180"
 
             "expand_time"   "2.0" // particle bound
         }

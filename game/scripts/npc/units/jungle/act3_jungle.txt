@@ -18,11 +18,12 @@
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"1"			// Physical protection.
+		"ArmorPhysical"				"10"			// Physical protection.
+		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"15"		// Damage range min.
-		"AttackDamageMax"			"20"		// Damage range max.
-		"AttackRate"				"1.1"		// Speed of attack.
+		"AttackDamageMin"			"40"		// Damage range min.
+		"AttackDamageMax"			"60"		// Damage range max.
+		"AttackRate"				"1.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"1300"		// Range within a target can be attacked.
@@ -33,14 +34,14 @@
 		"RingRadius"				"40"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"255"					
 
-		"StatusHealth"				"500"		// Base health.
+		"StatusHealth"				"3000"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -127,9 +128,9 @@
 		"RingRadius"				"40"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
@@ -196,9 +197,9 @@
 		"RingRadius"				"40"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
@@ -267,9 +268,9 @@
 		"RingRadius"				"40"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
@@ -339,9 +340,9 @@
 		"RingRadius"				"40"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
@@ -414,9 +415,9 @@
 		"RingRadius"				"40"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"255"					
@@ -484,9 +485,9 @@
 		"RingRadius"				"10"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
@@ -551,9 +552,9 @@
 		"RingRadius"				"10"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
@@ -626,9 +627,9 @@
 		"RingRadius"				"10"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
@@ -700,9 +701,9 @@
 		"RingRadius"				"10"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
@@ -771,9 +772,9 @@
 		"RingRadius"				"10"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
@@ -841,9 +842,9 @@
 		"RingRadius"				"10"
 		"HealthBarOffset"			"160"
 
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					

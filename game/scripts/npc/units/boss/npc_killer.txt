@@ -19,8 +19,8 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"			// Physical protection.
-		"MagicalResistance"         "30"
+		"ArmorPhysical"				"3"			// Physical protection.
+		"MagicalResistance"         "50"
 
 		// Attack
 		//----------------------------------------------------------------
@@ -54,9 +54,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"1"		// Experience earn.
-		"BountyGoldMin"				"1"		// Gold earned min.
-		"BountyGoldMax"				"1"		// Gold earned max.
+		"BountyXP" "0"		// Experience earn.
+		"BountyGoldMin" "0"		// Gold earned min.
+		"BountyGoldMax" "0"		// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
@@ -65,7 +65,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2200"		// Base health.
+		"StatusHealth"				"1400"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
 		"StatusMana"				"5000"		// Base mana.
 		"StatusManaRegen"			"100.0"		// Mana regeneration rate.		 

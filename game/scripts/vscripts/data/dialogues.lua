@@ -140,6 +140,14 @@ conditions = {
 { beat="npc_monkey_king",type="beat" },
 },
 },
+d_untitled_passage_3 = {
+priority = 0,
+conditions = {
+{ interact="npc_cat_barrel",type="interact" },
+{ var="act",value={ 1, 2 },type="var" },
+{ no_item="item_cage_key",type="no_item" },
+},
+},
 d_untitled_passage_33 = {
 priority = 0,
 conditions = {
@@ -214,13 +222,15 @@ priority = 0,
 conditions = {
 { var="act",value={ 1, 2 },type="var" },
 { trigger="trigger_island_fight_1",npc="npc_island_guard",type="trigger" },
+{ ent_var="first_met_global",value={ true },npc="npc_island_guard",type="ent_var" },
 },
 },
 d_untitled_passage_49 = {
 priority = 0,
 conditions = {
-{ trigger="trigger_island_third",type="trigger" },
 { var="act",value={ 1, 2 },type="var" },
+{ interact="npc_cat_barrel",type="interact" },
+{ has_item="item_cage_key",type="has_item" },
 },
 },
 d_untitled_passage_59 = {
@@ -473,6 +483,7 @@ priority = 0,
 conditions = {
 { questID="q_island_escape",status=QuestStatus.INACTIVE,type="quest" },
 { interact="npc_subway_fake",type="interact" },
+{ var="act",value={ 1 },type="var" },
 },
 },
 d_subway_fake_return = {
@@ -1280,7 +1291,7 @@ conditions = {
 { interact="npc_courier_octopus_1",type="interact" },
 },
 },
-d_untitled_passage_3 = {
+d_untitled_passage_3_merged_bubbles = {
 priority = 0,
 conditions = {
 { interact="npc_courier_pivo",type="interact" },
@@ -1883,7 +1894,7 @@ d_ty_klanyaeshsya_v_otvet = {
 text = [[*Послышался шум динамиков.*
 Ты... Меня впечталил, конечно.]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_cat_barrel",
 choices = {
 {
 text = [[Рад.]],
@@ -2274,6 +2285,17 @@ next = "d_nea_teper_ya_tvoj_tsar",
 },
 },
 },
+d_untitled_passage_3 = {
+text = [[Без ключа эту клетку не открыть.]],
+speaker = [[...]],
+npc = "npc_cat_barrel",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
 d_untitled_passage_33 = {
 text = [[Пс... Эй, ты. Подойди.
 *Подзывает тебя, поддёргивая рукой.*]],
@@ -2399,12 +2421,16 @@ next = "d_obidno",
 },
 d_untitled_passage_49 = {
 text = [[*Ты используешь ключ и открываешь клетку.*]],
-speaker = [[Крип-кот в бочке]],
-npc = nil,
+speaker = [[Кот-бочка]],
+npc = "npc_cat_barrel",
 choices = {
 {
 text = [[Вы свободны, убегайте.]],
 next = "d_vy_svobodny_ubegajte",
+actions = {
+{ itemName="item_cage_key",type="take_item" },
+{ var="freed_island_creeps",value=true,type="set_var" },
+},
 },
 },
 },
@@ -5107,12 +5133,15 @@ next = "d_pp2",
 },
 d_vy_svobodny_ubegajte = {
 text = [[*Поочерёдно крипы встали и поклонились тебе.*]],
-speaker = [[Крип-кот в бочке]],
-npc = nil,
+speaker = [[Кот-бочка]],
+npc = "npc_cat_barrel",
 choices = {
 {
 text = [[*Ты кланяешься в ответ.*]],
 next = "d_ty_klanyaeshsya_v_otvet",
+actions = {
+{ npc="npc_cat_barrel",type="remove" },
+},
 },
 },
 },
@@ -5624,7 +5653,7 @@ next = nil,
 d_ladno_poka = {
 text = [[*В стороне ты заметил вход в подземные пути.*]],
 speaker = [[...]],
-npc = nil,
+npc = "npc_cat_barrel",
 choices = {
 {
 text = [[Закрыть.]],
@@ -6437,7 +6466,7 @@ next = "d_em_my_v_limbe",
 d_rad = {
 text = [[Но и сильно разочаровал. Ты забрал мой товар, так что с этих пор - оглядывайся.]],
 speaker = [[Эпштейн]],
-npc = nil,
+npc = "npc_cat_barrel",
 choices = {
 {
 text = [[Ладно, пока.]],
@@ -15503,7 +15532,7 @@ next = nil,
 },
 },
 },
-d_untitled_passage_3 = {
+d_untitled_passage_3_merged_bubbles = {
 text = [[Не стесняйся, бери флягу и напивайся вдоволь. 
 В бочке всегда можешь брать добавки.
 Пьём весь день!]],

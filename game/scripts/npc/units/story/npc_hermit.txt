@@ -20,7 +20,8 @@
 
 				"Wearable2" { "ItemDef" "13228" } // back
 				"Wearable3" { "ItemDef" "8172" } // head
-				"Wearable5" { "ItemDef" "4246" } // hammer
+				// "Wearable5" { "ItemDef" "4246" } // hammer
+				"Wearable5" { "ItemDef" "4413" } // hammer
 				"Wearable6" { "ItemDef" "45" } // head model
 			}
 		}

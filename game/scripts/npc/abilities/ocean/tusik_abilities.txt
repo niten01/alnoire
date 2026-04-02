@@ -129,7 +129,7 @@
 
 		"AbilityValues"
 		{
-			"BaseAttackDamageAmpPerStack"           "20"
+			"BaseAttackDamageAmpPerStack"           "30"
 		}
 	}
 }

@@ -23,7 +23,7 @@ function goden_spin:OnSpellStart()
         "particles/goden_spin.vpcf",
         PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(self.pfx, 0, casterPos)
-    ParticleManager:SetParticleControl(self.pfx, 5, Vector(radius, 0, 0))
+    ParticleManager:SetParticleControl(self.pfx, 5, Vector(radius + 50, 0, 0))
 
     self.pfx2 = ParticleManager:CreateParticle(
         "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_blade_fury.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)

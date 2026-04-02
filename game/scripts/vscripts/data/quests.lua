@@ -109,7 +109,7 @@ return {
         giver = "npc_subway_fake",
         name = "jevacation",
         showExclamation = true,
-        acts = { 1, 2 },
+        acts = { 1 },
         steps = {
             {
                 description = "Сбеги с острова",
