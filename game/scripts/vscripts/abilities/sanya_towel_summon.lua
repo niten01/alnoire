@@ -79,24 +79,30 @@ function sanya_towel_summon:UpgradeBear(ability, bear)
     local ab1 = bear:GetAbilityByIndex(0)
     local ab2 = bear:GetAbilityByIndex(1)
     local ab3 = bear:GetAbilityByIndex(2)
-    if ab_level == 1 then
-        return
-    end
-    if ab_level == 2 then
-        ab1:SetLevel(1)
-        ab2:SetLevel(1)
-        return
-    end
-    if ab_level == 3 then
-        ab1:SetLevel(2)
-        ab2:SetLevel(2)
-        ab3:SetLevel(1)
-        return
-    end
-    if ab_level == 4 then
-        ab1:SetLevel(2)
-        ab2:SetLevel(2)
-        ab3:SetLevel(2)
-        return
-    end
+    local targetLvl1 = ability:GetSpecialValueFor("overpower_level")
+    local targetLvl2 = ability:GetSpecialValueFor("dash_level")
+    local targetLvl3 = ability:GetSpecialValueFor("explosion_level")
+    ab1:SetLevel(targetLvl1)
+    ab2:SetLevel(targetLvl2)
+    ab3:SetLevel(targetLvl3)
+    -- if ab_level == 1 then
+    --     return
+    -- end
+    -- if ab_level == 2 then
+    --     ab1:SetLevel(1)
+    --     ab2:SetLevel(1)
+    --     return
+    -- end
+    -- if ab_level == 3 then
+    --     ab1:SetLevel(2)
+    --     ab2:SetLevel(2)
+    --     ab3:SetLevel(1)
+    --     return
+    -- end
+    -- if ab_level == 4 then
+    --     ab1:SetLevel(2)
+    --     ab2:SetLevel(2)
+    --     ab3:SetLevel(2)
+    --     return
+    -- end
 end

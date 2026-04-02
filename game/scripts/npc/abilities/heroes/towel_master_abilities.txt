@@ -35,7 +35,7 @@
 			"cooldown"					"20.0 20.0 20.0 20.0"
 			"radius"					"1200 1200 1200 1200"
 			"overpower_level"			"0 1 2 3"
-			"dash_level"				"0 1 2 3"
+			"dash_level"				  "0 1 2 3"
 			"explosion_level"			"0 0 1 2"
 		}
 		"precache"
