@@ -4,7 +4,7 @@
     {
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"                    "abilities/ocean/ocean_siege_passive"
-		"AbilityTextureName"            ""
+		"AbilityTextureName"            "kunkka_divine_anchor_ghostship"
 
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"

@@ -1,0 +1,9 @@
+"DOTA_Tooltip_ability_morph_custom_strike"		            "Сильная вода"
+"DOTA_Tooltip_ability_morph_custom_strike_Lore"		            "Как же он силен.."
+"DOTA_Tooltip_Ability_morph_custom_strike_SummaryDescription" ""
+"DOTA_Tooltip_ability_morph_custom_strike_Description"		"Этот морф обалдеть какой сильный, я хочу быть как он... Ну а своей сильной водой он просто оглушает жертв."
+
+"DOTA_Tooltip_ability_morphling_waveform"		            "Ловкая вода"
+"DOTA_Tooltip_ability_morphling_waveform_Lore"		            "Водичка дырочку)"
+"DOTA_Tooltip_Ability_morphling_waveform_SummaryDescription" ""
+"DOTA_Tooltip_ability_morphling_waveform_Description"		"Да как его поймать?!! Какой то нереальный задр.. еще и без кд"

@@ -1,0 +1,4 @@
+"DOTA_Tooltip_ability_bomb_passive"		            "Подлянка"
+"DOTA_Tooltip_ability_bomb_passive_Lore"		            "АААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААА!"
+"DOTA_Tooltip_Ability_bomb_passive_SummaryDescription" ""
+"DOTA_Tooltip_ability_bomb_passive_Description"		"Только ты мог подумать: ~И это все?~, как гниду разрывает и все его кишочки разлетаются вокруг."

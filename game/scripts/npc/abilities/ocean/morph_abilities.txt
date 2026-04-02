@@ -67,12 +67,12 @@
 			}
 			"AbilityCastRange"
 			{
-				"value"				"950 800 900 1000"
+				"value"				"900 800 900 1000"
 				"special_bonus_unique_morphling_1"	"+250"
 			}			
 			"AbilityCooldown"
 			{
-				"value"														"3.5 18 15 12"
+				"value"														"3 18 15 12"
 				"special_bonus_unique_morphling_waveform_cooldown"			"-40%"
 			}
 			"pct_damage"

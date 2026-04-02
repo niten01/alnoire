@@ -1,0 +1,9 @@
+"DOTA_Tooltip_ability_seledka_ponds"		            "Лужицы"
+"DOTA_Tooltip_ability_seledka_ponds_Lore"		            "Вода кажется ~гуще~, чем обычно.."
+"DOTA_Tooltip_Ability_seledka_ponds_SummaryDescription" ""
+"DOTA_Tooltip_ability_seledka_ponds_Description"		"Эта рыбеха сгущает воду вокруг себя, от чего твои ноги в ней вязнут, и в целом находиться в них тебе некомфортно. Рыбе - напротив, такая субстанция очень даже нравится (кажется, она его баффает)."
+
+"DOTA_Tooltip_ability_slardar_bash"		            "Баш из глубин"
+"DOTA_Tooltip_ability_slardar_bash_Lore"		            "Еееее! Баш!!"
+"DOTA_Tooltip_Ability_slardar_bash_SummaryDescription" ""
+"DOTA_Tooltip_ability_slardar_bash_Description"		"Рыбина вкладывает всю силу в каждый ЧЕТВЕРТЫЙ удар, от такого удара легко можно потерять сознание."

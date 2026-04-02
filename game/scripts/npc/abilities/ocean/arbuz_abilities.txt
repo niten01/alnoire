@@ -13,7 +13,7 @@
 		{
             "damageReductionMaxPercent"    "97.0"
             "modelScaleMaxPercent"         "150"
-            "power"                        "1.13"
+            "power"                        "1.1"
 			"maxAoeIncrease"				"400"
 		}
 	}
