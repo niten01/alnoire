@@ -89,88 +89,6 @@
 		}	
 	}
 
-    "jakiro_ice_path"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
-		"FightRecapLevel"				"1"
-		"AbilitySound"					"Hero_Jakiro.IcePath"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.6"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"1"		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"path_delay"				"0.2"
-			"stun_duration"
-			{
-				"value"					"1.0 1.50 1.75 2.0"
-				"special_bonus_unique_jakiro"		"+0.4"
-			}
-			"path_duration"
-			{
-				"value"													"2.6 3.1 3.6 4.1"
-				"special_bonus_facet_jakiro_ice_breaker"				"=5 =5 =5 =5"
-				"special_bonus_unique_jakiro"		"+0.4"
-
-				
-			}			
-			"path_radius"				
-			{
-				"value"	"150"
-				"affected_by_aoe_increase"	"1"
-			}
-			"damage"		
-			{
-				"value"			"100"
-				"CalculateSpellDamageTooltip" "1"
-				"special_bonus_unique_jakiro_6"		"+60"
-			}
-			"AbilityCooldown"				
-			{
-				"value"								"4 17 14 11"
-			}	
-			"detonate_damage"
-			{
-				"value"													"=0 =0 =0 =0"
-				"special_bonus_facet_jakiro_ice_breaker"				"=50 =100 =150 =200"
-			}
-			"detonate_stun_duration"
-			{
-				"value"													"=0"
-				"special_bonus_facet_jakiro_ice_breaker"				"=0.5"
-			}
-			"detonate_projectile_speed"
-			{
-				"value"													"=0"
-				"special_bonus_facet_jakiro_ice_breaker"				"=2400"
-			}
-		}		
-		"AbilityCastAnimation"		"ACT_DOTA_ATTACK"
-	}
-
 	"custom_liquid_frost"
 	{
 		"BaseClass"                     "ability_lua"
@@ -223,6 +141,31 @@
 			"damage_on_touch"	"50"		
 			"debuff_duration"	"3.0"
 			"dmg_per_sec"		"20"	
+		}
+	}
+
+	"custom_ice_path"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/ocean/custom_ice_path" // Путь к Lua-скрипту
+		"AbilityTextureName"            "jakiro_ice_path"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		
+		"AbilityCastPoint"              "0.65" 
+		"AbilityCastRange"              "900"
+		"AbilityCooldown"               "6.0"
+		"AbilityManaCost"               "0"
+
+		"AbilityValues"
+		{
+			"pathDelay"            "0.5" 
+			"duration"              "2.0"
+			"stunDuration"			"1.0"
+			"pathLength"			"900"
 		}
 	}
 }
