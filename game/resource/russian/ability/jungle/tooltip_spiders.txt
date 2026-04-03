@@ -8,10 +8,10 @@
 "DOTA_Tooltip_Ability_custom_liquid_fire_SummaryDescription" ""
 "DOTA_Tooltip_ability_custom_liquid_fire_Description"		"Паучок формирует шарик из лавы и пуляет им."
 
-"DOTA_Tooltip_ability_jakiro_ice_path"		            "Стена льда"
-"DOTA_Tooltip_ability_jakiro_ice_path_Lore"		            "Какая сладкая парочка.."
-"DOTA_Tooltip_Ability_jakiro_ice_path_SummaryDescription" ""
-"DOTA_Tooltip_ability_jakiro_ice_path_Description"		"Водный паучок напрягается и формирует стену льда!"
+"DOTA_Tooltip_ability_custom_ice_path"		            "Стена льда"
+"DOTA_Tooltip_ability_custom_ice_path_Lore"		            "Какая сладкая парочка.."
+"DOTA_Tooltip_Ability_custom_ice_path_SummaryDescription" ""
+"DOTA_Tooltip_ability_custom_ice_path_Description"		"Водный паучок напрягается и формирует стену льда!"
 
 "DOTA_Tooltip_ability_custom_liquid_frost"		            "Выстрел льдом"
 "DOTA_Tooltip_ability_custom_liquid_frost_Lore"		            "Какая сладкая парочка.."
