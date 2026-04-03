@@ -1275,7 +1275,7 @@ return {
         pack_darkforest_act3_titans = {
             rangeFastTickRate = 2500,
             rangeRetreat = 1300,
-            rangeAggro = 1000,
+            rangeAggro = 1100,
             stayActivatedOnPlayerDeath = true,
         },
 

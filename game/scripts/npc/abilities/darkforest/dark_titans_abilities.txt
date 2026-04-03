@@ -11,8 +11,8 @@
 
 		"AbilityValues"
 		{
-            "critChance"    "35"
-            "critMult"      "200"       
+            "critChance"    "33"
+            "critMult"      "1000"       
 		}
 	}
 

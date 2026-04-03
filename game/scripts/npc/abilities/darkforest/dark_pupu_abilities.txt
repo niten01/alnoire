@@ -16,7 +16,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"170"
+		"AbilityCastRange"				"130"
 		"AbilityCastPoint"				"0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
@@ -33,7 +33,7 @@
 		{
 			"dismember_damage"		
 			{
-				"value"					"30 100 120"
+				"value"					"0 100 120"
 				"special_bonus_unique_pudge_3"	"x1.5"	
 				"CalculateSpellDamageTooltip"	"1"
 			}
@@ -53,13 +53,13 @@
 			"animation_rate"		"1.5"
 			"AbilityChannelTime"			
 			{
-				"value"				"10.0 2.75 2.75"
+				"value"				"4.0 2.75 2.75"
 				"special_bonus_unique_pudge_6"	"+0.75"
 			}
 			
 			"AbilityCooldown"				
 			{
-				"value"							"12.5 25 20"
+				"value"							"8 25 20"
 			}
 			"shard_regen_pct"			
 			{
@@ -112,9 +112,9 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1600"
+		"AbilityCastRange"				"2000"
 		"AbilityCastPoint"				"0.2 0.2 0.2"
-		"AbilityChannelTime"			"10.0"
+		"AbilityChannelTime"			"4.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		
@@ -136,7 +136,7 @@
 		{
 			"health_drain"
 			{
-				"value"					"30 250 350"
+				"value"					"400 250 350"
 				"CalculateSpellDamageTooltip"	"1"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 			}

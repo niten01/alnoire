@@ -55,7 +55,7 @@
 			"damage"		"400"
 
 			// rand min max
-			"cd"	"1 5"
+			"cd"	"1.5 4"
 		}
 
 		"precache"
