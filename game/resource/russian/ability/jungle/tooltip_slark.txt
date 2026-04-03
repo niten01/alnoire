@@ -1,7 +1,7 @@
 "DOTA_Tooltip_ability_slark_attr_passive"		            "Загадка природы"
 "DOTA_Tooltip_ability_slark_attr_passive_Lore"		            "Тут разобраться только с божей помощью, предупреждаю"
 "DOTA_Tooltip_Ability_slark_attr_passive_SummaryDescription" ""
-"DOTA_Tooltip_ability_slark_attr_passive_Description"		"Осеменитель подселяет к тебе своих головастиков.. Но зачем???"
+"DOTA_Tooltip_ability_slark_attr_passive_Description"		"Осеменитель подселяет к тебе своих головастиков.. Ощущается приятно..."
 
 "DOTA_Tooltip_ability_slark_hit_toggle"		            "Мастерство черного рифа"
 "DOTA_Tooltip_ability_slark_hit_toggle_Lore"		            "Где то я уже это видел.."

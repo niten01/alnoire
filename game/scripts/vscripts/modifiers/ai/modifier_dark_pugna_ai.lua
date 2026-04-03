@@ -1,3 +1,5 @@
+LinkLuaModifier('modifier_pugna_tp_invul', "modifiers/ai/modifier_dark_pugna_ai", LUA_MODIFIER_MOTION_NONE)
+
 modifier_dark_pugna_ai = class({})
 
 function modifier_dark_pugna_ai:IsHidden() return true end
@@ -49,6 +51,9 @@ function modifier_dark_pugna_ai:TpToRandomSpot(unit, spotNames)
         if not unit or unit:IsNull() or not unit:IsAlive() then return end
         unit:FadeGesture(ACT_DOTA_CAST_ABILITY_1)
         FindClearSpaceForUnit(unit, targetPos, true)
+        if unit:HasModifier('modifier_pugna_tp_invul') then
+            unit:RemoveModifierByName('modifier_pugna_tp_invul')
+        end
         EmitSoundOn("Hero_MonkeyKing.Transform.On", unit)
     end)
     Timers:CreateTimer(0.3, function()
@@ -63,6 +68,7 @@ function modifier_dark_pugna_ai:OnTakeDamage(params)
     if params.unit == parent then
         parent.timeToTp = true
         parent:Stop()
+        parent:AddNewModifier(parent, nil, 'modifier_pugna_tp_invul', {})
         self:TpToRandomSpot(parent, SPOTS)
     end
 end
@@ -150,4 +156,20 @@ function modifier_dark_pugna_ai:OnIntervalThink()
         end
     else
     end
+end
+
+modifier_pugna_tp_invul = class({})
+
+function modifier_pugna_tp_invul:IsHidden()
+    return true
+end
+
+function modifier_pugna_tp_invul:IsPurgable()
+    return false
+end
+
+function modifier_pugna_tp_invul:CheckState()
+    return {
+        [MODIFIER_STATE_INVULNERABLE] = true
+    }
 end

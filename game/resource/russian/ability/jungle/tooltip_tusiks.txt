@@ -7,3 +7,8 @@
 "DOTA_Tooltip_ability_tusk_ice_shards_Lore"		            "Остынь, братишка"
 "DOTA_Tooltip_Ability_tusk_ice_shards_SummaryDescription" ""
 "DOTA_Tooltip_ability_tusk_ice_shards_Description"		"Жаль, что не всем дано вырубать одной левой, и тем не менее даже самые ссыкливые тусики адаптировались и научились спасать свой ass с помощью ледяной бухты."
+
+"DOTA_Tooltip_ability_tusik_papa_passive"		            "Спячка"
+"DOTA_Tooltip_ability_tusik_papa_passive_Lore"		            "ZZzZz..."
+"DOTA_Tooltip_Ability_tusik_papa_passive_SummaryDescription" ""
+"DOTA_Tooltip_ability_tusik_papa_passive_Description"		"Кажется, ты разбудил папу тускара посреди его спячки... Ты об этом пожалеешь.."
