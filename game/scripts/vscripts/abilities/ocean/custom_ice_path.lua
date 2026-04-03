@@ -10,17 +10,14 @@ function custom_ice_path:OnSpellStart()
 	local point = self:GetCursorPosition()
 	local caster_pos = caster:GetAbsOrigin()
 
-	-- Параметры из KV
 	local duration = self:GetSpecialValueFor("duration")
-	local path_delay = self:GetSpecialValueFor("path_delay")
+	local path_delay = self:GetSpecialValueFor("pathDelay")
 	local range = self:GetCastRange(point, nil) + caster:GetCastRangeBonus()
 
-	-- Вычисляем направление и конечную точку
 	local direction = (point - caster_pos):Normalized()
 	direction.z = 0
 	local end_pos = caster_pos + direction * range
 
-	-- Создаем синклер (невидимый юнит-контроллер пути)
 	CreateModifierThinker(
 		caster,
 		self,
@@ -51,21 +48,18 @@ function modifier_custom_ice_path_thinker:OnCreated(kv)
 	self.start_pos = self:GetParent():GetAbsOrigin()
 	self.end_pos = Vector(kv.end_x, kv.end_y, kv.end_z)
 
-	self.path_radius = self.ability:GetSpecialValueFor("path_radius")
-	self.path_delay = self.ability:GetSpecialValueFor("path_delay")
-	self.stun_duration = self.ability:GetSpecialValueFor("stun_duration")
-	self.damage = self.ability:GetSpecialValueFor("damage")
+	self.path_delay = self.ability:GetSpecialValueFor("pathDelay")
+	self.stun_duration = self.ability:GetSpecialValueFor("stunDuration")
+	self.path_radius = 300
 
-	self.is_active = false -- Лед станет активным только после задержки
+	self.is_active = false
 
-	-- Создаем эффект "предвестника" (слабое свечение)
 	self.pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_ice_path.vpcf",
 		PATTACH_WORLDORIGIN, nil)
 	ParticleManager:SetParticleControl(self.pfx, 0, self.start_pos)
 	ParticleManager:SetParticleControl(self.pfx, 1, self.end_pos)
 	ParticleManager:SetParticleControl(self.pfx, 2, Vector(self.path_delay + self:GetDuration(), 0, 0))
 
-	-- Таймер активации льда
 	self:StartIntervalThink(self.path_delay)
 end
 
@@ -73,15 +67,12 @@ function modifier_custom_ice_path_thinker:OnIntervalThink()
 	if not IsServer() then return end
 
 	if not self.is_active then
-		-- ЛЕД ПОЯВИЛСЯ
 		self.is_active = true
 		EmitSoundOnLocationWithCaster(self.start_pos, "Hero_Jakiro.IcePath", self.caster)
 
-		-- Теперь проверяем коллизию часто (каждые 0.1 сек), пока лед стоит
 		self:StartIntervalThink(0.1)
 	end
 
-	-- Поиск врагов в линии
 	local enemies = FindUnitsInLine(
 		self.caster:GetTeamNumber(),
 		self.start_pos,
@@ -94,18 +85,9 @@ function modifier_custom_ice_path_thinker:OnIntervalThink()
 	)
 
 	for _, enemy in pairs(enemies) do
-		-- Если враг еще не оглушен этим путем (или мы хотим обновлять стан)
 		if not enemy:HasModifier("modifier_custom_ice_path_stun") then
 			enemy:AddNewModifier(self.caster, self.ability, "modifier_custom_ice_path_stun",
 				{ duration = self.stun_duration })
-
-			ApplyDamage({
-				victim = enemy,
-				attacker = self.caster,
-				damage = self.damage,
-				damage_type = DAMAGE_TYPE_MAGICAL,
-				ability = self.ability
-			})
 		end
 	end
 end
@@ -116,7 +98,7 @@ function modifier_custom_ice_path_thinker:OnDestroy()
 		ParticleManager:DestroyParticle(self.pfx, false)
 		ParticleManager:ReleaseParticleIndex(self.pfx)
 	end
-	UTIL_Remove(self:GetParent()) -- Удаляем невидимого юнита
+	UTIL_Remove(self:GetParent())
 end
 
 --------------------------------------------------------------------------------

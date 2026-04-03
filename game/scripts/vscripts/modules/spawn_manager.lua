@@ -17,7 +17,6 @@ function SpawnManager:OnGameInProgress()
     for k, v in EntityData:AllByType("spawner") do spawnersCopy[k] = v end
     for spawnerName, spawnerData in pairs(spawnersCopy) do
         if spawnerData.deferred then goto continue end
-        if spawnerData.packID and string.find(spawnerData.packID, "act") then goto continue end
         self:SpawnNPC(spawnerName)
         ::continue::
     end
