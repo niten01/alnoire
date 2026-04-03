@@ -1,0 +1,9 @@
+"DOTA_Tooltip_ability_viper_nethertoxin"		            "Отрава"
+"DOTA_Tooltip_ability_viper_nethertoxin_Lore"		            "В пустоши выжили только сильнейшие, пусть гадюку нельзя назвать таковой, однако ее яд застает врасплох даже самых мощных обитателей"
+"DOTA_Tooltip_Ability_viper_nethertoxin_SummaryDescription" ""
+"DOTA_Tooltip_ability_viper_nethertoxin_Description"		"Яд постепенно растекается по твоей коже и сильно жжется."
+
+"DOTA_Tooltip_ability_life_stealer_open_wounds"		            "Открытая рана"
+"DOTA_Tooltip_ability_life_stealer_open_wounds_Lore"		            "Он уже вообще не похож на человека.. Что же тут произошло?"
+"DOTA_Tooltip_Ability_life_stealer_open_wounds_SummaryDescription" ""
+"DOTA_Tooltip_ability_life_stealer_open_wounds_Description"		"Безумец наносит сильный порез когтями, первое время тебе очень больно и тяжело двигаться."

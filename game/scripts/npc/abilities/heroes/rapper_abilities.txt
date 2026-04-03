@@ -54,14 +54,14 @@
 
 		"AbilityValues"
 		{
-			"duration_per_stack"	    "0.12"
+			"duration_per_stack"	    "0.2 0.1 0.065"
 			"attack_speed_bonus"		"300 450 600"
 			"flow_per_shot"				"3 5 7"
 			"perfect_buff_duration"		"5"
 			"perfect_num_pulses"		"11"
 			"perfect_incoming_damage_reduction_pct" "60 65 70"
 			"perfect_pulse_radius"		"200 250 300"
-			"perfect_damage_per_pulse" "30 50 70"
+			"perfect_damage_per_pulse"  "30 50 70"
 		}
 
 		"precache"
@@ -123,7 +123,7 @@
 			"spread"					"30"
 			"shot_speed"				"3000"
 			"projectile_radius"			"30"
-			"damage_reduction_pct"		"65 70 72 74"
+			"damage_reduction_pct"		"65 76 82 86"
 		}
 
 		"precache"

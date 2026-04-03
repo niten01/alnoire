@@ -1,0 +1,9 @@
+"DOTA_Tooltip_ability_desert_huskar_push"		            "Наскок"
+"DOTA_Tooltip_ability_desert_huskar_push_Lore"		            "По одному только виду этого выживальщика можно сказать - на глаза ему лучше не попадаться"
+"DOTA_Tooltip_Ability_desert_huskar_push_SummaryDescription" ""
+"DOTA_Tooltip_ability_desert_huskar_push_Description"		"Выживальщик яростно летит в твою сторону и сбивает с ног."
+
+"DOTA_Tooltip_ability_desert_troll_fevor"		            "Пламя битвы"
+"DOTA_Tooltip_ability_desert_troll_fevor_Lore"		            "Годы жизни в пустоши не прошли для него бесследно, теперь каждый его бой превращается в некий транс"
+"DOTA_Tooltip_Ability_desert_troll_fevor_SummaryDescription" ""
+"DOTA_Tooltip_ability_desert_troll_fevor_Description"		"Тролль с каждой атакой начинает все ловче и ловче орудовать своими топорами."

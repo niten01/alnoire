@@ -1,0 +1,9 @@
+"DOTA_Tooltip_ability_dark_treant_ult"		            "Пустил корни"
+"DOTA_Tooltip_ability_dark_treant_ult_Lore"		            "Яблоко от яблони"
+"DOTA_Tooltip_Ability_dark_treant_ult_SummaryDescription" ""
+"DOTA_Tooltip_ability_dark_treant_ult_Description"		"Древо пускает свои корни в землю в округе, как только все корни напитаются, почки раскроются и на свет появляется новая жизнь."
+
+"DOTA_Tooltip_ability_treant_leech_seed"		            "Пиявочное семя"
+"DOTA_Tooltip_ability_treant_leech_seed_Lore"		            "Хорошее из тебя получится удобрение"
+"DOTA_Tooltip_Ability_treant_leech_seed_SummaryDescription" ""
+"DOTA_Tooltip_ability_treant_leech_seed_Description"		"Древо незаметно подсаживает в тебя свое семя, оно почти не чувствуется, но охотно питается твоими силами."
