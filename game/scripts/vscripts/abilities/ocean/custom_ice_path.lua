@@ -1,5 +1,5 @@
-LinkLuaModifier("modifier_custom_ice_path_thinker", "abilities/custom_ice_path.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_custom_ice_path_stun", "abilities/custom_ice_path.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_custom_ice_path_thinker", "abilities/ocean/custom_ice_path", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_custom_ice_path_stun", "abilities/ocean/custom_ice_path", LUA_MODIFIER_MOTION_NONE)
 
 custom_ice_path = class({})
 
@@ -45,19 +45,24 @@ function modifier_custom_ice_path_thinker:OnCreated(kv)
 
 	self.ability = self:GetAbility()
 	self.caster = self:GetCaster()
+
 	self.start_pos = self:GetParent():GetAbsOrigin()
 	self.end_pos = Vector(kv.end_x, kv.end_y, kv.end_z)
 
+	local visual_start = self.start_pos + Vector(0, 0, 15)
+	local visual_end = self.end_pos + Vector(0, 0, 15)
+
 	self.path_delay = self.ability:GetSpecialValueFor("pathDelay")
 	self.stun_duration = self.ability:GetSpecialValueFor("stunDuration")
-	self.path_radius = 300
+	self.path_radius = 150
 
 	self.is_active = false
+	self.hit_units = {}
 
 	self.pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_ice_path.vpcf",
 		PATTACH_WORLDORIGIN, nil)
-	ParticleManager:SetParticleControl(self.pfx, 0, self.start_pos)
-	ParticleManager:SetParticleControl(self.pfx, 1, self.end_pos)
+	ParticleManager:SetParticleControl(self.pfx, 0, visual_start)
+	ParticleManager:SetParticleControl(self.pfx, 1, visual_end)
 	ParticleManager:SetParticleControl(self.pfx, 2, Vector(self.path_delay + self:GetDuration(), 0, 0))
 
 	self:StartIntervalThink(self.path_delay)
@@ -69,8 +74,7 @@ function modifier_custom_ice_path_thinker:OnIntervalThink()
 	if not self.is_active then
 		self.is_active = true
 		EmitSoundOnLocationWithCaster(self.start_pos, "Hero_Jakiro.IcePath", self.caster)
-
-		self:StartIntervalThink(0.1)
+		self:StartIntervalThink(0.05)
 	end
 
 	local enemies = FindUnitsInLine(
@@ -85,20 +89,35 @@ function modifier_custom_ice_path_thinker:OnIntervalThink()
 	)
 
 	for _, enemy in pairs(enemies) do
-		if not enemy:HasModifier("modifier_custom_ice_path_stun") then
-			enemy:AddNewModifier(self.caster, self.ability, "modifier_custom_ice_path_stun",
-				{ duration = self.stun_duration })
+		local entIndex = enemy:GetEntityIndex()
+
+		if not self.hit_units[entIndex] then
+			enemy:AddNewModifier(self.caster, self.ability, "modifier_custom_ice_path_stun", {
+				duration = self.stun_duration
+			})
+
+			self.hit_units[entIndex] = true
 		end
 	end
 end
 
 function modifier_custom_ice_path_thinker:OnDestroy()
 	if not IsServer() then return end
+
 	if self.pfx then
 		ParticleManager:DestroyParticle(self.pfx, false)
 		ParticleManager:ReleaseParticleIndex(self.pfx)
+		self.pfx = nil
 	end
-	UTIL_Remove(self:GetParent())
+
+	local thinker = self:GetParent()
+	if thinker and not thinker:IsNull() then
+		Timers:CreateTimer(0.1, function()
+			if thinker and not thinker:IsNull() then
+				thinker:Remove()
+			end
+		end)
+	end
 end
 
 --------------------------------------------------------------------------------
@@ -110,7 +129,7 @@ function modifier_custom_ice_path_stun:CheckState()
 end
 
 function modifier_custom_ice_path_stun:GetEffectName()
-	return "particles/generic_gameplay/generic_stunned.vpcf"
+	return "particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf"
 end
 
 function modifier_custom_ice_path_stun:GetEffectAttachType()
