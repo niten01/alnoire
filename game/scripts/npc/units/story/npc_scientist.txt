@@ -11,6 +11,11 @@
 			"AttachWearables"
 			{
 				"Wearable1" { "ItemDef" "466" } // head
+				"Wearable2" { "ItemDef" "34367" } // helm
+				"Wearable3" { "ItemDef" "34368" } // shoulder
+				"Wearable4" { "ItemDef" "34369" } // back
+				"Wearable5" { "ItemDef" "34370" } // weapon
+				"Wearable6" { "ItemDef" "34371" } // offhand
 			}
         }
 	}

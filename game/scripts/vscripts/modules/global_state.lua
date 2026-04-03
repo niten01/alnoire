@@ -10,6 +10,7 @@ function GlobalState:Init()
         has_ski = false,
         green_test_tried = false,
         perekup_good_ending = false,
+        perekup_negotiated = false,
 
         has_concert_pass = false,
         concert_crowd_met = false,

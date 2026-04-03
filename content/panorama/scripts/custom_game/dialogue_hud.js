@@ -34,6 +34,16 @@
     "Воин Эпштейна": "island_guard",
     "Раздраженный крип": "predvestnik",
     "Крип Предвестник": "predvestnik",
+    "Учёный": "scientist",
+    "Крип-алхимик": "alchemist",
+    "Крип-загадка": "mystery",
+    "Сказитель": "storyteller",
+    "Крип с мечтой": "dream",
+    "Представительный человек": "perekup",
+    "Перекуп": "perekup",
+    "Крип-вышибала": "bouncer",
+    "Глава": "leader",
+    "Кот-бочка": "barrel_cats",
   }
 
   const root = $.GetContextPanel();

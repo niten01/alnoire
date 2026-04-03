@@ -19,7 +19,7 @@
 
         "AbilityValues" 
         {
-            "distance"  "300"
+            "distance"  "500"
             "travel_time" "0.4"
         }
     }
