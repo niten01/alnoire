@@ -33,6 +33,16 @@
             <Image src="file://{images}/custom_game/portraits/killer.psd" />
             <Image src="file://{images}/custom_game/portraits/hermit.psd" />
             <Image src="file://{images}/custom_game/portraits/predvestnik.psd" />
+            <Image src="file://{images}/custom_game/portraits/lanaya.psd" />
+            <Image src="file://{images}/custom_game/portraits/leader.psd" />
+            <Image src="file://{images}/custom_game/portraits/scientist.psd" />
+            <Image src="file://{images}/custom_game/portraits/alchemist.psd" />
+            <Image src="file://{images}/custom_game/portraits/mystery.psd" />
+            <Image src="file://{images}/custom_game/portraits/storyteller.psd" />
+            <Image src="file://{images}/custom_game/portraits/dream.psd" />
+            <Image src="file://{images}/custom_game/portraits/perekup.psd" />
+            <Image src="file://{images}/custom_game/portraits/bouncer.psd" />
+            <Image src="file://{images}/custom_game/portraits/barrel_cats.psd" />
         </Panel>
     </Panel>
 </root>

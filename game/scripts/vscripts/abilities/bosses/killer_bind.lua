@@ -19,11 +19,13 @@ function killer_bind:OnSpellStart()
         pfxCP1 = pfx
     })
 
-    caster:AddNewModifier(caster, self, "modifier_killer_bind", {
-        partnerIdx = target:entindex(),
-        maxDistance = maxDistance,
-        duration = -1,
-    })
+    Timers:CreateTimer(0.3, function()
+        caster:AddNewModifier(caster, self, "modifier_killer_bind", {
+            partnerIdx = target:entindex(),
+            maxDistance = maxDistance,
+            duration = -1,
+        })
+    end)
 
     caster:EmitSound("ability.killer.bind.cast")
     caster:EmitSound("ability.killer.bind.target")
@@ -55,6 +57,11 @@ function modifier_killer_bind:OnCreated(kv)
     if self.pfxCP1 then
         parent:EmitSound("ability.killer.bind.loop")
     end
+end
+
+function modifier_killer_bind:OnRefresh(kv)
+    self:OnDestroy()
+    self:OnCreated(kv)
 end
 
 function modifier_killer_bind:OnDestroy()

@@ -83,5 +83,19 @@
 		{
         	"soundfile"			"soundevents/bosses/perekup.vsndevts"
 		}
+
+        "Creature"
+        {
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "6781" } // neck
+				"Wearable2" { "ItemDef" "12784" } // belt
+				"Wearable3" { "ItemDef" "6779" } // shoulder
+				"Wearable4" { "ItemDef" "6777" } // gloves
+				"Wearable5" { "ItemDef" "6430" } // back
+				"Wearable6" { "ItemDef" "6428" } // boots
+				"Wearable7" { "ItemDef" "5252" } // head
+			}
+        }
 	}
 }
