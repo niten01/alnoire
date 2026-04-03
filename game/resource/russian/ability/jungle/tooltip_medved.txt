@@ -1,0 +1,14 @@
+"DOTA_Tooltip_ability_ursa_overpower"		            "Злой мишка"
+"DOTA_Tooltip_ability_ursa_overpower_Lore"		            "А урса, то.."
+"DOTA_Tooltip_Ability_ursa_overpower_SummaryDescription" ""
+"DOTA_Tooltip_ability_ursa_overpower_Description"		"Медведь приходит в ярость на короткое время и молотит тебя всеми лапами с огромной скоростью."
+
+"DOTA_Tooltip_ability_ursa_fury_swipes"		            "Когти мишки"
+"DOTA_Tooltip_ability_ursa_fury_swipes_Lore"		            "медленная, но если подойдет.."
+"DOTA_Tooltip_Ability_ursa_fury_swipes_SummaryDescription" ""
+"DOTA_Tooltip_ability_ursa_fury_swipes_Description"		"Когти мишки впиваются сильнее в твою кожу с каждым его ударом.."
+
+"DOTA_Tooltip_ability_ursa_enrage"		            "Ярость мишки"
+"DOTA_Tooltip_ability_ursa_enrage_Lore"		            "то наносит МНОГО урона!"
+"DOTA_Tooltip_Ability_ursa_enrage_SummaryDescription" ""
+"DOTA_Tooltip_ability_ursa_enrage_Description"		"На последнем издыхании мишка дерется что есть мочи! БЕГИ ПОКА МОЖЕШЬ"

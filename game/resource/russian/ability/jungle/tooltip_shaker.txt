@@ -1,0 +1,14 @@
+"DOTA_Tooltip_ability_earthshaker_aftershock"		            "Дрожь"
+"DOTA_Tooltip_ability_earthshaker_aftershock_Lore"		            "There is many earths.."
+"DOTA_Tooltip_Ability_earthshaker_aftershock_SummaryDescription" ""
+"DOTA_Tooltip_ability_earthshaker_aftershock_Description"		"Мощь способностей братьев-трясунов отдается эхом по земле вокруг."
+
+"DOTA_Tooltip_ability_earthshaker_enchant_totem"		            "Братский тотем"
+"DOTA_Tooltip_ability_earthshaker_enchant_totem_Lore"		            "but only one.."
+"DOTA_Tooltip_Ability_earthshaker_enchant_totem_SummaryDescription" ""
+"DOTA_Tooltip_ability_earthshaker_enchant_totem_Description"		"Любимая забава братьев - прыжки на своих тотемах. Шум и тряску этих прыжков можно услышать аж из города, если приложить ухо к земле."
+
+"DOTA_Tooltip_ability_earthshaker_echo_slam"		            "Кровная месть"
+"DOTA_Tooltip_ability_earthshaker_echo_slam_Lore"		            "EARTHSHAKER"
+"DOTA_Tooltip_Ability_earthshaker_echo_slam_SummaryDescription" ""
+"DOTA_Tooltip_ability_earthshaker_echo_slam_Description"		"Потеряв своего брата, традиции обязывают трясунов кастануть эхо слэм в память о нем."

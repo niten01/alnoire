@@ -1,0 +1,9 @@
+"DOTA_Tooltip_ability_nyx_bury"		            "Кучка"
+"DOTA_Tooltip_ability_nyx_bury_Lore"		            "Здесь кто-нибудь есть?"
+"DOTA_Tooltip_Ability_nyx_bury_SummaryDescription" ""
+"DOTA_Tooltip_ability_nyx_bury_Description"		"Навозник зарывается, оставляя на поверхности небольшую теплую кучку."
+
+"DOTA_Tooltip_ability_nyx_assassin_impale"		            "Подкоп"
+"DOTA_Tooltip_ability_nyx_assassin_impale_Lore"		            "Свена копни, а не виспа, дружище"
+"DOTA_Tooltip_Ability_nyx_assassin_impale_SummaryDescription" ""
+"DOTA_Tooltip_ability_nyx_assassin_impale_Description"		"Навозник делает в твою сторону подкоп, который подбрасывает тебя в воздух."

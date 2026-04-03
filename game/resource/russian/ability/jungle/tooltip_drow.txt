@@ -1,0 +1,9 @@
+"DOTA_Tooltip_ability_drow_ranger_wave_of_silence"		            "Мороз по коже"
+"DOTA_Tooltip_ability_drow_ranger_wave_of_silence_Lore"		            "Злобная девка, да?"
+"DOTA_Tooltip_Ability_drow_ranger_wave_of_silence_SummaryDescription" ""
+"DOTA_Tooltip_ability_drow_ranger_wave_of_silence_Description"		"Эта малышка не любит когда посягают на ее личное пространство, поэтому прогоняет всех уродцев, что осмеливаются подойти."
+
+"DOTA_Tooltip_ability_dark_drow_hg_passive"		            "Меткость охотницы"
+"DOTA_Tooltip_ability_dark_drow_hg_passive_Lore"		            "Глаз алмаз"
+"DOTA_Tooltip_Ability_dark_drow_hg_passive_SummaryDescription" ""
+"DOTA_Tooltip_ability_dark_drow_hg_passive_Description"		"Стреляя с возвышенности, охотнице куда проще попасть тебе прямо в лоб."

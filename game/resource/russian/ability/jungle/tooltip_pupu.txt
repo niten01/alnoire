@@ -1,0 +1,14 @@
+"DOTA_Tooltip_ability_dark_pudge_passive"		            "Преданность куклы"
+"DOTA_Tooltip_ability_dark_pudge_passive_Lore"		            "Хозяин... о, любимый хозяин.."
+"DOTA_Tooltip_Ability_dark_pudge_passive_SummaryDescription" ""
+"DOTA_Tooltip_ability_dark_pudge_passive_Description"		"Марионетка неуязвима и НЕУДЕРЖИМА"
+
+"DOTA_Tooltip_ability_pudge_dismember"		            "Кровь и кишки"
+"DOTA_Tooltip_ability_pudge_dismember_Lore"		            "Какой у тебя мясистый нос!"
+"DOTA_Tooltip_Ability_pudge_dismember_SummaryDescription" ""
+"DOTA_Tooltip_ability_pudge_dismember_Description"		"Марионетка пожирает любого, кто угрожает ее хозяину"
+
+"DOTA_Tooltip_ability_pugna_life_drain"		            "Выкачка соков"
+"DOTA_Tooltip_ability_pugna_life_drain_Lore"		            "Фруктовая диета никогда не сравнится с диетой ЖИЗНЕННЫХ СОКОВ"
+"DOTA_Tooltip_Ability_pugna_life_drain_SummaryDescription" ""
+"DOTA_Tooltip_ability_pugna_life_drain_Description"		"Кукловод умело работает в паре со своей марионеткой, и, пока ты уязвим, крадет жизненные силы!"

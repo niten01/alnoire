@@ -2,6 +2,14 @@ LinkLuaModifier('modifier_startfight_gesture', 'modifiers/desert/modifier_desert
     LUA_MODIFIER_MOTION_NONE)
 modifier_desert_dire_animation = class({})
 
+function modifier_desert_dire_animation:IsHidden()
+    return true
+end
+
+function modifier_desert_dire_animation:IsPurgable()
+    return false
+end
+
 function modifier_desert_dire_animation:OnCreated()
     if not IsServer() then return end
     self.packEnt = Entities:FindByName(nil, "pack_desert_act4_dire_creeps")

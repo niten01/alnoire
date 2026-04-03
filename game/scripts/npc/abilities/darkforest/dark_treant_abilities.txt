@@ -63,6 +63,7 @@
 		"ScriptFile" 					"abilities/darkforest/dark_treant_ult"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"treant/fungal_protector_icons/treant_overgrowth"
 
 		"AbilityCastPoint"				"0.5"
 		"AbilityCastRange"				"1200"

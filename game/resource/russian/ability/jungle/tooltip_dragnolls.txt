@@ -1,5 +1,5 @@
 "DOTA_Tooltip_ability_gnoll_slow_passive"		            "Секретная смазка"
-"DOTA_Tooltip_ability_gnoll_slow_passive_Lore"		            "Интересно, какая она на вкус?"
+"DOTA_Tooltip_ability_gnoll_slow_passive_Lore"		            "Его тренировали ровно неделю"
 "DOTA_Tooltip_Ability_gnoll_slow_passive_SummaryDescription" ""
 "DOTA_Tooltip_ability_gnoll_slow_passive_Description"		"Непонятно, чем этот крестьянин намазал кончик копья, но от его попадания у тебя отнимаются ноги и хочется спать."
 
