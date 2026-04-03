@@ -1301,9 +1301,9 @@ return {
         },
 
         pack_darkforest_act3_treant = {
-            rangeFastTickRate = 2200,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 2400,
+            rangeRetreat = 1300,
+            rangeAggro = 950,
             stayActivatedOnPlayerDeath = true,
         },
 
