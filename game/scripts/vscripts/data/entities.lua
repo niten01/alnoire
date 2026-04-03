@@ -414,6 +414,18 @@ return {
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
         },
+        spawner_chaser_stuns                = {
+            npc = "npc_chaser",
+            packID = "pack_desert_act4_dire_creeps",
+            ai_modifier = "modifier_chaser_stuns_ai",
+            team = DOTA_TEAM_BADGUYS,
+        },
+        spawner_chaser_rites                = {
+            npc = "npc_chaser",
+            packID = "pack_desert_act4_viperstealer",
+            ai_modifier = "modifier_chaser_rites_ai",
+            team = DOTA_TEAM_BADGUYS,
+        },
 
         spawner_derek                 = {
             npc = "npc_derek",

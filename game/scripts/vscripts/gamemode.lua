@@ -250,7 +250,7 @@ function barebones:InitModules()
     require('modules.dialogue.dialogue'),
     require('modules.minigames.clashgame'),
     require('modules.minigames.eps_traps'),
-    -- require('modules.minigames.barrel_click'),
+    require('modules.minigames.barrel_click'),
     require('modules.flaskmanager'),
     require('modules.keybinds'),
     require('modules.damage_tracker'),
