@@ -860,7 +860,7 @@
 		"ModelScale" 				"0.75"
 
 		
-		"Ability1"					"jakiro_ice_path"			// Ability 1
+		"Ability1"					"custom_ice_path"			// Ability 1
 		"Ability2"					"custom_liquid_frost"			// Ability 2
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4

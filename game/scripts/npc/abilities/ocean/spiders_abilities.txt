@@ -150,6 +150,7 @@
 		"ScriptFile"                    "abilities/ocean/custom_ice_path" // Путь к Lua-скрипту
 		"AbilityTextureName"            "jakiro_ice_path"
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -162,9 +163,9 @@
 
 		"AbilityValues"
 		{
-			"pathDelay"            "0.5" 
-			"duration"              "2.0"
-			"stunDuration"			"1.0"
+			"pathDelay"            "0" 
+			"duration"              "1.0"
+			"stunDuration"			"2.0"
 			"pathLength"			"900"
 		}
 	}
