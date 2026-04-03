@@ -115,4 +115,16 @@
       "sounds/misc/firework_explode.vsnd",
     ]
   }
+  sfx.pack_bounty.gold = {
+    type = "dota_update_default"
+    volume = 1.600000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.200000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/ui/coins.vsnd",
+    ]
+  }
 }

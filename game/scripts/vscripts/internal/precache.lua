@@ -478,6 +478,7 @@ return {
         -- barrel click
         "particles/units/heroes/hero_bounty_hunter/bounty_hunter_cutpurse.vpcf",
         "particles/dev/library/base_dust_hit.vpcf",
+        "particles/barrel_click_countdown.vpcf",
 
         -- debug
         "particles/sanya_debug_radius_ring.vpcf",

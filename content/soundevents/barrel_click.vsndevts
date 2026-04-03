@@ -14,4 +14,30 @@
     ]
     vsnd_duration = 1.0
   }
+  barrel_click.countdown = {
+    type = "dota_update_default"
+    volume = 1.500000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/ui/economy/rylais_wheel_lever_click_01.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
+  barrel_click.start = {
+    type = "dota_update_default"
+    volume = 1.500000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.600000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/ui/menu/click_back.vsnd",
+    ]
+    vsnd_duration = 1.0
+  }
 }

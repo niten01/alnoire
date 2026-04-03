@@ -158,6 +158,24 @@ function PackManager:GetPack(packName)
     return EntityData:ByName(packName)
 end
 
+function PackManager:GiveRewards(pack)
+    for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+        local player = PlayerResource:GetPlayer(playerID)
+        if PlayerResource:IsValidPlayer(playerID) and player then
+            local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+            assert(hero)
+            if pack.goldBounty > 0 then
+                hero:ModifyGold(pack.goldBounty, true, DOTA_ModifyGold_CreepKill)
+                hero:EmitSound("sfx.pack_bounty.gold")
+            end
+
+            if pack.xpBounty > 0 then
+                hero:AddExperience(pack.xpBounty, DOTA_ModifyXP_CreepKill, false, true, 0)
+            end
+        end
+    end
+end
+
 local OnPackWipedEvent = CreateGameEvent 'OnPackWiped'
 function PackManager:PackTargetDefaultThink(packEnt, pack)
     if not packEnt or packEnt:IsNull() then return nil end
@@ -166,6 +184,7 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
     if #pack.units == 0 then return IDLE_THINK_INTERVAL end
     if not AnyAlive(pack) then
         print("[ALNOIRE] All units in pack " .. packEnt:GetName() .. " are dead. Disabling beacon thinker.")
+        self:GiveRewards(pack)
         self:DeactivatePack(pack.name)
         OnPackWipedEvent({
             packName = pack.name

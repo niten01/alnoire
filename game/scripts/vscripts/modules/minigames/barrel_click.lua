@@ -5,8 +5,8 @@ local INITIAL_SPAWN_INTERVAL = 1.0
 local TIER_INTERVAL_STEP = 0.13
 local TIER_LIFETIME_STEP = 0.1
 local INITIAL_BARREL_LIFETIME = 2.0
-local AREA_RADIUS = 600
-local BARREL_BOUNTY = 3
+local AREA_RADIUS = 500
+local BARREL_BOUNTY = 9 -- max win approx.: 1413
 
 function BarrelClick:Init()
     self.tier = 1
@@ -20,6 +20,14 @@ function BarrelClick:Init()
         self.tierRecordTextEnt = Entities:FindByName(nil, "barrel_click_tier_record_text")
         assert(self.tierRecordTextEnt)
     end)
+end
+
+function BarrelClick:Enable()
+    DoEntFireByInstanceHandle(self.tierTextEnt, "Enable", "", 0, nil, nil)
+    DoEntFireByInstanceHandle(self.tierRecordTextEnt, "Enable", "", 0, nil, nil)
+    for _, ent in ipairs(Entities:FindAllByName("barrel_click_prop")) do
+        DoEntFireByInstanceHandle(ent, "Enable", "", 0, nil, nil)
+    end
 end
 
 function BarrelClick:Start(playerID)
@@ -45,7 +53,25 @@ function BarrelClick:Start(playerID)
     assert(self.center)
     self.center = self.center:GetAbsOrigin()
 
-    Timers:CreateTimer(self.interval, bind(self.SpawnLoop, self))
+    local countdown = 3
+    local pfx = ParticleManager:CreateParticle(
+        "particles/barrel_click_countdown.vpcf", PATTACH_OVERHEAD_FOLLOW,
+        self.hero)
+    ParticleManager:SetParticleControlEnt(pfx, 3, self.hero, PATTACH_OVERHEAD_FOLLOW, "", Vector(0, 0, 0), true)
+    Timers:CreateTimer(0, function()
+        if countdown < 0 then
+            ParticleManager:DestroyParticle(pfx, false)
+            ParticleManager:ReleaseParticleIndex(pfx)
+            Timers:CreateTimer(0, bind(self.SpawnLoop, self))
+            self.hero:EmitSound("barrel_click.start")
+            return nil
+        end
+        ParticleManager:SetParticleControl(pfx, 2, Vector(countdown, 0, 0))
+        countdown = countdown - 1
+        self.hero:EmitSound("barrel_click.countdown")
+
+        return 0.5
+    end)
 end
 
 function BarrelClick:SpawnLoop()
@@ -92,13 +118,12 @@ function BarrelClick:OnBarrelClicked(barrelHandle)
             ParticleManager:SetParticleControlEnt(pfx, 1, self.hero, PATTACH_POINT_FOLLOW, "attach_hitloc", Vector(0, 0,
                 0), false)
             ParticleManager:ReleaseParticleIndex(pfx)
+            barrelHandle:EmitSound("barrel_click.coin")
         end
 
         local pfx = ParticleManager:CreateParticle("particles/dev/library/base_dust_hit.vpcf", PATTACH_ABSORIGIN,
             barrelHandle)
         ParticleManager:ReleaseParticleIndex(pfx)
-
-        barrelHandle:EmitSound("barrel_click.coin")
 
         UTIL_Remove(barrelHandle)
     end
