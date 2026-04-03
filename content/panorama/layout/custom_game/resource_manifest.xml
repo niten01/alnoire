@@ -24,6 +24,15 @@
             <Image src="file://{images}/custom_game/portraits/george_1.psd" />
             <Image src="file://{images}/custom_game/portraits/george_2.psd" />
             <Image src="file://{images}/custom_game/portraits/derek.psd" />
+            <Image src="file://{images}/custom_game/portraits/eps.psd" />
+            <Image src="file://{images}/custom_game/portraits/subway.psd" />
+            <Image src="file://{images}/custom_game/portraits/fake_subway.psd" />
+            <Image src="file://{images}/custom_game/portraits/red.psd" />
+            <Image src="file://{images}/custom_game/portraits/green.psd" />
+            <Image src="file://{images}/custom_game/portraits/blue.psd" />
+            <Image src="file://{images}/custom_game/portraits/killer.psd" />
+            <Image src="file://{images}/custom_game/portraits/hermit.psd" />
+            <Image src="file://{images}/custom_game/portraits/predvestnik.psd" />
         </Panel>
     </Panel>
 </root>

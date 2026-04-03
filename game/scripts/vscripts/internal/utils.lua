@@ -448,3 +448,7 @@ function SafeGiveItem(playerID, itemName)
   assert(item, "Failed to create item: " .. itemName)
   return item
 end
+
+function AbilityRandomValueFloat(ability, valueName)
+  return RandomFloat(ability:GetLevelSpecialValueFor(valueName, 0), ability:GetLevelSpecialValueFor(valueName, 1))
+end
