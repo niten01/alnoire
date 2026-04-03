@@ -19,8 +19,8 @@ conditions = {
 d_untitled_passage_11 = {
 priority = 0,
 conditions = {
-{ ent_var="beaten",value={ false },npc="npc_island_guard",type="ent_var" },
 { trigger="trigger_island_fight_1",npc="npc_island_guard",type="trigger" },
+{ ent_var="first_met_global",value={ false },npc="npc_island_guard",type="ent_var" },
 },
 },
 d_untitled_passage_12 = {
@@ -447,6 +447,20 @@ d_flask_barrel = {
 priority = 0,
 conditions = {
 { interact="npc_flask_barrel",type="interact" },
+},
+},
+d_ghetto_danger = {
+priority = 0,
+conditions = {
+{ trigger="trigger_ghetto_danger",type="trigger" },
+{ questID="q_ghetto",status=QuestStatus.INACTIVE,type="quest" },
+},
+},
+d_ghetto_danger_late = {
+priority = 0,
+conditions = {
+{ questID="q_ghetto",status="incomplete",type="quest" },
+{ trigger="trigger_ghetto_danger",type="trigger" },
 },
 },
 d_gorilla_again = {
@@ -1835,7 +1849,7 @@ next = "d_kakoj_dar_prepodnesesh_mne_segodnya",
 },
 d_pridetsya_chtoto_pridumat = {
 text = [[Надеюсь ты сможешь. Я просто обожаю этот шар!]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -2622,7 +2636,7 @@ next = "d_ne_podskazhesh_gde_najti_predvestnika",
 },
 d_untitled_passage_75 = {
 text = [[Думаю тебе пригодятся молоток и гвозди.]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -2875,6 +2889,28 @@ choices = {
 {
 text = [[Не не, мне не важно кто вы, я спрашивал, что за раса у вас.]],
 next = "d_ne_ne_mne_ne_vazhno_kto_vy_ya_sprashival_chto_za_rasa_u_vas",
+},
+},
+},
+d_ghetto_danger = {
+text = [[Ты не можешь пошевелиться, тело наотрез отказывается двигаться дальше. В этот раз лучше довериться чутью...]],
+speaker = [[...]],
+npc = nil,
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
+d_ghetto_danger_late = {
+text = [[Ты не можешь пошевелиться, тело наотрез отказывается двигаться дальше. В этот раз лучше довериться чутью...]],
+speaker = [[...]],
+npc = nil,
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -4201,7 +4237,7 @@ next = "d_ty_zhe_ponimaesh_chto_ya_ne_ujdu",
 },
 d_o7 = {
 text = [[А?! Ты ещё здесь? Вообщем есть неурядица. Приходили крипочки-хулиганы и начали играть в футбол моим драгоценным шаром! Эти черти разбили его!]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -4216,7 +4252,7 @@ next = "d_ya_b_tak_zhe_sdelal",
 },
 d_o8 = {
 text = [[Хмм... ничем. А. Нет! Сквозь него я могу видеть испытания уготовленные нам, смертным! Ты... наверное видел кратер в лесу, да?]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -5218,7 +5254,7 @@ next = "d_ogromnymi_proshu_zametit",
 },
 d_da_bolshaya_yama = {
 text = [[Метеорит упал в то место. Это предсказал мой шар! Целых три года назад!!]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -5951,7 +5987,7 @@ next = nil,
 d_ne_ya_prishel_uznat_novoe_predskazanie = {
 text = [[Аааа... Понятно.
 *Крип начал палкой двигать осколки.*]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -6544,7 +6580,7 @@ next = nil,
 },
 d_sozhaleu = {
 text = [[Верно. Ужасное событие, может ли это быть моим наказанием?!]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -6640,7 +6676,7 @@ next = "d_pozaimstvoval_mozhet_ukral",
 d_tak_eto_ty_smozhesh_vydat_novoe_predskazanie = {
 text = [[*Он недовольно помахал пальцем.*
 Только с шаром. Без шара никак! А давай ты его починишь! Я слышал, что люди хорошо мастерят, так давай же!]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -6919,7 +6955,7 @@ actions = {
 d_hm_a_gde_sam_meteorit = {
 text = [[*Крип задумался.*
 И вправду... Где он?]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -7391,7 +7427,7 @@ next = "d_i",
 d_ya_b_tak_zhe_sdelal = {
 text = [[*Челюсть предвестника отвисла, а глаза выпучились*
 Что?! Н.. но зачем. Это же порча священного имущества. Тебя могут покарать те, кто сверху!]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -7440,7 +7476,7 @@ next = "d_ischez_s_radarov",
 },
 d_ya_poprobuu = {
 text = [[*Надо взять осколки и каким-то способом починить шар. Но тут всё в крошку, смогу ли я найти искусного мастера?*]],
-speaker = [[Крип Предвестник Апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {

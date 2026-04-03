@@ -9,4 +9,6 @@
 	Default_Keys = [
 
     ]
+    MinPlayers = 1
+	MaxPlayers = 1
 }
