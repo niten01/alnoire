@@ -11,12 +11,17 @@
 		{
 			"AttachWearables"
 			{
-				"Wearable1" { "ItemDef" "9932" } 
-				"Wearable2" { "ItemDef" "9933" } // shoulder
-				"Wearable3" { "ItemDef" "9934" } // head
-				"Wearable4" { "ItemDef" "9935" } // belt
-				"Wearable5" { "ItemDef" "9936" } // back
-				"Wearable6" { "ItemDef" "9937" } // staff
+				// "Wearable1" { "ItemDef" "9932" } 
+				// "Wearable2" { "ItemDef" "9933" } // shoulder
+				// "Wearable3" { "ItemDef" "9934" } // head
+				// "Wearable4" { "ItemDef" "9935" } // belt
+				// "Wearable5" { "ItemDef" "9936" } // back
+				// "Wearable6" { "ItemDef" "9937" } // staff
+				"Wearable2" { "ItemDef" "19661" } // shoulder
+				"Wearable3" { "ItemDef" "94" } // head
+				"Wearable4" { "ItemDef" "9172" } // belt
+				"Wearable5" { "ItemDef" "9057" } // back
+				"Wearable6" { "ItemDef" "4711" } // staff
 			}
 		}
 	}

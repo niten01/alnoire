@@ -2,16 +2,20 @@ ogre_bruiser_fly_hit = class {}
 LinkLuaModifier("modifier_ogre_fly", "abilities/bosses/ogre_bruiser_fly_hit.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
 
 function ogre_bruiser_fly_hit:GetBehavior()
-    return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
+    return DOTA_ABILITY_BEHAVIOR_POINT
 end
 
 function ogre_bruiser_fly_hit:OnAbilityPhaseStart()
     local caster = self:GetCaster()
     assert(caster)
     caster:EmitSound("ability.ogre_bruiser.swing")
-    local jumpDelay  = 1.41
-    local flyTime    = self:GetCastPoint() - jumpDelay
-    local targetEnt  = self:GetCursorTarget()
+    local jumpDelay = 1.41
+    local flyTime   = self:GetCastPoint() - jumpDelay
+    local targetEnt = FindSanyaInRadius(caster:GetAbsOrigin(), 9999)
+    if not targetEnt then
+        caster:Stop()
+        return
+    end
     self.activeTimer = Timers:CreateTimer(jumpDelay, function()
         local target = targetEnt:GetAbsOrigin()
         caster.flyTarget = target

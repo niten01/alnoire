@@ -4,7 +4,6 @@
     "...": "default",
     "???": "tormentor",
     "БОГ": "tormentor",
-    "Неизвестный": "default",
     "Старушка": "shamanka",
     "Банда троллей": "gate_trolls",
     "Синий Принц": "blue_prince",
@@ -24,6 +23,17 @@
     "Джордж Богоподобный": "george_2",
     "Дерек": "derek",
     "xaviersobased": "npc_xavier",
+    "Неизвестный": "eps",
+    "Эпштейн": "eps",
+    "Подозрительный терминал": "fake_subway",
+    "Терминал М.Е.Т.Р.О.": "subway",
+    "Красный": "red",
+    "Зеленый": "green",
+    "Синий": "blue",
+    "Убийца": "killer",
+    "Воин Эпштейна": "island_guard",
+    "Раздраженный крип": "predvestnik",
+    "Крип Предвестник": "predvestnik",
   }
 
   const root = $.GetContextPanel();

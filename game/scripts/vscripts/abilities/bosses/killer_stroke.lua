@@ -35,6 +35,8 @@ function killer_stroke:OnSpellStart()
         iVisionRadius = 500,
         iVisionTeamNumber = caster:GetTeamNumber()
     })
+
+    self:StartCooldown(AbilityRandomValueFloat(self, "cd"))
 end
 
 function killer_stroke:OnProjectileHit(target, location)
