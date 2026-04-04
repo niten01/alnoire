@@ -22,7 +22,7 @@ function BarrelClick:Init()
     end)
 end
 
-function BarrelClick:Enable()
+function BarrelClick:BuildArena()
     DoEntFireByInstanceHandle(self.tierTextEnt, "Enable", "", 0, nil, nil)
     DoEntFireByInstanceHandle(self.tierRecordTextEnt, "Enable", "", 0, nil, nil)
     for _, ent in ipairs(Entities:FindAllByName("barrel_click_prop")) do

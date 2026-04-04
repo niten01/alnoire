@@ -218,9 +218,15 @@ return {
             npc = "npc_brewmaster",
             modifiers = { "modifier_story_npc" },
         },
+        spawner_brewmaster_good       = {
+            npc = "npc_brewmaster_good",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+        },
         spawner_brewmaster_minigame   = {
             npc = "npc_brewmaster",
             modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
         spawner_ogre_magi             = {
             npc = "npc_ogre_magi",
@@ -414,13 +420,13 @@ return {
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
         },
-        spawner_chaser_stuns                = {
+        spawner_chaser_stuns          = {
             npc = "npc_chaser",
             packID = "pack_desert_act4_dire_creeps",
             ai_modifier = "modifier_chaser_stuns_ai",
             team = DOTA_TEAM_BADGUYS,
         },
-        spawner_chaser_rites                = {
+        spawner_chaser_rites          = {
             npc = "npc_chaser",
             packID = "pack_desert_act4_viperstealer",
             ai_modifier = "modifier_chaser_rites_ai",
@@ -1479,8 +1485,12 @@ return {
         zone_forest_3 = { musicSet = "forest3", respawnPoint = "respawn_forest_3" },
         zone_city = { musicSet = "city", respawnPoint = "respawn_city", noCombatMusic = true },
         zone_ski = { musicSet = "ski", respawnPoint = "respawn_city", noCombatMusic = true },
+        zone_academy = { musicSet = "academy", respawnPoint = "respawn_academy" },
+        zone_academy_entrance = { musicSet = "silence", respawnPoint = "respawn_city" },
         zone_wastelands = { musicSet = "wastelands", respawnPoint = "respawn_wastelands" },
-        zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_ghetto" },
+        zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_city" },
+        zone_ghetto_entrance = { musicSet = "silence", respawnPoint = "respawn_city" },
+        zone_concert_entrance = { musicSet = "silence", respawnPoint = "respawn_city" },
         zone_concert_muted = { musicSet = "concert_muted", respawnPoint = "respawn_concert" },
         zone_concert = { musicSet = "concert", respawnPoint = "respawn_concert" },
         zone_cave = { musicSet = "cave", respawnPoint = "respawn_cave", noCombatMusic = true },

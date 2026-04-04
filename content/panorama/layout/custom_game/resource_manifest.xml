@@ -14,6 +14,7 @@
             <Image src="file://{images}/custom_game/portraits/rogach.psd" />
             <Image src="file://{images}/custom_game/portraits/mustache.psd" />
             <Image src="file://{images}/custom_game/portraits/brewmaster.psd" />
+            <Image src="file://{images}/custom_game/portraits/brewmaster_good.psd" />
             <Image src="file://{images}/custom_game/portraits/ogre_right.psd" />
             <Image src="file://{images}/custom_game/portraits/ogre_left.psd" />
             <Image src="file://{images}/custom_game/portraits/ogre_both.psd" />
@@ -21,6 +22,7 @@
             <Image src="file://{images}/custom_game/portraits/guide.psd" />
             <Image src="file://{images}/custom_game/portraits/kamish.psd" />
             <Image src="file://{images}/custom_game/portraits/island_duo.psd" />
+            <Image src="file://{images}/custom_game/portraits/island_guard.psd" />
             <Image src="file://{images}/custom_game/portraits/george_1.psd" />
             <Image src="file://{images}/custom_game/portraits/george_2.psd" />
             <Image src="file://{images}/custom_game/portraits/derek.psd" />
