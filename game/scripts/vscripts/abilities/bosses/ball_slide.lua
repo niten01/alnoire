@@ -85,7 +85,7 @@ function modifier_ball_slide:UpdateHorizontalMotion(me, dt)
     end
 
     me:SetForwardVector(self.velocity:Normalized())
-    me:FaceTowards(pos + self.velocity*2)
+    me:FaceTowards(pos + self.velocity * 2)
 
     if not me:HasModifier("modifier_vertical_jump") then
         nextPos.z = GetGroundHeight(nextPos, me)
@@ -96,7 +96,7 @@ function modifier_ball_slide:UpdateHorizontalMotion(me, dt)
 
     self.velocity = self.velocity * self.friction
 
-    if #self.velocity >= self.minDamageVelocity then
+    if #self.velocity >= self.minDamageVelocity and not me:HasModifier("modifier_vertical_jump") then
         local enemies = FindEnemiesForAIInRadius(pos, self.radius)
         for _, ent in ipairs(enemies) do
             ApplyDamage({
@@ -111,7 +111,7 @@ function modifier_ball_slide:UpdateHorizontalMotion(me, dt)
 end
 
 function modifier_ball_slide:HandleBounce(current_pos)
-    local test_dist = 1 + SAFE_BLINK_HULL_RADIUS
+    local test_dist = 0.5 + SAFE_BLINK_HULL_RADIUS
     -- self.velocity = -self.velocity
     local xTest = Vector(self.velocity.x > 0 and test_dist or -test_dist, 0, 0)
     local yTest = Vector(0, self.velocity.y > 0 and test_dist or -test_dist, 0)
