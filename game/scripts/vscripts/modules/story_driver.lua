@@ -26,7 +26,7 @@ function StoryDriver:Init()
   end)
 
   ChatCommand:LinkDevCommand("-bc", function(event, args)
-    BarrelClick:Enable()
+    BarrelClick:BuildArena()
     BarrelClick:Start(event.playerID)
   end)
 end
@@ -393,6 +393,12 @@ function Handlers.start_final_walk(playerID, action)
   end)
 end
 
+function Handlers.build_barrel_click(playerID, action)
+  prettyRemoveNPC("npc_brewmaster_good")
+  SpawnManager:SpawnNPC("spawner_brewmaster_minigame")
+  BarrelClick:BuildArena()
+end
+
 function StoryDriver:StartFight(packName, nonLethalNPC)
   local pack = PackManager:GetPack(packName)
   assert(pack, "No pack to start fight with: " .. packName)
@@ -488,6 +494,7 @@ function StoryDriver:SetupAct2()
 
   SpawnManager:SpawnNPC("spawner_dream")
   triggerSetEnabled("trigger_black_creep", true)
+  triggerSetEnabled("zone_concert_entrance", false)
   triggerSetEnabled("zone_concert_muted", true)
 
   SpawnManager:SpawnNPC("spawner_genius")

@@ -187,14 +187,17 @@ return {
 
                 },
                 postStepActions = {
-                    { type = "spawn", spawn = "spawner_brewmaster" }
+                    { type = "spawn", spawn = "spawner_brewmaster_good" }
                 }
             },
             {
                 description = "Вернись к панде",
                 objectives = {
                     { type = "talk", npc = "npc_brewmaster" }
-                }
+                },
+                postStepActions = {
+                    { type = "build_barrel_click" }
+                },
             },
         }
     },

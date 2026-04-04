@@ -12,6 +12,7 @@
     "Боб": "bob",
     "Быдло": "monkey_king",
     "Пьяная панда": "brewmaster",
+    "Панда": "brewmaster_good",
     "Голова умнотуп": "ogre_left",
     "Голова подначка": "ogre_right",
     "Сиамский огр": "ogre_both",
@@ -44,6 +45,7 @@
     "Крип-вышибала": "bouncer",
     "Глава": "leader",
     "Кот-бочка": "barrel_cats",
+    "Хранительница": "lanaya",
   }
 
   const root = $.GetContextPanel();
