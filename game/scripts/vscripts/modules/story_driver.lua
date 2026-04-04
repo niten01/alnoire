@@ -399,6 +399,10 @@ function Handlers.build_barrel_click(playerID, action)
   BarrelClick:BuildArena()
 end
 
+function Handlers.disable_clash_royale(playerID, action)
+  triggerSetEnabled("trigger_clash_arena", false)
+end
+
 function StoryDriver:StartFight(packName, nonLethalNPC)
   local pack = PackManager:GetPack(packName)
   assert(pack, "No pack to start fight with: " .. packName)

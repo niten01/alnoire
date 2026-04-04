@@ -30,11 +30,12 @@ function ball_jump:OnSpellStart()
     })
 
     Timers:CreateTimer(duration - warningDuration, function()
-        ShowGenericCircleWarning(target, radius, warningDuration)
+        ShowGenericCircleWarning(target, radius, warningDuration, caster)
     end)
 
     Timers:CreateTimer(duration, function()
-        slide.velocity = v:Normalized() * slideSpeed 
+        local target = caster:GetAbsOrigin()
+        slide.velocity = v:Normalized() * slideSpeed
         local enemies = FindEnemiesForAIInRadius(target, radius)
         for _, ent in ipairs(enemies) do
             ApplyDamage({

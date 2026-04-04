@@ -102,7 +102,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
         "AbilityValues"
         {

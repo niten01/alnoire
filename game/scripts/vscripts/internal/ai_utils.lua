@@ -516,10 +516,13 @@ function ShowGenericLineWarning(p1, p2, width, duration, startEnt)
   end)
 end
 
-function ShowGenericCircleWarning(center, radius, duration)
+function ShowGenericCircleWarning(center, radius, duration, centerEnt)
   local particleName = "particles/warning_circle.vpcf"
-  local pfx = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, nil)
-  ParticleManager:SetParticleControl(pfx, 0, center)
+  local pfx = ParticleManager:CreateParticle(particleName, centerEnt and PATTACH_ABSORIGIN_FOLLOW or PATTACH_WORLDORIGIN,
+    centerEnt)
+  if not centerEnt then
+    ParticleManager:SetParticleControl(pfx, 0, center)
+  end
   ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 0, 0))
   ParticleManager:SetParticleControl(pfx, 2, Vector(duration, 0, 0))
   Timers:CreateTimer(duration, function()

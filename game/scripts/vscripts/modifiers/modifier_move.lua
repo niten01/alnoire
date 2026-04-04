@@ -41,8 +41,6 @@ function modifier_move:UpdateHorizontalMotion(me, dt)
     local step = math.min(self.speed * dt, self.distance - self.travelled)
     self.travelled = self.travelled + step
 
-    DebugPrint(self.travelled, self.distance)
-
     local new_pos = me:GetAbsOrigin() + self.direction * step
     me:SetAbsOrigin(new_pos)
 
