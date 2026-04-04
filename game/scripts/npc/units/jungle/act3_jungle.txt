@@ -162,10 +162,10 @@
 
 			"AttachWearables"
 			{
-				"Wearable1" { "ItemDef" "19425" } // arms
-				"Wearable2" { "ItemDef" "19426" } // back
-				"Wearable3" { "ItemDef" "19427" } // belt
-				"Wearable4" { "ItemDef" "19429" } // head
+				"Wearable1" { "ItemDef" "23333" } // arms
+				"Wearable2" { "ItemDef" "23331" } // back
+				"Wearable3" { "ItemDef" "23334" } // belt
+				"Wearable4" { "ItemDef" "23332" } // head
 			}
 		}
 	}
