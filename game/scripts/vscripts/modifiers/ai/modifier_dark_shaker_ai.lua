@@ -43,6 +43,17 @@ function modifier_dark_shaker_ai:OnCreated()
             "dark_shaker_target_3",
             "dark_shaker_target_4",
             "dark_shaker_target_5",
+            "dark_shaker_target_6",
+            "dark_shaker_target_7",
+            "dark_shaker_target_8",
+            "dark_shaker_target_9",
+            "dark_shaker_target_a",
+            "dark_shaker_target_b",
+            "dark_shaker_target_c",
+            "dark_shaker_target_d",
+            "dark_shaker_target_e",
+            "dark_shaker_target_f",
+            "dark_shaker_target_g",
         }
 
         for digit in string.gmatch(posSequenceStr, "%d") do

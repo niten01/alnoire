@@ -270,7 +270,7 @@
     "AttributeBaseStrength"                               "20"
     "AttributeStrengthGain"                               "1.2"
     "AttributeBaseAgility"                                "27"
-    "AttributeAgilityGain"                                "4.0"
+    "AttributeAgilityGain"                                "3.5"
     "AttributeBaseIntelligence"                           "13"
     "AttributeIntelligenceGain"                           "2.4"
 
