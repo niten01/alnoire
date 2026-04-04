@@ -5,51 +5,51 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",      status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",               value = { 1, 2, 3 },         type = "var" },
+                { questID = "q_pandas",        status = QuestStatus.INACTIVE, type = "quest" },
+                { var = "act",                 value = { 1, 2, 3 },           type = "var" },
             },
         },
         d_untitled_passage_1 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_bruiser", type = "interact" },
-                { questID = "q_ogres",         status = "incomplete", type = "quest" },
+                { questID = "q_ogres",           status = "incomplete", type = "quest" },
             },
         },
         d_untitled_passage_11 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_fight_1", npc = "npc_island_guard", type = "trigger" },
-                { ent_var = "first_met_global",     value = { false },      npc = "npc_island_guard", type = "ent_var" },
+                { ent_var = "first_met_global",       value = { false },        npc = "npc_island_guard", type = "ent_var" },
             },
         },
         d_untitled_passage_12 = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_gate_trolls", npc = "npc_troll",       type = "trigger" },
-                { questID = "q_reach_city",      status = QuestStatus.ACTIVE, step = { 1 },            type = "quest" },
-                { ent_var = "first_met_global",  value = { true },          npc = "npc_gate_troll_uruk", type = "ent_var" },
+                { trigger = "trigger_gate_trolls", npc = "npc_troll",           type = "trigger" },
+                { questID = "q_reach_city",        status = QuestStatus.ACTIVE, step = { 1 },                type = "quest" },
+                { ent_var = "first_met_global",    value = { true },            npc = "npc_gate_troll_uruk", type = "ent_var" },
                 { trigger = "trigger_gate_trolls", type = "trigger" },
             },
         },
         d_untitled_passage_13 = {
             priority = 0,
             conditions = {
-                { var = "act",                   value = { 0 },   type = "var" },
+                { var = "act",                     value = { 0 },     type = "var" },
                 { trigger = "trigger_guide_first", npc = "npc_guide", type = "trigger" },
             },
         },
         d_untitled_passage_14 = {
             priority = 0,
             conditions = {
-                { interact = "npc_guide",       type = "interact" },
+                { interact = "npc_guide",         type = "interact" },
                 { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 1, 2 }, type = "quest" },
             },
         },
         d_untitled_passage_15 = {
             priority = 0,
             conditions = {
-                { var = "act",               value = { 0 },       type = "var" },
+                { var = "act",                 value = { 0 },         type = "var" },
                 { trigger = "trigger_rebirth", npc = "npc_tormentor", type = "trigger" },
             },
         },
@@ -57,14 +57,14 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_tormentor", type = "interact" },
-                { var = "act",              value = { 0 },  type = "var" },
+                { var = "act",                value = { 0 },    type = "var" },
             },
         },
         d_untitled_passage_17 = {
             priority = 100,
             conditions = {
                 { interact = "npc_creep_rogach", type = "interact" },
-                { ent_var = "first_met_global", value = { true }, npc = "npc_creep_rogach", type = "ent_var" },
+                { ent_var = "first_met_global",  value = { true }, npc = "npc_creep_rogach", type = "ent_var" },
             },
         },
         d_untitled_passage_18 = {
@@ -77,7 +77,7 @@ return {
             priority = 100,
             conditions = {
                 { trigger = "trigger_usach_stopit", npc = "npc_mustache", type = "trigger" },
-                { ent_var = "first_met_global",   value = { true },   npc = "npc_mustache", type = "ent_var" },
+                { ent_var = "first_met_global",     value = { true },     npc = "npc_mustache", type = "ent_var" },
             },
         },
         d_untitled_passage_2 = {
@@ -95,14 +95,14 @@ return {
         d_untitled_passage_21 = {
             priority = 0,
             conditions = {
-                { interact = "npc_creep_bob", type = "interact" },
+                { interact = "npc_creep_bob",   type = "interact" },
                 { ent_var = "first_met_global", value = { true }, npc = "npc_creep_bob", type = "ent_var" },
             },
         },
         d_untitled_passage_22 = {
             priority = 0,
             conditions = {
-                { interact = "npc_creep_bob", type = "interact" },
+                { interact = "npc_creep_bob",   type = "interact" },
                 { ent_var = "first_met_global", value = { false }, npc = "npc_creep_bob", type = "ent_var" },
             },
         },
@@ -110,22 +110,22 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { var = "act",                value = { 1 },               type = "var" },
-                { questID = "q_clash_royale", status = QuestStatus.INACTIVE, type = "quest" },
+                { var = "act",                  value = { 1 },                 type = "var" },
+                { questID = "q_clash_royale",   status = QuestStatus.INACTIVE, type = "quest" },
             },
         },
         d_untitled_passage_24 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royale", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
+                { questID = "q_clash_royale",   status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_25 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royale", status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_clash_royale",   status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_26 = {
@@ -144,8 +144,8 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_cat_barrel", type = "interact" },
-                { var = "act",               value = { 1, 2 }, type = "var" },
-                { no_item = "item_cage_key", type = "no_item" },
+                { var = "act",                 value = { 1, 2 }, type = "var" },
+                { no_item = "item_cage_key",   type = "no_item" },
             },
         },
         d_untitled_passage_33 = {
@@ -164,23 +164,23 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.INACTIVE, type = "quest" },
-                { var = "act",              value = { 1 },               type = "var" },
+                { questID = "q_ogres",        status = QuestStatus.INACTIVE, type = "quest" },
+                { var = "act",                value = { 1 },                 type = "var" },
             },
         },
         d_untitled_passage_41 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.ACTIVE, type = "quest" },
-                { questID = "q_ogres",      status = QuestStatus.ACTIVE, step = { 1, 2, 3 }, type = "quest" },
+                { questID = "q_ogres",        status = QuestStatus.ACTIVE, type = "quest" },
+                { questID = "q_ogres",        status = QuestStatus.ACTIVE, step = { 1, 2, 3 }, type = "quest" },
             },
         },
         d_untitled_passage_42 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_bruiser", type = "interact" },
-                { questID = "q_ogres",         status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
+                { questID = "q_ogres",           status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_43 = {
@@ -193,44 +193,44 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
+                { questID = "q_ogres",        status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
             },
         },
         d_untitled_passage_45 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_ogres",        status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_46 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_first", type = "trigger" },
-                { var = "act",                    value = { 1, 2 }, type = "var" },
+                { var = "act",                      value = { 1, 2 }, type = "var" },
             },
         },
         d_untitled_passage_47 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_island_second", type = "trigger" },
-                { var = "act",                     value = { 1, 2 }, type = "var" },
+                { var = "act",                       value = { 1, 2 }, type = "var" },
             },
         },
         d_untitled_passage_48 = {
             priority = 0,
             conditions = {
-                { var = "act",                      value = { 1, 2 },       type = "var" },
+                { var = "act",                        value = { 1, 2 },         type = "var" },
                 { trigger = "trigger_island_fight_1", npc = "npc_island_guard", type = "trigger" },
-                { ent_var = "first_met_global",     value = { true },       npc = "npc_island_guard", type = "ent_var" },
+                { ent_var = "first_met_global",       value = { true },         npc = "npc_island_guard", type = "ent_var" },
             },
         },
         d_untitled_passage_49 = {
             priority = 0,
             conditions = {
-                { var = "act",               value = { 1, 2 }, type = "var" },
+                { var = "act",                 value = { 1, 2 }, type = "var" },
                 { interact = "npc_cat_barrel", type = "interact" },
-                { has_item = "item_cage_key", type = "has_item" },
+                { has_item = "item_cage_key",  type = "has_item" },
             },
         },
         d_untitled_passage_59 = {
@@ -243,101 +243,101 @@ return {
             priority = 80,
             conditions = {
                 { interact = "npc_templar_assasin", type = "interact" },
-                { var = "knows_village_password", value = { false }, type = "var" },
+                { var = "knows_village_password",   value = { false }, type = "var" },
             },
         },
         d_untitled_passage_61 = {
             priority = 90,
             conditions = {
                 { interact = "npc_templar_assasin", type = "interact" },
-                { var = "knows_village_password", value = { true }, type = "var" },
-                { var = "has_village_pass",       value = { false }, type = "var" },
+                { var = "knows_village_password",   value = { true },  type = "var" },
+                { var = "has_village_pass",         value = { false }, type = "var" },
             },
         },
         d_untitled_passage_63 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royale", status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
+                { questID = "q_clash_royale",   status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
             },
         },
         d_untitled_passage_64 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_bruiser", type = "interact" },
-                { questID = "q_ogres",         status = QuestStatus.INACTIVE, type = "quest" },
+                { questID = "q_ogres",           status = QuestStatus.INACTIVE, type = "quest" },
             },
         },
         d_untitled_passage_65 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { questID = "q_ogres",      status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_ogres",        status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_66 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royale", status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_clash_royale",   status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_67 = {
             priority = 0,
             conditions = {
                 { interact = "npc_monkey_king", type = "interact" },
-                { ent_var = "beaten",         value = { true }, npc = "npc_monkey_king", type = "ent_var" },
+                { ent_var = "beaten",           value = { true }, npc = "npc_monkey_king", type = "ent_var" },
             },
         },
         d_untitled_passage_68 = {
             priority = 0,
             conditions = {
                 { interact = "npc_ogre_magi", type = "interact" },
-                { var = "act",              value = { 2, 3, 4 }, type = "var" },
-                { questID = "q_ogres",      status = "incomplete", type = "quest" },
+                { var = "act",                value = { 2, 3, 4 },   type = "var" },
+                { questID = "q_ogres",        status = "incomplete", type = "quest" },
             },
         },
         d_untitled_passage_69 = {
             priority = 0,
             conditions = {
                 { interact = "npc_monkey_king", type = "interact" },
-                { ent_var = "beaten",         value = { false }, npc = "npc_monkey_king", type = "ent_var" },
+                { ent_var = "beaten",           value = { false }, npc = "npc_monkey_king", type = "ent_var" },
             },
         },
         d_untitled_passage_70 = {
             priority = 0,
             conditions = {
-                { var = "act",                value = { 2, 3, 4 }, type = "var" },
+                { var = "act",                  value = { 2, 3, 4 },   type = "var" },
                 { interact = "npc_blue_prince", type = "interact" },
-                { questID = "q_clash_royale", status = "incomplete", type = "quest" },
+                { questID = "q_clash_royale",   status = "incomplete", type = "quest" },
             },
         },
         d_untitled_passage_71 = {
             priority = 0,
             conditions = {
                 { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",      status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_pandas",        status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_72 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_beginning", type = "trigger" },
-                { var = "act",                 value = { 0 }, type = "var" },
+                { var = "act",                   value = { 0 },   type = "var" },
             },
         },
         d_untitled_passage_73 = {
             priority = 0,
             conditions = {
-                { var = "act",                        value = { 0 },    type = "var" },
+                { var = "act",                          value = { 0 },      type = "var" },
                 { trigger = "trigger_school_shooter_1", npc = "npc_sniper", type = "trigger" },
             },
         },
         d_untitled_passage_74 = {
             priority = 0,
             conditions = {
-                { interact = "npc_predvestnik", type = "interact" },
-                { var = "act",                  value = { 1 },             type = "var" },
+                { interact = "npc_predvestnik",   type = "interact" },
+                { var = "act",                    value = { 1 },               type = "var" },
                 { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
@@ -345,22 +345,22 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_predvestnik", type = "interact" },
-                { questID = "q_main_quest_1", status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
-                { var = "act",                value = { 1 },             type = "var" },
+                { questID = "q_main_quest_1",   status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
+                { var = "act",                  value = { 1 },               type = "var" },
             },
         },
         d_untitled_passage_76 = {
             priority = 0,
             conditions = {
                 { interact = "npc_mystery", type = "interact" },
-                { var = "act",            value = { 1 },  type = "var" },
+                { var = "act",              value = { 1 },    type = "var" },
             },
         },
         d_untitled_passage_77 = {
             priority = 100,
             conditions = {
-                { interact = "npc_scientist", type = "interact" },
-                { var = "act",                value = { 1 },  type = "var" },
+                { interact = "npc_scientist",   type = "interact" },
+                { var = "act",                  value = { 1 },    type = "var" },
                 { ent_var = "first_met_global", value = { true }, npc = "npc_scientist", type = "ent_var" },
             },
         },
@@ -368,7 +368,7 @@ return {
             priority = 60,
             conditions = {
                 { interact = "npc_templar_assasin", type = "interact" },
-                { var = "has_village_pass",       value = { true }, type = "var" },
+                { var = "has_village_pass",         value = { true }, type = "var" },
             },
         },
         d_untitled_passage_79 = {
@@ -381,7 +381,7 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_shamanka", type = "interact" },
-                { var = "act",             value = { 0 },  type = "var" },
+                { var = "act",               value = { 0 },    type = "var" },
             },
         },
         d_untitled_passage_80 = {
@@ -394,20 +394,20 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_concert_guard", type = "interact" },
-                { var = "act",                  value = { 1 },  type = "var" },
+                { var = "act",                    value = { 1 },    type = "var" },
             },
         },
         d_untitled_passage_82 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_no_skis", type = "trigger" },
-                { var = "has_ski",           value = { false }, type = "var" },
+                { var = "has_ski",             value = { false }, type = "var" },
             },
         },
         d_untitled_passage_83 = {
             priority = 0,
             conditions = {
-                { interact = "npc_predvestnik", type = "interact" },
+                { interact = "npc_predvestnik",   type = "interact" },
                 { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
                 { has_item = "item_crystal_ball", type = "has_item" },
             },
@@ -415,31 +415,31 @@ return {
         d_untitled_passage_84 = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_gorilla",  npc = "npc_gorilla",       type = "trigger" },
-                { ent_var = "first_met_global", value = { true },          npc = "npc_gorilla", type = "ent_var" },
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 4 },  type = "quest" },
+                { trigger = "trigger_gorilla",    npc = "npc_gorilla",         type = "trigger" },
+                { ent_var = "first_met_global",   value = { true },            npc = "npc_gorilla", type = "ent_var" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 4 },        type = "quest" },
             },
         },
         d_untitled_passage_85 = {
             priority = 0,
             conditions = {
-                { ent_var = "beaten",         value = { false },         npc = "npc_red", type = "ent_var" },
-                { interact = "npc_red",       type = "interact" },
-                { questID = "q_pandas",       status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
-                { ent_var = "first_met_global", value = { false },       npc = "npc_red", type = "ent_var" },
+                { ent_var = "beaten",           value = { false },           npc = "npc_red", type = "ent_var" },
+                { interact = "npc_red",         type = "interact" },
+                { questID = "q_pandas",         status = QuestStatus.ACTIVE, step = { 1 },    type = "quest" },
+                { ent_var = "first_met_global", value = { false },           npc = "npc_red", type = "ent_var" },
             },
         },
         d_untitled_passage_86 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_after_gorilla", npc = "npc_guide", type = "trigger" },
-                { var = "act",                     value = { 1 },   type = "var" },
+                { var = "act",                       value = { 1 },     type = "var" },
             },
         },
         d_untitled_passage_9 = {
             priority = 0,
             conditions = {
-                { var = "act",                   value = { 0 },      type = "var" },
+                { var = "act",                     value = { 0 },        type = "var" },
                 { trigger = "trigger_choose_hero", npc = "npc_shamanka", type = "trigger" },
             },
         },
@@ -453,37 +453,37 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_ghetto_danger", type = "trigger" },
-                { questID = "q_ghetto",            status = QuestStatus.INACTIVE, type = "quest" },
+                { questID = "q_ghetto",              status = QuestStatus.INACTIVE, type = "quest" },
             },
         },
         d_ghetto_danger_late = {
             priority = 0,
             conditions = {
-                { questID = "q_ghetto",            status = "incomplete", type = "quest" },
+                { questID = "q_ghetto",              status = "incomplete", type = "quest" },
                 { trigger = "trigger_ghetto_danger", type = "trigger" },
             },
         },
         d_gorilla_again = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_gorilla",  npc = "npc_gorilla",       type = "trigger" },
-                { ent_var = "first_met_global", value = { false },         npc = "npc_gorilla", type = "ent_var" },
-                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 4 },  type = "quest" },
+                { trigger = "trigger_gorilla",    npc = "npc_gorilla",         type = "trigger" },
+                { ent_var = "first_met_global",   value = { false },           npc = "npc_gorilla", type = "ent_var" },
+                { questID = "q_main_quest_act_1", status = QuestStatus.ACTIVE, step = { 4 },        type = "quest" },
             },
         },
         d_red_hlup = {
             priority = 0,
             conditions = {
-                { interact = "npc_red",       type = "interact" },
-                { questID = "q_pandas",       status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
-                { ent_var = "first_met_global", value = { true },        npc = "npc_red", type = "ent_var" },
+                { interact = "npc_red",         type = "interact" },
+                { questID = "q_pandas",         status = QuestStatus.ACTIVE, step = { 1 },    type = "quest" },
+                { ent_var = "first_met_global", value = { true },            npc = "npc_red", type = "ent_var" },
             },
         },
         d_secret_ending = {
             priority = 0,
             conditions = {
                 { kill = "npc_shooter", type = "kill" },
-                { var = "act",        value = { 0 }, type = "var" },
+                { var = "act",          value = { 0 }, type = "var" },
             },
         },
         d_subway_city = {
@@ -495,16 +495,16 @@ return {
         d_subway_fake = {
             priority = 0,
             conditions = {
-                { questID = "q_island_escape", status = QuestStatus.INACTIVE, type = "quest" },
+                { questID = "q_island_escape",  status = QuestStatus.INACTIVE, type = "quest" },
                 { interact = "npc_subway_fake", type = "interact" },
-                { var = "act",                value = { 1 },               type = "var" },
+                { var = "act",                  value = { 1 },                 type = "var" },
             },
         },
         d_subway_fake_return = {
             priority = 0,
             conditions = {
                 { interact = "npc_subway_fake_return", type = "interact" },
-                { questID = "q_island_escape",       status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
+                { questID = "q_island_escape",         status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
             },
         },
         d_subway_to_city = {
@@ -517,62 +517,62 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_gate_trolls", type = "trigger" },
-                { questID = "q_reach_city",      status = QuestStatus.ACTIVE, step = { 1 },            type = "quest" },
-                { ent_var = "first_met_global",  value = { false },         npc = "npc_gate_troll_uruk", type = "ent_var" },
+                { questID = "q_reach_city",        status = QuestStatus.ACTIVE, step = { 1 },                type = "quest" },
+                { ent_var = "first_met_global",    value = { false },           npc = "npc_gate_troll_uruk", type = "ent_var" },
             },
         },
         d_bouncer_have_ticket = {
             priority = 0,
             conditions = {
-                { interact = "npc_concert_guard", type = "interact" },
-                { var = "act",                    value = { 2 },   type = "var" },
+                { interact = "npc_concert_guard",   type = "interact" },
+                { var = "act",                      value = { 2 },     type = "var" },
                 { has_item = "item_concert_ticket", type = "has_item" },
-                { var = "has_concert_pass",       value = { false }, type = "var" },
+                { var = "has_concert_pass",         value = { false }, type = "var" },
             },
         },
         d_bouncer_no_ticket = {
             priority = 0,
             conditions = {
-                { interact = "npc_concert_guard", type = "interact" },
-                { var = "act",                   value = { 2 },   type = "var" },
+                { interact = "npc_concert_guard",  type = "interact" },
+                { var = "act",                     value = { 2 },     type = "var" },
                 { no_item = "item_concert_ticket", type = "no_item" },
-                { var = "has_concert_pass",      value = { false }, type = "var" },
+                { var = "has_concert_pass",        value = { false }, type = "var" },
             },
         },
         d_dream_after_quest_give = {
             priority = 0,
             conditions = {
                 { interact = "npc_dream", type = "interact" },
-                { questID = "q_concert", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
+                { questID = "q_concert",  status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_dream_after_reject = {
             priority = 0,
             conditions = {
                 { interact = "npc_dream", type = "interact" },
-                { questID = "q_concert", status = QuestStatus.REJECTED, type = "quest" },
+                { questID = "q_concert",  status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_dream_first_met = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_black_creep", npc = "npc_dream", type = "trigger" },
-                { var = "act",                   value = { 2 },   type = "var" },
+                { var = "act",                     value = { 2 },     type = "var" },
             },
         },
         d_dream_on_concert = {
             priority = 0,
             conditions = {
                 { interact = "npc_dream", type = "interact" },
-                { var = "act",          value = { 2 },                type = "var" },
-                { questID = "q_concert", status = QuestStatus.COMPLETED, type = "quest" },
+                { var = "act",            value = { 2 },                  type = "var" },
+                { questID = "q_concert",  status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_dream_turn_in = {
             priority = 0,
             conditions = {
-                { questID = "q_concert",          status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
-                { interact = "npc_dream",         type = "interact" },
+                { questID = "q_concert",            status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
+                { interact = "npc_dream",           type = "interact" },
                 { has_item = "item_concert_ticket", type = "has_item" },
             },
         },
@@ -599,31 +599,31 @@ return {
         d_genius_fight_again = {
             priority = 0,
             conditions = {
-                { interact = "npc_genius",    type = "interact" },
-                { var = "act",                value = { 2, 3 }, type = "var" },
+                { interact = "npc_genius",      type = "interact" },
+                { var = "act",                  value = { 2, 3 },  type = "var" },
                 { ent_var = "first_met_global", value = { false }, npc = "npc_genius", type = "ent_var" },
             },
         },
         d_genius_first_met = {
             priority = 0,
             conditions = {
-                { interact = "npc_genius",    type = "interact" },
-                { var = "act",                value = { 2, 3 }, type = "var" },
+                { interact = "npc_genius",      type = "interact" },
+                { var = "act",                  value = { 2, 3 }, type = "var" },
                 { ent_var = "first_met_global", value = { true }, npc = "npc_genius", type = "ent_var" },
             },
         },
         d_green_fight_again = {
             priority = 0,
             conditions = {
-                { interact = "npc_green",     type = "interact" },
+                { interact = "npc_green",       type = "interact" },
                 { ent_var = "first_met_global", value = { false }, npc = "npc_green", type = "ent_var" },
-                { var = "green_test_tried",   value = { true }, type = "var" },
+                { var = "green_test_tried",     value = { true },  type = "var" },
             },
         },
         d_green_first_met = {
             priority = 0,
             conditions = {
-                { interact = "npc_green", type = "interact" },
+                { interact = "npc_green",   type = "interact" },
                 { var = "green_test_tried", value = { false }, type = "var" },
             },
         },
@@ -643,59 +643,59 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_guide", type = "interact" },
-                { var = "act",          value = { 2 },  type = "var" },
+                { var = "act",            value = { 2 },    type = "var" },
             },
         },
         d_hermit_again = {
             priority = 0,
             conditions = {
-                { interact = "npc_hermit",    type = "interact" },
+                { interact = "npc_hermit",      type = "interact" },
                 { ent_var = "first_met_global", value = { false }, npc = "npc_hermit", type = "ent_var" },
             },
         },
         d_hermit_first_met = {
             priority = 0,
             conditions = {
-                { interact = "npc_hermit",      type = "interact" },
-                { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
-                { ent_var = "first_met_global", value = { true },          npc = "npc_hermit", type = "ent_var" },
+                { interact = "npc_hermit",        type = "interact" },
+                { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 3 },       type = "quest" },
+                { ent_var = "first_met_global",   value = { true },            npc = "npc_hermit", type = "ent_var" },
             },
         },
         d_leader_again_1 = {
             priority = 0,
             conditions = {
-                { interact = "npc_leader",      type = "interact" },
-                { ent_var = "first_met_in_act", value = { false },         npc = "npc_leader", type = "ent_var" },
-                { var = "act",                  value = { 2 },             type = "var" },
+                { interact = "npc_leader",        type = "interact" },
+                { ent_var = "first_met_in_act",   value = { false },           npc = "npc_leader", type = "ent_var" },
+                { var = "act",                    value = { 2 },               type = "var" },
                 { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, type = "quest" },
             },
         },
         d_leader_first_met = {
             priority = 0,
             conditions = {
-                { interact = "npc_leader",      type = "interact" },
+                { interact = "npc_leader",        type = "interact" },
                 { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_leader_pass_3 = {
             priority = 0,
             conditions = {
-                { interact = "npc_leader",      type = "interact" },
+                { interact = "npc_leader",        type = "interact" },
                 { questID = "q_main_quest_act_3", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_leader_second = {
             priority = 100,
             conditions = {
-                { interact = "npc_leader",      type = "interact" },
+                { interact = "npc_leader",        type = "interact" },
                 { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
             },
         },
         d_mustache_act_2 = {
             priority = 80,
             conditions = {
-                { interact = "npc_mustache",  type = "interact" },
-                { var = "act",                value = { 2 },  type = "var" },
+                { interact = "npc_mustache",    type = "interact" },
+                { var = "act",                  value = { 2 },    type = "var" },
                 { ent_var = "first_met_in_act", value = { true }, npc = "npc_mustache", type = "ent_var" },
             },
         },
@@ -703,41 +703,41 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_mystery", type = "interact" },
-                { var = "act",            value = { 2 },  type = "var" },
+                { var = "act",              value = { 2 },    type = "var" },
             },
         },
         d_rogach_act_2 = {
             priority = 80,
             conditions = {
                 { interact = "npc_creep_rogach", type = "interact" },
-                { var = "act",                 value = { 2 },  type = "var" },
-                { ent_var = "first_met_in_act", value = { true }, npc = "npc_creep_rogach", type = "ent_var" },
+                { var = "act",                   value = { 2 },    type = "var" },
+                { ent_var = "first_met_in_act",  value = { true }, npc = "npc_creep_rogach", type = "ent_var" },
             },
         },
         d_seller_1 = {
             priority = 0,
             conditions = {
-                { interact = "npc_perekup", type = "interact" },
-                { questID = "q_concert",    status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
-                { var = "act",              value = { 2 },             type = "var" },
-                { var = "perekup_negotiated", value = { false },       type = "var" },
+                { interact = "npc_perekup",   type = "interact" },
+                { questID = "q_concert",      status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
+                { var = "act",                value = { 2 },               type = "var" },
+                { var = "perekup_negotiated", value = { false },           type = "var" },
             },
         },
         d_seller_fight_again = {
             priority = 0,
             conditions = {
-                { ent_var = "beaten",        value = { false },         npc = "npc_perekup", type = "ent_var" },
-                { interact = "npc_perekup",  type = "interact" },
-                { var = "act",               value = { 2 },             type = "var" },
-                { questID = "q_concert",     status = QuestStatus.ACTIVE, step = { 1 },    type = "quest" },
-                { var = "perekup_good_ending", value = { false },       type = "var" },
-                { var = "perekup_negotiated", value = { true },         type = "var" },
+                { ent_var = "beaten",          value = { false },           npc = "npc_perekup", type = "ent_var" },
+                { interact = "npc_perekup",    type = "interact" },
+                { var = "act",                 value = { 2 },               type = "var" },
+                { questID = "q_concert",       status = QuestStatus.ACTIVE, step = { 1 },        type = "quest" },
+                { var = "perekup_good_ending", value = { false },           type = "var" },
+                { var = "perekup_negotiated",  value = { true },            type = "var" },
             },
         },
         d_seller_no_fight = {
             priority = 0,
             conditions = {
-                { interact = "npc_perekup",  type = "interact" },
+                { interact = "npc_perekup",    type = "interact" },
                 { var = "perekup_good_ending", value = { true }, type = "var" },
             },
         },
@@ -745,27 +745,27 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_perekup", type = "interact" },
-                { questID = "q_concert",  status = QuestStatus.INACTIVE, type = "quest" },
+                { questID = "q_concert",    status = QuestStatus.INACTIVE, type = "quest" },
             },
         },
         d_shamanka_act_2_quest_active = {
             priority = 0,
             conditions = {
                 { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
-                { interact = "npc_shamanka",    type = "interact" },
+                { interact = "npc_shamanka",      type = "interact" },
             },
         },
         d_shamanka_act_2_quest_complete = {
             priority = 0,
             conditions = {
-                { interact = "npc_shamanka",    type = "interact" },
+                { interact = "npc_shamanka",      type = "interact" },
                 { questID = "q_main_quest_act_2", status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_xavier_after_fight = {
             priority = 0,
             conditions = {
-                { interact = "npc_xavier",    type = "interact" },
+                { interact = "npc_xavier",      type = "interact" },
                 { ent_var = "first_met_global", value = { true }, npc = "npc_xavier", type = "ent_var" },
                 { var = "concert_crowd_beaten", value = { true }, type = "var" },
             },
@@ -773,108 +773,108 @@ return {
         d_xavier_again = {
             priority = 0,
             conditions = {
-                { interact = "npc_xavier",    type = "interact" },
+                { interact = "npc_xavier",      type = "interact" },
                 { ent_var = "first_met_global", value = { false }, npc = "npc_xavier", type = "ent_var" },
-                { var = "concert_crowd_beaten", value = { true }, type = "var" },
+                { var = "concert_crowd_beaten", value = { true },  type = "var" },
             },
         },
         d_xavier_fight_again = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_concert_crowd", type = "trigger" },
-                { var = "concert_crowd_beaten",    value = { false }, type = "var" },
-                { var = "concert_crowd_met",       value = { true }, type = "var" },
+                { var = "concert_crowd_beaten",      value = { false }, type = "var" },
+                { var = "concert_crowd_met",         value = { true },  type = "var" },
             },
         },
         d_xavier_fight_start = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_concert_crowd", type = "trigger" },
-                { var = "concert_crowd_met",       value = { false }, type = "var" },
+                { var = "concert_crowd_met",         value = { false }, type = "var" },
             },
         },
         d_untitled_passage_10 = {
             priority = 0,
             conditions = {
                 { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",      status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_pandas",        status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_27_merged_act3 = {
             priority = 0,
             conditions = {
                 { interact = "npc_dream", type = "interact" },
-                { var = "act",          value = { 3 },                type = "var" },
-                { questID = "q_ghetto", status = QuestStatus.INACTIVE, type = "quest" },
-                { questID = "q_concert", status = QuestStatus.COMPLETED, type = "quest" },
+                { var = "act",            value = { 3 },                  type = "var" },
+                { questID = "q_ghetto",   status = QuestStatus.INACTIVE,  type = "quest" },
+                { questID = "q_concert",  status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_34_merged_act3 = {
             priority = 0,
             conditions = {
                 { interact = "npc_dream", type = "interact" },
-                { var = "act",          value = { 3 },               type = "var" },
-                { questID = "q_ghetto", status = QuestStatus.REJECTED, type = "quest" },
+                { var = "act",            value = { 3 },                 type = "var" },
+                { questID = "q_ghetto",   status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_40_merged_act3 = {
             priority = 0,
             conditions = {
                 { interact = "npc_dream", type = "interact" },
-                { var = "act",          value = { 3 },             type = "var" },
-                { questID = "q_ghetto", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
+                { var = "act",            value = { 3 },               type = "var" },
+                { questID = "q_ghetto",   status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_41_merged_act3 = {
             priority = 0,
             conditions = {
                 { interact = "npc_dream", type = "interact" },
-                { questID = "q_concert", status = "incomplete", type = "quest" },
-                { var = "act",          value = { 3, 4 },    type = "var" },
+                { questID = "q_concert",  status = "incomplete", type = "quest" },
+                { var = "act",            value = { 3, 4 },      type = "var" },
             },
         },
         d_untitled_passage_42_merged_act3 = {
             priority = 0,
             conditions = {
-                { questID = "q_ghetto",          status = QuestStatus.ACTIVE, step = { 1 },     type = "quest" },
-                { trigger = "trigger_ghetto_test", npc = "npc_gangster",    type = "trigger" },
-                { var = "act",                   value = { 3 },             type = "var" },
-                { ent_var = "first_met_global",  value = { true },          npc = "npc_gangster", type = "ent_var" },
+                { questID = "q_ghetto",            status = QuestStatus.ACTIVE, step = { 1 },         type = "quest" },
+                { trigger = "trigger_ghetto_test", npc = "npc_gangster",        type = "trigger" },
+                { var = "act",                     value = { 3 },               type = "var" },
+                { ent_var = "first_met_global",    value = { true },            npc = "npc_gangster", type = "ent_var" },
             },
         },
         d_untitled_passage_43_merged_act3 = {
             priority = 0,
             conditions = {
-                { interact = "npc_gangster",  type = "interact" },
+                { interact = "npc_gangster",    type = "interact" },
                 { ent_var = "first_met_global", value = { false }, npc = "npc_gangster", type = "ent_var" },
-                { var = "is_ghetto_member",   value = { true }, type = "var" },
+                { var = "is_ghetto_member",     value = { true },  type = "var" },
             },
         },
         d_untitled_passage_44_merged_act3 = {
             priority = 0,
             conditions = {
-                { interact = "npc_dream", type = "interact" },
-                { questID = "q_ghetto",   status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
-                { var = "act",            value = { 3 },             type = "var" },
-                { var = "is_ghetto_member", value = { true },        type = "var" },
-                { has_item = "item_lean", type = "has_item" },
+                { interact = "npc_dream",   type = "interact" },
+                { questID = "q_ghetto",     status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
+                { var = "act",              value = { 3 },               type = "var" },
+                { var = "is_ghetto_member", value = { true },            type = "var" },
+                { has_item = "item_lean",   type = "has_item" },
             },
         },
         d_untitled_passage_45_merged_act3 = {
             priority = 0,
             conditions = {
                 { interact = "npc_dream_golden", type = "interact" },
-                { ent_var = "first_met_global", value = { true }, npc = "npc_dream_golden", type = "ent_var" },
+                { ent_var = "first_met_global",  value = { true }, npc = "npc_dream_golden", type = "ent_var" },
             },
         },
         d_untitled_passage_46_merged_act3 = {
             priority = 0,
             conditions = {
-                { interact = "npc_dream", type = "interact" },
-                { questID = "q_ghetto",   status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
-                { var = "act",            value = { 3 },             type = "var" },
-                { var = "is_ghetto_member", value = { false },       type = "var" },
-                { has_item = "item_lean", type = "has_item" },
+                { interact = "npc_dream",   type = "interact" },
+                { questID = "q_ghetto",     status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
+                { var = "act",              value = { 3 },               type = "var" },
+                { var = "is_ghetto_member", value = { false },           type = "var" },
+                { has_item = "item_lean",   type = "has_item" },
             },
         },
         d_untitled_passage_47_merged_act3 = {
@@ -887,74 +887,74 @@ return {
             priority = 60,
             conditions = {
                 { interact = "npc_creep_rogach", type = "interact" },
-                { ent_var = "first_met_in_act", value = { true }, npc = "npc_creep_rogach", type = "ent_var" },
-                { var = "act",                 value = { 3, 4 }, type = "var" },
+                { ent_var = "first_met_in_act",  value = { true }, npc = "npc_creep_rogach", type = "ent_var" },
+                { var = "act",                   value = { 3, 4 }, type = "var" },
             },
         },
         d_untitled_passage_49_merged_act3 = {
             priority = 60,
             conditions = {
-                { interact = "npc_mustache",  type = "interact" },
-                { var = "act",                value = { 3 },  type = "var" },
+                { interact = "npc_mustache",    type = "interact" },
+                { var = "act",                  value = { 3 },    type = "var" },
                 { ent_var = "first_met_in_act", value = { true }, npc = "npc_mustache", type = "ent_var" },
             },
         },
         d_untitled_passage_50 = {
             priority = 0,
             conditions = {
-                { interact = "npc_cat_barrel",  type = "interact" },
-                { questID = "q_island_explosion", status = QuestStatus.INACTIVE, type = "quest" },
-                { questID = "q_island_escape",  status = QuestStatus.COMPLETED, type = "quest" },
-                { var = "act",                  value = { 3 },                type = "var" },
+                { interact = "npc_cat_barrel",    type = "interact" },
+                { questID = "q_island_explosion", status = QuestStatus.INACTIVE,  type = "quest" },
+                { questID = "q_island_escape",    status = QuestStatus.COMPLETED, type = "quest" },
+                { var = "act",                    value = { 3 },                  type = "var" },
             },
         },
         d_untitled_passage_52 = {
             priority = 0,
             conditions = {
-                { var = "act",                     value = { 3 }, type = "var" },
+                { var = "act",                       value = { 3 },   type = "var" },
                 { trigger = "trigger_island_fourth", type = "trigger" },
             },
         },
         d_untitled_passage_53 = {
             priority = 0,
             conditions = {
-                { var = "act",                    value = { 3 }, type = "var" },
+                { var = "act",                      value = { 3 },   type = "var" },
                 { trigger = "trigger_island_fifth", type = "trigger" },
             },
         },
         d_untitled_passage_54 = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_demons", type = "trigger" },
+                { trigger = "trigger_demons",   type = "trigger" },
                 { ent_var = "first_met_global", value = { true }, npc = "npc_island_demon", type = "ent_var" },
             },
         },
         d_untitled_passage_55 = {
             priority = 0,
             conditions = {
-                { interact = "npc_cat_barrel",  type = "interact" },
+                { interact = "npc_cat_barrel",    type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_56 = {
             priority = 0,
             conditions = {
-                { interact = "npc_cat_barrel",  type = "interact" },
+                { interact = "npc_cat_barrel",    type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 5 }, type = "quest" },
             },
         },
         d_untitled_passage_57 = {
             priority = 0,
             conditions = {
-                { interact = "npc_cat_barrel",  type = "interact" },
+                { interact = "npc_cat_barrel",    type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
         d_untitled_passage_58 = {
             priority = 0,
             conditions = {
-                { var = "act",                  value = { 3 },             type = "var" },
-                { interact = "npc_bomb_place",  type = "interact" },
+                { var = "act",                    value = { 3 },               type = "var" },
+                { interact = "npc_bomb_place",    type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
             },
         },
@@ -962,64 +962,64 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_guide", type = "interact" },
-                { var = "act",          value = { 3, 4 }, type = "var" },
+                { var = "act",            value = { 3, 4 }, type = "var" },
             },
         },
         d_untitled_passage_6 = {
             priority = 0,
             conditions = {
                 { interact = "npc_blue", type = "interact" },
-                { questID = "q_pandas", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
+                { questID = "q_pandas",  status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_61_merged_act3 = {
             priority = 0,
             conditions = {
-                { interact = "npc_cat_barrel",  type = "interact" },
-                { var = "act",                  value = { 3 },               type = "var" },
+                { interact = "npc_cat_barrel",    type = "interact" },
+                { var = "act",                    value = { 3 },                 type = "var" },
                 { questID = "q_island_explosion", status = QuestStatus.REJECTED, type = "quest" },
             },
         },
         d_untitled_passage_62 = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_demons", type = "trigger" },
+                { trigger = "trigger_demons",   type = "trigger" },
                 { ent_var = "first_met_global", value = { false }, npc = "npc_island_demon", type = "ent_var" },
             },
         },
         d_untitled_passage_63_merged_act3 = {
             priority = 90,
             conditions = {
-                { interact = "npc_scientist", type = "interact" },
+                { interact = "npc_scientist",   type = "interact" },
                 { ent_var = "first_met_in_act", value = { true }, npc = "npc_scientist", type = "ent_var" },
             },
         },
         d_untitled_passage_64_merged_act3 = {
             priority = 80,
             conditions = {
-                { interact = "npc_scientist", type = "interact" },
+                { interact = "npc_scientist",   type = "interact" },
                 { ent_var = "first_met_in_act", value = { false }, npc = "npc_scientist", type = "ent_var" },
             },
         },
         d_untitled_passage_65_merged_act3 = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_key_done", type = "trigger" },
-                { var = "act",                  value = { 3 },             type = "var" },
+                { trigger = "trigger_key_done",   type = "trigger" },
+                { var = "act",                    value = { 3 },               type = "var" },
                 { questID = "q_main_quest_act_3", status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_66_merged_act3 = {
             priority = 0,
             conditions = {
-                { interact = "npc_leader",      type = "interact" },
+                { interact = "npc_leader",        type = "interact" },
                 { questID = "q_main_quest_act_3", status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_68_merged_act3 = {
             priority = 0,
             conditions = {
-                { interact = "npc_leader",      type = "interact" },
+                { interact = "npc_leader",        type = "interact" },
                 { questID = "q_main_quest_act_3", status = QuestStatus.COMPLETED, type = "quest" },
             },
         },
@@ -1027,27 +1027,27 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",      status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
+                { questID = "q_pandas",        status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_86_merged_act3 = {
             priority = 0,
             conditions = {
                 { interact = "npc_dream_golden", type = "interact" },
-                { ent_var = "first_met_global", value = { false }, npc = "npc_dream_golden", type = "ent_var" },
+                { ent_var = "first_met_global",  value = { false }, npc = "npc_dream_golden", type = "ent_var" },
             },
         },
         d_subway_fake_act_3 = {
             priority = 0,
             conditions = {
-                { interact = "npc_subway_fake", type = "interact" },
+                { interact = "npc_subway_fake",   type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_subway_fake_return_act_3 = {
             priority = 0,
             conditions = {
-                { questID = "q_island_explosion",    status = QuestStatus.ACTIVE, step = { 5 }, type = "quest" },
+                { questID = "q_island_explosion",      status = QuestStatus.ACTIVE, step = { 5 }, type = "quest" },
                 { interact = "npc_subway_fake_return", type = "interact" },
             },
         },
@@ -1061,7 +1061,7 @@ return {
         d_untitled_passage_67_merged_act4 = {
             priority = 0,
             conditions = {
-                { interact = "npc_wasteland", type = "interact" },
+                { interact = "npc_wasteland",   type = "interact" },
                 { ent_var = "first_met_global", value = { true }, npc = "npc_wasteland", type = "ent_var" },
             },
         },
@@ -1075,16 +1075,16 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_boss_fight_1", npc = "npc_derek", type = "trigger" },
-                { ent_var = "first_met_global",   value = { false }, npc = "npc_derek", type = "ent_var" },
-                { ent_var = "beaten",             value = { false }, npc = "npc_derek", type = "ent_var" },
+                { ent_var = "first_met_global",     value = { false }, npc = "npc_derek", type = "ent_var" },
+                { ent_var = "beaten",               value = { false }, npc = "npc_derek", type = "ent_var" },
             },
         },
         d_untitled_passage_71_merged_act4 = {
             priority = 0,
             conditions = {
                 { trigger = "trigger_boss_fight_1", npc = "npc_derek", type = "trigger" },
-                { ent_var = "first_met_global",   value = { false }, npc = "npc_derek", type = "ent_var" },
-                { ent_var = "beaten",             value = { false }, npc = "npc_derek", type = "ent_var" },
+                { ent_var = "first_met_global",     value = { false }, npc = "npc_derek", type = "ent_var" },
+                { ent_var = "beaten",               value = { false }, npc = "npc_derek", type = "ent_var" },
             },
         },
         d_untitled_passage_73_merged_act4 = {
@@ -1098,8 +1098,8 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_boss_fight_2", npc = "npc_george", type = "trigger" },
-                { ent_var = "first_met_global",   value = { true }, npc = "npc_george", type = "ent_var" },
-                { ent_var = "beaten",             value = { false }, npc = "npc_george", type = "ent_var" },
+                { ent_var = "first_met_global",     value = { true },   npc = "npc_george", type = "ent_var" },
+                { ent_var = "beaten",               value = { false },  npc = "npc_george", type = "ent_var" },
             },
         },
         d_untitled_passage_76_merged_act4 = {
@@ -1118,14 +1118,14 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_boss_fight_2", npc = "npc_george", type = "trigger" },
-                { ent_var = "first_met_global",   value = { false }, npc = "npc_george", type = "ent_var" },
-                { ent_var = "beaten",             value = { false }, npc = "npc_george", type = "ent_var" },
+                { ent_var = "first_met_global",     value = { false },  npc = "npc_george", type = "ent_var" },
+                { ent_var = "beaten",               value = { false },  npc = "npc_george", type = "ent_var" },
             },
         },
         d_untitled_passage_79_merged_act4 = {
             priority = 0,
             conditions = {
-                { interact = "npc_tormentor",   type = "interact" },
+                { interact = "npc_tormentor",     type = "interact" },
                 { questID = "q_main_quest_act_4", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
             },
         },
@@ -1133,14 +1133,14 @@ return {
             priority = 0,
             conditions = {
                 { questID = "q_main_quest_act_4", status = QuestStatus.ACTIVE, step = { 5 }, type = "quest" },
-                { interact = "npc_tormentor",   type = "interact" },
+                { interact = "npc_tormentor",     type = "interact" },
             },
         },
         d_untitled_passage_81_merged_act4 = {
             priority = 0,
             conditions = {
-                { questID = "q_main_quest_act_4", status = QuestStatus.ACTIVE, step = { 5 }, type = "quest" },
-                { trigger = "trigger_guide_finale", npc = "npc_guide",       type = "trigger" },
+                { questID = "q_main_quest_act_4",   status = QuestStatus.ACTIVE, step = { 5 },    type = "quest" },
+                { trigger = "trigger_guide_finale", npc = "npc_guide",           type = "trigger" },
             },
         },
         d_untitled_passage_82_merged_act4 = {
@@ -1823,8 +1823,8 @@ return {
                     text = [[*Ну почему я то?!*]],
                     next = nil,
                     actions = {
-                        { pack = "pack_gorilla",     type = "fight_start" },
-                        { npc = "npc_rape_victim",   type = "kill" },
+                        { pack = "pack_gorilla",       type = "fight_start" },
+                        { npc = "npc_rape_victim",     type = "kill" },
                         { type = "gorilla_fight_start" },
                     },
                 },
@@ -2454,8 +2454,8 @@ return {
                     text = [[Вы свободны, убегайте.]],
                     next = "d_vy_svobodny_ubegajte",
                     actions = {
-                        { itemName = "item_cage_key", type = "take_item" },
-                        { var = "freed_island_creeps", value = true,  type = "set_var" },
+                        { itemName = "item_cage_key",  type = "take_item" },
+                        { var = "freed_island_creeps", value = true,      type = "set_var" },
                     },
                 },
             },
@@ -3790,10 +3790,10 @@ return {
                     text = [[Базар.]],
                     next = nil,
                     actions = {
-                        { npc = "npc_brewmaster", type = "remove" },
-                        { spawn = "spawner_red", type = "spawn" },
+                        { npc = "npc_brewmaster",  type = "remove" },
+                        { spawn = "spawner_red",   type = "spawn" },
                         { spawn = "spawner_green", type = "spawn" },
-                        { spawn = "spawner_blue", type = "spawn" },
+                        { spawn = "spawner_blue",  type = "spawn" },
                     },
                 },
             },
@@ -4650,7 +4650,7 @@ return {
                     next = nil,
                     actions = {
                         { target = "tp_target_city_fake", type = "teleport" },
-                        { questID = "q_island_escape",  type = "quest_end" },
+                        { questID = "q_island_escape",    type = "quest_end" },
                     },
                 },
                 {
@@ -5884,8 +5884,8 @@ return {
                     text = [[Z - это Cамость, а Cамость - это Z.]],
                     next = "d_z_eto_camost_a_camost_eto_z",
                     actions = {
-                        { var = "has_village_pass", value = true,  type = "set_var" },
-                        { door = "door_village",  type = "open_door" },
+                        { var = "has_village_pass", value = true,      type = "set_var" },
+                        { door = "door_village",    type = "open_door" },
                     },
                 },
                 {
@@ -7807,8 +7807,8 @@ return {
                     next = nil,
                     actions = {
                         { itemName = "item_concert_ticket", type = "take_item" },
-                        { var = "has_concert_pass",       value = true,    type = "set_var" },
-                        { door = "door_concert",          type = "open_door" },
+                        { var = "has_concert_pass",         value = true,      type = "set_var" },
+                        { door = "door_concert",            type = "open_door" },
                     },
                 },
             },
@@ -7856,7 +7856,7 @@ return {
                     text = [[Давай.]],
                     next = nil,
                     actions = {
-                        { npc = "npc_dream",             type = "remove" },
+                        { npc = "npc_dream",               type = "remove" },
                         { spawn = "spawner_dream_concert", type = "spawn" },
                     },
                 },
@@ -7898,7 +7898,7 @@ return {
                     text = [[*Сорваться с цепи.*]],
                     next = nil,
                     actions = {
-                        { var = "concert_crowd_met", value = true,      type = "set_var" },
+                        { var = "concert_crowd_met",   value = true,        type = "set_var" },
                         { pack = "pack_concert_crowd", type = "fight_start" },
                         { type = "music_stop" },
                     },
@@ -9727,7 +9727,7 @@ That was dope, you're feeling me, yeah]],
                     text = [[А где он?]],
                     next = "d_where_is_leader",
                     actions = {
-                        { npc = "npc_mystery",        type = "remove" },
+                        { npc = "npc_mystery",          type = "remove" },
                         { door = "door_village_leader", type = "open_door" },
                     },
                 },
@@ -11219,8 +11219,8 @@ But luckily it's here you feel me?]],
                     text = [[Зайду.]],
                     next = "d_zajdu",
                     actions = {
-                        { npc = "npc_dream",            type = "remove" },
-                        { questID = "q_ghetto",         type = "quest_end" },
+                        { npc = "npc_dream",              type = "remove" },
+                        { questID = "q_ghetto",           type = "quest_end" },
                         { spawn = "spawner_dream_golden", type = "spawn" },
                     },
                 },
@@ -14415,8 +14415,8 @@ Wazup, ты кем будешь, dawg?]],
                     text = [[Закрыть.]],
                     next = nil,
                     actions = {
-                        { npc = "npc_shooter_ending", type = "kill" },
-                        { door = "door_classroom",    type = "open_door" },
+                        { npc = "npc_shooter_ending",   type = "kill" },
+                        { door = "door_classroom",      type = "open_door" },
                         { pack = "pack_shooter_hall_1", type = "fight_start" },
                         { pack = "pack_shooter_hall_2", type = "fight_start" },
                         { pack = "pack_shooter_hall_3", type = "fight_start" },
@@ -15499,7 +15499,7 @@ Wazup, ты кем будешь, dawg?]],
                     next = nil,
                     actions = {
                         { pack = "pack_shooter_classroom", nonLethalNPC = "npc_shooter_ending", type = "fight_start" },
-                        { music = "music.ending.combat", type = "music_start" },
+                        { music = "music.ending.combat",   type = "music_start" },
                     },
                 },
             },

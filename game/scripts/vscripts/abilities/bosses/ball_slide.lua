@@ -85,7 +85,7 @@ function modifier_ball_slide:UpdateHorizontalMotion(me, dt)
     end
 
     me:SetForwardVector(self.velocity:Normalized())
-    me:FaceTowards(nextPos)
+    me:FaceTowards(pos + self.velocity*2)
 
     if not me:HasModifier("modifier_vertical_jump") then
         nextPos.z = GetGroundHeight(nextPos, me)
@@ -111,7 +111,8 @@ function modifier_ball_slide:UpdateHorizontalMotion(me, dt)
 end
 
 function modifier_ball_slide:HandleBounce(current_pos)
-    local test_dist = 1
+    local test_dist = 1 + SAFE_BLINK_HULL_RADIUS
+    -- self.velocity = -self.velocity
     local xTest = Vector(self.velocity.x > 0 and test_dist or -test_dist, 0, 0)
     local yTest = Vector(0, self.velocity.y > 0 and test_dist or -test_dist, 0)
     local x_blocked = not GridNav:IsTraversable(current_pos + xTest) or GridNav:IsBlocked(current_pos + xTest)

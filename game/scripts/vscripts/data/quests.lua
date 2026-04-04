@@ -42,6 +42,9 @@ return {
                 description = "Уничтожь владения Красного Принца",
                 objectives = {
                     { type = "kill", npc = "npc_dota_custom_king_tower_bad" }
+                },
+                postStepActions = {
+                    { type = "disable_clash_royale" }
                 }
             },
             {

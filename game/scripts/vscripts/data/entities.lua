@@ -1288,6 +1288,7 @@ return {
             rangeRetreat = 4000,
             rangeAggro = 750,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1000,
         },
 
         pack_darkforest_act3_titans = {

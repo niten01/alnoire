@@ -46,6 +46,8 @@
     "Глава": "leader",
     "Кот-бочка": "barrel_cats",
     "Хранительница": "lanaya",
+    "Скулшутер": "shooter",
+    "Крип-гений": "genius",
   }
 
   const root = $.GetContextPanel();
