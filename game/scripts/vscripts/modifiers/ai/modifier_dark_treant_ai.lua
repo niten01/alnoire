@@ -22,6 +22,7 @@ function modifier_dark_treant_ai:OnDeath(params)
         end
         if self.summonDeathCounter == numSummons then
             self.goCastUlt = true
+            self.summonDeathCounter = nil
         end
     end
     if not self.customDeathSound then return end

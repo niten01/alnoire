@@ -32,6 +32,7 @@ function dark_treant_ult:OnSpellStart()
     for i = 1, numSummons do
         local randomOffset = RandomVector(RandomFloat(100, summonRadius))
         local spawnPos = caster:GetAbsOrigin() + randomOffset
+        spawnPos = GetSafeBlinkDestination(caster:GetAbsOrigin(), spawnPos, nil)
         local summon = CreateUnitByName(
             summonName,
             spawnPos,
