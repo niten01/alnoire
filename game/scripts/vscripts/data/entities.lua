@@ -1563,12 +1563,12 @@ return {
         },
         door_forest_2 = {
             clipEntity = "clip_door_forest_2",
-            openAnimation = "cf_palace_door_open",
+            openAnimation = "gate_wooden_destruction",
             requiresPassword = "stringus collapsus",
         },
         door_forest_3 = {
             clipEntity = "clip_door_forest_3",
-            openAnimation = "open",
+            openAnimation = "gate_wooden_locked_02_opening",
             requiresPassword = "logarithmus solvus",
         },
         door_village = {
