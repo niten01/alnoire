@@ -14,6 +14,15 @@ function FlaskManager:Init()
         self:RefillFlask(event.playerID)
     end)
 
+    ChatCommand:LinkDevCommand("-giveeldenflaskseed", function(event, args)
+        local playerID = event.playerID
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+
+        if hero then
+            hero:AddItemByName("item_sanya_flask_seed")
+        end
+    end)
+
     GameEvents:OnInventoryThink(function(event)
         if event.item:GetName() ~= "item_sanya_flask" and
             event.item:GetName() ~= "item_sanya_flask_upgrade_1"

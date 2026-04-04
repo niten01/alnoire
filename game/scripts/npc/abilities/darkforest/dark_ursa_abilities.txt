@@ -17,8 +17,8 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12 11 10 9"
-		"AbilityDuration"				"20"
+		"AbilityCooldown"				"6 11 10 9"
+		"AbilityDuration"				"4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -54,13 +54,13 @@
 		{
 				"bonus_reset_time"				
 				{
-					"value"						"8 12 16 20"
+					"value"						"5 12 16 20"
 					"special_bonus_unique_ursa_4" "+9"
 				}
 				"bonus_reset_time_roshan"		"8"
 				"damage_per_stack"				
 				{
-					"value"					"12 20 28 36"
+					"value"					"20 20 28 36"
 					"special_bonus_unique_ursa" "+6"
 				}
 				"stun_stack_count"
@@ -115,7 +115,7 @@
 				"special_bonus_scepter"	"=30 =24 =18"
 			}
 			
-			"damage_reduction"			"80"
+			"damage_reduction"			"99"
 			"status_resistance"
 			{
 				"value"							"50"
@@ -123,7 +123,7 @@
 			}
 			"duration"
 			{
-				"value"							"4 4.5 5"
+				"value"							"12 4.5 5"
 			}
 			"aoe_radius"
 			{

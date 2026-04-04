@@ -38,6 +38,7 @@ end
 function modifier_custom_tower_attack:OnIntervalThink()
     if not IsServer() then return end
     local parent = self:GetParent()
+    if not parent or not parent:IsAlive() then return end
     local point = parent:GetAbsOrigin()
     local range = parent:GetBaseAttackRange()
 

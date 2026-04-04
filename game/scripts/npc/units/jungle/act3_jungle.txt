@@ -116,9 +116,10 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
-		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackDamageMax"			"40"		// Damage range max.
 		"AttackRate"				"1.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
@@ -135,7 +136,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
 
-		"StatusHealth"				"950"		// Base health.
+		"StatusHealth"				"2500"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -161,10 +162,10 @@
 
 			"AttachWearables"
 			{
-				"Wearable1" { "ItemDef" "19425" } // arms
-				"Wearable2" { "ItemDef" "19426" } // back
-				"Wearable3" { "ItemDef" "19427" } // belt
-				"Wearable4" { "ItemDef" "19429" } // head
+				"Wearable1" { "ItemDef" "23333" } // arms
+				"Wearable2" { "ItemDef" "23331" } // back
+				"Wearable3" { "ItemDef" "23334" } // belt
+				"Wearable4" { "ItemDef" "23332" } // head
 			}
 		}
 	}
@@ -479,8 +480,8 @@
 		"ArmorPhysical"				"5"			// Physical protection.
 		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"30"		// Damage range min.
-		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackDamageMin"			"70"		// Damage range min.
+		"AttackDamageMax"			"80"		// Damage range max.
 		"AttackRate"				"1.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
@@ -495,7 +496,7 @@
 		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"210"					
+		"MovementSpeed"				"250"					
 
 		"StatusHealth"				"400"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
@@ -534,7 +535,7 @@
 		"Level"						"1"
 		"ModelScale" 				"1.0"
 		"vscripts"					"ai/shaker.lua"
-		"posSequence"				"31254"
+		"posSequence"				"53cgf94ae21b7d86"
 		"CustomDeathSound"			"Dark_Shaker.Death_1"
 		"RequiredTimeInAggroOffset"	"-2.0"
 
@@ -766,7 +767,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"8"			// Physical protection.
-		"MagicalResistance"         "30"
+		"MagicalResistance"         "25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"40"		// Damage range min.
 		"AttackDamageMax"			"40"		// Damage range max.

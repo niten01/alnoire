@@ -38,20 +38,33 @@ function modifier_dark_shaker_ai:OnCreated()
         self.requiredTimeInAggroOffset = kv["RequiredTimeInAggroOffset"]
         local posSequenceStr = kv["posSequence"] or '1234'
         local targetNames = {
-            "dark_shaker_target_1",
-            "dark_shaker_target_2",
-            "dark_shaker_target_3",
-            "dark_shaker_target_4",
-            "dark_shaker_target_5",
+            ["1"] = "dark_shaker_target_1",
+            ["2"] = "dark_shaker_target_2",
+            ["3"] = "dark_shaker_target_3",
+            ["4"] = "dark_shaker_target_4",
+            ["5"] = "dark_shaker_target_5",
+            ["6"] = "dark_shaker_target_6",
+            ["7"] = "dark_shaker_target_7",
+            ["8"] = "dark_shaker_target_8",
+            ["9"] = "dark_shaker_target_9",
+            ["a"] = "dark_shaker_target_a",
+            ["b"] = "dark_shaker_target_b",
+            ["c"] = "dark_shaker_target_c",
+            ["d"] = "dark_shaker_target_d",
+            ["e"] = "dark_shaker_target_e",
+            ["f"] = "dark_shaker_target_f",
+            ["g"] = "dark_shaker_target_g",
         }
 
-        for digit in string.gmatch(posSequenceStr, "%d") do
-            local targetIdx = tonumber(digit)
-            if targetIdx and targetNames[targetIdx] then
-                local ent = Entities:FindByName(nil, targetNames[targetIdx])
+        for char in string.gmatch(posSequenceStr, "%w") do
+            local targetName = targetNames[char]
+            if targetName then
+                local ent = Entities:FindByName(nil, targetName)
                 if ent then
                     table.insert(self.jumpTargets, ent)
                 end
+            else
+                DebugPrint("Warning: No shaker jump target defined for character: " .. char)
             end
         end
     end
