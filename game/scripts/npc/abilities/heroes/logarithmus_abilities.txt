@@ -35,7 +35,7 @@
         "AbilityCastPoint"		    "0.2"
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
         "AbilityCooldown"           "10.0" 
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
         "AbilityDamage"             "70 105"
@@ -70,7 +70,7 @@
         "AbilityCastPoint"		    "0.3"
         "AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_2"
         "AbilityCooldown"           "10.0" 
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -103,7 +103,7 @@
         "AbilityCastPoint"		    "0.35"
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
         "AbilityCooldown"           "8.0" 
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
         "AbilityDamage"                 "85 170"
@@ -136,7 +136,7 @@
         "AbilityCastPoint"		    "0.35"
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
         "AbilityCooldown"           "8.0" 
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
         "AbilityDamage"                 "85 170"
@@ -166,7 +166,7 @@
         "AbilityCastPoint"		    "0.0"
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_7"
         "AbilityCooldown"           "9.0" 
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
         "AbilityDamage"                 "180 360"
@@ -195,7 +195,7 @@
         "AbilityCastPoint"		    "0.2"
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
         "AbilityCooldown"           "0.0" 
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
         "AbilityDamage"                 "180 360"
@@ -223,7 +223,7 @@
         "AbilityCastPoint"		    "0.0"
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_7"
         "AbilityCooldown"           "9.0" 
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
         "AbilityDamage"                 "150 300"
@@ -255,7 +255,7 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastRange"        	"1200"
 		"AbilityCooldown"           "7.0" 
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
         "AbilityDamage"                 "140 280"
@@ -286,10 +286,10 @@
 		"AbilityCastAnimation"		"ACT_DOTA_OVERRIDE_ABILITY_4"
 		"AbilityCastRange"        	"400"
 		"AbilityCooldown"           "7.0" 
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
-        "AbilityDamage"                 "40 64"
+        "AbilityDamage"                 "50 80"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"AbilityValues"
@@ -339,7 +339,7 @@
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
         "AbilityCooldown"           "8.0" 
 		"AbilityCastRange"			"500"
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
         "AbilityDamage"                 "210 420"
@@ -377,7 +377,7 @@
         // "AbilityCastPoint"		    "0.4"
         // "AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_6"
         "AbilityCooldown"           "8.0" 
-		"MaxLevel"					"3"
+		"MaxLevel"					"2"
 		"RequiredLevel"				"1"
 
         "AbilityDamage"                 "180 360"

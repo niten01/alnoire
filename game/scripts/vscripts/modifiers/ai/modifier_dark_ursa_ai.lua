@@ -110,7 +110,7 @@ function modifier_dark_ursa_almost_dead:DeclareFunctions()
 end
 
 function modifier_dark_ursa_almost_dead:GetModifierAttackSpeedBonus_Constant()
-    return 300
+    return 140
 end
 
 function modifier_dark_ursa_almost_dead:GetMinHealth()
@@ -118,7 +118,7 @@ function modifier_dark_ursa_almost_dead:GetMinHealth()
 end
 
 function modifier_dark_ursa_almost_dead:GetModifierMoveSpeedBonus_Constant()
-    return 200
+    return 110
 end
 
 function modifier_dark_ursa_almost_dead:OnCreated()

@@ -15,7 +15,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"2200"
+		"AbilityCastRange"				"3000"
 		"AbilityCastPoint"				"0.5"
 		"FightRecapLevel"				"1"
 
@@ -37,17 +37,17 @@
 		{
 			"totem_damage_percentage"	
 			{
-				"value"		"100 200 300 400"
+				"value"		"250 200 300 400"
 				"CalculateSpellDamageTooltip"	"0"
 				"special_bonus_unique_earthshaker_totem_damage"	"+65"
 			}
 			"distance_scepter"			
 			{
-				"special_bonus_scepter"		"1200"
+				"special_bonus_scepter"		"3000"
 			}
 			"AbilityCooldown"
 			{
-				"value"			"3.0"
+				"value"			"2.5"
 				"special_bonus_unique_earthshaker"			"-1.5"
 
 			}
@@ -112,7 +112,7 @@
 				}
 				"aftershock_damage"			
 				{
-					"value"		"65 90 115 140"
+					"value"		"400 90 115 140"
 					"special_bonus_unique_earthshaker_6"		"+50"
 				}
 				"aftershock_range_increase_per_level_interval"
@@ -161,27 +161,27 @@
 		{
 				"echo_slam_damage_range"	
 				{	
-					"value"		"700"
+					"value"		"1000"
 					"CalculateSpellDamageTooltip"	"0"
 					"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 					"affected_by_aoe_increase"	"1"
 				}
 				"echo_slam_echo_search_range" 
 				{
-					"value"		"700"
+					"value"		"1000"
 					"affected_by_aoe_increase"	"1"
 				}
 				"echo_slam_echo_range"		
 				{
-					"value"			"700"
+					"value"			"1000"
 					"affected_by_aoe_increase"	"1"
 				}
 				"echo_slam_echo_damage"		
 				{
-					"value"				"70 90 110"
+					"value"				"0 90 110"
 					"special_bonus_unique_earthshaker_2" "+50"
 				}
-				"echo_slam_initial_damage"		"100 140 180"
+				"echo_slam_initial_damage"		"1000 140 180"
 				"AbilityCooldown"
 				{
 					"value"										"1.0 120.0 110.0"

@@ -115,7 +115,7 @@
 		"Ability3"						"ursa_enrage"			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
+		"ArmorPhysical"				"7"			// Physical protection.
 		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
@@ -134,9 +134,9 @@
 		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"210"					
+		"MovementSpeed"				"270"					
 
-		"StatusHealth"				"2500"		// Base health.
+		"StatusHealth"				"3000"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -546,6 +546,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
@@ -565,7 +566,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
 
-		"StatusHealth"				"950"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -611,7 +612,7 @@
 		"ModelScale" 				"1.0"
 		"vscripts"					"ai/shaker.lua"
 		"CustomDeathSound"			"Dark_Shaker.Death_2"
-		"posSequence"				"53421"
+		"posSequence"				"cf72d4951eg6da38"
 		"RequiredTimeInAggroOffset"	"-1.0"
 
 		
@@ -621,6 +622,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
@@ -640,7 +642,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
 
-		"StatusHealth"				"950"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -685,7 +687,7 @@
 		"ModelScale" 				"1.0"
 		"vscripts"					"ai/shaker.lua"
 		"CustomDeathSound"			"Dark_Shaker.Death_3"
-		"posSequence"				"12345"
+		"posSequence"				"fg91835246a7bcde"
 		"RequiredTimeInAggroOffset"	"-2.0"
 
 		
@@ -695,6 +697,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
@@ -714,7 +717,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
 
-		"StatusHealth"				"950"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
