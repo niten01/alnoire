@@ -13,7 +13,7 @@ function modifier_dark_pugna_ai:DeclareFunctions()
     }
 end
 
-local SPOTS = { "darkforest_pugna_tp_1", "darkforest_pugna_tp_2", "darkforest_pugna_tp_3", "darkforest_pugna_tp_4", "darkforest_pugna_tp_5", "darkforest_pugna_tp_6", "darkforest_pugna_tp_7" }
+local SPOTS = { "darkforest_pugna_tp_1", "darkforest_pugna_tp_2", "darkforest_pugna_tp_3", "darkforest_pugna_tp_4", "darkforest_pugna_tp_5", "darkforest_pugna_tp_6", "darkforest_pugna_tp_7", "darkforest_pugna_tp_8" }
 
 function modifier_dark_pugna_ai:TpToRandomSpot(unit, spotNames)
     if not IsServer() then return end

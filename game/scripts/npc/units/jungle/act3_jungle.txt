@@ -23,7 +23,7 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"40"		// Damage range min.
 		"AttackDamageMax"			"60"		// Damage range max.
-		"AttackRate"				"1.8"		// Speed of attack.
+		"AttackRate"				"2.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"1300"		// Range within a target can be attacked.
@@ -477,6 +477,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
@@ -496,7 +497,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
 
-		"StatusHealth"				"950"		// Base health.
+		"StatusHealth"				"400"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -763,11 +764,11 @@
 		//"Ability3"						"earthshaker_echo_slam"			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
+		"ArmorPhysical"				"8"			// Physical protection.
 		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"60"		// Damage range min.
-		"AttackDamageMax"			"80"		// Damage range max.
+		"AttackDamageMin"			"40"		// Damage range min.
+		"AttackDamageMax"			"40"		// Damage range max.
 		"AttackRate"				"1.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
@@ -837,8 +838,8 @@
 		"ArmorPhysical"				"5"			// Physical protection.
 		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"30"		// Damage range min.
-		"AttackDamageMax"			"40"		// Damage range max.
+		"AttackDamageMin"			"60"		// Damage range min.
+		"AttackDamageMax"			"70"		// Damage range max.
 		"AttackRate"				"1.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.

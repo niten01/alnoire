@@ -11,8 +11,8 @@
 
 		"AbilityValues"
 		{
-			"max_stacks"				"25 50 100 150"
-			"damage_pct_per_stack"		"1"
+			"max_stacks"				"50 50 100 150"
+			"damage_pct_per_stack"		"0.5 1 1 1"
 			"stacks_per_attack"			"1 1 2 2"
 		}
 	}
@@ -48,13 +48,13 @@
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"		"rapper_strife"
-        "AbilityCooldown"               "40 35 30" 
+        "AbilityCooldown"               "30 25 20" 
 		"MaxLevel"						"3"
 		"RequiredLevel"					"1"
 
 		"AbilityValues"
 		{
-			"duration_per_stack"	    "0.2 0.1 0.065"
+			"duration_per_stack"	    "0.12 0.06 0.04"
 			"attack_speed_bonus"		"300 450 600"
 			"flow_per_shot"				"3 5 7"
 			"perfect_buff_duration"		"5"
