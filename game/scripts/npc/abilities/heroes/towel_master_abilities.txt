@@ -32,7 +32,7 @@
 		"AbilityManaCost"               "0"
 		"AbilityValues"
 		{
-			"cooldown"					"20.0 20.0 20.0 20.0"
+			"cooldown"					"15.0 14.0 13.0 12.0"
 			"radius"					"1200 1200 1200 1200"
 			"overpower_level"			"0 1 2 3"
 			"dash_level"				  "0 1 2 3"

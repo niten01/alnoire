@@ -279,6 +279,7 @@
 		"Model"						"models/props_structures/good_ancient001.vmdl"// Model.
 		"SoundSet"					"Tower.Water"					// Name of sound set.
 		"MinimapIcon"				""
+		"ModelScale"				"0.7"
 		"MinimapIconSize"			"0"
 		"Level"						"1"
 		// Abilities
