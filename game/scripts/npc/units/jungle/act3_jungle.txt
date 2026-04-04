@@ -757,6 +757,7 @@
 		"Level"						"1"
 		"ModelScale" 				"1.0"
 		"vscripts"					"ai/treant.lua"
+		"RequiredTimeInAggroOffset"	"-2.0"
 
 		
 		"Ability1"						"dark_treant_ult"			// Ability 1 
