@@ -474,6 +474,11 @@ return {
         -- clash
         "particles/clash_custom_freeze.vpcf",
         "particles/econ/items/drow/drow_arcana/drow_arcana_status_effect_frost_arrow.vpcf",
+        "particles/clash_firework.vpcf",
+        "particles/clash_firework_dire.vpcf",
+        "particles/econ/world/towers/rock_golem/dire_rock_golem_destruction.vpcf",
+        "particles/econ/world/towers/rock_golem/radiant_rock_golem_destruction.vpcf",
+        "particles/king_tower_bad_destroy.vpcf",
 
         -- barrel click
         "particles/units/heroes/hero_bounty_hunter/bounty_hunter_cutpurse.vpcf",

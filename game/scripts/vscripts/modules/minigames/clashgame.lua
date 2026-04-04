@@ -14,6 +14,17 @@ function ClashGame:Init()
         { point = "spawn_dire_right",    team = DOTA_TEAM_BADGUYS,  target = "agro_for_dire_right" },
     }
 
+    self.pfxTargets = {
+        "info_pfx_right_1",
+        "info_pfx_right_2",
+        "info_pfx_right_3",
+        "info_pfx_left_1",
+        "info_pfx_left_2",
+        "info_pfx_left_3",
+        "info_pfx_middle_1",
+        "info_pfx_middle_2",
+    }
+
     self.king_tower_good = nil
     self.king_tower_bad = nil
     self.lastSpellCastTime = 0
@@ -52,6 +63,7 @@ function ClashGame:Init()
 
         if self.isActive then return end
         DebugPrint("[ALNOIRE] Started CLASHGAME")
+        Music:StartCustomMusicForAll("music.island.combat")
         self.isActive = true
         self:SpawnTowers()
         self:SpawnAllWaves()
@@ -233,6 +245,28 @@ function ClashGame:OnKingTowerKilled(team)
         is_winner = false
     end
     self.isActive = false
+    local soundName = "Clash.Win"
+    local pfxName = "particles/clash_firework.vpcf"
+    if not is_winner then
+        soundName = "Clash.Lose"
+        pfxName = "particles/clash_firework_dire.vpcf"
+    end
+    local player = PlayerResource:GetSelectedHeroEntity(0)
+    if player then
+        Timers:CreateTimer(1.0, function()
+            EmitSoundOn(soundName, player)
+            for _, targetName in ipairs(self.pfxTargets) do
+                local targetEnt = Entities:FindByName(nil, targetName)
+                if targetEnt then
+                    local pfx = ParticleManager:CreateParticle(pfxName, PATTACH_WORLDORIGIN,
+                        nil)
+                    ParticleManager:SetParticleControl(pfx, 0, (targetEnt:GetAbsOrigin() + Vector(0, 0, 300)))
+                    ParticleManager:ReleaseParticleIndex(pfx)
+                end
+            end
+        end)
+    end
+    Music:StopCustomMusic(0)
     self:KillAll()
 end
 

@@ -1,0 +1,47 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+
+{
+  KingTowerBad.Destroy = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/physics/damage/building/dire_ancient_destruction_lose.vsnd",
+      ]
+      
+      volume = 7.0
+      pitch = 1.0
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+  Clash.Win = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/weapons/hero/legion_commander/duel_victory.vsnd",
+      ]
+      
+      volume = 7.0
+      pitch = 1.0
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+
+  Clash.Lose = 
+  {
+      type = "dota_src1_3d"
+      
+      vsnd_files = 
+      [
+          "sounds/clash/clash_lose.vsnd",
+      ]
+      
+      volume = 7.0
+      pitch = 1.0
+      mixgroup = "Weapons"
+      distance_max = 2500.0
+  }
+}
