@@ -105,6 +105,7 @@ function modifier_dark_ursa_almost_dead:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_MIN_HEALTH,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
     }
 end
 
@@ -114,6 +115,10 @@ end
 
 function modifier_dark_ursa_almost_dead:GetMinHealth()
     return 1
+end
+
+function modifier_dark_ursa_almost_dead:GetModifierMoveSpeedBonus_Constant()
+    return 200
 end
 
 function modifier_dark_ursa_almost_dead:OnCreated()
