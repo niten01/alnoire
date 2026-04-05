@@ -350,6 +350,7 @@ return {
         "soundevents/darkforest/dark_shaker.vsndevts",
         "soundevents/desert/desert_dire.vsndevts",
         "soundevents/bosses/ball.vsndevts",
+        "soundevents/clash/clash.vsndevts"
     },
     particles = {
         "particles/econ/items/bloodseeker/bloodseeker_crownfall_immortal/bloodseeker_crownfall_immortal_ambient_eyeglow_l.vpcf",
