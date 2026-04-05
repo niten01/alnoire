@@ -222,6 +222,9 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
         false
     )
     if #enemiesInFOW == 0 then
+        if pack.state ~= "idle" then
+            self:OnRetreat(pack, nil)
+        end
         pack.state = "idle"
         pack.target = nil
         pack.somebodyNear = false
@@ -275,6 +278,7 @@ function PackManager:OnAggro(pack, target)
 end
 
 function PackManager:OnRetreat(pack, target)
+    DebugPrint("[ALNOIRE] Retreat: " .. pack.name)
     local pids = target and { target:GetPlayerOwnerID() } or {}
     if not target then
         for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
