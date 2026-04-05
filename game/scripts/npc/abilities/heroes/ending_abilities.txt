@@ -50,7 +50,7 @@
             "throw_distance_behind"	"350"
             "pull_angle"		"230"
             "stun_duration"			"1.2 1.5 1.8 2.1"
-            "impact_damage"		"70 140 210 280"
+            "impact_damage"		"400"
 		}
 
 		"precache"

@@ -138,6 +138,16 @@
     fade_out = "2.0"
   }
   // ---------------------------------------------------------
+  music.academy.explore = {
+    type = "dota_update_battle_music"
+    vsnd_files =
+    [
+      "sounds/music/academy_explore.vsnd"
+    ]
+    volume = "2.500000"
+    fade_out = "3.0"
+  }
+  // ---------------------------------------------------------
   music.wastelands.explore = {
     type = "dota_update_battle_music"
     vsnd_files =
