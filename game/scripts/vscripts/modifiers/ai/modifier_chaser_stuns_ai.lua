@@ -16,6 +16,8 @@ function modifier_chaser_stuns_ai:OnTakeDamage(params)
     if params.unit ~= parent then return end
 
     if params.unit:GetHealth() <= 1 then
+        self:StartIntervalThink(-1)
+        parent:Stop()
         parent:EmitSound("chaser.disappear")
         parent:EmitSound("chaser.laugh")
         local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_chaos_knight/chaos_knight_phantasm.vpcf",
@@ -31,6 +33,11 @@ function modifier_chaser_stuns_ai:OnTakeDamage(params)
             UTIL_Remove(parent)
         end)
     end
+end
+
+function modifier_chaser_stuns_ai:OnCreated()
+    if not IsServer() then return end
+    self.chaserAlone = false
 end
 
 function modifier_chaser_stuns_ai:OnIntervalThink()
@@ -49,5 +56,29 @@ function modifier_chaser_stuns_ai:OnIntervalThink()
 
     if beaconState == 'aggro' and target and target:IsAlive() then
         if CastAbility(unit, target, "chaser_stun") then return end
+
+        if IsCasting(unit) then return end
+        local beaconPos = beaconData.pos
+        local allies = FindUnitsInRadius(unit:GetTeamNumber(), beaconPos, nil, beaconData.rangeFastTickRate,
+            DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE,
+            FIND_ANY_ORDER, false)
+        local hasGroupMembers = false
+        for _, ally in pairs(allies) do
+            if ally ~= unit and ally:IsAlive() and ally.packTargetData == beaconData then
+                hasGroupMembers = true
+                break
+            end
+        end
+        if not hasGroupMembers then
+            self.chaserAlone = true
+        end
+        if not unit:GetAggroTarget() and self.chaserAlone then
+            ExecuteOrderFromTable({
+                UnitIndex = unit:entindex(),
+                OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                Position = target:GetAbsOrigin(),
+                Queue = false,
+            })
+        end
     end
 end

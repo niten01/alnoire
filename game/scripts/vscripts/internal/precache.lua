@@ -205,6 +205,7 @@ return {
         "npc_dota_hero_troll_warlord",
         "npc_dota_hero_legion_commander",
         "npc_dota_hero_mars",
+        "npc_dota_hero_chaos_knight",
 
 
 
