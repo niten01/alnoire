@@ -1408,7 +1408,7 @@ return {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 3000,
             rangeRetreat = 2000,
-            rangeAggro = 1400,
+            rangeAggro = 1030,
             doors = {
                 "door_ball"
             }
