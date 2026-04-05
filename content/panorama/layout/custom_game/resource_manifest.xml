@@ -47,6 +47,7 @@
             <Image src="file://{images}/custom_game/portraits/barrel_cats.psd" />
             <Image src="file://{images}/custom_game/portraits/shooter.psd" />
             <Image src="file://{images}/custom_game/portraits/genius.psd" />
+            <Image src="file://{images}/custom_game/portraits/ogre_bruiser.psd" />
         </Panel>
     </Panel>
 </root>

@@ -48,6 +48,7 @@
     "Хранительница": "lanaya",
     "Скулшутер": "shooter",
     "Крип-гений": "genius",
+    "Огр-громила": "ogre_bruiser",
   }
 
   const root = $.GetContextPanel();

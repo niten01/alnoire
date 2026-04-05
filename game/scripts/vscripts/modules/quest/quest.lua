@@ -157,7 +157,9 @@ function Quest:CompleteQuestForAll(questID)
     quest = quest
   })
   if not quest.noFireworks then
-    self:EmitQuestCompleteParticles()
+    Timers:CreateTimer(0.5, function()
+      self:EmitQuestCompleteParticles()
+    end)
   end
   Notifications:TopToAll({ text = "Квест выполнен \"" .. quest.name .. "\"", duration = 5 })
 end
