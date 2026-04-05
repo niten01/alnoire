@@ -43,7 +43,9 @@ end
 modifier_rapper_strife = class {}
 
 function modifier_rapper_strife:IsHidden() return false end
+
 function modifier_rapper_strife:IsDebuff() return false end
+
 function modifier_rapper_strife:IsPurgable() return false end
 
 function modifier_rapper_strife:OnCreated(kv)
@@ -80,11 +82,16 @@ function modifier_rapper_strife:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
+        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
 
         MODIFIER_EVENT_ON_TAKEDAMAGE,
         MODIFIER_EVENT_ON_ATTACK,
         MODIFIER_EVENT_ON_ABILITY_START
     }
+end
+
+function modifier_rapper_strife:GetModifierBaseDamageOutgoing_Percentage()
+    return -self:GetAbility():GetSpecialValueFor("damage_reduction_pct")
 end
 
 function modifier_rapper_strife:OnAbilityStart(kv)

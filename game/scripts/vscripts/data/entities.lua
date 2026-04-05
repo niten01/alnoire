@@ -1453,7 +1453,7 @@ return {
             rangeFastTickRate = 6000,
             rangeAggro = 6000,
             activateAfterUnitsSpawned = false,
-            music="hlup_full"
+            music = "hlup_full"
         },
         pack_perekup = {
             activateAfterUnitsSpawned = false,

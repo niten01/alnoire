@@ -257,6 +257,7 @@ function Quest:OnActChange(event)
     end
     ::skip_quest::
   end
+  self:UpdateQuestlog()
 end
 
 function Quest:ShowQuestStatus(event, args)

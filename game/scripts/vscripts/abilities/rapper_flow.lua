@@ -70,7 +70,7 @@ function modifier_rapper_flow:OnTakeDamage(params)
     local stackCount = self:GetStackCount()
     if params.damage > 0 then
         local fraction = params.damage / self:GetParent():GetMaxHealth()
-        self:SetStackCount(math.max(0, stackCount - math.floor(self.maxStacks * fraction)))
+        self:SetStackCount(math.max(0, stackCount - math.max(1, math.floor(self.maxStacks * fraction))))
     end
 end
 
@@ -96,7 +96,7 @@ function modifier_rapper_flow:OnAttackLanded(params)
     if self:GetParent():HasModifier("modifier_rapper_strife") then return end
 
     self:SetStackCount(math.min(self.maxStacks,
-    self:GetStackCount() + self:GetAbility():GetSpecialValueFor("stacks_per_attack")))
+        self:GetStackCount() + self:GetAbility():GetSpecialValueFor("stacks_per_attack")))
 end
 
 function modifier_rapper_flow:GetModifierDamageOutgoing_Percentage()
