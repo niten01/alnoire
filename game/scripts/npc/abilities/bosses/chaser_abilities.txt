@@ -72,4 +72,32 @@
             "particle"		"particles/chaser_stun_projectile.vpcf"
         }
     }
+
+    "chaser_clones"
+    {
+        // General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile" 					"abilities/bosses/chaser_clones"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"chaos_knight_phantasm"
+
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastRange"				"2000"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"		
+		"AbilityCooldown"				"200.0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"numSummons"		"2"
+			"summonLifetime"	"-1" // -1 for infinite lifetime
+			"summonRadius"		"200"
+		}
+    }
 }

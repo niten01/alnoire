@@ -417,7 +417,7 @@ return {
             team = DOTA_TEAM_BADGUYS,
         },
         spawner_chaser                = {
-            npc = "npc_chaser",
+            npc = "npc_chaser_final",
             packID = "pack_chaser",
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
