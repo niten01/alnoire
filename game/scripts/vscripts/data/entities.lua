@@ -1333,28 +1333,28 @@ return {
         pack_desert_act4_nyxs = {
             rangeFastTickRate = 2200,
             rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_desert_act4_viperstealer = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 2200,
+            rangeRetreat = 1400,
+            rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_desert_act4_trollhuskar = {
             rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeRetreat = 1400,
+            rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_desert_act4_dire_creeps = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 2200,
+            rangeRetreat = 1400,
+            rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
         },
 
@@ -1416,6 +1416,9 @@ return {
         pack_chaser = {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 5000,
+            rangeRetreat = 999999,
+            rangeAggro = 700,
         },
         pack_derek = {
             activateAfterUnitsSpawned = false,

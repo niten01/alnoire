@@ -62,7 +62,7 @@
 			"perfect_incoming_damage_reduction_pct" "60 65 70"
 			"perfect_pulse_radius"		"200 250 300"
 			"perfect_damage_per_pulse"  "30 50 70"
-			"damage_reduction_pct"  	"30"
+			"damage_reduction_pct"  	"20"
 		}
 
 		"precache"
