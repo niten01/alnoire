@@ -193,7 +193,7 @@
 	{
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"                    "abilities/clash/custom_tower_attack"
-		"AbilityTextureName"            "monkey_king_jingu_mastery"
+		"AbilityTextureName"            "gyrocopter_flak_cannon"
 
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"

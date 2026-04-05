@@ -1,0 +1,19 @@
+"DOTA_Tooltip_ability_custom_tower_attack"		            "Башенная пушка"
+"DOTA_Tooltip_ability_custom_tower_attack_Lore"		            "Годы противостояния принцев подстегнули гонку вооружений между их царствами, в результате чего лучшими инженерами Синего Принца были разработаны полностью автоматичекие башни с пушками, которые мощнее и смертоноснее любого воина. После подкупа одного из инженеров, чертежи башни попали к Красному Принцу, из-за чего на поле боя сложилась патовая ситуация."
+"DOTA_Tooltip_Ability_custom_tower_attack_SummaryDescription" ""
+"DOTA_Tooltip_ability_custom_tower_attack_Description"		"Башня атакует любого, кто угрожает принцу."
+
+"DOTA_Tooltip_ability_invoker_chaos_meteor"		            "Огненный шар"
+"DOTA_Tooltip_ability_invoker_chaos_meteor_Lore"		            "С появлением магии в арсенале у Красного Принца, Синему стало невероятно трудно сопротивляться, к счастью для него, Красный пока не овладел ей в должной мере, и поэтому может использовать заклинания только для защиты на своей территории."
+"DOTA_Tooltip_Ability_invoker_chaos_meteor_SummaryDescription" ""
+"DOTA_Tooltip_ability_invoker_chaos_meteor_Description"		"Красный обрушивает огенный шар в точку на поле боя."
+
+"DOTA_Tooltip_ability_custom_freeze"		            "Зелье заморозки"
+"DOTA_Tooltip_ability_custom_freeze_Lore"		            "Говорят, что некоторые, особо алчные алхимики из прошлого за большие деньги помогали Красному в усилении его армии, примером тому служит зелье заморозки, секрет этого зелья канул в лету вместе с его создателем."
+"DOTA_Tooltip_Ability_custom_freeze_SummaryDescription" ""
+"DOTA_Tooltip_ability_custom_freeze_Description"		"Красный сбрасывает на выбранную облость зелье, замораживающее всех в радиусе."
+
+"DOTA_Tooltip_ability_zuus_lightning_bolt"		            "Зелье молнии"
+"DOTA_Tooltip_ability_zuus_lightning_bolt_Lore"		            "Несмотря на все новшества армии Красного, у него все еще не получилось захватить земли Синего, и он пошел на крайние меры - донат. Запрещенная во всех королевствах механика подразумевает покупку военной силы за золото в неограниченных масштабах. Пока казна Красного полна, его армия растет и становится сильнее и разнообразнее с каждым днем. Данная механика была запрещена во всех королевствах, после инцидента с эволюцией гоблинской бочки на седьмой арене."
+"DOTA_Tooltip_Ability_zuus_lightning_bolt_SummaryDescription" ""
+"DOTA_Tooltip_ability_zuus_lightning_bolt_Description"		"Молния бьет три раза по случайным целям."
