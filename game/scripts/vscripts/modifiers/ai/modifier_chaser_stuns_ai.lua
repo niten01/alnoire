@@ -18,7 +18,6 @@ function modifier_chaser_stuns_ai:OnTakeDamage(params)
     if params.unit:GetHealth() <= 1 then
         self:StartIntervalThink(-1)
         parent:Stop()
-        parent:StartGesture(ACT_DOTA_CAST_ABILITY_4)
         parent:EmitSound("chaser.disappear")
         parent:EmitSound("chaser.laugh")
         local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_chaos_knight/chaos_knight_phantasm.vpcf",
