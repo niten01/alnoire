@@ -1,10 +1,16 @@
+local storyItems = nil
+local shopItems = nil
+
 -- Order Filter; order can be casting an ability, moving, clicking to attack, using scan (radar), glyph etc.
 function barebones:OrderFilter(filter_table)
-	--PrintTable(filter_table)
-
 	local order = filter_table.order_type
 	local units = filter_table.units
 	local playerID = filter_table.issuer_player_id_const
+
+	local vtResult = VectorTarget:OrderFilter(filter_table)
+	if not vtResult then
+		return false
+	end
 
 	-- Order enums:
 	-- DOTA_UNIT_ORDER_NONE = 0
@@ -48,28 +54,28 @@ function barebones:OrderFilter(filter_table)
 	-- DOTA_UNIT_ORDER_TAKE_ITEM_FROM_NEUTRAL_ITEM_STASH = 39
 
 	-- Example 1: If the order is an ability
-	if order == DOTA_UNIT_ORDER_CAST_POSITION or order == DOTA_UNIT_ORDER_CAST_TARGET or order == DOTA_UNIT_ORDER_CAST_NO_TARGET or order == DOTA_UNIT_ORDER_CAST_TOGGLE or order == DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO then
-		local ability_index = filter_table.entindex_ability
-		local ability
-		if ability_index then
-			ability = EntIndexToHScript(ability_index)
-		end
-		local caster
-		if units and units["0"] then
-			caster = EntIndexToHScript(units["0"])
-		end
-	end
+	-- if order == DOTA_UNIT_ORDER_CAST_POSITION or order == DOTA_UNIT_ORDER_CAST_TARGET or order == DOTA_UNIT_ORDER_CAST_NO_TARGET or order == DOTA_UNIT_ORDER_CAST_TOGGLE or order == DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO then
+	-- 	local ability_index = filter_table.entindex_ability
+	-- 	local ability
+	-- 	if ability_index then
+	-- 		ability = EntIndexToHScript(ability_index)
+	-- 	end
+	-- 	local caster
+	-- 	if units and units["0"] then
+	-- 		caster = EntIndexToHScript(units["0"])
+	-- 	end
+	-- end
 
 	-- Example 2: If the order is a simple move command
-	if order == DOTA_UNIT_ORDER_MOVE_TO_POSITION and units then
-		local destination_x = filter_table.position_x
-		local destination_y = filter_table.position_y
-		local unit_with_order
-		if units["0"] then
-			unit_with_order = EntIndexToHScript(units["0"])
-			unit_with_order.lastMoveOrder = Vector(destination_x, destination_y, 0)
-		end
-	end
+	-- if order == DOTA_UNIT_ORDER_MOVE_TO_POSITION and units then
+	-- 	local destination_x = filter_table.position_x
+	-- 	local destination_y = filter_table.position_y
+	-- 	local unit_with_order
+	-- 	if units["0"] then
+	-- 		unit_with_order = EntIndexToHScript(units["0"])
+	-- 		unit_with_order.lastMoveOrder = Vector(destination_x, destination_y, 0)
+	-- 	end
+	-- end
 
 	-- Example 3: Disable item sharing for a custom courier that everyone can control
 	--[[
@@ -87,6 +93,17 @@ function barebones:OrderFilter(filter_table)
 		end
 	end
 	]]
+
+	if order == DOTA_UNIT_ORDER_PURCHASE_ITEM then
+		if not shopItems or not storyItems then
+			shopItems = LoadKeyValues("scripts/npc/items/shop_items.txt")
+			storyItems = LoadKeyValues("scripts/npc/items/story_items.txt")
+		end
+
+		local itemName = filter_table.shop_item_name
+		-- only allow purchasing shop items
+		if not shopItems[itemName] then return false end
+	end
 
 	return true
 end
@@ -106,8 +123,8 @@ function barebones:DamageFilter(keys)
 
 	local damage_type = keys.damagetype_const
 	local inflictor = keys
-	.entindex_inflictor_const                    -- keys.entindex_inflictor_const is nil if damage is not caused by an ability
-	local damage_after_reductions = keys.damage  -- keys.damage is damage after reductions without spell amplifications
+		.entindex_inflictor_const            -- keys.entindex_inflictor_const is nil if damage is not caused by an ability
+	local damage_after_reductions = keys.damage -- keys.damage is damage after reductions without spell amplifications
 
 	-- Damage types:
 	-- DAMAGE_TYPE_NONE = 0
@@ -139,7 +156,7 @@ function barebones:DamageFilter(keys)
 			local gold_bounty
 			if hero_streak > 2 then
 				gold_bounty = HERO_KILL_GOLD_BASE + hero_level * HERO_KILL_GOLD_PER_LEVEL +
-				(hero_streak - 2) * HERO_KILL_GOLD_PER_STREAK
+					(hero_streak - 2) * HERO_KILL_GOLD_PER_STREAK
 			else
 				gold_bounty = HERO_KILL_GOLD_BASE + hero_level * HERO_KILL_GOLD_PER_LEVEL
 			end
@@ -300,7 +317,7 @@ function barebones:InventoryFilter(keys)
 	local item_index = keys.item_entindex_const
 	local owner_index = keys.item_parent_entindex_const                 -- -1 if not defined
 	local item_slot = keys
-	.suggested_slot                                                     -- slot in which the item should be put, usually its -1 meaning put in the first free slot
+		.suggested_slot                                                 -- slot in which the item should be put, usually its -1 meaning put in the first free slot
 
 	-- Item slots:
 	-- Inventory slots: DOTA_ITEM_SLOT_1 - DOTA_ITEM_SLOT_9

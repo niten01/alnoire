@@ -66,7 +66,7 @@ function modifier_dark_drow_ai:OnIntervalThink()
         else
             unit.stoppedLastTime = false
         end
-        if distFromDrow <= 200 then
+        if distFromDrow <= 300 then
             if CastAllAbilities(unit, target) then
                 return
             end

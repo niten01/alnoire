@@ -267,12 +267,14 @@ function FindSanyaInRadius(centerPoint, radius)
     radius,
     DOTA_UNIT_TARGET_TEAM_BOTH,
     DOTA_UNIT_TARGET_HERO,
-    DOTA_UNIT_TARGET_FLAG_NONE,
-    FIND_CLOSEST,
+    DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+    FIND_ANY_ORDER,
     false
   )
+  DebugPrint(#units)
 
   for _, unit in ipairs(units) do
+    DebugPrint(unit:GetUnitName())
     if unit:IsRealHero() and unit:GetPlayerOwnerID() ~= -1 and not unit:IsSpiritBearCustom() then
       return unit
     end
@@ -346,7 +348,8 @@ function FindEnemiesForAIInRadius(center, radius)
     radius,
     DOTA_UNIT_TARGET_TEAM_ENEMY,
     DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-    DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
+    DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE + DOTA_UNIT_TARGET_FLAG_INVULNERABLE +
+    DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
     FIND_CLOSEST,
     false
   )

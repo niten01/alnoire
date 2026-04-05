@@ -11,9 +11,9 @@
 
 		"AbilityValues"
 		{
-			"max_stacks"				"50 50 100 200"
-			"damage_pct_per_stack"		"0.5 1 1 0.75"
-			"stacks_per_attack"			"1 1 2 4"
+			"max_stacks"				"50 100 200 300"
+			"damage_pct_per_stack"		"0.5 0.5 0.5 0.5"
+			"stacks_per_attack"			"1 2 3 4"
 		}
 	}
 	"rapper_spliff"
@@ -54,14 +54,15 @@
 
 		"AbilityValues"
 		{
-			"duration_per_stack"	    "0.12 0.06 0.04"
-			"attack_speed_bonus"		"300 450 600"
-			"flow_per_shot"				"3 5 7"
+			"duration_per_stack"	    "0.05 0.025 0.017"
+			"attack_speed_bonus"		"200 300 400"
+			"flow_per_shot"				"5 8 12"
 			"perfect_buff_duration"		"5"
 			"perfect_num_pulses"		"11"
 			"perfect_incoming_damage_reduction_pct" "60 65 70"
 			"perfect_pulse_radius"		"200 250 300"
 			"perfect_damage_per_pulse"  "30 50 70"
+			"damage_reduction_pct"  	"20"
 		}
 
 		"precache"
@@ -89,7 +90,7 @@
 		{
 			"range"						"700"
 			"buff_duration"				"3"
-			"ms_reduction"				"100"
+			"ms_reduction"				"80"
 			"attack_range_bonus"		"400"
 		}
 

@@ -364,7 +364,7 @@ return {
             {
                 description = "Вернись в реальный мир",
                 objectives = {
-                    { type = "trigger", trigger = "trigger_portal_escape" }
+                    { type = "come", trigger = "trigger_ending_1" }
                 }
             },
         }

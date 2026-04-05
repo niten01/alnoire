@@ -791,6 +791,39 @@
 						reverse = false
 						additional_anim_files = [  ]
 					},
+					{
+						_class = "AnimFile"
+						name = "skiing"
+						children = 
+						[
+							{
+								_class = "ActivityModifier"
+								activity_name = "windy"
+								activity_weight = 100
+							},
+						]
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 100
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/sanya/animations/skiing.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
 				]
 				default_root_bone_name = ""
 			},
@@ -820,7 +853,7 @@
 						_class = "Attachment"
 						name = "attach_blade_end"
 						parent_bone = "Weapon_0"
-						relative_origin = [ 170.898926, -0.000046, -23.706345 ]
+						relative_origin = [ 170.89893, -0.000046, -23.706345 ]
 						relative_angles = [ 52.62006, 0.0, 0.000598 ]
 						weight = 1.0
 						ignore_rotation = false
@@ -839,7 +872,7 @@
 						name = "attach_eyeR"
 						parent_bone = "head"
 						relative_origin = [ 1.488297, 9.737099, -4.485648 ]
-						relative_angles = [ 30.513079, 4.819746, 164.886185 ]
+						relative_angles = [ 30.513079, 4.819746, 164.88618 ]
 						weight = 1.0
 						ignore_rotation = false
 					},
@@ -880,8 +913,8 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -33.351028, -6.543525, -10.062553 ]
-								hitbox_maxs = [ 152.313766, 6.537796, 4.892159 ]
+								hitbox_mins = [ -33.35103, -6.543525, -10.062553 ]
+								hitbox_maxs = [ 152.31377, 6.537796, 4.892159 ]
 							},
 							{
 								_class = "Hitbox"
@@ -901,7 +934,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -16.29731, -23.448692, -23.810942 ]
-								hitbox_maxs = [ 33.726318, 17.355446, 23.810926 ]
+								hitbox_maxs = [ 33.72632, 17.355446, 23.810926 ]
 							},
 							{
 								_class = "Hitbox"
@@ -911,7 +944,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -17.517914, -23.791065, -29.984596 ]
-								hitbox_maxs = [ 33.974335, 18.199039, 29.046925 ]
+								hitbox_maxs = [ 33.974335, 18.19904, 29.046925 ]
 							},
 							{
 								_class = "Hitbox"
@@ -990,7 +1023,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -33.515942, -12.129948, -13.880997 ]
+								hitbox_mins = [ -33.51594, -12.129948, -13.880997 ]
 								hitbox_maxs = [ 9.375732, 11.3043, 11.237961 ]
 							},
 							{
@@ -1121,7 +1154,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -10.204788, -18.299892, -10.272148 ]
-								hitbox_maxs = [ 37.120132, 19.414749, 17.651634 ]
+								hitbox_maxs = [ 37.120132, 19.41475, 17.651634 ]
 							},
 							{
 								_class = "Hitbox"
@@ -1350,8 +1383,8 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -51.518391, -39.731422, -16.314762 ]
-								hitbox_maxs = [ 28.73657, 27.053551, 43.224056 ]
+								hitbox_mins = [ -51.51839, -39.731422, -16.314762 ]
+								hitbox_maxs = [ 28.73657, 27.05355, 43.224056 ]
 							},
 							{
 								_class = "Hitbox"
@@ -1370,8 +1403,8 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -12.670204, -18.122704, -35.237782 ]
-								hitbox_maxs = [ 49.191231, 35.284206, 10.729301 ]
+								hitbox_mins = [ -12.670204, -18.122704, -35.23778 ]
+								hitbox_maxs = [ 49.19123, 35.284206, 10.729301 ]
 							},
 							{
 								_class = "Hitbox"
@@ -1390,8 +1423,8 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -49.178585, -30.551781, -21.847969 ]
-								hitbox_maxs = [ 22.684864, 27.759678, 34.538139 ]
+								hitbox_mins = [ -49.178585, -30.55178, -21.84797 ]
+								hitbox_maxs = [ 22.684864, 27.759678, 34.53814 ]
 							},
 						]
 					},

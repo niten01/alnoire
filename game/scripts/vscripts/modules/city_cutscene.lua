@@ -112,7 +112,7 @@ function CityCutscene:Start(playerID)
     assert(hero)
 
     PlayerResource:SetCameraTarget(playerID, hero)
-    GameRules:GetGameModeEntity():SetCameraSmoothCountOverride(10)
+    GameRules:GetGameModeEntity():SetCameraSmoothCountOverride(30)
     hero:MoveToPosition(wp:GetAbsOrigin())
     hero:AddNewModifier(nil, nil, "modifier_cutscene_player", { duration = -1 })
 

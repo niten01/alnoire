@@ -345,8 +345,8 @@ d_untitled_passage_75 = {
 priority = 0,
 conditions = {
 { interact="npc_predvestnik",type="interact" },
-{ questID="q_main_quest_1",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
 { var="act",value={ 1 },type="var" },
+{ questID="q_main_quest_act_1",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
 },
 },
 d_untitled_passage_76 = {
@@ -793,6 +793,20 @@ conditions = {
 { var="concert_crowd_met",value={ false },type="var" },
 },
 },
+d_untitled_passage_merged_act3 = {
+priority = 0,
+conditions = {
+{ var="act",value={ 3 },type="var" },
+{ interact="npc_concert_guard",type="interact" },
+},
+},
+d_untitled_passage_1_merged_act3 = {
+priority = 0,
+conditions = {
+{ interact="npc_concert_guard",type="interact" },
+{ var="act",value={ 4 },type="var" },
+},
+},
 d_untitled_passage_10 = {
 priority = 0,
 conditions = {
@@ -1026,8 +1040,8 @@ conditions = {
 d_untitled_passage_7 = {
 priority = 0,
 conditions = {
-{ interact="npc_brewmaster",type="interact" },
 { questID="q_pandas",status=QuestStatus.ACTIVE,step={ 2 },type="quest" },
+{ interact="npc_brewmaster_good",type="interact" },
 },
 },
 d_untitled_passage_86_merged_act3 = {
@@ -1075,8 +1089,8 @@ d_untitled_passage_70_merged_act4 = {
 priority = 0,
 conditions = {
 { trigger="trigger_boss_fight_1",npc="npc_derek",type="trigger" },
-{ ent_var="first_met_global",value={ false },npc="npc_derek",type="ent_var" },
 { ent_var="beaten",value={ false },npc="npc_derek",type="ent_var" },
+{ ent_var="first_met_global",value={ true },npc="npc_derek",type="ent_var" },
 },
 },
 d_untitled_passage_71_merged_act4 = {
@@ -1634,7 +1648,7 @@ next = "d_podojti_poblizhe_i_prislushatsya",
 },
 d_nabludat = {
 text = [[*Предвестник зажигает несколько свечек. Он садится и кладёт руки на шар. Всё это сопровождается его глубокими вдохами и едва слышным мычанием.*]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -1929,7 +1943,7 @@ next = "d_j",
 },
 d_ujti = {
 text = [[*Обе головы продолжают спорить.*]],
-speaker = [[Крип-сиамский огр]],
+speaker = [[Сиамский огр]],
 npc = "npc_ogre_magi",
 choices = {
 {
@@ -2735,7 +2749,7 @@ next = nil,
 },
 d_untitled_passage_83 = {
 text = [[*Приунывший предсказатель собирает с пола шишки.*]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -2864,7 +2878,7 @@ next = "d_ej_ty_pervyj_krip_chto_upomyanul_korolya_chto_tebe_o_nem_izvestno",
 },
 },
 d_flask_barrel = {
-text = [[Сверху вниз на тебя взирает пузатая бочка. Если замереть и прислушаться, можно уловить её неспешное, утробное ворчание – мягкое бульканье, которым она зазывает тебя наполнить опустевшую флягу.]],
+text = [[Сверху вниз на тебя взирает пузатая бочка. Если замереть и прислушаться, можно уловить её неспешное, утробное ворчание - мягкое бульканье, которым она зазывает тебя наполнить опустевшую флягу.]],
 speaker = [[Бочка]],
 npc = "npc_flask_barrel",
 choices = {
@@ -2916,7 +2930,7 @@ next = nil,
 },
 d_give_sling = {
 text = [[*На последнем издыхании предвестник протягивет тебе какой-то предмет... Это праща...*]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -3009,7 +3023,7 @@ next = "d_h5",
 },
 },
 d_h5 = {
-text = [[На севере - Система подземных путей М.Е.Т.Р.О. (Межрассовая Единая Тоннельно-Рельсовая Объединённая система), ведущих на территории, где поселились "новые" люди.]],
+text = [[На севере - Система подземных путей М.Е.Т.Р.О. (Межрасовая Единая Тоннельно-Рельсовая Объединённая система), ведущих на территории, где поселились "новые" люди.]],
 speaker = [[Гид]],
 npc = "npc_guide",
 choices = {
@@ -3993,7 +4007,7 @@ next = "d_on_umer",
 },
 d_m8 = {
 text = [[*Огр обнял сам себя.*]],
-speaker = [[Крип-сиамский огр]],
+speaker = [[Сиамский огр]],
 npc = "npc_ogre_magi",
 choices = {
 {
@@ -4312,7 +4326,7 @@ next = "d_scientist_explain_2",
 },
 d_p10 = {
 text = [[ДА..  ДА..    ДАРОВАНА..                          ЖИЗНЬ.]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -4323,7 +4337,7 @@ next = "d_give_sling",
 },
 d_p11__1 = {
 text = [[*Предвестник падает в обморок.*]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -4396,7 +4410,7 @@ next = "d_esli_by_ya_vstretil_vas_pri_zhizni_to_mozhet_postupil_by_v_kempridzh",
 },
 d_p4 = {
 text = [[*По какой-то причине свечи начинают сильно разгораться. Тепло, что исходит от них, не греет, а наоборот - обмараживает.*]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -4407,7 +4421,7 @@ next = "d_p5",
 },
 d_p5 = {
 text = [[*Шар начинает постепенно темнеть и покрываться чем-то наподобие плесени. Свечки затухли, и крип, с опустевшими глазами начинает обрывисто говорить...*]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -4418,7 +4432,7 @@ next = "d_p6",
 },
 d_p6 = {
 text = [[ОН И.. ИДЁТ.      МОНСТР...                    ГОРИЛЛА..      И...]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -4429,7 +4443,7 @@ next = "d_p7",
 },
 d_p7 = {
 text = [[ЖИ.. ЖИВОТНАЯ   ПОХОТЬ...       ЕГО..    ТЯГА...         ЧТО...        ИСПЕПЕЛЯЕТ...]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -4440,7 +4454,7 @@ next = "d_p8",
 },
 d_p8 = {
 text = [[ОНО..       Б.. БУДЕТ        НАСИЛОВАТЬ..    КАЖДОГО...           ГРЯДЁТ..]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -4451,7 +4465,7 @@ next = "d_p9",
 },
 d_p9 = {
 text = [[КОРОЛЕ..  ВСКАЯ..     БИТВА..            ПОСЛЕДНЕМУ..    ВЫЖИВШЕМУ...         БУДЕТ...]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -4986,7 +5000,7 @@ next = "d_pochemu_v_tri",
 d_v_sebe = {
 text = [[2: Как можно вообще потеряться в себе, он внутри своей головы живёт?
 1: Это невозможно. скорее всего он заблудился.]],
-speaker = [[Крип-сиамский огр]],
+speaker = [[Сиамский огр]],
 npc = "npc_ogre_magi",
 choices = {
 {
@@ -5097,7 +5111,7 @@ actions = {
 },
 d_vot_tvoj_shar = {
 text = [[*Выронив из рук все шишки, он подлетает к тебе и выхватывает шар. Руки крипа нетерпеливо крутят его во все стороны, пока лучи солнца бликуют об хрустальную поверхность прямо тебе в глаза.*]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -5123,7 +5137,7 @@ actions = {
 },
 d_vse_hvatit_ty_obeschal_sdelat_predskazanie = {
 text = [[Ооух точно! Ради тебя и твоего рода я дам вам предупреждения от высших... Начинаю.]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -5465,7 +5479,7 @@ actions = {
 },
 d_i_kak_mne_na_eto_reagirovat = {
 text = [[*Пора возвращаться к гиду.*]],
-speaker = [[Крип-предвестник апокалипсиса]],
+speaker = [[Крип Предвестник]],
 npc = "npc_predvestnik",
 choices = {
 {
@@ -6199,7 +6213,7 @@ next = "d_vy_rodstvenniki_primi_ego_takim_kakim_est_i_eto_budet_vzaimno",
 d_on_ne_vernetsya = {
 text = [[*Обе головы переглянулись в недоумении.*
 Почему?!]],
-speaker = [[Крип-сиамский огр]],
+speaker = [[Сиамский огр]],
 npc = "npc_ogre_magi",
 choices = {
 {
@@ -6210,7 +6224,7 @@ next = "d_on_poteryalsya",
 },
 d_on_poteryalsya = {
 text = [[Где?!]],
-speaker = [[Крип-сиамский огр]],
+speaker = [[Сиамский огр]],
 npc = "npc_ogre_magi",
 choices = {
 {
@@ -6221,7 +6235,7 @@ next = "d_v_sebe",
 },
 d_on_srazhalsya_s_drakonom_posle_pobedy_on_pal = {
 text = [[*Они начали смотреть в разные стороны.*]],
-speaker = [[Крип-сиамский огр]],
+speaker = [[Сиамский огр]],
 npc = "npc_ogre_magi",
 choices = {
 {
@@ -6232,7 +6246,7 @@ next = "d_tsenoj_svoej_zhizni_on_spas_poselenie_dobryh_kripov",
 },
 d_on_umer = {
 text = [[*Головы замолкли.*]],
-speaker = [[Крип-сиамский огр]],
+speaker = [[Сиамский огр]],
 npc = "npc_ogre_magi",
 choices = {
 {
@@ -7033,7 +7047,7 @@ next = "d_chto_za_mantiya",
 },
 d_tsenoj_svoej_zhizni_on_spas_poselenie_dobryh_kripov = {
 text = [[*Все четыре глаза поочерёдно заслезились.*]],
-speaker = [[Крип-сиамский огр]],
+speaker = [[Сиамский огр]],
 npc = "npc_ogre_magi",
 choices = {
 {
@@ -7748,6 +7762,7 @@ next = nil,
 actions = {
 { npc="npc_dream",type="remove" },
 { spawn="spawner_dream_concert",type="spawn" },
+{ spawn="spawner_xavier",type="spawn" },
 },
 },
 },
@@ -8285,7 +8300,7 @@ next = nil,
 },
 d_hermit_again = {
 text = [[Первую часть я отдал старушке-медиуму, вторую - спрятал на соседней Снежной горе, а третью - скормил самому могучему крипу Искажённого леса.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8296,7 +8311,7 @@ next = nil,
 },
 d_hermit_first_met = {
 text = [[*Одинокий человек угрюмо смотрит на сверкающий от солнца снег. Здесь почему-то  холоднее обычного.*]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8307,7 +8322,7 @@ next = "d_eto_ty_tot_vyzhivshij_chto_smog_sbezhat_ot_zverya",
 },
 d_hermit_i_get_it = {
 text = [[Эти места были выбраны не просто так. Только человек с крепким телом и духом сможет заполучить их все. Только сильнейшему дозволено распоряжаться тем, как использовать этот ключ.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8318,7 +8333,7 @@ next = "d_hermit_im_ready",
 },
 d_hermit_im_ready = {
 text = [[*Он кивнул.*]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8722,7 +8737,7 @@ next = "d_leader_hey",
 },
 },
 d_leader_hey = {
-text = [[Я - Глава Скрытой деревни, а также - нынешний Глава Королевства.]],
+text = [[Я - Глава Скрытой Академии, а также - нынешний Глава Королевства.]],
 speaker = [[Глава]],
 npc = "npc_leader",
 choices = {
@@ -8819,7 +8834,7 @@ next = "d_q2",
 d_q10 = {
 text = [[*Не открывая глаз, он начал демонстрировать интонацию и движения, которые он совершал при разговоре с Дереком.*
 Какое-то время он смотрел на меня, а после сказал: "Не трать свою жизнь на месть, уходи и оставь меня. Передай остальным, чтобы тоже бросили это дело и продолжили жить."]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8831,7 +8846,7 @@ next = "d_q11",
 d_q11 = {
 text = [[*Лицо отшельника стало заметно грустнее.*
 После, Дерек попросил сделать ещё одну вещь...  А именно: запереть его в древних покоях, что находятся на краю Пустоши.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8842,7 +8857,7 @@ next = "d_q12",
 },
 d_q12 = {
 text = [["С ключом делай, что хочешь. Если не сможешь смириться с гибелью товарищей, то возвращайся, и я дам тебе последний бой. Однако, предпочёл бы, чтобы дверь была заперта и забыта. В итоге выбор всё равно за тобой."]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8854,7 +8869,7 @@ next = "d_q13",
 d_q13 = {
 text = [[*Отшельник открыл глаза.*
 После нашего разговора, я не решился вовзращаться в Королевство в одиночку.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8866,7 +8881,7 @@ next = "d_pochemu_on_poschadil_imenno_tebya",
 d_q14 = {
 text = [[П-почему выжил именно я?!
 *Шёпотом прокричал он.*]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8881,7 +8896,7 @@ next = "d_derek_etogo_hotel",
 },
 d_q15 = {
 text = [[...]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8892,7 +8907,7 @@ next = "d_q17",
 },
 d_q16 = {
 text = [[*Тишина.*]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8903,7 +8918,7 @@ next = "d_q15",
 },
 d_q17 = {
 text = [[Знаешь... Спасибо, что пришёл.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8914,7 +8929,7 @@ next = "d_nu_pozhalujsta_navernoe",
 },
 d_q18 = {
 text = [[Только вот я не просто его выбросил... Перед этим, мной было принято решение разломать ключ на три части...]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8925,7 +8940,7 @@ next = "d_em_dopustim",
 },
 d_q19 = {
 text = [[Через несколько минут ярость покинула его - Зверь снова стал человеком.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -8947,14 +8962,13 @@ next = "d_q3",
 },
 d_q3 = {
 text = [[...что загнанный в угол зверь - невероятно страшный противник. 
-Почти все полегли. Только один человек смог сбежать, но вместо того, чтобы вернуться в Королевство, он сбежал в Снежные горы. Причину никто так и не знает...
-*Интересно, что за зверь? Довольно сложно представить животное, способное одолеть столько людей в одиночку.*]],
+Почти все полегли. Только один человек смог сбежать, но вместо того, чтобы вернуться в Королевство, он сбежал в Снежные горы. Причину никто так и не знает...]],
 speaker = [[Глава]],
 npc = "npc_leader",
 choices = {
 {
-text = [[Думаете этот выживший одолел Зверя?]],
-next = "d_dumaete_etot_vyzhivshij_odolel_zverya",
+text = [[...]],
+next = "d_qq4",
 },
 },
 },
@@ -9007,7 +9021,7 @@ next = "d_porazhen_umom_svinopasa",
 },
 d_q8 = {
 text = [[Израненный Дерек, словно демон, выискивал нас по одному и цеплялся когтями, пока сердце жертвы не переставало стучать... С каждым ранением он становился жестчё и беспощаднее. Даже толпой у нас не было шансов...]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9020,12 +9034,34 @@ d_q9 = {
 text = [[Я продолжу... 
 *Отшельник закрыл глаза.*
 Мои пятки были в крови и я просто застыл, однако Дерек не спешил нападать. Он... он просто остановился, начав глубоко дышать... Вдох... Выдох... Вдох.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
 text = [[...]],
 next = "d_q19",
+},
+},
+},
+d_qq4 = {
+text = [[*Интересно, что за зверь? Довольно сложно представить животное, способное одолеть столько людей в одиночку.*]],
+speaker = [[...]],
+npc = "npc_leader",
+choices = {
+{
+text = [[Думаете этот выживший одолел Зверя?]],
+next = "d_dumaete_etot_vyzhivshij_odolel_zverya",
+},
+},
+},
+d_qq5 = {
+text = [[*Этот диалог воодушевил тебя, приятно осозновать, что твои действия помогли кому-то и ещё могут помочь. Будет и вправду неплохо разобраться с этим Зверем, но пока рано, он слишком силён. Стоит найти этого отшельника и разузнать побольше.*]],
+speaker = [[...]],
+npc = "npc_leader",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -9037,9 +9073,6 @@ choices = {
 {
 text = [[*Взять награду.*]],
 next = "d_vzyat_nagradu",
-actions = {
-{ questID="q_main_quest_act_2",type="quest_end" },
-},
 },
 },
 },
@@ -9240,7 +9273,7 @@ next = "d_konechno_moj_goat",
 },
 d_a_gde_on_scha = {
 text = [[Что это тебе даст?]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9252,7 +9285,7 @@ next = "d_vybor",
 d_a_zachem_on_pozvolil_zaperet_sebya = {
 text = [[*Взгляд отшельника застыл.*
 Я не знаю...]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9300,7 +9333,7 @@ next = "d_chem_ya_tebe_ne_ugodil",
 },
 d_a = {
 text = [[Подари же всем нам надежду... Слава Королю...]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9506,14 +9539,13 @@ next = "d_l4",
 },
 },
 d_vrode_zapomnil = {
-text = [[Тогда отправляйся.
-*Этот диалог воодушевил тебя, приятно осозновать, что твои действия помогли кому-то и ещё могут помочь. Будет и вправду неплохо разобраться с этим Зверем, но пока рано, он слишком силён. Стоит найти этого отшельника и разузнать побольше.*]],
+text = [[Тогда отправляйся.]],
 speaker = [[Глава]],
 npc = "npc_leader",
 choices = {
 {
-text = [[Закрыть.]],
-next = nil,
+text = [[...]],
+next = "d_qq5",
 },
 },
 },
@@ -9542,7 +9574,7 @@ next = "d_r1",
 d_vybor = {
 text = [[*В моменте он остепенился.*
 Хм... Хорошо. Возможно, ты и есть тот, кто должен был оказаться на моём месте.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9553,7 +9585,7 @@ next = "d_q18",
 },
 d_glava_poprosil = {
 text = [[Глава, да? Понятно...]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9563,8 +9595,7 @@ next = "d_ty_upomyanul_chto_zver_tebya_otpustil",
 },
 },
 d_glava = {
-text = [[Правильно. Связующее звено. 
-(remove:npc=npc_mystery|open_door:door=door_village_leader)]],
+text = [[Правильно. Связующее звено.]],
 speaker = [[Крип-загадка]],
 npc = "npc_mystery",
 choices = {
@@ -9579,6 +9610,10 @@ actions = {
 {
 text = [[Глава чего?]],
 next = "d_where_is_leader",
+actions = {
+{ npc="npc_mystery",type="remove" },
+{ door="door_village_leader",type="open_door" },
+},
 },
 },
 },
@@ -9617,7 +9652,7 @@ next = "d_kak_ya_pomnu_panda_nosit_s_soboj_polotentse",
 },
 d_derek_etogo_hotel = {
 text = [[Но зачем?]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9628,7 +9663,7 @@ next = "d_chtoby_ty_predostereg_ludej_ot_neminuemoj_gibeli",
 },
 d_derek_zver_eto_chelovek = {
 text = [[Ожидаемо, что он тебе не сказал...]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9792,7 +9827,7 @@ next = "d_dopustim_a_zachem_pozval_menya_to",
 d_i_chto_ty_sobiraeshsya_delat = {
 text = [[Я... н-не знаю...
 *Он оцепенел.*]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9865,7 +9900,7 @@ next = "d_j3",
 },
 d_kak_ty_postupil = {
 text = [[Наихудшим образом. Я, можно сказать, снял с себя ответственность, выкинув ключ. Теперь это не моя забота...]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9876,7 +9911,7 @@ next = "d_a_gde_on_scha",
 },
 d_kak_eto = {
 text = [[А ты сам кто? И зачем пришёл по мою душу?]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -9945,7 +9980,7 @@ next = "d_budu_hranit_etot_dar_vechno",
 },
 d_kstati_est_li_u_zverya_kakieto_slabosti = {
 text = [[Нету, ведь он сражается, чтобы выжить.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -10184,7 +10219,7 @@ next = nil,
 d_nu_pozhalujsta_navernoe = {
 text = [[*Отшельник немного успокоился.*
 Тебе наверное интересно, что стало с ключом?]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -10309,7 +10344,7 @@ next = "d_r3",
 },
 d_pochemu_on_poschadil_imenno_tebya = {
 text = [[Я не знаю.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -10604,7 +10639,7 @@ d_ty_upomyanul_chto_zver_tebya_otpustil = {
 text = [[Да... 
 *Его ноги начали подрагивать.*
 Ту ночь я никогда не забуду. Люди умирали пачками, мои друзья бездыханно лежали под ногами, а моё тело зажималось и дрожало от страха.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -10746,7 +10781,7 @@ next = "d_ladno_a_kakaya_vneshnost_u_perekupa",
 },
 d_chtoby_ty_predostereg_ludej_ot_neminuemoj_gibeli = {
 text = [[А почему именно я?]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -10757,7 +10792,7 @@ next = "d_q15",
 },
 d_chutchut = {
 text = [[Долгое время я не мог решиться... С одной стороны, утаивание ключа - благое действие, однако бесчестное. С другой, бой с Дереком - это страшная смерть...]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -10768,7 +10803,7 @@ next = "d_kak_ty_postupil",
 },
 d_em_dopustim = {
 text = [[Первую часть я отдал старушке-медиуму, вторую - спрятал на соседнем пике Снежных гор, а третью - скормил самому могучему крипу Искажённого леса.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -10822,7 +10857,7 @@ d_eto_ty_tot_vyzhivshij_chto_smog_sbezhat_ot_zverya = {
 text = [[Сбежать? Нет...
 *Ответил он хриплым голосом.*
 Он сам меня отпустил.]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -10899,7 +10934,7 @@ next = "d_j2",
 },
 d_ya_ne_znau = {
 text = [[*Неожиданно с дерева упал огромный кусок снега.*]],
-speaker = [[Человек-отшельник]],
+speaker = [[Отшельник]],
 npc = "npc_hermit",
 choices = {
 {
@@ -11010,7 +11045,7 @@ next = "d_u2",
 },
 d_pora_v_put = {
 text = [[*Сейчас необычайно тихо.*]],
-speaker = [[Глава]],
+speaker = [[...]],
 npc = "npc_leader",
 choices = {
 {
@@ -11123,6 +11158,28 @@ next = "d_g18",
 {
 text = [[Луковые кольца говно.]],
 next = "d_lukovye_koltsa_govno",
+},
+},
+},
+d_untitled_passage_merged_act3 = {
+text = [[Концерт закончился, вали.]],
+speaker = [[Крип-вышибала]],
+npc = "npc_concert_guard",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
+},
+},
+},
+d_untitled_passage_1_merged_act3 = {
+text = [[Концерт закончился, вали.]],
+speaker = [[Крип-вышибала]],
+npc = "npc_concert_guard",
+choices = {
+{
+text = [[Закрыть.]],
+next = nil,
 },
 },
 },
@@ -12918,9 +12975,6 @@ choices = {
 {
 text = [[Принимаю.]],
 next = "d_prinimau",
-actions = {
-{ questID="q_main_quest_act_3",type="quest_end" },
-},
 },
 },
 },
@@ -13071,7 +13125,7 @@ next = "d_n2",
 },
 d_prinimau = {
 text = [[Остаётся последний шаг - одолеть Зверя Пустоши. 
-*Он выпремляется и начинает воодушевляюще говорить.*
+*Он выпрямляется и начинает воодушевляюще говорить.*
 Отправляйся сейчас же и прояви мужество на поле боя, борись до конца, не давай ему шанса на передышку, действуй непредсказуемо и бейся как в последний раз. Ради своего будущего, руди будущего Королевства.]],
 speaker = [[Глава]],
 npc = "npc_leader",
@@ -14040,6 +14094,7 @@ text = [[*Сосредоточиться.*]],
 next = nil,
 actions = {
 { pack="pack_derek",type="fight_start" },
+{ music="music.derek.phase1",type="music_start" },
 },
 },
 },
@@ -14425,6 +14480,7 @@ text = [[*Глубоко вдохнуть.*]],
 next = nil,
 actions = {
 { pack="pack_derek",type="fight_start" },
+{ music="music.derek.phase1",type="music_start" },
 },
 },
 },
@@ -15122,6 +15178,7 @@ text = [[*Глубоко вдохнуть.*]],
 next = nil,
 actions = {
 { pack="pack_derek",type="fight_start" },
+{ music="music.derek.phase1",type="music_start" },
 },
 },
 },

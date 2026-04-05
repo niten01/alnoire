@@ -10,11 +10,11 @@
         
         "AbilityValues"
         {
-            "friction"      "0.98"
+            "friction"      "0.99"
             "bounce_factor" "1.0"
             "hit_speed"     "1300"
-            "damage_radius"  "150"
-            "dps"            "500"
+            "damage_radius"  "200"
+            "dps"            "2000"
             "min_damage_vel" "50"
         }
 
@@ -31,7 +31,7 @@
         
         "AbilityCastPoint"              "0"
 
-        "AbilityCooldown"               "7" 
+        "AbilityCooldown"               "6" 
         "AbilityCastRange"        		"9999"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
@@ -42,7 +42,7 @@
             "jump_height"   "500"
             "warning_duration"  "1"
             "radius"        "500"
-            "damage"        "300"
+            "damage"        "600"
             "landing_slide_speed"   "1500"
         }
 
@@ -60,7 +60,7 @@
         
         "AbilityCastPoint"              "1"
 
-        "AbilityCooldown"               "7" 
+        "AbilityCooldown"               "6" 
         "AbilityCastRange"        		"9999"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	

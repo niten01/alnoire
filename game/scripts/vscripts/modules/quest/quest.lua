@@ -221,7 +221,7 @@ end
 function Quest:OnActChange(event)
   local act = event.act
   for questID, quest in pairs(self.quests) do
-    local isNowActive = (not quest.acts) or max(quest.acts) >= act
+    local isNowActive = (not quest.acts) or (max(quest.acts) >= act and act >= min(quest.acts))
     self:TryRemoveExclamation(questID)
 
     if isNowActive then
@@ -257,6 +257,7 @@ function Quest:OnActChange(event)
     end
     ::skip_quest::
   end
+  self:UpdateQuestlog()
 end
 
 function Quest:ShowQuestStatus(event, args)

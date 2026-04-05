@@ -96,10 +96,12 @@ return {
         spawner_xavier                = {
             npc = "npc_xavier",
             modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
         spawner_xavier_ending         = {
             npc = "npc_xavier",
             modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
         spawner_shooter_1             = {
             npc = "npc_shooter",
@@ -1331,28 +1333,28 @@ return {
         pack_desert_act4_nyxs = {
             rangeFastTickRate = 2200,
             rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_desert_act4_viperstealer = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 2200,
+            rangeRetreat = 1400,
+            rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_desert_act4_trollhuskar = {
             rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeRetreat = 1400,
+            rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_desert_act4_dire_creeps = {
-            rangeFastTickRate = 2000,
-            rangeRetreat = 1200,
-            rangeAggro = 900,
+            rangeFastTickRate = 2200,
+            rangeRetreat = 1400,
+            rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
         },
 
@@ -1406,7 +1408,7 @@ return {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 3000,
             rangeRetreat = 2000,
-            rangeAggro = 1400,
+            rangeAggro = 1030,
             doors = {
                 "door_ball"
             }
@@ -1414,13 +1416,15 @@ return {
         pack_chaser = {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 5000,
+            rangeRetreat = 999999,
+            rangeAggro = 700,
         },
         pack_derek = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
-            music = "music.derek.phase1",
-            rangeFastTickRate = 2000,
-            rangeRetreat = 2000,
+            rangeFastTickRate = 3000,
+            rangeRetreat = 2200,
             rangeAggro = 2000,
             doors = {
                 "door_derek"
@@ -1451,6 +1455,7 @@ return {
             rangeFastTickRate = 6000,
             rangeAggro = 6000,
             activateAfterUnitsSpawned = false,
+            music = "hlup_full",
         },
         pack_perekup = {
             activateAfterUnitsSpawned = false,
@@ -1488,7 +1493,7 @@ return {
         zone_forest_3 = { musicSet = "forest3", respawnPoint = "respawn_forest_3" },
         zone_city = { musicSet = "city", respawnPoint = "respawn_city", noCombatMusic = true },
         zone_ski = { musicSet = "ski", respawnPoint = "respawn_city", noCombatMusic = true },
-        zone_academy = { musicSet = "academy", respawnPoint = "respawn_academy" },
+        zone_academy = { musicSet = "academy", respawnPoint = "respawn_academy", noCombatMusic = true, },
         zone_academy_entrance = { musicSet = "silence", respawnPoint = "respawn_city" },
         zone_wastelands = { musicSet = "wastelands", respawnPoint = "respawn_wastelands" },
         zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_city" },

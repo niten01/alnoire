@@ -13,6 +13,7 @@
 				"Wearable1" { "ItemDef" "14025" } // head
 				"Wearable2" { "ItemDef" "7119" } // shoulders
 				"Wearable3" { "ItemDef" "7118" } // armor
+				"Wearable4" { "ItemDef" "514" } // effects
 			}
 		}
 	}

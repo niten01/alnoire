@@ -222,6 +222,9 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
         false
     )
     if #enemiesInFOW == 0 then
+        if pack.state ~= "idle" then
+            self:OnRetreat(pack, nil)
+        end
         pack.state = "idle"
         pack.target = nil
         pack.somebodyNear = false
@@ -262,8 +265,11 @@ function PackManager:HasActiveFights()
 end
 
 function PackManager:OnAggro(pack, target)
+    DebugPrint("[ALNOIRE] Pack aggro: " .. pack.name)
     if pack.music then
-        Music:StartCustomMusic(target:GetPlayerOwnerID(), pack.music)
+        for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+            Music:StartCustomMusic(playerID, pack.music)
+        end
     end
 
     for _, door in ipairs(pack.doors) do
@@ -272,6 +278,7 @@ function PackManager:OnAggro(pack, target)
 end
 
 function PackManager:OnRetreat(pack, target)
+    DebugPrint("[ALNOIRE] Retreat: " .. pack.name)
     local pids = target and { target:GetPlayerOwnerID() } or {}
     if not target then
         for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do

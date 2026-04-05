@@ -58,7 +58,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"		"370"	
+			"radius"		"270"	
 			"spread"		"180"			
 			"warning_delay"		"0.25"			
 			"damage"    "135"
@@ -202,7 +202,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"		"350"	
+			"radius"		"250"	
 			"spread"  "180"	
 			"damage"    "135"
 			"jump_time"   "0.5"
@@ -417,7 +417,7 @@
 		"AbilityValues"
 		{
 			"damage"	       "100"	
-			"radius"		   "350"
+			"radius"		   "250"
 			"spread"		   "120"
 			"jump_time"	       "0.40" // animation bound (and acts as warning)
 			"anim_attack_point" "0.7"

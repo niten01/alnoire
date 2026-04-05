@@ -73,7 +73,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -9.596001, -32.872875, -37.444008 ]
-								hitbox_maxs = [ 32.310928, 41.368649, 17.351604 ]
+								hitbox_maxs = [ 32.31093, 41.36865, 17.351604 ]
 							},
 							{
 								_class = "Hitbox"
@@ -82,7 +82,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -18.500008, -41.368591, -37.539822 ]
+								hitbox_mins = [ -18.500008, -41.36859, -37.53982 ]
 								hitbox_maxs = [ 48.107376, 41.368637, 18.420574 ]
 							},
 							{
@@ -102,8 +102,8 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -47.780689, -32.428741, -32.675644 ]
-								hitbox_maxs = [ 29.717854, 27.033569, 16.646011 ]
+								hitbox_mins = [ -47.78069, -32.42874, -32.675644 ]
+								hitbox_maxs = [ 29.717854, 27.03357, 16.646011 ]
 							},
 							{
 								_class = "Hitbox"
@@ -122,7 +122,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -51.419731, -6.660934, -15.480564 ]
+								hitbox_mins = [ -51.41973, -6.660934, -15.480564 ]
 								hitbox_maxs = [ 14.862762, 16.453594, 19.653168 ]
 							},
 							{
@@ -132,7 +132,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -23.806419, -9.850933, -13.919109 ]
+								hitbox_mins = [ -23.80642, -9.850933, -13.919109 ]
 								hitbox_maxs = [ 23.66581, 12.662201, 9.559052 ]
 							},
 							{
@@ -182,7 +182,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -19.419081, -16.453754, -23.818169 ]
+								hitbox_mins = [ -19.41908, -16.453754, -23.818169 ]
 								hitbox_maxs = [ 51.419693, 7.027901, 15.480637 ]
 							},
 							{
@@ -263,7 +263,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -50.500175, -11.112785, -27.064661 ]
-								hitbox_maxs = [ 18.006416, 33.904259, 11.568838 ]
+								hitbox_maxs = [ 18.006416, 33.90426, 11.568838 ]
 							},
 							{
 								_class = "Hitbox"
@@ -282,8 +282,8 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -26.838909, -15.349947, -43.228474 ]
-								hitbox_maxs = [ 21.218262, 17.468344, 18.823429 ]
+								hitbox_mins = [ -26.83891, -15.349947, -43.228474 ]
+								hitbox_maxs = [ 21.218262, 17.468344, 18.82343 ]
 							},
 							{
 								_class = "Hitbox"
@@ -333,7 +333,7 @@
 								translation_only = false
 								group_id = 0
 								hitbox_mins = [ -22.662306, -41.177864, -1.341103 ]
-								hitbox_maxs = [ 62.537384, 40.385399, 25.750753 ]
+								hitbox_maxs = [ 62.537384, 40.3854, 25.750753 ]
 							},
 							{
 								_class = "Hitbox"
@@ -342,7 +342,7 @@
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -20.513269, -39.857674, -40.748863 ]
+								hitbox_mins = [ -20.51327, -39.857674, -40.748863 ]
 								hitbox_maxs = [ 51.057137, 2.223557, 24.897593 ]
 							},
 							{
@@ -774,6 +774,31 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = 10.0
+						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "death"
+						is_default_idle_anim = false
+						activity_name = "ACT_DOTA_DIE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/derek/animations/death.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 15.0
 						reverse = false
 						additional_anim_files = [  ]
 					},
