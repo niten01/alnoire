@@ -1,6 +1,7 @@
 modifier_gorilla_capture = class {}
 
 function modifier_gorilla_capture:OnCreated(kv)
+    if not IsServer() then return end
     local interval = 0.1
     self.radius = kv.radius
     self.ummDuration = kv.ummDuration
@@ -9,6 +10,7 @@ function modifier_gorilla_capture:OnCreated(kv)
 end
 
 function modifier_gorilla_capture:OnIntervalThink(kv)
+    if not IsServer() then return end
     local parent = self:GetParent()
     local enemies = FindEnemiesForAIInRadius(parent:GetAbsOrigin(), self.radius)
     for _, ent in ipairs(enemies) do

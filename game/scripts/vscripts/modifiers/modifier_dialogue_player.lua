@@ -32,7 +32,6 @@ function modifier_dialogue_player:CheckState()
     return {
         [MODIFIER_STATE_INVULNERABLE] = true,
         [MODIFIER_STATE_NO_HEALTH_BAR] = true,
-        [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
         [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
     }
 end

@@ -262,8 +262,11 @@ function PackManager:HasActiveFights()
 end
 
 function PackManager:OnAggro(pack, target)
+    DebugPrint("[ALNOIRE] Pack aggro: " .. pack.name)
     if pack.music then
-        Music:StartCustomMusic(target:GetPlayerOwnerID(), pack.music)
+        for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+            Music:StartCustomMusic(playerID, pack.music)
+        end
     end
 
     for _, door in ipairs(pack.doors) do

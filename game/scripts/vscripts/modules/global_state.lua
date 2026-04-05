@@ -17,6 +17,7 @@ function GlobalState:Init()
         concert_crowd_beaten = false,
 
         is_ghetto_member = false,
+        derek_kill = false,
     }
 
 

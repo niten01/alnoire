@@ -311,6 +311,14 @@ function max(seq)
   return mx
 end
 
+function min(seq)
+  local mn = math.huge
+  for _, el in ipairs(seq) do
+    if el < mn then mn = el end
+  end
+  return mn
+end
+
 --- @param start Vector unit position where blink started
 --- @param targetRaw Vector basically click position
 function GetSafeBlinkDestination(start, targetRaw, distance)

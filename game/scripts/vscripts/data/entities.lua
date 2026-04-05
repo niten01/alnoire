@@ -1420,9 +1420,8 @@ return {
         pack_derek = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
-            music = "music.derek.phase1",
-            rangeFastTickRate = 2000,
-            rangeRetreat = 2000,
+            rangeFastTickRate = 3000,
+            rangeRetreat = 2200,
             rangeAggro = 2000,
             doors = {
                 "door_derek"
@@ -1453,7 +1452,7 @@ return {
             rangeFastTickRate = 6000,
             rangeAggro = 6000,
             activateAfterUnitsSpawned = false,
-            music = "hlup_full"
+            music = "hlup_full",
         },
         pack_perekup = {
             activateAfterUnitsSpawned = false,

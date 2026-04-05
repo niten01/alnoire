@@ -13,6 +13,9 @@ function modifier_ball_ai:OnIntervalThink()
     local target = beaconData.target
 
     if DefaultAiTick(unit) then
+        if beaconData.state == "retreat" then
+            PackManager:ResetPackPosition("pack_ball")
+        end
         AdjustTickRate(unit)
         self:StartIntervalThink(beaconData.currentCreepInterval)
         return

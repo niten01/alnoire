@@ -50,6 +50,7 @@
     "Крип-гений": "genius",
     "Огр-громила": "ogre_bruiser",
     "Отшельник": "hermit",
+    "Гангстер": "gangster",
   }
 
   const root = $.GetContextPanel();

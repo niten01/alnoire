@@ -98,6 +98,7 @@ function Dialogue:StartDialogueForPlayer(playerID, startNodeID)
   end
   CenterCameraOnUnit(playerID, focusUnit)
   hero:Stop()
+  hero:MoveToPosition(hero:GetAbsOrigin())
   hero:AddNewModifier(nil, nil, "modifier_dialogue_player", { duration = -1 })
 
   self:ShowDialogueNode(playerID, startNodeID)

@@ -352,6 +352,8 @@ function Handlers.george_transition(playerID, action)
 end
 
 function Handlers.setup_guide_finale(playerID, action)
+  GameRules:SetTimeOfDay(0.3)
+
   fastRemoveNPC("npc_guide")
   SpawnManager:SpawnNPC("spawner_guide_finale")
   triggerSetEnabled("trigger_guide_finale", true)
@@ -497,6 +499,8 @@ function StoryDriver:OnPackWiped(event)
 end
 
 function StoryDriver:SetupAct2()
+  GameRules:SetTimeOfDay(0.8)
+
   fastRemoveNPC("npc_mystery")
   SpawnManager:SpawnNPC("spawner_mystery_2")
   SpawnManager:SpawnNPC("spawner_storyteller")
@@ -514,15 +518,17 @@ end
 
 local QuestStatus = require('modules.quest.quest_status')
 function StoryDriver:SetupAct3()
+  GameRules:SetTimeOfDay(0.3)
+
   fastRemoveNPC("npc_xavier")
   DoorManager:Close("door_concert")
   triggerSetEnabled("zone_concert_entrance", true)
   triggerSetEnabled("zone_concert_muted", false)
 
   fastRemoveNPC("npc_dream")
-  if Quest:GetQuestState("q_concert").status == QuestStatus.COMPLETED then
-    SpawnManager:SpawnNPC("spawner_dream")
-  end
+  SpawnManager:SpawnNPC("spawner_dream")
+  -- if Quest:GetQuestState("q_concert").status == QuestStatus.COMPLETED then
+  -- end
 
   if GlobalState:Get().freed_island_creeps then
     SpawnManager:SpawnNPC("spawner_cat_barrel_city")
@@ -533,6 +539,9 @@ function StoryDriver:SetupAct3()
 end
 
 function StoryDriver:SetupAct4()
+  GameRules:SetTimeOfDay(0.8)
+
+  fastRemoveNPC("npc_mustache")
   fastRemoveNPC("npc_shamanka")
   fastRemoveNPC("npc_storyteller")
 end
