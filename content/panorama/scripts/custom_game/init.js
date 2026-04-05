@@ -19,6 +19,8 @@ function SetupHUD() {
 			hideAllChildren(hud.FindChildTraverse("inventory_neutral_craft_holder"))
 			hideAllChildren(hud.FindChildTraverse("RoshanTimerContainer"))
 			hideAllChildren(hud.FindChildTraverse("GlyphScanContainer"))
+			hideAllChildren(hud.FindChildTraverse("SearchAndButtonsContainer"))
+			hideAllChildren(hud.FindChildTraverse("TeamItems"))
 
 			// $.DispatchEvent("Activated", hud.FindChildTraverse("GridUpgradesTab"), "mouse")
 			$.Schedule(5, () => {

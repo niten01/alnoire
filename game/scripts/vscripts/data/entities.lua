@@ -96,10 +96,12 @@ return {
         spawner_xavier                = {
             npc = "npc_xavier",
             modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
         spawner_xavier_ending         = {
             npc = "npc_xavier",
             modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
         spawner_shooter_1             = {
             npc = "npc_shooter",
@@ -1451,6 +1453,7 @@ return {
             rangeFastTickRate = 6000,
             rangeAggro = 6000,
             activateAfterUnitsSpawned = false,
+            music="hlup_full"
         },
         pack_perekup = {
             activateAfterUnitsSpawned = false,
@@ -1488,7 +1491,7 @@ return {
         zone_forest_3 = { musicSet = "forest3", respawnPoint = "respawn_forest_3" },
         zone_city = { musicSet = "city", respawnPoint = "respawn_city", noCombatMusic = true },
         zone_ski = { musicSet = "ski", respawnPoint = "respawn_city", noCombatMusic = true },
-        zone_academy = { musicSet = "academy", respawnPoint = "respawn_academy" },
+        zone_academy = { musicSet = "academy", respawnPoint = "respawn_academy", noCombatMusic = true, },
         zone_academy_entrance = { musicSet = "silence", respawnPoint = "respawn_city" },
         zone_wastelands = { musicSet = "wastelands", respawnPoint = "respawn_wastelands" },
         zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_city" },
