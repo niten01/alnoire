@@ -39,6 +39,8 @@ function chaser_stun:OnProjectileHit(target, location)
   })
   target:AddNewModifier(caster, self, "modifier_stunned", { duration = stunDuration })
 
-  caster:EmitSound("ability.chaser.stun.hit")
+  if IsValidEntity(caster) then
+    caster:EmitSound("ability.chaser.stun.hit")
+  end
   return true
 end

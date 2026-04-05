@@ -59,6 +59,8 @@
 		"precache"
 		{
         	"soundfile"			"soundevents/bosses/chaser.vsndevts"
+			"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_phantasm.vpcf"
+			"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
 		}
 
 		"Creature"

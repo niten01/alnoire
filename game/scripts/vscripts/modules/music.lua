@@ -70,7 +70,7 @@ function Music:HeroMusicThink(hero)
         state.lastInCombat = t0
     end
 
-    if t0 - state.lastInCombat <= MUSIC_COMBAT_DECAY then
+    if not state.noCombat and t0 - state.lastInCombat <= MUSIC_COMBAT_DECAY then
         newSoundState = "combat"
     end
 

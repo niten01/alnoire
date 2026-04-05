@@ -19,7 +19,9 @@ function chaser_rite:OnSpellStart()
     ParticleManager:DestroyParticle(pfx, false)
     ParticleManager:ReleaseParticleIndex(pfx)
 
-    caster:EmitSound("ability.chaser.rite.explode")
+    if IsValidEntity(caster) then
+      caster:EmitSound("ability.chaser.rite.explode")
+    end
 
     local enemies = FindEnemiesForAIInRadius(targetPos, radius)
     for _, ent in ipairs(enemies) do

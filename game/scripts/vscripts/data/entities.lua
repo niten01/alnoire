@@ -424,12 +424,14 @@ return {
             npc = "npc_chaser",
             packID = "pack_desert_act4_dire_creeps",
             ai_modifier = "modifier_chaser_stuns_ai",
+            modifiers = { "modifier_generic_unkillable" },
             team = DOTA_TEAM_BADGUYS,
         },
         spawner_chaser_rites          = {
             npc = "npc_chaser",
             packID = "pack_desert_act4_viperstealer",
             ai_modifier = "modifier_chaser_rites_ai",
+            modifiers = { "modifier_generic_unkillable" },
             team = DOTA_TEAM_BADGUYS,
         },
 
