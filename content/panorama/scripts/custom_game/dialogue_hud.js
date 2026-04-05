@@ -29,7 +29,7 @@
     "Подозрительный терминал": "fake_subway",
     "Терминал М.Е.Т.Р.О.": "subway",
     "Красный": "red",
-    "Зеленый": "green",
+    "Зелёный": "green",
     "Синий": "blue",
     "Убийца": "killer",
     "Воин Эпштейна": "island_guard",
@@ -49,6 +49,7 @@
     "Скулшутер": "shooter",
     "Крип-гений": "genius",
     "Огр-громила": "ogre_bruiser",
+    "Отшельник": "hermit",
   }
 
   const root = $.GetContextPanel();

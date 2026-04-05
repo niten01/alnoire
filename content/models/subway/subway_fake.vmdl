@@ -49,14 +49,14 @@
 						children = 
 						[
 							{
-								_class = "Hitbox"
-								name = "root"
+								_class = "HitboxCapsule"
 								parent_bone = "root"
 								surface_property = ""
 								translation_only = false
 								group_id = 0
-								hitbox_mins = [ -180.115234, -2.864319, -186.153732 ]
-								hitbox_maxs = [ 182.267822, 302.476501, 172.006485 ]
+								radius = 171.53314
+								point0 = [ -2.942833, 69.50705, -11.919312 ]
+								point1 = [ -2.1564815, 144.18105, -14.355992 ]
 							},
 						]
 					},

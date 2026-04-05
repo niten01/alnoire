@@ -128,6 +128,7 @@
     {
         "BaseClass"             "item_datadriven"
         "AbilityTextureName"    "broken_crystal_ball"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
         "ItemPurchasable"               "1"
@@ -176,7 +177,6 @@
     }
     "item_key_part_1"
     {
-        "ID"                    "3005"
         "BaseClass"             "item_datadriven"
         "AbilityTextureName"    "key_part_1"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -187,7 +187,6 @@
     }
     "item_key_part_2"
     {
-        "ID"                    "3006"
         "BaseClass"             "item_datadriven"
         "AbilityTextureName"    "key_part_2"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -198,7 +197,6 @@
     }
     "item_key_part_3"
     {
-        "ID"                    "3007"
         "BaseClass"             "item_datadriven"
         "AbilityTextureName"    "key_part_3"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -209,7 +207,6 @@
     }
     "item_recipe_key"
     {
-        "ID"                    "3008"
         "BaseClass"             "item_datadriven"
         "ItemRecipe"          "1" 
         "ItemCost"            "0" 
@@ -221,7 +218,6 @@
     }
     "item_key"
     {
-        "ID"                    "3009"
         "BaseClass"             "item_datadriven"
         "AbilityTextureName"    "key_full"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"

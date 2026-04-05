@@ -104,9 +104,13 @@ end
 function Handlers.change_hero(playerID, action)
   local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
   if not hero then error("No hero") end
+  local hadDialogue = hero:HasModifier("modifier_dialogue_player")
   local fwd = hero:GetForwardVector()
   local newHero = PlayerResource:ReplaceHeroWith(playerID, action.hero, 0, 0)
   newHero:SetForwardVector(fwd)
+  if hadDialogue then
+    newHero:AddNewModifier(nil, nil, "modifier_dialogue_player", { duration = -1 })
+  end
   hero:RemoveSelf()
   Timers:CreateTimer(1.0, function()
     local player = PlayerResource:GetPlayer(playerID)
@@ -508,9 +512,17 @@ function StoryDriver:SetupAct2()
   SpawnManager:SpawnNPC("spawner_concert_fan_melee")
 end
 
+local QuestStatus = require('modules.quest.quest_status')
 function StoryDriver:SetupAct3()
+  fastRemoveNPC("npc_xavier")
+  DoorManager:Close("door_concert")
+  triggerSetEnabled("zone_concert_entrance", true)
+  triggerSetEnabled("zone_concert_muted", false)
+
   fastRemoveNPC("npc_dream")
-  SpawnManager:SpawnNPC("spawner_dream")
+  if Quest:GetQuestState("q_concert").status == QuestStatus.COMPLETED then
+    SpawnManager:SpawnNPC("spawner_dream")
+  end
 
   if GlobalState:Get().freed_island_creeps then
     SpawnManager:SpawnNPC("spawner_cat_barrel_city")

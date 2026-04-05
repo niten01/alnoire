@@ -6,3 +6,4 @@
 "DOTA_Tooltip_ability_rapper_strife_attack_speed_bonus" "ДОП. СКОРOСТЬ АТАКИ:"
 "DOTA_Tooltip_ability_rapper_strife_duration_per_stack" "ДЛИТЕЛЬНОСТЬ ЗА СТАК ФЛОУ:"
 "DOTA_Tooltip_ability_rapper_strife_flow_per_shot" "РАСХОД ФЛОУ:"
+"DOTA_Tooltip_ability_rapper_strife_damage_reduction_pct" "%УМЕНЬШЕНИЕ ИСХОДЯЩЕГО УРОНА:"

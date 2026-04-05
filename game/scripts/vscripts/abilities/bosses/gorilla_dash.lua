@@ -5,7 +5,7 @@ function gorilla_dash:ShowWarning(targetPos)
     local casterPos = caster:GetAbsOrigin()
     local dir = (targetPos - casterPos):Normalized()
     local distance = self:GetSpecialValueFor("distance")
-    local delay = self:GetSpecialValueFor("warning_delay")
+    local delay = self:GetSpecialValueFor("warning_delay") + self:GetCastPoint()
     local dest = GetSafeBlinkDestination(casterPos, casterPos + dir * distance, distance)
     self.targetPos = dest
     ShowGenericLineWarning(casterPos, self.targetPos, self:GetSpecialValueFor("capture_radius"), delay)
