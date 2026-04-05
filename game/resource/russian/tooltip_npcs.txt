@@ -36,3 +36,6 @@
 "npc_chaser"        "Преследователь"
 "npc_leader"        "Глава"
 "npc_minigame_barrel"        "Бочка"
+"npc_subway_city"        "Терминал М.Е.Т.Р.О."
+"npc_subway_fake"        "Подозрительный терминал"
+"npc_subway_to_city"        "Терминал М.Е.Т.Р.О."
