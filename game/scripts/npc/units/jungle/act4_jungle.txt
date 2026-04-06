@@ -17,6 +17,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"         "45"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
@@ -36,7 +37,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
 
-		"StatusHealth"				"950"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -87,6 +88,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"         "45"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
@@ -106,7 +108,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
 
-		"StatusHealth"				"950"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -157,6 +159,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"         "45"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
@@ -176,7 +179,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"210"					
 
-		"StatusHealth"				"950"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -226,14 +229,15 @@
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"1"			// Physical protection.
+		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"         "20"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"15"		// Damage range min.
-		"AttackDamageMax"			"20"		// Damage range max.
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"40"		// Damage range max.
 		"AttackRate"				"1.1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"1300"		// Range within a target can be attacked.
+		"AttackRange"				"250"		// Range within a target can be attacked.
 		"ProjectileModel"		"particles/units/heroes/hero_viper/viper_base_attack.vpcf"
 		"ProjectileSpeed"		"1200"
 
@@ -246,9 +250,9 @@
 		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"255"					
+		"MovementSpeed"				"160"					
 
-		"StatusHealth"				"500"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -296,10 +300,11 @@
 		//"Ability3"						"ursa_enrage"			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
+		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"         "20"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"30"		// Damage range min.
-		"AttackDamageMax"			"32"		// Damage range max.
+		"AttackDamageMin"			"60"		// Damage range min.
+		"AttackDamageMax"			"70"		// Damage range max.
 		"AttackRate"				"1.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
@@ -314,9 +319,9 @@
 		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"250"					
+		"MovementSpeed"				"230"					
 
-		"StatusHealth"				"950"		// Base health.
+		"StatusHealth"				"2500"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 

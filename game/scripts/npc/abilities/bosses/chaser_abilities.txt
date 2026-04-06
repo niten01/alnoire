@@ -54,17 +54,17 @@
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
         "AbilityCastPoint"              "0.61"
 
-        "AbilityCooldown"               "15" 
+        "AbilityCooldown"               "12" 
         "AbilityCastRange"        		"700"
 
 		    "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 
         "AbilityValues"
         {
-            "stun_duration"       "2"
-            "damage"              "200"
+            "stun_duration"       "1.5"
+            "damage"              "300"
             "speed"               "250"   
-            "timeout"             "6.5"   
+            "timeout"             "4.0"   
         }
 
         "precache"

@@ -15,12 +15,12 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"750"
+		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"2.5 15 13 11"
+		"AbilityCooldown"				"4.5 15 13 11"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@
 		{
 				"width"				
 				{
-					"value"			"140"
+					"value"			"120"
 					"affected_by_aoe_increase"	"1"
 				}
 				"duration"			
@@ -41,11 +41,11 @@
 					"value"				"0.5 1.4 1.7 2.0"
 					"special_bonus_unique_nyx_3"	"+0.2"
 				}
-				"length"			"750"
-				"speed"				"700"
+				"length"			"1000"
+				"speed"				"400"
 				"impale_damage"			
 				{
-					"value"			"150 160 220 280"
+					"value"			"300 160 220 280"
 					"special_bonus_unique_nyx_2" "+140"
 				}
 		}
@@ -66,8 +66,8 @@
 		"AbilityValues"
 		{
             "vulnurableTimeMin"    "2.0"
-            "undergroundTimeMin"   "4.0"
-            "vulnurableTimeMax"    "7.0"
+            "vulnurableTimeMax"    "6.0"
+			"undergroundTimeMin"   "4.0"
             "undergroundTimeMax"   "15.0"
 		}
     }
