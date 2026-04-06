@@ -25,7 +25,7 @@
 		"Ability13"					""			
 
 		"ArmorPhysical"				"1"		
-		"MagicalResistance"         "25"	
+		"MagicalResistance"         "40"	
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"90"		// Damage range min.
@@ -43,7 +43,7 @@
 		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"570"		// Speed.			
+		"MovementSpeed"				"320"		// Speed.			
 
 		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.

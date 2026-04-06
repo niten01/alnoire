@@ -193,7 +193,7 @@
 
         "AbilityValues" 
         {
-            "ms_reduction"  "20"
+            "ms_reduction"  "10"
             "duration" "3"
         }
     }
@@ -278,7 +278,7 @@
 
         "AbilityValues" 
         {
-            "ms_reduction"  "30"
+            "ms_reduction"  "15"
             "poison_dps"  "15"
             "duration" "3"
         }
@@ -347,7 +347,7 @@
 
         "AbilityValues" 
         {
-            "ms_reduction"  "40"
+            "ms_reduction"  "20"
             "armor_reduction"  "2"
             "poison_dps"  "20"
             "duration" "4"
@@ -382,7 +382,7 @@
 
         "AbilityValues" 
         {
-            "ms_reduction"  "50"
+            "ms_reduction"  "30"
             "armor_reduction"  "4"
             "mag_res_reduction"  "20"
             "attack_speed_reduction"  "50"
