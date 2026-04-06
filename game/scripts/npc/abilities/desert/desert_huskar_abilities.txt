@@ -5,7 +5,7 @@
         "BaseClass"                     "ability_lua"
 		"ScriptFile"                    "abilities/desert/desert_huskar_push"
 		"AbilityTextureName"            "huskar_berserkers_blood"
-        "AbilityCooldown"               "12.0"
+        "AbilityCooldown"               "5.0"
         "AbilityCastRange"              "1500"
         "AbilityCastPoint"              "0.3"
 
@@ -15,11 +15,11 @@
 
 		"AbilityValues"
 		{
-            "jumpSpeed"         "1200"
+            "jumpSpeed"         "2000"
             "jumpImpactRadius"  "400"
-            "pushDistance"      "400"
+            "pushDistance"      "300"
             "pushDuration"      "0.75"
-            "initialDamage"     "130"
+            "initialDamage"     "100"
             "offset"            "180"
 		}
     }

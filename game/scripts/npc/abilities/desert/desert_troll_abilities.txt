@@ -10,9 +10,9 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
 		{
-			"maxStacks"					"20"
-			"stacksDuration"			"5.0"
-			"attackSpeedPerAttack"		"15"
+			"maxStacks"					"50"
+			"stacksDuration"			"2.5"
+			"attackSpeedPerAttack"		"50"
 		}
 	}
 }

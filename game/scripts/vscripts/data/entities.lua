@@ -1333,14 +1333,14 @@ return {
         pack_desert_act4_nyxs = {
             rangeFastTickRate = 2200,
             rangeRetreat = 1200,
-            rangeAggro = 800,
+            rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 
         pack_desert_act4_viperstealer = {
             rangeFastTickRate = 2200,
             rangeRetreat = 1400,
-            rangeAggro = 1000,
+            rangeAggro = 950,
             stayActivatedOnPlayerDeath = true,
         },
 
