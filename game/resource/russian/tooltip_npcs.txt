@@ -41,3 +41,4 @@
 "npc_subway_to_city"        "Терминал М.Е.Т.Р.О."
 "npc_ghetto_melee"        "Член гетто"
 "npc_ghetto_ranged"        "Член гетто"
+"npc_bomb_place"        "Место для бомбы"

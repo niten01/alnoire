@@ -15,7 +15,7 @@
 						[
 							{
 								from = "cylinder.vmat"
-								to = "models/circle/sand/sand.vmat"
+								to = "materials/particle/ogre_magi/blob_white.vmat"
 							},
 						]
 						use_global_default = false

@@ -33,6 +33,7 @@ function modifier_ball_slide:OnCreated(kv)
     self.radius = ability:GetSpecialValueFor("damage_radius")
     self.dps = ability:GetSpecialValueFor("dps")
     self.minDamageVelocity = ability:GetSpecialValueFor("min_damage_vel")
+    self.minDamage = ability:GetSpecialValueFor("min_damage")
 
     -- if self:ApplyHorizontalMotionController() == false then
     --     self:Destroy()
@@ -51,6 +52,7 @@ function modifier_ball_slide:OnTakeDamage(params)
     local parent = self:GetParent()
     local parentPos = parent:GetAbsOrigin()
     if params.unit ~= parent then return end
+    if params.damage < self.minDamage then return end
 
     local attackerPos = params.attacker:GetAbsOrigin()
     local direction = (parentPos - attackerPos):Normalized()

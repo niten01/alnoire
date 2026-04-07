@@ -63,6 +63,7 @@ function modifier_derek_ai:OnTakeDamage(params)
         self:TransitionBack()
         parent:SetTeam(DOTA_TEAM_GOODGUYS)
         self.phase = -1
+        parent:RemoveModifierByName("modifier_generic_unkillable")
     end
 end
 

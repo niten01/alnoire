@@ -15,7 +15,8 @@
             "hit_speed"     "1300"
             "damage_radius"  "200"
             "dps"            "2000"
-            "min_damage_vel" "50"
+            "min_damage_vel" "50" // min velocity to deal damage
+            "min_damage"     "40"  // min damage to bounce
         }
 
         "precache"

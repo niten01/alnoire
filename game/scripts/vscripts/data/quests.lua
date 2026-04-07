@@ -158,7 +158,7 @@ return {
                 description = "Одолей демонов",
                 objectives = {
                     { type = "kill", npc = "npc_island_fiend" },
-                    { type = "kill", npc = "npc_island_shadow_demon" },
+                    { type = "kill", npc = "npc_island_demon" },
                 }
             },
             {
