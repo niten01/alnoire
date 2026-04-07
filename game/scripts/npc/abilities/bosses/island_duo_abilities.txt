@@ -45,7 +45,7 @@
             "shadowraze_radius"	"200"		
             "range"             "200"
             "stack_bonus_damage" "80"
-            "duration"	"8"
+            "duration"	"10"
 		}
 	}
 
@@ -258,7 +258,7 @@
 
 		"AbilityValues"
 		{
-            "damage_per_proj"	"90"	
+            "damage_per_proj"	"130"	
             "stack_bonus_damage" "80"
             "num_projectiles"    "20"
 			"max_range"			 "1000"
@@ -287,10 +287,10 @@
         {
             "range"                "2000"
             "damage"               "50"
-            "damage_per_stack"     "100"
+            "damage_per_stack"     "80"
             "projectile_radius"    "160"
             "warning_delay"        "0.3"
-            "projectile_speed"     "1000"
+            "projectile_speed"     "800"
             "poison_decay"         "10"
         }
 
