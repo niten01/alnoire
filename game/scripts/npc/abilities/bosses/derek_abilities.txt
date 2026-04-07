@@ -22,9 +22,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"		"150"	
+			"radius"		"180"	
 			"spread"		"450"			
-			"axe_damage"    "135"
+			"axe_damage"    "100"
 			"fly_time_oneway"	    "0.5"
 
             // min max
@@ -61,7 +61,7 @@
 			"radius"		"270"	
 			"spread"		"180"			
 			"warning_delay"		"0.25"			
-			"damage"    "135"
+			"damage"    "200"
 
 			"jump_time"   "0.5"
 			"jump_distance"   "600"
@@ -100,7 +100,7 @@
 			"proj_radius"		"50"
 			"proj_speed"		"2500"
 			"warning_delay"		"0.2"			
-			"damage"    "135"
+			"damage"    "150"
 		}
 
 		"precache"
@@ -125,7 +125,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1500"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_1"
-		"AbilityChannelTime"			"5.0"
+		"AbilityChannelTime"			"4.0"
 		"AbilityCooldown"		        "25.0"
 
 		// Special
@@ -134,9 +134,9 @@
 		{
 			"distance"	"1500"	
 			"radius"	"120"	
-			"speed"		"900"			
+			"speed"		"750"			
 			"interval"  "0.5"
-			"damage"    "135"
+			"damage"    "125"
 		}
 
 		"precache"
@@ -160,7 +160,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"9999"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityCastPoint"				"0.47"
+		"AbilityCastPoint"				"0.6"
         "AbilityCooldown"		        "18.0"
 
 		// Special
@@ -171,7 +171,7 @@
 			"spawn_radius"  "1500"	
 			"num_areas"     "5"
 			"interval"	"1"			
-			"damage"    "135"
+			"damage"    "100"
 			"num_pulses"  "7"
 			"warning_delay" "0.3"
 		}
@@ -202,9 +202,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"		"250"	
+			"radius"		"270"	
 			"spread"  "180"	
-			"damage"    "135"
+			"damage"    "200"
 			"jump_time"   "0.5"
 			"hit_after_jump_delay"   "-0.2"
 			"anim_attack_point"	"0.2"
@@ -230,15 +230,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCastPoint"				"1.45"
-        "AbilityCooldown"		        "18.0"
+		"AbilityCastPoint"				"1.0"
+        "AbilityCooldown"		        "15.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"radius"		"800"	
-			"damage"    "135"
+			"damage"    "250"
 
 			"lift_height"   "200"
 

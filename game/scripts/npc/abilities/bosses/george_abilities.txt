@@ -17,7 +17,7 @@
 
         "AbilityValues"
         {
-            "num_skeletons"     "8"
+            "num_skeletons"     "4"
             "radius"            "1000"
         }
 
@@ -44,7 +44,7 @@
         "AbilityValues"
         {
             "distance"            "1000"
-            "damage"              "200"
+            "damage"              "400"
             "travel_time"            "0.8"
             "warning_delay"          "0.3"
             "width"             "150"
@@ -66,7 +66,7 @@
         
         "AbilityValues"
         {
-            "stun_duration"            "5"
+            "stun_duration"            "3"
         }
 
         "precache"
@@ -94,7 +94,7 @@
             "num_points"    "30"
             "spawn_radius"  "2000"
             "radius"        "150"
-            "damage"        "200"
+            "damage"        "400"
 
             // rand min max
             "delay"         "1 2"
@@ -124,7 +124,7 @@
         {
             "duration"         "1.0"
             "stun_duration"    "2"
-            "damage"           "200"
+            "damage"           "600"
             "damage_threshold" "40"
 
             // rand min max
