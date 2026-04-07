@@ -33,7 +33,6 @@ function modifier_chaser_stuns_ai:BlinkOut(unit, spotNames)
         return
     end
     local targetPos = targetEnt:GetAbsOrigin()
-    unit:StartGesture(ACT_DOTA_CAST_ABILITY_4)
     Timers:CreateTimer(0.4, function()
         if not unit or unit:IsNull() or not unit:IsAlive() then return end
 
@@ -47,10 +46,9 @@ function modifier_chaser_stuns_ai:BlinkOut(unit, spotNames)
     end)
     Timers:CreateTimer(0.6, function()
         if not unit or unit:IsNull() or not unit:IsAlive() then return end
-        unit:FadeGesture(ACT_DOTA_CAST_ABILITY_4)
         FindClearSpaceForUnit(unit, targetPos, true)
-        if unit:HasModifier('modifier_pugna_tp_invul') then
-            unit:RemoveModifierByName('modifier_pugna_tp_invul')
+        if unit:HasModifier('modifier_chaser_tp_invul') then
+            unit:RemoveModifierByName('modifier_chaser_tp_invul')
         end
         local pfxEnd = ParticleManager:CreateParticle(
             "particles/econ/events/fall_2022/blink/blink_dagger_end_fall2022.vpcf",
@@ -71,9 +69,10 @@ function modifier_chaser_stuns_ai:OnTakeDamage(params)
     local parent = self:GetParent()
     if params.unit ~= parent then return end
 
-    if params.unit:GetHealth() >= 10 and not self.chaserAlone then
+    if params.unit:GetHealth() >= 10 and not self.chaserAlone and params.damage >= 30 then
         parent.timeToTp = true
         parent:Stop()
+        parent:AddNewModifier(parent, nil, 'modifier_chaser_tp_invul', {})
         self:BlinkOut(parent, SPOTS)
     end
 
