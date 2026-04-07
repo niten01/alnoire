@@ -13,6 +13,8 @@
 		"AbilityValues"
 		{
 			"max_stacks"				"8"
+			"vampMult"				"1.0"
+			"stacksDuration"		"10.0"
 		}
 	}
 

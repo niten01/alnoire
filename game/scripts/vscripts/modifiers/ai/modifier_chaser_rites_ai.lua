@@ -13,6 +13,8 @@ end
 function modifier_chaser_rites_ai:OnCreated()
     if not IsServer() then return end
     self.chaserAlone = false
+    local parent = self:GetParent()
+    parent.lastCastTime = 0
 end
 
 function modifier_chaser_rites_ai:OnTakeDamage(params)
@@ -54,8 +56,13 @@ function modifier_chaser_rites_ai:OnIntervalThink()
         return
     end
 
+    local currentTime = GameRules:GetGameTime()
+    local requiredDelay = 2.5
     if beaconState == 'aggro' and target and target:IsAlive() then
-        if CastAbility(unit, target, "chaser_rite") then return end
+        if (currentTime - unit.lastCastTime) >= requiredDelay and CastAllAbilities(unit, target) then
+            unit.lastCastTime = GameRules:GetGameTime()
+            return
+        end
 
         if IsCasting(unit) then return end
         local beaconPos = beaconData.pos
