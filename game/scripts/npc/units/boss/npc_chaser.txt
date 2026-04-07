@@ -162,6 +162,7 @@
 		"ModelScale" 				"1.1"
 		"ConsideredHero" 			"1"
 		"AutoAttacksByDefault" 		"0"
+		"vscripts"					"ai/chaser_clone"
 
 		"Ability1"					"chaser_passive"			// Ability 1
 		"Ability2"					"chaser_rite"			// Ability 2

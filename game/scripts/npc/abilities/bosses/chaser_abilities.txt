@@ -32,7 +32,7 @@
 
         "AbilityValues"
         {
-            "radius"              "600"
+            "radius"              "300 600"
             "damage"              "150"
             "delay"               "2.0"   
         }
