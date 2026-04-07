@@ -17,10 +17,72 @@ function modifier_chaser_rites_ai:OnCreated()
     parent.lastCastTime = 0
 end
 
+local SPOTS = { "chaser_rites_tp_1", "chaser_rites_tp_2" }
+
+function modifier_chaser_rites_ai:BlinkOut(unit, spotNames)
+    if not IsServer() then return end
+    if not unit or unit:IsNull() or not unit:IsAlive() then return end
+    if unit:IsChanneling() then
+        unit:Stop()
+    end
+    local availableSpots = {}
+    for _, name in pairs(spotNames) do
+        if name ~= self.lastSpot then
+            table.insert(availableSpots, name)
+        end
+    end
+    local randomSpotName = availableSpots[RandomInt(1, #availableSpots)]
+    self.lastSpot = randomSpotName
+    local targetEnt = Entities:FindByName(nil, randomSpotName)
+    if not targetEnt then
+        print("[CHASER_ERROR] Could not find entity with name: " .. randomSpotName)
+        return
+    end
+    local targetPos = targetEnt:GetAbsOrigin()
+    unit:StartGesture(ACT_DOTA_CAST_ABILITY_4)
+    Timers:CreateTimer(0.4, function()
+        if not unit or unit:IsNull() or not unit:IsAlive() then return end
+
+        local pfx = ParticleManager:CreateParticle(
+            "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_start.vpcf",
+            PATTACH_ABSORIGIN,
+            unit
+        )
+        ParticleManager:ReleaseParticleIndex(pfx)
+        EmitSoundOn("DOTA_Item.Overwhelming_Blink.NailedIt", unit)
+    end)
+    Timers:CreateTimer(0.6, function()
+        if not unit or unit:IsNull() or not unit:IsAlive() then return end
+        unit:FadeGesture(ACT_DOTA_CAST_ABILITY_4)
+        FindClearSpaceForUnit(unit, targetPos, true)
+        if unit:HasModifier('modifier_pugna_tp_invul') then
+            unit:RemoveModifierByName('modifier_pugna_tp_invul')
+        end
+        local pfxEnd = ParticleManager:CreateParticle(
+            "particles/econ/events/fall_2022/blink/blink_dagger_end_fall2022.vpcf",
+            PATTACH_ABSORIGIN,
+            unit
+        )
+        ParticleManager:ReleaseParticleIndex(pfxEnd)
+        EmitSoundOn("Blink_Layer.Overwhelming", unit)
+    end)
+    Timers:CreateTimer(0.3, function()
+        if not unit or unit:IsNull() or not unit:IsAlive() then return end
+        unit.timeToTp = false
+    end)
+end
+
 function modifier_chaser_rites_ai:OnTakeDamage(params)
     if not IsServer() then return end
     local parent = self:GetParent()
     if params.unit ~= parent then return end
+
+    if params.unit:GetHealth() >= 10 and not self.chaserAlone then
+        parent.timeToTp = true
+        parent:Stop()
+        self:BlinkOut(parent, SPOTS)
+    end
+
 
     if params.unit:GetHealth() <= 1 then
         self:StartIntervalThink(-1)
@@ -45,6 +107,9 @@ end
 function modifier_chaser_rites_ai:OnIntervalThink()
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
+    if unit.timeToTp then
+        return
+    end
     local beaconData = unit.packTargetData
     if not beaconData then return end
     local beaconState = beaconData.state
