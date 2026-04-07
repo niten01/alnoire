@@ -29,7 +29,8 @@ function modifier_mk_passive_stacks:OnAttackLanded(params)
     local maxStacks = abil:GetSpecialValueFor('max_stacks')
     local target = params.target
     local modifier_name = "modifier_mk_stack_debuff"
-    local mod = target:AddNewModifier(self:GetParent(), self:GetAbility(), modifier_name, { duration = 10 })
+    local duration = abil:GetSpecialValueFor('stacksDuration')
+    local mod = target:AddNewModifier(self:GetParent(), self:GetAbility(), modifier_name, { duration = duration })
     if mod then
         if mod:GetStackCount() < maxStacks then
             mod:IncrementStackCount()
