@@ -1381,7 +1381,7 @@ return {
         pack_island_duo = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1300,
-            rangeAggro = 1200,
+            rangeAggro = 900,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
             music = "music.island_duo.phase1",

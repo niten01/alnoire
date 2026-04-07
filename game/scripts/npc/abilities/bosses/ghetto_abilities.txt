@@ -1,0 +1,26 @@
+"DOTAAbilities"
+{
+    "ghetto_shoot"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/bosses/ghetto_shoot.lua"
+        "AbilityTextureName"            "action_stop"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+
+        "AbilityCastPoint"              "0.45"
+        "AbilityCooldown"               "6" 
+        "AbilityCastRange"        		"2000"
+        
+        "AbilityDamage"         "30"
+        "AbilityValues"
+        {
+            "proj_speed"      "1000"
+            "proj_radius"     "20"
+        }
+
+        "precache"
+        {
+            "particle"		"particles/derek_linear_proj.vpcf"
+        }
+    }   
+}

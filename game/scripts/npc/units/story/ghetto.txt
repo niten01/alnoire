@@ -13,7 +13,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"ghetto_shoot"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -24,7 +24,7 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		"AttackDamageMin"			"25"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
 		"AttackRate"				"1.8"		// Speed of attack.
@@ -130,6 +130,11 @@
 		//----------------------------------------------------------------
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+
+		"precache"
+		{
+        	"soundfile"			"soundevents/bosses/ghetto.vsndevts"
+		}
 	}
 	"npc_gangster" 
 	{
