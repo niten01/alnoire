@@ -417,7 +417,7 @@ return {
             team = DOTA_TEAM_BADGUYS,
         },
         spawner_chaser                = {
-            npc = "npc_chaser",
+            npc = "npc_chaser_final",
             packID = "pack_chaser",
             ai_modifier = "modifier_default_creep_ai",
             team = DOTA_TEAM_BADGUYS,
@@ -1381,7 +1381,7 @@ return {
         pack_island_duo = {
             rangeFastTickRate = 2000,
             rangeRetreat = 1300,
-            rangeAggro = 1200,
+            rangeAggro = 900,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = false,
             music = "music.island_duo.phase1",

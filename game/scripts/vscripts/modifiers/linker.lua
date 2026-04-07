@@ -99,7 +99,7 @@ LinkLuaModifier("modifier_desert_huskar_ai", "modifiers/ai/modifier_desert_huska
 LinkLuaModifier("modifier_morph_small_ai", "modifiers/ai/modifier_morph_small_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_chaser_stuns_ai", "modifiers/ai/modifier_chaser_stuns_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_chaser_rites_ai", "modifiers/ai/modifier_chaser_rites_ai", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier('modifier_chaser_tp_invul', 'modifiers/modifier_chaser_tp_invul', LUA_MODIFIER_MOTION_NONE)
 
 
 

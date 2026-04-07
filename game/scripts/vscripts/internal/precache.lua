@@ -472,6 +472,8 @@ return {
         "particles/units/heroes/hero_nyx_assassin/nyx_assassin_burrow_exit.vpcf",
         "particles/units/heroes/hero_nyx_assassin/nyx_assassin_burrow.vpcf",
         "particles/units/heroes/hero_huskar/huskar_inner_fire.vpcf",
+        "particles/econ/events/fall_2022/blink/blink_dagger_end_fall2022.vpcf",
+        "particles/econ/events/fall_2022/blink/blink_dagger_fall_2022_start.vpcf",
 
         -- clash
         "particles/clash_custom_freeze.vpcf",
