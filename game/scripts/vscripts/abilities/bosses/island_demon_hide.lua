@@ -14,6 +14,7 @@ function island_demon_hide:OnSpellStart()
     local enemies = FindEnemiesForAIInRadius(casterPos, self:GetCastRange(casterPos, nil))
 
     for _, ent in ipairs(enemies) do
+        ent:Purge(true, false, false, false, false)
         ent:AddNewModifier(caster, self, "modifier_island_duo_hidden_vis", {
             duration = self:GetSpecialValueFor("duration")
         })

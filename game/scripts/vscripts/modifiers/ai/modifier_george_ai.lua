@@ -22,14 +22,17 @@ function modifier_george_ai:ResetState()
     parent:StopSound("ability.george.sunrays.loop")
     parent:AddNewModifier(parent, nil, "modifier_generic_unkillable", { duration = -1 })
 
+    parent:AddNoDraw()
     Timers:CreateTimer(1, function()
         parent:AddNewModifier(parent, nil, "modifier_model", {
             duration = -1,
             model = "models/creeps/ice_biome/undeadtusk/undead_tuskskeleton_armor01.vmdl",
             scale = 2.3,
         })
+        parent:RemoveNoDraw()
     end)
 
+    self:KillSkeletons()
     self:DestroyEnvParticles()
 end
 
@@ -92,8 +95,8 @@ function modifier_george_ai:Phase1(unit, target)
     local shield = unit:FindModifierByName("modifier_george_shield")
     if not shield or shield.charges <= 0 then
         if CastAbility(unit, target, "george1_shield") then return end
-        if CastAbility(unit, target, "george1_parry") then return end
     end
+    if CastAbility(unit, target, "george1_parry") then return end
 
     if CastAbility(unit, target, "george1_kick") then return end
     if CastAbility(unit, target, "george1_summon") then return end

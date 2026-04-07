@@ -24,7 +24,7 @@ function island_fiend_eye:ShowWarning(targetPos)
     }
 
     for _, curve in ipairs(self.curves) do
-        ShowGenericCurveWarning(curve, radius, delay)
+        ShowGenericCurveWarning(curve, radius, delay + self:GetCastPoint())
     end
 
     return delay

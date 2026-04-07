@@ -17,7 +17,6 @@
 
         "AbilityValues"
         {
-            "num_skeletons"     "8"
             "radius"            "1000"
         }
 

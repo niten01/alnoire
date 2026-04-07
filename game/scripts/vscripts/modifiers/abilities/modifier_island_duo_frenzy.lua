@@ -13,7 +13,7 @@ function modifier_island_duo_frenzy:OnCreated(kv)
 end
 
 function modifier_island_duo_frenzy:GetModifierPercentageCasttime()
-    return -50
+    return 30
 end
 
 function modifier_island_duo_frenzy:GetModifierPercentageCooldown()

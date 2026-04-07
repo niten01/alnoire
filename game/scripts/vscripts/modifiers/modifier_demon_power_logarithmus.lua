@@ -1,6 +1,6 @@
 modifier_demon_power_logarithmus = class {}
 
-function modifier_demon_power_logarithmus:IsHidden() return true end
+function modifier_demon_power_logarithmus:IsHidden() return false end
 
 function modifier_demon_power_logarithmus:IsPurgable() return false end
 

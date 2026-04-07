@@ -33,10 +33,12 @@ function modifier_dialogue_player:CheckState()
         [MODIFIER_STATE_INVULNERABLE] = true,
         [MODIFIER_STATE_NO_HEALTH_BAR] = true,
         [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
+        [MODIFIER_STATE_DISARMED] = true,
     }
 end
 
 function modifier_dialogue_player:OnCreated()
+    if not IsServer() then return end
     local parent = self:GetParent()
     parent:Stop()
 end

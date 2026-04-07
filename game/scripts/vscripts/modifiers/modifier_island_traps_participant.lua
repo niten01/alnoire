@@ -15,6 +15,7 @@ function modifier_island_traps_participant:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_DISABLE_HEALING,
+        MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
     }
 end
 
@@ -24,4 +25,8 @@ end
 
 function modifier_island_traps_participant:GetDisableHealing()
     return 1
+end
+
+function modifier_island_traps_participant:GetModifierMoveSpeed_Absolute()
+    return 300
 end

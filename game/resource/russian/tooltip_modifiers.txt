@@ -4,7 +4,10 @@
 "DOTA_Tooltip_modifier_demon_power_rapper"		"Сила Демона"
 "DOTA_Tooltip_modifier_demon_power_rapper_Description"		"Получает %dMODIFIER_PROPERTY_TOOLTIP% щита в секунду."
 
-"DOTA_Tooltip_modifier_demon_power_logarithmus_combo"		"Комбо Демона"
+"DOTA_Tooltip_modifier_demon_power_logarithmus"		"Комбо Демона"
+"DOTA_Tooltip_modifier_demon_power_logarithmus_Description"		"Получает вампиризм заклинаниями за последовательное попадание способностями."
+
+"DOTA_Tooltip_modifier_demon_power_logarithmus_combo"		"Комбо"
 "DOTA_Tooltip_modifier_demon_power_logarithmus_combo_Description"		"Получает %dMODIFIER_PROPERTY_TOOLTIP%%% вампиризма заклинаниями."
 
 "DOTA_Tooltip_modifier_demon_power_towel_master"		"Сила Демона"

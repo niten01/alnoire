@@ -46,7 +46,7 @@ function modifier_rapper_strife:IsHidden() return false end
 
 function modifier_rapper_strife:IsDebuff() return false end
 
-function modifier_rapper_strife:IsPurgable() return false end
+function modifier_rapper_strife:IsPurgable() return true end
 
 function modifier_rapper_strife:OnCreated(kv)
     if not IsServer() then return end
