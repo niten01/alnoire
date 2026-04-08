@@ -56,4 +56,20 @@ function FlaskManager:RefillFlask(playerID)
     flask:EndCooldown()
 end
 
+function FlaskManager:RefillOneCharge(playerID)
+    local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+    assert(hero, "No hero was found for flask refill")
+    local item = hero:FindItemInInventory('item_sanya_flask')
+    local item1 = hero:FindItemInInventory('item_sanya_flask_upgrade_1')
+    if not item and not item1 then return end
+    local flask = item or item1
+    if not flask then return end
+    local oldCharges = flask:GetCurrentCharges()
+    if oldCharges + 1 > flask:GetInitialCharges() then
+        return
+    end
+    flask:SetCurrentCharges(oldCharges + 1)
+    flask:EndCooldown()
+end
+
 return FlaskManager

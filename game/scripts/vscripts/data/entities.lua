@@ -1101,6 +1101,7 @@ return {
             doors = {},
             xpBounty = 0,
             goldBounty = 0,
+            refillsFlask = true,
         },
 
         pack_shooter_classroom = {

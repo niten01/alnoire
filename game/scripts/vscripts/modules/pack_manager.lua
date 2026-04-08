@@ -172,6 +172,10 @@ function PackManager:GiveRewards(pack)
             if pack.xpBounty > 0 then
                 hero:AddExperience(pack.xpBounty, DOTA_ModifyXP_CreepKill, false, true, 0)
             end
+
+            if pack.refillsFlask then
+                FlaskManager:RefillOneCharge(playerID)
+            end
         end
     end
 end
