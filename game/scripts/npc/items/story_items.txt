@@ -5,8 +5,8 @@
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask"
         "AbilityTextureName"            "sanya_flask"
+        "ID"                            "3001"
 
-        "ItemCost"                      "1"
         "ItemQuality"                   "artifact"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAM | DECLARE_PURCHASES_IN_SPEECH"
         "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
@@ -22,7 +22,7 @@
         "ItemSellable"                  "0"
 
         "ItemIsNeutralItem"         "1"
-        "ItemPurchasable"               "0"
+        "ItemPurchasable"               "1"
         "ItemDeclarativeSlot"        "neutral" 
 
         "AbilityValues" 
@@ -34,17 +34,21 @@
     "item_sanya_flask_seed"
     {
         "BaseClass"           "item_datadriven"
+        "ID"                            "3002"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
         "AbilityTextureName"            "sanya_flask_seed"
     }
 
     "item_sanya_flask_upgrade_recipe"
     {
         "BaseClass"           "item_datadriven"
+        "ID"                            "3003"
         "ItemRecipe"          "1" 
         "ItemCost"            "0" 
         "ItemResult"          "item_sanya_flask_upgrade_1"
+        "ItemPurchasable"               "1"
         "ItemRequirements"
         {
             "01" "item_sanya_flask;item_sanya_flask_seed"
@@ -55,8 +59,8 @@
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask_upgrade_1"
         "AbilityTextureName"            "sanya_flask_upgrade_1"
+        "ID"                            "3004"
 
-        "ItemCost"                      "1"
         "ItemQuality"                   "artifact"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAM | DECLARE_PURCHASES_IN_SPEECH"
         "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
@@ -72,7 +76,7 @@
         "ItemSellable"                  "0"
 
         "ItemIsNeutralItem"         "1"
-        "ItemPurchasable"               "0"
+        "ItemPurchasable"               "1"
         "ItemDeclarativeSlot"        "neutral" 
 
         "AbilityValues" 
