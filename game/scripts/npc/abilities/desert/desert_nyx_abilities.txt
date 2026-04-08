@@ -42,10 +42,10 @@
 					"special_bonus_unique_nyx_3"	"+0.2"
 				}
 				"length"			"1000"
-				"speed"				"400"
+				"speed"				"500"
 				"impale_damage"			
 				{
-					"value"			"300 160 220 280"
+					"value"			"350 160 220 280"
 					"special_bonus_unique_nyx_2" "+140"
 				}
 		}
@@ -66,9 +66,9 @@
 		"AbilityValues"
 		{
             "vulnurableTimeMin"    "2.0"
-            "vulnurableTimeMax"    "6.0"
-			"undergroundTimeMin"   "4.0"
-            "undergroundTimeMax"   "15.0"
+            "vulnurableTimeMax"    "4.0"
+			"undergroundTimeMin"   "3.0"
+            "undergroundTimeMax"   "8.0"
 		}
     }
 }

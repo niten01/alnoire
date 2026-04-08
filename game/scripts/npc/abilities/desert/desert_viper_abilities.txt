@@ -29,12 +29,12 @@
 		{
 				"min_damage"			
 				{
-					"value"		"20"
+					"value"		"40"
 					"special_bonus_unique_viper_3"	"+20"
 				}
 				"max_damage"
 				{
-					"value"			"120"
+					"value"			"220"
 					"special_bonus_unique_viper_3"	"+40"
 				}
 				"max_duration"			

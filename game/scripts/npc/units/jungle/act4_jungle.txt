@@ -16,8 +16,8 @@
 		//"Ability3"						"ursa_enrage"			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "45"
+		"ArmorPhysical"				"9"			// Physical protection.
+		"MagicalResistance"         "50"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
@@ -87,8 +87,8 @@
 		//"Ability3"						"ursa_enrage"			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "45"
+		"ArmorPhysical"				"9"			// Physical protection.
+		"MagicalResistance"         "50"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
@@ -158,8 +158,8 @@
 		//"Ability3"						"ursa_enrage"			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "45"
+		"ArmorPhysical"				"9"			// Physical protection.
+		"MagicalResistance"         "50"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"32"		// Damage range max.
@@ -229,15 +229,15 @@
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"2"			// Physical protection.
-		"MagicalResistance"         "20"
+		"ArmorPhysical"				"9"			// Physical protection.
+		"MagicalResistance"         "50"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"40"		// Damage range max.
 		"AttackRate"				"1.1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"250"		// Range within a target can be attacked.
+		"AttackRange"				"300"		// Range within a target can be attacked.
 		"ProjectileModel"		"particles/units/heroes/hero_viper/viper_base_attack.vpcf"
 		"ProjectileSpeed"		"1200"
 
@@ -250,7 +250,7 @@
 		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"160"					
+		"MovementSpeed"				"180"					
 
 		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
@@ -300,8 +300,8 @@
 		//"Ability3"						"ursa_enrage"			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"2"			// Physical protection.
-		"MagicalResistance"         "20"
+		"ArmorPhysical"				"9"			// Physical protection.
+		"MagicalResistance"         "50"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"60"		// Damage range min.
 		"AttackDamageMax"			"70"		// Damage range max.
@@ -371,11 +371,11 @@
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "30"
+		"ArmorPhysical"				"9"			// Physical protection.
+		"MagicalResistance"         "50"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"70"		// Damage range min.
-		"AttackDamageMax"			"80"		// Damage range max.
+		"AttackDamageMin"			"150"		// Damage range min.
+		"AttackDamageMax"			"180"		// Damage range max.
 		"AttackRate"				"4.0"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
@@ -443,8 +443,8 @@
 		//"Ability2"						"troll_warlord_switch_stance"			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "25"
+		"ArmorPhysical"				"9"			// Physical protection.
+		"MagicalResistance"         "50"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"60"		// Damage range min.
 		"AttackDamageMax"			"70"		// Damage range max.
@@ -533,8 +533,8 @@
 		//"Ability3"						"ursa_enrage"			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "30"
+		"ArmorPhysical"				"9"			// Physical protection.
+		"MagicalResistance"         "50"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"20"		// Damage range min.
 		"AttackDamageMax"			"30"		// Damage range max.
@@ -595,8 +595,8 @@
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "30"
+		"ArmorPhysical"				"9"			// Physical protection.
+		"MagicalResistance"         "50"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"40"		// Damage range min.
 		"AttackDamageMax"			"50"		// Damage range max.
@@ -659,8 +659,8 @@
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "30"
+		"ArmorPhysical"				"9"			// Physical protection.
+		"MagicalResistance"         "50"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"70"		// Damage range min.
 		"AttackDamageMax"			"100"		// Damage range max.

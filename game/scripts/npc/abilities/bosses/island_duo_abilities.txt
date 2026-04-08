@@ -41,10 +41,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-            "shadowraze_damage"	"250"	
+            "shadowraze_damage"	"150"	
             "shadowraze_radius"	"180"		
             "range"             "200"
-            "stack_bonus_damage" "150"
+            "stack_bonus_damage" "60"
             "duration"	"7"
 		}
 	}
@@ -91,8 +91,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-            "shadowraze_damage"	"250"	
-            "stack_bonus_damage" "150"
+            "shadowraze_damage"	"150"	
+            "stack_bonus_damage" "60"
             "range"     "450"
 		}
 	} 
@@ -138,8 +138,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-            "shadowraze_damage"	"100"	
-            "stack_bonus_damage" "50"
+            "shadowraze_damage"	"150"	
+            "stack_bonus_damage" "60"
             "range"     "700"
 		}
 	}
@@ -233,7 +233,7 @@
         "AbilityDamage"         "10"
 		"AbilityValues"
 		{
-            "shadowraze_damage"	"90"	
+            "shadowraze_damage"	"100"	
             "stack_bonus_damage" "50"
             "num_points"        "3"
 		}
@@ -258,7 +258,7 @@
 
 		"AbilityValues"
 		{
-            "damage_per_proj"	"130"	
+            "damage_per_proj"	"150"	
             "stack_bonus_damage" "80"
             "num_projectiles"    "20"
 			"max_range"			 "800"
@@ -309,7 +309,7 @@
         "AbilityChannelAnimation"          "ACT_DOTA_GENERIC_CHANNEL_1"
         "AbilityCastPoint"              "0.56"
 		"AbilityChannelTime"			"3.0"
-        "AbilityCooldown"               "30.0" 
+        "AbilityCooldown"               "25.0" 
         "AbilityCastRange"        		"9999"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
         

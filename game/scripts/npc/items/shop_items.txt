@@ -211,7 +211,7 @@
 
         "AbilityValues" 
         {
-            "attack_speed_reduction"  "20"
+            "attack_speed_reduction"  "5"
             "duration" "3"
         }
     }
@@ -244,7 +244,7 @@
 
         "AbilityValues" 
         {
-            "attack_speed_reduction"  "30"
+            "attack_speed_reduction"  "10"
             "poison_dps"  "10"
             "duration" "6"
         }
@@ -313,7 +313,7 @@
         "AbilityValues" 
         {
             "mag_res_reduction"  "15"
-            "attack_speed_reduction"  "40"
+            "attack_speed_reduction"  "15"
             "poison_dps"  "15"
             "duration" "7"
         }
@@ -385,7 +385,7 @@
             "ms_reduction"  "30"
             "armor_reduction"  "4"
             "mag_res_reduction"  "20"
-            "attack_speed_reduction"  "50"
+            "attack_speed_reduction"  "25"
             "poison_dps"  "25"
             "duration" "7"
         }
@@ -493,7 +493,7 @@
 
         "AbilityValues" 
         {
-            "crit_pct" "250"
+            "crit_pct" "175"
             "chance_pct" "75"
             "duration"   "6"
         }
@@ -516,9 +516,9 @@
 
         "AbilityValues" 
         {
-            "crit_pct" "300"
-            "chance_pct" "75"
-            "duration"   "4"
+            "crit_pct" "175"
+            "chance_pct" "50"
+            "duration"   "6"
         }
     }
     "item_nullity"

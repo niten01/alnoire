@@ -10,7 +10,7 @@
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
         "AbilityCastPoint"              "0.5"
 
-        "AbilityCooldown"               "20" 
+        "AbilityCooldown"               "24" 
         "AbilityCastRange"        		"9999"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
@@ -33,7 +33,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_5"
-        "AbilityCastPoint"              "0.37"
+        "AbilityCastPoint"              "0.45"
 
         "AbilityCooldown"               "5" 
         "AbilityCastRange"        		"300"
@@ -65,7 +65,7 @@
         
         "AbilityValues"
         {
-            "stun_duration"            "3"
+            "stun_duration"            "4"
         }
 
         "precache"
@@ -90,10 +90,10 @@
         
         "AbilityValues"
         {
-            "num_points"    "30"
+            "num_points"    "50"
             "spawn_radius"  "2000"
             "radius"        "150"
-            "damage"        "400"
+            "damage"        "300"
 
             // rand min max
             "delay"         "1 2"
@@ -121,13 +121,13 @@
         
         "AbilityValues"
         {
-            "duration"         "1.0"
+            "duration"         "3.0"
             "stun_duration"    "2"
-            "damage"           "600"
+            "damage"           "500"
             "damage_threshold" "40"
 
             // rand min max
-            "cooldown"         "1 7"
+            "cooldown"         "3 8"
         }
 
         "precache"
@@ -185,9 +185,9 @@
         "AbilityValues"
         {
             "min_radius"          "0"
-            "max_radius"          "1000"
+            "max_radius"          "800"
             "damage"              "200"
-            "travel_time"         "1.5"
+            "travel_time"         "1.7"
             "width"               "50"
             "warning_delay"       "0.5"
         }
@@ -221,7 +221,7 @@
 			"area_radius"		"275"	
 			"spawn_radius"  "1500"	
 			"num_areas"     "8"
-            "duration"      "5"
+            "duration"      "2.5"
 			"dps"    "135"
             "warning_delay" "1.0"
 
@@ -249,18 +249,18 @@
 		"AbilityCastRange"				"9999"
 		"AbilityChannelAnimation"		    "ACT_DOTA_CHANNEL_ABILITY_1"
 		"AbilityCastAnimation"		    "ACT_DOTA_CHANNEL_ABILITY_1"
-		"AbilityChannelTime"			"7.0"
+		"AbilityChannelTime"			"5.0"
 		"AbilityCastPoint"			    "1.0"
-        "AbilityCooldown"		        "30.0"
+        "AbilityCooldown"		        "25.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"length"		"1500"	
-            "num_rays"      "10"
+            "num_rays"      "6"
             "angular_velocity" "0.5"
-			"dps"           "135"
+			"dps"           "300"
 			"width"           "70"
             // cast point is warning delay
 		}
@@ -280,7 +280,7 @@
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
         "AbilityCastPoint"              "0.94"
 
-        "AbilityCooldown"               "35" 
+        "AbilityCooldown"               "30" 
         "AbilityCastRange"        		"9999"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -295,7 +295,7 @@
             "spread"                    "180"
             "num_directions"            "18"
             "num_simultaneous_spawners" "2"
-            "damage"                    "200"
+            "damage"                    "150"
         }
 
         "precache"
@@ -320,8 +320,8 @@
 
         "AbilityValues"
         {
-            "damage"              "200"
-            "travel_time"         "0.5"
+            "damage"              "400"
+            "travel_time"         "0.45"
             "width"               "150"
             "length"              "400"
         }
@@ -351,7 +351,7 @@
 
         "AbilityValues"
         {
-            "damage"              "100"
+            "damage"              "120"
             "stun_duration"       "0.5"
             "radius"              "200"
             "interval"            "0.4"

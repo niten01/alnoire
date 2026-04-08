@@ -1354,8 +1354,8 @@ return {
 
         pack_desert_act4_dire_creeps = {
             rangeFastTickRate = 2200,
-            rangeRetreat = 1400,
-            rangeAggro = 800,
+            rangeRetreat = 2500,
+            rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
         },
 

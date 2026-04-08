@@ -11,7 +11,7 @@
 		"AbilityValues"
 		{
 			"maxStacks"					"50"
-			"stacksDuration"			"2.5"
+			"stacksDuration"			"2.3"
 			"attackSpeedPerAttack"		"50"
 		}
 	}
