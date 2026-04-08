@@ -77,7 +77,7 @@ function logarithmus_clone:OnSpellStart()
       if #enemies > 0 then
         IncrementLogarithmusStacks(caster)
       else
-        BreakLogarithmusCombo(caster)
+        -- BreakLogarithmusCombo(caster)
       end
     end)
   end)

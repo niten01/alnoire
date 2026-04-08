@@ -101,6 +101,15 @@ function modifier_george_ai:Phase1(unit, target)
     if CastAbility(unit, target, "george1_kick") then return end
     if CastAbility(unit, target, "george1_summon") then return end
     if CastAbility(unit, target, "george1_stalactites") then return end
+
+    if not unit:GetAggroTarget() then
+        ExecuteOrderFromTable({
+            UnitIndex = unit:entindex(),
+            OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+            Position = target:GetAbsOrigin(),
+            Queue = false,
+        })
+    end
 end
 
 function modifier_george_ai:Phase2(unit, target)

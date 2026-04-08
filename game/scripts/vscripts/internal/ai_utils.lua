@@ -123,6 +123,8 @@ function GiveCastOrderAI(unit, target, ability)
       GiveCastOrderSimple(unit, target, ability)
     end
     unit.lastCastAbilityName = ability:GetAbilityName()
+    -- idk if using just lastCastTime will break anything so make a new one 
+    unit.genericLastCastTime = GameRules:GetGameTime()
   end
 
   unit.isCasting = true

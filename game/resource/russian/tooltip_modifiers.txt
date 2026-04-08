@@ -25,3 +25,6 @@
 
 "DOTA_Tooltip_modifier_lean_power_rapper"		"Любимый Перк"
 "DOTA_Tooltip_modifier_lean_power_rapper_Description"		"Сняряд Swag Souljah может спровоцировать линовый всплеск на противнике."
+
+"DOTA_Tooltip_modifier_lean_power_logarithmus"		"Любимый Перк"
+"DOTA_Tooltip_modifier_lean_power_logarithmus_Description"		"При атаке с не менее чем %dMODIFIER_PROPERTY_TOOLTIP% стаками концентрации провоцирует линовый всплеск на противнике."

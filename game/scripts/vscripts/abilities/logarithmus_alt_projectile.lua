@@ -21,6 +21,9 @@ function logarithmus_alt_projectile:OnSpellStart()
 
     caster:EmitSound("ability.logarithmus.alt_projectile.cast")
 
+    local numDestroyed = 0
+    local numHit = 0
+
     local angleDiff = 2 * math.pi / numProjectiles
     for i = 1, numProjectiles, 1 do
         local elapsed = 0
@@ -35,11 +38,9 @@ function logarithmus_alt_projectile:OnSpellStart()
 
         EmitSoundOnLocationWithCasterSafe(pos, "ability.logarithmus.alt_projectile.cast", caster)
 
-        local numDestroyed = 0
-        local numHit = 0
-
         local function destroyPfx(pos)
             numDestroyed = numDestroyed + 1
+            DebugPrint(numDestroyed, numHit, numProjectiles)
             if numDestroyed == numProjectiles and numHit == 0 then
                 BreakLogarithmusCombo(caster)
             end
