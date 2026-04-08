@@ -53,7 +53,8 @@ function derek_wolf_bite:OnSpellStart()
         local pfx = ParticleManager:CreateParticle("particles/derek_wolf_bite.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
         ParticleManager:ReleaseParticleIndex(pfx)
 
-        local enemies = FindEnemiesInSegment(DOTA_TEAM_BADGUYS, caster:GetAbsOrigin(), caster:GetForwardVector() * radius,
+        local attIdx = caster:ScriptLookupAttachment("attach_mouth")
+        local enemies = FindEnemiesInSegment(DOTA_TEAM_BADGUYS, caster:GetAttachmentOrigin(attIdx), caster:GetForwardVector() * radius,
             spread)
 
         for _, ent in ipairs(enemies) do

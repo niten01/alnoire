@@ -30,6 +30,7 @@ function modifier_george_ai:ResetState()
             scale = 2.3,
         })
         parent:RemoveNoDraw()
+        self:KillSkeletons()
     end)
 
     self:KillSkeletons()

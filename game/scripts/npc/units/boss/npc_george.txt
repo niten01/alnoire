@@ -27,7 +27,7 @@
 		"ArmorPhysical"				"5"
 		"MagicalResistance"         "30"			
 
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"150"		// Damage range min.
 		"AttackDamageMax"			"200"		// Damage range max.
 		"AttackRate"				"1.6"		// Speed of attack.

@@ -49,7 +49,7 @@ function modifier_george_parry:OnTakeDamage(params)
     local ability = self:GetAbility()
     if params.unit ~= parent then return end
     local threshold = ability:GetSpecialValueFor("damage_threshold")
-    if params.damage < threshold then return end
+    if params.original_damage < threshold then return end
 
     local stunDuration = ability:GetSpecialValueFor("stun_duration")
     local damage = ability:GetSpecialValueFor("damage")

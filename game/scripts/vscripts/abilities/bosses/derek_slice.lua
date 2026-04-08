@@ -54,7 +54,7 @@ function derek_slice:OnSpellStart()
       caster:EmitSound("ability.derek.swing")
 
       local casterPos = caster:GetAbsOrigin()
-      local v = casterPos + caster:GetForwardVector() * radius
+      local v = caster:GetForwardVector() * radius
       local enemies = FindEnemiesInSegment(DOTA_TEAM_BADGUYS, casterPos, v, spread)
       for _, ent in ipairs(enemies) do
         ApplyDamage({

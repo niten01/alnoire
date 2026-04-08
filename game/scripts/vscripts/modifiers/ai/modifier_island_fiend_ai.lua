@@ -64,8 +64,20 @@ function modifier_island_fiend_ai:Phase1(unit, target)
         unit:EmitSound("island_fiend.laugh")
         Timers:CreateTimer(2.5, function()
             unit:FadeGesture(ACT_DOTA_IDLE_RARE)
-            self.phase = 2
-            self.partnerAI.phase = 2
+            unit:AddNoDraw()
+            local pfx = ParticleManager:CreateParticle(
+                "particles/units/heroes/hero_shadow_demon/shadow_demon_disruption.vpcf",
+                PATTACH_WORLDORIGIN, nil)
+            local pos = unit:GetAbsOrigin()
+            pos.z = pos.z + 50
+            ParticleManager:SetParticleControl(pfx, 0, pos)
+            Timers:CreateTimer(3, function()
+                unit:RemoveNoDraw()
+                ParticleManager:DestroyParticle(pfx, false)
+                ParticleManager:ReleaseParticleIndex(pfx)
+                self.phase = 2
+                self.partnerAI.phase = 2
+            end)
         end)
 
         self.partner:AddNewModifier(unit, nil, "modifier_island_duo_hidden", {
@@ -73,7 +85,7 @@ function modifier_island_fiend_ai:Phase1(unit, target)
         })
         unit:AddNewModifier(unit, nil, "modifier_island_duo_frenzy", {
             duration = -1,
-            cdr = 50
+            cdr = 25
         })
         Music:StartCustomMusic(target:GetPlayerOwnerID(), "music.island_duo.phase2")
 

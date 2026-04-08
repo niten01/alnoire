@@ -84,7 +84,7 @@ function modifier_island_demon_rand_cdr:IsPurgable() return false end
 
 function modifier_island_demon_rand_cdr:OnCreated()
     if not IsServer() then return end
-    self.cdrPct = RandomInt(-70, 60)
+    self.cdrPct = RandomInt(20, 70)
 end
 
 function modifier_island_demon_rand_cdr:DeclareFunctions()

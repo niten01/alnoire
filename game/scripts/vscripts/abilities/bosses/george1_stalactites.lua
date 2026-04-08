@@ -12,7 +12,20 @@ function george1_stalactites:OnSpellStart()
     ScreenShake(casterPos, 10, 3, 3, 3000, 0, true)
     caster:EmitSound("ability.george1.stalactites.cast")
 
-    local points = RandomPointsInCircle(casterPos, spawnRadius, numAreas, 100)
+    local points = {}
+    while #points < numAreas do
+        local point = nil
+        while true do
+            point = RandomPointsInCircle(casterPos, spawnRadius, 1, 100)[1]
+            local minDist = math.huge
+            for _, p in ipairs(points) do
+                minDist = math.min(minDist, #(p - point))
+            end
+            DebugPrint(minDist)
+            if minDist >= areaRadius then break end
+        end
+        table.insert(points, point)
+    end
     for _, point in ipairs(points) do
         point.z = GetGroundHeight(point, nil) + 20
 

@@ -101,6 +101,7 @@ function modifier_george_shield:GetModifierIncomingDamageConstant(params)
         end
     end
 
+    if params.original_damage < self:GetAbility():GetSpecialValueFor("damage_threshold") then return 0 end
     self.charges = self.charges - 1
     self:SendBuffRefreshToClients()
 

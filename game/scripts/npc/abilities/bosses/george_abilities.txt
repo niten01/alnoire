@@ -66,6 +66,7 @@
         "AbilityValues"
         {
             "stun_duration"            "4"
+            "damage_threshold" "40"
         }
 
         "precache"
