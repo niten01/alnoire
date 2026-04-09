@@ -24,8 +24,8 @@
 		"Ability12"					"george_stun"			
 		"Ability13"					""			
 
-		"ArmorPhysical"				"5"
-		"MagicalResistance"         "30"			
+		"ArmorPhysical"				"9"
+		"MagicalResistance"         "50"			
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"150"		// Damage range min.
@@ -43,9 +43,9 @@
 		"BountyGoldMax" "0"		// Gold earned max.
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"570"		// Speed.			
+		"MovementSpeed"				"320"		// Speed.			
 
-		"StatusHealth"				"3000"		// Base health.
+		"StatusHealth"				"5000"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 

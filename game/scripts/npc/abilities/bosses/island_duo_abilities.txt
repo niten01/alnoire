@@ -44,7 +44,7 @@
             "shadowraze_damage"	"150"	
             "shadowraze_radius"	"180"		
             "range"             "200"
-            "stack_bonus_damage" "60"
+            "stack_bonus_damage" "50"
             "duration"	"7"
 		}
 	}
@@ -92,7 +92,7 @@
 		"AbilityValues"
 		{
             "shadowraze_damage"	"150"	
-            "stack_bonus_damage" "60"
+            "stack_bonus_damage" "50"
             "range"     "450"
 		}
 	} 
@@ -139,7 +139,7 @@
 		"AbilityValues"
 		{
             "shadowraze_damage"	"150"	
-            "stack_bonus_damage" "60"
+            "stack_bonus_damage" "50"
             "range"     "700"
 		}
 	}
@@ -233,7 +233,7 @@
         "AbilityDamage"         "10"
 		"AbilityValues"
 		{
-            "shadowraze_damage"	"100"	
+            "shadowraze_damage"	"50"	
             "stack_bonus_damage" "50"
             "num_points"        "3"
 		}
