@@ -1724,7 +1724,7 @@
 			m_bDisableChild = true
 		},
 		{
-			m_ChildRef = resource:"particles/ghetto_base_attack.vpcf"
+			m_ChildRef = resource:"particles/ghetto_base_attack_child.vpcf"
 		},
 	]
 }

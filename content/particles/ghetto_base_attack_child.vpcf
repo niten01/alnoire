@@ -96,6 +96,7 @@
 			_class = "C_OP_SetChildControlPoints"
 			m_nFirstControlPoint = 3
 			m_bSetOrientation = true
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_Spin"
