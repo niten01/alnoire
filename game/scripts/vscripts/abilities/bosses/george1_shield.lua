@@ -73,7 +73,7 @@ function modifier_george_shield:Break()
 
     parent:Stop()
     local stunDuration = self:GetAbility():GetSpecialValueFor("stun_duration")
-    parent:AddNewModifier(parent, self:GetAbility(), "modifier_stunned", {
+    parent:AddNewModifier(parent, self:GetAbility(), "modifier_stunned_wrap", {
         duration = stunDuration
     })
 end

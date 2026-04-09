@@ -19,6 +19,7 @@ return {
         "npc_subway_to_city",
         "npc_subway_fake",
         "npc_flask_barrel",
+        "npc_derek_keyhole",
 
         "npc_training_dummy",
         "npc_minigame_barrel",

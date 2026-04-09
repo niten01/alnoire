@@ -47,7 +47,7 @@ function perekup_shuffleshot:Spawn()
         end,
         stun = function(target)
             target:EmitSound("ability.perekup.stun")
-            target:AddNewModifier(caster, self, "modifier_stunned", {
+            target:AddNewModifier(caster, self, "modifier_stunned_wrap", {
                 duration = self:GetRandAbilityValue("stun_duration")
             })
         end,

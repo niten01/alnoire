@@ -37,7 +37,7 @@ function trap_arrow:OnProjectileHit(target, location)
     if target then
         local caster = self:GetCaster()
         ScreenShake(caster:GetAbsOrigin(), 5, 0.1, 0.5, 500, 0, true)
-        target:AddNewModifier(caster, self, "modifier_stunned", { duration = 0.5 })
+        target:AddNewModifier(caster, self, "modifier_stunned_wrap", { duration = 0.5 })
         ApplyDamage({
             victim = target,
             attacker = self:GetCaster(),

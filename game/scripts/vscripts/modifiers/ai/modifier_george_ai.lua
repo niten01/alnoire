@@ -222,7 +222,7 @@ function modifier_george_ai:Transition()
         ScreenShake(unit:GetAbsOrigin(), 50, 5, 1.5, 3000, 0, true)
 
         unit:SetHealth(unit:GetMaxHealth())
-        unit:RemoveModifierByName("modifier_stunned")
+        unit:RemoveModifierByName("modifier_stunned_wrap")
         unit:RemoveModifierByName("modifier_george_shield")
         unit:RemoveModifierByName("modifier_model")
         unit:StartGesture(ACT_DOTA_SPAWN)

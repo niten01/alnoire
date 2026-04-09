@@ -39,7 +39,7 @@ function george_stun:OnSpellStart()
                     damage_type = self:GetAbilityDamageType(),
                     ability = self,
                 })
-                ent:AddNewModifier(caster, self, "modifier_stunned", { duration = stunDuration })
+                ent:AddNewModifier(caster, self, "modifier_stunned_wrap", { duration = stunDuration })
                 ApplyGeorgeBurn(ent, self)
             end
         end)

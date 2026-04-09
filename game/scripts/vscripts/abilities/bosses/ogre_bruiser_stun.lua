@@ -33,7 +33,7 @@ function ogre_bruiser_stun:OnSpellStart()
             damage_type = DAMAGE_TYPE_PHYSICAL,
             ability = self,
         })
-        ent:AddNewModifier(caster, self, "modifier_stunned", { duration = stunDuration })
+        ent:AddNewModifier(caster, self, "modifier_stunned_wrap", { duration = stunDuration })
     end
 
     ScreenShake(casterPos, 10, 0.3, 0.5, 3000, 0, true)

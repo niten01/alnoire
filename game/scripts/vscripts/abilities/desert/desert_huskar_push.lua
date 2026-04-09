@@ -85,7 +85,7 @@ function modifier_desert_huskar_push_jump:OnDestroy()
 			ability = self,
 		}
 		ApplyDamage(damageTable)
-		enemy:AddNewModifier(self.caster, self.abil, 'modifier_stunned', { duration = pushDuration })
+		enemy:AddNewModifier(self.caster, self.abil, 'modifier_stunned_wrap', { duration = pushDuration })
 		enemy:AddNewModifier(self.caster, self.abil, "modifier_move", knockback_properties)
 	end
 end

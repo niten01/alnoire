@@ -63,7 +63,7 @@ function goden_skewer:OnSpellStart()
             })
 
             local dur = math.max(0, move:GetRemainingTime() - 0.5)
-            ent:AddNewModifier(caster, self, "modifier_stunned", { duration = dur })
+            ent:AddNewModifier(caster, self, "modifier_stunned_wrap", { duration = dur })
             ent:AddNewModifier(caster, self, "modifier_move", {
                 duration = dur,
                 speed = speed,

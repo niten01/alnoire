@@ -51,7 +51,7 @@ function modifier_ogre_pull:OnCreated()
     self.direction = dir:Normalized()
     self.travelled = 0
 
-    parent:AddNewModifier(ability:GetCaster(), ability, "modifier_stunned", { duration = self:GetDuration() })
+    parent:AddNewModifier(ability:GetCaster(), ability, "modifier_stunned_wrap", { duration = self:GetDuration() })
     if self:ApplyHorizontalMotionController() then
         self.time = 0
     else

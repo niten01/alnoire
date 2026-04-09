@@ -15,6 +15,7 @@ LinkLuaModifier('modifier_gorilla_invulnerable', 'modifiers/modifier_gorilla_inv
 LinkLuaModifier('modifier_generic_vector_target', 'modifiers/modifier_generic_vector_target', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_generic_unkillable", "modifiers/modifier_generic_unkillable", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_model", "modifiers/modifier_model", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_stunned_wrap", "modifiers/modifier_stunned_wrap", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_generic_ring", "modifiers/modifier_generic_ring", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_island_traps_participant", "modifiers/modifier_island_traps_participant",
     LUA_MODIFIER_MOTION_NONE)

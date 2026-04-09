@@ -63,7 +63,7 @@ function modifier_george_parry:OnTakeDamage(params)
         ability = self,
     })
 
-    params.attacker:AddNewModifier(parent, ability, "modifier_stunned", {
+    params.attacker:AddNewModifier(parent, ability, "modifier_stunned_wrap", {
         duration = stunDuration
     })
 end

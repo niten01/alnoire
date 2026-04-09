@@ -37,7 +37,7 @@ function derek_wolf_stun_howl:OnSpellStart()
       ability = self,
     })
 
-    ent:AddNewModifier(caster, self, "modifier_stunned", {
+    ent:AddNewModifier(caster, self, "modifier_stunned_wrap", {
       duration = self:GetSpecialValueFor("stun_duration"),
     })
   end

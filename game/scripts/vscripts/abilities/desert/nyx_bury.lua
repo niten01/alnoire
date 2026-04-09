@@ -47,7 +47,7 @@ function nyx_bury:OnToggle()
         unit.nyxIsUnderground = false
         Timers:CreateTimer(0.7, function()
             if not unit or unit:IsNull() or not unit:IsAlive() then return end
-            unit:AddNewModifier(unit, self, "modifier_stunned", { duration = vulnurableTime })
+            unit:AddNewModifier(unit, self, "modifier_stunned_wrap", { duration = vulnurableTime })
         end)
     end
 end

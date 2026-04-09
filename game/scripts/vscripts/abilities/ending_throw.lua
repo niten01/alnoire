@@ -126,7 +126,7 @@ function ending_throw:OnSpellStart()
             enemy:AddNewModifier(
                 caster,             -- player source
                 self,               -- ability source
-                "modifier_stunned", -- modifier name
+                "modifier_stunned_wrap", -- modifier name
                 { duration = stun } -- kv
             )
 

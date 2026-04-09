@@ -23,7 +23,7 @@ function trap_spikes:TriggerSpikes()
             ability = self
         })
 
-        ent:AddNewModifier(caster, self, "modifier_stunned", { duration = 0.5 })
+        ent:AddNewModifier(caster, self, "modifier_stunned_wrap", { duration = 0.5 })
     end
 end
 

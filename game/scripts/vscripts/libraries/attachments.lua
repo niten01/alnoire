@@ -236,10 +236,10 @@ function Attachments:Attachment_Freeze(args)
   if args.freeze == 1 then
     unit:AddNewModifier(unit, nil, "modifier_animation_freeze_stun", {})
     unit:SetForwardVector(Vector(0,-1,0))
-    --unit:AddNewModifier(unit, nil, "modifier_stunned", {})
+    --unit:AddNewModifier(unit, nil, "modifier_stunned_wrap", {})
   else
     unit:RemoveModifierByName("modifier_animation_freeze_stun")
-    --unit:RemoveModifierByName("modifier_stunned")
+    --unit:RemoveModifierByName("modifier_stunned_wrap")
   end
 end
 
