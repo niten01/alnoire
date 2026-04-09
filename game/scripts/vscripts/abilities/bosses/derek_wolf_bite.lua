@@ -54,7 +54,9 @@ function derek_wolf_bite:OnSpellStart()
         ParticleManager:ReleaseParticleIndex(pfx)
 
         local attIdx = caster:ScriptLookupAttachment("attach_mouth")
-        local enemies = FindEnemiesInSegment(DOTA_TEAM_BADGUYS, caster:GetAttachmentOrigin(attIdx), caster:GetForwardVector() * radius,
+        local enemies = FindEnemiesInSegment(DOTA_TEAM_BADGUYS,
+            caster:GetAttachmentOrigin(attIdx) + caster:GetForwardVector() * 50,
+            caster:GetForwardVector() * radius,
             spread)
 
         for _, ent in ipairs(enemies) do
@@ -65,8 +67,7 @@ function derek_wolf_bite:OnSpellStart()
                 damage_type = damageType,
                 ability = self,
             })
+            PlayDerekBloodEffects(ent, -caster:GetForwardVector())
         end
-
-        PlayDerekBloodEffects(target, -caster:GetForwardVector())
     end)
 end

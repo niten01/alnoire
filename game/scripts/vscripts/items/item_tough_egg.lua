@@ -33,7 +33,6 @@ end
 
 function modifier_tough_egg_buff:CheckState()
     return {
-        [MODIFIER_STATE_DEBUFF_IMMUNE] = true,
         [MODIFIER_STATE_MAGIC_IMMUNE] = true,
     }
 end
@@ -41,7 +40,14 @@ end
 function modifier_tough_egg_buff:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+        MODIFIER_EVENT_ON_MODIFIER_ADDED,
     }
+end
+
+function modifier_tough_egg_buff:OnModifierAdded(params)
+    if params.unit == self:GetParent() and params.added_buff:IsDebuff() then
+        params.added_buff:Destroy()
+    end
 end
 
 function modifier_tough_egg_buff:GetModifierIncomingDamage_Percentage()
