@@ -35,9 +35,17 @@ function modifier_george_ai:ResetState()
 
     self:KillSkeletons()
     self:DestroyEnvParticles()
+    self.gcdT0 = 0
+    self.gcdTime = 0
 end
 
 modifier_george_ai.OnCreated = modifier_george_ai.ResetState
+
+function modifier_george_ai:StartGCD(min, max)
+    self.gcdT0 = GameRules:GetGameTime()
+    self.gcdTime = RandomFloat(min, max)
+    DebugPrint(self.gcdTime)
+end
 
 function modifier_george_ai:OnIntervalThink()
     local unit = self:GetParent()
@@ -47,12 +55,12 @@ function modifier_george_ai:OnIntervalThink()
     local beaconState = beaconData.state
     local target = beaconData.target
 
+    AdjustTickRate(unit)
+    self:StartIntervalThink(beaconData.currentCreepInterval)
     if DefaultAiTick(unit) then
         if beaconData.state == "retreat" then
             self:ResetState()
         end
-        AdjustTickRate(unit)
-        self:StartIntervalThink(beaconData.currentCreepInterval)
         return
     end
 
@@ -89,6 +97,7 @@ function modifier_george_ai:Phase1(unit, target)
         self:KillSkeletons()
         if not target or target:IsNull() or not target:IsAlive() then return end
         target:Stop()
+        PackManager:ResetPackPosition("pack_george")
         Dialogue:StartDialogueForPlayer(target:GetPlayerOwnerID(), "d_george_phase_2_start")
         return
     end
@@ -115,12 +124,25 @@ end
 
 function modifier_george_ai:Phase2(unit, target)
     if unit.georgeCasting then return end
+    if GameRules:GetGameTime() - self.gcdT0 < self.gcdTime then return end
+
     if CastAbility(unit, target, "george_impale") then return end
     if CastAbility(unit, target, "george_crack") then return end
     if CastAbility(unit, target, "george_stun") then return end
-    if CastAbility(unit, target, "george_ring") then return end
+    if CastAbility(unit, target, "george_ring") then
+        DebugPrint(unit.lastCastAbilityName)
+        if unit.lastCastAbilityName == "george_ring" then
+            self:StartGCD(4.0, 7.5)
+        end
+        return
+    end
     if CastAbility(unit, target, "george_puddles") then return end
-    if CastAbility(unit, target, "george_sunrays") then return end
+    if CastAbility(unit, target, "george_sunrays") then
+        if unit.lastCastAbilityName == "george_sunrays" then
+            self:StartGCD(8.5, 12.5)
+        end
+        return
+    end
     if CastAbility(unit, target, "george_bullets") then return end
 end
 

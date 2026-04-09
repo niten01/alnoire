@@ -21,9 +21,17 @@ function modifier_derek_ai:ResetState()
 
     local parent = self:GetParent()
     parent:AddNewModifier(parent, nil, "modifier_generic_unkillable", { duration = -1 })
+    self.gcdT0 = 0
+    self.gcdTime = 0
 end
 
 modifier_derek_ai.OnCreated = modifier_derek_ai.ResetState
+
+function modifier_derek_ai:StartGCD(min, max)
+    self.gcdT0 = GameRules:GetGameTime()
+    self.gcdTime = RandomFloat(min, max)
+    DebugPrint(self.gcdTime)
+end
 
 function modifier_derek_ai:OnIntervalThink()
     local unit = self:GetParent()
@@ -33,12 +41,12 @@ function modifier_derek_ai:OnIntervalThink()
     local beaconState = beaconData.state
     local target = beaconData.target
 
+    AdjustTickRate(unit)
+    self:StartIntervalThink(beaconData.currentCreepInterval)
     if DefaultAiTick(unit) then
         if beaconData.state == "retreat" then
             self:ResetState()
         end
-        AdjustTickRate(unit)
-        self:StartIntervalThink(beaconData.currentCreepInterval)
         return
     end
 
@@ -69,6 +77,7 @@ end
 
 function modifier_derek_ai:Phase1(unit, target)
     if unit.derekCasting then return end
+    if GameRules:GetGameTime() - self.gcdT0 < self.gcdTime then return end
 
     if unit:GetHealth() == 1 then
         self.phase = -1
@@ -84,7 +93,12 @@ function modifier_derek_ai:Phase1(unit, target)
 
     if CastAbility(unit, target, "derek_epicenter") then return end
     if CastAbility(unit, target, "derek_strafe") then return end
-    if CastAbility(unit, target, "derek_axe_fury") then return end
+    if CastAbility(unit, target, "derek_axe_fury") then
+        if unit.lastCastAbilityName == "derek_axe_fury" then
+            self:StartGCD(6, 8)
+        end
+        return
+    end
     if CastAbility(unit, target, "derek_lift", 0) then return end
 
     if isClose then

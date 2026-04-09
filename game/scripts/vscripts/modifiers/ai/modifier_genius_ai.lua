@@ -17,9 +17,9 @@ function modifier_genius_ai:OnIntervalThink()
     local beaconState = beaconData.state
     local target = beaconData.target
 
+    AdjustTickRate(unit)
+    self:StartIntervalThink(beaconData.currentCreepInterval)
     if DefaultAiTick(unit) then
-        AdjustTickRate(unit)
-        self:StartIntervalThink(beaconData.currentCreepInterval)
         return
     end
 
