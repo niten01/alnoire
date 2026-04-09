@@ -29,6 +29,7 @@
 #base "units/jungle/act4_jungle.txt"
 
 #base "units/story/npc_subway.txt"
+#base "units/story/npc_derek_keyhole.txt"
 #base "units/story/npc_flask_barrel.txt"
 
 #base "units/story/npc_tormentor.txt"

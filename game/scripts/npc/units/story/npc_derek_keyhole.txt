@@ -1,0 +1,11 @@
+"DOTAUnits"
+{
+	"npc_derek_keyhole" 
+	{
+		"Model"						"models/derek_keyhole/derek_keyhole.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"2.2"
+		"RingRadius"				"200"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+}
