@@ -13,10 +13,12 @@ function ghetto_shoot:OnSpellStart()
     local direction = (targetPos - casterPos):Normalized()
     direction.z = 0
 
+    local gunAttIdx = caster:ScriptLookupAttachment("attach_attack1")
+
     local projectileInfo = {
         Ability = self,
         EffectName = "particles/ghetto_base_attack.vpcf",
-        vSpawnOrigin = casterPos + Vector(0, 0, 25),
+        vSpawnOrigin = caster:GetAttachmentOrigin(gunAttIdx),
         fDistance = projRange,
         fStartRadius = projHitbox,
         fEndRadius = projHitbox,
