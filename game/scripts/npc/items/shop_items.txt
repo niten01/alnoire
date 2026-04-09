@@ -19,7 +19,7 @@
 
         "AbilityValues" 
         {
-            "distance"  "500"
+            "distance"  "450"
             "travel_time" "0.4"
         }
     }
@@ -100,7 +100,7 @@
 
         "AbilityValues" 
         {
-            "cdr_pct"  "20"
+            "cdr_pct"  "15"
         }
 
         "Modifiers"
