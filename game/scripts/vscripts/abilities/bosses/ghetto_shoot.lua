@@ -15,8 +15,8 @@ function ghetto_shoot:OnSpellStart()
 
     local projectileInfo = {
         Ability = self,
-        EffectName = "particles/derek_linear_proj.vpcf",
-        vSpawnOrigin = casterPos + Vector(0, 0, 35),
+        EffectName = "particles/ghetto_base_attack.vpcf",
+        vSpawnOrigin = casterPos + Vector(0, 0, 25),
         fDistance = projRange,
         fStartRadius = projHitbox,
         fEndRadius = projHitbox,
@@ -34,6 +34,7 @@ function ghetto_shoot:OnSpellStart()
 
     ProjectileManager:CreateLinearProjectile(projectileInfo)
     EmitSoundOn("ghetto.shoot", caster)
+    self:StartCooldown(AbilityRandomValueFloat(self, "cd"))
 end
 
 function ghetto_shoot:OnProjectileHit(target, location)

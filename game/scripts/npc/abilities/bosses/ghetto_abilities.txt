@@ -7,8 +7,9 @@
         "AbilityTextureName"            "action_stop"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
         "AbilityCastPoint"              "0.45"
-        "AbilityCooldown"               "6" 
+        "AbilityCooldown"               "0" 
         "AbilityCastRange"        		"2000"
         
         "AbilityDamage"         "30"
@@ -16,11 +17,13 @@
         {
             "proj_speed"      "1000"
             "proj_radius"     "20"
+            // rand min max
+            "cd"            "0 2"
         }
 
         "precache"
         {
-            "particle"		"particles/derek_linear_proj.vpcf"
+            "particle"		"particles/ghetto_base_attack.vpcf"
         }
     }   
 }

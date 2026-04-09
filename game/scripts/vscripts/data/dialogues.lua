@@ -7838,6 +7838,7 @@ return {
                         { itemName = "item_concert_ticket", type = "take_item" },
                         { var = "has_concert_pass",       value = true,    type = "set_var" },
                         { door = "door_concert",          type = "open_door" },
+                        { spawn = "spawner_xavier",       type = "spawn" },
                     },
                 },
             },
@@ -7887,7 +7888,6 @@ return {
                     actions = {
                         { npc = "npc_dream",             type = "remove" },
                         { spawn = "spawner_dream_concert", type = "spawn" },
-                        { spawn = "spawner_xavier",      type = "spawn" },
                     },
                 },
             },
@@ -15343,7 +15343,8 @@ Wazup, ты кем будешь, dawg?]],
             },
         },
         d_polozhit_kluch = {
-            text = [[Ты слышишь гул под землёй - дверь начинает медленно открываться, а ключ растворяется в чаше алтаря]],
+            text =
+            [[Ты слышишь гул под землёй - дверь начинает медленно открываться, а ключ растворяется в чаше алтаря...]],
             speaker = [[...]],
             npc = "npc_derek_keyhole",
             choices = {

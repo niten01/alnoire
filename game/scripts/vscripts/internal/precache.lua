@@ -124,6 +124,7 @@ return {
         "npc_storyteller",
         "npc_leader",
         "npc_xavier",
+        "npc_concert_guard",
         "npc_dream",
         "npc_dream_golden",
         "npc_hermit",
