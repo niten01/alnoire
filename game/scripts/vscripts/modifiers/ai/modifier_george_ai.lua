@@ -44,7 +44,6 @@ modifier_george_ai.OnCreated = modifier_george_ai.ResetState
 function modifier_george_ai:StartGCD(min, max)
     self.gcdT0 = GameRules:GetGameTime()
     self.gcdTime = RandomFloat(min, max)
-    DebugPrint(self.gcdTime)
 end
 
 function modifier_george_ai:OnIntervalThink()
@@ -126,11 +125,11 @@ function modifier_george_ai:Phase2(unit, target)
     if unit.georgeCasting then return end
     if GameRules:GetGameTime() - self.gcdT0 < self.gcdTime then return end
 
+    if CastAbility(unit, target, "george_bullets") then return end
     if CastAbility(unit, target, "george_impale") then return end
     if CastAbility(unit, target, "george_crack") then return end
     if CastAbility(unit, target, "george_stun") then return end
     if CastAbility(unit, target, "george_ring") then
-        DebugPrint(unit.lastCastAbilityName)
         if unit.lastCastAbilityName == "george_ring" then
             self:StartGCD(4.0, 7.5)
         end
@@ -143,7 +142,6 @@ function modifier_george_ai:Phase2(unit, target)
         end
         return
     end
-    if CastAbility(unit, target, "george_bullets") then return end
 end
 
 function modifier_george_ai:Sink()
@@ -229,6 +227,8 @@ function modifier_george_ai:Transition()
         self:Unsink()
 
         Timers:CreateTimer(2.0, function()
+            local bh = unit:FindAbilityByName("george_bullets")
+            bh:StartCooldown(bh:GetCooldown(bh:GetLevel()))
             self.phase = 2
         end)
     end)

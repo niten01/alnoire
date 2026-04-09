@@ -1050,7 +1050,7 @@ return {
         },
         spawner_island_demon_illusion = {
             npc = "npc_island_demon_illusion",
-            modifiers = { "modifier_island_demon_rand_cdr" },
+            modifiers = { },
             -- is linked manually
             -- packID = "pack_island_duo",
             ai_modifier = "modifier_island_demon_illusion_ai",

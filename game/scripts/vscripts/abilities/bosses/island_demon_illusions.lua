@@ -40,7 +40,14 @@ function island_demon_illusions:OnChannelFinish(bInterrupted)
 
     local npcs = SpawnManager:SpawnNPC(spawnerName)
 
+    local ai = caster:FindModifierByName("modifier_island_demon_ai")
+    assert(ai)
     for _, npc in ipairs(npcs) do
+        npc:AddNewModifier(caster, self, "modifier_island_demon_rand_cdr", {
+            minCDR = (ai.phase == 2) and 20 or -10,
+            maxCDR = (ai.phase == 2) and 70 or 50,
+        })
+
         local pos = npc:GetAbsOrigin()
 
         local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_shadow_demon/shadow_demon_loadout.vpcf",
@@ -82,9 +89,9 @@ function modifier_island_demon_rand_cdr:IsHidden() return true end
 
 function modifier_island_demon_rand_cdr:IsPurgable() return false end
 
-function modifier_island_demon_rand_cdr:OnCreated()
+function modifier_island_demon_rand_cdr:OnCreated(kv)
     if not IsServer() then return end
-    self.cdrPct = RandomInt(20, 70)
+    self.cdrPct = RandomInt(kv.minCDR, kv.maxCDR)
 end
 
 function modifier_island_demon_rand_cdr:DeclareFunctions()
