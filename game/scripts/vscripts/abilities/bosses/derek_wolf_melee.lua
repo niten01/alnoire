@@ -37,7 +37,7 @@ function derek_wolf_melee:OnSpellStart()
         caster:EmitSound("ability.derek.swing")
 
         local casterPos = caster:GetAbsOrigin()
-        local enemies = FindEnemiesInSegment(DOTA_TEAM_BADGUYS, casterPos, caster:GetForwardVector() * radius, spread)
+        local enemies = FindEnemiesInSegment(DOTA_TEAM_BADGUYS, casterPos+ caster:GetForwardVector()*100, caster:GetForwardVector() * radius, spread)
         for _, ent in ipairs(enemies) do
             ApplyDamage({
                 victim = ent,

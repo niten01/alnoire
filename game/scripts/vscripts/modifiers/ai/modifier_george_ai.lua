@@ -139,7 +139,7 @@ function modifier_george_ai:Phase2(unit, target)
     if CastAbility(unit, target, "george_puddles") then return end
     if CastAbility(unit, target, "george_sunrays") then
         if unit.lastCastAbilityName == "george_sunrays" then
-            self:StartGCD(8.5, 12.5)
+            self:StartGCD(6.5, 11.5)
         end
         return
     end
