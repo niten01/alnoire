@@ -7,6 +7,11 @@
 		"ModelScale" 				"1.5"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"StatusHealth"				"2"
+		"HealthBarOffset"			"250"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRate"				"1.8"		// Speed of attack.
+		"AttackDamageMin"			"0"		
+		"AttackDamageMax"			"0"		
 	}
 	"npc_dream_golden" 
 	{
