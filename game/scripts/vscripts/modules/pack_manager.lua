@@ -179,7 +179,7 @@ function PackManager:GiveRewards(pack)
             end
 
             if pack.xpBounty > 0 then
-                hero:AddExperience(pack.xpBounty, DOTA_ModifyXP_CreepKill, false, true, 0)
+                hero:AddExperience(pack.xpBounty * X_MULT, DOTA_ModifyXP_CreepKill, false, true, 0)
             end
 
             if pack.refillsFlask then
