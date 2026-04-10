@@ -127,6 +127,18 @@
       "sounds/ui/coins.vsnd",
     ]
   }
+  sfx.quest_bounty.gold = {
+    type = "dota_update_default"
+    volume = 0.100000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.200000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/ui/coins_big.vsnd",
+    ]
+  }
   sfx.cave_door.open = {
     type = "dota_update_default"
     volume = 2.600000

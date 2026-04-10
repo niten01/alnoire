@@ -24,7 +24,12 @@ return {
                     { type = "change_act", act = 1 }
                 }
             },
-        }
+        },
+        rewardXP = 2000,
+        rewardGold = 2000,
+        rewardItems ={
+            "item_tough_egg"
+        },
     },
     q_clash_royale = {
         giver = "npc_blue_prince",

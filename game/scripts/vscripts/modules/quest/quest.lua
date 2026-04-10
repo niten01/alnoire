@@ -153,6 +153,25 @@ function Quest:CompleteQuestForAll(questID)
   if not state then return end
   state.status = QuestStatus.COMPLETED
   self:UpdateQuestlog()
+
+  for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+    if PlayerResource:IsValidPlayerID(playerID) then
+      local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+      if hero then
+        if quest.rewardXP then
+          hero:AddExperience(quest.rewardXP, DOTA_ModifyXP_TomeOfKnowledge, false, true, 0)
+        end
+        if quest.rewardGold then
+          hero:ModifyGold(quest.rewardGold, true, DOTA_ModifyGold_CreepKill)
+          hero:EmitSound("sfx.quest_bounty.gold")
+        end
+        for _, itemName in ipairs(quest.rewardItems or {}) do
+          SafeGiveItem(playerID, itemName)
+        end
+      end
+    end
+  end
+
   OnQuestCompleteEvent({
     quest = quest
   })
