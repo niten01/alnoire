@@ -28,7 +28,7 @@
 		//-------------------------------------------------------------------------------------------------------------
         "AbilityCastAnimation"          "ACT_DOTA_RAZE_1"
 		"AbilityCastRange"				"9999"
-		"AbilityCastPoint"				"0.55"
+		"AbilityCastPoint"				"0.6"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@
 		"AbilityValues"
 		{
             "shadowraze_damage"	"150"	
-            "shadowraze_radius"	"180"		
+            "shadowraze_radius"	"160"		
             "range"             "200"
             "stack_bonus_damage" "50"
             "duration"	"7"
@@ -207,9 +207,9 @@
 		"AbilityValues"
 		{
             "mid_spread_minmax"    "100 800"
-            "warning_delay"        "0.8"
+            "warning_delay"        "0.2"
             "proj_radius"          "50"
-            "proj_speed"                "2500"
+            "proj_speed"                "2600"
             "raze_stacks_per_hit"   "3"
 		}
 
@@ -226,14 +226,14 @@
 		"AbilityBehavior" 			"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"		"nevermore_shadowraze1"
 		"AbilityCastAnimation"	    "ACT_DOTA_RAZE_3"
-		"AbilityCastPoint"			"0.55"
+		"AbilityCastPoint"			"0.8"
         "AbilityCooldown"               "1.0" 
 		"AbilityCastRange"				"9999"
 
         "AbilityDamage"         "10"
 		"AbilityValues"
 		{
-            "shadowraze_damage"	"50"	
+            "shadowraze_damage"	"10"	
             "stack_bonus_damage" "50"
             "num_points"        "3"
 		}

@@ -176,7 +176,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_6"
-        "AbilityCastPoint"              "0.54"
+        "AbilityCastPoint"              "0.8"
 
         "AbilityCooldown"               "8" 
         "AbilityCastRange"        		"9999"
@@ -212,7 +212,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"9999"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.7"
         "AbilityCooldown"		        "10.0"
 
 		// Special
@@ -252,7 +252,7 @@
 		"AbilityCastAnimation"		    "ACT_DOTA_CHANNEL_ABILITY_1"
 		"AbilityChannelTime"			"5.0"
 		"AbilityCastPoint"			    "1.0"
-        "AbilityCooldown"		        "25.0"
+        "AbilityCooldown"		        "12.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -261,7 +261,7 @@
 			"length"		"1500"	
             "num_rays"      "6"
             "angular_velocity" "0.5"
-			"dps"           "300"
+			"dps"           "330"
 			"width"           "70"
             // cast point is warning delay
 		}
@@ -281,7 +281,7 @@
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
         "AbilityCastPoint"              "0.94"
 
-        "AbilityCooldown"               "25" 
+        "AbilityCooldown"               "20" 
         "AbilityCastRange"        		"9999"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -296,7 +296,7 @@
             "spread"                    "180"
             "num_directions"            "18"
             "num_simultaneous_spawners" "2"
-            "damage"                    "150"
+            "damage"                    "125"
         }
 
         "precache"
@@ -353,7 +353,7 @@
         "AbilityValues"
         {
             "damage"              "120"
-            "stun_duration"       "0.3"
+            "stun_duration"       "0.2"
             "radius"              "200"
             "interval"            "0.4"
             "delay"               "1.2"
