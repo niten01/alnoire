@@ -6,6 +6,15 @@ function PackManager:Init()
         self:RespawnPack(args[1])
         self:ActivatePack(args[1])
     end)
+    ChatCommand:LinkCommand("-activefights", function(event, args)
+        DebugPrint("-------------------")
+        for _, pack in EntityData:AllByType("pack") do
+            if pack.state == 'aggro' then
+                DebugPrint("Active fight: " .. pack.name)
+            end
+        end
+        DebugPrint("-------------------")
+    end)
 end
 
 function PackManager:OnGameInProgress()

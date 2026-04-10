@@ -75,6 +75,12 @@ function DoorManager:Open(doorName)
       doorEnt)
     ParticleManager:ReleaseParticleIndex(pfx)
   end
+
+  if data.openSound then
+    local doorEnt = Entities:FindByName(nil, doorName)
+    assert(doorEnt)
+    doorEnt:EmitSound(data.openSound)
+  end
 end
 
 function DoorManager:Close(doorName)

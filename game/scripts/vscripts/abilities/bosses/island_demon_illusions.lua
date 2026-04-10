@@ -9,6 +9,10 @@ function island_demon_illusions:OnSpellStart()
     local caster = self:GetCaster()
     caster:AddNoDraw()
 
+    caster:AddNewModifier(caster, self, "modifier_island_demon_invulnerable", {
+        duration = -1
+    })
+
     self.pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_shadow_demon/shadow_demon_disruption.vpcf",
         PATTACH_WORLDORIGIN, nil)
     local pos = caster:GetAbsOrigin()
@@ -27,10 +31,12 @@ function island_demon_illusions:OnChannelFinish(bInterrupted)
         self.pfx = nil
     end
 
+    local caster = self:GetCaster()
+    caster:RemoveModifierByName("modifier_island_demon_invulnerable")
+
     if bInterrupted then return end
     local spawnerName = "spawner_island_demon_illusion"
 
-    local caster = self:GetCaster()
     local points = {}
     for _, ent in ipairs(Entities:FindAllByName(spawnerName)) do
         table.insert(points, ent:GetAbsOrigin())

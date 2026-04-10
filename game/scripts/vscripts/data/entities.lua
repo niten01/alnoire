@@ -1594,11 +1594,13 @@ return {
             clipEntity = "clip_door_forest_2",
             openAnimation = "gate_wooden_destruction",
             requiresPassword = "stringus collapsus",
+            openSound = "sfx.wooden_door.open",
         },
         door_forest_3 = {
             clipEntity = "clip_door_forest_3",
             openAnimation = "gate_wooden_locked_02_opening",
             requiresPassword = "logarithmus solvus",
+            openSound = "sfx.metal_door.open",
         },
         door_village = {
             clipEntity = "clip_door_village",

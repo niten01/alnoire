@@ -127,4 +127,40 @@
       "sounds/ui/coins.vsnd",
     ]
   }
+  sfx.cave_door.open = {
+    type = "dota_update_default"
+    volume = 2.600000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.200000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/sfx/cave_door_open.vsnd",
+    ]
+  }
+  sfx.wooden_door.open = {
+    type = "dota_update_default"
+    volume = 2.000000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.200000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/sfx/wooden_door_break.vsnd",
+    ]
+  }
+  sfx.metal_door.open = {
+    type = "dota_update_default"
+    volume = 2.000000
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.200000
+    spread_radius = 500.000000
+    vsnd_files = 
+    [
+      "sounds/sfx/metal_door_break.vsnd",
+    ]
+  }
 }
