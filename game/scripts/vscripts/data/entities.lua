@@ -1607,7 +1607,8 @@ return {
         },
         door_village_leader = {
             clipEntity = "clip_door_village_leader",
-            openAnimation = "cf_palace_door_open",
+            openAnimation = "open",
+            closeAnimation = "close",
         },
         door_concert = {
             clipEntity = "clip_door_concert"

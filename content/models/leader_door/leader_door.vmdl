@@ -68,8 +68,33 @@
 						import_bone_scales = false
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 30.0
 						reverse = false
+						additional_anim_files = [  ]
+					},
+					{
+						_class = "AnimFile"
+						name = "close"
+						is_default_idle_anim = false
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						delete_from_compiled_model = false
+						source_filename = "models/leader_door/animations/open.fbx"
+						import_bone_scales = false
+						start_frame = -1
+						end_frame = -1
+						framerate = 50.0
+						reverse = true
 						additional_anim_files = [  ]
 					},
 				]

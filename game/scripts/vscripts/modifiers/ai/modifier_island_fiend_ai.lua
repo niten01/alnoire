@@ -57,6 +57,7 @@ end
 function modifier_island_fiend_ai:Phase1(unit, target)
     if self.partner and self.partner:GetHealth() == 1 then
         self.phase = -1
+        self:StopSeq()
         unit:Stop()
         unit:RemoveGesture(ACT_DOTA_IDLE)
         unit:StartGesture(ACT_DOTA_IDLE_RARE)
@@ -71,7 +72,7 @@ function modifier_island_fiend_ai:Phase1(unit, target)
             local pos = unit:GetAbsOrigin()
             pos.z = pos.z + 50
             ParticleManager:SetParticleControl(pfx, 0, pos)
-            Timers:CreateTimer(3, function()
+            Timers:CreateTimer(3.5, function()
                 unit:RemoveNoDraw()
                 ParticleManager:DestroyParticle(pfx, false)
                 ParticleManager:ReleaseParticleIndex(pfx)
