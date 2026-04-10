@@ -58,6 +58,11 @@ return {
         spawner_courier_sniffer       = { npc = "npc_courier_sniffer", modifiers = { "modifier_story_npc" } },
         spawner_courier_smart         = { npc = "npc_courier_smart", modifiers = { "modifier_story_npc" } },
 
+        spawner_courier_tomato        = { npc = "npc_courier_tomato", modifiers = { "modifier_story_npc" } },
+        spawner_courier_psycho        = { npc = "npc_courier_psycho", modifiers = { "modifier_story_npc" } },
+        spawner_courier_gardener      = { npc = "npc_courier_gardener", modifiers = { "modifier_story_npc" } },
+        spawner_courier_ant           = { npc = "npc_courier_ant", modifiers = { "modifier_story_npc" } },
+
         spawner_courier_roshanchik    = { npc = "npc_courier_roshanchik", modifiers = { "modifier_story_npc" } },
         spawner_courier_bober         = { npc = "npc_courier_bober", modifiers = { "modifier_story_npc" } },
         spawner_courier_rabbit        = { npc = "npc_courier_rabbit", modifiers = { "modifier_story_npc" } },
@@ -81,10 +86,14 @@ return {
         spawner_courier_demon         = { npc = "npc_courier_demon", modifiers = { "modifier_story_npc" } },
         spawner_courier_evil_shop     = { npc = "npc_courier_evil_shop", modifiers = { "modifier_story_npc" } },
         spawner_courier_doom          = { npc = "npc_courier_doom", modifiers = { "modifier_story_npc" } },
+        spawner_courier_statue        = { npc = "npc_courier_statue", modifiers = { "modifier_story_npc" } },
         spawner_courier_bones         = { npc = "npc_courier_bones", modifiers = { "modifier_story_npc" } },
         spawner_courier_babka_2       = { npc = "npc_courier_babka_2", modifiers = { "modifier_story_npc" } },
         spawner_courier_blue_frog     = { npc = "npc_courier_blue_frog", modifiers = { "modifier_story_npc" } },
         spawner_courier_pig           = { npc = "npc_courier_pig", modifiers = { "modifier_story_npc" } },
+        spawner_courier_furion        = { npc = "npc_courier_furion", modifiers = { "modifier_story_npc" } },
+
+        spawner_courier_winter_cat    = { npc = "npc_courier_winter_cat", modifiers = { "modifier_story_npc" } },
 
         spawner_courier_aghanim       = { npc = "npc_courier_aghanim", modifiers = { "modifier_story_npc" } },
         spawner_courier_grandpa       = { npc = "npc_courier_grandpa", modifiers = { "modifier_story_npc" } },
@@ -1002,6 +1011,34 @@ return {
         },
         spawner_concert_fan_melee     = {
             npc = "npc_ghetto_melee",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+            packID = "pack_concert_crowd",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_concert_lina          = {
+            npc = "npc_concert_lina",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+            packID = "pack_concert_crowd",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_concert_legion        = {
+            npc = "npc_concert_legion",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+            packID = "pack_concert_crowd",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_concert_meepo         = {
+            npc = "npc_concert_legion",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+            packID = "pack_concert_crowd",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_concert_wk            = {
+            npc = "npc_concert_legion",
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_concert_crowd",

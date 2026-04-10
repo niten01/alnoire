@@ -43,7 +43,11 @@ return {
         "npc_courier_crocodile",
         "npc_courier_sniffer",
         "npc_courier_smart",
-        "npc_courier_roshanchik",
+
+        "npc_courier_tomato",
+        "npc_courier_psycho",
+        "npc_courier_gardener",
+        "npc_courier_ant",
 
         "npc_courier_roshanchik",
         "npc_courier_bober",
@@ -67,11 +71,13 @@ return {
         "npc_courier_cripple_dog",
         "npc_courier_demon",
         "npc_courier_evil_shop",
-        "npc_courier_doom",
+        "npc_courier_statue",
         "npc_courier_bones",
         "npc_courier_babka_2",
         "npc_courier_blue_frog",
         "npc_courier_pig",
+        "npc_courier_winter_cat",
+        "npc_courier_furion",
 
         "npc_courier_aghanim",
         "npc_courier_grandpa",
@@ -133,6 +139,10 @@ return {
         "npc_genius",
         "npc_ghetto_ranged",
         "npc_ghetto_melee",
+        "npc_concert_lina",
+        "npc_concert_legion",
+        "npc_concert_meepo",
+        "npc_concert_wk",
         "npc_gangster",
         "npc_blue",
 

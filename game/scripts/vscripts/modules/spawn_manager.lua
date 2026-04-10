@@ -124,6 +124,8 @@ function SpawnManager:SpawnItem(itemSpawnerName)
         local origin = spawnerEnt:GetAbsOrigin()
         DebugPrint("\tFound spawner entity: (" .. origin.x .. ";" .. origin.y .. ")")
         local item = CreateItem(spawner.item, nil, nil)
+        assert(item)
+        item:SetCombineLocked(true)
         CreateItemOnPositionSync(origin, item)
     end
 end
