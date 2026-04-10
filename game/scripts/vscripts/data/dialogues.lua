@@ -1526,10 +1526,40 @@ return {
                 { interact = "npc_courier_taksa", type = "interact" },
             },
         },
+        d_untitled_passage_59_merged_bubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_furion", type = "interact" },
+            },
+        },
         d_untitled_passage_6_merged_bubbles = {
             priority = 0,
             conditions = {
                 { interact = "npc_courier_pudge", type = "interact" },
+            },
+        },
+        d_untitled_passage_60_merged_bubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_tomato", type = "interact" },
+            },
+        },
+        d_untitled_passage_61_merged_bubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_psycho", type = "interact" },
+            },
+        },
+        d_untitled_passage_62_merged_bubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_gardener", type = "interact" },
+            },
+        },
+        d_untitled_passage_63_merged_bubbles = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_courier_ant", type = "interact" },
             },
         },
         d_untitled_passage_7_merged_bubbles = {
@@ -16350,10 +16380,71 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
+        d_untitled_passage_59_merged_bubbles = {
+            text = [[Из кратера можно выйти в нескольких местах - иди по факелам!]],
+            speaker = [[default]],
+            npc = "npc_courier_furion",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
         d_untitled_passage_6_merged_bubbles = {
             text = [[СВИЖЕЕ МЙАСССООООООО]],
             speaker = [[default]],
             npc = "npc_courier_pudge",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_60_merged_bubbles = {
+            text = [[Я добрая помидорка, не ешь меня!]],
+            speaker = [[default]],
+            npc = "npc_courier_tomato",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_61_merged_bubbles = {
+            text = [[АААААААААРРРРГХХХХХРРРРРР
+ДАЙТЕ МНЕ НОГИ, Я ЕЁ СОЖРУ!!!]],
+            speaker = [[default]],
+            npc = "npc_courier_psycho",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_62_merged_bubbles = {
+            text = [[Не топчи клумбы!]],
+            speaker = [[default]],
+            npc = "npc_courier_gardener",
+            is_bubble = true,
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_untitled_passage_63_merged_bubbles = {
+            text = [[Найди себе другой укромный уголок...]],
+            speaker = [[default]],
+            npc = "npc_courier_ant",
             is_bubble = true,
             choices = {
                 {

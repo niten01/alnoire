@@ -399,4 +399,53 @@
 		"ModelScale" 				"1.0"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	}
+	"npc_courier_winter_cat" 
+	{
+		"Model"						"models/courier/snowleopard/snowleopard_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_furion" 
+	{
+		"Model"						"models/items/furion/treant/father_treant/father_treant.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_statue" 
+	{
+		"Model"						"models/items/courier/supernova_rave_courier/supernova_rave_courier.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_tomato" 
+	{
+		"Model"						"models/items/furion/treant/supreme_gardener_treants/supreme_gardener_treants.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_psycho" 
+	{
+		"Model"						"models/items/witchdoctor/wd_ward/ti8_wd_spore_gardener_spore_abomination_ti8/ti8_wd_spore_gardener_spore_abomination_ti8.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_gardener" 
+	{
+		"Model"						"models/items/furion/treant/abyssal_prophet_abyssal_prophet_treant/abyssal_prophet_abyssal_prophet_treant.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
+	"npc_courier_ant" 
+	{
+		"Model"						"models/items/furion/treant/np_verdant_swarm_ability/np_verdant_swarm_ability.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"0.66"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
 }

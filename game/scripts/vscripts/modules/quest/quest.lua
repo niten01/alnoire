@@ -113,6 +113,7 @@ function Quest:CompleteObjective(questID, objective)
   local activeStep = quest.steps[state.stepIdx]
   if not activeStep then return end
 
+  self:TryGiveReward(objective)
   objective.complete = true
 
   local hasIncomplete = false
@@ -129,12 +130,33 @@ function Quest:CompleteObjective(questID, objective)
   self:UpdateQuestlog()
 end
 
+function Quest:TryGiveReward(obj)
+  for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+    if PlayerResource:IsValidPlayerID(playerID) then
+      local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+      if hero then
+        if obj.rewardXP then
+          hero:AddExperience(obj.rewardXP, DOTA_ModifyXP_TomeOfKnowledge, false, true, 0)
+        end
+        if obj.rewardGold then
+          hero:ModifyGold(obj.rewardGold, true, DOTA_ModifyGold_CreepKill)
+          hero:EmitSound("sfx.quest_bounty.gold")
+        end
+        for _, itemName in ipairs(obj.rewardItems or {}) do
+          SafeGiveItem(playerID, itemName)
+        end
+      end
+    end
+  end
+end
+
 function Quest:AdvanceStep(questID)
   local state = self:GetQuestState(questID)
   local quest = self.quests[questID]
   local activeStep = quest.steps[state.stepIdx]
   DebugPrint("[ALNOIRE] Advance quest step: " .. questID .. " " .. state.stepIdx .. " -> " .. state.stepIdx + 1)
 
+  self:TryGiveReward(activeStep)
   for _, action in ipairs(activeStep.postStepActions or {}) do
     StoryDriver:HandleAction(nil, action)
   end
@@ -154,23 +176,7 @@ function Quest:CompleteQuestForAll(questID)
   state.status = QuestStatus.COMPLETED
   self:UpdateQuestlog()
 
-  for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-    if PlayerResource:IsValidPlayerID(playerID) then
-      local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
-      if hero then
-        if quest.rewardXP then
-          hero:AddExperience(quest.rewardXP, DOTA_ModifyXP_TomeOfKnowledge, false, true, 0)
-        end
-        if quest.rewardGold then
-          hero:ModifyGold(quest.rewardGold, true, DOTA_ModifyGold_CreepKill)
-          hero:EmitSound("sfx.quest_bounty.gold")
-        end
-        for _, itemName in ipairs(quest.rewardItems or {}) do
-          SafeGiveItem(playerID, itemName)
-        end
-      end
-    end
-  end
+  self:TryGiveReward(quest)
 
   OnQuestCompleteEvent({
     quest = quest
