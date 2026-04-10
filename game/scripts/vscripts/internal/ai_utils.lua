@@ -310,7 +310,7 @@ function FindEnemiesForSanyaInLine(p1, p2, width)
 end
 
 -- find enemies fo curTeam in segment starting at center, with direction of vector, radius is #vector and total width of cone in degrees is angle
-function FindEnemiesInSegment(curTeam, center, vector, angle)
+function FindEnemiesInSector(curTeam, center, vector, angle)
   local units = FindUnitsInRadius(
     curTeam,
     center,
@@ -327,9 +327,12 @@ function FindEnemiesInSegment(curTeam, center, vector, angle)
 
   local cosHalfAngle = math.cos(math.rad(angle / 2))
 
+  vector.z = 0
   local dirNormalized = vector:Normalized()
   for _, unit in pairs(units) do
-    local vToUnit = (unit:GetOrigin() - center):Normalized()
+    local vToUnit3D = unit:GetAbsOrigin() - center
+    vToUnit3D.z = 0
+    local vToUnit = vToUnit3D:Normalized()
     local dotProduct = dirNormalized:Dot(vToUnit)
 
     if dotProduct >= cosHalfAngle then
@@ -539,6 +542,7 @@ function ShowGenericCurveWarning(curveInfo, width, duration)
   local iter = curveInfo:UnstableIteratorElapsed()
   local point = iter()
   local pfx = ParticleManager:CreateParticle("particles/warning_rope.vpcf", PATTACH_WORLDORIGIN, nil)
+  ParticleManager:SetParticleControl(pfx, 0, point)
   local z = GetGroundHeight(point, nil)
   ParticleManager:SetParticleControl(pfx, 1, Vector(width, 0, 0))
 
@@ -811,6 +815,7 @@ function ParabolaInfo:UnstableIteratorElapsed()
 
     elapsed = elapsed and math.min(1, elapsed) or 0
     local point = self:GetPoint(elapsed)
+    DrawDebugCircle(point, 30, 0.2)
 
     if elapsed >= 1 then
       reachedEnd = true

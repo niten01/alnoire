@@ -62,7 +62,7 @@ function logarithmus_clone:OnSpellStart()
 
       local radius = self:GetSpecialValueFor("swing_radius")
       local angleWidth = self:GetSpecialValueFor("swing_angle_width")
-      local enemies = FindEnemiesInSegment(DOTA_TEAM_GOODGUYS, casterPos, fwd * radius, angleWidth)
+      local enemies = FindEnemiesInSector(DOTA_TEAM_GOODGUYS, casterPos, fwd * radius, angleWidth)
       for _, ent in ipairs(enemies) do
         PlayLogarithmusImpaleEffect(ent, casterPos)
         ApplyDamage({

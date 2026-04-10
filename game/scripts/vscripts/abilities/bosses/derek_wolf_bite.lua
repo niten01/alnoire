@@ -15,7 +15,11 @@ function derek_wolf_bite:OnSpellStart()
 
     local v = targetPos - randStartPoint
     local dir = v:Normalized()
-    local dist = #v - radius / 2
+
+    local mouthIdx = caster:ScriptLookupAttachment("attach_mouth")
+    local mouthPos = caster:GetAttachmentOrigin(mouthIdx)
+    local mouthDelta = #(casterPos - mouthPos)
+    local dist = #v - mouthDelta
 
     EmitSoundOnLocationWithCasterSafe(casterPos, "ability.derek.wolf_bite.blink", caster)
     caster:SetAbsOrigin(randStartPoint)
@@ -53,9 +57,9 @@ function derek_wolf_bite:OnSpellStart()
         local pfx = ParticleManager:CreateParticle("particles/derek_wolf_bite.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
         ParticleManager:ReleaseParticleIndex(pfx)
 
-        local attIdx = caster:ScriptLookupAttachment("attach_mouth")
-        local enemies = FindEnemiesInSegment(DOTA_TEAM_BADGUYS,
-            caster:GetAttachmentOrigin(attIdx) + caster:GetForwardVector() * 50,
+        local casterPos = caster:GetAbsOrigin()
+        local enemies = FindEnemiesInSector(DOTA_TEAM_BADGUYS,
+            casterPos + caster:GetForwardVector() * mouthDelta,
             caster:GetForwardVector() * radius,
             spread)
 

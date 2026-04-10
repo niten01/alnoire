@@ -20,7 +20,7 @@ function derek_rebound:OnSpellStart()
   local spread = self:GetSpecialValueFor("spread")
   assert(self.targetPos)
   local v = (self.targetPos - casterPos):Normalized() * radius
-  local enemies = FindEnemiesInSegment(DOTA_TEAM_BADGUYS, casterPos, v, spread)
+  local enemies = FindEnemiesInSector(DOTA_TEAM_BADGUYS, casterPos, v, spread)
   local damage = self:GetSpecialValueFor("damage")
   for _, ent in ipairs(enemies) do
     ApplyDamage({

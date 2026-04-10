@@ -34,6 +34,7 @@ function modifier_dialogue_player:CheckState()
         [MODIFIER_STATE_NO_HEALTH_BAR] = true,
         [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
         [MODIFIER_STATE_DISARMED] = true,
+        [MODIFIER_STATE_SILENCED] = true,
     }
 end
 

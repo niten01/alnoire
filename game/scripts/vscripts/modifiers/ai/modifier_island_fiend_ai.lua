@@ -86,7 +86,7 @@ function modifier_island_fiend_ai:Phase1(unit, target)
         })
         unit:AddNewModifier(unit, nil, "modifier_island_duo_frenzy", {
             duration = -1,
-            cdr = 25
+            cdr = 20
         })
         Music:StartCustomMusic(target:GetPlayerOwnerID(), "music.island_duo.phase2")
 

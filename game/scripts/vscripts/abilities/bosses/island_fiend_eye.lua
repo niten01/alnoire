@@ -18,9 +18,9 @@ function island_fiend_eye:ShowWarning(targetPos)
     )
 
     self.curves = {
-        PointsParabola(casterPos, midPoint, endPos),
+        -- PointsParabola(casterPos, midPoint, endPos),
         PointsParabola(casterPos, midPoint + right * bias, endPos),
-        PointsParabola(casterPos, midPoint - right * bias, endPos),
+        -- PointsParabola(casterPos, midPoint - right * bias, endPos),
     }
 
     for _, curve in ipairs(self.curves) do
