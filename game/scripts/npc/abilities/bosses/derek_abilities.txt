@@ -346,7 +346,7 @@
 		"AbilityValues"
 		{
 			"damage"	       "375"	
-			"radius"		   "500"
+			"radius"		   "550"
 			"pull_radius"	   "1500"
 			"pull_duration"	   "0.4"
 			"second_pull_delay" "2.0"
@@ -382,7 +382,7 @@
 		{
 			"damage"	       "300"	
 			"distance"		   "2500"
-			"num_shots"		   "9"
+			"num_shots"		   "13"
 			"proj_width"	   "50"
 			"proj_speed"	   "1600"
 			"warning_delay"	   "0"
@@ -417,8 +417,8 @@
 		"AbilityValues"
 		{
 			"damage"	       "325"	
-			"radius"		   "140"
-			"spread"		   "100"
+			"radius"		   "270"
+			"spread"		   "90"
 			"jump_time"	       "0.40" // animation bound (and acts as warning)
 			"anim_attack_point" "0.7"
 		}
@@ -450,8 +450,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"		"140"	
-			"spread"        "100"	
+			"radius"		"270"	
+			"spread"        "90"	
 			"damage"        "325"
 			"anim_attack_point"	"0.6"
 		}
