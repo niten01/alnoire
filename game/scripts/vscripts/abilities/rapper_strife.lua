@@ -29,6 +29,19 @@ function rapper_strife:OnSpellStart()
     end
 end
 
+function rapper_strife:OnHeroLevelUp()
+    local caster = self:GetCaster()
+    local level = caster:GetLevel()
+    if RAPPER_ULT_LEVELS[level] then
+        local currentLevel = self:GetLevel()
+        self:SetLevel(math.min(currentLevel + 1, self:GetMaxLevel()))
+        local current_points = caster:GetAbilityPoints()
+        if current_points > 0 then
+            caster:SetAbilityPoints(current_points - 1)
+        end
+    end
+end
+
 function rapper_strife:OnUpgrade()
     if not IsServer() then return end
     local caster = self:GetCaster()

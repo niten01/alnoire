@@ -6,6 +6,19 @@ function logarithmus_concentration:Spawn()
     self:SetLevel(1)
 end
 
+function logarithmus_concentration:OnHeroLevelUp()
+    local caster = self:GetCaster()
+    local level = caster:GetLevel()
+    if LOGARITHMUS_ULT_LEVELS[level] then
+        local currentLevel = self:GetLevel()
+        self:SetLevel(math.min(currentLevel + 1, self:GetMaxLevel()))
+        local current_points = caster:GetAbilityPoints()
+        if current_points > 0 then
+            caster:SetAbilityPoints(current_points - 1)
+        end
+    end
+end
+
 function logarithmus_concentration:GetIntrinsicModifierName()
     return "modifier_logarithmus_concentration"
 end

@@ -81,8 +81,42 @@
 
         "AbilityValues" 
         {
-            "hp_regen_percent"          "30.0"
+            "hp_regen_percent"          "20.0"
             "duration"                  "2.0"
+        }
+    }
+
+    "item_sanya_flask_upgrade_2"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_sanya_flask_upgrade_2"
+        "AbilityTextureName"            "sanya_flask_upgrade_2"
+        "ID"                            "3004"
+
+        "ItemQuality"                   "artifact"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAM | DECLARE_PURCHASES_IN_SPEECH"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityCooldown"               "0.0"
+
+        "ItemInitialCharges" "7" 
+        "ItemDisplayCharges" "1" 
+        "ItemRequiresCharges" "1" 
+        "ItemDroppable"         "0"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+
+        "ItemIsNeutralItem"         "1"
+        "ItemPurchasable"               "1"
+        "ItemDeclarativeSlot"        "neutral" 
+
+        "AbilityValues" 
+        {
+            "hp_regen_percent"          "20.0"
+            "duration"                  "2.0"
+            "msBuff"                    "50"
+            "buffDuration"              "5.0"
         }
     }
     "item_ski"

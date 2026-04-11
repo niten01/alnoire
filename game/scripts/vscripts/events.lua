@@ -267,9 +267,11 @@ function barebones:OnPlayerLevelUp(keys)
 	end
 
 	if hero then
-		if not NO_SKILL_POINTS_LEVELS[level] then
-			local unspent_ap = hero:GetAbilityPoints()
-			hero:SetAbilityPoints(unspent_ap + 1)
+		if NO_SKILL_POINTS_LEVELS[level] then
+			local current_points = hero:GetAbilityPoints()
+			if current_points > 0 then
+				hero:SetAbilityPoints(current_points - 1)
+			end
 		end
 		-- Update hero gold bounty when a hero gains a level
 		if USE_CUSTOM_HERO_GOLD_BOUNTY then

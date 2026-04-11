@@ -105,6 +105,21 @@ XP_PER_LEVEL_TABLE[15]                       = 50 * X_MULT
 NO_SKILL_POINTS_LEVELS                       = {}
 NO_SKILL_POINTS_LEVELS[13]                   = true
 
+TOWEL_MASTER_ULT_LEVELS                      = {}
+TOWEL_MASTER_ULT_LEVELS[4]                   = true
+TOWEL_MASTER_ULT_LEVELS[7]                   = true
+TOWEL_MASTER_ULT_LEVELS[13]                  = true
+
+RAPPER_ULT_LEVELS                            = {}
+RAPPER_ULT_LEVELS[4]                         = true
+RAPPER_ULT_LEVELS[7]                         = true
+RAPPER_ULT_LEVELS[13]                        = true
+
+LOGARITHMUS_ULT_LEVELS                       = {}
+LOGARITHMUS_ULT_LEVELS[6]                    = true
+LOGARITHMUS_ULT_LEVELS[9]                    = true
+LOGARITHMUS_ULT_LEVELS[13]                   = true
+
 ENABLE_FIRST_BLOOD                           = true  -- Should we enable first blood for the first kill in this game?
 HIDE_KILL_BANNERS                            = false -- Should we hide the kill banners that show when a player is killed?
 LOSE_GOLD_ON_DEATH                           = false -- Should we have players lose the normal amount of dota gold on death?
