@@ -66,7 +66,7 @@
 		"AbilityValues"
 		{
             "vulnurableTimeMin"    "2.0"
-            "vulnurableTimeMax"    "4.0"
+            "vulnurableTimeMax"    "3.0"
 			"undergroundTimeMin"   "3.0"
             "undergroundTimeMax"   "8.0"
 		}

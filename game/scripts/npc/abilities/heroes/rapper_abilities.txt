@@ -31,8 +31,8 @@
 
 		"AbilityValues"
 		{
-			"max_shield"				"240 360 480 600"
-			"shield_per_sec"			"80 120 160 200"
+			"max_shield"				"300 450 600 750"
+			"shield_per_sec"			"100 150 200 250"
 		}
 
 		"precache"
@@ -57,12 +57,12 @@
 		{
 			"duration_per_stack"	    "0.05 0.025 0.017"
 			"attack_speed_bonus"		"200 300 400"
-			"flow_per_shot"				"5 8 12"
+			"flow_per_shot"				"4 6 11"
 			"perfect_buff_duration"		"5"
 			"perfect_num_pulses"		"11"
 			"perfect_incoming_damage_reduction_pct" "70 75 80"
 			"perfect_pulse_radius"		"200 250 300"
-			"perfect_damage_per_pulse"  "30 50 70"
+			"perfect_damage_per_pulse"  "40 60 80"
 			"damage_reduction_pct"  	"20"
 		}
 
