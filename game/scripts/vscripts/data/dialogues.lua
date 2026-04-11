@@ -12364,6 +12364,8 @@ Wazup, ты кем будешь, dawg?]],
                     next = nil,
                     actions = {
                         { pack = "pack_ghetto", type = "fight_start" },
+                        { pack = "pack_ghetto_2", type = "fight_start" },
+                        { pack = "pack_ghetto_3", type = "fight_start" },
                     },
                 },
             },

@@ -1088,12 +1088,6 @@ return {
             packID = "pack_ghetto_2",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_gangster_3             = {
-            npc = "npc_gangster",
-            modifiers = { "modifier_story_npc" },
-            packID = "pack_ghetto_3",
-            ai_modifier = "modifier_default_creep_ai",
-        },
         spawner_ghetto_ranged_3       = {
             npc = "npc_ghetto_ranged",
             modifiers = { "modifier_story_npc" },
