@@ -25,11 +25,7 @@ return {
                 }
             },
         },
-        rewardXP = 2000,
-        rewardGold = 2000,
-        rewardItems ={
-            "item_tough_egg"
-        },
+        rewardGold = 200,
     },
     q_clash_royale = {
         giver = "npc_blue_prince",
@@ -58,7 +54,9 @@ return {
                     { type = "talk", npc = "npc_blue_prince" }
                 },
             },
-        }
+        },
+        rewardGold = 300,
+        rewardXP = 1,
     },
     q_concert = {
         giver = "npc_dream",
@@ -78,7 +76,9 @@ return {
                     { type = "talk", npc = "npc_dream" }
                 }
             },
-        }
+        },
+        rewardGold = 400,
+        rewardXP = 1,
     },
     q_ogres = {
         giver = "npc_ogre_magi",
@@ -111,7 +111,8 @@ return {
                     { type = "talk", npc = "npc_ogre_magi" }
                 }
             },
-        }
+        },
+        rewardGold = 300,
     },
     q_island_escape = {
         giver = "npc_subway_fake",
@@ -137,7 +138,8 @@ return {
                     { type = "manual" }
                 }
             },
-        }
+        },
+        rewardXP = 1,
     },
     q_island_explosion = {
         giver = "npc_cat_barrel",
@@ -178,7 +180,8 @@ return {
                     { type = "talk", npc = "npc_cat_barrel" }
                 }
             },
-        }
+        },
+        rewardGold = 600,
     },
     q_pandas = {
         giver = "npc_brewmaster",
@@ -252,7 +255,8 @@ return {
                     { type = "change_act", act = 2 }
                 }
             },
-        }
+        },
+        rewardGold = 500,
     },
     q_main_quest_act_2 = {
         giver = "npc_guide",
@@ -285,7 +289,8 @@ return {
                     { type = "change_act", act = 3 }
                 }
             },
-        }
+        },
+        rewardGold = 900,
     },
     q_main_quest_act_3 = {
         giver = "npc_leader",
@@ -307,7 +312,8 @@ return {
                     { type = "change_act", act = 4 }
                 }
             },
-        }
+        },
+        rewardGold = 800,
     },
     q_ghetto = {
         giver = "npc_dream",
@@ -332,7 +338,9 @@ return {
                     { type = "manual" }
                 }
             },
-        }
+        },
+        rewardGold = 500,
+        rewardXP = 1,
     },
     q_main_quest_act_4 = {
         giver = "npc_leader",

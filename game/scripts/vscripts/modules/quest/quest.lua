@@ -136,7 +136,7 @@ function Quest:TryGiveReward(obj)
       local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
       if hero then
         if obj.rewardXP then
-          hero:AddExperience(obj.rewardXP, DOTA_ModifyXP_TomeOfKnowledge, false, true, 0)
+          hero:AddExperience(obj.rewardXP * X_MULT, DOTA_ModifyXP_TomeOfKnowledge, false, true)
         end
         if obj.rewardGold then
           hero:ModifyGold(obj.rewardGold, true, DOTA_ModifyGold_CreepKill)
