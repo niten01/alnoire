@@ -10,7 +10,7 @@
         
         "AbilityValues"
         {
-          "ms_bonus"      "300"
+          "ms_bonus"      "200"
           "attack_speed_bonus"  "200"
           "hp_threshold_pct"    "70"
         }

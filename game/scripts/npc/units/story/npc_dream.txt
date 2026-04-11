@@ -12,6 +12,8 @@
 		"AttackRate"				"1.8"		// Speed of attack.
 		"AttackDamageMin"			"0"		
 		"AttackDamageMax"			"0"		
+		"AttackRange"				"125"
+		"MovementSpeed"				"310"
 	}
 	"npc_dream_golden" 
 	{
