@@ -46,6 +46,7 @@ end
 
 function modifier_tough_egg_buff:OnModifierAdded(params)
     if params.unit == self:GetParent() and params.added_buff:IsDebuff() then
+        DebugPrint(params.added_buff:GetName())
         params.added_buff:Destroy()
     end
 end

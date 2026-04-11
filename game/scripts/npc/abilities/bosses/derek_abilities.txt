@@ -118,7 +118,9 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
         "AbilityTextureName"            "beastmaster/bm_2021_immortal_ability_icon/bm_2021_immortal_wild_axes_crimson_witness"
 
 		// Casting
@@ -278,7 +280,7 @@
 			"proj_radius"	   "50"	
 			"proj_speed"       "1300"	
 			"proj_distance"    "3000"
-			"proj_damage"      "275"
+			"proj_damage"      "250"
 			"jump_time"        "0.6"
 			"jump_height"      "100"
 			"jump_distance"    "1300"
@@ -345,7 +347,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage"	       "375"	
+			"damage"	       "350"	
 			"radius"		   "550"
 			"pull_radius"	   "1500"
 			"pull_duration"	   "0.4"
@@ -380,7 +382,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage"	       "300"	
+			"damage"	       "250"	
 			"distance"		   "2500"
 			"num_shots"		   "13"
 			"proj_width"	   "50"

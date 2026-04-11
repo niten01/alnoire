@@ -36,7 +36,7 @@
 
         "AbilityValues" 
         {
-            "armor"  "4"
+            "armor"  "3"
         }
 
         "Modifiers"
@@ -68,7 +68,7 @@
 
         "AbilityValues" 
         {
-            "mag_res"  "14"
+            "mag_res"  "9"
         }
 
         "Modifiers"

@@ -392,10 +392,10 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/item_fan_ring.vpcf"
+			m_ChildRef = resource:"particles/custom_items/item_fan_ring.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/item_fan_shock.vpcf"
+			m_ChildRef = resource:"particles/custom_items/item_fan_shock.vpcf"
 		},
 	]
 }

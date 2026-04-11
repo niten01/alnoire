@@ -815,7 +815,6 @@ function ParabolaInfo:UnstableIteratorElapsed()
 
     elapsed = elapsed and math.min(1, elapsed) or 0
     local point = self:GetPoint(elapsed)
-    DrawDebugCircle(point, 30, 0.2)
 
     if elapsed >= 1 then
       reachedEnd = true

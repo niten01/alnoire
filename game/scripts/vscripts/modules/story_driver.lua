@@ -355,6 +355,7 @@ function Handlers.setup_guide_finale(playerID, action)
   GameRules:SetTimeOfDay(0.3)
 
   fastRemoveNPC("npc_guide")
+  fastRemoveNPC("npc_george")
   SpawnManager:SpawnNPC("spawner_guide_finale")
   triggerSetEnabled("trigger_guide_finale", true)
 end
@@ -504,6 +505,7 @@ function StoryDriver:SetupAct2()
   fastRemoveNPC("npc_mystery")
   SpawnManager:SpawnNPC("spawner_mystery_2")
   SpawnManager:SpawnNPC("spawner_storyteller")
+  SpawnManager:SpawnNPC("spawner_leader")
 
   SpawnManager:SpawnNPC("spawner_dream")
   triggerSetEnabled("trigger_black_creep", true)
@@ -542,6 +544,7 @@ function StoryDriver:SetupAct4()
   GameRules:SetTimeOfDay(0.8)
 
   fastRemoveNPC("npc_mustache")
+  triggerSetEnabled("trigger_usach_stopit", false)
   fastRemoveNPC("npc_shamanka")
   fastRemoveNPC("npc_storyteller")
 end

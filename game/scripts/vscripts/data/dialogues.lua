@@ -2621,7 +2621,7 @@ return {
             },
         },
         d_untitled_passage_68 = {
-            text = [[Похоже он никогда не вернёться...]],
+            text = [[Похоже он никогда не вернётся...]],
             speaker = [[Сиамский огр]],
             npc = "npc_ogre_magi",
             choices = {
@@ -12364,6 +12364,8 @@ Wazup, ты кем будешь, dawg?]],
                     next = nil,
                     actions = {
                         { pack = "pack_ghetto", type = "fight_start" },
+                        { pack = "pack_ghetto_2", type = "fight_start" },
+                        { pack = "pack_ghetto_3", type = "fight_start" },
                     },
                 },
             },

@@ -1,0 +1,14 @@
+""
+{
+    "TextureData"
+    {
+        "minimap_sanya"
+        {
+            "file"   "materials/vgui/hud/minimap_sanya.vmat"
+            "x"      "0"
+            "y"      "0"
+            "width"  "64"
+            "height" "64"
+        }
+    }
+}
