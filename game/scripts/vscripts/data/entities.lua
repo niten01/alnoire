@@ -352,6 +352,7 @@ return {
         spawner_leader                = {
             npc = "npc_leader",
             modifiers = { "modifier_story_npc" },
+            deferred = true,
         },
         spawner_perekup               = {
             npc = "npc_perekup",

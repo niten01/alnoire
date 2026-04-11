@@ -28,3 +28,6 @@
 
 "DOTA_Tooltip_modifier_lean_power_logarithmus"		"Любимый Перк"
 "DOTA_Tooltip_modifier_lean_power_logarithmus_Description"		"При атаке с не менее чем %dMODIFIER_PROPERTY_TOOLTIP% стаками концентрации провоцирует линовый всплеск на противнике."
+
+"DOTA_Tooltip_modifier_ski_cold"		"Пронизывающий холод"
+"DOTA_Tooltip_modifier_ski_cold_Description"		"Урон может стать смертельным..."

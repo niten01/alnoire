@@ -47,7 +47,7 @@
     ]
     volume = "5.500000"
     fade_out = "2.0"
-    fade_in = "5.0"
+    fade_in = "2.0"
   }
   music.concert.combat = {
     type = "dota_update_battle_music"

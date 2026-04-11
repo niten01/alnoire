@@ -140,7 +140,7 @@ function Quest:TryGiveReward(obj)
         end
         if obj.rewardGold then
           hero:ModifyGold(obj.rewardGold, true, DOTA_ModifyGold_CreepKill)
-          hero:EmitSound("sfx.quest_bounty.gold")
+          -- hero:EmitSound("sfx.quest_bounty.gold")
         end
         for _, itemName in ipairs(obj.rewardItems or {}) do
           SafeGiveItem(playerID, itemName)
@@ -256,16 +256,15 @@ function Quest:OnActChange(event)
     if isNowActive then
       -- try cancel quest that doesn't meet requirements
       for _, req in ipairs(quest.requires or {}) do
-        if not QuestExpired(self.quests[req], act) then
-          -- we can still complete it
-          goto skip_req
-        end
+        -- cancel only if quest can't be completed anymore
+        local shouldCancel = QuestExpired(self.quests[req], act)
         local state = self.questStates:GetOneQuestState(req)
         if state.status ~= QuestStatus.COMPLETED then
-          self.questStates:CancelQuest(questID)
+          if shouldCancel then
+            self.questStates:CancelQuest(questID)
+          end
           goto skip_quest
         end
-        ::skip_req::
       end
 
       if quest.showExclamation then

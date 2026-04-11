@@ -2621,7 +2621,7 @@ return {
             },
         },
         d_untitled_passage_68 = {
-            text = [[Похоже он никогда не вернёться...]],
+            text = [[Похоже он никогда не вернётся...]],
             speaker = [[Сиамский огр]],
             npc = "npc_ogre_magi",
             choices = {
