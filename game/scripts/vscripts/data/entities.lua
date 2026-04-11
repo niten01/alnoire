@@ -1629,19 +1629,22 @@ return {
         },
 
         pack_ghetto = {
+            rangeFastTickRate = 5000,
             rangeRetreat = 6000,
             rangeAggro = 1000,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
         },
         pack_ghetto_2 = {
-            rangeRetreat = 6000,
+            rangeFastTickRate = 1850,
+            rangeRetreat = 1850,
             rangeAggro = 1100,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
         },
         pack_ghetto_3 = {
-            rangeRetreat = 6000,
+            rangeFastTickRate = 3200,
+            rangeRetreat = 3200,
             rangeAggro = 800,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
