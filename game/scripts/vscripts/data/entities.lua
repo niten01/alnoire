@@ -1180,8 +1180,8 @@ return {
             rangeFastTickRate = 6500,
             rangeRetreat = 5400,
             rangeAggro = 1000,
-            xpBounty = 200,
-            goldBounty = 200,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_forest_act1_bears = {
@@ -1189,6 +1189,8 @@ return {
             rangeFastTickRate = 2000,
             rangeRetreat = 1150,
             rangeAggro = 700,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_forest_act1_apples = {
@@ -1196,6 +1198,8 @@ return {
             rangeFastTickRate = 2400,
             rangeRetreat = 1600,
             rangeAggro = 900,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_forest_act1_axe = {
@@ -1203,6 +1207,8 @@ return {
             rangeFastTickRate = 1500,
             rangeRetreat = 1000,
             rangeAggro = 800,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_forest_act1_roshan = {
@@ -1210,6 +1216,8 @@ return {
             rangeFastTickRate = 1500,
             rangeRetreat = 900,
             rangeAggro = 750,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_forest_act1_techies_1 = {
@@ -1217,12 +1225,16 @@ return {
             rangeAggro = 300,
             rangeRetreat = 500,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 0.5,
+            goldBounty = 50,
         },
         pack_forest_act1_techies_2 = {
             rangeFastTickRate = 900,
             rangeAggro = 300,
             rangeRetreat = 500,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 0.5,
+            goldBounty = 50,
         },
         pack_forest_act1_techies_3 = {
             rangeFastTickRate = 900,
@@ -1236,6 +1248,8 @@ return {
             rangeAggro = 600,
             rangeRetreat = 900,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_forest_act1_dragnolls = {
@@ -1243,6 +1257,8 @@ return {
             rangeAggro = 950,
             rangeRetreat = 1300,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_forest_act1_perdun = {
@@ -1251,6 +1267,8 @@ return {
             rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
             flower = "npc_jungle_perdun_flower",
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_ocean_act2_catapa = {
@@ -1258,6 +1276,8 @@ return {
             rangeRetreat = 2500,
             rangeAggro = 1800,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_ocean_act2_tusiki = {
@@ -1265,6 +1285,8 @@ return {
             rangeRetreat = 2400,
             rangeAggro = 700,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_ocean_act2_tadpoles_ranged = {
@@ -1272,6 +1294,8 @@ return {
             rangeRetreat = 3000,
             rangeAggro = 840,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_ocean_act2_tadpoles_big = {
@@ -1279,6 +1303,8 @@ return {
             rangeRetreat = 2800,
             rangeAggro = 530,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_ocean_act2_spiders = {
@@ -1286,6 +1312,8 @@ return {
             rangeRetreat = 1300,
             rangeAggro = 800,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_ocean_act2_arbuz = {
@@ -1293,6 +1321,8 @@ return {
             rangeRetreat = 1900,
             rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_ocean_act2_seledka = {
@@ -1300,6 +1330,8 @@ return {
             rangeRetreat = 2200,
             rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_ocean_act2_morphs = {
@@ -1307,6 +1339,8 @@ return {
             rangeRetreat = 2300,
             rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_ocean_act2_slark = {
@@ -1314,6 +1348,8 @@ return {
             rangeRetreat = 350,
             rangeAggro = 300,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_ocean_act2_bombers = {
@@ -1321,6 +1357,8 @@ return {
             rangeRetreat = 9999999,
             rangeAggro = 350,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_darkforest_act3_drow = {
@@ -1328,6 +1366,8 @@ return {
             rangeRetreat = 1400,
             rangeAggro = 650,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 200,
         },
 
         pack_darkforest_act3_ursa = {
@@ -1335,7 +1375,8 @@ return {
             rangeRetreat = 4000,
             rangeAggro = 750,
             stayActivatedOnPlayerDeath = true,
-            xpBounty = 1000,
+            xpBounty = 1,
+            goldBounty = 200,
         },
 
         pack_darkforest_act3_titans = {
@@ -1343,6 +1384,8 @@ return {
             rangeRetreat = 1300,
             rangeAggro = 1100,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 200,
         },
 
         pack_darkforest_act3_pupu = {
@@ -1350,6 +1393,8 @@ return {
             rangeRetreat = 1700,
             rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 200,
         },
 
         pack_darkforest_act3_greevils = {
@@ -1357,6 +1402,8 @@ return {
             rangeRetreat = 2200,
             rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 200,
         },
 
         pack_darkforest_act3_shakers = {
@@ -1364,6 +1411,8 @@ return {
             rangeRetreat = 1400,
             rangeAggro = 1100,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 200,
         },
 
         pack_darkforest_act3_treant = {
@@ -1371,6 +1420,8 @@ return {
             rangeRetreat = 1300,
             rangeAggro = 950,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 200,
         },
 
         pack_desert_act4_nyxs = {
@@ -1378,6 +1429,8 @@ return {
             rangeRetreat = 1200,
             rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_desert_act4_viperstealer = {
@@ -1385,6 +1438,8 @@ return {
             rangeRetreat = 1400,
             rangeAggro = 950,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_desert_act4_trollhuskar = {
@@ -1392,6 +1447,8 @@ return {
             rangeRetreat = 1400,
             rangeAggro = 600,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_desert_act4_dire_creeps = {
@@ -1399,6 +1456,8 @@ return {
             rangeRetreat = 2500,
             rangeAggro = 1000,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
+            goldBounty = 100,
         },
 
         pack_concert_crowd = {
@@ -1406,20 +1465,26 @@ return {
             rangeRetreat = 2000,
             rangeAggro = 1300,
             activateAfterUnitsSpawned = false,
+            xpBounty = 1,
         },
         pack_monkey_king = {
             rangeRetreat = 5000,
             rangeAggro = 500,
             activateAfterUnitsSpawned = false,
+            xpBounty = 1,
+            goldBounty = 500,
         },
         pack_gate_trolls = {
             rangeRetreat = 1000,
             rangeAggro = 600,
             activateAfterUnitsSpawned = false,
+            xpBounty = 1,
+            goldBounty = 300,
         },
         pack_island_guard = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
+            goldBounty = 400,
         },
         pack_island_duo = {
             rangeFastTickRate = 2000,
@@ -1430,7 +1495,8 @@ return {
             music = "music.island_duo.phase1",
             doors = {
                 "door_island_duo"
-            }
+            },
+            xpBounty = 2,
         },
         pack_killer = {
             activateAfterUnitsSpawned = false,
@@ -1438,13 +1504,17 @@ return {
             rangeFastTickRate = 6000,
             rangeRetreat = 5000,
             rangeAggro = 5000,
+            xpBounty = 1,
+            goldBounty = 200,
         },
         pack_goden = {
             activateAfterUnitsSpawned = true,
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 2400,
             rangeRetreat = 1600,
-            rangeAggro = 1000
+            rangeAggro = 1000,
+            xpBounty = 1,
+            goldBounty = 300,
         },
         pack_ball = {
             activateAfterUnitsSpawned = true,
@@ -1454,7 +1524,9 @@ return {
             rangeAggro = 1030,
             doors = {
                 "door_ball"
-            }
+            },
+            xpBounty = 1,
+            goldBounty = 400,
         },
         pack_chaser = {
             activateAfterUnitsSpawned = true,
@@ -1462,6 +1534,8 @@ return {
             rangeFastTickRate = 5000,
             rangeRetreat = 999999,
             rangeAggro = 700,
+            xpBounty = 2,
+            goldBounty = 100,
         },
         pack_derek = {
             activateAfterUnitsSpawned = false,
@@ -1486,12 +1560,14 @@ return {
         pack_ogre_bruiser = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
+            xpBounty = 1,
         },
         pack_gorilla = {
             activateAfterUnitsSpawned = false,
             rangeFastTickRate = 2000,
             rangeRetreat = 1850,
             rangeAggro = 1000,
+            xpBounty = 1,
         },
         pack_red = {
             rangeRetreat = 6000,
@@ -1499,6 +1575,7 @@ return {
             rangeAggro = 6000,
             activateAfterUnitsSpawned = false,
             music = "hlup_full",
+            xpBounty = 1,
         },
         pack_perekup = {
             activateAfterUnitsSpawned = false,
@@ -1508,6 +1585,8 @@ return {
             rangeRetreat = 4800,
             rangeFastTickRate = 6000,
             rangeAggro = 1500,
+            xpBounty = 1,
+            goldBounty = 400,
         },
 
         pack_ghetto = {

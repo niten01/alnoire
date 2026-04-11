@@ -1,94 +1,109 @@
-USE_DEBUG = true -- Should we print statements on almost every function/event call? For debugging.
+USE_DEBUG                                    = true -- Should we print statements on almost every function/event call? For debugging.
 
-INTERACTION_RADIUS = 500
-DOOR_PASSWORD_RADIUS = 500
+INTERACTION_RADIUS                           = 500
+DOOR_PASSWORD_RADIUS                         = 500
 
-MUSIC_COMBAT_DECAY = 3.5
-MUSIC_THINK_INTERVAL = 0.5
+MUSIC_COMBAT_DECAY                           = 3.5
+MUSIC_THINK_INTERVAL                         = 0.5
 
-IDLE_THINK_INTERVAL = 1.5
-BATTLE_THINK_INTERVAL = 0.05
+IDLE_THINK_INTERVAL                          = 1.5
+BATTLE_THINK_INTERVAL                        = 0.05
 
-SAFE_BLINK_PRECISION = 0.5 -- Smaller means more precise
-SAFE_BLINK_HULL_RADIUS = 15
+SAFE_BLINK_PRECISION                         = 0.5 -- Smaller means more precise
+SAFE_BLINK_HULL_RADIUS                       = 15
 
-NEUTRAL_SLOT_IDX = 16
+NEUTRAL_SLOT_IDX                             = 16
 
 ---------------------------------------------------------------------------
 
-ENABLE_HERO_RESPAWN = true        -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
-UNIVERSAL_SHOP_MODE = true        -- Should the shops contain all items?
-ALLOW_SAME_HERO_SELECTION = false -- Should we let people select the same hero as each other
-LOCK_TEAMS = false                -- Should we Lock (true) or unlock (false) team assignemnt. If team assignment is locked players cannot change teams.
+ENABLE_HERO_RESPAWN                          = true  -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
+UNIVERSAL_SHOP_MODE                          = true  -- Should the shops contain all items?
+ALLOW_SAME_HERO_SELECTION                    = false -- Should we let people select the same hero as each other
+LOCK_TEAMS                                   = false -- Should we Lock (true) or unlock (false) team assignemnt. If team assignment is locked players cannot change teams.
 
-CUSTOM_GAME_SETUP_TIME = 0        -- How long should custom game setup last - the screen where players pick a team?
-HERO_SELECTION_TIME = 0           -- How long should we let people select their hero? Should be at least 5 seconds.
-HERO_SELECTION_PENALTY_TIME = 0   -- How long should the penalty time for not picking a hero last? During this time player loses gold.
-ENABLE_BANNING_PHASE = false      -- Should we enable banning phase? Set to true if "EnablePickRules" is "1" in 'addoninfo.txt'
-BANNING_PHASE_TIME = 20.0         -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
-STRATEGY_TIME = 0                 -- How long should strategy time last? Bug: You can buy items during strategy time and it will not be spent!
-SHOWCASE_TIME = 0                 -- How long should show case time be?
-PRE_GAME_TIME = 0                 -- How long after showcase time should the horn blow and the game start?
-POST_GAME_TIME = 60.0             -- How long should we let people stay around before closing the server automatically?
-TREE_REGROW_TIME = 300.0          -- How long should it take individual trees to respawn after being cut down/destroyed?
+CUSTOM_GAME_SETUP_TIME                       = 0     -- How long should custom game setup last - the screen where players pick a team?
+HERO_SELECTION_TIME                          = 0     -- How long should we let people select their hero? Should be at least 5 seconds.
+HERO_SELECTION_PENALTY_TIME                  = 0     -- How long should the penalty time for not picking a hero last? During this time player loses gold.
+ENABLE_BANNING_PHASE                         = false -- Should we enable banning phase? Set to true if "EnablePickRules" is "1" in 'addoninfo.txt'
+BANNING_PHASE_TIME                           = 20.0  -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
+STRATEGY_TIME                                = 0     -- How long should strategy time last? Bug: You can buy items during strategy time and it will not be spent!
+SHOWCASE_TIME                                = 0     -- How long should show case time be?
+PRE_GAME_TIME                                = 0     -- How long after showcase time should the horn blow and the game start?
+POST_GAME_TIME                               = 60.0  -- How long should we let people stay around before closing the server automatically?
+TREE_REGROW_TIME                             = 300.0 -- How long should it take individual trees to respawn after being cut down/destroyed?
 
 --GOLD_PER_TICK = 100                     -- How much gold should players get per tick? SetGoldTickTime DOESN'T WORK
 --GOLD_TICK_TIME = 1.0                    -- How long should we wait in seconds between gold ticks? SetGoldPerTick DOESN'T WORK
 --ADDITIONAL_GPM = 100                    -- Uncomment this if you want additional gold per minute beside default
 
-NORMAL_START_GOLD = 0                   -- Starting Gold
+NORMAL_START_GOLD                            = 0      -- Starting Gold
 
-RECOMMENDED_BUILDS_DISABLED = true      -- Should we disable the recommended item builds for heroes? Turns the panel for showing recommended items at the shop off/on.
-CAMERA_DISTANCE_OVERRIDE = 1134.0       -- How far out should we allow the camera to go? 1134 is the default in Dota.
+RECOMMENDED_BUILDS_DISABLED                  = true   -- Should we disable the recommended item builds for heroes? Turns the panel for showing recommended items at the shop off/on.
+CAMERA_DISTANCE_OVERRIDE                     = 1134.0 -- How far out should we allow the camera to go? 1134 is the default in Dota.
 
-MINIMAP_ICON_SIZE = 1                   -- What icon size should we use for our heroes?
-MINIMAP_CREEP_ICON_SIZE = 1             -- What icon size should we use for creeps?
-MINIMAP_RUNE_ICON_SIZE = 1              -- What icon size should we use for runes?
+MINIMAP_ICON_SIZE                            = 1      -- What icon size should we use for our heroes?
+MINIMAP_CREEP_ICON_SIZE                      = 1      -- What icon size should we use for creeps?
+MINIMAP_RUNE_ICON_SIZE                       = 1      -- What icon size should we use for runes?
 
-BUYBACK_ENABLED = false                 -- Should we allow players to buyback when they die?
-CUSTOM_BUYBACK_COST_ENABLED = false     -- Should we use a custom buyback cost setting?
-CUSTOM_BUYBACK_COOLDOWN_ENABLED = false -- Should we use a custom buyback time?
-CUSTOM_BUYBACK_COOLDOWN_TIME = 480.0    -- Custom buyback cooldown time (needed if CUSTOM_BUYBACK_COOLDOWN_ENABLED is true).
-BUYBACK_FIXED_GOLD_COST = 500           -- Fixed custom buyback gold cost (needed if CUSTOM_BUYBACK_COST_ENABLED is true).
+BUYBACK_ENABLED                              = false  -- Should we allow players to buyback when they die?
+CUSTOM_BUYBACK_COST_ENABLED                  = false  -- Should we use a custom buyback cost setting?
+CUSTOM_BUYBACK_COOLDOWN_ENABLED              = false  -- Should we use a custom buyback time?
+CUSTOM_BUYBACK_COOLDOWN_TIME                 = 480.0  -- Custom buyback cooldown time (needed if CUSTOM_BUYBACK_COOLDOWN_ENABLED is true).
+BUYBACK_FIXED_GOLD_COST                      = 500    -- Fixed custom buyback gold cost (needed if CUSTOM_BUYBACK_COST_ENABLED is true).
 
-CUSTOM_SCAN_COOLDOWN = 210              -- Custom cooldown of Scan in seconds. Doesn't affect Scan's starting cooldown!
-CUSTOM_GLYPH_COOLDOWN = 300             -- Custom cooldown of Glyph in seconds. Doesn't affect Glyph's starting cooldown!
+CUSTOM_SCAN_COOLDOWN                         = 210    -- Custom cooldown of Scan in seconds. Doesn't affect Scan's starting cooldown!
+CUSTOM_GLYPH_COOLDOWN                        = 300    -- Custom cooldown of Glyph in seconds. Doesn't affect Glyph's starting cooldown!
 
 -- TODO: only for testing
-DISABLE_FOG_OF_WAR_ENTIRELY = false      -- Should we disable fog of war entirely for both teams?
-USE_UNSEEN_FOG_OF_WAR = true             -- Should we make unseen and fogged areas of the map completely black until uncovered by each team?
+DISABLE_FOG_OF_WAR_ENTIRELY                  = false -- Should we disable fog of war entirely for both teams?
+USE_UNSEEN_FOG_OF_WAR                        = true  -- Should we make unseen and fogged areas of the map completely black until uncovered by each team?
 -- NOTE: DISABLE_FOG_OF_WAR_ENTIRELY must be false for USE_UNSEEN_FOG_OF_WAR to work
-USE_STANDARD_DOTA_BOT_THINKING = false   -- Should we have bots act like they would in Dota? (This requires 3 lanes, vanilla items, vanilla heroes etc)
+USE_STANDARD_DOTA_BOT_THINKING               = false -- Should we have bots act like they would in Dota? (This requires 3 lanes, vanilla items, vanilla heroes etc)
 
-USE_CUSTOM_HERO_GOLD_BOUNTY = false      -- Should the gold for hero kills be modified (true) or same as in default Dota (false)?
-HERO_KILL_GOLD_BASE = 110                -- Hero gold bounty base value
-HERO_KILL_GOLD_PER_LEVEL = 10            -- Hero gold bounty increase per level
-HERO_KILL_GOLD_PER_STREAK = 60           -- Hero gold bounty per his kill-streak (Killing Spree: +HERO_KILL_GOLD_PER_STREAK gold; Ultrakill: +2 x HERO_KILL_GOLD_PER_STREAK gold ...)
-DISABLE_ALL_GOLD_FROM_HERO_KILLS = false -- Should we remove gold gain from hero kills? USE_CUSTOM_HERO_GOLD_BOUNTY needs to be true.
+USE_CUSTOM_HERO_GOLD_BOUNTY                  = false -- Should the gold for hero kills be modified (true) or same as in default Dota (false)?
+HERO_KILL_GOLD_BASE                          = 110   -- Hero gold bounty base value
+HERO_KILL_GOLD_PER_LEVEL                     = 10    -- Hero gold bounty increase per level
+HERO_KILL_GOLD_PER_STREAK                    = 60    -- Hero gold bounty per his kill-streak (Killing Spree: +HERO_KILL_GOLD_PER_STREAK gold; Ultrakill: +2 x HERO_KILL_GOLD_PER_STREAK gold ...)
+DISABLE_ALL_GOLD_FROM_HERO_KILLS             = false -- Should we remove gold gain from hero kills? USE_CUSTOM_HERO_GOLD_BOUNTY needs to be true.
 -- NOTE: DISABLE_ALL_GOLD_FROM_HERO_KILLS requires GoldFilter.
-USE_CUSTOM_HERO_LEVELS = false           -- Should the heroes give a custom amount of XP when killed? Can malfunction for levels above 30!
+USE_CUSTOM_HERO_LEVELS                       = false -- Should the heroes give a custom amount of XP when killed? Can malfunction for levels above 30!
 
-USE_CUSTOM_TOP_BAR_VALUES = true         -- Should we do customized top bar values or use the default kill count per team?
-TOP_BAR_VISIBLE = false                  -- Should we display the top bar score/count at all?
-SHOW_KILLS_ON_TOPBAR = true              -- Should we display kills only on the top bar? (No denies, suicides, kills by neutrals)  Requires USE_CUSTOM_TOP_BAR_VALUES
+USE_CUSTOM_TOP_BAR_VALUES                    = true  -- Should we do customized top bar values or use the default kill count per team?
+TOP_BAR_VISIBLE                              = false -- Should we display the top bar score/count at all?
+SHOW_KILLS_ON_TOPBAR                         = true  -- Should we display kills only on the top bar? (No denies, suicides, kills by neutrals)  Requires USE_CUSTOM_TOP_BAR_VALUES
 
-ENABLE_TOWER_BACKDOOR_PROTECTION = true  -- Should we enable backdoor protection for our buildings?
+ENABLE_TOWER_BACKDOOR_PROTECTION             = true  -- Should we enable backdoor protection for our buildings?
 --REMOVE_ILLUSIONS_ON_DEATH = false       -- Should we remove all illusions if the main hero dies? DOESN'T WORK
-DISABLE_GOLD_SOUNDS = false              -- Should we disable the gold sound when players acquire gold?
+DISABLE_GOLD_SOUNDS                          = false -- Should we disable the gold sound when players acquire gold?
 
-END_GAME_ON_KILLS = false                -- Should the game end after a certain number of kills?
-KILLS_TO_END_GAME_FOR_TEAM = 100         -- How many kills for a team should signify an end of game?
+END_GAME_ON_KILLS                            = false -- Should the game end after a certain number of kills?
+KILLS_TO_END_GAME_FOR_TEAM                   = 100   -- How many kills for a team should signify an end of game?
 
-USE_CUSTOM_XP_VALUES = false             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
-MAX_LEVEL = 30                           -- What level should we let heroes get to?
+USE_CUSTOM_XP_VALUES                         = true  -- Should we use custom XP values to level up heroes, or the default Dota numbers?
+MAX_LEVEL                                    = 15    -- What level should we let heroes get to?
 -- NOTE: XP_PER_LEVEL_TABLE will not work if USE_CUSTOM_XP_VALUES is false or nil.
 
 -- Fill this table up with the required XP per level if you want to change it
-XP_PER_LEVEL_TABLE = {}
-XP_PER_LEVEL_TABLE[1] = 0
-for i = 2, MAX_LEVEL do
-	XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i - 1] + i * 100
-end
+X_MULT                                       = 100
+XP_PER_LEVEL_TABLE                           = {}
+XP_PER_LEVEL_TABLE[1]                        = 0 * X_MULT
+XP_PER_LEVEL_TABLE[2]                        = 2 * X_MULT
+XP_PER_LEVEL_TABLE[3]                        = 4 * X_MULT
+XP_PER_LEVEL_TABLE[4]                        = 7 * X_MULT
+XP_PER_LEVEL_TABLE[5]                        = 10 * X_MULT
+XP_PER_LEVEL_TABLE[6]                        = 13 * X_MULT
+XP_PER_LEVEL_TABLE[7]                        = 17 * X_MULT
+XP_PER_LEVEL_TABLE[8]                        = 20 * X_MULT
+XP_PER_LEVEL_TABLE[9]                        = 23 * X_MULT
+XP_PER_LEVEL_TABLE[10]                       = 25 * X_MULT
+XP_PER_LEVEL_TABLE[11]                       = 28 * X_MULT
+XP_PER_LEVEL_TABLE[12]                       = 30 * X_MULT
+XP_PER_LEVEL_TABLE[13]                       = 36 * X_MULT
+XP_PER_LEVEL_TABLE[14]                       = 43 * X_MULT
+XP_PER_LEVEL_TABLE[15]                       = 50 * X_MULT
+
+NO_SKILL_POINTS_LEVELS                       = {}
+NO_SKILL_POINTS_LEVELS[13]                   = true
 
 ENABLE_FIRST_BLOOD                           = true  -- Should we enable first blood for the first kill in this game?
 HIDE_KILL_BANNERS                            = false -- Should we hide the kill banners that show when a player is killed?
