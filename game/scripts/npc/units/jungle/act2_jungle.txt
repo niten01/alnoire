@@ -1101,7 +1101,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"160"					
 
-		"StatusHealth"				"3200"		// Base health.
+		"StatusHealth"				"2700"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -1144,7 +1144,7 @@
 		//"Ability3"					""			// Ability 3
 		//"Ability4"					""			// Ability 4
 
-		"ArmorPhysical"				"35"	// Physical protection.
+		"ArmorPhysical"				"25"	// Physical protection.
 		"MagicalResistance"         "75"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"50"		// Damage range min.

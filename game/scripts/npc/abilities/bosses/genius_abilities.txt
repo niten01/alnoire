@@ -32,7 +32,7 @@
 		{
 			"channel_time"
 			{
-				"value"								"2.5"
+				"value"								"1.5"
 			}
 			"damage"
 			{
