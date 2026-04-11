@@ -181,16 +181,19 @@ return {
             npc = "npc_gate_troll_biruk",
             modifiers = { "modifier_story_npc" },
             packID = "pack_gate_trolls",
+            ai_modifier = "modifier_default_creep_ai",
         },
         spawner_gate_troll_right      = {
             npc = "npc_gate_troll_diruk",
             modifiers = { "modifier_story_npc" },
             packID = "pack_gate_trolls",
+            ai_modifier = "modifier_default_creep_ai",
         },
         spawner_gate_troll_center     = {
             npc = "npc_gate_troll_uruk",
             modifiers = { "modifier_story_npc" },
             packID = "pack_gate_trolls",
+            ai_modifier = "modifier_default_creep_ai",
         },
         spawner_guide_city_entrance   = {
             npc = "npc_guide",
@@ -1154,8 +1157,17 @@ return {
     ------------------------------------------------------------
     item_spawner = {
         item_spawner_lean = {
-            item = "item_lean"
-        }
+            item = "item_lean",
+        },
+        item_spawner_flask = {
+            item = "item_sanya_flask",
+        },
+        item_spawner_ski = {
+            item = "item_ski",
+        },
+        item_spawner_key_part_1 = {
+            item = "item_key_part_1",
+        },
     },
 
     ------------------------------------------------------------

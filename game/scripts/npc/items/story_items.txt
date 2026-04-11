@@ -280,6 +280,7 @@
         "ID"                    "3011"
         "BaseClass"             "item_datadriven"
         "AbilityTextureName"    "lean"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
         "ItemPurchasable"               "1"

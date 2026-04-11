@@ -47,3 +47,4 @@
 "npc_shooter"        "Скулшутер"
 "npc_shooter_ending"        "Скулшутер"
 "npc_shooter_ending_mini"        "Скулшутер"
+"npc_cat_barrel"        "Коты-бочки"

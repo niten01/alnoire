@@ -516,9 +516,9 @@ return {
         d_trolls_again = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_gate_trolls", type = "trigger" },
-                { questID = "q_reach_city",      status = QuestStatus.ACTIVE, step = { 1 },            type = "quest" },
-                { ent_var = "first_met_global",  value = { false },         npc = "npc_gate_troll_uruk", type = "ent_var" },
+                { questID = "q_reach_city",       status = QuestStatus.ACTIVE, step = { 1 },            type = "quest" },
+                { ent_var = "first_met_global",   value = { false },         npc = "npc_gate_troll_uruk", type = "ent_var" },
+                { interact = "npc_gate_troll_uruk", type = "interact" },
             },
         },
         d_bouncer_have_ticket = {
@@ -919,21 +919,21 @@ return {
                 { interact = "npc_cat_barrel",  type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.INACTIVE, type = "quest" },
                 { questID = "q_island_escape",  status = QuestStatus.COMPLETED, type = "quest" },
-                { var = "act",                  value = { 3 },                type = "var" },
             },
         },
         d_untitled_passage_52 = {
             priority = 0,
             conditions = {
-                { var = "act",                     value = { 3 }, type = "var" },
+                { var = "act",                     value = { 3 },             type = "var" },
                 { trigger = "trigger_island_fourth", type = "trigger" },
+                { questID = "q_island_explosion",  status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_53 = {
             priority = 0,
             conditions = {
-                { var = "act",                    value = { 3 }, type = "var" },
                 { trigger = "trigger_island_fifth", type = "trigger" },
+                { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_54 = {
@@ -967,7 +967,6 @@ return {
         d_untitled_passage_58 = {
             priority = 0,
             conditions = {
-                { var = "act",                  value = { 3 },             type = "var" },
                 { interact = "npc_bomb_place",  type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
             },
@@ -990,7 +989,6 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_cat_barrel",  type = "interact" },
-                { var = "act",                  value = { 3 },               type = "var" },
                 { questID = "q_island_explosion", status = QuestStatus.REJECTED, type = "quest" },
             },
         },
@@ -4750,7 +4748,7 @@ return {
         d_trolls_again = {
             text = [[Эу, пфффть
 *Существо сплевывает на пол.*]],
-            speaker = [[default]],
+            speaker = [[Банда троллей]],
             npc = "npc_gate_troll_uruk",
             choices = {
                 {
@@ -4761,7 +4759,7 @@ return {
         },
         d_trolls_again_provo = {
             text = [[Кажется мы уже показали тебе твое место в этом мире. Хочешь попробовать землю на вкус еще раз?]],
-            speaker = [[default]],
+            speaker = [[Банда троллей]],
             npc = "npc_gate_troll_uruk",
             choices = {
                 {
@@ -4776,7 +4774,7 @@ return {
         d_trolls_again_spit = {
             text =
             [[*Неудачно – часть слюны повисает у него на подбородке. Зеленый поспешно исправляет эту оплошность, а его подельники делают вид, что ничего не заметили*]],
-            speaker = [[default]],
+            speaker = [[Банда троллей]],
             npc = "npc_gate_troll_uruk",
             choices = {
                 {
@@ -5140,7 +5138,7 @@ return {
         },
         d_v_etot_raz_vse_budet_podrugomu = {
             text = [[]],
-            speaker = [[default]],
+            speaker = [[Банда троллей]],
             npc = "npc_gate_troll_uruk",
             choices = {
                 {
@@ -11333,7 +11331,7 @@ But luckily it's here you feel me?]],
             },
         },
         d_u_nego_vse_horosho_luchshe_ya_pojdu = {
-            text = [[*Крип-нигер заметил тебя и начал рассматривать. Ты услашал, как он перешёптывается с гангстером.*]],
+            text = [[*Крип-нигер заметил тебя и начал рассматривать. Ты услышал, как он перешёптывается с гангстером.*]],
             speaker = [[Крип-нигер]],
             npc = "npc_dream_golden",
             choices = {
@@ -12504,7 +12502,7 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_u2 = {
             text =
-            [[So, next next hour or so, you know what i'm talkin about? I hear knock onb a door. So, I get up, understand? I ran to that shi, i'm thinkin its going to be a littl salty. Open a door, it's a black dood, so i'm like, "the pig done set me up for real." You understand? For real, y'now what i'm sayin?]],
+            [[So, next next hour or so, you know what i'm talkin about? I hear knock on a door. So, I get up, understand? I ran to that shi, i'm thinkin its going to be a littl salty. Open a door, it's a black dood, so i'm like, "the pig done set me up for real." You understand? For real, y'now what i'm sayin?]],
             speaker = [[Крип-нигер]],
             npc = "npc_dream_golden",
             choices = {
@@ -16510,7 +16508,7 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Закрыть.]],
                     next = nil,
-                },
+                }
             },
         },
     },

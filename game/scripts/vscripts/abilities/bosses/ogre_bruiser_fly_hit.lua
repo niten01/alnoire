@@ -19,6 +19,7 @@ function ogre_bruiser_fly_hit:OnAbilityPhaseStart()
     self.activeTimer = Timers:CreateTimer(jumpDelay, function()
         local target = targetEnt:GetAbsOrigin()
         caster.flyTarget = target
+        caster.flyTargetEnt = targetEnt
         if not caster:HasModifier("modifier_move") then
             local dir = (target - caster:GetAbsOrigin())
             local speed = #dir / flyTime
@@ -85,7 +86,9 @@ function modifier_ogre_fly:OnCreated()
 
     local parent = self:GetParent()
     local target = parent.flyTarget
+    self.targetEnt = parent.flyTargetEnt
     parent.flyTarget = nil
+    parent.flyTargetEnt = nil
     assert(target)
     local time = self:GetDuration()
     assert(time)
@@ -96,6 +99,7 @@ function modifier_ogre_fly:OnCreated()
     self.speed = self.distance / time
     self.direction = dir:Normalized()
     self.travelled = 0
+    self.target = target
 
     if self:ApplyHorizontalMotionController() then
         self.time = 0
@@ -113,6 +117,9 @@ function modifier_ogre_fly:UpdateHorizontalMotion(me, dt)
 
     local new_pos = me:GetAbsOrigin() + self.direction * step
     me:SetAbsOrigin(new_pos)
+    if IsValidEntity(self.targetEnt) then
+        me:FaceTowards(self.targetEnt:GetAbsOrigin())
+    end
 
     if self.travelled >= self.distance then
         me:InterruptMotionControllers(true)
