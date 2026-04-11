@@ -308,9 +308,9 @@
         "ItemQuality"                   "rare"
         "AbilityValues"
         {
-            "lifesteal_pct_per_stack"      "3.5"
-            "max_stacks"                   "20"
-            "decay_time"                   "6"
+            "lifesteal_pct_per_stack"      "4"
+            "max_stacks"                   "10"
+            "decay_time"                   "5"
         }
     }
     "item_lean_power_towel_master" 

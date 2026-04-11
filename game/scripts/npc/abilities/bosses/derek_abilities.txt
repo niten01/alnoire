@@ -278,7 +278,7 @@
 			"proj_radius"	   "50"	
 			"proj_speed"       "1300"	
 			"proj_distance"    "3000"
-			"proj_damage"      "275"
+			"proj_damage"      "250"
 			"jump_time"        "0.6"
 			"jump_height"      "100"
 			"jump_distance"    "1300"
@@ -345,7 +345,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage"	       "375"	
+			"damage"	       "350"	
 			"radius"		   "550"
 			"pull_radius"	   "1500"
 			"pull_duration"	   "0.4"
@@ -380,7 +380,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage"	       "300"	
+			"damage"	       "250"	
 			"distance"		   "2500"
 			"num_shots"		   "13"
 			"proj_width"	   "50"
