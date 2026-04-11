@@ -14,7 +14,7 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
         "AbilityCooldown"               "0.0"
 
-        "ItemInitialCharges" "5" 
+        "ItemInitialCharges" "3" 
         "ItemDisplayCharges" "1" 
         "ItemRequiresCharges" "1" 
         "ItemDroppable"         "0"
@@ -28,7 +28,7 @@
         "AbilityValues" 
         {
             "hp_regen_percent"          "20.0"
-            "duration"                  "3.0"
+            "duration"                  "5.0"
         }
     }
     "item_sanya_flask_seed"
