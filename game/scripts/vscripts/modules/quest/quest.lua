@@ -243,20 +243,29 @@ function Quest:TryRemoveExclamation(questID)
   end
 end
 
+local function QuestExpired(quest, act)
+  return (max(quest.acts) or math.huge) < act
+end
+
 function Quest:OnActChange(event)
   local act = event.act
   for questID, quest in pairs(self.quests) do
-    local isNowActive = (not quest.acts) or (max(quest.acts) >= act and act >= min(quest.acts))
+    local isNowActive = not QuestExpired(quest, act)
     self:TryRemoveExclamation(questID)
 
     if isNowActive then
       -- try cancel quest that doesn't meet requirements
       for _, req in ipairs(quest.requires or {}) do
+        if not QuestExpired(self.quests[req], act) then
+          -- we can still complete it
+          goto skip_req
+        end
         local state = self.questStates:GetOneQuestState(req)
         if state.status ~= QuestStatus.COMPLETED then
           self.questStates:CancelQuest(questID)
           goto skip_quest
         end
+        ::skip_req::
       end
 
       if quest.showExclamation then

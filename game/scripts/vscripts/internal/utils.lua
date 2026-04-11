@@ -304,6 +304,7 @@ function contains(seq, val)
 end
 
 function max(seq)
+  if not seq or #seq == 0 then return nil end
   local mx = -math.huge
   for _, el in ipairs(seq) do
     if el > mx then mx = el end

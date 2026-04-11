@@ -31,7 +31,7 @@
 "npc_island_demon" "Демон острова"
 "npc_ball" "Мяч"
 "npc_derek" "Зверь Пустошей"
-"npc_george" "Джорж Богоподобный"
+"npc_george" "Джордж Богоподобный"
 "npc_flask_barrel" "Бочка"
 "npc_chaser"        "Преследователь"
 "npc_leader"        "Глава"
@@ -42,3 +42,4 @@
 "npc_ghetto_melee"        "Член гетто"
 "npc_ghetto_ranged"        "Член гетто"
 "npc_bomb_place"        "Место для бомбы"
+"npc_dream"        "Крип с мечтой"
