@@ -21,6 +21,7 @@ function derek_axe_fury:OnChannelFinish(bInterrupted)
   if not IsServer() then return end
   local caster = self:GetCaster()
   caster:StopSound("ability.derek.axe_fury.loop")
+  DebugPrint("finish ".. tostring(bInterrupted))
 
   ParticleManager:DestroyParticle(self.pfx, false)
   ParticleManager:ReleaseParticleIndex(self.pfx)
