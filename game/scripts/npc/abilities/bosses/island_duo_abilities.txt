@@ -44,7 +44,7 @@
             "shadowraze_damage"	"150"	
             "shadowraze_radius"	"160"		
             "range"             "200"
-            "stack_bonus_damage" "50"
+            "stack_bonus_damage" "40"
             "duration"	"7"
 		}
 	}
@@ -92,7 +92,7 @@
 		"AbilityValues"
 		{
             "shadowraze_damage"	"150"	
-            "stack_bonus_damage" "50"
+            "stack_bonus_damage" "40"
             "range"     "450"
 		}
 	} 
@@ -139,7 +139,7 @@
 		"AbilityValues"
 		{
             "shadowraze_damage"	"150"	
-            "stack_bonus_damage" "50"
+            "stack_bonus_damage" "40"
             "range"     "700"
 		}
 	}
@@ -203,13 +203,13 @@
         "AbilityCooldown"               "7.0" 
 		"AbilityCastRange"				"9999"
 
-        "AbilityDamage"         "300"
+        "AbilityDamage"         "200"
 		"AbilityValues"
 		{
             "mid_spread_minmax"    "100 800"
-            "warning_delay"        "0.2"
+            "warning_delay"        "0.5"
             "proj_radius"          "50"
-            "proj_speed"                "2600"
+            "proj_speed"                "2400"
             "raze_stacks_per_hit"   "3"
 		}
 
@@ -234,7 +234,7 @@
 		"AbilityValues"
 		{
             "shadowraze_damage"	"10"	
-            "stack_bonus_damage" "50"
+            "stack_bonus_damage" "40"
             "num_points"        "3"
 		}
 
