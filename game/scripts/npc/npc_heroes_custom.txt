@@ -10,6 +10,10 @@
     "Model"                                               "models/sanya/sanya.vmdl"
     "ModelScale"                                          "0.85"
 
+    "MinimapIcon"        "minimap_sanya"
+    "MinimapIconSize"    "1000"
+    "MinimapDisableTint" "1"
+
     "BotImplemented"                                      "0"
 
     "MovementCapabilities"                                "DOTA_UNIT_CAP_MOVE_GROUND"
