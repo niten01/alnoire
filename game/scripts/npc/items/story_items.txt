@@ -14,7 +14,7 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
         "AbilityCooldown"               "0.0"
 
-        "ItemInitialCharges" "5" 
+        "ItemInitialCharges" "3" 
         "ItemDisplayCharges" "1" 
         "ItemRequiresCharges" "1" 
         "ItemDroppable"         "0"
@@ -28,7 +28,7 @@
         "AbilityValues" 
         {
             "hp_regen_percent"          "20.0"
-            "duration"                  "3.0"
+            "duration"                  "5.0"
         }
     }
     "item_sanya_flask_seed"
@@ -308,9 +308,9 @@
         "ItemQuality"                   "rare"
         "AbilityValues"
         {
-            "lifesteal_pct_per_stack"      "3.5"
-            "max_stacks"                   "20"
-            "decay_time"                   "6"
+            "lifesteal_pct_per_stack"      "4"
+            "max_stacks"                   "10"
+            "decay_time"                   "5"
         }
     }
     "item_lean_power_towel_master" 

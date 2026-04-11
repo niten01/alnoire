@@ -12,7 +12,7 @@
         "AbilityCooldown"               "0" 
         "AbilityCastRange"        		"2000"
         
-        "AbilityDamage"         "30"
+        "AbilityDamage"         "70"
         "AbilityValues"
         {
             "proj_speed"      "1000"

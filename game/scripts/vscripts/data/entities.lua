@@ -1052,6 +1052,12 @@ return {
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
+        spawner_gangster_3              = {
+            npc = "npc_gangster",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_ghetto_3",
+            ai_modifier = "modifier_default_creep_ai",
+        },
         spawner_ghetto_ranged         = {
             npc = "npc_ghetto_ranged",
             modifiers = { "modifier_story_npc" },
@@ -1062,6 +1068,42 @@ return {
             npc = "npc_ghetto_melee",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_gangster_2             = {
+            npc = "npc_gangster",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_ghetto_2",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_ghetto_ranged_2       = {
+            npc = "npc_ghetto_ranged",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_ghetto_2",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_ghetto_melee_2        = {
+            npc = "npc_ghetto_melee",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_ghetto_2",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_gangster_3             = {
+            npc = "npc_gangster",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_ghetto_3",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_ghetto_ranged_3       = {
+            npc = "npc_ghetto_ranged",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_ghetto_3",
+            ai_modifier = "modifier_default_creep_ai",
+        },
+        spawner_ghetto_melee_3        = {
+            npc = "npc_ghetto_melee",
+            modifiers = { "modifier_story_npc" },
+            packID = "pack_ghetto_3",
             ai_modifier = "modifier_default_creep_ai",
         },
         spawner_blue                  = {
@@ -1483,6 +1525,8 @@ return {
             goldBounty = 300,
         },
         pack_island_guard = {
+            rangeRetreat = 2700,
+            rangeAggro = 1300,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
             goldBounty = 400,
@@ -1592,7 +1636,19 @@ return {
 
         pack_ghetto = {
             rangeRetreat = 6000,
-            rangeAggro = 1300,
+            rangeAggro = 1000,
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+        },
+        pack_ghetto_2 = {
+            rangeRetreat = 6000,
+            rangeAggro = 1100,
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+        },
+        pack_ghetto_3 = {
+            rangeRetreat = 6000,
+            rangeAggro = 800,
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
         },
