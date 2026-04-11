@@ -919,21 +919,21 @@ return {
                 { interact = "npc_cat_barrel",  type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.INACTIVE, type = "quest" },
                 { questID = "q_island_escape",  status = QuestStatus.COMPLETED, type = "quest" },
-                { var = "act",                  value = { 3 },                type = "var" },
             },
         },
         d_untitled_passage_52 = {
             priority = 0,
             conditions = {
-                { var = "act",                     value = { 3 }, type = "var" },
+                { var = "act",                     value = { 3 },             type = "var" },
                 { trigger = "trigger_island_fourth", type = "trigger" },
+                { questID = "q_island_explosion",  status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_53 = {
             priority = 0,
             conditions = {
-                { var = "act",                    value = { 3 }, type = "var" },
                 { trigger = "trigger_island_fifth", type = "trigger" },
+                { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_54 = {
@@ -967,7 +967,6 @@ return {
         d_untitled_passage_58 = {
             priority = 0,
             conditions = {
-                { var = "act",                  value = { 3 },             type = "var" },
                 { interact = "npc_bomb_place",  type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
             },
@@ -990,7 +989,6 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_cat_barrel",  type = "interact" },
-                { var = "act",                  value = { 3 },               type = "var" },
                 { questID = "q_island_explosion", status = QuestStatus.REJECTED, type = "quest" },
             },
         },
@@ -16510,7 +16508,7 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Закрыть.]],
                     next = nil,
-                },
+                }
             },
         },
     },

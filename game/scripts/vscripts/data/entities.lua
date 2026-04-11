@@ -1165,6 +1165,9 @@ return {
         item_spawner_ski = {
             item = "item_ski",
         },
+        item_spawner_key_part_1 = {
+            item = "item_key_part_1",
+        },
     },
 
     ------------------------------------------------------------
