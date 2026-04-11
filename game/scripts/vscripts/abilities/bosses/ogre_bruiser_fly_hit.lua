@@ -96,6 +96,7 @@ function modifier_ogre_fly:OnCreated()
     self.speed = self.distance / time
     self.direction = dir:Normalized()
     self.travelled = 0
+    self.target = target
 
     if self:ApplyHorizontalMotionController() then
         self.time = 0
@@ -113,6 +114,7 @@ function modifier_ogre_fly:UpdateHorizontalMotion(me, dt)
 
     local new_pos = me:GetAbsOrigin() + self.direction * step
     me:SetAbsOrigin(new_pos)
+    me:FaceTowards(self.target)
 
     if self.travelled >= self.distance then
         me:InterruptMotionControllers(true)

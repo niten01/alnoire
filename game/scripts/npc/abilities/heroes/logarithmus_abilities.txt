@@ -192,7 +192,7 @@
 		"ScriptFile" 				"abilities/logarithmus_anchor_return.lua"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 
 		"AbilityTextureName"		"logarithmus_anchor_return"
         "AbilityCastPoint"		    "0.2"

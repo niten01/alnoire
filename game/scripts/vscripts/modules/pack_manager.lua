@@ -167,7 +167,9 @@ function PackManager:GetPack(packName)
     return EntityData:ByName(packName)
 end
 
-function PackManager:GiveRewards(pack)
+function PackManager:GiveRewards(packName)
+    local pack = EntityData:ByName(packName)
+    assert(pack)
     for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
         local player = PlayerResource:GetPlayer(playerID)
         if PlayerResource:IsValidPlayer(playerID) and player then
@@ -197,7 +199,7 @@ function PackManager:PackTargetDefaultThink(packEnt, pack)
     if #pack.units == 0 then return IDLE_THINK_INTERVAL end
     if not AnyAlive(pack) then
         print("[ALNOIRE] All units in pack " .. packEnt:GetName() .. " are dead. Disabling beacon thinker.")
-        self:GiveRewards(pack)
+        self:GiveRewards(pack.name)
         self:DeactivatePack(pack.name)
         OnPackWipedEvent({
             packName = pack.name

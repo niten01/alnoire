@@ -475,6 +475,7 @@ function StoryDriver:OnCancelLethalDamage(event)
     local packName = self.activeStoryFights[i]
     if unit.packTargetData and unit.packTargetData.name == packName then
       PackManager:ResetPackPosition(packName)
+      PackManager:GiveRewards(packName)
       self:StopFight(i)
       local hero = PlayerResource:GetBarebonesAssignedHero(event.attackerPlayerID)
       assert(hero)
