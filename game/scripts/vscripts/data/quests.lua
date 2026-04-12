@@ -193,8 +193,8 @@ return {
                 description = "Найди Красного, Зелёного и Синего",
                 objectives = {
                     { type = "remove", npc = "npc_red" },
-                    { type = "remove", npc = "npc_green" },
-                    { type = "remove", npc = "npc_blue" },
+                    { type = "remove", npc = "npc_green", rewardXP = 1 },
+                    { type = "remove", npc = "npc_blue",  rewardXP = 1 },
 
                 },
                 postStepActions = {
@@ -271,7 +271,7 @@ return {
             {
                 description = "Встреться с Главой",
                 objectives = {
-                    { type = "talk", npc = "npc_leader" }
+                    { type = "talk", npc = "npc_leader", rewardGold = 700 }
                 }
             },
             {

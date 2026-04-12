@@ -105,8 +105,19 @@ function modifier_dark_ursa_almost_dead:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_MIN_HEALTH,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+        MODIFIER_EVENT_ON_DEATH
     }
+end
+
+function modifier_dark_ursa_almost_dead:OnDeath(params)
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    if params.unit ~= parent and params.attacker == parent then
+        EmitSoundOn("Dark_Ursa.Survived", parent)
+        self.dontKill = true
+        self:Destroy()
+    end
 end
 
 function modifier_dark_ursa_almost_dead:GetModifierAttackSpeedBonus_Constant()
@@ -127,6 +138,7 @@ function modifier_dark_ursa_almost_dead:OnCreated()
     if parent:HasModifier('modifier_dark_ursa_ai') then
         parent:RemoveModifierByName('modifier_dark_ursa_ai')
     end
+    self.dontKill = nil
     self:StartIntervalThink(BATTLE_THINK_INTERVAL)
 end
 
@@ -149,6 +161,11 @@ end
 function modifier_dark_ursa_almost_dead:OnDestroy()
     if not IsServer() then return end
     local parent = self:GetParent()
-    EmitSoundOn(parent.customDeathSound, parent)
-    parent:Kill(nil, parent)
+    if not self.dontKill then
+        EmitSoundOn(parent.customDeathSound, parent)
+        parent:Kill(nil, parent)
+    else
+        local mod = parent:AddNewModifier(parent, nil, "modifier_dark_ursa_ai", {})
+        mod:StartIntervalThink(BATTLE_THINK_INTERVAL)
+    end
 end
