@@ -75,7 +75,7 @@ function modifier_chaser_rites_ai:OnTakeDamage(params)
     local parent = self:GetParent()
     if params.unit ~= parent then return end
 
-    if params.unit:GetHealth() >= 10 and not self.chaserAlone then
+    if params.unit:GetHealth() >= 10 and not self.chaserAlone and params.damage >= 30 then
         parent.timeToTp = true
         parent:Stop()
         parent:AddNewModifier(parent, nil, 'modifier_chaser_tp_invul', {})
