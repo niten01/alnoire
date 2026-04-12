@@ -407,6 +407,10 @@ function Handlers.build_barrel_click(playerID, action)
   BarrelClick:BuildArena()
 end
 
+function Handlers.start_barrel_click(playerID, action)
+  BarrelClick:Start(playerID)
+end
+
 function Handlers.disable_clash_royale(playerID, action)
   triggerSetEnabled("trigger_clash_arena", false)
 end
@@ -517,6 +521,10 @@ function StoryDriver:SetupAct2()
 
   SpawnManager:SpawnNPC("spawner_concert_fan_ranged")
   SpawnManager:SpawnNPC("spawner_concert_fan_melee")
+  SpawnManager:SpawnNPC("spawner_concert_wk")
+  SpawnManager:SpawnNPC("spawner_concert_meepo")
+  SpawnManager:SpawnNPC("spawner_concert_lina")
+  SpawnManager:SpawnNPC("spawner_concert_legion")
 end
 
 local QuestStatus = require('modules.quest.quest_status')

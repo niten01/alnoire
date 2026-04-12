@@ -18,6 +18,7 @@ function GlobalState:Init()
 
         is_ghetto_member = false,
         derek_kill = false,
+        tried_barrels = false,
     }
 
 
