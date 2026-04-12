@@ -8,7 +8,7 @@
             [
                     "sounds/music/hlups/hlup_full.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup = {
             type = "dota_update_battle_music"
@@ -16,7 +16,7 @@
             [
                     "sounds/music/hlups/hlup.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap = {
             type = "dota_update_battle_music"
@@ -24,7 +24,7 @@
             [
                     "sounds/music/hlups/hlup_snap.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_accent = {
             type = "dota_update_battle_music"
@@ -32,7 +32,7 @@
             [
                     "sounds/music/hlups/hlup_snap_accent.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_accent_bass = {
             type = "dota_update_battle_music"
@@ -40,7 +40,7 @@
             [
                     "sounds/music/hlups/hlup_snap_accent_bass.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_accent_bass_cad = {
             type = "dota_update_battle_music"
@@ -48,7 +48,7 @@
             [
                     "sounds/music/hlups/hlup_snap_accent_bass_cad.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_accent_bass_riff = {
             type = "dota_update_battle_music"
@@ -56,7 +56,7 @@
             [
                     "sounds/music/hlups/hlup_snap_accent_bass_riff.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_accent_vox = {
             type = "dota_update_battle_music"
@@ -64,7 +64,7 @@
             [
                     "sounds/music/hlups/hlup_snap_accent_vox.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_accent_vox_cad = {
             type = "dota_update_battle_music"
@@ -72,7 +72,7 @@
             [
                     "sounds/music/hlups/hlup_snap_accent_vox_cad.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_accent_vox_riff = {
             type = "dota_update_battle_music"
@@ -80,7 +80,7 @@
             [
                     "sounds/music/hlups/hlup_snap_accent_vox_riff.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_tempo = {
             type = "dota_update_battle_music"
@@ -88,7 +88,7 @@
             [
                     "sounds/music/hlups/hlup_snap_tempo.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_tempo_bass = {
             type = "dota_update_battle_music"
@@ -96,7 +96,7 @@
             [
                     "sounds/music/hlups/hlup_snap_tempo_bass.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_tempo_bass_cad = {
             type = "dota_update_battle_music"
@@ -104,7 +104,7 @@
             [
                     "sounds/music/hlups/hlup_snap_tempo_bass_cad.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_tempo_bass_riff = {
             type = "dota_update_battle_music"
@@ -112,7 +112,7 @@
             [
                     "sounds/music/hlups/hlup_snap_tempo_bass_riff.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_tempo_vox = {
             type = "dota_update_battle_music"
@@ -120,7 +120,7 @@
             [
                     "sounds/music/hlups/hlup_snap_tempo_vox.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_tempo_vox_cad = {
             type = "dota_update_battle_music"
@@ -128,7 +128,7 @@
             [
                     "sounds/music/hlups/hlup_snap_tempo_vox_cad.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_snap_tempo_vox_riff = {
             type = "dota_update_battle_music"
@@ -136,7 +136,7 @@
             [
                     "sounds/music/hlups/hlup_snap_tempo_vox_riff.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp = {
             type = "dota_update_battle_music"
@@ -144,7 +144,7 @@
             [
                     "sounds/music/hlups/hlup_stomp.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_accent = {
             type = "dota_update_battle_music"
@@ -152,7 +152,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_accent.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_accent_bass = {
             type = "dota_update_battle_music"
@@ -160,7 +160,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_accent_bass.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_accent_bass_cad = {
             type = "dota_update_battle_music"
@@ -168,7 +168,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_accent_bass_cad.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_accent_bass_riff = {
             type = "dota_update_battle_music"
@@ -176,7 +176,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_accent_bass_riff.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_accent_vox = {
             type = "dota_update_battle_music"
@@ -184,7 +184,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_accent_vox.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_accent_vox_cad = {
             type = "dota_update_battle_music"
@@ -192,7 +192,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_accent_vox_cad.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_accent_vox_riff = {
             type = "dota_update_battle_music"
@@ -200,7 +200,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_accent_vox_riff.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_tempo = {
             type = "dota_update_battle_music"
@@ -208,7 +208,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_tempo.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_tempo_bass = {
             type = "dota_update_battle_music"
@@ -216,7 +216,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_tempo_bass.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_tempo_bass_cad = {
             type = "dota_update_battle_music"
@@ -224,7 +224,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_tempo_bass_cad.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_tempo_bass_riff = {
             type = "dota_update_battle_music"
@@ -232,7 +232,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_tempo_bass_riff.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_tempo_vox = {
             type = "dota_update_battle_music"
@@ -240,7 +240,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_tempo_vox.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_tempo_vox_cad = {
             type = "dota_update_battle_music"
@@ -248,7 +248,7 @@
             [
                     "sounds/music/hlups/hlup_stomp_tempo_vox_cad.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
     hlup_stomp_tempo_vox_riff = {
             type = "dota_update_battle_music"
@@ -256,6 +256,6 @@
             [
                     "sounds/music/hlups/hlup_stomp_tempo_vox_riff.vsnd"
             ]
-            volume = "2.5"
+            volume = "2.0"
     }
 }

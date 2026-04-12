@@ -23,9 +23,9 @@ function modifier_trap_skeleton:OnAttackLanded(params)
     if not IsServer() then return end
     if params.attacker ~= self:GetParent() then return end
     ApplyDamage({
-        victim = params.unit,
+        victim = params.target,
         attacker = self:GetParent(),
-        damage = EpsTraps:GetDamage(params.unit),
+        damage = EpsTraps:GetDamage(params.target),
         damage_type = DAMAGE_TYPE_PURE,
         ability = self:GetAbility()
     })

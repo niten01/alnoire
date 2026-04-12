@@ -6,6 +6,7 @@
 "DOTA_Tooltip_ability_sanya_towel_aura_1_hp_regen"		"<font color=\"#9acd32\">ВОССТ. ЗДОРОВЬЯ РАБА</font>:"
 "DOTA_Tooltip_ability_sanya_towel_aura_1_decreaseMult"		"<font color=\"#9acd32\">КОЭФФИЦИЕНТ ЛЕЧЕНИЯ В БОЮ</font>:"
 "DOTA_Tooltip_ability_sanya_towel_aura_1_delayBeforeReset"		"<font color=\"#9acd32\">ВРЕМЯ ВНЕ БОЯ:</font>:"
+"DOTA_Tooltip_ability_sanya_towel_aura_1_healPrc"		"%<font color=\"#9acd32\">ЛЕЧЕНИЕ В СЕКУНДУ:</font>:"
 
 
 "DOTA_Tooltip_ability_sanya_towel_aura_2"		            "#DOTA_Tooltip_ability_sanya_towel_aura_1"

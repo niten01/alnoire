@@ -79,6 +79,7 @@ end
 
 -- An NPC has spawned somewhere in game. This includes heroes
 local OnNPCSpawnedEvent = CreateGameEvent 'OnNPCSpawned'
+local OnTowelSummonInGameEvent = CreateGameEvent 'OnTowelSummonInGame'
 function barebones:OnNPCSpawned(keys)
 	-- DebugPrint("[BAREBONES] A unit spawned: entindex=" .. keys.entindex)
 
@@ -96,6 +97,7 @@ function barebones:OnNPCSpawned(keys)
 		self:OnHeroInGame(npc)
 	end
 
+	OnTowelSummonInGameEvent(npc)
 	OnNPCSpawnedEvent(extend(keys, { unit = npc }))
 end
 
@@ -106,7 +108,6 @@ end
   The hero parameter is the hero entity that just spawned.
 ]]
 local OnHeroInGameEvent = CreateGameEvent 'OnHeroInGame'
-local OnTowelSummonInGameEvent = CreateGameEvent 'OnTowelSummonInGame'
 function barebones:OnHeroInGame(hero)
 	-- -- Innate abilities like Earth Spirit Stone Remnant (abilities that a hero needs to have auto-leveled up at the start of the game)
 	-- -- Take a look at this guide: https://moddota.com/abilities/creating-innate-abilities

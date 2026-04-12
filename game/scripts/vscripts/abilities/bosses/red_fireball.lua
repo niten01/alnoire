@@ -15,7 +15,7 @@ function red_fireball:ShowWarning(targetPos)
     local start = self:GetStartPos()
     local dir = (targetPos - start):Normalized()
     self.target = start + dir*range
-    ShowGenericLineWarning(start, self.target, radius, delay)
+    ShowGenericLineWarning(start, self.target, radius, delay + self:GetCastPoint())
     return delay
 end
 
