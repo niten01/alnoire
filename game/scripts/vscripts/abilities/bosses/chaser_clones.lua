@@ -37,10 +37,10 @@ function chaser_clones:OnSpellStart()
             if summonLifetime > 0 then
                 summon:AddNewModifier(caster, self, "modifier_kill", { duration = summonLifetime })
             end
-            summon:AddNewModifier(summon, nil, 'modifier_default_creep_ai', {})
+            summon:AddNewModifier(summon, nil, 'modifier_chaser_clone_ai', {})
             summon.spawnPos = summon:GetAbsOrigin()
             summon.spawnForward = summon:GetForwardVector()
-            summon.ai_modifier = "modifier_default_creep_ai"
+            summon.ai_modifier = "modifier_chaser_clone_ai"
             summon.spawnerName = nil
             local packName = "pack_chaser"
             PackManager:AddUnit(packName, summon)

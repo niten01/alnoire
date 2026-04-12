@@ -437,7 +437,7 @@ return {
         spawner_chaser                = {
             npc = "npc_chaser_final",
             packID = "pack_chaser",
-            ai_modifier = "modifier_default_creep_ai",
+            ai_modifier = "modifier_chaser_final_ai",
             team = DOTA_TEAM_BADGUYS,
         },
         spawner_chaser_stuns          = {
@@ -1055,7 +1055,7 @@ return {
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_gangster_3              = {
+        spawner_gangster_3            = {
             npc = "npc_gangster",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto_3",
@@ -1073,7 +1073,7 @@ return {
             packID = "pack_ghetto",
             ai_modifier = "modifier_default_creep_ai",
         },
-        spawner_gangster_2             = {
+        spawner_gangster_2            = {
             npc = "npc_gangster",
             modifiers = { "modifier_story_npc" },
             packID = "pack_ghetto_2",

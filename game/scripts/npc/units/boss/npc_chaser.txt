@@ -165,6 +165,11 @@
 		"ConsideredHero" 			"1"
 		"AutoAttacksByDefault" 		"0"
 		"vscripts"					"ai/chaser_clone"
+		"MinRiteDelay"				"0.5"
+		"MaxRiteDelay"				"2.0"
+		"MinStunDelay"				"0.5"
+		"MaxStunDelay"				"2.0"
+
 
 		"Ability1"					"chaser_passive"			// Ability 1
 		"Ability2"					"chaser_rite"			// Ability 2
