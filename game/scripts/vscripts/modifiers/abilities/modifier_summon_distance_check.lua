@@ -22,7 +22,7 @@ function modifier_summon_distance_check:DeclareFunctions()
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
         MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
-        MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
     }
 end
 
@@ -64,7 +64,7 @@ function modifier_summon_distance_check:GetModifierMagicalResistanceBonus()
     return self:GetInt() * 0.1
 end
 
-function modifier_summon_distance_check:GetModifierBaseAttack_BonusDamage()
+function modifier_summon_distance_check:GetModifierPreAttack_BonusDamage()
     return self:GetAgi() * 1
 end
 
