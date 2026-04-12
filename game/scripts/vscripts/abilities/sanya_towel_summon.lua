@@ -15,6 +15,7 @@ end
 function sanya_towel_summon:OnAbilityPhaseStart()
     local caster = self:GetCaster()
     local inFrontOfCaster = caster:GetAbsOrigin() + caster:GetForwardVector() * 100
+    inFrontOfCaster = GetSafeBlinkDestination(caster:GetAbsOrigin(), inFrontOfCaster)
     local pfx = ParticleManager:CreateParticle("particles/sanya_summon_emerge.vpcf", PATTACH_WORLDORIGIN,
         self:GetCaster())
     ParticleManager:SetParticleControl(pfx, 0, inFrontOfCaster)
