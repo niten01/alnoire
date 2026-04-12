@@ -2,20 +2,70 @@ modifier_summon_distance_check = class({})
 LinkLuaModifier("modifier_towel_summon_custom_stun", "modifiers/abilities/modifier_towel_summon_custom_stun",
     LUA_MODIFIER_MOTION_NONE)
 
-function modifier_summon_distance_check:IsHidden() return false end
+function modifier_summon_distance_check:IsHidden() return true end
 
 function modifier_summon_distance_check:IsPurgable() return false end
 
 function modifier_summon_distance_check:OnCreated()
+    self.kv = LoadKeyValues("scripts/npc/units/towel_summon.txt").towel_summon
+    self:UpdateHealth()
     if not IsServer() then return end
     self:StartIntervalThink(0.2)
 end
 
 function modifier_summon_distance_check:DeclareFunctions()
     return {
-        MODIFIER_EVENT_ON_DEATH, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS
+        MODIFIER_EVENT_ON_DEATH,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
+        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
     }
+end
+
+function modifier_summon_distance_check:GetStr()
+    return self.kv.AttributeBaseStrength + self.kv.AttributeStrengthGain * self:GetParent():GetLevel()
+end
+
+function modifier_summon_distance_check:GetAgi()
+    return self.kv.AttributeBaseAgility + self.kv.AttributeAgilityGain * self:GetParent():GetLevel()
+end
+
+function modifier_summon_distance_check:GetInt()
+    return self.kv.AttributeBaseIntelligence + self.kv.AttributeIntelligenceGain * self:GetParent():GetLevel()
+end
+
+function modifier_summon_distance_check:UpdateHealth()
+    if not IsServer() then return end
+    local unit = self:GetParent()
+    local frac = unit:GetHealthPercent()
+    unit:SetBaseMaxHealth(self:GetStr() * 22)
+    unit:SetMaxHealth(self:GetStr() * 22)
+    unit:SetHealth(unit:GetMaxHealth() * frac)
+    unit:CalculateGenericBonuses()
+end
+
+function modifier_summon_distance_check:GetModifierConstantHealthRegen()
+    return self:GetStr() * 0.09
+end
+
+function modifier_summon_distance_check:GetModifierAttackSpeedBonus_Constant()
+    return self:GetAgi() * 1
+end
+
+function modifier_summon_distance_check:GetModifierPhysicalArmorBonus()
+    return self:GetAgi() * (1.0 / 6.0)
+end
+
+function modifier_summon_distance_check:GetModifierMagicalResistanceBonus()
+    return self:GetInt() * 0.1
+end
+
+function modifier_summon_distance_check:GetModifierPreAttack_BonusDamage()
+    return self:GetAgi() * 1
 end
 
 function modifier_summon_distance_check:GetActivityTranslationModifiers()
@@ -34,7 +84,12 @@ function modifier_summon_distance_check:OnIntervalThink()
     local unit = self:GetParent()
     local owner = unit:GetOwner()
     while unit:GetLevel() < owner:GetLevel() do
-        unit:HeroLevelUp(false)
+        if unit.HeroLevelUp then
+            unit:HeroLevelUp(false)
+        else
+            unit:CreatureLevelUp(math.abs(owner:GetLevel() - unit:GetLevel()))
+            self:UpdateHealth()
+        end
     end
     local ability = self:GetAbility()
     if not owner or not owner:IsAlive() or not ability then return end

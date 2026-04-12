@@ -60,7 +60,7 @@
 			"flow_per_shot"				"4 6 11"
 			"perfect_buff_duration"		"5"
 			"perfect_num_pulses"		"11"
-			"perfect_incoming_damage_reduction_pct" "70 75 80"
+			"perfect_incoming_damage_reduction_pct" "80 85 90"
 			"perfect_pulse_radius"		"200 250 300"
 			"perfect_damage_per_pulse"  "40 60 80"
 			"damage_reduction_pct"  	"20"

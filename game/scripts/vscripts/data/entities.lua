@@ -1035,14 +1035,14 @@ return {
             ai_modifier = "modifier_default_creep_ai",
         },
         spawner_concert_meepo         = {
-            npc = "npc_concert_legion",
+            npc = "npc_concert_meepo",
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_concert_crowd",
             ai_modifier = "modifier_default_creep_ai",
         },
         spawner_concert_wk            = {
-            npc = "npc_concert_legion",
+            npc = "npc_concert_wk",
             modifiers = { "modifier_story_npc" },
             deferred = true,
             packID = "pack_concert_crowd",
@@ -1158,6 +1158,12 @@ return {
     item_spawner = {
         item_spawner_lean = {
             item = "item_lean",
+        },
+        item_spawner_seed = {
+            item = "item_sanya_flask_seed",
+        },
+        item_spawner_egg = {
+            item = "item_tough_egg",
         },
         item_spawner_flask = {
             item = "item_sanya_flask",
