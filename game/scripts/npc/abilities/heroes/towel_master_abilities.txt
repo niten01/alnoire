@@ -51,6 +51,8 @@
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"                    "abilities/sanya_towel_summon_return"
 		"MaxLevel"                      "4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"15"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName"            "towel_summon_return"

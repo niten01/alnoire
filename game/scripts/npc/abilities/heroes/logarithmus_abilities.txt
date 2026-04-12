@@ -12,7 +12,7 @@
 		"AbilityValues"
 		{
 			"magical_damage_per_stack"	"15 20 25 30"
-			"lifesteal_pct_per_stack"	"15"
+			"lifesteal_pct_per_stack"	"12 13 14 15"
 			"max_stacks"				"20"
 			"spell_amp_pct"				"0 20 30 40"
 		}
@@ -192,7 +192,7 @@
 		"ScriptFile" 				"abilities/logarithmus_anchor_return.lua"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 
 		"AbilityTextureName"		"logarithmus_anchor_return"
         "AbilityCastPoint"		    "0.2"

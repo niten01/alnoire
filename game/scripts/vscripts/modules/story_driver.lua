@@ -407,6 +407,10 @@ function Handlers.build_barrel_click(playerID, action)
   BarrelClick:BuildArena()
 end
 
+function Handlers.start_barrel_click(playerID, action)
+  BarrelClick:Start(playerID)
+end
+
 function Handlers.disable_clash_royale(playerID, action)
   triggerSetEnabled("trigger_clash_arena", false)
 end
@@ -475,6 +479,7 @@ function StoryDriver:OnCancelLethalDamage(event)
     local packName = self.activeStoryFights[i]
     if unit.packTargetData and unit.packTargetData.name == packName then
       PackManager:ResetPackPosition(packName)
+      PackManager:GiveRewards(packName)
       self:StopFight(i)
       local hero = PlayerResource:GetBarebonesAssignedHero(event.attackerPlayerID)
       assert(hero)
@@ -516,6 +521,10 @@ function StoryDriver:SetupAct2()
 
   SpawnManager:SpawnNPC("spawner_concert_fan_ranged")
   SpawnManager:SpawnNPC("spawner_concert_fan_melee")
+  SpawnManager:SpawnNPC("spawner_concert_wk")
+  SpawnManager:SpawnNPC("spawner_concert_meepo")
+  SpawnManager:SpawnNPC("spawner_concert_lina")
+  SpawnManager:SpawnNPC("spawner_concert_legion")
 end
 
 local QuestStatus = require('modules.quest.quest_status')

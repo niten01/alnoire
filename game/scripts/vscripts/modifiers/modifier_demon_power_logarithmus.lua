@@ -18,7 +18,7 @@ function modifier_demon_power_logarithmus:OnDestroy()
     DestroyDemonPowerEffects(self)
 end
 
-function modifier_demon_power_logarithmus_combo:GetTexture()
+function modifier_demon_power_logarithmus:GetTexture()
     return "nevermore_dark_lord"
 end
 

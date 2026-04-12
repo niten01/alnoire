@@ -22,7 +22,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"		"150"	
+			"radius"		"140"	
 			"spread"		"450"			
 			"axe_damage"    "175"
 			"fly_time_oneway"	    "0.8"
@@ -95,11 +95,11 @@
 		{
 			"distance"	"1000"	
 			"time"	    "0.5"	
-			"shot_dist_step"		"250"			
+			"shot_dist_step"		"270"			
 			"proj_distance"		"2000"
 			"proj_radius"		"50"
 			"proj_speed"		"2500"
-			"warning_delay"		"0.2"			
+			"warning_delay"		"0.3"			
 			"damage"    "225"
 		}
 
@@ -175,7 +175,7 @@
 			"interval"	"1"			
 			"damage"    "150"
 			"num_pulses"  "7"
-			"warning_delay" "0.3"
+			"warning_delay" "0.6"
 		}
 
 		"precache"
@@ -246,7 +246,7 @@
 
 			// bound to particle
 			"lift_duration" "2"
-			"warning_delay" "0.0"
+			"warning_delay" "1.0"
 		}
 
 		"precache"
@@ -316,7 +316,7 @@
 			"damage"	       "250"	
 			"radius"		   "500"
 			"stun_duration"	   "2"
-			"warning_delay"	   "0"
+			"warning_delay"	   "0.3"
 		}
 
 		"precache"
@@ -384,7 +384,7 @@
 		{
 			"damage"	       "250"	
 			"distance"		   "2500"
-			"num_shots"		   "13"
+			"num_shots"		   "12"
 			"proj_width"	   "50"
 			"proj_speed"	   "1600"
 			"warning_delay"	   "0"

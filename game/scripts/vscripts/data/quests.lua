@@ -144,7 +144,7 @@ return {
     q_island_explosion = {
         giver = "npc_cat_barrel",
         name = "Epstein's blow job",
-        acts = { 3 },
+        acts = { 3, 4 },
         onAccept = {
             { type = 'setup_island_second_encounter' }
         },

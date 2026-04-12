@@ -516,9 +516,9 @@ return {
         d_trolls_again = {
             priority = 0,
             conditions = {
-                { trigger = "trigger_gate_trolls", type = "trigger" },
-                { questID = "q_reach_city",      status = QuestStatus.ACTIVE, step = { 1 },            type = "quest" },
-                { ent_var = "first_met_global",  value = { false },         npc = "npc_gate_troll_uruk", type = "ent_var" },
+                { questID = "q_reach_city",       status = QuestStatus.ACTIVE, step = { 1 },            type = "quest" },
+                { ent_var = "first_met_global",   value = { false },         npc = "npc_gate_troll_uruk", type = "ent_var" },
+                { interact = "npc_gate_troll_uruk", type = "interact" },
             },
         },
         d_bouncer_have_ticket = {
@@ -810,8 +810,9 @@ return {
         d_untitled_passage_10 = {
             priority = 0,
             conditions = {
-                { interact = "npc_brewmaster", type = "interact" },
-                { questID = "q_pandas",      status = QuestStatus.COMPLETED, type = "quest" },
+                { questID = "q_pandas",           status = QuestStatus.COMPLETED, type = "quest" },
+                { var = "tried_barrels",          value = { false },            type = "var" },
+                { interact = "npc_brewmaster_good", type = "interact" },
             },
         },
         d_untitled_passage_27_merged_act3 = {
@@ -919,21 +920,21 @@ return {
                 { interact = "npc_cat_barrel",  type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.INACTIVE, type = "quest" },
                 { questID = "q_island_escape",  status = QuestStatus.COMPLETED, type = "quest" },
-                { var = "act",                  value = { 3 },                type = "var" },
             },
         },
         d_untitled_passage_52 = {
             priority = 0,
             conditions = {
-                { var = "act",                     value = { 3 }, type = "var" },
+                { var = "act",                     value = { 3 },             type = "var" },
                 { trigger = "trigger_island_fourth", type = "trigger" },
+                { questID = "q_island_explosion",  status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_53 = {
             priority = 0,
             conditions = {
-                { var = "act",                    value = { 3 }, type = "var" },
                 { trigger = "trigger_island_fifth", type = "trigger" },
+                { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
             },
         },
         d_untitled_passage_54 = {
@@ -967,7 +968,6 @@ return {
         d_untitled_passage_58 = {
             priority = 0,
             conditions = {
-                { var = "act",                  value = { 3 },             type = "var" },
                 { interact = "npc_bomb_place",  type = "interact" },
                 { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
             },
@@ -990,7 +990,6 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_cat_barrel",  type = "interact" },
-                { var = "act",                  value = { 3 },               type = "var" },
                 { questID = "q_island_explosion", status = QuestStatus.REJECTED, type = "quest" },
             },
         },
@@ -1064,6 +1063,13 @@ return {
             conditions = {
                 { questID = "q_island_explosion",    status = QuestStatus.ACTIVE, step = { 5 }, type = "quest" },
                 { interact = "npc_subway_fake_return", type = "interact" },
+            },
+        },
+        d_davaj_poprobuem = {
+            priority = 0,
+            conditions = {
+                { interact = "npc_brewmaster_good", type = "interact" },
+                { var = "tried_barrels",          value = { true }, type = "var" },
             },
         },
         d_untitled_passage_merged_act4 = {
@@ -4750,7 +4756,7 @@ return {
         d_trolls_again = {
             text = [[Эу, пфффть
 *Существо сплевывает на пол.*]],
-            speaker = [[default]],
+            speaker = [[Банда троллей]],
             npc = "npc_gate_troll_uruk",
             choices = {
                 {
@@ -4761,7 +4767,7 @@ return {
         },
         d_trolls_again_provo = {
             text = [[Кажется мы уже показали тебе твое место в этом мире. Хочешь попробовать землю на вкус еще раз?]],
-            speaker = [[default]],
+            speaker = [[Банда троллей]],
             npc = "npc_gate_troll_uruk",
             choices = {
                 {
@@ -4776,7 +4782,7 @@ return {
         d_trolls_again_spit = {
             text =
             [[*Неудачно – часть слюны повисает у него на подбородке. Зеленый поспешно исправляет эту оплошность, а его подельники делают вид, что ничего не заметили*]],
-            speaker = [[default]],
+            speaker = [[Банда троллей]],
             npc = "npc_gate_troll_uruk",
             choices = {
                 {
@@ -5140,7 +5146,7 @@ return {
         },
         d_v_etot_raz_vse_budet_podrugomu = {
             text = [[]],
-            speaker = [[default]],
+            speaker = [[Банда троллей]],
             npc = "npc_gate_troll_uruk",
             choices = {
                 {
@@ -11333,7 +11339,7 @@ But luckily it's here you feel me?]],
             },
         },
         d_u_nego_vse_horosho_luchshe_ya_pojdu = {
-            text = [[*Крип-нигер заметил тебя и начал рассматривать. Ты услашал, как он перешёптывается с гангстером.*]],
+            text = [[*Крип-нигер заметил тебя и начал рассматривать. Ты услышал, как он перешёптывается с гангстером.*]],
             speaker = [[Крип-нигер]],
             npc = "npc_dream_golden",
             choices = {
@@ -11425,13 +11431,13 @@ But luckily it's here you feel me?]],
             },
         },
         d_untitled_passage_10 = {
-            text = [[Удачи в твоих странствиях!]],
+            text = [[Ооо, мой спаситель!]],
             speaker = [[Панда]],
             npc = "npc_brewmaster",
             choices = {
                 {
-                    text = [[Закрыть.]],
-                    next = nil,
+                    text = [[Смотрю, ты следуешь за мечтой?]],
+                    next = "d_smotru_ty_sleduesh_za_mechtoj",
                 },
             },
         },
@@ -11807,7 +11813,7 @@ But luckily it's here you feel me?]],
             text =
             [[*Приближаясь к знакомой уже панде, ты замечаешь сильные изменения. Он больше не пьёт, морда его довольная, а тело более подтянутое.*]],
             speaker = [[Панда]],
-            npc = "npc_brewmaster",
+            npc = "npc_brewmaster_good",
             choices = {
                 {
                     text = [[Привет, панда. Вижу жизнь твоя налаживается.]],
@@ -12504,7 +12510,7 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_u2 = {
             text =
-            [[So, next next hour or so, you know what i'm talkin about? I hear knock onb a door. So, I get up, understand? I ran to that shi, i'm thinkin its going to be a littl salty. Open a door, it's a black dood, so i'm like, "the pig done set me up for real." You understand? For real, y'now what i'm sayin?]],
+            [[So, next next hour or so, you know what i'm talkin about? I hear knock on a door. So, I get up, understand? I ran to that shi, i'm thinkin its going to be a littl salty. Open a door, it's a black dood, so i'm like, "the pig done set me up for real." You understand? For real, y'now what i'm sayin?]],
             speaker = [[Крип-нигер]],
             npc = "npc_dream_golden",
             choices = {
@@ -12570,6 +12576,18 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Пришлось вступить в их банду ради этого.]],
                     next = "d_prishlos_vstupit_v_ih_bandu_radi_etogo",
+                },
+            },
+        },
+        d_a_chto_delat_to = {
+            text =
+            [[Все просто! Бери топор - руби бочки! Не успеешь срубить за отведенное время - проиграешь. Если продержишься дольше своего рекорда - получишь по несколько золотых за каждую бочку. Для тебя участие бесплатное!]],
+            speaker = [[Панда]],
+            npc = "npc_brewmaster",
+            choices = {
+                {
+                    text = [[Давай попробуем...]],
+                    next = "d_davaj_poprobuem",
                 },
             },
         },
@@ -12840,6 +12858,21 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
+        d_davaj_poprobuem = {
+            text = [[Руби бочки!]],
+            speaker = [[Панда]],
+            npc = "npc_brewmaster_good",
+            choices = {
+                {
+                    text = [[Погнали!]],
+                    next = nil,
+                    actions = {
+                        { type = "start_barrel_click" },
+                        { var = "tried_barrels",    value = true, type = "set_var" },
+                    },
+                },
+            },
+        },
         d_davajte_pokonchim_s_etim = {
             text = [[*Кот-бочка снимает со своего хвоста детонатор и с честью протягивает тебе.*]],
             speaker = [[Кот-бочка]],
@@ -12914,6 +12947,17 @@ Wazup, ты кем будешь, dawg?]],
             text = [[*Интересно, получится ли у него?*]],
             speaker = [[Крип с мечтой]],
             npc = "npc_dream",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_zajdu_kstati_tvoi_synovya_obeschali_vernutsya_no_ih_ne_vidat_gde_oni = {
+            text = [[Какие сыновья?]],
+            speaker = [[Панда]],
+            npc = "npc_brewmaster_good",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -13046,17 +13090,6 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Да договорились там, всё норм.]],
                     next = "d_da_dogovorilis_tam_vse_norm",
-                },
-            },
-        },
-        d_kstati_tvoi_synovya_obeschali_vernutsya_no_ih_ne_vidat_gde_oni = {
-            text = [[Какие сыновья?]],
-            speaker = [[Панда]],
-            npc = "npc_brewmaster",
-            choices = {
-                {
-                    text = [[Закрыть.]],
-                    next = nil,
                 },
             },
         },
@@ -13294,6 +13327,17 @@ Wazup, ты кем будешь, dawg?]],
             },
         },
         d_pognali = {
+            text = [[]],
+            speaker = [[Панда]],
+            npc = "npc_brewmaster_good",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
+        d_pognali__1 = {
             text =
             [[*Ты чувствуешь, что любая ошибка может спровоцировать их. Следует очень внимательно подходить к ответу.*]],
             speaker = [[Гангстер]],
@@ -13364,7 +13408,7 @@ Wazup, ты кем будешь, dawg?]],
             text = [[Оооо, здравствуй, приятель. Ты не поверишь, сколько всего в моей жизни произошло.
 *Он приятно улыбается и пожимает твою руку.*]],
             speaker = [[Панда]],
-            npc = "npc_brewmaster",
+            npc = "npc_brewmaster_good",
             choices = {
                 {
                     text = [[Я вижу, пить перестал, да?]],
@@ -13451,11 +13495,11 @@ Wazup, ты кем будешь, dawg?]],
             text =
             [[Представь, даже жена меня домой пустила. Когда спросил её о причине, то она ответила, что со мной стало приятней общаться и что я перестал перечить и доводить до конфликтов. Хорошо, что чудеса случаются.]],
             speaker = [[Панда]],
-            npc = "npc_brewmaster",
+            npc = "npc_brewmaster_good",
             choices = {
                 {
-                    text = [[Кстати, твои сыновья обещали вернуться, но их не видать. Где они?]],
-                    next = "d_kstati_tvoi_synovya_obeschali_vernutsya_no_ih_ne_vidat_gde_oni",
+                    text = [[Чем думаешь заняться?]],
+                    next = "d_chem_dumaesh_zanyatsya",
                 },
             },
         },
@@ -13553,6 +13597,17 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Давай без этого.]],
                     next = "d_davaj_bez_etogo",
+                },
+            },
+        },
+        d_smotru_ty_sleduesh_za_mechtoj = {
+            text = [[Так точно! Аттракцион открылся совсем недавно, а от посетителей уже отбоя нет.]],
+            speaker = [[Панда]],
+            npc = "npc_brewmaster",
+            choices = {
+                {
+                    text = [[А что делать то?]],
+                    next = "d_a_chto_delat_to",
                 },
             },
         },
@@ -13656,7 +13711,7 @@ Wazup, ты кем будешь, dawg?]],
             choices = {
                 {
                     text = [[Погнали.]],
-                    next = "d_pognali",
+                    next = "d_pognali__1",
                 },
             },
         },
@@ -13767,6 +13822,18 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[...]],
                     next = "d_r15",
+                },
+            },
+        },
+        d_chem_dumaesh_zanyatsya = {
+            text =
+            [[У меня нет особых талантов, но я всегда хотел дарить людям улыбки. Есть у меня одна идея - думаю сад будет отличным местом, заходи как-нибудь!]],
+            speaker = [[Панда]],
+            npc = "npc_brewmaster_good",
+            choices = {
+                {
+                    text = [[Зайду. Кстати, твои сыновья обещали вернуться, но их не видать. Где они?]],
+                    next = "d_zajdu_kstati_tvoi_synovya_obeschali_vernutsya_no_ih_ne_vidat_gde_oni",
                 },
             },
         },
@@ -13916,7 +13983,7 @@ Wazup, ты кем будешь, dawg?]],
             text =
             [[Да, и не только. Вся моя жизнь пошла в гору, особенно отношения с другими существами. Точно не уверен почему это произошло, но очень доволен, что так вышло.]],
             speaker = [[Панда]],
-            npc = "npc_brewmaster",
+            npc = "npc_brewmaster_good",
             choices = {
                 {
                     text = [[Рад за тебя.]],

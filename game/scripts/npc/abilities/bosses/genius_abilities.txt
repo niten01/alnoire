@@ -32,7 +32,7 @@
 		{
 			"channel_time"
 			{
-				"value"								"2.5"
+				"value"								"1.5"
 			}
 			"damage"
 			{
@@ -202,7 +202,7 @@
         
         "AbilityValues"
         {
-            "radius"                "700"
+            "radius"                "600"
             "time"                  "0.2"
         }
 
