@@ -106,7 +106,13 @@ LinkLuaModifier("modifier_chaser_final_ai", "modifiers/ai/modifier_chaser_final_
 LinkLuaModifier('modifier_chaser_tp_invul', 'modifiers/modifier_chaser_tp_invul', LUA_MODIFIER_MOTION_NONE)
 
 
-
+-- flask
+LinkLuaModifier("modifier_item_sanya_flask_heal", "modifiers/items/modifier_item_sanya_flask_heal",
+    LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_sanya_flask_ms", "modifiers/items/modifier_item_sanya_flask_ms",
+    LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_sanya_flask_evade", "modifiers/items/modifier_item_sanya_flask_evade",
+    LUA_MODIFIER_MOTION_NONE)
 
 -- shards / talents
 LinkLuaModifier('modifier_demon_power_rapper', 'modifiers/modifier_demon_power_rapper', LUA_MODIFIER_MOTION_NONE)

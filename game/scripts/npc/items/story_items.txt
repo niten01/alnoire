@@ -41,7 +41,7 @@
         "AbilityTextureName"            "sanya_flask_seed"
     }
 
-    "item_sanya_flask_upgrade_recipe"
+    "item_sanya_flask_upgrade_1_recipe"
     {
         "BaseClass"           "item_datadriven"
         "ID"                            "3003"
@@ -68,7 +68,7 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
         "AbilityCooldown"               "0.0"
 
-        "ItemInitialCharges" "7" 
+        "ItemInitialCharges" "3" 
         "ItemDisplayCharges" "1" 
         "ItemRequiresCharges" "1" 
         "ItemDroppable"         "0"
@@ -86,12 +86,25 @@
         }
     }
 
+    "item_sanya_flask_upgrade_2_recipe"
+    {
+        "BaseClass"           "item_datadriven"
+        "ID"                            "3005"
+        "ItemRecipe"          "1" 
+        "ItemCost"            "0" 
+        "ItemResult"          "item_sanya_flask_upgrade_2"
+        "ItemPurchasable"               "1"
+        "ItemRequirements"
+        {
+            "01" "item_sanya_flask_upgrade_1;item_sanya_flask_seed"
+        }
+    }
     "item_sanya_flask_upgrade_2"
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask_upgrade_2"
-        "AbilityTextureName"            "sanya_flask_upgrade_2"
-        "ID"                            "3004"
+        "AbilityTextureName"            "sanya_flask_upgrade_1"
+        "ID"                            "3006"
 
         "ItemQuality"                   "artifact"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAM | DECLARE_PURCHASES_IN_SPEECH"
@@ -100,7 +113,7 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
         "AbilityCooldown"               "0.0"
 
-        "ItemInitialCharges" "7" 
+        "ItemInitialCharges" "3" 
         "ItemDisplayCharges" "1" 
         "ItemRequiresCharges" "1" 
         "ItemDroppable"         "0"
@@ -119,6 +132,150 @@
             "buffDuration"              "5.0"
         }
     }
+
+    "item_sanya_flask_upgrade_3_recipe"
+    {
+        "BaseClass"           "item_datadriven"
+        "ID"                            "3005"
+        "ItemRecipe"          "1" 
+        "ItemCost"            "0" 
+        "ItemResult"          "item_sanya_flask_upgrade_3"
+        "ItemPurchasable"               "1"
+        "ItemRequirements"
+        {
+            "01" "item_sanya_flask_upgrade_2;item_sanya_flask_seed"
+        }
+    }
+    "item_sanya_flask_upgrade_3"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_sanya_flask_upgrade_3"
+        "AbilityTextureName"            "sanya_flask_upgrade_2"
+        "ID"                            "3006"
+
+        "ItemQuality"                   "artifact"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAM | DECLARE_PURCHASES_IN_SPEECH"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityCooldown"               "0.0"
+
+        "ItemInitialCharges" "3" 
+        "ItemDisplayCharges" "1" 
+        "ItemRequiresCharges" "1" 
+        "ItemDroppable"         "0"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+
+        "ItemIsNeutralItem"         "1"
+        "ItemPurchasable"               "1"
+        "ItemDeclarativeSlot"        "neutral" 
+
+        "AbilityValues" 
+        {
+            "hp_regen_percent"          "20.0"
+            "duration"                  "3.0"
+            "msBuff"                    "50"
+            "buffDuration"              "5.0"
+        }
+    }
+    "item_sanya_flask_upgrade_4_recipe"
+    {
+        "BaseClass"           "item_datadriven"
+        "ID"                            "3005"
+        "ItemRecipe"          "1" 
+        "ItemCost"            "0" 
+        "ItemResult"          "item_sanya_flask_upgrade_4"
+        "ItemPurchasable"               "1"
+        "ItemRequirements"
+        {
+            "01" "item_sanya_flask_upgrade_3;item_sanya_flask_seed"
+        }
+    }
+    "item_sanya_flask_upgrade_4"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_sanya_flask_upgrade_4"
+        "AbilityTextureName"            "sanya_flask_upgrade_2"
+        "ID"                            "3006"
+
+        "ItemQuality"                   "artifact"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAM | DECLARE_PURCHASES_IN_SPEECH"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityCooldown"               "0.0"
+
+        "ItemInitialCharges" "3" 
+        "ItemDisplayCharges" "1" 
+        "ItemRequiresCharges" "1" 
+        "ItemDroppable"         "0"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+
+        "ItemIsNeutralItem"         "1"
+        "ItemPurchasable"               "1"
+        "ItemDeclarativeSlot"        "neutral" 
+
+        "AbilityValues" 
+        {
+            "hp_regen_percent"          "20.0"
+            "duration"                  "3.0"
+            "msBuff"                    "50"
+            "msBuffDuration"            "5.0"
+            "evadePercent"              "10.0"
+            "evadeBuffDuration"         "5.0"
+        }
+    }
+    "item_sanya_flask_upgrade_5_recipe"
+    {
+        "BaseClass"           "item_datadriven"
+        "ID"                            "3005"
+        "ItemRecipe"          "1" 
+        "ItemCost"            "0" 
+        "ItemResult"          "item_sanya_flask_upgrade_5"
+        "ItemPurchasable"               "1"
+        "ItemRequirements"
+        {
+            "01" "item_sanya_flask_upgrade_4;item_sanya_flask_seed"
+        }
+    }
+    "item_sanya_flask_upgrade_5"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_sanya_flask_upgrade_5"
+        "AbilityTextureName"            "sanya_flask_upgrade_3"
+        "ID"                            "3006"
+
+        "ItemQuality"                   "artifact"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAM | DECLARE_PURCHASES_IN_SPEECH"
+        "ItemCapabilities"              "ITEM_CAPABILITY_CAN_BE_DROPPED"
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityCooldown"               "0.0"
+
+        "ItemInitialCharges" "4" 
+        "ItemDisplayCharges" "1" 
+        "ItemRequiresCharges" "1" 
+        "ItemDroppable"         "0"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+
+        "ItemIsNeutralItem"         "1"
+        "ItemPurchasable"               "1"
+        "ItemDeclarativeSlot"        "neutral" 
+
+        "AbilityValues" 
+        {
+            "hp_regen_percent"          "20.0"
+            "duration"                  "3.0"
+            "msBuff"                    "50"
+            "msBuffDuration"            "5.0"
+            "evadePercent"              "10.0"
+            "evadeBuffDuration"         "5.0"
+        }
+    }
+
     "item_ski"
     {
         "BaseClass"                     "item_lua"          

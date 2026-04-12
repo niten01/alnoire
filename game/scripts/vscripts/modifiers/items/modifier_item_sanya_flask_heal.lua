@@ -1,31 +1,32 @@
-modifier_item_sanya_flask_upgrade_1 = class({})
+modifier_item_sanya_flask_heal = class({})
 
-function modifier_item_sanya_flask_upgrade_1:IsHidden() return false end
+function modifier_item_sanya_flask_heal:IsHidden() return false end
 
-function modifier_item_sanya_flask_upgrade_1:IsPurgable() return true end
+function modifier_item_sanya_flask_heal:IsPurgable() return true end
 
-function modifier_item_sanya_flask_upgrade_1:IsDebuff() return false end
+function modifier_item_sanya_flask_heal:IsDebuff() return false end
 
-function modifier_item_sanya_flask_upgrade_1:GetTexture()
-    return "sanya_flask_upgrade_1_modifier"
+function modifier_item_sanya_flask_heal:GetTexture()
+    return "forest_troll_high_priest_heal_amp_aura"
 end
 
-function modifier_item_sanya_flask_upgrade_1:DeclareFunctions()
+function modifier_item_sanya_flask_heal:DeclareFunctions()
     return {
         MODIFIER_EVENT_ON_TAKEDAMAGE,
         MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
     }
 end
 
-function modifier_item_sanya_flask_upgrade_1:GetModifierHealthRegenPercentage()
-    local abil = self:GetAbility()
-    return abil:GetSpecialValueFor('hp_regen_percent') or 30.0
+function modifier_item_sanya_flask_heal:GetModifierHealthRegenPercentage()
+    return self.hp_regen_percent
 end
 
-function modifier_item_sanya_flask_upgrade_1:OnCreated()
+function modifier_item_sanya_flask_heal:OnCreated()
     if not IsServer() then
         return
     end
+    local abil = self:GetAbility()
+    self.hp_regen_percent = abil:GetSpecialValueFor('hp_regen_percent')
     local unit = self:GetParent()
     local pfx = ParticleManager:CreateParticle(
         'particles/econ/items/pugna/pugna_ti9_immortal/pugna_ti9_immortal_netherblast_flash_b.vpcf', PATTACH_ABSORIGIN,
@@ -33,7 +34,7 @@ function modifier_item_sanya_flask_upgrade_1:OnCreated()
     ParticleManager:ReleaseParticleIndex(pfx)
 end
 
-function modifier_item_sanya_flask_upgrade_1:OnTakeDamage(params)
+function modifier_item_sanya_flask_heal:OnTakeDamage(params)
     if not IsServer() then return end
 
     if params.unit == self:GetParent() then
