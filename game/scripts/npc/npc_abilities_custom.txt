@@ -108,7 +108,7 @@
 
 		"AbilityValues"
 		{
-			"range"		"600"
+			"range"		"1310"
 			"fire_interval"	"1"
 		}
 	}

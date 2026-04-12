@@ -536,9 +536,9 @@
         
         "AbilityValues"
         {
-            "damage"      "100" // magical
-            "radius"      "200"
-            "chance_pct"  "10"
+            "damage"      "70" // magical
+            "radius"      "300"
+            "chance_pct"  "15"
         }
     }
     "item_lean_power_rapper" 
@@ -572,9 +572,9 @@
         
         "AbilityValues"
         {
-            "damage"      "100" // magical
+            "damage"      "30" // magical
             "radius"      "200"
-            "chance_pct"  "10"
+            "chance_pct"  "15"
         }
     }
     "item_lean_power_logarithmus" 
@@ -609,8 +609,8 @@
         "AbilityValues"
         {
             "damage"      "100" // magical
-            "radius"      "200"
-            "stacks_threshold"  "15"
+            "radius"      "500"
+            "stacks_threshold"  "10"
         }
     }
     // "item_barrel_hammer"
