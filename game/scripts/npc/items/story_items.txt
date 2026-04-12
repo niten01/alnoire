@@ -103,7 +103,7 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask_upgrade_2"
-        "AbilityTextureName"            "sanya_flask_upgrade_1"
+        "AbilityTextureName"            "sanya_flask_upgrade_2"
         "ID"                            "3006"
 
         "ItemQuality"                   "artifact"
@@ -150,7 +150,7 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask_upgrade_3"
-        "AbilityTextureName"            "sanya_flask_upgrade_2"
+        "AbilityTextureName"            "sanya_flask_upgrade_3"
         "ID"                            "3006"
 
         "ItemQuality"                   "artifact"
@@ -196,7 +196,7 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask_upgrade_4"
-        "AbilityTextureName"            "sanya_flask_upgrade_2"
+        "AbilityTextureName"            "sanya_flask_upgrade_4"
         "ID"                            "3006"
 
         "ItemQuality"                   "artifact"
@@ -244,7 +244,7 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask_upgrade_5"
-        "AbilityTextureName"            "sanya_flask_upgrade_3"
+        "AbilityTextureName"            "sanya_flask_upgrade_5"
         "ID"                            "3006"
 
         "ItemQuality"                   "artifact"

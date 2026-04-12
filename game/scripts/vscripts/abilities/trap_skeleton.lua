@@ -13,6 +13,24 @@ function modifier_trap_skeleton:IsHidden() return true end
 
 function modifier_trap_skeleton:IsPurgable() return false end
 
+function modifier_trap_skeleton:DeclareFunctions()
+    return {
+        MODIFIER_EVENT_ON_ATTACK_LANDED
+    }
+end
+
+function modifier_trap_skeleton:OnAttackLanded(params)
+    if not IsServer() then return end
+    if params.attacker ~= self:GetParent() then return end
+    ApplyDamage({
+        victim = params.unit,
+        attacker = self:GetParent(),
+        damage = EpsTraps:GetDamage(params.unit),
+        damage_type = DAMAGE_TYPE_PURE,
+        ability = self:GetAbility()
+    })
+end
+
 function modifier_trap_skeleton:OnCreated()
     if not IsServer() then return end
     local ability = self:GetAbility()
