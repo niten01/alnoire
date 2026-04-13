@@ -662,7 +662,7 @@
 		"MovementSpeed"				"210"					
 		"MovementTurnRate"			"1.0"					
 
-		"StatusHealth"				"800"		// Base health.
+		"StatusHealth"				"700"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -743,7 +743,7 @@
 		"MovementSpeed"				"210"					
 		"MovementTurnRate"			"1.0"					
 
-		"StatusHealth"				"800"		// Base health.
+		"StatusHealth"				"700"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -1088,8 +1088,8 @@
 		"ArmorPhysical"				"1"			// Physical protection.
 		"MagicalResistance"         "40"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"40"		// Damage range min.
-		"AttackDamageMax"			"45"		// Damage range max.
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"35"		// Damage range max.
 		"AttackRate"				"5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.

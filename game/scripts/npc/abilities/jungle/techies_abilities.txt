@@ -45,7 +45,7 @@
 			"stun_duration"				"2.0 1 1.2 1.4"
 			"hp_cost"			
 			{
-				"value" 			"10"
+				"value" 			"15"
 				"DamageTypeTooltip"									"DAMAGE_TYPE_PURE"
 				"CalculateSpellDamageTooltip"						 "0"
 			}
