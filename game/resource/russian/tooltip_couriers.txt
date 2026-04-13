@@ -17,20 +17,6 @@
 "npc_courier_crocodile"    "Не вор - 100"
 "npc_courier_sniffer"    "Нюхач"
 "npc_courier_smart"    "Студент"
-<<<<<<< HEAD
-"npc_courier_roshanchik"    "Рошанчик"
-"npc_courier_aghanim"    "Аганим"
-"npc_courier_grandpa"    "Дедуля"
-"npc_courier_gold_hamster"    "Хомячок"
-"npc_courier_gold_cat"    "Учёная кошка"
-"npc_courier_gold_wizard"    "Учёный"
-"npc_courier_black_wizard"    "Уголёк"
-"npc_courier_blue_zombie"    "Зомби ассистент"
-"npc_courier_taksa"    "Такса"
-"npc_courier_demon_book"    "Всезнайка"
-"npc_courier_gold_dp"    "Учёная"
-"npc_courier_black_wizzard"    "Тёмный сантехник"
-=======
 "npc_courier_roshanchik"    "Рошанчик" 
 "npc_courier_aghanim"    "Аганим prime"
 "npc_courier_grandpa"    "Профессор" 
@@ -42,7 +28,6 @@
 "npc_courier_demon_book"    "Фанат Стругацкого"
 "npc_courier_gold_dp"    "Надменная гиперосмик" 
 "npc_courier_black_wizzard"    "Тёмный сантехник" 
->>>>>>> 360026dfa188b7592ced6c487444a83a96a15089
 "npc_courier_pudge_dog"    "Бульдог"
 "npc_courier_bober"    "Бобёр"
 "npc_courier_rabbit"    "Заяц"
