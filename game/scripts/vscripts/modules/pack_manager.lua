@@ -76,9 +76,9 @@ function PackManager:ActivatePack(packName)
         self:SetUnitAIActive(unit, true)
     end)
 
-    local enemies = FindEnemiesForAIInRadius(pack.pos, pack.rangeRetreat)
-    if #enemies > 0 then
-        self:OnAggro(pack, enemies[1])
+    local sanya = FindSanyaInRadius(pack.pos, pack.rangeRetreat)
+    if sanya then
+        self:OnAggro(pack, sanya)
     end
 end
 

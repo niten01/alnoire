@@ -127,12 +127,12 @@ SHOW_ONLY_PLAYER_INVENTORY                   = false -- Should we allow players 
 DISABLE_STASH_PURCHASING                     = false -- Should we prevent players from being able to buy items into their stash when not at a shop?
 DISABLE_ANNOUNCER                            = true  -- Should we disable the announcer from working in the game?
 FORCE_PICKED_HERO                            =
-"npc_dota_hero_sanya_towel_master"                   -- What hero should we force all players to spawn as? (e.g. "npc_dota_hero_axe").  Use nil to allow players to pick their own hero.
+"npc_dota_hero_sanya"                   -- What hero should we force all players to spawn as? (e.g. "npc_dota_hero_axe").  Use nil to allow players to pick their own hero.
 -- This will not work if "EnablePickRules" is "1" in 'addoninfo.txt'!
 
 ADD_ITEM_TO_HERO_ON_SPAWN                    = false -- Add an example item to the picked hero when he spawns?
 
-CUSTOM_RESPAWN_TIME                          = 300
+CUSTOM_RESPAWN_TIME                          = 3
 
 FOUNTAIN_CONSTANT_MANA_REGEN                 = -1    -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_MANA_REGEN               = -1    -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.

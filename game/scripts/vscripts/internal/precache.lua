@@ -310,6 +310,9 @@ return {
         "npc_trap_skeleton",
     },
     models = {
+        -- ski
+        "models/sanya/wearables/sanya_ski.vmdl",
+
         --mk banana
         "models/props_gameplay/banana_prop_closed_mk.vmdl",
         "models/creeps/roshan_aghanim/roshan_aghanim.vmdl",

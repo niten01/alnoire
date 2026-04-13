@@ -2,7 +2,7 @@ ogre_bruiser_fly_hit = class {}
 LinkLuaModifier("modifier_ogre_fly", "abilities/bosses/ogre_bruiser_fly_hit.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
 
 function ogre_bruiser_fly_hit:GetBehavior()
-    return DOTA_ABILITY_BEHAVIOR_POINT
+    return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET
 end
 
 function ogre_bruiser_fly_hit:OnAbilityPhaseStart()
@@ -23,12 +23,16 @@ function ogre_bruiser_fly_hit:OnAbilityPhaseStart()
         if not caster:HasModifier("modifier_move") then
             local dir = (target - caster:GetAbsOrigin())
             local speed = #dir / flyTime
-            caster:AddNewModifier(nil, nil, "modifier_move", {
+            caster:AddNewModifier(caster, self, "modifier_move", {
                 directionX = dir.x,
                 directionY = dir.y,
                 speed = speed,
                 duration = flyTime
             })
+            -- caster:AddNewModifier(caster, self, "modifier_ogre_fly", {
+            --     duration = flyTime
+            -- })
+            -- caster:SetCursorCastTarget(target)
         end
     end)
 end
@@ -40,9 +44,7 @@ function ogre_bruiser_fly_hit:OnAbilityPhaseInterrupted()
     end
 
     local caster = self:GetCaster()
-    if caster and caster:HasModifier("modifier_ogre_fly") then
-        caster:RemoveModifierByName("modifier_ogre_fly")
-    end
+    caster:RemoveModifierByName("modifier_move")
 end
 
 function ogre_bruiser_fly_hit:OnSpellStart()
@@ -87,25 +89,35 @@ function modifier_ogre_fly:OnCreated()
     local parent = self:GetParent()
     local target = parent.flyTarget
     self.targetEnt = parent.flyTargetEnt
-    parent.flyTarget = nil
-    parent.flyTargetEnt = nil
-    assert(target)
-    local time = self:GetDuration()
-    assert(time)
-    local dir = target - parent:GetAbsOrigin()
-    local dist = #dir
-    local weaponOffset = 200
-    self.distance = dist - weaponOffset
-    self.speed = self.distance / time
-    self.direction = dir:Normalized()
-    self.travelled = 0
-    self.target = target
+    self:StartIntervalThink(0.1)
+    -- parent.flyTarget = nil
+    -- parent.flyTargetEnt = nil
+    -- assert(target)
+    -- local time = self:GetDuration()
+    -- assert(time)
+    -- local dir = target - parent:GetAbsOrigin()
+    -- local dist = #dir
+    -- local weaponOffset = 200
+    -- self.distance = dist - weaponOffset
+    -- self.speed = self.distance / time
+    -- self.direction = dir:Normalized()
+    -- self.travelled = 0
+    -- self.target = target
 
-    if self:ApplyHorizontalMotionController() then
-        self.time = 0
-    else
-        self:Destroy()
-    end
+    -- if self:ApplyHorizontalMotionController() then
+    --     self.time = 0
+    -- else
+    --     self:Destroy()
+    -- end
+end
+
+function modifier_ogre_fly:OnIntervalThink()
+    if not IsServer() then return end
+    local parent    = self:GetParent()
+    local targetPos = self.targetEnt:GetAbsOrigin()
+    DrawDebugCircle(targetPos, 20, 0.1)
+    parent:SetCursorPosition(targetPos)
+    parent:FaceTowards(targetPos)
 end
 
 function modifier_ogre_fly:UpdateHorizontalMotion(me, dt)
@@ -118,6 +130,7 @@ function modifier_ogre_fly:UpdateHorizontalMotion(me, dt)
     local new_pos = me:GetAbsOrigin() + self.direction * step
     me:SetAbsOrigin(new_pos)
     if IsValidEntity(self.targetEnt) then
+        DrawDebugCircle(self.targetEnt:GetAbsOrigin(), 20, 0.1)
         me:FaceTowards(self.targetEnt:GetAbsOrigin())
     end
 

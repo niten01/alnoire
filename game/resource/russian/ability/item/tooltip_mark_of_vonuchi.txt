@@ -1,3 +1,3 @@
 "DOTA_Tooltip_ability_item_mark_of_vonuchi"	        "Клеймо Вонючего"
 "DOTA_Tooltip_ability_item_mark_of_vonuchi_Lore"	    "«Казуал» обязан принять сперму в рот или прямую кишку, чтобы не «заказуалить» какой-либо предмет или другого обитателя. Оплата с точки зрения «казуальского закона» обязательна, поскольку превращает половой акт с «казуалом» в проституцию."
-"DOTA_Tooltip_ability_item_mark_of_vonuchi_mag_res" "+$spell_resist"
+"DOTA_Tooltip_ability_item_mark_of_vonuchi_mag_res" "%+$spell_resist"

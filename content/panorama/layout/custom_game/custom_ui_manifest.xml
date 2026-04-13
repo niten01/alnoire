@@ -10,7 +10,7 @@
     <CustomUIElement type="Hud"
       layoutfile="file://{resources}/layout/custom_game/resource_manifest.xml" />
 
-    <!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/intro.xml" /> -->
+    <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/intro.xml" />
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/flow_bar.xml" />
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/cutscene_hud.xml" />
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/dialogue_hud.xml" />

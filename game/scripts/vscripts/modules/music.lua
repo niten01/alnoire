@@ -99,17 +99,17 @@ end
 
 function Music:OnEntityKilled(event)
     local victim = event.killed_unit
-    -- if victim:IsRealHero() and not victim:IsSpiritBearCustom() then
-    --     local playerID = victim:GetPlayerOwnerID()
-    --     self:StopCustomMusic(playerID)
-    --     self.musicState[playerID].musicSet = "silence"
-    --     Timers:CreateTimer(CUSTOM_RESPAWN_TIME + 5, function()
-    --         local player = victim:GetPlayerOwner()
-    --         StopSoundOn(self.musicState[playerID].current, player)
-    --         EmitSoundOnClient(self.musicState[playerID].current, player)
-    --         -- EmitGlobalSound(self.musicState[playerID].current)
-    --     end)
-    -- end
+    if victim:IsRealHero() and not victim:IsSpiritBearCustom() then
+        local playerID = victim:GetPlayerOwnerID()
+        self:StopCustomMusic(playerID)
+        -- self.musicState[playerID].musicSet = "silence"
+        -- Timers:CreateTimer(CUSTOM_RESPAWN_TIME + 5, function()
+        --     local player = victim:GetPlayerOwner()
+        --     StopSoundOn(self.musicState[playerID].current, player)
+        --     EmitSoundOnClient(self.musicState[playerID].current, player)
+        --     -- EmitGlobalSound(self.musicState[playerID].current)
+        -- end)
+    end
 end
 
 function Music:OnPackWiped(event)

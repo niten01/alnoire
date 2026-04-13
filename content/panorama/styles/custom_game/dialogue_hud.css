@@ -102,7 +102,7 @@
   width: 220px;
   height: 220px;
   border-radius: 18px;
-  overflow: clip;
+  overflow: noclip;
 
   background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2330ff), to(#0b0f16ff));
   border: 1px solid #ffffff14;
