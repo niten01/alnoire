@@ -290,7 +290,7 @@
         {
             "proj_distance"            "5000"
             "proj_speed"                "250"
-            "proj_radius"               "30"
+            "proj_radius"               "25"
             "shot_interval"             "0.07"
             "duration"                  "10"
             "spread"                    "180"

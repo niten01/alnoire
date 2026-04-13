@@ -8,8 +8,8 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"ConsideredHero" 			"1"
 
-        "StatusHealth"				"150"		// Base health.
-		"ArmorPhysical"				"10"	// Physical protection.
-		"MagicalResistance"         "30"
+        "StatusHealth"				"144"		// Base health.
+		"ArmorPhysical"				"0"	// Physical protection.
+		"MagicalResistance"         "65"
 	}
 }

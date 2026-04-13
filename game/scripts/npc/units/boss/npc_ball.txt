@@ -86,3 +86,4 @@
         	"soundfile"			"soundevents/bosses/island_guard.vsndevts"
 		}
 	}
+}

@@ -109,7 +109,7 @@
 		"AbilityValues"
 		{
 			"range"		"1310"
-			"fire_interval"	"1.5"
+			"fire_interval"	"2.5"
 		}
 	}
 }

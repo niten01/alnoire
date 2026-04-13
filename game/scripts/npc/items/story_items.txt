@@ -479,6 +479,28 @@
             "particle"		"particles/base_attacks/ranged_siege_good.vpcf"
         }
     }
+    "item_poison_note"
+    {
+        "ID"                    "3014"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "poison_note"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+    }
+    "item_first_note"
+    {
+        "ID"                    "3015"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "first_note"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+    }
     "item_demon_power_rapper"
     {
         "BaseClass"             "item_datadriven"
