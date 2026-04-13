@@ -232,7 +232,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCastPoint"				"1.3"
+		"AbilityCastPoint"				"1.7"
         "AbilityCooldown"		        "15.0"
 
 		// Special
@@ -246,7 +246,7 @@
 
 			// bound to particle
 			"lift_duration" "2"
-			"warning_delay" "1.0"
+			"warning_delay" "0.0"
 		}
 
 		"precache"
@@ -306,7 +306,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
 		"AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastPoint"				"1.0"
+		"AbilityCastPoint"				"1.4"
         "AbilityCooldown"		        "8.0"
 
 		// Special
@@ -316,7 +316,7 @@
 			"damage"	       "250"	
 			"radius"		   "500"
 			"stun_duration"	   "2"
-			"warning_delay"	   "0.3"
+			"warning_delay"	   "0.0"
 		}
 
 		"precache"

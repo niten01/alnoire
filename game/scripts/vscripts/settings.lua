@@ -132,7 +132,7 @@ FORCE_PICKED_HERO                            =
 
 ADD_ITEM_TO_HERO_ON_SPAWN                    = false -- Add an example item to the picked hero when he spawns?
 
-CUSTOM_RESPAWN_TIME                          = 3
+CUSTOM_RESPAWN_TIME                          = 300
 
 FOUNTAIN_CONSTANT_MANA_REGEN                 = -1    -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_MANA_REGEN               = -1    -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.

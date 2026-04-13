@@ -1165,6 +1165,12 @@ return {
         item_spawner_egg = {
             item = "item_tough_egg",
         },
+        item_spawner_poison_note = {
+            item = "item_poison_note",
+        },
+        item_spawner_first_note = {
+            item = "item_first_note",
+        },
         item_spawner_flask = {
             item = "item_sanya_flask",
         },
@@ -1530,8 +1536,8 @@ return {
             goldBounty = 500,
         },
         pack_gate_trolls = {
-            rangeRetreat = 1000,
-            rangeAggro = 600,
+            rangeRetreat = 1600,
+            rangeAggro = 900,
             activateAfterUnitsSpawned = false,
             xpBounty = 1,
             goldBounty = 300,

@@ -3,6 +3,7 @@ SummonInventory = class {}
 function SummonInventory:Init()
     GameEvents:OnEntityKilled(function(event)
         local killedUnit = event.killed_unit
+        DebugPrint(killedUnit:GetUnitName())
         if killedUnit:GetUnitName() ~= "towel_summon" then return end
         self:SaveSummonInventory(killedUnit)
     end)
@@ -11,10 +12,13 @@ function SummonInventory:Init()
         if spawnedUnit:GetUnitName() ~= "towel_summon" then return end
 
         local owner = spawnedUnit:GetOwner()
+        DebugPrint(owner)
+        PrintTable(owner.summonItemStash or {})
 
         if owner and owner.summonItemStash then
             for _, item in ipairs(owner.summonItemStash) do
                 if not item:IsNull() then
+                    DebugPrint(item:GetName())
                     item:RemoveEffects(EF_NODRAW)
                     spawnedUnit:AddItem(item)
                 end

@@ -103,7 +103,7 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask_upgrade_2"
-        "AbilityTextureName"            "sanya_flask_upgrade_1"
+        "AbilityTextureName"            "sanya_flask_upgrade_2"
         "ID"                            "3006"
 
         "ItemQuality"                   "artifact"
@@ -150,7 +150,7 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask_upgrade_3"
-        "AbilityTextureName"            "sanya_flask_upgrade_2"
+        "AbilityTextureName"            "sanya_flask_upgrade_3"
         "ID"                            "3006"
 
         "ItemQuality"                   "artifact"
@@ -196,7 +196,7 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask_upgrade_4"
-        "AbilityTextureName"            "sanya_flask_upgrade_2"
+        "AbilityTextureName"            "sanya_flask_upgrade_4"
         "ID"                            "3006"
 
         "ItemQuality"                   "artifact"
@@ -244,7 +244,7 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_sanya_flask_upgrade_5"
-        "AbilityTextureName"            "sanya_flask_upgrade_3"
+        "AbilityTextureName"            "sanya_flask_upgrade_5"
         "ID"                            "3006"
 
         "ItemQuality"                   "artifact"
@@ -479,6 +479,28 @@
             "particle"		"particles/base_attacks/ranged_siege_good.vpcf"
         }
     }
+    "item_poison_note"
+    {
+        "ID"                    "3014"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "poison_note"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+    }
+    "item_first_note"
+    {
+        "ID"                    "3015"
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "first_note"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemKillable"                  "0"
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemQuality"                   "rare"
+    }
     "item_demon_power_rapper"
     {
         "BaseClass"             "item_datadriven"
@@ -536,9 +558,9 @@
         
         "AbilityValues"
         {
-            "damage"      "100" // magical
-            "radius"      "200"
-            "chance_pct"  "10"
+            "damage"      "70" // magical
+            "radius"      "300"
+            "chance_pct"  "15"
         }
     }
     "item_lean_power_rapper" 
@@ -572,9 +594,9 @@
         
         "AbilityValues"
         {
-            "damage"      "100" // magical
+            "damage"      "30" // magical
             "radius"      "200"
-            "chance_pct"  "10"
+            "chance_pct"  "15"
         }
     }
     "item_lean_power_logarithmus" 
@@ -609,8 +631,8 @@
         "AbilityValues"
         {
             "damage"      "100" // magical
-            "radius"      "200"
-            "stacks_threshold"  "15"
+            "radius"      "500"
+            "stacks_threshold"  "10"
         }
     }
     // "item_barrel_hammer"

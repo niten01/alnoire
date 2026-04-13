@@ -64,3 +64,6 @@
 "npc_desert_dire_melee"                 "Вечный воин"
 "npc_desert_dire_range"                 "Вечный стрелок"
 "npc_desert_dire_siege"                 "Вечная катапульта"
+"npc_chaser_clone"                      "Преследователь"
+"npc_chaser"                            "Преследователь"
+"npc_chaser_final"                      "Преследователь"

@@ -115,7 +115,7 @@
 		"AbilityValues"
 		{
 			"radius"					"400 450 500 550"
-			"healPrc"					"0.10 0.12 0.15 0.18"
+			"healPct"					"12 14 16 18"
 			"decreaseMult"				"0.20 0.20 0.20 0.20"
 			"delayBeforeReset"			"2.0 2.0 2.0 2.0"
 		}

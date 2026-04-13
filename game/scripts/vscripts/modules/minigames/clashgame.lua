@@ -63,7 +63,7 @@ function ClashGame:Init()
 
         if self.isActive then return end
         DebugPrint("[ALNOIRE] Started CLASHGAME")
-        Music:StartCustomMusicForAll("music.island.combat")
+        Music:StartCustomMusicForAll("music.city.combat.clean")
         self.isActive = true
         self:SpawnTowers()
         self:SpawnAllWaves()

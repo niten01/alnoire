@@ -1,2 +1,3 @@
 "DOTA_Tooltip_ability_item_tough_egg"	        "Крепкое Яйцо"
+"DOTA_Tooltip_ability_item_tough_egg_Lore"     "Человек, однажды бродивший по лесу, увидел как из гнезда выпало яйцо. Однако... оно не разбилось. Данная картина осенила человека."
 "DOTA_Tooltip_ability_item_tough_egg_Description" "<h1>Активное: Укрепиться</h1> Владелец становится неуязвимым на %duration% сек."
