@@ -10,6 +10,15 @@ function FlaskManager:Init()
         end
     end)
 
+    ChatCommand:LinkDevCommand("-musdeath", function(event, args)
+        local playerID = event.playerID
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+
+        if hero then
+            EmitSoundOn("DOTAMusic.Death", hero)
+        end
+    end)
+
     ChatCommand:LinkDevCommand("-refillelden", function(event, args)
         self:RefillFlask(event.playerID)
     end)

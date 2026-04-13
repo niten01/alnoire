@@ -380,7 +380,7 @@
 
 		// Bounds
 		"RingRadius"				"40"
-		"HealthBarOffset"			"150"
+		"HealthBarOffset"			"160"
 
 		"BountyXP" "0"		// Experience earn.
 		"BountyGoldMin" "0"		// Gold earned min.
@@ -515,7 +515,7 @@
 
 		// Bounds
 		"RingRadius"				"40"
-		"HealthBarOffset"			"130"
+		"HealthBarOffset"			"200"
 
 		"BountyXP" "0"		// Experience earn.
 		"BountyGoldMin" "0"		// Gold earned min.
@@ -652,7 +652,7 @@
 
 		// Bounds
 		"RingRadius"				"40"
-		"HealthBarOffset"			"130"
+		"HealthBarOffset"			"140"
 
 		"BountyXP" "0"		// Experience earn.
 		"BountyGoldMin" "0"		// Gold earned min.
@@ -733,7 +733,7 @@
 
 		// Bounds
 		"RingRadius"				"40"
-		"HealthBarOffset"			"130"
+		"HealthBarOffset"			"140"
 
 		"BountyXP" "0"		// Experience earn.
 		"BountyGoldMin" "0"		// Gold earned min.
@@ -813,7 +813,7 @@
 
 		// Bounds
 		"RingRadius"				"40"
-		"HealthBarOffset"			"130"
+		"HealthBarOffset"			"140"
 
 		"BountyXP" "0"		// Experience earn.
 		"BountyGoldMin" "0"		// Gold earned min.

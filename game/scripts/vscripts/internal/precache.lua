@@ -53,7 +53,7 @@ return {
         "npc_courier_bober",
         "npc_courier_rabbit",
         "npc_courier_boar",
-        "npc_courier_racoon",
+        "npc_courier_raccoon",
         "npc_courier_parrot",
         "npc_courier_mushroom_1",
         "npc_courier_mushroom_2",
@@ -90,6 +90,7 @@ return {
         "npc_courier_gold_dp",
         "npc_courier_black_wizard",
         "npc_courier_pudge_dog",
+        "npc_courier_doom",
 
         "npc_tormentor",
         "npc_shamanka",

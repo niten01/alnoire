@@ -36,6 +36,7 @@ function SummonInventory:SaveSummonInventory(summonUnit)
 
         for i = 0, 14 do
             local item = summonUnit:GetItemInSlot(i)
+            DebugPrint(item)
             if item then
                 summonUnit:TakeItem(item)
                 table.insert(owner.summonItemStash, item)
