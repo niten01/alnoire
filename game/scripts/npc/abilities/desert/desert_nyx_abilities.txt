@@ -68,7 +68,7 @@
             "vulnurableTimeMin"    "2.0"
             "vulnurableTimeMax"    "3.0"
 			"undergroundTimeMin"   "3.0"
-            "undergroundTimeMax"   "8.0"
+            "undergroundTimeMax"   "10.0"
 		}
     }
 }
