@@ -1,9 +1,9 @@
 "DOTA_Tooltip_ability_perdun_fart_passive"		            "Запашок"
 "DOTA_Tooltip_ability_perdun_fart_passive_Lore"		            "Фууу, чел, боже.."
 "DOTA_Tooltip_Ability_perdun_fart_passive_SummaryDescription" ""
-"DOTA_Tooltip_ability_perdun_fart_passive_Description"		"Ну и запах!!! От него ты прямо не хочешь жить! В моменте ты замечаешь, что на полянке помимо пердуна растут любопытные цветы.."
+"DOTA_Tooltip_ability_perdun_fart_passive_Description"		"Ну и запах!!! От него ты прямо не хочешь жить! Как эти цветы тут вообще растут.."
 
 "DOTA_Tooltip_ability_perdun_flower_passive"		            "Чудный сад"
-"DOTA_Tooltip_ability_perdun_flower_passive_Lore"		            "Садо-мазо? нет, я предпочитаю садо-водство"
+"DOTA_Tooltip_ability_perdun_flower_passive_Lore"		            "Садо-мазо? Нет, я предпочитаю садо-водство"
 "DOTA_Tooltip_Ability_perdun_flower_passive_SummaryDescription" ""
 "DOTA_Tooltip_ability_perdun_flower_passive_Description"		"Как же эти цветы растут в таком смраде? С ними явно что-то не так!"

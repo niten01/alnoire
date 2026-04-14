@@ -1,6 +1,6 @@
 "DOTA_Tooltip_ability_logarithmus_concentration"		            "Концентрация"
 "DOTA_Tooltip_Ability_logarithmus_concentration_SummaryDescription" ""
-"DOTA_Tooltip_ability_logarithmus_concentration_Description"		"Жонглируя в уме задачами из разных областей математики, Интегралус становится физически сильнее. Каждое попадание способностью дает заряд эффекта. Совершая атаку, герой наносит дополнительный магический урон и исцеляется за каждый заряд."
+"DOTA_Tooltip_ability_logarithmus_concentration_Description"		"Жонглируя в уме задачами из разных областей математики, Интегралус становится физически сильнее. Каждое попадание способностью дает заряд эффекта. Совершая базовую атаку, герой наносит дополнительный магический урон и исцеляется за каждый заряд."
 "DOTA_Tooltip_ability_logarithmus_concentration_Lore"		    "\"В чем смысл жизни? Решать.\"<br>— Неизвестный"
 "DOTA_Tooltip_ability_logarithmus_concentration_max_stacks"		    "МАКС. ЭФФЕКТОВ:"
 "DOTA_Tooltip_ability_logarithmus_concentration_magical_damage_per_stack"		    "ДОП. УРОН ЗА ЭФФЕКТ:"

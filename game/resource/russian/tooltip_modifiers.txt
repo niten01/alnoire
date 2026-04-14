@@ -18,10 +18,10 @@
 
 
 "DOTA_Tooltip_modifier_lean_power_towel_master"		"Любимый Перк"
-"DOTA_Tooltip_modifier_lean_power_towel_master_Description"		"Атака Раба может спровоцировать линовый всплеск."
+"DOTA_Tooltip_modifier_lean_power_towel_master_Description"		"Атака Раба может спровоцировать линовый всплеск вокруг вас обоих."
 
 "DOTA_Tooltip_modifier_lean_power_towel_summon"		"Любимый Перк"
-"DOTA_Tooltip_modifier_lean_power_towel_summon_Description"		"Атака Раба может спровоцировать линовый всплеск."
+"DOTA_Tooltip_modifier_lean_power_towel_summon_Description"		"Атака Раба может спровоцировать линовый всплеск вокруг вас обоих."
 
 "DOTA_Tooltip_modifier_lean_power_rapper"		"Любимый Перк"
 "DOTA_Tooltip_modifier_lean_power_rapper_Description"		"Сняряд Swag Souljah может спровоцировать линовый всплеск на противнике."

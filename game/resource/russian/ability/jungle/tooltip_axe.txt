@@ -1,5 +1,5 @@
 "DOTA_Tooltip_ability_axe_custom_hunger"		            "Горелка"
-"DOTA_Tooltip_ability_axe_custom_hunger_Lore"		            "Акс смотреть как саня гореть."
+"DOTA_Tooltip_ability_axe_custom_hunger_Lore"		            "Акс смотреть как Алекс гореть."
 "DOTA_Tooltip_Ability_axe_custom_hunger_SummaryDescription" ""
 "DOTA_Tooltip_ability_axe_custom_hunger_Description"		"Акс заставляет врага испытывать невыносимую жажду битвы, отчего тот получает магический урон каждую секунду, пока не убьет врага."
 

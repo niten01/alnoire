@@ -11,4 +11,4 @@
 "DOTA_Tooltip_ability_ursa_enrage"		            "Ярость мишки"
 "DOTA_Tooltip_ability_ursa_enrage_Lore"		            "то наносит МНОГО урона!"
 "DOTA_Tooltip_Ability_ursa_enrage_SummaryDescription" ""
-"DOTA_Tooltip_ability_ursa_enrage_Description"		"На последнем издыхании мишка дерется что есть мочи! БЕГИ ПОКА МОЖЕШЬ"
+"DOTA_Tooltip_ability_ursa_enrage_Description"		"Он идёт до конца."
