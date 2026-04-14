@@ -34,6 +34,7 @@
     "item_sanya_flask_seed"
     {
         "BaseClass"           "item_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ID"                            "3002"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
