@@ -111,7 +111,6 @@ function ClashGame:SpawnTowers()
             fwd.z = 0
             unit:FaceTowards(unit:GetAbsOrigin() + fwd * 100)
             unit:SetForwardVector(fwd)
-            DrawDebugCircle(unit, unit:GetBaseAttackRange(), 200)
             if string.find(unitName, 'king') then
                 unit:AddNewModifier(unit, nil, 'modifier_invulnerable', {})
                 unit:AddNewModifier(unit, nil, 'modifier_king_tower', {})
@@ -305,7 +304,6 @@ function ClashGame:TryCastKingSpell()
         local pointEnt = Entities:FindByName(nil, name)
         if pointEnt then
             if self.circleDrawn < self.totalSpellTargets then
-                DrawDebugCircle(pointEnt:GetAbsOrigin(), self.spellTargetFindRadius, 100)
                 self.circleDrawn = self.circleDrawn + 1
             end
             local enemies = FindUnitsInRadius(

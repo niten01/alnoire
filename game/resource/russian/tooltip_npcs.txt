@@ -57,3 +57,7 @@
 "npc_hermit"    "Отшельник"
 "npc_trap_skeleton"   "P diddy"
 "npc_green" "Зелёный"
+"npc_trap_spikes" "Шипы"
+"npc_trap_fire" "Огнемёт"
+"npc_trap_arrow" "Стреломёт"
+"npc_trap_pendulum" "Маятник"

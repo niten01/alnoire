@@ -40,8 +40,23 @@ end
 function modifier_tough_egg_buff:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
+        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
+        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
         MODIFIER_EVENT_ON_MODIFIER_ADDED,
     }
+end
+
+function modifier_tough_egg_buff:GetAbsoluteNoDamageMagical()
+    return 1
+end
+
+function modifier_tough_egg_buff:GetAbsoluteNoDamagePhysical()
+    return 1
+end
+
+function modifier_tough_egg_buff:GetAbsoluteNoDamagePure()
+    return 1
 end
 
 function modifier_tough_egg_buff:OnModifierAdded(params)

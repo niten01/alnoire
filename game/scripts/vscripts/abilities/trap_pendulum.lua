@@ -75,7 +75,7 @@ function modifier_trap_pendulum_thinker:OnIntervalThink()
     local startPos = origin - rightVec * length
     local endPos = origin + rightVec * length
 
-    DebugDrawLine(startPos, endPos, 255, 0, 0, false, 1)
+    -- DebugDrawLine(startPos, endPos, 255, 0, 0, false, 1)
     local enemies = FindUnitsInLine(
         caster:GetTeamNumber(),
         startPos,
