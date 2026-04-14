@@ -177,7 +177,7 @@ function PackManager:GiveRewards(packName)
             assert(hero)
             if pack.goldBounty > 0 then
                 hero:ModifyGold(pack.goldBounty, true, DOTA_ModifyGold_CreepKill)
-                hero:EmitSound("sfx.pack_bounty.gold")
+                SendOverheadEventMessage(nil, OVERHEAD_ALERT_GOLD, hero, pack.goldBounty, nil)
             end
 
             if pack.xpBounty > 0 then
