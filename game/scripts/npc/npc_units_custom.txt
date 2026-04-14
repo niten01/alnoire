@@ -53,6 +53,7 @@
 #base "units/story/npc_cat_barrel.txt"
 
 #base "units/story/npc_storyteller.txt"
+#base "units/story/npc_wasteland.txt"
 #base "units/story/npc_leader.txt"
 #base "units/story/npc_dream.txt"
 #base "units/story/npc_perekup.txt"

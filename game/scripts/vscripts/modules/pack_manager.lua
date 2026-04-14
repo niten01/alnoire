@@ -45,9 +45,9 @@ function PackManager:ActivatePack(packName)
         return
     end
     pack.debugPfx = {
-        DrawDebugCircle(packEntity, pack.rangeAggro),
-        DrawDebugCircle(packEntity, pack.rangeRetreat),
-        DrawDebugCircle(packEntity, pack.rangeFastTickRate),
+        -- DrawDebugCircle(packEntity, pack.rangeAggro),
+        -- DrawDebugCircle(packEntity, pack.rangeRetreat),
+        -- DrawDebugCircle(packEntity, pack.rangeFastTickRate),
     }
 
     pack.pos = packEntity:GetAbsOrigin()

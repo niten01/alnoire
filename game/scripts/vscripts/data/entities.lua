@@ -352,6 +352,11 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
+        spawner_wasteland           = {
+            npc = "npc_wasteland",
+            modifiers = { "modifier_story_npc" },
+            deferred = true,
+        },
         spawner_leader                = {
             npc = "npc_leader",
             modifiers = { "modifier_story_npc" },
