@@ -568,6 +568,9 @@ function StoryDriver:SetupAct4()
 
   fastRemoveNPC("npc_mustache")
   triggerSetEnabled("trigger_usach_stopit", false)
+
+  SpawnManager:SpawnNPC("spawner_wasteland")
+
   fastRemoveNPC("npc_shamanka")
   fastRemoveNPC("npc_storyteller")
 end

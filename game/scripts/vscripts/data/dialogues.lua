@@ -1104,6 +1104,7 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_wasteland", type = "interact" },
+                { ent_var = "first_met_global", value = { false }, npc = "npc_wasteland", type = "ent_var" },
             },
         },
         d_untitled_passage_70_merged_act4 = {
@@ -14508,7 +14509,7 @@ Wazup, ты кем будешь, dawg?]],
             },
         },
         d_untitled_passage_71_merged_act4 = {
-            text = [[Каждый, кто бросает мне вызов, - признаёт свою смерть.]],
+            text = [[Каждый, кто бросает мне вызов, признаёт свою смерть.]],
             speaker = [[Дерек]],
             npc = "npc_derek",
             choices = {
