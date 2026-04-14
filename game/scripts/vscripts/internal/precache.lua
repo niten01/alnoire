@@ -347,6 +347,7 @@ return {
         "models/creeps/ice_biome/undeadtusk/undead_tuskskeleton_armor01.vmdl",
     },
     sounds = {
+        "soundevents/fake_death.vsndevts",
         "soundevents/sfx.vsndevts",
         "soundevents/items.vsndevts",
         "soundevents/music.vsndevts",
