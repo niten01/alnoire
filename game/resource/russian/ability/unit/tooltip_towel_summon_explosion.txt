@@ -1,5 +1,5 @@
 "DOTA_Tooltip_ability_towel_summon_explosion"		            "Последняя Капля"
 "DOTA_Tooltip_ability_towel_summon_explosion_Lore"		    "Вечное сияние Чистого Полотенца."
 "DOTA_Tooltip_Ability_towel_summon_explosion_SummaryDescription" ""
-"DOTA_Tooltip_ability_towel_summon_explosion_Description"		"Раб в течение %delay% сек. копит все несогласие с концепцией мытья и выпускает его, нанося противникам огромный урон.<br><br>Во время подготовки Раб не может действовать и его нельзя атаковать."
+"DOTA_Tooltip_ability_towel_summon_explosion_Description"		"Раб в течение %delay% сек. копит всё несогласие с концепцией мытья и выпускает его, нанося противникам огромный урон.<br><br>Во время подготовки Раб не может действовать и его нельзя атаковать.<br><br>Если Раб атакует врага физическими атаками, перезарядка этой способности уменьшается на %cooldownReductionPerAttack% сек."
 "DOTA_Tooltip_ability_towel_summon_explosion_damage"		"УРОН:"

@@ -11,4 +11,4 @@
 "DOTA_Tooltip_ability_tidehunter_dead_in_the_water"		            "Якорь мне в бухту!"
 "DOTA_Tooltip_ability_tidehunter_dead_in_the_water_Lore"		            "Откуда он его достал?!"
 "DOTA_Tooltip_Ability_tidehunter_dead_in_the_water_SummaryDescription" ""
-"DOTA_Tooltip_ability_tidehunter_dead_in_the_water_Description"		"Арбуз сажает тебя на цепь якоря и своей жопой прикрывает его, чтобы ты никуда не ушел."
+"DOTA_Tooltip_ability_tidehunter_dead_in_the_water_Description"		"Арбуз сажает тебя на цепь якоря и своей жопой прикрывает его, чтобы ты никуда не ушел. Говорят, этот якорь уничтожал целые миры..."

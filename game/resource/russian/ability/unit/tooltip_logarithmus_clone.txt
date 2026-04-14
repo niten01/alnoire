@@ -1,5 +1,5 @@
 "DOTA_Tooltip_ability_logarithmus_clone"		            "Афинное преобразование"
 "DOTA_Tooltip_Ability_logarithmus_clone_SummaryDescription" ""
-"DOTA_Tooltip_ability_logarithmus_clone_Description"		"Интегралус смещает начало координат собственного пространства, переносясь назад и оставляя за собой свой прообраз. Через %swing_delay% сек. прообраз нанесет урон в области перед собой и исчезнет.<br><br><font color='#ffffff'><h1>АЛЬТ ВЕРСИЯ:</h1></font>Создает вокруг врага 4 копии и занимает место случайной из них. Интегралусы наносят сокрушаючий удар, после чего копии исчезают."
+"DOTA_Tooltip_ability_logarithmus_clone_Description"		"Интегралус смещает начало координат собственного пространства, переносясь назад и оставляя свой прообраз. Через %swing_delay% сек. прообраз нанесет урон в области перед собой и исчезнет.<br><br><font color='#ffffff'><h1>АЛЬТ ВЕРСИЯ:</h1></font>Создает вокруг врага 4 копии и занимает место случайной из них. Интегралусы наносят сокрушаючий удар, после чего копии исчезают. Во время нанесения удара, ты неуязвим."
 "DOTA_Tooltip_ability_logarithmus_clone_Note0"		    "Не может быть использован через уровни ландшафта."
 "DOTA_Tooltip_ability_logarithmus_clone_Lore"		    "φ: V₁→V₂<br>Im φ ⊕ Ker φ ≠ V₁<br>dim(Im φ) + dim(Ker φ) = dim V₁"

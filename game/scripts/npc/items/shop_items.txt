@@ -443,11 +443,11 @@
         "ItemSellable"                  "1"
         "ItemPurchasable"               "1"
 
-        "ItemCost"                      "1300"
+        "ItemCost"                      "1200"
 
         "AbilityValues" 
         {
-            "chance_pct"     "33"        
+            "chance_pct"     "50"        
             "additional_targets"    "2"
             "search_radius"  "400"
             "damage_reduction_pct"  "20" 

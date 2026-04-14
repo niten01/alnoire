@@ -1,4 +1,4 @@
 "DOTA_Tooltip_ability_logarithmus_alt_clone"		            "Альт Преобразование"
 "DOTA_Tooltip_Ability_logarithmus_alt_clone_SummaryDescription" ""
-"DOTA_Tooltip_ability_logarithmus_alt_clone_Description"		"Создает вокруг врага 4 копии и занимает место случайной из них. Интегралусы наносят сокрушаючий удар, после чего копии исчезают."
+"DOTA_Tooltip_ability_logarithmus_alt_clone_Description"		"Создает вокруг врага 4 копии и занимает место случайной из них. Интегралусы наносят сокрушаючий удар, после чего исчезают. Во время нанесения удара, ты неуязвим."
 "DOTA_Tooltip_ability_logarithmus_alt_clone_Note0"		    "Не может быть использован через уровни ландшафта."

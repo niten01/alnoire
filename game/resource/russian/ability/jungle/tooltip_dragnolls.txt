@@ -6,4 +6,4 @@
 "DOTA_Tooltip_ability_black_dragon_fireball"		            "Огненный плевок"
 "DOTA_Tooltip_ability_black_dragon_fireball_Lore"		            "Наверное, у него очень тепленько в пузике)"
 "DOTA_Tooltip_Ability_black_dragon_fireball_SummaryDescription" ""
-"DOTA_Tooltip_ability_black_dragon_fireball_Description"		"Ничего экзотического, просто лужа лавы изо рта, тебе это должно быть знакомо.."
+"DOTA_Tooltip_ability_black_dragon_fireball_Description"		"Ничего экзотического, просто лужа лавы изо рта, тебе это должно быть знакомо..."
