@@ -149,6 +149,7 @@ function OnVectorTargetingStart(fStartWidth, fEndWidth, fCastLength, bDual, bIgn
 	Particles.SetParticleControl(vectorTargetParticle, 1, Vector_raiseZ(worldPosition, 100));
 	Particles.SetParticleControl(vectorTargetParticle, 3, [endWidth, startWidth, ignoreArrowWidth]);
 	Particles.SetParticleControl(vectorTargetParticle, 4, [0, 255, 0]);
+	Particles.SetParticleControl(vectorTargetParticle, 6, [1, 0, 0]);
 
 	//Calculate initial particle CPs
 	vectorStartPosition = worldPosition;
