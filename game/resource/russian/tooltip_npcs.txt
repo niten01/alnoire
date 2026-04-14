@@ -56,3 +56,4 @@
 "npc_concert_legion"     "Мулатка"
 "npc_hermit"    "Отшельник"
 "npc_trap_skeleton"   "P diddy"
+"npc_green" "Зелёный"

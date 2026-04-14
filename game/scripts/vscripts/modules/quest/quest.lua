@@ -140,7 +140,7 @@ function Quest:TryGiveReward(obj)
         end
         if obj.rewardGold then
           hero:ModifyGold(obj.rewardGold, true, DOTA_ModifyGold_CreepKill)
-          -- hero:EmitSound("sfx.quest_bounty.gold")
+          SendOverheadEventMessage(nil, OVERHEAD_ALERT_GOLD, hero, obj.rewardGold, nil)
         end
         for _, itemName in ipairs(obj.rewardItems or {}) do
           SafeGiveItem(playerID, itemName)
