@@ -27,7 +27,7 @@
 "npc_courier_taksa"    "Носитель бремени"
 "npc_courier_demon_book"    "Фанат Стругацкого"
 "npc_courier_gold_dp"    "Надменная гиперосмик" 
-"npc_courier_black_wizzard"    "Тёмный сантехник" 
+"npc_courier_black_wizard"    "Тёмный сантехник" 
 "npc_courier_pudge_dog"    "Бульдог"
 "npc_courier_bober"    "Бобёр"
 "npc_courier_rabbit"    "Заяц"
@@ -61,3 +61,4 @@
 "npc_courier_ant"    "Муравей"
 "npc_courier_gardener"    "Садовник"
 "npc_courier_statue"    "Титановый демон"
+"npc_courier_furion"     "Проводник"
