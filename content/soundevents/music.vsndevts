@@ -205,7 +205,7 @@
     volume = "3.500000"
     fade_out = "2.0"
   }
-  music.city.combat.clean = {
+  music.clash.explore = {
     type = "dota_update_battle_music"
     vsnd_files =
     [

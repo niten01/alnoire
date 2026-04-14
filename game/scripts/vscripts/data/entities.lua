@@ -1689,6 +1689,7 @@ return {
         zone_classroom_1 = { musicSet = "classroom_1", respawnPoint = "respawn_prologue" },
         zone_prologue = { musicSet = "silence", respawnPoint = "respawn_prologue" },
         zone_forest_1 = { musicSet = "forest1", respawnPoint = "respawn_forest_1" },
+        zone_clash = { musicSet = "clash", respawnPoint = "respawn_clash", noCombatMusic = true },
         zone_forest_2 = { musicSet = "forest2", respawnPoint = "respawn_forest_2" },
         zone_forest_3 = { musicSet = "forest3", respawnPoint = "respawn_forest_3" },
         zone_city = { musicSet = "city", respawnPoint = "respawn_city", noCombatMusic = true },
