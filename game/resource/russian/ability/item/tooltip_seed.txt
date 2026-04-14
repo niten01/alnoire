@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_sanya_flask_seed"	        "Космический обломок"
+"DOTA_Tooltip_ability_item_sanya_flask_seed_Lore"	        "Этот камушек тянется к твоему лечебному вареву. Он словно хочет слиться с ним воедино..."

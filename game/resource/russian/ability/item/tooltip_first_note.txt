@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_first_note"	        "Древнняя рукопись"
+"DOTA_Tooltip_ability_item_first_note_Lore"	        "... жизнь за жизнь... не соглаша.тесь на его сд.лку... оставайт.сь людьми! - П."
