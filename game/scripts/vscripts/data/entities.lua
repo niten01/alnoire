@@ -243,7 +243,7 @@ return {
             deferred = true,
         },
         spawner_brewmaster_minigame   = {
-            npc = "npc_brewmaster",
+            npc = "npc_brewmaster_good",
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
@@ -1797,6 +1797,14 @@ return {
             requiresPassword = "logarithmus solvus",
             openSound = "sfx.metal_door.open",
         },
+        door_forest_3_shortcut = {
+            clipEntity = "clip_door_forest_3_shortcut",
+            openAnimation = "forest_3_open",
+            openSound = "sfx.door_palace.open",
+            requiresButtons = {
+                "button_forest_3_shortcut"
+            },
+        },
         door_village = {
             clipEntity = "clip_door_village",
         },
@@ -1845,6 +1853,9 @@ return {
     button = {
         button_forest_1_shortcut = {
             trigger = "button_trigger_forest_1_shortcut"
+        },
+        button_forest_3_shortcut = {
+            trigger = "button_trigger_forest_3_shortcut"
         },
 
         button_forest_1_reward_1 = {

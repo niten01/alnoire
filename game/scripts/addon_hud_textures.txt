@@ -10,5 +10,29 @@
             "width"  "64"
             "height" "64"
         }
+        "minimap_sanya_logarithmus"
+        {
+            "file"   "materials/vgui/hud/minimap_sanya_logarithmus.vmat"
+            "x"      "0"
+            "y"      "0"
+            "width"  "64"
+            "height" "64"
+        }
+        "minimap_sanya_rapper"
+        {
+            "file"   "materials/vgui/hud/minimap_sanya_rapper.vmat"
+            "x"      "0"
+            "y"      "0"
+            "width"  "64"
+            "height" "64"
+        }
+        "minimap_sanya_tm"
+        {
+            "file"   "materials/vgui/hud/minimap_sanya_tm.vmat"
+            "x"      "0"
+            "y"      "0"
+            "width"  "64"
+            "height" "64"
+        }
     }
 }

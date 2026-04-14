@@ -1,6 +1,7 @@
 (function () {
     const container = $("#IntroContainer")
     const video = $("#IntroVideo")
+    let hidden = true
 
     function StartIntro() {
         $.Msg("Start intro")
@@ -11,14 +12,18 @@
         $.GetContextPanel().style.visibility = "visible"
 
         $.Schedule(30.0, SkipIntro);
+        hidden = false
     }
 
     function SkipIntro() {
         $.Msg("Stop intro")
         video.Stop();
         video.AddClass("Hide")
+        video.style.visibility = "collapse"
         container.AddClass("Hide")
+        container.style.visibility = "collapse"
         $.GetContextPanel().style.visibility = "collapse"
+        hidden = true
     }
 
     $("#SkipButton").SetPanelEvent("onactivate", () => {
@@ -26,8 +31,11 @@
     })
 
     video.SetPanelEvent("onactivate", () => {
-        video.Play()
+        if (!hidden) {
+            video.Play()
+        }
     })
 
     GameEvents.Subscribe("start_intro", StartIntro);
+    GameEvents.Subscribe("stop_intro", SkipIntro);
 })();

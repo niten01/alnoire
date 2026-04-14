@@ -13,7 +13,7 @@ function SetupHUD() {
 			hideAllChildren(hud.FindChildTraverse("StatBranch"))
 			hideAllChildren(hud.FindChildTraverse("StatBranchDrawer"))
 			hideAllChildren(hud.FindChildTraverse("level_stats_frame"))
-			hideAllChildren(hud.FindChildTraverse("GridBasicsTab"))
+			// hideAllChildren(hud.FindChildTraverse("GridBasicsTab"))
 			hideAllChildren(hud.FindChildTraverse("GridNeutralsTab"))
 			hideAllChildren(hud.FindChildTraverse("TormentorTimerContainer"))
 			hideAllChildren(hud.FindChildTraverse("inventory_neutral_craft_holder"))

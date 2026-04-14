@@ -64,6 +64,10 @@
     "SoundSet"                                            "Hero_SanyaEnding"
     "GameSoundsFile"                                      "soundevents/heroes/sanya_ending.vsndevts"
 
+    "MinimapIcon"        "minimap_sanya"
+    "MinimapIconSize"    "1000"
+    "MinimapDisableTint" "1"
+
     "Ability1"                                            "ending_throw"
     "Ability2"                                            "ending_attacks"
 
@@ -123,6 +127,10 @@
     "BotImplemented"                                      "0"
     "SoundSet"                                            "Hero_TowelMaster"
     "GameSoundsFile"                                      "soundevents/heroes/towel_master.vsndevts"
+
+    "MinimapIcon"        "minimap_sanya_tm"
+    "MinimapIconSize"    "1000"
+    "MinimapDisableTint" "1"
 
     "MovementCapabilities"                                "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementTurnRate"                                    "0.9"
@@ -241,6 +249,10 @@
     "BotImplemented"                                      "0"
     "SoundSet"                                            "Hero_Rapper"
     "GameSoundsFile"                                      "soundevents/heroes/rapper.vsndevts"
+
+    "MinimapIcon"        "minimap_sanya_rapper"
+    "MinimapIconSize"    "1000"
+    "MinimapDisableTint" "1"
 
     "MovementCapabilities"                                "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementTurnRate"                                    "0.9"
@@ -361,6 +373,10 @@
     "HasAggressiveStance"                                 "1"
     "SoundSet"                                            "Hero_Logarithmus"
     "GameSoundsFile"                                      "soundevents/heroes/logarithmus.vsndevts"
+
+    "MinimapIcon"        "minimap_sanya_logarithmus"
+    "MinimapIconSize"    "1000"
+    "MinimapDisableTint" "1"
 
     "BotImplemented"                                      "0"
 

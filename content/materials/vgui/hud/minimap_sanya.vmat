@@ -2,6 +2,6 @@
 {
     "Shader"            "ui.vfx"
     "F_STENCIL_MASKING" "1"
-    "Texture"           "materials/vgui/hud/minimap_sanya.psd" //EDIT THIS
+    "Texture"           "materials/vgui/hud/minimap_sanya.png" //EDIT THIS
     "F_TRANSLUCENT"     "1"
 }

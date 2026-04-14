@@ -318,6 +318,20 @@ function Handlers.add_demon_power(playerID, action)
   end
 end
 
+function Handlers.give_xavier_percocet(playerID, action)
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
+  assert(hero)
+  if hero:GetUnitName() == "npc_dota_hero_sanya_rapper" then
+    SafeGiveItem(playerID, "item_lean_power_rapper")
+  elseif hero:GetUnitName() == "npc_dota_hero_sanya_towel_master" then
+    SafeGiveItem(playerID, "item_lean_power_towel_master")
+  elseif hero:GetUnitName() == "npc_dota_hero_sanya_logarithmus" then
+    SafeGiveItem(playerID, "item_lean_power_logarithmus")
+  else
+    assert(false, "[???] percocet not implemented")
+  end
+end
+
 function Handlers.happy_cat_fireworks(playerID, action)
   local cats = Entities:FindByName(nil, "npc_cat_barrel")
   assert(cats)

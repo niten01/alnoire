@@ -30,7 +30,8 @@ function SpawnManager:OnGameInProgress()
         self:SpawnItem(spawnerName)
     end
 
-    ChatCommand:LinkCommand("-zv", function(event)
+    ChatCommand:LinkCommand("-forcespawn", function(event, args)
+        self:SpawnNPC(args[1])
     end)
 end
 

@@ -52,6 +52,9 @@
             <Image src="file://{images}/custom_game/portraits/gangster.psd" />
             <Image src="file://{images}/heroes/npc_dota_hero_sanya.png" />
             <Image src="file://{images}/heroes/icons/npc_dota_hero_sanya.png" />
+            <Image src="file://{images}/heroes/icons/npc_dota_hero_sanya_rapper.png" />
+            <Image src="file://{images}/heroes/icons/npc_dota_hero_sanya_logarithmus.png" />
+            <Image src="file://{images}/heroes/icons/npc_dota_hero_sanya_towel_master.png" />
         </Panel>
     </Panel>
 </root>

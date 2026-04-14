@@ -925,9 +925,8 @@ return {
         d_untitled_passage_52 = {
             priority = 0,
             conditions = {
-                { var = "act",                     value = { 3 },             type = "var" },
                 { trigger = "trigger_island_fourth", type = "trigger" },
-                { questID = "q_island_explosion",  status = QuestStatus.ACTIVE, step = { 2 }, type = "quest" },
+                { questID = "q_island_explosion",  status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
         d_untitled_passage_53 = {
@@ -2344,6 +2343,7 @@ return {
                     next = "d_i9",
                     actions = {
                         { questID = "q_clash_royale", type = "quest_start" },
+                        { door = "door_clash_royale", type = "open_door" },
                     },
                 },
                 {
@@ -10216,6 +10216,9 @@ That was dope, you're feeling me, yeah]],
                 {
                     text = [[Буду хранить этот дар вечно...]],
                     next = "d_budu_hranit_etot_dar_vechno",
+                    actions = {
+                        { type = "give_xavier_percocet" },
+                    },
                 },
             },
         },
@@ -11014,7 +11017,7 @@ But luckily it's here you feel me?]],
         },
         d_chem_ya_tebe_ne_ugodil = {
             text =
-            [[В Скрытую деревню испокон веков попадали только самые выдающиеся и умнейшие крипы и люди этих земель. Посмотри на себя, твой внешний вид показывает, что ты - примитивное существо.]],
+            [[В Скрытую Академию испокон веков попадали только самые выдающиеся и умнейшие крипы и люди этих земель. Посмотри на себя, твой внешний вид показывает, что ты - примитивное существо.]],
             speaker = [[Крип-гений]],
             npc = "npc_genius",
             choices = {

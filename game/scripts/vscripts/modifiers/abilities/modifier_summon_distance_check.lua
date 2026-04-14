@@ -89,6 +89,7 @@ function modifier_summon_distance_check:OnIntervalThink()
         else
             unit:CreatureLevelUp(math.abs(owner:GetLevel() - unit:GetLevel()))
             self:UpdateHealth()
+            UpgradeBear(owner:FindAbilityByName("sanya_towel_summon"), unit)
         end
     end
     local ability = self:GetAbility()

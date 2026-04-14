@@ -38,7 +38,7 @@ function sanya_towel_summon:OnSpellStart()
     caster.summon = unit
 
 
-    self:UpgradeBear(unit)
+    UpgradeBear(self, unit)
     unit:AddNewModifier(caster, self, "modifier_summon_distance_check", {})
     unit:SetBaseMoveSpeed(caster:GetBaseMoveSpeed())
     local pfx = ParticleManager:CreateParticle("particles/creatures/aghanim/portal_summon_b0a.vpcf",
@@ -62,7 +62,7 @@ function sanya_towel_summon:OnHeroLevelUp()
     local caster = self:GetCaster()
     local summon = caster.summon
     if not summon then return end
-    self:UpgradeBear(summon)
+    UpgradeBear(self, summon)
 
     local level = caster:GetLevel()
     if TOWEL_MASTER_ULT_LEVELS[level] then
@@ -84,42 +84,42 @@ function sanya_towel_summon:OnUpgrade()
     end
     local summon = caster.summon
     if not summon then return end
-    self:UpgradeBear(summon)
+    UpgradeBear(self, summon)
 end
 
 function sanya_towel_summon:GetCastRange()
     return self:GetSpecialValueFor('radius') or 1200
 end
 
-function sanya_towel_summon:UpgradeBear(bear)
-    if not bear then return end
-    local ab1 = bear:GetAbilityByIndex(0)
-    local ab2 = bear:GetAbilityByIndex(1)
-    local ab3 = bear:GetAbilityByIndex(2)
-    local targetLvl1 = self:GetSpecialValueFor("overpower_level")
-    local targetLvl2 = self:GetSpecialValueFor("dash_level")
-    local targetLvl3 = self:GetSpecialValueFor("explosion_level")
-    ab1:SetLevel(targetLvl1)
-    ab2:SetLevel(targetLvl2)
-    ab3:SetLevel(targetLvl3)
-    -- if ab_level == 1 then
-    --     return
-    -- end
-    -- if ab_level == 2 then
-    --     ab1:SetLevel(1)
-    --     ab2:SetLevel(1)
-    --     return
-    -- end
-    -- if ab_level == 3 then
-    --     ab1:SetLevel(2)
-    --     ab2:SetLevel(2)
-    --     ab3:SetLevel(1)
-    --     return
-    -- end
-    -- if ab_level == 4 then
-    --     ab1:SetLevel(2)
-    --     ab2:SetLevel(2)
-    --     ab3:SetLevel(2)
-    --     return
-    -- end
-end
+-- function sanya_towel_summon:UpgradeBear(bear)
+--     if not bear then return end
+--     local ab1 = bear:GetAbilityByIndex(0)
+--     local ab2 = bear:GetAbilityByIndex(1)
+--     local ab3 = bear:GetAbilityByIndex(2)
+--     local targetLvl1 = self:GetSpecialValueFor("overpower_level")
+--     local targetLvl2 = self:GetSpecialValueFor("dash_level")
+--     local targetLvl3 = self:GetSpecialValueFor("explosion_level")
+--     ab1:SetLevel(targetLvl1)
+--     ab2:SetLevel(targetLvl2)
+--     ab3:SetLevel(targetLvl3)
+--     -- if ab_level == 1 then
+--     --     return
+--     -- end
+--     -- if ab_level == 2 then
+--     --     ab1:SetLevel(1)
+--     --     ab2:SetLevel(1)
+--     --     return
+--     -- end
+--     -- if ab_level == 3 then
+--     --     ab1:SetLevel(2)
+--     --     ab2:SetLevel(2)
+--     --     ab3:SetLevel(1)
+--     --     return
+--     -- end
+--     -- if ab_level == 4 then
+--     --     ab1:SetLevel(2)
+--     --     ab2:SetLevel(2)
+--     --     ab3:SetLevel(2)
+--     --     return
+--     -- end
+-- end
