@@ -15,7 +15,9 @@ function FlaskManager:Init()
         local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
         if hero then
-            EmitSoundOn("DOTAMusic.Death", hero)
+            local amount = tonumber(args[1])
+            SendOverheadEventMessage(nil, OVERHEAD_ALERT_GOLD, hero, 100, nil)
+            print('дал денег')
         end
     end)
 

@@ -129,6 +129,7 @@ return {
         "npc_killer",
 
         "npc_storyteller",
+        "npc_wasteland",
         "npc_leader",
         "npc_xavier",
         "npc_concert_guard",

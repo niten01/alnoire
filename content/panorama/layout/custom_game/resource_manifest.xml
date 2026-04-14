@@ -50,6 +50,7 @@
             <Image src="file://{images}/custom_game/portraits/genius.psd" />
             <Image src="file://{images}/custom_game/portraits/ogre_bruiser.psd" />
             <Image src="file://{images}/custom_game/portraits/gangster.psd" />
+            <Image src="file://{images}/custom_game/portraits/wasteland.psd" />
             <Image src="file://{images}/heroes/npc_dota_hero_sanya.png" />
             <Image src="file://{images}/heroes/icons/npc_dota_hero_sanya.png" />
             <Image src="file://{images}/heroes/icons/npc_dota_hero_sanya_rapper.png" />

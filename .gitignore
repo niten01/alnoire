@@ -84,6 +84,7 @@ game/models/*
 !game/models/creeps/
 !game/models/heroes/
 !game/models/items/
+!game/panorama/videos/
 game/models/items/*
 
 game/models/heroes/*
