@@ -63,7 +63,6 @@ function ClashGame:Init()
 
         if self.isActive then return end
         DebugPrint("[ALNOIRE] Started CLASHGAME")
-        Music:StartCustomMusicForAll("music.city.combat.clean")
         self.isActive = true
         self:SpawnTowers()
         self:SpawnAllWaves()
@@ -266,7 +265,6 @@ function ClashGame:OnKingTowerKilled(team)
             end
         end)
     end
-    Music:StopCustomMusic(0)
     self:KillAll()
 end
 
