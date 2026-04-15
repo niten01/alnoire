@@ -352,7 +352,7 @@ return {
             modifiers = { "modifier_story_npc" },
             deferred = true,
         },
-        spawner_wasteland           = {
+        spawner_wasteland             = {
             npc = "npc_wasteland",
             modifiers = { "modifier_story_npc" },
             deferred = true,
@@ -1535,6 +1535,7 @@ return {
         },
         pack_monkey_king = {
             rangeRetreat = 5000,
+            rangeFastTickRate = 5100,
             rangeAggro = 500,
             activateAfterUnitsSpawned = false,
             xpBounty = 1,

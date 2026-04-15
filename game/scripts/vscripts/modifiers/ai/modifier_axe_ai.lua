@@ -9,6 +9,10 @@ function modifier_axe_ai:OnCreated()
     self.abilSustain = abilSustain
 end
 
+function modifier_axe_ai:IsHidden()
+    return true
+end
+
 function modifier_axe_ai:OnIntervalThink()
     local unit = self:GetParent()
     if not unit:IsAlive() then return nil end
