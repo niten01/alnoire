@@ -554,6 +554,17 @@ function StoryDriver:SetupAct3()
   SpawnManager:SpawnNPC("spawner_dream")
   -- if Quest:GetQuestState("q_concert").status == QuestStatus.COMPLETED then
   -- end
+  SpawnManager:SpawnNPC("spawner_gangster")
+  SpawnManager:SpawnNPC("spawner_ghetto_ranged")
+  SpawnManager:SpawnNPC("spawner_ghetto_melee")
+
+  SpawnManager:SpawnNPC("spawner_gangster_2")
+  SpawnManager:SpawnNPC("spawner_ghetto_ranged_2")
+  SpawnManager:SpawnNPC("spawner_ghetto_melee_2")
+
+  SpawnManager:SpawnNPC("spawner_gangster_3")
+  SpawnManager:SpawnNPC("spawner_ghetto_ranged_3")
+  SpawnManager:SpawnNPC("spawner_ghetto_melee_3")
 
   if GlobalState:Get().freed_island_creeps then
     SpawnManager:SpawnNPC("spawner_cat_barrel_city")

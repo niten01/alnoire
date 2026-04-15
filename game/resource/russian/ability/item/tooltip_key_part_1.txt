@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_key_part_1"	        "Часть ключа"
+"DOTA_Tooltip_ability_item_key_part_1_Lore"    "Передняя часть ключа. Сложно поверить, что с такой резьбой можно что-то открыть."

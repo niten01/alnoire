@@ -8,15 +8,7 @@
 //   {
 //   }
 
-  // "weapons_armor" // 17/17
-  // {
-  // }
-
-  // "misc" // 17/17
-  // {
-  // }
-
-  "basics" // 16/16
+  "weapons_armor" // 17/17
   {
     "item"              "item_mark_of_ebuchi"
     "item"              "item_mark_of_vonuchi"
@@ -27,13 +19,25 @@
     "item"              "item_orb_of_decrepitude"
   }
 
-  "support" // 16/16
+  "misc" // 17/17
   {
     "item"              "item_fan"
     "item"              "item_tough_egg"
     "item"              "item_nullity"
     "item"              "item_staff_of_madness"
   }
+
+  "basics" // 16/16
+  {
+    "item"              "item_leadlined_grip"
+    "item"              "item_echo_dagger"
+    "item"              "item_schism"
+    "item"              "item_cinder_brand"
+  }
+
+  // "support" // 16/16
+  // {
+  // }
 
   "magics" // 19/20
   {
@@ -42,16 +46,12 @@
     "item"              "item_shivas_seal"
   }
 
-  "defense" // 19/20
-  {
-  }
+  // "defense" // 19/20
+  // {
+  // }
 
   "weapons" // 20/20
   {
-    "item"              "item_leadlined_grip"
-    "item"              "item_echo_dagger"
-    "item"              "item_schism"
-    "item"              "item_cinder_brand"
     "item"              "item_caustic_sopor"
     "item"              "item_ossified_gaff"
     "item"              "item_blight_vesper"
@@ -60,7 +60,7 @@
     "item"              "item_keen_killer"
   }
 
-  "artifacts" // 18/20
-  {
-  }
+  // "artifacts" // 18/20
+  // {
+  // }
 }
