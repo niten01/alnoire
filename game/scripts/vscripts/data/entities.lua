@@ -1543,6 +1543,7 @@ return {
             xpBounty = 1,
         },
         pack_monkey_king = {
+            rangeFastTickRate = 5600,
             rangeRetreat = 5000,
             rangeAggro = 500,
             activateAfterUnitsSpawned = false,
