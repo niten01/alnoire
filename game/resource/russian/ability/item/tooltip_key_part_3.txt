@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_key_part_3"	        "Часть ключа"
+"DOTA_Tooltip_ability_item_key_part_3_Lore"    "Задняя часть ключа. Странная форма."
