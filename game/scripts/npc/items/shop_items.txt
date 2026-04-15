@@ -620,9 +620,8 @@
         {
             "aoe_radius"    "250"
             "duration"      "10.0"
-            "armor_reduction" "8"
-            "magres_reduction" "8"
-            "lifesteal_pct"   "24"
+            "incoming_dmg_pct" "100"
+            "outgoing_dmg_pct" "100"
         }
 
         "precache"

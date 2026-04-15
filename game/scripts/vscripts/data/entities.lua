@@ -62,6 +62,7 @@ return {
         spawner_courier_psycho        = { npc = "npc_courier_psycho", modifiers = { "modifier_story_npc" } },
         spawner_courier_gardener      = { npc = "npc_courier_gardener", modifiers = { "modifier_story_npc" } },
         spawner_courier_ant           = { npc = "npc_courier_ant", modifiers = { "modifier_story_npc" } },
+        spawner_courier_garden_dog    = { npc = "npc_courier_garden_dog", modifiers = { "modifier_story_npc" } },
 
         spawner_courier_roshanchik    = { npc = "npc_courier_roshanchik", modifiers = { "modifier_story_npc" } },
         spawner_courier_bober         = { npc = "npc_courier_bober", modifiers = { "modifier_story_npc" } },

@@ -463,34 +463,42 @@ function AbilityRandomValueFloat(ability, valueName)
 end
 
 function UpgradeBear(ability, bear)
-    if not bear then return end
-    local ab1 = bear:GetAbilityByIndex(0)
-    local ab2 = bear:GetAbilityByIndex(1)
-    local ab3 = bear:GetAbilityByIndex(2)
-    local targetLvl1 = ability:GetSpecialValueFor("overpower_level")
-    local targetLvl2 = ability:GetSpecialValueFor("dash_level")
-    local targetLvl3 = ability:GetSpecialValueFor("explosion_level")
-    ab1:SetLevel(targetLvl1)
-    ab2:SetLevel(targetLvl2)
-    ab3:SetLevel(targetLvl3)
-    -- if ab_level == 1 then
-    --     return
-    -- end
-    -- if ab_level == 2 then
-    --     ab1:SetLevel(1)
-    --     ab2:SetLevel(1)
-    --     return
-    -- end
-    -- if ab_level == 3 then
-    --     ab1:SetLevel(2)
-    --     ab2:SetLevel(2)
-    --     ab3:SetLevel(1)
-    --     return
-    -- end
-    -- if ab_level == 4 then
-    --     ab1:SetLevel(2)
-    --     ab2:SetLevel(2)
-    --     ab3:SetLevel(2)
-    --     return
-    -- end
+  if not bear then return end
+  local ab1 = bear:GetAbilityByIndex(0)
+  local ab2 = bear:GetAbilityByIndex(1)
+  local ab3 = bear:GetAbilityByIndex(2)
+  local targetLvl1 = ability:GetSpecialValueFor("overpower_level")
+  local targetLvl2 = ability:GetSpecialValueFor("dash_level")
+  local targetLvl3 = ability:GetSpecialValueFor("explosion_level")
+  ab1:SetLevel(targetLvl1)
+  ab2:SetLevel(targetLvl2)
+  ab3:SetLevel(targetLvl3)
+  -- if ab_level == 1 then
+  --     return
+  -- end
+  -- if ab_level == 2 then
+  --     ab1:SetLevel(1)
+  --     ab2:SetLevel(1)
+  --     return
+  -- end
+  -- if ab_level == 3 then
+  --     ab1:SetLevel(2)
+  --     ab2:SetLevel(2)
+  --     ab3:SetLevel(1)
+  --     return
+  -- end
+  -- if ab_level == 4 then
+  --     ab1:SetLevel(2)
+  --     ab2:SetLevel(2)
+  --     ab3:SetLevel(2)
+  --     return
+  -- end
+end
+
+function ShowAbilityLvlupNotification(abilityName)
+  CustomGameEventManager:Send_ServerToAllClients("show_ability_notification", {
+    ability_name = abilityName,
+    message = "Новый уровень!",
+    duration = 7.0
+  })
 end

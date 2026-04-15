@@ -581,6 +581,9 @@ function StoryDriver:SetupAct4()
   triggerSetEnabled("trigger_usach_stopit", false)
 
   SpawnManager:SpawnNPC("spawner_wasteland")
+  local mustacheCorpseEnt = Entities:FindByName(nil, "mustache_corpse")
+  assert(mustacheCorpseEnt)
+  DoEntFireByInstanceHandle(mustacheCorpseEnt, "Enable", "", 0, nil, nil)
 
   fastRemoveNPC("npc_shamanka")
   fastRemoveNPC("npc_storyteller")

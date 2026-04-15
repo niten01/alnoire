@@ -448,4 +448,11 @@
 		"ModelScale" 				"0.66"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	}
+	"npc_courier_garden_dog" 
+	{
+		"Model"						""
+		"BaseClass"					"npc_dota_creature"
+		"ModelScale" 				"1.0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	}
 }

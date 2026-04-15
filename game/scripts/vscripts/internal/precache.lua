@@ -48,6 +48,7 @@ return {
         "npc_courier_psycho",
         "npc_courier_gardener",
         "npc_courier_ant",
+        "npc_courier_garden_dog",
 
         "npc_courier_roshanchik",
         "npc_courier_bober",
@@ -521,6 +522,7 @@ return {
         "particles/custom_items/leadlined_grip_impact.vpcf",
         "particles/custom_items/cinder_brand_explosion.vpcf",
         "particles/custom_items/staff_of_madness_aoe.vpcf",
+        "particles/items2_fx/mask_of_madness.vpcf",
     },
     particleFolders = {
         "particles/custom_items"

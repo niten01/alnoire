@@ -63,9 +63,8 @@ function modifier_staff_of_madness_buff:IsDebuff() return false end
 function modifier_staff_of_madness_buff:OnCreated()
     local ability = self:GetAbility()
     if ability then
-        self.armorReduction = ability:GetSpecialValueFor("armor_reduction")
-        self.magresReduction = ability:GetSpecialValueFor("magres_reduction")
-        self.lifestealFrac = ability:GetSpecialValueFor("lifesteal_pct") / 100
+        self.incomingPct = ability:GetSpecialValueFor("incoming_dmg_pct")
+        self.outgoingPct = ability:GetSpecialValueFor("outgoing_dmg_pct")
     end
 
     if not IsServer() then return end
@@ -76,37 +75,44 @@ end
 
 function modifier_staff_of_madness_buff:CheckState()
     return {
-        [MODIFIER_STATE_SILENCED] = true
+        -- [MODIFIER_STATE_SILENCED] = true
     }
 end
 
 function modifier_staff_of_madness_buff:DeclareFunctions()
     return {
-        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
-        MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
     }
 end
 
-function modifier_staff_of_madness_buff:GetModifierPhysicalArmorBonus()
-    return -self.armorReduction
+-- function modifier_staff_of_madness_buff:GetModifierPhysicalArmorBonus()
+--     return -self.armorReduction
+-- end
+
+-- function modifier_staff_of_madness_buff:GetModifierMagicalResistanceBonus()
+--     return -self.magresReduction
+-- end
+
+function modifier_staff_of_madness_buff:GetModifierDamageOutgoing_Percentage()
+    return self.outgoingPct
 end
 
-function modifier_staff_of_madness_buff:GetModifierMagicalResistanceBonus()
-    return -self.magresReduction
+function modifier_staff_of_madness_buff:GetModifierIncomingDamage_Percentage()
+    return self.incomingPct
 end
 
-function modifier_staff_of_madness_buff:OnAttackLanded(params)
-    if not IsServer() then return end
-    if params.attacker ~= self:GetParent() then return end
+-- function modifier_staff_of_madness_buff:OnAttackLanded(params)
+--     if not IsServer() then return end
+--     if params.attacker ~= self:GetParent() then return end
 
-    local heal = params.original_damage * self.lifestealFrac
-    self:GetParent():Heal(heal, self:GetAbility())
+--     local heal = params.original_damage * self.lifestealFrac
+--     self:GetParent():Heal(heal, self:GetAbility())
 
-    local pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf",
-        PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-    ParticleManager:ReleaseParticleIndex(pfx)
-end
+--     local pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf",
+--         PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+--     ParticleManager:ReleaseParticleIndex(pfx)
+-- end
 
 function modifier_staff_of_madness_buff:GetTexture()
     return "item_staff_of_madness"

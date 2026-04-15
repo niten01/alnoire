@@ -62,6 +62,8 @@ function modifier_ski:CheckState()
     return {
         [MODIFIER_STATE_ROOTED] = true,
         [MODIFIER_STATE_DISARMED] = true,
+        [MODIFIER_STATE_MUTED] = true,
+        [MODIFIER_STATE_SILENCED] = true,
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
     }
 end

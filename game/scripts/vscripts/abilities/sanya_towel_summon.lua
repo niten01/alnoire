@@ -61,13 +61,15 @@ end
 function sanya_towel_summon:OnHeroLevelUp()
     local caster = self:GetCaster()
     local summon = caster.summon
-    if not summon then return end
-    UpgradeBear(self, summon)
+    if summon then
+        UpgradeBear(self, summon)
+    end
 
     local level = caster:GetLevel()
     if TOWEL_MASTER_ULT_LEVELS[level] then
         local currentLevel = self:GetLevel()
         self:SetLevel(math.min(currentLevel + 1, self:GetMaxLevel()))
+        ShowAbilityLvlupNotification("sanya_towel_summon")
         local current_points = caster:GetAbilityPoints()
         if current_points > 0 then
             caster:SetAbilityPoints(current_points - 1)

@@ -35,6 +35,7 @@ function rapper_strife:OnHeroLevelUp()
     if RAPPER_ULT_LEVELS[level] then
         local currentLevel = self:GetLevel()
         self:SetLevel(math.min(currentLevel + 1, self:GetMaxLevel()))
+        ShowAbilityLvlupNotification("rapper_strife")
         local current_points = caster:GetAbilityPoints()
         if current_points > 0 then
             caster:SetAbilityPoints(current_points - 1)
