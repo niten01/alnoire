@@ -29,13 +29,23 @@ end
 function modifier_keen_killer_buff:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
+        MODIFIER_EVENT_ON_ATTACK_LANDED
     }
+end
+
+function modifier_keen_killer_buff:OnAttackLanded(params)
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    if params.attacker == parent and self.goCritSound then
+        params.target:EmitSound("items.keen_killer.crit")
+        self.goCritSound = false
+    end
 end
 
 function modifier_keen_killer_buff:GetModifierPreAttack_CriticalStrike(params)
     if IsServer() then
         if RollPseudoRandomPercentage(self.chancePct, DOTA_PSEUDO_RANDOM_CUSTOM_GAME_1, self:GetParent()) then
-            self:GetParent():EmitSound("items.keen_killer.crit")
+            self.goCritSound = true
             return self.critDamagePct
         end
     end

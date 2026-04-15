@@ -47,6 +47,7 @@ function modifier_schism_owner:OnAttack(params)
         if enemy == params.target then goto continue end
 
         self.splitShot = true
+        parent:EmitSound('items.schism.shot')
         parent:PerformAttack(enemy, true, true, true, false, true, false, false)
         self.splitShot = false
 

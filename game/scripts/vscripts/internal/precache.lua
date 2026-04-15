@@ -520,6 +520,7 @@ return {
         "particles/custom_items/item_fan.vpcf",
         "particles/custom_items/leadlined_grip_impact.vpcf",
         "particles/custom_items/cinder_brand_explosion.vpcf",
+        "particles/custom_items/staff_of_madness_aoe.vpcf",
     },
     particleFolders = {
         "particles/custom_items"

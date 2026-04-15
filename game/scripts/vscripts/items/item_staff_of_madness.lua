@@ -34,7 +34,7 @@ function modifier_staff_of_madness_thinker:OnCreated()
     if not IsServer() then return end
 
     local pfx = ParticleManager:CreateParticle(
-    "particles/custom_items/staff_of_madness_aoe.vpcf", PATTACH_WORLDORIGIN, nil)
+        "particles/custom_items/staff_of_madness_aoe.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(pfx, 0, self:GetParent():GetAbsOrigin())
     ParticleManager:SetParticleControl(pfx, 1, Vector(self.radius, 1, 1))
     self:AddParticle(pfx, false, false, -1, false, false)
@@ -95,7 +95,6 @@ end
 function modifier_staff_of_madness_buff:GetModifierMagicalResistanceBonus()
     return -self.magresReduction
 end
-
 
 function modifier_staff_of_madness_buff:OnAttackLanded(params)
     if not IsServer() then return end
