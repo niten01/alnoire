@@ -12,16 +12,29 @@ end
 
 function modifier_item_sanya_flask_evade:DeclareFunctions()
     return {
-        MODIFIER_PROPERTY_EVASION_CONSTANT
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
     }
 end
 
-function modifier_item_sanya_flask_evade:GetModifierEvasion_Constant()
-    return self.evadeBonus
+function modifier_item_sanya_flask_evade:GetModifierIncomingDamage_Percentage()
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    if RollPercentage(self.evadeChancePct) then
+        SendOverheadEventMessage(
+            nil,
+            OVERHEAD_ALERT_EVADE,
+            parent,
+            0,
+            nil
+        )
+        return -100
+    else
+        return 0
+    end
 end
 
 function modifier_item_sanya_flask_evade:OnCreated()
     if not IsServer() then return end
     local abil = self:GetAbility()
-    self.evadeBonus = abil:GetSpecialValueFor('evadePercent')
+    self.evadeChancePct = abil:GetSpecialValueFor('evadePercent')
 end
