@@ -12,7 +12,7 @@ function GlobalState:Init()
         perekup_good_ending = false,
         perekup_negotiated = false,
 
-        has_concert_pass = false,
+        has_concert_password = false,
         concert_crowd_met = false,
         concert_crowd_beaten = false,
 
@@ -29,6 +29,15 @@ function GlobalState:Init()
 
     ChatCommand:LinkDevCommand("-setact", function(event, args)
         GlobalState:SetAct(tonumber(args[1]))
+    end)
+    ChatCommand:LinkDevCommand("-setvar", function(event, args)
+        if args[2] == "true" then
+            GlobalState:Get()[args[1]] = true
+        elseif args[2] == "false" then
+            GlobalState:Get()[args[1]] = false
+        else
+            GlobalState:Get()[args[1]] = tonumber(args[2])
+        end
     end)
     ChatCommand:LinkDevCommand("-getvar", function(event, args)
         print(args[1], ':', GlobalState:Get()[args[1]])
