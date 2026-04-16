@@ -176,6 +176,10 @@
   text-overflow: shrink;
 }
 
+.TextInnerHL {
+  font-style: italic;
+}
+
 /* ===== Continue hint (subtle pulse) ===== */
 .ContinueHint {
   flow-children: right;

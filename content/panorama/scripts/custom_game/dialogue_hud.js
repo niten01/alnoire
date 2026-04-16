@@ -96,6 +96,10 @@
     GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_PROTECT, !isOpen);
   }
 
+  function format(text) {
+    return text.replace(/\n/g,"<br>").replace(/\*(.*?)\*/g, "<span class=\"TextInnerHL\">*$1*</span>");
+  }
+
   function typewriter(text, cps) {
     typingToken++;
     const token = typingToken;
@@ -112,6 +116,23 @@
       if (!isTyping) return;
 
       i = Math.min(fullText.length, i + charsPerTick);
+
+      while (i < fullText.length) {
+        const lastOpen = fullText.lastIndexOf('<', i - 1);
+        const lastClose = fullText.lastIndexOf('>', i - 1);
+
+        if (lastOpen > lastClose) {
+          const nextClose = fullText.indexOf('>', i);
+          if (nextClose !== -1) {
+            i = nextClose + 1;
+          } else {
+            i = fullText.length;
+          }
+        } else {
+          break;
+        }
+      }
+
       textLabel.text = fullText.substring(0, i);
 
       if (i >= fullText.length) {
@@ -147,14 +168,16 @@
     const hasChoices = Object.keys(payload.choices).length > 0;
     continueHint.visible = !hasChoices;
 
-    typewriter(payload.text || "", payload.cps || 65);
+    const text = format(payload.text || "")
+    typewriter(text, payload.cps || 65);
 
     for (const [luaIdx, c] of Object.entries(payload.choices)) {
       const btn = $.CreatePanel("TextButton", choicesRoot, "");
       btn.AddClass("DialogueChoice");
 
       const lbl = $.CreatePanel("Label", btn, "");
-      lbl.text = c.text;
+      lbl.html = true
+      lbl.text = format(c.text);
 
       btn.SetPanelEvent("onmouseover", () => {
         choicesRoot.Children().forEach(p => p.RemoveClass("IsSelected"));

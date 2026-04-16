@@ -103,15 +103,28 @@
     volume_fade_out = "0.600000"
     spread_radius = "300.000000"
   }
-  ability.towel_master.towel_summon_explosion = {
+  ability.towel_master.towel_summon_explosion_buildup = {
     type = "dota_update_default"
     vsnd_files =
     [
-        "sounds/towel_master/tm_explosion.vsnd",
+        "sounds/towel_master/tm_explosion_buildup.vsnd",
     ]
     volume = "2.00000"
     pitch_rand_min = "0.050000"
     pitch_rand_max = "0.050000"
+    pitch = "1.000000"
+    soundlevel = "81.000000"
+    mixgroup = "Weapons"
+    volume_fade_out = "0.600000"
+    spread_radius = "300.000000"
+  }
+  ability.towel_master.towel_summon_explosion_bang = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/towel_master/tm_explosion_bang.vsnd",
+    ]
+    volume = "2.00000"
     pitch = "1.000000"
     soundlevel = "81.000000"
     mixgroup = "Weapons"

@@ -49,7 +49,7 @@ function modifier_towel_summon_delayed_explode:OnCreated()
         caster:GetAbsOrigin(), true)
     self:AddParticle(pfx_pre_1, false, false, -1, false, false)
     self:AddParticle(pfx_pre_2, false, false, -1, false, false)
-    caster:EmitSound("ability.towel_master.towel_summon_explosion")
+    caster:EmitSound("ability.towel_master.towel_summon_explosion_buildup")
 end
 
 function modifier_towel_summon_delayed_explode:OnDestroy()
@@ -62,7 +62,11 @@ function modifier_towel_summon_delayed_explode:OnDestroy()
         caster)
     ParticleManager:SetParticleControl(pfx_exp, 1, Vector(radius + 70, 0, 0))
     ParticleManager:ReleaseParticleIndex(pfx_exp)
+
     ScreenShake(caster:GetAbsOrigin(), 15, 150, 0.4, 1000, 0, true)
+
+    caster:EmitSound("ability.towel_master.towel_summon_explosion_bang")
+
     local enemies = FindUnitsInRadius(
         caster:GetTeamNumber(),
         caster:GetAbsOrigin(),

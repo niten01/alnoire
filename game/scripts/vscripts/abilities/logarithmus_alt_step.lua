@@ -59,6 +59,7 @@ end
 
 modifier_logarithmus_alt_step = class {}
 
+function modifier_logarithmus_alt_step:IsHidden() return true end
 
 function modifier_logarithmus_alt_step:OnCreated(kv)
     if not IsServer() then return end

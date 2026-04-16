@@ -114,7 +114,7 @@
   }
   items.malignance.crit = {
     type = "dota_update_default"
-    volume = 0.700000
+    volume = 0.800000
     soundlevel = 81.000000
     pitch = "0.700000"
     pitch_rand_min = "-0.100000"
@@ -130,7 +130,7 @@
   }
   items.malignance.cast = {
     type = "dota_update_default"
-    volume = 0.700000
+    volume = 1.500000
     soundlevel = 81.000000
     pitch = "0.70000"
     pitch_rand_min = "-0.100000"
@@ -162,9 +162,9 @@
   }
   items.keen_killer.cast = {
     type = "dota_update_default"
-    volume = 0.700000
+    volume = 1.300000
     soundlevel = 81.000000
-    pitch = "0.70000"
+    pitch = "1.00000"
     pitch_rand_min = "-0.100000"
     pitch_rand_max = "0.100000"
     mixgroup = "Weapons"
@@ -208,9 +208,11 @@
   }
   items.staff_of_madness.cast = {
     type = "dota_update_default"
-    volume = 0.500000
+    volume = 1.000000
     soundlevel = 81.000000
-    pitch = "1.100000"
+    pitch = "1.000000"
+    pitch_rand_min = "-0.100000"
+    pitch_rand_max = "0.100000"
     mixgroup = "Weapons"
     volume_fade_out = 0.600000
     spread_radius = 500.000000
@@ -244,7 +246,7 @@
         "sounds/sfx/flask_cast_2.vsnd",
         "sounds/sfx/flask_cast_3.vsnd",
     ]
-    volume = "0.50000"
+    volume = "1.00000"
     pitch = "1.200000"
     pitch_rand_min = "-0.050000"
     pitch_rand_max = "0.050000"
@@ -256,8 +258,8 @@
 
   items.schism.shot = {
     type = "dota_update_default"
-    volume = "0.90000"
-    pitch = "0.700000"
+    volume = "1.40000"
+    pitch = "1.000000"
     pitch_rand_min = "-0.050000"
     pitch_rand_max = "0.050000"
     soundlevel = "81.000000"

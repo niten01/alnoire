@@ -1852,6 +1852,7 @@ return {
             clipEntity = "clip_door_derek",
             openAnimation = "cf_palace_door_open",
             closeAnimation = "cf_palace_door_close",
+            openSound = "sfx.door_palace.open",
         },
         door_cave = {
             clipEntity = "clip_door_cave",

@@ -263,7 +263,7 @@ return {
         name = "Выживший",
         steps = {
             {
-                description = "Найди загадочного крипа и узнай, что ему нужно",
+                description = "Найди загадочного крипа из кратера и узнай, что ему нужно",
                 objectives = {
                     { type = "talk", npc = "npc_mystery" }
                 }
@@ -272,6 +272,12 @@ return {
                 description = "Встреться с Главой",
                 objectives = {
                     { type = "talk", npc = "npc_leader", rewardGold = 700 }
+                }
+            },
+            {
+                description = "Попади в Коралловый Лес (Stringus Collapsus)",
+                objectives = {
+                    { type = "come", trigger = "trigger_forest_2" }
                 }
             },
             {

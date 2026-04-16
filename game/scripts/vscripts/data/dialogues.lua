@@ -581,6 +581,7 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_epstein_killer", npc = "npc_killer", type = "trigger" },
+                { ent_var = "first_met_global",     value = { false }, npc = "npc_killer", type = "ent_var" },
             },
         },
         d_fairytale = {
@@ -658,8 +659,8 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_hermit",      type = "interact" },
-                { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
                 { ent_var = "first_met_global", value = { true },          npc = "npc_hermit", type = "ent_var" },
+                { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
             },
         },
         d_leader_again_1 = {
@@ -689,7 +690,7 @@ return {
             priority = 100,
             conditions = {
                 { interact = "npc_leader",      type = "interact" },
-                { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
+                { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 5 }, type = "quest" },
             },
         },
         d_mustache_act_2 = {
@@ -752,8 +753,8 @@ return {
         d_shamanka_act_2_quest_active = {
             priority = 0,
             conditions = {
-                { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
                 { interact = "npc_shamanka",    type = "interact" },
+                { questID = "q_main_quest_act_2", status = QuestStatus.ACTIVE, step = { 5 }, type = "quest" },
             },
         },
         d_shamanka_act_2_quest_complete = {
@@ -1004,8 +1005,10 @@ return {
         d_untitled_passage_63_merged_act3 = {
             priority = 90,
             conditions = {
-                { interact = "npc_scientist", type = "interact" },
-                { ent_var = "first_met_in_act", value = { true }, npc = "npc_scientist", type = "ent_var" },
+                { interact = "npc_scientist",   type = "interact" },
+                { ent_var = "first_met_in_act", value = { true },          npc = "npc_scientist", type = "ent_var" },
+                { var = "act",                  value = { 3 },             type = "var" },
+                { questID = "q_main_quest_act_3", status = QuestStatus.ACTIVE, step = { 1 },    type = "quest" },
             },
         },
         d_untitled_passage_64_merged_act3 = {
@@ -4485,7 +4488,7 @@ return {
         },
         d_p13 = {
             text =
-            [[И ещё. Приходил один странный крип, загадочный. Он просил передать, чтобы ты встретился с ним. Он ожидает тебя где-то здесь, в Королевстве. Удачи!]],
+            [[И ещё. Приходил один твой знакомый крип. Он просил передать, что после встречи в кратере у него появилось для тебя срочное поручение. Он ожидает где-то здесь, в Королевстве. Удачи!]],
             speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
@@ -11457,7 +11460,7 @@ But luckily it's here you feel me?]],
         d_untitled_passage_10 = {
             text = [[Ооо, мой спаситель!]],
             speaker = [[Панда]],
-            npc = "npc_brewmaster",
+            npc = "npc_brewmaster_good",
             choices = {
                 {
                     text = [[Смотрю, ты следуешь за мечтой?]],
@@ -12618,7 +12621,7 @@ Wazup, ты кем будешь, dawg?]],
             text =
             [[Все просто! Бери топор - руби бочки! Не успеешь срубить за отведенное время - проиграешь. Если продержишься дольше своего рекорда - получишь по несколько золотых за каждую бочку. Для тебя участие бесплатное!]],
             speaker = [[Панда]],
-            npc = "npc_brewmaster",
+            npc = "npc_brewmaster_good",
             choices = {
                 {
                     text = [[Давай попробуем...]],
@@ -13642,7 +13645,7 @@ Wazup, ты кем будешь, dawg?]],
         d_smotru_ty_sleduesh_za_mechtoj = {
             text = [[Так точно! Аттракцион открылся совсем недавно, а от посетителей уже отбоя нет.]],
             speaker = [[Панда]],
-            npc = "npc_brewmaster",
+            npc = "npc_brewmaster_good",
             choices = {
                 {
                     text = [[А что делать то?]],
@@ -14193,7 +14196,7 @@ Wazup, ты кем будешь, dawg?]],
             },
         },
         d_dobit_ego = {
-            text = [[*Твоя атака пронзает его тело и тот падает замертво. Дерек не сопротивлялся. Он был спокоен.*]],
+            text = [[*Твоя атака пронзает его тело и тот падает замертво. Дерек не сопротивлялся.*]],
             speaker = [[Дерек]],
             npc = "npc_derek",
             choices = {
@@ -14314,7 +14317,7 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_prismotretsya = {
             text = [[СКОЛЬКО Я ЕЩЁ БУДУ СТРАДАТЬ АААА?!!?!!?
-*Невероятно громко выкрикнуло существо.*]],
+*Невероятно громко выкрикнул огромный скелет.*]],
             speaker = [[Пропавший Король]],
             npc = "npc_george",
             choices = {
@@ -14386,14 +14389,14 @@ Wazup, ты кем будешь, dawg?]],
             npc = "npc_george",
             choices = {
                 {
-                    text = [[В каком смысле Бог?]],
-                    next = "d_v_kakom_smysle_bog",
+                    text = [[Ты Шиит или Ибадит?]],
+                    next = "d_ty_shiit_ili_ibadit",
                 },
             },
         },
         d_u4 = {
             text =
-            [[НЕВЕРОЯТНО УМНАЯ МЫСЛЬ ПРИШЛА КО МНЕ: ЗАСТАВИТЬ ВСЕХ ЛЮДЕЙ ДУМАТЬ, ЧТО Я ИХ КОРОЛЬ. БЫСТРО И ЭФФЕКТИВНО. ПРАВДА БЫЛА ЕЩЁ ОДНА ПРОБЛЕМА - КРИПЫ.]],
+            [[Я ЗАСТАВИЛ ВСЕХ ЛЮДЕЙ ДУМАТЬ, ЧТО Я ИХ КОРОЛЬ. БЫСТРО И ЭФФЕКТИВНО. ПРАВДА БЫЛА ЕЩЁ ОДНА ПРОБЛЕМА - КРИПЫ.]],
             speaker = [[Джордж Богоподобный]],
             npc = "npc_george",
             choices = {
@@ -14404,14 +14407,13 @@ Wazup, ты кем будешь, dawg?]],
             },
         },
         d_u5__1 = {
-            text =
-            [[ОНИ БЕСПОЛЕЗНЫЕ НИЧТОЖЕСТВА, ТАК ЧТО ПАРИТЬСЯ НЕ СТАЛ И ПРОСТО ЗАСТАВИЛ ИХ ПОСТОЯННО ТЕРЯТЬ ПАМЯТЬ. ОТЛИЧНЫЕ РАБЫ ПОЛУЧИЛИСЬ.]],
+            text = [[БЕЗМОЗГЛОЕ СТАДО. Я ПРОСТО ЗАСТАВИЛ ИХ ПОСТОЯННО ТЕРЯТЬ ПАМЯТЬ. ОХ, ОТЛИЧНЫЕ РАБЫ ПОЛУЧИЛИСЬ.]],
             speaker = [[Джордж Богоподобный]],
             npc = "npc_george",
             choices = {
                 {
-                    text = [[Откуда ты взял души для этих манипуляций?]],
-                    next = "d_otkuda_ty_vzyal_dushi_dlya_etih_manipulyatsij",
+                    text = [[Где ты взял столько душ?]],
+                    next = "d_gde_ty_vzyal_stolko_dush",
                 },
             },
         },
@@ -14422,8 +14424,8 @@ Wazup, ты кем будешь, dawg?]],
             npc = "npc_george",
             choices = {
                 {
-                    text = [[Так называемая "тварина" должна была убить тебя. Почему ты жив?]],
-                    next = "d_tak_nazyvaemaya_tvarina_dolzhna_byla_ubit_tebya_pochemu_ty_zhiv",
+                    text = [[Азазазаз]],
+                    next = "d_zvzv",
                 },
             },
         },
@@ -14541,8 +14543,8 @@ Wazup, ты кем будешь, dawg?]],
             npc = "npc_george",
             choices = {
                 {
-                    text = [[Тут кто-нибудь есть?]],
-                    next = "d_tut_ktonibud_est",
+                    text = [[О, там кто-то стоит.]],
+                    next = "d_o_tam_ktoto_stoit",
                 },
             },
         },
@@ -14660,6 +14662,17 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
+        d_derek_good_choice = {
+            text = [[Мятежник, цареубийца, враг людского рода.]],
+            speaker = [[Дерек]],
+            npc = "npc_derek",
+            choices = {
+                {
+                    text = [[Почему.]],
+                    next = "d_pochemu__1",
+                },
+            },
+        },
         d_derek_names_alex = {
             text = [[Зачем ты явился сюда, зная каким будет исход?]],
             speaker = [[Дерек]],
@@ -14673,8 +14686,8 @@ Wazup, ты кем будешь, dawg?]],
                     },
                 },
                 {
-                    text = [[Я пришёл, чтобы разобраться.]],
-                    next = "d_ya_prishel_chtoby_razobratsya",
+                    text = [[Я хочу узнать кто ты.]],
+                    next = "d_derek_good_choice",
                     actions = {
                         { var = "derek_kill", value = false, type = "set_var" },
                     },
@@ -14689,6 +14702,17 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[...]],
                     next = "d_t3",
+                },
+            },
+        },
+        d_derek_silence = {
+            text = [[...]],
+            speaker = [[Дерек]],
+            npc = "npc_derek",
+            choices = {
+                {
+                    text = [[...]],
+                    next = "d_t",
                 },
             },
         },
@@ -14740,7 +14764,7 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_h33 = {
             text =
-            [[Был один очень странный день. Когда я возвращался с работы, то заметил, что куча людей просто исчезла, словно испарилась...]],
+            [[Был один очень странный день. Когда я возвращался в Королевство с работы, то заметил, что куча людей просто исчезла, словно испарилась...]],
             speaker = [[Дерек]],
             npc = "npc_derek",
             choices = {
@@ -15002,7 +15026,7 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_u = {
             text =
-            [[У МЕНЯ ЕСТЬ СЕКРЕТЫ, КОТОРЫЕ Я НИКОМУ НЕ РАССКАЗЫВАЛ, НО РАЗ УЖ Я ВСЁ РАВНО В ЛОВУШКЕ, ТО ПОЧЕМУ БЫ НЕ ПОВЕДАТЬ. Я ОЧЕНЬ ЛЮБЛЮ РАССКАЗЫВАТЬ ИСТОРИИ...]],
+            [[У МЕНЯ ЕСТЬ СЕКРЕТЫ, КОТОРЫЕ Я НИКОМУ НЕ РАССКАЗЫВАЛ, НО РАЗ УЖ ТЫ ЗДЕСЬ, ЗНАЧИТ ДЛЯ МЕНЯ ЕЩЁ НЕ ВСЁ КОНЧЕНО. ВНИМАЙ, КОЛИ XОЧЕШЬ УЗНАТЬ ВСЮ ПРАВДУ.]],
             speaker = [[Джордж Богоподобный]],
             npc = "npc_george",
             choices = {
@@ -15026,13 +15050,13 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_u3 = {
             text =
-            [[И ВОТ. В ЭТИХ ЗАПИСЯХ БЫЛО НАПИСАНО, ЧТО БОГ ВЫПОЛНЯЕТ ЛЮБОЕ ОДНО ДЕЙСТВИЕ ВЗАМЕН НА ДУШУ. ПЛАН СРАЗУ СОЗРЕЛ В МОЕЙ ГОЛОВЕ!]],
+            [[В ЗАПИСЯХ БЫЛ НАМЁК - БОГ ВЫПОЛНЯЕТ ЛЮБОЕ ОДНО ДЕЙСТВИЕ ВЗАМЕН НА ДУШУ. ПЛАН СРАЗУ СОЗРЕЛ В МОЕЙ ГОЛОВЕ!]],
             speaker = [[Джордж Богоподобный]],
             npc = "npc_george",
             choices = {
                 {
-                    text = [[Подожди, а кто написал об этом?]],
-                    next = "d_podozhdi_a_kto_napisal_ob_etom",
+                    text = [[Автор случайно не...]],
+                    next = "d_avtor_sluchajno_ne",
                 },
             },
         },
@@ -15082,6 +15106,17 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
+        d_zvzv = {
+            text = [[ЧТО СМЕШНОГО?]],
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
+            choices = {
+                {
+                    text = [[Это, наверное, самый тупой способ использовать божественную силу.]],
+                    next = "d_eto_navernoe_samyj_tupoj_sposob_ispolzovat_bozhestvennuu_silu",
+                },
+            },
+        },
         d_a_vy_ne_souzniki_s_nim = {
             text = [[*Она рассмеялась.*
 То есть ты решил вершить судьбы людей, не зная всей истории?]],
@@ -15102,6 +15137,17 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Почему?]],
                     next = "d_wastelands_girl_why",
+                },
+            },
+        },
+        d_avtor_sluchajno_ne = {
+            text = [[ПЕРВЫЙ.]],
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
+            choices = {
+                {
+                    text = [[...]],
+                    next = "d_u4",
                 },
             },
         },
@@ -15128,9 +15174,20 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
+        d_bessmertnyj_gotov_do_skonchaniya_vekov_prinimat_v_tuza = {
+            text = [[*Джордж стерпел.*]],
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
+            choices = {
+                {
+                    text = [[Давай ближе к делу.]],
+                    next = "d_davaj_blizhe_k_delu",
+                },
+            },
+        },
         d_bylo_by_neploho = {
             text =
-            [[ВИДЕЛ ТОТ ПОРТАЛ В ЦЕНТРЕ КОРОЛЕВСТВА? ЕГО ОСТАВИЛ ПЕРВЫЙ, ПОЖЕРТВОВАВ СОБОЙ. ВОТ ЖЕ БОЛВАН, КОНЕЧНО, Я Б НА ЕГО МЕСТЕ...]],
+            [[ВИДЕЛ ТОТ ПОРТАЛ В ЦЕНТРЕ КОРОЛЕВСТВА? ЕГО ОСТАВИЛ ПЕРВЫЙ, ПОЖЕРТВОВАВ СОБОЙ. ЧЕРВЯК, Я Б НА ЕГО МЕСТЕ...]],
             speaker = [[Джордж Богоподобный]],
             npc = "npc_george",
             choices = {
@@ -15140,25 +15197,15 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
-        d_v_kakom_smysle_bog = {
-            text = [[В ПРЯМОМ, ВИДЕЛ ТОТ ЗОЛОТОЙ КРИСТАЛЛ НА ЦЕПЯХ? ЭТО ОН И ЕСТЬ.]],
+        d_gde_ty_vzyal_stolko_dush = {
+            text =
+            [[ТЫ ТУПОЙ, ХА-ХА-ХА! Я ПРОСТО ПОЖЕРТВОВАЛ ПОЛОВИНОЙ ЛЮДЕЙ - ЧТОБЫ ЗАГИПНОТИЗИРОВАТЬ ДРУГУЮ. ТО ЖЕ САМОЕ С КРИПАМИ.]],
             speaker = [[Джордж Богоподобный]],
             npc = "npc_george",
             choices = {
                 {
-                    text = [[Эм...]],
-                    next = "d_u3",
-                },
-            },
-        },
-        d_vasche_logichno_da = {
-            text = [[ВАЛИ ТОГДА!]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
-            choices = {
-                {
-                    text = [[Закрыть.]],
-                    next = nil,
+                    text = [[*Чё за бред?*]],
+                    next = "d_u6__1",
                 },
             },
         },
@@ -15170,6 +15217,18 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Активируй портал, построенный Первым.]],
                     next = "d_aktiviruj_portal_postroennyj_pervym",
+                },
+            },
+        },
+        d_davaj_blizhe_k_delu = {
+            text = [[*Джордж кое о чём задумался.*
+О, Я ЗНАЮ! ТЫ ЖЕ ВЕДЬ ХОЧЕШЬ ВЕРНУТЬСЯ ДОМОЙ, ДА?]],
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
+            choices = {
+                {
+                    text = [[Домой это куда?]],
+                    next = "d_domoj_eto_kuda",
                 },
             },
         },
@@ -15223,14 +15282,14 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
-        d_zachem_ty_ubil_stolko_ludej = {
-            text = [[Это был не выбор. Мне пришлось обороняться, чтобы выжить.]],
-            speaker = [[Дерек]],
-            npc = "npc_derek",
+        d_zabilis = {
+            text = [[ВАЛИ ТОГДА!]],
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
             choices = {
                 {
-                    text = [[Ты ведь знаешь почему они напали на тебя?]],
-                    next = "d_ty_ved_znaesh_pochemu_oni_napali_na_tebya",
+                    text = [[Закрыть.]],
+                    next = nil,
                 },
             },
         },
@@ -15243,18 +15302,6 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[*Потушить сигару и поймать пулю зубами.*]],
                     next = "d_potushit_sigaru_i_pojmat_pulu_zubami",
-                },
-            },
-        },
-        d_i_chto_mne_teper_delat = {
-            text = [[*Джордж кое о чём задумался.*
-О, О, Я ЗНАЮ! ТЫ ЖЕ ВЕДЬ ХОЧЕШЬ ВЕРНУТЬСЯ ДОМОЙ, ДА?]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
-            choices = {
-                {
-                    text = [[Домой это куда?]],
-                    next = "d_domoj_eto_kuda",
                 },
             },
         },
@@ -15307,7 +15354,7 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
-        d_kto_on_to_skazhi = {
+        d_kto_on_to = {
             text = [[НА КОЛЕНИ.]],
             speaker = [[Пропавший Король]],
             npc = "npc_george",
@@ -15399,13 +15446,24 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_o_chem_rech = {
             text =
-            [[ОО, ТЫ ЖЕ ОТКРЫЛ ДВЕРЬ. Я СВОБОДЕН. ОСТАЛОСЬ ТОЛЬКО ИЗБИТЬ ТЕБЯ, НО НЕ УБИВАТЬ. ВОЗМОЖНО ОН ДАСТ МНЕ ЕЩЁ ОДИН ШАНС.]],
+            [[Я НАКОНЕЦ-ТО СВОБОДЕН. ОСТАЛОСЬ ТОЛЬКО ИЗБИТЬ ТЕБЯ, НО НЕ УБИВАТЬ. ВОЗМОЖНО ОН ДАСТ МНЕ ЕЩЁ ОДИН ШАНС.]],
             speaker = [[Пропавший Король]],
             npc = "npc_george",
             choices = {
                 {
-                    text = [[Кто он то, скажи.]],
-                    next = "d_kto_on_to_skazhi",
+                    text = [[Кто он то...]],
+                    next = "d_kto_on_to",
+                },
+            },
+        },
+        d_o_tam_ktoto_stoit = {
+            text = [[*Существо зашевелилось.*]],
+            speaker = [[...]],
+            npc = "npc_george",
+            choices = {
+                {
+                    text = [[*Присмотреться.*]],
+                    next = "d_prismotretsya",
                 },
             },
         },
@@ -15435,18 +15493,6 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
-        d_otkuda_ty_vzyal_dushi_dlya_etih_manipulyatsij = {
-            text =
-            [[ТЫ ЧЁ, ТУПОЙ, ХА-ХА-ХА! Я ПРОСТО ПОЖЕРТВОВАЛ ПОЛОВИНОЙ ЛЮДЕЙ - ЧТОБЫ ЗАГИПНОТИЗИРОВАТЬ ДРУГУЮ. ТО ЖЕ САМОЕ С КРИПАМИ.]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
-            choices = {
-                {
-                    text = [[...]],
-                    next = "d_u6__1",
-                },
-            },
-        },
         d_pprivet__1 = {
             text = [[Не провйодишь миня до метро?]],
             speaker = [[xaviersobased]],
@@ -15466,17 +15512,6 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Я всё равно пойду.]],
                     next = "d_s4",
-                },
-            },
-        },
-        d_podozhdi_a_kto_napisal_ob_etom = {
-            text = [[ПЕРВЫЙ.]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
-            choices = {
-                {
-                    text = [[...]],
-                    next = "d_u4",
                 },
             },
         },
@@ -15508,6 +15543,17 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Из-за чего отключился портал Первого?]],
                     next = "d_u7__1",
+                },
+            },
+        },
+        d_pochemu__1 = {
+            text = [[Это был не выбор. Мне пришлось обороняться, чтобы выжить.]],
+            speaker = [[Дерек]],
+            npc = "npc_derek",
+            choices = {
+                {
+                    text = [[Ты ведь знаешь почему они напали на тебя?]],
+                    next = "d_ty_ved_znaesh_pochemu_oni_napali_na_tebya",
                 },
             },
         },
@@ -15546,17 +15592,6 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
-        d_s_kakoj_tselu_eto_bylo_sdelano = {
-            text = [[...]],
-            speaker = [[Дерек]],
-            npc = "npc_derek",
-            choices = {
-                {
-                    text = [[...]],
-                    next = "d_t",
-                },
-            },
-        },
         d_s_radostu = {
             text =
             [[*Вы вместе отправляетесь в метро. Дальше ходите по магазинам, а потом ты показываешь ему достопримечательности. После покупаете бабл-ти и гуляете по ночной Москве.*]],
@@ -15591,21 +15626,10 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
-        d_tak_nazyvaemaya_tvarina_dolzhna_byla_ubit_tebya_pochemu_ty_zhiv = {
-            text = [[КТО Ж ЗНАЕТ ТО?!]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
-            choices = {
-                {
-                    text = [[И что мне теперь делать?]],
-                    next = "d_i_chto_mne_teper_delat",
-                },
-            },
-        },
         d_tak_on_mertv = {
             text = [[*Дерек покачал головой.*
-Врата запечатаны... Открываются они с помощью слов: "Carcer Immortalium".
-С твоей силой ты сможешь положить конец его тиранству...]],
+Врата запечатаны... Carcer Immortalium.
+С твоей силой ты сможешь положить конец его тирании...]],
             speaker = [[Дерек]],
             npc = "npc_derek",
             choices = {
@@ -15620,13 +15644,13 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_takoe_chmo_ne_mozhet_pomogat_drugim = {
             text =
-            [[ДА ТЫ Ж ВИДИШЬ. Я НЕ МОГУ УМЕРЕТЬ, НО БОЛЬ ТО Я ЧУВСВТУЮ ПОСТОЯННО, ЭТО НЕВЫНОСИМО. ТАК ЧТО СДЕЛАВ ТАК, КАК Я СКАЗАЛ, ТЫ ДАРУЕШЬ СПАСЕНИЕ СЕБЕ, ЛЮДЯМ И МНЕ.]],
+            [[ЕЩЕ БЫ Я СТАЛ ПОМОГАТЬ ЭТОМУ СБРОДУ. Я НЕ МОГУ УМЕРЕТЬ, НО БОЛЬ ТО Я ЧУВСВТУЮ ПОСТОЯННО, ЭТО НЕВЫНОСИМО. ТАК ЧТО, ИСПОЛЬЗОВАВ ТЕБЯ, Я СПАСУ СЕБЯ ОТ ВЕЧНЫХ МУЧЕНИЙ.]],
             speaker = [[Джордж Богоподобный]],
             npc = "npc_george",
             choices = {
                 {
-                    text = [[Ваще логично, да.]],
-                    next = "d_vasche_logichno_da",
+                    text = [[Забились.]],
+                    next = "d_zabilis",
                 },
             },
         },
@@ -15658,14 +15682,14 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
-        d_tut_ktonibud_est = {
-            text = [[*Спереди послышались шорохи.*]],
-            speaker = [[...]],
+        d_ty_shiit_ili_ibadit = {
+            text = [[ЧЁ? Я ПРО ЗОЛОТОЙ КРИСТАЛЛ НА ЦЕПЯХ. ЭТО ОН И ЕСТЬ.]],
+            speaker = [[Джордж Богоподобный]],
             npc = "npc_george",
             choices = {
                 {
-                    text = [[*Присмотреться.*]],
-                    next = "d_prismotretsya",
+                    text = [[Эм...]],
+                    next = "d_u3",
                 },
             },
         },
@@ -15677,8 +15701,8 @@ Wazup, ты кем будешь, dawg?]],
             npc = "npc_derek",
             choices = {
                 {
-                    text = [[С какой целью это было сделано?]],
-                    next = "d_s_kakoj_tselu_eto_bylo_sdelano",
+                    text = [[...]],
+                    next = "d_derek_silence",
                 },
             },
         },
@@ -15754,6 +15778,17 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
+        d_eto_navernoe_samyj_tupoj_sposob_ispolzovat_bozhestvennuu_silu = {
+            text = [[ТОЛЬКО Я БЕССМЕРТНЫЙ КОРОЛЬ ЭТОГО МИРА, А У ТЕБЯ НОС КАРТОШКА.]],
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
+            choices = {
+                {
+                    text = [[Бессмертный? Готов до скончания веков принимать в туза?]],
+                    next = "d_bessmertnyj_gotov_do_skonchaniya_vekov_prinimat_v_tuza",
+                },
+            },
+        },
         d_ya_ischu_dereka = {
             text = [[*Она приоткрыла глаза и удивлённо на тебя взглянула.*
 А зачем?]],
@@ -15772,7 +15807,7 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_ya_ne_gotov_zhertvovat_chuzhoj_zhiznu = {
             text =
-            [[УТИ ПУТИ КАКОЙ! ХА-ХА-ХА. РАСЛАБЬСЯ, ТЫ ПОЖЕРТВУЕШЬ МНОЙ, ПОНЯЛ? ОТКРОЕШЬ ПОРТАЛ И СО ВСЕЙ СВОРОЙ ВЕРНЁШЬСЯ НА ПРЕКРАСНУЮ ЗЕМЛЮ!]],
+            [[УТИ ПУТИ КАКОЙ! ХА-ХА-ХА, ТЫ ПОЖЕРТВУЕШЬ МНОЙ. ОТКРОЕШЬ ПОРТАЛ И СО ВСЕЙ СВОРОЙ ВЕРНЁШЬСЯ НА ПРЕКРАСНУЮ ЗЕМЛЮ!]],
             speaker = [[Джордж Богоподобный]],
             npc = "npc_george",
             choices = {
@@ -15791,17 +15826,6 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Ты не понял, кровь прольётся твоя.]],
                     next = "d_t1",
-                },
-            },
-        },
-        d_ya_prishel_chtoby_razobratsya = {
-            text = [[Разобраться в чём?]],
-            speaker = [[Дерек]],
-            npc = "npc_derek",
-            choices = {
-                {
-                    text = [[Зачем ты убил столько людей?]],
-                    next = "d_zachem_ty_ubil_stolko_ludej",
                 },
             },
         },

@@ -1,5 +1,7 @@
 modifier_move = class {}
 
+function modifier_move:IsHidden() return true end
+
 function modifier_move:OnCreated(kv)
     if not IsServer() then return end
     if self:GetParent():HasModifier("modifier_immobile") then

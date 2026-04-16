@@ -35,7 +35,7 @@
 
         <Panel class="RightCol">
           <Panel class="TextArea">
-            <Label id="DialogueText" class="DialogueText" text="..." />
+            <Label id="DialogueText" class="DialogueText" html="true" text="..." />
           </Panel>
 
           <Panel id="ContinueHint" class="ContinueHint" visible="false">
