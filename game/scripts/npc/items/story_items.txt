@@ -22,7 +22,7 @@
         "ItemSellable"                  "0"
 
         "ItemIsNeutralItem"         "1"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemDeclarativeSlot"        "neutral" 
 
         "AbilityValues" 
