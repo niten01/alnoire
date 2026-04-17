@@ -1,6 +1,6 @@
 modifier_ski = class({})
 
-function modifier_ski:IsHidden() return false end
+function modifier_ski:IsHidden() return true end
 
 function modifier_ski:OnCreated(kv)
     if not IsServer() then return end
