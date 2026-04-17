@@ -1,5 +1,5 @@
 "DOTA_Tooltip_ability_item_staff_of_madness"	        "Staff of Madness"
-"DOTA_Tooltip_ability_item_staff_of_madness_Description" "<h1>Активное: Berserk Zone</h1>Создает в указанной точке область радиусом %aoe_radius% на %duration% сек. Находясь внутри круга, Алекс и его подконтрольные существа повышают входящий и исходящий урон атаками и способностями на %incoming_dmg_pct%."
+"DOTA_Tooltip_ability_item_staff_of_madness_Description" "<h1>Активное: Berserk Zone</h1>Создает в указанной точке область радиусом %aoe_radius% на %duration% сек. Находясь внутри круга, Алекс и его подконтрольные существа повышают входящий и исходящий урон атаками и способностями на %incoming_dmg_pct%%%."
 
 "DOTA_Tooltip_modifier_staff_of_madness_buff"		"Berserk"
 "DOTA_Tooltip_modifier_staff_of_madness_buff_Description"		"Наносимый и получаемый урон увеличен."
