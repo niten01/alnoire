@@ -1,2 +1,2 @@
 "DOTA_Tooltip_ability_item_poison_note"	        "Предсмертная записка"
-"DOTA_Tooltip_ability_item_poison_note_Lore"	        "НЕ БЕЙ ЕЁ! ЭТА... ЭТА ТВАРЬ УПИВАЕТСЯ ЯДОМ!"
+"DOTA_Tooltip_ability_item_poison_note_Lore"	        "НЕ ИСПОЛЬЗУЙТЕ ЯД! ЭТА... ЭТА ТВАРЬ УПИВАЕТСЯ ЯДОМ!"

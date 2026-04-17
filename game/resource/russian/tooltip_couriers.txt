@@ -54,7 +54,7 @@
 "npc_courier_bones"    "Стервятник"
 "npc_courier_babka_2"    "Старушка" 
 "npc_courier_blue_frog"    "Слепой"
-"npc_courier_blue_pig"    "Житель Пустоши"
+"npc_courier_pig"    "Житель Пустоши"
 "npc_courier_winter_cat"    "Невидимый"
 "npc_courier_tomato"    "Помидорка" 
 "npc_courier_psycho"    "Псих"

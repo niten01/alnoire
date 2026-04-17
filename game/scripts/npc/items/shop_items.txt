@@ -472,7 +472,7 @@
         {
             // "chance_pct"     "33"        
             "radius"  "400"
-            "damage"  "80" 
+            "damage"  "90" 
         }
     }
     "item_malignance"
@@ -580,13 +580,13 @@
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
         "AbilityCastRange"              "500"
-        "AbilityCooldown"               "16.0" 
+        "AbilityCooldown"               "18.0" 
 
         "AbilityValues" 
         {
             "duration"      "3.0" // debuff
             "ms_reduction"  "100"
-            "damage"        "180"
+            "damage"        "200"
 
             "expand_time"   "2.0" // particle bound
         }
