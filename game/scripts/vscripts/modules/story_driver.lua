@@ -29,6 +29,13 @@ function StoryDriver:Init()
     BarrelClick:BuildArena()
     BarrelClick:Start(event.playerID)
   end)
+
+  ChatCommand:LinkDevCommand("-sfx", function(event, args)
+    self:HandleAction(event.playerID, {
+      type = "sfx",
+      sound = args[1]
+    })
+  end)
 end
 
 local function fastRemoveNPC(name)
@@ -223,8 +230,13 @@ function Handlers.music_stop(playerID, action)
   Music:StopCustomMusic(playerID)
 end
 
-function Handlers.sfx(playerID, action)
-  EmitGlobalSound(action.sound)
+function Handlers.island_explode(playerID, action)
+  local npc = Entities:FindByName(nil, "npc_bomb")
+  if not npc then
+    npc = Entities:FindByName(nil, "npc_bomb_place")
+  end
+  assert(npc)
+  npc:EmitSound("sfx.island_explode")
 end
 
 function Handlers.take_item(playerID, action)
@@ -543,6 +555,11 @@ function StoryDriver:SetupAct2()
   SpawnManager:SpawnNPC("spawner_concert_meepo")
   SpawnManager:SpawnNPC("spawner_concert_lina")
   SpawnManager:SpawnNPC("spawner_concert_legion")
+
+  if GlobalState:Get().freed_island_creeps then
+    SpawnManager:SpawnNPC("spawner_killer")
+    triggerSetEnabled("trigger_epstein_killer", true)
+  end
 end
 
 local QuestStatus = require('modules.quest.quest_status')
@@ -572,9 +589,6 @@ function StoryDriver:SetupAct3()
 
   if GlobalState:Get().freed_island_creeps then
     SpawnManager:SpawnNPC("spawner_cat_barrel_city")
-
-    SpawnManager:SpawnNPC("spawner_killer")
-    triggerSetEnabled("trigger_epstein_killer", true)
   end
 end
 

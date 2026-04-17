@@ -1061,13 +1061,6 @@ return {
                 { questID = "q_island_explosion", status = QuestStatus.ACTIVE, step = { 1 }, type = "quest" },
             },
         },
-        d_subway_fake_return_act_3 = {
-            priority = 0,
-            conditions = {
-                { questID = "q_island_explosion",    status = QuestStatus.ACTIVE, step = { 5 }, type = "quest" },
-                { interact = "npc_subway_fake_return", type = "interact" },
-            },
-        },
         d_davaj_poprobuem = {
             priority = 0,
             conditions = {
@@ -4720,7 +4713,6 @@ return {
                     next = nil,
                     actions = {
                         { target = "tp_target_city_fake", type = "teleport" },
-                        { questID = "q_island_escape",  type = "quest_end" },
                     },
                 },
                 {
@@ -11362,7 +11354,7 @@ But luckily it's here you feel me?]],
                     text = [[*Нажать на сочную красную кнопку.*]],
                     next = "d_n5",
                     actions = {
-                        { sound = "sfx.island_explode", type = "sfx" },
+                        { type = "island_explode" },
                     },
                 },
             },
@@ -11916,17 +11908,6 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Пришлось, иначе бы умер сам.]],
                     next = "d_prishlos_inache_by_umer_sam",
-                },
-            },
-        },
-        d_escape_island_2 = {
-            text = [[]],
-            speaker = [[Подозрительный терминал]],
-            npc = "npc_subway_fake_return",
-            choices = {
-                {
-                    text = [[Закрыть.]],
-                    next = nil,
                 },
             },
         },
@@ -12530,24 +12511,6 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
-        d_subway_fake_return_act_3 = {
-            text = [[*На тебя выжидающе смотрит окошко очередного нелегального терминала М.Е.Т.Р.О.*]],
-            speaker = [[Подозрительный терминал]],
-            npc = "npc_subway_fake_return",
-            choices = {
-                {
-                    text = [[Куда угодно, только подальше отсюда]],
-                    next = nil,
-                    actions = {
-                        { target = "tp_target_city_fake", type = "teleport" },
-                    },
-                },
-                {
-                    text = [[Я передумал]],
-                    next = nil,
-                },
-            },
-        },
         d_u2 = {
             text =
             [[So, next next hour or so, you know what i'm talkin about? I hear knock on a door. So, I get up, understand? I ran to that shi, i'm thinkin its going to be a littl salty. Open a door, it's a black dood, so i'm like, "the pig done set me up for real." You understand? For real, y'now what i'm sayin?]],
@@ -12922,7 +12885,7 @@ Wazup, ты кем будешь, dawg?]],
                     text = [[*Нажать на сочную красную кнопку.*]],
                     next = "d_nazhat_na_sochnuu_krasnuu_knopku",
                     actions = {
-                        { sound = "sfx.island_explode", type = "sfx" },
+                        { type = "island_explode" },
                     },
                 },
             },

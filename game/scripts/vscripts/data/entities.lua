@@ -334,7 +334,7 @@ return {
         spawner_trap_fake_spikes      = {
             npc = "npc_trap_fake_spikes",
             team = DOTA_TEAM_BADGUYS,
-            modifiers = { "modifier_story_npc" },
+            modifiers = { "modifier_story_npc", "modifier_disabled_vis" },
             deferred = true,
         },
         spawner_trap_pendulum         = {
