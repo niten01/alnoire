@@ -60,19 +60,12 @@ function modifier_mk_ai:OnIntervalThink()
     if not DefaultAiTick(unit) then
         -- деремся сука
         if beaconState == 'aggro' and target and target:IsAlive() then
-            if unit.castBonk then
-                local ability = unit:GetAbilityByIndex(0)
-                ExecuteOrderFromTable({
-                    UnitIndex = unit:entindex(),
-                    OrderType = DOTA_UNIT_ORDER_CAST_POSITION,
-                    Position = target:GetAbsOrigin(),
-                    AbilityIndex = ability:entindex(),
-                    Queue = false,
-                })
-                return BATTLE_THINK_INTERVAL
+            if unit.castBonk and CastAbility(unit, target, "monkey_king_boundless_strike") then
+                unit.lastCastTime = GameRules:GetGameTime()
+                return
             end
 
-            if not unit:GetAggroTarget() and not unit.castBonk then
+            if not unit:GetAggroTarget() then
                 ExecuteOrderFromTable({
                     UnitIndex = unit:entindex(),
                     OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
