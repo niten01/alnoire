@@ -37,7 +37,7 @@ function modifier_trap_skeleton:OnCreated()
     self.range = ability:GetSpecialValueFor("range")
     self:StartIntervalThink(ability:GetSpecialValueFor("fire_interval"))
 
-    DrawDebugCircle(self:GetParent():GetAbsOrigin(), self.range)
+    -- DrawDebugCircle(self:GetParent():GetAbsOrigin(), self.range)
 end
 
 function modifier_trap_skeleton:OnIntervalThink()

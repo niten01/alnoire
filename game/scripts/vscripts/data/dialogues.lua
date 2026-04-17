@@ -1721,8 +1721,8 @@ return {
         },
         d_nachat_bitvu = {
             text = [[]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -3008,6 +3008,7 @@ return {
                     next = "d_p11__1",
                     actions = {
                         { itemName = "item_sling", type = "give_item" },
+                        { npc = "npc_predvestnik", type = "kill" },
                     },
                 },
             },
@@ -4015,8 +4016,8 @@ return {
         },
         d_m = {
             text = [[Я не могу снять её.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Причина?]],
@@ -4027,8 +4028,8 @@ return {
         d_m1 = {
             text =
             [[До Мантии, моя жизнь была примитивной и бессмысленной. Сейчас же полна новых открытий и откровений.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Ты ведь обещал отдать Мантию им.]],
@@ -4038,8 +4039,8 @@ return {
         },
         d_m2 = {
             text = [[Моя позиция тверда, ничто не изменит её. Уходи.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Тебе всегда было плевать на них, или как?.]],
@@ -4053,8 +4054,8 @@ return {
         },
         d_m3 = {
             text = [[Не нравится мне убивать. Это глупо, тем более ты хороший человек.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Мне тоже, однако по другому это не решится.]],
@@ -4352,8 +4353,8 @@ return {
         },
         d_o6 = {
             text = [[Оставь слова при себе.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Ты же понимаешь, что я не уйду?]],
@@ -4495,7 +4496,7 @@ return {
         },
         d_p14 = {
             text = [[*Ты очень устал, однако придётся двигаться дальше.*]],
-            speaker = [[Гид]],
+            speaker = [[...]],
             npc = "npc_guide",
             choices = {
                 {
@@ -4969,8 +4970,8 @@ return {
         },
         d_a_pochemu_ty_ne_verneshsya_domoj = {
             text = [[Почему? Ты должен сам понимать.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Нет, не понимаю.]],
@@ -5410,8 +5411,8 @@ return {
         },
         d_da_oni_svoebraznye_no_hotya_by_provedaj_ih = {
             text = [[Тебе не понять насколько мерзки они для меня.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Так они же...]],
@@ -5894,8 +5895,8 @@ return {
         d_mantiya_proklyata = {
             text = [[*Поднялся ветер. Прохлада прошлась по твоему телу.*
 Нет. Я просто не хочу быть прежним. Сейчас я владею всеми знаниями мира, это высшее наслаждение.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[...]],
@@ -5928,8 +5929,8 @@ return {
             npc = "npc_ogre_bruiser",
             choices = {
                 {
-                    text = [[Они беспокоются за тебя, вернёшься к ним?]],
-                    next = "d_oni_bespokoutsya_za_tebya_verneshsya_k_nim",
+                    text = [[Они беспокоятся за тебя, вернёшься к ним?]],
+                    next = nil,
                 },
             },
         },
@@ -5963,8 +5964,8 @@ return {
         d_mne_tozhe_odnako_po_drugomu_eto_ne_reshitsya = {
             text = [[Тогда начнём.
 *Огромная тяжёлая дубина крепко сидит в руке огра. Похоже он наделён не только огроными знаниями.*]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[*Начать битву*]],
@@ -6044,7 +6045,7 @@ return {
                     text = [[*Взять камень.*]],
                     next = "d_vzyat_kamen",
                     actions = {
-                        { itemName = "item_philosopher_pebble", type = "give_item" },
+                        { itemName = "item_philosopher_pebble", locked = true, type = "give_item" },
                     },
                 },
             },
@@ -6162,8 +6163,8 @@ return {
         },
         d_net_ne_ponimau = {
             text = [[Нынешнему мне не о чем говорить с ними. У вас был диалог, думаю несложно догадаться о чём я.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Да, они своебразные, но хотя бы проведай их.]],
@@ -6401,12 +6402,23 @@ return {
         d_oni_bespokoutsya_za_tebya_verneshsya_k_nim = {
             text = [[*Его взгляд был прикован к фиолетовому цветку позади тебя. Его бутоны ещё не раскрылись.*
 Теперь не могу. Но каких-то пару дней назад всё ещё был шанс.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Это связано с Мантией?]],
                     next = "d_eto_svyazano_s_mantiej",
+                },
+            },
+        },
+        d_oni_bespokoyatsya_za_tebya_verneshsya_k_nim = {
+            text = [[]],
+            speaker = [[Огр-громила]],
+            npc = "npc_ogre_bruiser",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
                 },
             },
         },
@@ -6604,8 +6616,8 @@ return {
         },
         d_prichina = {
             text = [[Осознание. Возвращение в прошлую жизнь недопустимо.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Мантия проклята?]],
@@ -6801,8 +6813,8 @@ return {
         d_tak_oni_zhe = {
             text = [[*Огр перебивает тебя. Но ты не перебиваешь в ответ, наоборот, ты позвояешь ему это сделать.*
 Ты сейчас начнёшь рассказывать о наших воспоминаниях, братских узах и о том, как они меня однажды спасли. Не нужно этого.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[...]],
@@ -6979,8 +6991,8 @@ return {
         d_ty_ved_obeschal_otdat_mantiu_im = {
             text = [[*Он слегка наклонил голову. Было ощущение, что он пытается прислушаться к чему-то.*
 Верно, но я поддался искушению. Поверь, моим братьям Мантия будет только во вред.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[А почему ты не вернёшься домой?]],
@@ -7014,8 +7026,8 @@ return {
         d_ty_zhe_ponimaesh_chto_ya_ne_ujdu = {
             text = [[*Послышался негромкий вздох.*
 Да. Упёртость - есть удел недалёких. Я понимал, что без драки не обойдётся.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[...]],
@@ -7506,8 +7518,8 @@ return {
         },
         d_eto_svyazano_s_mantiej = {
             text = [[Да.]],
-            speaker = [[Огр-громила]],
-            npc = "npc_ogre_bruiser",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[...]],
@@ -11383,7 +11395,7 @@ But luckily it's here you feel me?]],
             },
         },
         d_aleks_obuzdavshij_ten = {
-            text = [[М.. Мы... Дожны.. должны.. его одолеть...
+            text = [[М.. Мы... Должны.. должны.. его одолеть...
 *Демонов потрясывает от страха*]],
             speaker = [[Демоны Тени]],
             npc = "npc_island_demon",
@@ -12465,7 +12477,7 @@ Wazup, ты кем будешь, dawg?]],
                     text = [[*Взять новый камень.*]],
                     next = "d_vzyat_novyj_kamen",
                     actions = {
-                        { itemName = "item_philosopher_pebble", type = "give_item" },
+                        { itemName = "item_philosopher_pebble", locked = true, type = "give_item" },
                     },
                 },
             },
@@ -13157,7 +13169,7 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_na_koleni_pered_vladykoj = {
             text = [[*Теневой демон смог собрать мысли.*
-Давай же, Исчадие тьмы, одолеем его ради нашего хозяина. Мы перед ним в неоплатном долгу.]],
+Давай же, Исчадие Тени, одолеем его ради нашего хозяина. Мы перед ним в неоплатном долгу.]],
             speaker = [[Демоны Тени]],
             npc = "npc_island_demon",
             choices = {
@@ -13276,7 +13288,7 @@ Wazup, ты кем будешь, dawg?]],
         d_on_sobran = {
             text =
             [[*Глава берёт ключ и начинает рассматривать. Похоже его заинтересовала его форма. Увидел ли он в ней что-то знакомое?*
-Отличная работа, Алекс. Большой же ты путь проделал, сложный и опасный, и в итоге предо мной - самый великий воин Королевста. Я официально присуждаю этот титул.]],
+Отличная работа, Алекс. Большой же ты путь проделал, сложный и опасный, и в итоге предо мной - самый великий воин Королевства. Я официально присуждаю этот титул.]],
             speaker = [[Глава]],
             npc = "npc_leader",
             choices = {
@@ -15618,7 +15630,8 @@ Wazup, ты кем будешь, dawg?]],
                     text = [[Забились.]],
                     next = "d_zabilis",
                     actions = {
-                        { var = "can_make_deal", value = true, type = "set_var" },
+                        { var = "can_make_deal",        value = true,        type = "set_var" },
+                        { questID = "q_main_quest_act_4", type = "quest_advance" },
                     },
                 },
             },

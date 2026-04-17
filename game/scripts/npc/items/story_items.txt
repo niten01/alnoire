@@ -36,9 +36,10 @@
         "BaseClass"           "item_datadriven"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ID"                            "3002"
+        "ItemCost"                      "99999"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "0"
+        "ItemPurchasable"               "1"
         "AbilityTextureName"            "sanya_flask_seed"
     }
 
@@ -295,9 +296,10 @@
         "BaseClass"             "item_datadriven"
         "AbilityTextureName"    "philosopher_pebble"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemCost"						"99999"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "0"
+        "ItemPurchasable"               "1"
         "ItemQuality"                   "rare"
         "AbilityValues"
         {

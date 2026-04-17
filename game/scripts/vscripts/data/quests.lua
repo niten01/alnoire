@@ -368,7 +368,7 @@ return {
             {
                 description = "Одолей Короля",
                 objectives = {
-                    { type = "talk", npc = "npc_george" }
+                    { type = "manual" }
                 }
             },
             {

@@ -1176,6 +1176,7 @@ return {
         },
         item_spawner_seed = {
             item = "item_sanya_flask_seed",
+            locked = true,
         },
         item_spawner_egg = {
             item = "item_tough_egg",

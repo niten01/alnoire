@@ -2,6 +2,7 @@ from dataclasses import dataclass, field
 from typing import List, Dict
 from enum import Enum
 from src.datadict import DataDict
+import re
 
 
 @dataclass
@@ -21,7 +22,7 @@ class Passage:
     speaker: str | None = field(default=None)
     npc: str | None = field(default=None)
     focus: str | None = field(default=None)
-    is_bubble : bool = False
+    is_bubble: bool = False
 
     def __repr__(self) -> str:
         return (
@@ -46,6 +47,12 @@ class Story:
 
     def get(self, name: str) -> Passage | None:
         return self.passages.get(name)
+
+    def count_words(self) -> int:
+        return sum(
+            len(p.text.split()) + sum(len(l.display) for l in p.links)
+            for p in self.passages.values()
+        )
 
     def rename(self, old: str, new: str):
         if old not in self.passages:

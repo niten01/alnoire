@@ -42,7 +42,7 @@ def merge(og: Story, s: Story) -> Story:
         og.entries[id] = entrypoint
 
     print(
-        f"Merged {og.title} with {s.title}: {len(og.passages)} passages with {sum(len(p.links) for p in og.passages.values())} links."
+        f"Merged {og.title} with {s.title}: {len(og.passages)} passages with {sum(len(p.links) for p in og.passages.values())} links ({og.count_words()} words)."
     )
     og.title = f"{og.title}+{s.title}"
     return og

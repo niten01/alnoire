@@ -43,6 +43,7 @@
 "npc_ghetto_ranged"        "Член CREEPS"
 "npc_gangster"            "Главарь CREEPS"
 "npc_bomb_place"        "Место для бомбы"
+"npc_bomb"        "Бомба"
 "npc_dream"        "Крип с мечтой"
 "npc_dream_golden"        "Крип-нигер"
 "npc_shooter"        "Скулшутер"

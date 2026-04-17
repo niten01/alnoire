@@ -40,4 +40,18 @@
     ]
     vsnd_duration = 1.0
   }
+  barrel_click.click = {
+    type = "dota_update_default"
+    volume = 1.300000
+    pitch_rand_min = "-0.070000"
+    pitch_rand_max = "0.070000"
+    soundlevel = 81.000000
+    mixgroup = "Weapons"
+    volume_fade_out = 0.200000
+    spread_radius = 600.000000
+    vsnd_files = 
+    [
+      "sounds/sfx/barrel_click.vsnd",
+    ]
+  }
 }

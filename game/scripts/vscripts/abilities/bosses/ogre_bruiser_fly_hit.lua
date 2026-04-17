@@ -115,7 +115,7 @@ function modifier_ogre_fly:OnIntervalThink()
     if not IsServer() then return end
     local parent    = self:GetParent()
     local targetPos = self.targetEnt:GetAbsOrigin()
-    DrawDebugCircle(targetPos, 20, 0.1)
+    -- DrawDebugCircle(targetPos, 20, 0.1)
     parent:SetCursorPosition(targetPos)
     parent:FaceTowards(targetPos)
 end
@@ -130,7 +130,7 @@ function modifier_ogre_fly:UpdateHorizontalMotion(me, dt)
     local new_pos = me:GetAbsOrigin() + self.direction * step
     me:SetAbsOrigin(new_pos)
     if IsValidEntity(self.targetEnt) then
-        DrawDebugCircle(self.targetEnt:GetAbsOrigin(), 20, 0.1)
+        -- DrawDebugCircle(self.targetEnt:GetAbsOrigin(), 20, 0.1)
         me:FaceTowards(self.targetEnt:GetAbsOrigin())
     end
 

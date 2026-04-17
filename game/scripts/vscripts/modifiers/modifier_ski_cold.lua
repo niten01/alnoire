@@ -50,7 +50,7 @@ function modifier_ski_cold:OnTakeDamage(params)
     if params.unit ~= parent then return end
 
     local healthPercentage = parent:GetHealth() / parent:GetMaxHealth()
-    if healthPercentage < 0.5 then
+    if healthPercentage < 0.3 then
         parent:EmitSound("sfx.ski_cold.kill")
         parent:Kill(parent, parent)
         local pfx = ParticleManager:CreateParticle(

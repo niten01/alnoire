@@ -13,12 +13,17 @@ function BarrelClick:Init()
     self.interval = INITIAL_SPAWN_INTERVAL
     self.lifetime = INITIAL_BARREL_LIFETIME
     self.tierRecord = 0
+    self.bcsp = false
 
     GameEvents:OnGameInProgress(function()
         self.tierTextEnt = Entities:FindByName(nil, "barrel_click_tier_text")
         assert(self.tierTextEnt)
         self.tierRecordTextEnt = Entities:FindByName(nil, "barrel_click_tier_record_text")
         assert(self.tierRecordTextEnt)
+    end)
+
+    ChatCommand:LinkDevCommand("-bcsp", function(event, args)
+        self.bcsp = not self.bcsp
     end)
 end
 
@@ -120,6 +125,7 @@ function BarrelClick:OnBarrelClicked(barrelHandle)
             ParticleManager:ReleaseParticleIndex(pfx)
             barrelHandle:EmitSound("barrel_click.coin")
         end
+        barrelHandle:EmitSound("barrel_click.click")
 
         local pfx = ParticleManager:CreateParticle("particles/dev/library/base_dust_hit.vpcf", PATTACH_ABSORIGIN,
             barrelHandle)
@@ -158,6 +164,12 @@ function BarrelClick:EndGame(success)
     for entIndex, _ in pairs(self.activeBarrels) do
         local unit = EntIndexToHScript(entIndex)
         if IsValidEntity(unit) then UTIL_Remove(unit) end
+    end
+
+    if self.bcsp then
+        Timers:CreateTimer(1.0, function()
+            self:Start(self.playerID)
+        end)
     end
 end
 

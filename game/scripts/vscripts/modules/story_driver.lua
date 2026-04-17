@@ -99,6 +99,10 @@ function Handlers.quest_end(playerID, action)
   Quest:CompleteQuestForAll(action.questID)
 end
 
+function Handlers.quest_advance(playerID, action)
+  Quest:AdvanceStep(action.questID)
+end
+
 -- { pack = "pack_abc", nonLethalNPC = "npc_someone" (optional) }
 function Handlers.fight_start(playerID, action)
   assert(not action.npc, "Legacy fight_start action, rewrite to pack")
@@ -138,7 +142,9 @@ end
 function Handlers.give_item(playerID, action)
   assert(action.itemName, "No itemName")
   local item = SafeGiveItem(playerID, action.itemName)
-  -- item:SetCombineLocked(true)
+  if action.locked then
+    item:SetCombineLocked(true)
+  end
 end
 
 function Handlers.kill(playerID, action)
@@ -235,7 +241,7 @@ function Handlers.island_explode(playerID, action)
   --   npc = Entities:FindByName(nil, "npc_bomb_place")
   -- end
   -- assert(npc)
-  local hero  = PlayerResource:GetBarebonesAssignedHero(playerID)
+  local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
   assert(hero)
   hero:EmitSound("sfx.island_explode")
 end

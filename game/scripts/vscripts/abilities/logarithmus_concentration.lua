@@ -82,7 +82,7 @@ function modifier_logarithmus_concentration:OnAttackLanded(params)
         ParticleManager:ReleaseParticleIndex(pfx)
 
         local leanMod = parent:FindModifierByName("modifier_lean_power_logarithmus")
-        if leanMod then
+        if leanMod and stackCount > leanMod.stacksThreshold then
             PlayLeanSplash(params.target, leanMod.radius)
 
             local enemies = FindEnemiesForSanyaInRadius(params.target:GetAbsOrigin(), leanMod.radius)

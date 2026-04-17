@@ -213,7 +213,7 @@ function Dialogue:GetDialogueNodeBestMatchEntrypoint(playerID, premetConditions)
       PrintTable(e, 2)
       print("-----------")
     end
-    Notifications:TopToAll({ text = text, duration = 10000 })
+    Notifications:TopToAll({ text = text, duration = 20 })
   end
 
   -- DebugPrint("[ALNOIRE] Dialogue entrypoint matches:")
