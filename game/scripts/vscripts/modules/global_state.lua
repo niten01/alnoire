@@ -12,7 +12,7 @@ function GlobalState:Init()
         perekup_good_ending = false,
         perekup_negotiated = false,
 
-        has_concert_password = false,
+        has_concert_pass = false,
         concert_crowd_met = false,
         concert_crowd_beaten = false,
 

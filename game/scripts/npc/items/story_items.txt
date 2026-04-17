@@ -38,7 +38,7 @@
         "ID"                            "3002"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "AbilityTextureName"            "sanya_flask_seed"
     }
 
@@ -77,7 +77,7 @@
         "ItemSellable"                  "0"
 
         "ItemIsNeutralItem"         "1"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemDeclarativeSlot"        "neutral" 
 
         "AbilityValues" 
@@ -122,7 +122,7 @@
         "ItemSellable"                  "0"
 
         "ItemIsNeutralItem"         "1"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemDeclarativeSlot"        "neutral" 
 
         "AbilityValues" 
@@ -169,7 +169,7 @@
         "ItemSellable"                  "0"
 
         "ItemIsNeutralItem"         "1"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemDeclarativeSlot"        "neutral" 
 
         "AbilityValues" 
@@ -215,7 +215,7 @@
         "ItemSellable"                  "0"
 
         "ItemIsNeutralItem"         "1"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemDeclarativeSlot"        "neutral" 
 
         "AbilityValues" 
@@ -263,7 +263,7 @@
         "ItemSellable"                  "0"
 
         "ItemIsNeutralItem"         "1"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemDeclarativeSlot"        "neutral" 
 
         "AbilityValues" 
@@ -297,7 +297,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
         "AbilityValues"
         {
@@ -327,7 +327,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
     }
     "item_recipe_crystal_ball"
@@ -378,7 +378,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
     }
     "item_key_part_2"
@@ -388,7 +388,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
     }
     "item_key_part_3"
@@ -398,7 +398,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
     }
     "item_recipe_key"
@@ -419,7 +419,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
     }
     "item_concert_ticket"
@@ -430,7 +430,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
     }
     "item_lean"
@@ -441,7 +441,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
     }
     "item_cage_key"
@@ -452,7 +452,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
     }
     "item_sling"
@@ -464,7 +464,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
         
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -488,7 +488,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
     }
     "item_first_note"
@@ -499,7 +499,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "ItemKillable"                  "0"
         "ItemSellable"                  "0"
-        "ItemPurchasable"               "1"
+        "ItemPurchasable"               "0"
         "ItemQuality"                   "rare"
     }
     "item_demon_power_rapper"

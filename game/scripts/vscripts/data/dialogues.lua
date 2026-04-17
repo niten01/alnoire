@@ -12892,7 +12892,7 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_davajte_ya_vstuplu_v_vashu_bandu = {
             text = [[*Всей толпой они выдали смешок.*
-Чтоб белый вступил в C.R.I.P.s.? Ты гонишь а.]],
+Чтоб белый вступил в C.R.E.E.P.s.? Ты гонишь а.]],
             speaker = [[Гангстер]],
             npc = "npc_gangster",
             choices = {
@@ -15348,7 +15348,7 @@ Wazup, ты кем будешь, dawg?]],
             npc = nil,
             choices = {
                 {
-                    text = [[Чей жизнью пожертвовать?]],
+                    text = [[Чьей жизнью пожертвовать?]],
                     next = "d_chej_zhiznu_pozhertvovat",
                 },
                 {

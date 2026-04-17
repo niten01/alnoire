@@ -15,7 +15,7 @@ function killer_bind:OnSpellStart()
     target:AddNewModifier(caster, self, "modifier_killer_bind", {
         partnerIdx = caster:entindex(),
         maxDistance = maxDistance,
-        duration = -1,
+        duration = 30,
         pfxCP1 = pfx
     })
 
@@ -23,7 +23,7 @@ function killer_bind:OnSpellStart()
         caster:AddNewModifier(caster, self, "modifier_killer_bind", {
             partnerIdx = target:entindex(),
             maxDistance = maxDistance,
-            duration = -1,
+            duration = 30,
         })
     end)
 
