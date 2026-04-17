@@ -561,7 +561,7 @@
         {
             "damage"      "70" // magical
             "radius"      "300"
-            "chance_pct"  "15"
+            "chance_pct"  "20"
         }
     }
     "item_lean_power_rapper" 

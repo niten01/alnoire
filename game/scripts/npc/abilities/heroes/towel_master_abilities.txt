@@ -116,8 +116,8 @@
 		{
 			"radius"					"400 450 500 550"
 			"healPct"					"12 14 16 18"
-			"decreaseMult"				"0.20 0.20 0.20 0.20"
-			"delayBeforeReset"			"2.0 2.0 2.0 2.0"
+			"decreaseMult"				"0.12 0.12 0.12 0.12"
+			"delayBeforeReset"			"2.5 2.5 2.5 2.5"
 		}
 
 		"precache"
@@ -172,7 +172,7 @@
 		"AbilityValues"
 		{
 			"radius"					"400 450 500 550"
-			"miss_chance"				"10 15 20 25"
+			"miss_chance"				"10 13 17 20"
 			"speed_bonus"				"50 60 70 80"
 		}
 

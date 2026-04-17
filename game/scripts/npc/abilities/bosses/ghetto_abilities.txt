@@ -12,10 +12,10 @@
         "AbilityCooldown"               "0" 
         "AbilityCastRange"        		"2000"
         
-        "AbilityDamage"         "70"
+        "AbilityDamage"         "100"
         "AbilityValues"
         {
-            "proj_speed"      "1000"
+            "proj_speed"      "800"
             "proj_radius"     "20"
             // rand min max
             "cd"            "0 2"
