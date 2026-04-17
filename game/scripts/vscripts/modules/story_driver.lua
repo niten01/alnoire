@@ -32,8 +32,7 @@ function StoryDriver:Init()
 
   ChatCommand:LinkDevCommand("-sfx", function(event, args)
     self:HandleAction(event.playerID, {
-      type = "sfx",
-      sound = args[1]
+      type = "island_explode",
     })
   end)
 end
@@ -139,7 +138,7 @@ end
 function Handlers.give_item(playerID, action)
   assert(action.itemName, "No itemName")
   local item = SafeGiveItem(playerID, action.itemName)
-  item:SetCombineLocked(true)
+  -- item:SetCombineLocked(true)
 end
 
 function Handlers.kill(playerID, action)
@@ -231,12 +230,14 @@ function Handlers.music_stop(playerID, action)
 end
 
 function Handlers.island_explode(playerID, action)
-  local npc = Entities:FindByName(nil, "npc_bomb")
-  if not npc then
-    npc = Entities:FindByName(nil, "npc_bomb_place")
-  end
-  assert(npc)
-  npc:EmitSound("sfx.island_explode")
+  -- local npc = Entities:FindByName(nil, "npc_bomb")
+  -- if not npc then
+  --   npc = Entities:FindByName(nil, "npc_bomb_place")
+  -- end
+  -- assert(npc)
+  local hero  = PlayerResource:GetBarebonesAssignedHero(playerID)
+  assert(hero)
+  hero:EmitSound("sfx.island_explode")
 end
 
 function Handlers.take_item(playerID, action)
