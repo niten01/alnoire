@@ -376,9 +376,9 @@ return {
                 objectives = {
                     { type = "talk", npc = "npc_tormentor" }
                 },
-                postStepActions = {
-                    { type = "setup_guide_finale" }
-                }
+                -- postStepActions = {
+                --     { type = "setup_guide_finale" }
+                -- }
             },
             {
                 description = "Вернись в реальный мир",

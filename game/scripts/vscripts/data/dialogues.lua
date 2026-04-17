@@ -1157,8 +1157,8 @@ return {
         d_untitled_passage_79_merged_act4 = {
             priority = 0,
             conditions = {
-                { interact = "npc_tormentor",   type = "interact" },
-                { questID = "q_main_quest_act_4", status = QuestStatus.ACTIVE, step = { 4 }, type = "quest" },
+                { interact = "npc_tormentor", type = "interact" },
+                { var = "can_make_deal",    value = { true }, type = "var" },
             },
         },
         d_untitled_passage_80_merged_act4 = {
@@ -15123,6 +15123,9 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Душой Короля, Джорджем.]],
                     next = "d_dushoj_korolya_dzhordzhem",
+                    actions = {
+                        { type = "setup_guide_finale" },
+                    },
                 },
             },
         },
@@ -15157,7 +15160,7 @@ Wazup, ты кем будешь, dawg?]],
             choices = {
                 {
                     text = [[Какой смысл возвращаться? Мы же умерли в реальном мире.]],
-                    next = nil,
+                    next = "d_kakoj_smysl_vozvraschatsya_my_zhe_umerli_v_realnom_mire",
                 },
             },
         },
@@ -15246,9 +15249,9 @@ Wazup, ты кем будешь, dawg?]],
             },
         },
         d_zabilis = {
-            text = [[ВАЛИ ТОГДА!]],
-            speaker = [[default]],
-            npc = nil,
+            text = [[УЙДИ С ГЛАЗ ДОЛОЙ!]],
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -15295,21 +15298,10 @@ Wazup, ты кем будешь, dawg?]],
             },
         },
         d_kakoj_smysl_vozvraschatsya_my_zhe_umerli_v_realnom_mire = {
-            text = [[]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
-            choices = {
-                {
-                    text = [[Закрыть.]],
-                    next = nil,
-                },
-            },
-        },
-        d_kakoj_smysl_vozraschatsya_my_zhe_umerli_v_realnom_mire = {
             text =
             [[ПЕРВЫЙ ВСЁ ПРОДУМАЛ. ПОРТАЛ ВОЗВРАЩАЕТ ТЕБЯ ЗА НЕСКОЛЬКО МИНУТ ДО СМЕРТИ, ЧТОБ ТЫ МОГ ИЗМЕНИТЬ СВОЮ СУДЬБУ. ЕСЛИ ВЫЙДЕТ, КОНЕЧНО, ХА-ХА-ХА!]],
-            speaker = [[default]],
-            npc = nil,
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
             choices = {
                 {
                     text = [[Ладно... Но портал же не работает.]],
@@ -15344,8 +15336,8 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_ladno_no_portal_zhe_ne_rabotaet = {
             text = [[ЕСТЬ СПОСОБ. СОВЕРШИ ОБМЕН С БОГОМ.]],
-            speaker = [[default]],
-            npc = nil,
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
             choices = {
                 {
                     text = [[Чьей жизнью пожертвовать?]],
@@ -15619,12 +15611,15 @@ Wazup, ты кем будешь, dawg?]],
         d_takoe_chmo_ne_mozhet_pomogat_drugim = {
             text =
             [[ЕЩЕ БЫ Я СТАЛ ПОМОГАТЬ ЭТОМУ СБРОДУ. Я НЕ МОГУ УМЕРЕТЬ, НО БОЛЬ ТО Я ЧУВСВТУЮ ПОСТОЯННО, ЭТО НЕВЫНОСИМО. ТАК ЧТО, ИСПОЛЬЗОВАВ ТЕБЯ, Я СПАСУ СЕБЯ ОТ ВЕЧНЫХ МУЧЕНИЙ.]],
-            speaker = [[default]],
-            npc = nil,
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
             choices = {
                 {
                     text = [[Забились.]],
                     next = "d_zabilis",
+                    actions = {
+                        { var = "can_make_deal", value = true, type = "set_var" },
+                    },
                 },
             },
         },
@@ -15728,8 +15723,8 @@ Wazup, ты кем будешь, dawg?]],
         d_chej_zhiznu_pozhertvovat = {
             text =
             [[ПРЯМО ПЕРЕД ТОБОЙ. ХА-ХА-ХА. ТЫ ПОЖЕРТВУЕШЬ МНОЙ, ПОНЯЛ? ОТКРОЕШЬ ПОРТАЛ И СО ВСЕЙ СВОРОЙ ВЕРНЁШЬСЯ НА ПРЕКРАСНУЮ ЗЕМЛЮ!]],
-            speaker = [[default]],
-            npc = nil,
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
             choices = {
                 {
                     text = [[Очевидный подвох.]],
@@ -15782,8 +15777,8 @@ Wazup, ты кем будешь, dawg?]],
         d_ya_ne_gotov_zhertvovat_chuzhoj_zhiznu = {
             text =
             [[УТИ ПУТИ КАКОЙ! ХА-ХА-ХА, ТЫ ПОЖЕРТВУЕШЬ МНОЙ. ОТКРОЕШЬ ПОРТАЛ И СО ВСЕЙ СВОРОЙ ВЕРНЁШЬСЯ НА ПРЕКРАСНУЮ ЗЕМЛЮ!]],
-            speaker = [[default]],
-            npc = nil,
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
             choices = {
                 {
                     text = [[Такое чмо не может помогать другим.]],
