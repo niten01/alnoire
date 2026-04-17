@@ -80,8 +80,11 @@ function FlaskManager:RefillOneCharge(playerID)
     assert(hero, "No hero was found for flask refill")
     local item = hero:FindItemInInventory('item_sanya_flask')
     local item1 = hero:FindItemInInventory('item_sanya_flask_upgrade_1')
-    if not item and not item1 then return end
-    local flask = item or item1
+    local item2 = hero:FindItemInInventory('item_sanya_flask_upgrade_2')
+    local item3 = hero:FindItemInInventory('item_sanya_flask_upgrade_3')
+    local item4 = hero:FindItemInInventory('item_sanya_flask_upgrade_4')
+    local item5 = hero:FindItemInInventory('item_sanya_flask_upgrade_5')
+    local flask = item or item1 or item2 or item3 or item4 or item4 or item5
     if not flask then return end
     local oldCharges = flask:GetCurrentCharges()
     if oldCharges + 1 > flask:GetInitialCharges() then

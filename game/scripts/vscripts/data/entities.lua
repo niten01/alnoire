@@ -1301,16 +1301,12 @@ return {
             rangeAggro = 300,
             rangeRetreat = 500,
             stayActivatedOnPlayerDeath = true,
-            xpBounty = 0.5,
-            goldBounty = 50,
         },
         pack_forest_act1_techies_2 = {
             rangeFastTickRate = 900,
             rangeAggro = 300,
             rangeRetreat = 500,
             stayActivatedOnPlayerDeath = true,
-            xpBounty = 0.5,
-            goldBounty = 50,
         },
         pack_forest_act1_techies_3 = {
             rangeFastTickRate = 900,
@@ -1646,7 +1642,8 @@ return {
             rangeFastTickRate = 2000,
             rangeRetreat = 1850,
             rangeAggro = 1000,
-            xpBounty = 1,
+            xpBounty = 2,
+            goldBounty = 100,
         },
         pack_red = {
             rangeRetreat = 6000,
