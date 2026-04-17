@@ -523,7 +523,7 @@
         "ItemQuality"                   "rare"
         "AbilityValues"
         {
-            "lifesteal_pct_per_stack"      "3"
+            "lifesteal_pct_per_stack"      "2.5"
             "max_stacks"                   "10"
             "decay_time"                   "5"
         }
@@ -561,7 +561,7 @@
         {
             "damage"      "70" // magical
             "radius"      "300"
-            "chance_pct"  "15"
+            "chance_pct"  "20"
         }
     }
     "item_lean_power_rapper" 
@@ -631,7 +631,7 @@
         
         "AbilityValues"
         {
-            "damage"      "100" // magical
+            "damage"      "220" // magical
             "radius"      "500"
             "stacks_threshold"  "10"
         }

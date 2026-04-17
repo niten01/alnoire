@@ -31,7 +31,7 @@
         "AbilityValues"
         {
             "duration"      "10.0"
-            "damagePerSec"  "30.0"
+            "damagePerSec"  "45.0"
             "slowAmount"    "50"
         }
     }	

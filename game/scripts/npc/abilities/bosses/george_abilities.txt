@@ -94,7 +94,7 @@
             "num_points"    "55"
             "spawn_radius"  "2000"
             "radius"        "150"
-            "damage"        "250"
+            "damage"        "350"
 
             // rand min max
             "delay"         "1 2"
@@ -296,7 +296,7 @@
             "spread"                    "180"
             "num_directions"            "18"
             "num_simultaneous_spawners" "2"
-            "damage"                    "125"
+            "damage"                    "175"
         }
 
         "precache"

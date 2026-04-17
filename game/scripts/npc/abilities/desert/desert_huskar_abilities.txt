@@ -19,7 +19,7 @@
             "jumpImpactRadius"  "400"
             "pushDistance"      "300"
             "pushDuration"      "0.75"
-            "initialDamage"     "100"
+            "initialDamage"     "200"
             "offset"            "180"
 		}
     }
