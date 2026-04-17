@@ -614,14 +614,14 @@
         "ItemCost"                      "1100"
 
         "AbilityCastRange"              "700"
-        "AbilityCooldown"               "10.0" 
+        "AbilityCooldown"               "26.0" 
 
         "AbilityValues" 
         {
             "aoe_radius"    "250"
-            "duration"      "10.0"
-            "incoming_dmg_pct" "100"
-            "outgoing_dmg_pct" "100"
+            "duration"      "6.0"
+            "incoming_dmg_pct" "25"
+            "outgoing_dmg_pct" "25"
         }
 
         "precache"
