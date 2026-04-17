@@ -19,7 +19,7 @@ function modifier_demon_power_towel_summon:OnTakeDamage(event)
     if event.unit ~= self:GetParent() then return end
     local parent = self:GetParent()
     if parent:GetHealth() - event.damage <= 1 then
-        parent:SetHealth(parent:GetMaxHealth())
+        parent:SetHealth(parent:GetMaxHealth() * 0.5)
 
         local pfx = ParticleManager:CreateParticle(
             "particles/units/heroes/hero_tidehunter/tidehunter_krakenshell_purge.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
