@@ -61,3 +61,4 @@
 "npc_trap_fire" "Огнемёт"
 "npc_trap_arrow" "Стреломёт"
 "npc_trap_pendulum" "Маятник"
+"npc_wasteland" "Житель Пустоши"

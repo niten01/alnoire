@@ -1241,14 +1241,14 @@ return {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 3000,
             rangeRetreat = 3000,
-            rangeAggro = 1000,
+            rangeAggro = 1700,
         },
         pack_shooter_hall_3 = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 3000,
             rangeRetreat = 3000,
-            rangeAggro = 1000,
+            rangeAggro = 2200,
         },
 
         pack_forest_act1_lizards = {

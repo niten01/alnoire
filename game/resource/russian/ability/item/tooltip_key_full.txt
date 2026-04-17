@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_key"	        "Большой ключ"
+"DOTA_Tooltip_ability_item_key_Lore"    "Тяжёлый и холодный"
