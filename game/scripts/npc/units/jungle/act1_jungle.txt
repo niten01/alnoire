@@ -369,7 +369,7 @@
 		"Ability3"					"axe_sustain"			// Ability 4
 
 		"ArmorPhysical"				"4"			// Physical protection.
-		"MagicalResistance"         "60"
+		"MagicalResistance"         "65"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"10"		// Damage range min.
 		"AttackDamageMax"			"20"		// Damage range max.
@@ -504,7 +504,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"6"			// Physical protection.
-		"MagicalResistance"         "10"
+		"MagicalResistance"         "15"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"15"		// Damage range min.
 		"AttackDamageMax"			"20"		// Damage range max.
@@ -569,7 +569,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "30"
+		"MagicalResistance"         "35"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"15"		// Damage range min.
 		"AttackDamageMax"			"20"		// Damage range max.
@@ -1150,7 +1150,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"1"			// Physical protection.
-		"MagicalResistance"         "10"
+		"MagicalResistance"         "15"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"15"		// Damage range min.
 		"AttackDamageMax"			"20"		// Damage range max.

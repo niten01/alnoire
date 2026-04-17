@@ -186,7 +186,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"7"			// Physical protection.
-		"MagicalResistance"         "35"
+		"MagicalResistance"         "40"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"20"		// Damage range min.
 		"AttackDamageMax"			"20"		// Damage range max.
