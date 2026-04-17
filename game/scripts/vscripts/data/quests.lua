@@ -135,7 +135,7 @@ return {
             {
                 description = "Воспользуйся подземным тоннелем",
                 objectives = {
-                    { type = "manual" }
+                    { type = "talk", npc = "npc_subway_fake_return" }
                 }
             },
         },
