@@ -192,7 +192,7 @@ return {
             {
                 description = "Найди Красного, Зелёного и Синего",
                 objectives = {
-                    { type = "remove", npc = "npc_red" },
+                    { type = "remove", npc = "npc_red",   rewardXP = 1 },
                     { type = "remove", npc = "npc_green", rewardXP = 1 },
                     { type = "remove", npc = "npc_blue",  rewardXP = 1 },
 

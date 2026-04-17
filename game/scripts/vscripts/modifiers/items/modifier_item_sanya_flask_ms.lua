@@ -17,11 +17,7 @@ function modifier_item_sanya_flask_ms:DeclareFunctions()
 end
 
 function modifier_item_sanya_flask_ms:GetModifierMoveSpeedBonus_Constant()
-    return self.msBonus
-end
-
-function modifier_item_sanya_flask_ms:OnCreated()
-    if not IsServer() then return end
-    local abil = self:GetAbility()
-    self.msBonus = abil:GetSpecialValueFor('msBuff')
+    if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor("msBuff")
+    end
 end
