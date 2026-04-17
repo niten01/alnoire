@@ -18,7 +18,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"2"			// Physical protection.
-		"MagicalResistance"         "20"
+		"MagicalResistance"         "30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"15"		// Damage range min.
 		"AttackDamageMax"			"20"		// Damage range max.
@@ -83,7 +83,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"2"			// Physical protection.
-		"MagicalResistance"         "15"
+		"MagicalResistance"         "25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"80"		// Damage range min.
 		"AttackDamageMax"			"120"		// Damage range max.
@@ -606,7 +606,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "20"
+		"MagicalResistance"         "25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"70"		// Damage range min.
 		"AttackDamageMax"			"90"		// Damage range max.
@@ -670,7 +670,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "20"
+		"MagicalResistance"         "25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"20"		// Damage range min.
 		"AttackDamageMax"			"30"		// Damage range max.
@@ -736,7 +736,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "20"
+		"MagicalResistance"         "25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"50"		// Damage range min.
 		"AttackDamageMax"			"60"		// Damage range max.
@@ -801,7 +801,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "10"
+		"MagicalResistance"         "20"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"20"		// Damage range min.
 		"AttackDamageMax"			"30"		// Damage range max.
@@ -866,7 +866,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "10"
+		"MagicalResistance"         "20"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"20"		// Damage range min.
 		"AttackDamageMax"			"30"		// Damage range max.
@@ -933,7 +933,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "50"
+		"MagicalResistance"         "55"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"50"		// Damage range min.
 		"AttackDamageMax"			"60"		// Damage range max.
@@ -1075,7 +1075,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "30"
+		"MagicalResistance"         "35"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"40"		// Damage range max.
@@ -1282,7 +1282,7 @@
 		//"Ability4"					""			// Ability 4
 
 		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"         "0"
+		"MagicalResistance"         "20"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"1"		// Damage range min.
 		"AttackDamageMax"			"1"		// Damage range max.

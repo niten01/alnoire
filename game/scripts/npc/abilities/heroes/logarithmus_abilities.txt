@@ -81,7 +81,7 @@
             "dash_range"           "500"
             "spin_radius"          "300"
 			"dash_time"		       "0.4"
-			"dps" 				   "200 400"
+			"dps" 				   "250 500"
 		}
 
         "precache"

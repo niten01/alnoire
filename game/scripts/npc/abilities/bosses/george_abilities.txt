@@ -94,7 +94,7 @@
             "num_points"    "55"
             "spawn_radius"  "2000"
             "radius"        "150"
-            "damage"        "250"
+            "damage"        "350"
 
             // rand min max
             "delay"         "1 2"

@@ -22,7 +22,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"9"			// Physical protection.
-		"MagicalResistance"         "40"
+		"MagicalResistance"         "45"
 
 		// Attack
 		//----------------------------------------------------------------
@@ -107,7 +107,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"9"			// Physical protection.
-		"MagicalResistance"         "40"
+		"MagicalResistance"         "45"
 
 		// Attack
 		//----------------------------------------------------------------
