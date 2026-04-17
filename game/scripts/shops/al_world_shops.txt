@@ -32,7 +32,6 @@
     "item"              "item_leadlined_grip"
     "item"              "item_echo_dagger"
     "item"              "item_schism"
-    "item"              "item_cinder_brand"
   }
 
   // "support" // 16/16
@@ -44,6 +43,9 @@
     "item"              "item_malignance"
     "item"              "item_octarine_essence"
     "item"              "item_shivas_seal"
+    "item"              "item_caustic_sopor"
+    "item"              "item_blight_vesper"
+    "item"              "item_cinder_brand"
   }
 
   // "defense" // 19/20
@@ -52,9 +54,7 @@
 
   "weapons" // 20/20
   {
-    "item"              "item_caustic_sopor"
     "item"              "item_ossified_gaff"
-    "item"              "item_blight_vesper"
     "item"              "item_marrow_eater"
     "item"              "item_entrophia"
     "item"              "item_keen_killer"

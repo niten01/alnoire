@@ -52,7 +52,7 @@ function modifier_ski_cold:OnTakeDamage(params)
     local healthPercentage = parent:GetHealth() / parent:GetMaxHealth()
     if healthPercentage < 0.5 then
         parent:EmitSound("sfx.ski_cold.kill")
-        parent:ForceKill(false)
+        parent:Kill(parent, parent)
         local pfx = ParticleManager:CreateParticle(
             "particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_explode_ti5.vpcf",
             PATTACH_ABSORIGIN_FOLLOW, parent)

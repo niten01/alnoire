@@ -334,7 +334,7 @@ return {
         spawner_trap_fake_spikes      = {
             npc = "npc_trap_fake_spikes",
             team = DOTA_TEAM_BADGUYS,
-            -- modifiers = { "modifier_story_npc" },
+            modifiers = { "modifier_story_npc" },
             deferred = true,
         },
         spawner_trap_pendulum         = {
@@ -1713,6 +1713,7 @@ return {
         zone_academy = { musicSet = "academy", respawnPoint = "respawn_academy", noCombatMusic = true, },
         zone_academy_entrance = { musicSet = "silence", respawnPoint = "respawn_city" },
         zone_wastelands = { musicSet = "wastelands", respawnPoint = "respawn_wastelands" },
+        zone_derek = { musicSet = "wastelands", respawnPoint = "respawn_derek" },
         zone_ghetto = { musicSet = "ghetto", respawnPoint = "respawn_city" },
         zone_ghetto_entrance = { musicSet = "silence", respawnPoint = "respawn_city" },
         zone_concert_entrance = { musicSet = "silence", respawnPoint = "respawn_city" },

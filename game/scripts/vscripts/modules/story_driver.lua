@@ -223,6 +223,10 @@ function Handlers.music_stop(playerID, action)
   Music:StopCustomMusic(playerID)
 end
 
+function Handlers.sfx(playerID, action)
+  EmitGlobalSound(action.sound)
+end
+
 function Handlers.take_item(playerID, action)
   local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
   if not hero then

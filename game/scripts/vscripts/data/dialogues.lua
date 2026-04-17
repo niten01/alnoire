@@ -504,7 +504,6 @@ return {
             priority = 0,
             conditions = {
                 { interact = "npc_subway_fake_return", type = "interact" },
-                { questID = "q_island_escape",       status = QuestStatus.ACTIVE, step = { 3 }, type = "quest" },
             },
         },
         d_subway_to_city = {
@@ -581,7 +580,7 @@ return {
             priority = 0,
             conditions = {
                 { trigger = "trigger_epstein_killer", npc = "npc_killer", type = "trigger" },
-                { ent_var = "first_met_global",     value = { false }, npc = "npc_killer", type = "ent_var" },
+                { ent_var = "first_met_global",     value = { true }, npc = "npc_killer", type = "ent_var" },
             },
         },
         d_fairytale = {
@@ -4673,7 +4672,7 @@ return {
                     },
                 },
                 {
-                    text = [[Концертная площадка.]],
+                    text = [[Концертная площадка]],
                     next = nil,
                     actions = {
                         { target = "tp_target_concert", type = "teleport" },
@@ -7995,7 +7994,7 @@ return {
         },
         d_s_uvazheniem_kivnut = {
             text = [[*Он соединил руки и стал глядеть в землю. В его голосе чувствуется сожаление.*
-Даже тогда, когда я был уверен в правоте оппонента, я старался убедить себя в обратном и шёл на дешёвые прииёмы: угрозы, запугивания и даже избиения.]],
+Даже тогда, когда я был уверен в правоте оппонента, я старался убедить себя в обратном и шёл на дешёвые приёмы: угрозы, запугивания и даже избиения.]],
             speaker = [[Зелёный]],
             npc = "npc_green",
             choices = {
@@ -9066,7 +9065,7 @@ return {
         },
         d_q12 = {
             text =
-            [["С ключом делай, что хочешь. Если не сможешь смириться с гибелью товарищей, то возвращайся, и я дам тебе последний бой. Однако, предпочёл бы, чтобы дверь была заперта и забыта. В итоге выбор всё равно за тобой."]],
+            [[И добавил: "С ключом делай, что хочешь. Если не сможешь смириться с гибелью товарищей, то возвращайся, и я дам тебе последний бой. Однако, предпочёл бы, чтобы дверь была заперта и забыта. В итоге выбор всё равно за тобой."]],
             speaker = [[Отшельник]],
             npc = "npc_hermit",
             choices = {
@@ -9733,7 +9732,7 @@ That was dope, you're feeling me, yeah]],
         },
         d_vneshka_ne_vazhna_ponimaesh_sila_vnutri_vot_zdes = {
             text = [[*Твой удар заставил Зелёного пересмотреть свои взгляды на жизнь. Словно ты ему что-то вправил.*
-Знаешь... Ты октрыл мне глаза. Всё время я смотрел на остальных сверху вниз, но почему? Даже не пытался выслушать их. Может ли быть такое, что... я просто надменный?]],
+Знаешь... Ты открыл мне глаза. Всё время я смотрел на остальных сверху вниз, но почему? Даже не пытался выслушать их. Может ли быть такое, что... я просто надменный?]],
             speaker = [[Зелёный]],
             npc = "npc_green",
             choices = {
@@ -11248,7 +11247,7 @@ But luckily it's here you feel me?]],
         },
         d_da_skoree_vsego_ty_prav_pojdu_tuda_tolko_kogda_stanu_silnee = {
             text = [[*Правильные мысли.*]],
-            speaker = [[Кот-бочка]],
+            speaker = [[...]],
             npc = "npc_cat_barrel",
             choices = {
                 {
@@ -11362,6 +11361,9 @@ But luckily it's here you feel me?]],
                 {
                     text = [[*Нажать на сочную красную кнопку.*]],
                     next = "d_n5",
+                    actions = {
+                        { sound = "sfx.island_explode", type = "sfx" },
+                    },
                 },
             },
         },
@@ -11379,7 +11381,7 @@ But luckily it's here you feel me?]],
         d_hmm_opyat_etot_ostrov_epshtejn_ne_promah_on_mozhet_ustroit_kakuuto_lovushku = {
             text =
             [[*Правильно думаешь. Чутьё подсказывает, что на острове находится что-то невероятно опасное, ОЧЕНЬ опасное. Лучше не идти туда, пока не будешь в прайме, ведь там будет невероятно сложно. Доверься своему разуму разочек.*]],
-            speaker = [[Кот-бочка]],
+            speaker = [[...]],
             npc = "npc_cat_barrel",
             choices = {
                 {
@@ -11721,7 +11723,7 @@ But luckily it's here you feel me?]],
         },
         d_untitled_passage_59_merged_act3 = {
             text = [[Надеюсь Король вернётся и спасёт всех нас...]],
-            speaker = [[Человек-гид]],
+            speaker = [[Гид]],
             npc = "npc_guide",
             choices = {
                 {
@@ -12475,7 +12477,7 @@ Wazup, ты кем будешь, dawg?]],
             text =
             [[*Насладившись процессом, учёный забирает камень и начинает полировать его наждачкой. После, протягивает это произведение исскуства к тебе.*
 С гордостью отдаём его, пусть он поможет привести нас всех к миру!]],
-            speaker = [[Учёный]],
+            speaker = [[Крип-алхимик]],
             npc = "npc_scientist",
             choices = {
                 {
@@ -12501,7 +12503,7 @@ Wazup, ты кем будешь, dawg?]],
         d_s2 = {
             text =
             [[*Учёный окликает своего коллегу. Крип-алхимик подходит к чану и черпает рукой небольшое количество консистенции и передаёт алхимику поменьше, тому, что сидит на нём. Тот же, в свою очередь, элегантно придаёт ему форму.*]],
-            speaker = [[Учёный]],
+            speaker = [[Крип-алхимик]],
             npc = "npc_scientist",
             choices = {
                 {
@@ -12676,7 +12678,7 @@ Wazup, ты кем будешь, dawg?]],
         d_vzorvem_epshtejna = {
             text =
             [[*Тебе выдали зелёную бочку. Выглядит она не впечатляюще, однако взрывная сила у неё - колоссальная.*]],
-            speaker = [[Кот-бочка]],
+            speaker = [[...]],
             npc = "npc_cat_barrel",
             choices = {
                 {
@@ -12919,6 +12921,9 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[*Нажать на сочную красную кнопку.*]],
                     next = "d_nazhat_na_sochnuu_krasnuu_knopku",
+                    actions = {
+                        { sound = "sfx.island_explode", type = "sfx" },
+                    },
                 },
             },
         },
@@ -13000,10 +13005,6 @@ Wazup, ты кем будешь, dawg?]],
                 {
                     text = [[Закрыть.]],
                     next = nil,
-                    actions = {
-                        { type = "build_barrel_click" },
-                        { npc = "npc_brewmaster_good", type = "remove" },
-                    },
                 },
             },
         },
@@ -13079,7 +13080,7 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_kakoj_plan_u_vas = {
             text = [[Мы любим мастерить всякие бомбочки, так что хотим взорвать остров!
-*Крипы по бокам начали запускать петарды от возбуждения.*]],
+*Крипы по бокам начали пускать петарды от возбуждения.*]],
             speaker = [[Кот-бочка]],
             npc = "npc_cat_barrel",
             choices = {
@@ -13247,19 +13248,19 @@ Wazup, ты кем будешь, dawg?]],
             npc = "npc_blue",
             choices = {
                 {
-                    text = [[- - - > < - - -]],
+                    text = [[- - - > &lt; - - -]],
                     next = "d_g10",
                 },
                 {
-                    text = [[- - - - - - - >]],
+                    text = [[- - - - - - - &gt;]],
                     next = "d_g11",
                 },
                 {
-                    text = [[< - - - - - - >]],
+                    text = [[&lt; - - - - - - &gt;]],
                     next = "d_g10",
                 },
                 {
-                    text = [[- > < - - > < -]],
+                    text = [[- &gt; &lt; - - &gt; &lt; -]],
                     next = "d_g10",
                 },
             },
@@ -13823,7 +13824,7 @@ Wazup, ты кем будешь, dawg?]],
             },
         },
         d_ty_chego = {
-            text = [[*Душа крипа покинула тело. Тучи разошлись, вышло солнце и ярко светить.*]],
+            text = [[*Душа крипа покинула тело. Тучи разошлись, вышло солнце и ярко светит.*]],
             speaker = [[Крип с мечтой]],
             npc = "npc_dream",
             choices = {
@@ -15192,8 +15193,8 @@ Wazup, ты кем будешь, dawg?]],
             npc = "npc_george",
             choices = {
                 {
-                    text = [[Какой смысл возращаться? Мы же умерли в реальном мире.]],
-                    next = "d_kakoj_smysl_vozraschatsya_my_zhe_umerli_v_realnom_mire",
+                    text = [[Какой смысл возвращаться? Мы же умерли в реальном мире.]],
+                    next = nil,
                 },
             },
         },
@@ -15221,8 +15222,7 @@ Wazup, ты кем будешь, dawg?]],
             },
         },
         d_davaj_blizhe_k_delu = {
-            text = [[*Джордж кое о чём задумался.*
-О, Я ЗНАЮ! ТЫ ЖЕ ВЕДЬ ХОЧЕШЬ ВЕРНУТЬСЯ ДОМОЙ, ДА?]],
+            text = [[О, Я ЗНАЮ! ТЫ ЖЕ ВЕДЬ ХОЧЕШЬ ВЕРНУТЬСЯ ДОМОЙ, ДА?]],
             speaker = [[Джордж Богоподобный]],
             npc = "npc_george",
             choices = {
@@ -15284,8 +15284,8 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_zabilis = {
             text = [[ВАЛИ ТОГДА!]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Закрыть.]],
@@ -15331,11 +15331,22 @@ Wazup, ты кем будешь, dawg?]],
                 },
             },
         },
+        d_kakoj_smysl_vozvraschatsya_my_zhe_umerli_v_realnom_mire = {
+            text = [[]],
+            speaker = [[Джордж Богоподобный]],
+            npc = "npc_george",
+            choices = {
+                {
+                    text = [[Закрыть.]],
+                    next = nil,
+                },
+            },
+        },
         d_kakoj_smysl_vozraschatsya_my_zhe_umerli_v_realnom_mire = {
             text =
             [[ПЕРВЫЙ ВСЁ ПРОДУМАЛ. ПОРТАЛ ВОЗВРАЩАЕТ ТЕБЯ ЗА НЕСКОЛЬКО МИНУТ ДО СМЕРТИ, ЧТОБ ТЫ МОГ ИЗМЕНИТЬ СВОЮ СУДЬБУ. ЕСЛИ ВЫЙДЕТ, КОНЕЧНО, ХА-ХА-ХА!]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Ладно... Но портал же не работает.]],
@@ -15370,8 +15381,8 @@ Wazup, ты кем будешь, dawg?]],
         },
         d_ladno_no_portal_zhe_ne_rabotaet = {
             text = [[ЕСТЬ СПОСОБ. СОВЕРШИ ОБМЕН С БОГОМ.]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Чей жизнью пожертвовать?]],
@@ -15645,8 +15656,8 @@ Wazup, ты кем будешь, dawg?]],
         d_takoe_chmo_ne_mozhet_pomogat_drugim = {
             text =
             [[ЕЩЕ БЫ Я СТАЛ ПОМОГАТЬ ЭТОМУ СБРОДУ. Я НЕ МОГУ УМЕРЕТЬ, НО БОЛЬ ТО Я ЧУВСВТУЮ ПОСТОЯННО, ЭТО НЕВЫНОСИМО. ТАК ЧТО, ИСПОЛЬЗОВАВ ТЕБЯ, Я СПАСУ СЕБЯ ОТ ВЕЧНЫХ МУЧЕНИЙ.]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Забились.]],
@@ -15754,8 +15765,8 @@ Wazup, ты кем будешь, dawg?]],
         d_chej_zhiznu_pozhertvovat = {
             text =
             [[ПРЯМО ПЕРЕД ТОБОЙ. ХА-ХА-ХА. ТЫ ПОЖЕРТВУЕШЬ МНОЙ, ПОНЯЛ? ОТКРОЕШЬ ПОРТАЛ И СО ВСЕЙ СВОРОЙ ВЕРНЁШЬСЯ НА ПРЕКРАСНУЮ ЗЕМЛЮ!]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Очевидный подвох.]],
@@ -15808,8 +15819,8 @@ Wazup, ты кем будешь, dawg?]],
         d_ya_ne_gotov_zhertvovat_chuzhoj_zhiznu = {
             text =
             [[УТИ ПУТИ КАКОЙ! ХА-ХА-ХА, ТЫ ПОЖЕРТВУЕШЬ МНОЙ. ОТКРОЕШЬ ПОРТАЛ И СО ВСЕЙ СВОРОЙ ВЕРНЁШЬСЯ НА ПРЕКРАСНУЮ ЗЕМЛЮ!]],
-            speaker = [[Джордж Богоподобный]],
-            npc = "npc_george",
+            speaker = [[default]],
+            npc = nil,
             choices = {
                 {
                     text = [[Такое чмо не может помогать другим.]],

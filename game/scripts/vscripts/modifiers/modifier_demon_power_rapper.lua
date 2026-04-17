@@ -31,6 +31,7 @@ end
 function modifier_demon_power_rapper:OnIntervalThink()
     if not IsServer() then return end
     local parent = self:GetParent()
+    if parent:HasModifier("modifier_island_traps_participant") then return end
     local shield = parent:FindModifierByName("modifier_rapper_spliff_shield")
     if not shield then
         shield = parent:AddNewModifier(parent, parent:FindAbilityByName("rapper_spliff"), "modifier_rapper_spliff_shield",

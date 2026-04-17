@@ -204,7 +204,7 @@ return {
             {
                 description = "Вернись к панде",
                 objectives = {
-                    { type = "talk", npc = "npc_brewmaster" }
+                    { type = "talk", npc = "npc_brewmaster_good" }
                 },
                 postStepActions = {
                     { type = "build_barrel_click" }

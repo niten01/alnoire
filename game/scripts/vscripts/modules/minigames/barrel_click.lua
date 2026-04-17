@@ -36,7 +36,7 @@ function BarrelClick:Start(playerID)
     local hero = PlayerResource:GetBarebonesAssignedHero(playerID)
     assert(hero)
 
-    self.giverNPC = Entities:FindByName(nil, "npc_brewmaster")
+    self.giverNPC = Entities:FindByName(nil, "npc_brewmaster_good")
     assert(self.giverNPC)
     Dialogue:ShowDialogueBubbleEx(self.giverNPC, "Ломай бочки!", 2)
 
