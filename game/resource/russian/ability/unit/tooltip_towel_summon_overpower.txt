@@ -3,3 +3,6 @@
 "DOTA_Tooltip_Ability_towel_summon_overpower_SummaryDescription" ""
 "DOTA_Tooltip_ability_towel_summon_overpower_Description"		"Раб Чистоты черпает силы в своем протесте, увеличивая скорость атаки на %asb_per_attack% с каждым ударом."
 "DOTA_Tooltip_ability_towel_summon_overpower_buff_duration"		"ДЛИТЕЛЬНОСТЬ:"
+
+"DOTA_Tooltip_modifier_towel_summon_overpower" "Безмолвная ярость"
+"DOTA_Tooltip_modifier_towel_summon_overpower_Description" "Скорость атаки Раба увеличивается за каждый нанесенный им удар"

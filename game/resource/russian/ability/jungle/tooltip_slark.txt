@@ -7,3 +7,6 @@
 "DOTA_Tooltip_ability_slark_hit_toggle_Lore"		            "Где то я уже это видел.."
 "DOTA_Tooltip_Ability_slark_hit_toggle_SummaryDescription" ""
 "DOTA_Tooltip_ability_slark_hit_toggle_Description"		"Никакой пощады казуалам, НИКТО не знает как противостоять осеменителю глубин.."
+
+"DOTA_Tooltip_modifier_slark_attr_debuff" "Загадка природы"
+"DOTA_Tooltip_modifier_slark_attr_debuff_Description" "Внутри тебя копошатся головастики осеменителя"
