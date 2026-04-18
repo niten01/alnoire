@@ -1,4 +1,5 @@
 from src.datatypes import *
+import datetime, subprocess
 
 
 class LuaEmitter:
@@ -80,11 +81,22 @@ class LuaEmitter:
             self._emit_entrypoint(node_id, entrypoint)
         self.lines.append("},")
 
+    def _emit_version(self):
+        date = datetime.datetime.now().strftime("%Y%m%d%H%M")
+        sha = (
+            subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+            .decode("utf-8")
+            .strip()
+        )
+
+        self.lines.append(f"""version = "v{sha} ({date})",""")
+
     def emit(self):
         self.lines.append(
             """local QuestStatus = require('modules.quest.quest_status')"""
         )
         self.lines.append("return {")
+        self._emit_version()
         self._emit_entries()
         self._emit_nodes()
         self.lines.append("}")

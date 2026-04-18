@@ -1,5 +1,6 @@
 local QuestStatus = require('modules.quest.quest_status')
 return {
+    version = "v0a50a4d9 (202604182242)",
     entries = {
         d_untitled_passage = {
             priority = 0,

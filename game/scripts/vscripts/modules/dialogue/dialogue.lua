@@ -38,6 +38,7 @@ function Dialogue:Init()
   DebugPrint("[ALNOIRE] Initializing dialogues ")
   self.playerDialogueState = {}
   local dialogues = require('data.dialogues')
+  print("Version: " .. dialogues.version)
   self.entryPoints = dialogues.entries
   self.dialogueGraph = dialogues.nodes
   self.bubbleStateActive = {}
