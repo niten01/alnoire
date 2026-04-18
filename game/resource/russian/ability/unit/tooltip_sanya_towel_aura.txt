@@ -24,3 +24,12 @@
 "DOTA_Tooltip_ability_sanya_towel_aura_3_radius"		"РАДИУС:"
 "DOTA_Tooltip_ability_sanya_towel_aura_3_miss_chance"	"%<font color=\"#3eb3f7\">ШАНС УКЛОНЕНИЯ</font>:"
 "DOTA_Tooltip_ability_sanya_towel_aura_3_speed_bonus"	"<font color=\"#3eb3f7\">ДОП. СКОРОСТЬ</font>:"
+
+"DOTA_Tooltip_modifier_sanya_towel_aura_buff_1" "Аура исцеления"
+"DOTA_Tooltip_modifier_sanya_towel_aura_buff_1_Description" "Восстанавливает здоровье Раба"
+
+"DOTA_Tooltip_modifier_sanya_towel_aura_buff_2" "Аура берсерка"
+"DOTA_Tooltip_modifier_sanya_towel_aura_buff_2_Description" "Увеличивает урон от атак Раба, но забирает часть его здоровья каждую секунду"
+
+"DOTA_Tooltip_modifier_sanya_towel_aura_buff_3" "Аура побега"
+"DOTA_Tooltip_modifier_sanya_towel_aura_buff_3_Description" "Ускоряет владельца и Раба, а также дает шанс универсального уклонения"
