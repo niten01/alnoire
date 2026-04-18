@@ -12,15 +12,8 @@ end
 
 function modifier_dark_shaker_ai:OnDeath(params)
     local parent = self:GetParent()
-    local hero = PlayerResource:GetBarebonesAssignedHero(0)
-    if hero and params.unit == hero and self.shakerDowned then
-        self.goCastEcho = false
-        self.shakerDowned = false
-        PackManager:RespawnPack('pack_darkforest_act3_shakers')
-    end
     if string.find(params.unit:GetUnitName(), "npc_dark_shaker") then
         self.goCastEcho = true
-        self.shakerDowned = true
     end
 
     if not self.customDeathSound then return end
