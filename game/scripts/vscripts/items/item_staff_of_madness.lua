@@ -83,6 +83,7 @@ function modifier_staff_of_madness_buff:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
     }
 end
 
@@ -100,6 +101,10 @@ end
 
 function modifier_staff_of_madness_buff:GetModifierIncomingDamage_Percentage()
     return self.incomingPct
+end
+
+function modifier_staff_of_madness_buff:GetModifierSpellAmplify_Percentage()
+    return self.outgoingPct
 end
 
 -- function modifier_staff_of_madness_buff:OnAttackLanded(params)

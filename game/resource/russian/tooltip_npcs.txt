@@ -68,3 +68,4 @@
 "npc_subway_fake_return" "Подозрительный терминал"
 "npc_bomb"  "Кошачья бомба"
 "npc_derek_keyhole" "Алтарь"
+"npc_killer"        "Наёмник Эпштейна"
