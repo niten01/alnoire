@@ -1,0 +1,2 @@
+"DOTA_Tooltip_ability_item_ticket"	        "Билет"
+"DOTA_Tooltip_ability_item_ticket_Lore"	        "Нет возможности что-либо прочитать - билет в плохом состоянии."

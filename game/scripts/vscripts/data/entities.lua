@@ -155,6 +155,20 @@ return {
             packID = "pack_shooter_hall_3",
             team = DOTA_TEAM_BADGUYS,
         },
+        spawner_shooter_hall_4        = {
+            npc = "npc_shooter_ending_mini",
+            deferred = true,
+            ai_modifier = "modifier_default_creep_ai",
+            packID = "pack_shooter_hall_4",
+            team = DOTA_TEAM_BADGUYS,
+        },
+        spawner_shooter_hall_5        = {
+            npc = "npc_shooter_ending_mini",
+            deferred = true,
+            ai_modifier = "modifier_default_creep_ai",
+            packID = "pack_shooter_hall_5",
+            team = DOTA_TEAM_BADGUYS,
+        },
         spawner_gorilla               = {
             npc = "npc_gorilla",
             modifiers = { "modifier_story_npc", "modifier_gorilla_invulnerable" },
@@ -1235,22 +1249,37 @@ return {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 3000,
             rangeRetreat = 3000,
-            rangeAggro = 1000,
+            rangeAggro = 680,
         },
         pack_shooter_hall_2 = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 3000,
             rangeRetreat = 3000,
-            rangeAggro = 1700,
+            rangeAggro = 630,
         },
         pack_shooter_hall_3 = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 3000,
             rangeRetreat = 3000,
-            rangeAggro = 2200,
+            rangeAggro = 530,
         },
+        pack_shooter_hall_4 = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 3000,
+            rangeRetreat = 3000,
+            rangeAggro = 550,
+        },
+        pack_shooter_hall_5 = {
+            activateAfterUnitsSpawned = false,
+            stayActivatedOnPlayerDeath = true,
+            rangeFastTickRate = 3000,
+            rangeRetreat = 3000,
+            rangeAggro = 550,
+        },
+        
 
         pack_forest_act1_lizards = {
             stayActivatedOnPlayerDeath = true,
