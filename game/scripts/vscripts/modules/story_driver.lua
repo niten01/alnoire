@@ -410,6 +410,8 @@ function Handlers.start_city_finale_cutscene(playerID, action)
   SpawnManager:SpawnNPC("spawner_shooter_hall_1")
   SpawnManager:SpawnNPC("spawner_shooter_hall_2")
   SpawnManager:SpawnNPC("spawner_shooter_hall_3")
+  SpawnManager:SpawnNPC("spawner_shooter_hall_4")
+  SpawnManager:SpawnNPC("spawner_shooter_hall_5")
 end
 
 function Handlers.start_final_walk(playerID, action)
