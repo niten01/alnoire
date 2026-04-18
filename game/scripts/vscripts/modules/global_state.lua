@@ -20,6 +20,7 @@ function GlobalState:Init()
         derek_kill = false,
         tried_barrels = false,
         can_make_deal = false,
+        made_deal = false,
     }
 
 
