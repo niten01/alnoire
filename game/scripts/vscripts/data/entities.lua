@@ -1263,21 +1263,21 @@ return {
             stayActivatedOnPlayerDeath = true,
             rangeFastTickRate = 3000,
             rangeRetreat = 3000,
-            rangeAggro = 530,
+            rangeAggro = 800,
         },
         pack_shooter_hall_4 = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 3000,
-            rangeRetreat = 3000,
-            rangeAggro = 550,
+            rangeFastTickRate = 2200,
+            rangeRetreat = 2200,
+            rangeAggro = 1800,
         },
         pack_shooter_hall_5 = {
             activateAfterUnitsSpawned = false,
             stayActivatedOnPlayerDeath = true,
-            rangeFastTickRate = 3000,
-            rangeRetreat = 3000,
-            rangeAggro = 550,
+            rangeFastTickRate = 1400,
+            rangeRetreat = 1400,
+            rangeAggro = 1200,
         },
         
 
