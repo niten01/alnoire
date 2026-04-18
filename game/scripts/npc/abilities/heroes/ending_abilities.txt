@@ -14,7 +14,7 @@
 			"num_attacks"				"15"
             "pulse_radius"              "400"
             "pulse_damage"              "100"
-            "recovery_duration"         "3"
+            "recovery_duration"         "1"
 		}
 
         "precache"

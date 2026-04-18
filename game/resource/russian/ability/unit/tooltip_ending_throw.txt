@@ -1,0 +1,4 @@
+"DOTA_Tooltip_ability_ending_throw"		            "Унижающий прогиб"
+"DOTA_Tooltip_Ability_ending_throw_SummaryDescription" ""
+"DOTA_Tooltip_ability_ending_throw_Description"		""
+"DOTA_Tooltip_ability_ending_throw_Lore"		    "Воспоминание о путешествии."

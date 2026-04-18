@@ -20,7 +20,7 @@ end
 
 modifier_ending_attacks_buff = class {}
 
-function modifier_ending_attacks_buff:IsHidden() return false end
+function modifier_ending_attacks_buff:IsHidden() return true end
 
 function modifier_ending_attacks_buff:OnCreated()
     self:SetStackCount(self:GetAbility():GetSpecialValueFor("num_attacks"))
