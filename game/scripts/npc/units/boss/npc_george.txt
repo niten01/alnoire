@@ -24,8 +24,8 @@
 		"Ability12"					"george_stun"			
 		"Ability13"					""			
 
-		"ArmorPhysical"				"9"
-		"MagicalResistance"         "50"			
+		"ArmorPhysical"				"10"
+		"MagicalResistance"         "55"			
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"150"		// Damage range min.

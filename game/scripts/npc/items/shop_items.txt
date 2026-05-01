@@ -175,7 +175,7 @@
 
         "AbilityValues" 
         {
-            "mag_res_reduction"  "10"
+            "mag_res_reduction"  "5"
             "duration" "4"
         }
     }
@@ -312,7 +312,7 @@
 
         "AbilityValues" 
         {
-            "mag_res_reduction"  "15"
+            "mag_res_reduction"  "10"
             "attack_speed_reduction"  "20"
             "poison_dps"  "15"
             "duration" "7"
@@ -384,7 +384,7 @@
         {
             "ms_reduction"  "30"
             "armor_reduction"  "4"
-            "mag_res_reduction"  "20"
+            "mag_res_reduction"  "15"
             "attack_speed_reduction"  "30"
             "poison_dps"  "25"
             "duration" "7"

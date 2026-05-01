@@ -24,8 +24,8 @@
 		"Ability12"					"derek_wolf_bite"			
 		"Ability13"					"derek_wolf_melee"			
 
-		"ArmorPhysical"				"9"	
-		"MagicalResistance"         "50"		
+		"ArmorPhysical"				"10"	
+		"MagicalResistance"         "55"		
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		"AttackDamageMin"			"150"		// Damage range min.
