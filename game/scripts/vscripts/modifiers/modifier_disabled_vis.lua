@@ -21,6 +21,7 @@ function modifier_disabled_vis:OnCreated()
 end
 
 function modifier_disabled_vis:OnDestroy()
+    if not IsServer() then return end
     local parent = self:GetParent()
     parent:FadeGesture(ACT_DOTA_DISABLED)
 end

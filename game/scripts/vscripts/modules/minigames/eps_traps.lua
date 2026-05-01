@@ -27,7 +27,7 @@ function EpsTraps:SetActivated(activated)
     DebugPrint("[ALNOIRE] Traps minigame is now " .. (activated and 'active' or 'inactive'))
 
     for _, trap in ipairs(self.traps) do
-        if GlobalState:Get().act ~= 3 and trap.act3Only then goto continue end
+        if GlobalState:Get().act < 3 and trap.act3Only then goto continue end
 
         for _, ent in ipairs(Entities:FindAllByName(trap.npc)) do
             local thinker = ent:FindModifierByName(trap.modifier)
@@ -40,7 +40,7 @@ function EpsTraps:SetActivated(activated)
 end
 
 function EpsTraps:GetDamage(target)
-    if GlobalState:Get().act == 3 then
+    if GlobalState:Get().act >= 3 then
         return 0.21 * target:GetMaxHealth()
     end
     return 0.34 * target:GetMaxHealth()

@@ -57,7 +57,9 @@ function Dialogue:Init()
 
   local version = dialogues.version
   ChatCommand:LinkCommand("-version", function(event)
-    GameRules:SendCustomMessage("Version: " .. version, 0, 0)
+    local msg = "Version: " .. version
+    GameRules:SendCustomMessage(msg, 0, 0)
+    print(msg)
   end)
 
   ChatCommand:LinkDevCommand("-dialoguestart", function(event, args)

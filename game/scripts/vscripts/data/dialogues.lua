@@ -1,6 +1,6 @@
 local QuestStatus = require('modules.quest.quest_status')
 return {
-    version = "v0a50a4d9 (202604182242)",
+    version = "v6c5ede13 (202605012046)",
     entries = {
         d_untitled_passage = {
             priority = 0,
@@ -5174,21 +5174,21 @@ return {
             npc = "npc_shamanka",
             choices = {
                 {
-                    text = [[Кварц-Ксеон]],
+                    text = [[Кварц-Ксеон (Репер физовик // Сложность: 1)]],
                     next = "d_vybrat_svou_sudbu",
                     actions = {
                         { hero = "npc_dota_hero_sanya_rapper", type = "change_hero" },
                     },
                 },
                 {
-                    text = [[Интегралус]],
+                    text = [[Интегралус (Маг-прокастер // Сложность: 2)]],
                     next = "d_vybrat_svou_sudbu",
                     actions = {
                         { hero = "npc_dota_hero_sanya_logarithmus", type = "change_hero" },
                     },
                 },
                 {
-                    text = [[Towel Master (не выбирать для первого прохождения)]],
+                    text = [[Towel Master (Тактический саммонер // Сложность: 3) ]],
                     next = "d_vybrat_svou_sudbu",
                     actions = {
                         { hero = "npc_dota_hero_sanya_towel_master", type = "change_hero" },
