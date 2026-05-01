@@ -55,6 +55,11 @@ function Dialogue:Init()
     self:HideDialogue(event.playerID)
   end)
 
+  local version = dialogues.version
+  ChatCommand:LinkCommand("-version", function(event)
+    GameRules:SendCustomMessage("Version: " .. version, 0, 0)
+  end)
+
   ChatCommand:LinkDevCommand("-dialoguestart", function(event, args)
     self:StartDialogueForPlayer(event.playerID, args[1])
   end)
